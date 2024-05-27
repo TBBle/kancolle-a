@@ -1,5 +1,6 @@
 //! Module for importers for https://kancolle-arcade.net/ac/api/ resources
 
+use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
 use std::ops::Deref;
@@ -7,7 +8,6 @@ use std::ops::Deref;
 #[derive(Debug, Deserialize)]
 pub struct TcBook(Vec<BookShip>);
 
-// TODO: What's the easy way to make this read-only outside this module?
 impl TcBook {
     /// Parses a TcBook from the provided JSON string.
     /// Fails if not given a JSON array, or expected data structure does not match.
@@ -17,6 +17,7 @@ impl TcBook {
     }
 }
 
+// Implementing Deref but not DerefMut so it can't be mutated.
 impl Deref for TcBook {
     type Target = Vec<BookShip>;
 
@@ -25,37 +26,37 @@ impl Deref for TcBook {
     }
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Getters)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShip {
-    pub book_no: u16,
-    pub ship_class: Option<String>,
-    pub ship_class_index: Option<i16>,
-    pub ship_type: String,
-    pub ship_model_num: String,
-    pub ship_name: String,
-    pub card_index_img: String,
-    pub card_list: Vec<BookShipCardPage>,
-    pub variation_num: u16,
-    pub acquire_num: u16,
-    pub lv: u16,
-    pub is_married: Option<Vec<bool>>,
-    pub married_img: Option<Vec<String>>, // Probably... No married ships
+    book_no: u16,
+    ship_class: Option<String>,
+    ship_class_index: Option<i16>,
+    ship_type: String,
+    ship_model_num: String,
+    ship_name: String,
+    card_index_img: String,
+    card_list: Vec<BookShipCardPage>,
+    variation_num: u16,
+    acquire_num: u16,
+    lv: u16,
+    is_married: Option<Vec<bool>>,
+    married_img: Option<Vec<String>>, // Probably... No married ships to validate this.
 }
 
 // Notes for future functions
 // * Card images (s/tc_NO_xxx.jpg) live in https://kancolle-arcade.net/ac/resources/pictureBook/
 // * Status images (i/i_xxx.png) live in https://kancolle-arcade.net/ac/resources/chara/
-// ** Status images end with _n, _
+// ** Status images end with _n, _bs, _bm, or _bl. (Not sure if there's one for sunk?)
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Getters)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShipCardPage {
-    pub priority: u16,
-    pub card_img_list: Vec<String>,
-    pub status_img: Option<Vec<String>>,
-    pub variation_num_in_page: u16,
-    pub acquire_num_in_page: u16,
+    priority: u16,
+    card_img_list: Vec<String>,
+    status_img: Option<Vec<String>>,
+    variation_num_in_page: u16,
+    acquire_num_in_page: u16,
 }
