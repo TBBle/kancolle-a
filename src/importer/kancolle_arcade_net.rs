@@ -60,3 +60,52 @@ pub struct BookShipCardPage {
     variation_num_in_page: u16,
     acquire_num_in_page: u16,
 }
+
+#[derive(Debug, Deserialize)]
+pub struct BlueprintList(Vec<BlueprintShip>);
+
+impl BlueprintList {
+    /// Parses a BlueprintList from the provided JSON string.
+    /// Fails if not given a JSON array, or expected data structure does not match.
+    pub fn new(blueprintlist_json: &str) -> Result<BlueprintList> {
+        let result: BlueprintList = serde_json::from_str(blueprintlist_json)?;
+        Ok(result)
+    }
+}
+
+// Implementing Deref but not DerefMut so it can't be mutated.
+impl Deref for BlueprintList {
+    type Target = Vec<BlueprintShip>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+// Notes for future functions
+// * Status images (i/i_xxx.png) live in https://kancolle-arcade.net/ac/resources/chara/
+// ** Status images end with _n, _bs, _bm, or _bl. (Not sure if there's one for sunk?)
+
+#[derive(Debug, Deserialize, Getters)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+pub struct BlueprintShip {
+    ship_class_id: u16,
+    ship_class_index: u16,
+    ship_sort_no: u16,
+    ship_type: String,
+    ship_name: String,
+    status_img: String,
+    blueprint_total_num: u16,
+    exists_warning_for_expiration: bool,
+    expiration_date_list: Vec<BlueprintExpirationDate>,
+}
+
+#[derive(Debug, Deserialize, Getters)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+pub struct BlueprintExpirationDate {
+    expiration_date: u64, // TODO: Unixtime. Flexible, in case they change expiry rules?
+    blueprint_num: u16,
+    expire_this_month: bool,
+}
