@@ -1,5 +1,6 @@
 //! Module for importers for https://kancolle-arcade.net/ac/api/ resources
 
+use chrono::{DateTime, Utc};
 use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
@@ -85,6 +86,9 @@ impl Deref for BlueprintList {
 // Notes for future functions
 // * Status images (i/i_xxx.png) live in https://kancolle-arcade.net/ac/resources/chara/
 // ** Status images end with _n, _bs, _bm, or _bl. (Not sure if there's one for sunk?)
+// * Expiration date appears to be the 11th of the month of expiry. Not clear why.
+// ** True expiration date is 23:59 on the last date of the month.
+// ** Or I made a mistake, I guess?
 
 #[derive(Debug, Deserialize, Getters)]
 #[serde(rename_all = "camelCase")]
@@ -105,7 +109,8 @@ pub struct BlueprintShip {
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BlueprintExpirationDate {
-    expiration_date: u64, // TODO: Unixtime. Flexible, in case they change expiry rules?
+    #[serde(with = "chrono::serde::ts_milliseconds")]
+    expiration_date: DateTime<Utc>,
     blueprint_num: u16,
     expire_this_month: bool,
 }

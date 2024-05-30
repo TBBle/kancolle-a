@@ -1,3 +1,7 @@
+use chrono;
+use chrono::Datelike;
+use chrono::TimeZone;
+use chrono_tz::Asia::Tokyo;
 use std::env;
 use std::fs;
 use std::path::Path;
@@ -58,7 +62,8 @@ fn validate_blueprint_list_common(blueprint_list: &kca_net::BlueprintList) {
         assert!(!ship.expiration_date_list().is_empty());
 
         for expiration_date in ship.expiration_date_list().iter() {
-            assert_ne!(*expiration_date.expiration_date(), 0);
+            // They all have the same day. No idea why.
+            assert_eq!(expiration_date.expiration_date().day(), 11);
             assert_ne!(*expiration_date.blueprint_num(), 0);
         }
     }
@@ -77,4 +82,70 @@ fn parse_fixture_tcbook_info_20240528() {
 
     assert_eq!(blueprint_list.len(), 133);
     validate_blueprint_list_common(&blueprint_list);
+
+    // Specific interesting ships.
+
+    let 弥生 = &blueprint_list[0];
+    assert_eq!(*弥生.ship_class_id(), 14);
+    assert_eq!(*弥生.ship_class_index(), 3);
+    assert_eq!(*弥生.ship_sort_no(), 1800);
+    assert_eq!(弥生.ship_type(), "駆逐艦");
+    assert_eq!(弥生.ship_name(), "弥生");
+    assert_eq!(弥生.status_img(), "i/i_4ma06a97am0r_n.png");
+    assert_eq!(*弥生.blueprint_total_num(), 2);
+    assert_eq!(*弥生.exists_warning_for_expiration(), false);
+    assert_eq!(弥生.expiration_date_list().len(), 2);
+    let 弥生_0 = &弥生.expiration_date_list()[0];
+    // No idea why the expiration date is actually the 11th...
+    assert_eq!(
+        *弥生_0.expiration_date(),
+        Tokyo
+            .with_ymd_and_hms(2024, 8, 11, 23, 59, 59)
+            .unwrap()
+            .to_utc()
+    );
+    assert_eq!(*弥生_0.blueprint_num(), 1);
+    assert_eq!(*弥生_0.expire_this_month(), false);
+    let 弥生_1 = &弥生.expiration_date_list()[1];
+    assert_eq!(
+        *弥生_1.expiration_date(),
+        Tokyo
+            .with_ymd_and_hms(2024, 10, 11, 23, 59, 59)
+            .unwrap()
+            .to_utc()
+    );
+    assert_eq!(*弥生_1.blueprint_num(), 1);
+    assert_eq!(*弥生_1.expire_this_month(), false);
+
+    // Expiring blueprint.
+    let 卯月 = &blueprint_list[12];
+    assert_eq!(*卯月.ship_class_id(), 14);
+    assert_eq!(*卯月.ship_class_index(), 4);
+    assert_eq!(*卯月.ship_sort_no(), 1800);
+    assert_eq!(卯月.ship_type(), "駆逐艦");
+    assert_eq!(卯月.ship_name(), "卯月");
+    assert_eq!(卯月.status_img(), "i/i_mj1x41twqqw6_n.png");
+    assert_eq!(*卯月.blueprint_total_num(), 2);
+    assert_eq!(*卯月.exists_warning_for_expiration(), true);
+    assert_eq!(卯月.expiration_date_list().len(), 2);
+    let 卯月_0 = &卯月.expiration_date_list()[0];
+    assert_eq!(
+        *卯月_0.expiration_date(),
+        Tokyo
+            .with_ymd_and_hms(2024, 5, 11, 23, 59, 59)
+            .unwrap()
+            .to_utc()
+    );
+    assert_eq!(*卯月_0.blueprint_num(), 1);
+    assert_eq!(*卯月_0.expire_this_month(), true);
+    let 卯月_1 = &卯月.expiration_date_list()[1];
+    assert_eq!(
+        *卯月_1.expiration_date(),
+        Tokyo
+            .with_ymd_and_hms(2024, 9, 11, 23, 59, 59)
+            .unwrap()
+            .to_utc()
+    );
+    assert_eq!(*卯月_1.blueprint_num(), 1);
+    assert_eq!(*卯月_1.expire_this_month(), false);
 }
