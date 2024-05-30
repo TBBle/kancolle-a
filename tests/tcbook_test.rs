@@ -18,10 +18,11 @@ fn parse_empty_vector() {
 }
 
 #[test]
-fn parse_fixture_tcbook_info() {
+fn parse_fixture_tcbook_info_20240528() {
     let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
     // https://kancolle-arcade.net/ac/api/TcBook/info
-    let fixture = path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "TcBook_info.json");
+    let fixture =
+        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-28" / "TcBook_info.json");
 
     let data = fs::read_to_string(fixture).unwrap();
     let tcbook = kca_net::TcBook::new(&data).unwrap();
