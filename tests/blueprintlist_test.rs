@@ -17,19 +17,7 @@ fn parse_empty_vector() {
     assert_eq!(blueprint_list.len(), 0);
 }
 
-#[test]
-fn parse_fixture_tcbook_info_20240528() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/BlueprintList/info
-    let fixture = path!(
-        Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-30" / "BlueprintList_info.json"
-    );
-
-    let data = fs::read_to_string(fixture).unwrap();
-    let blueprint_list = kca_net::BlueprintList::new(&data).unwrap();
-
-    assert_eq!(blueprint_list.len(), 133);
-
+fn validate_blueprint_list_common(blueprint_list: &kca_net::BlueprintList) {
     const STATUS_IMAGE_PREFIX: &str = "i/i_";
     const STATUS_IMAGE_SUFFIXES: [&'static str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
 
@@ -74,4 +62,19 @@ fn parse_fixture_tcbook_info_20240528() {
             assert_ne!(*expiration_date.blueprint_num(), 0);
         }
     }
+}
+
+#[test]
+fn parse_fixture_tcbook_info_20240528() {
+    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
+    // https://kancolle-arcade.net/ac/api/BlueprintList/info
+    let fixture = path!(
+        Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-30" / "BlueprintList_info.json"
+    );
+
+    let data = fs::read_to_string(fixture).unwrap();
+    let blueprint_list = kca_net::BlueprintList::new(&data).unwrap();
+
+    assert_eq!(blueprint_list.len(), 133);
+    validate_blueprint_list_common(&blueprint_list);
 }
