@@ -2,16 +2,17 @@ use chrono::{Datelike, Utc};
 use kancolle_a::importer::kancolle_arcade_net::BlueprintList;
 use std::collections::BTreeMap;
 use std::error::Error;
-use std::{env, fs};
+use std::io::BufReader;
+use std::{env, fs::File};
 
 fn main() -> Result<(), Box<dyn Error>> {
     let bp_path = env::args()
         .nth(1)
         .ok_or("Need an info file to open".to_owned())?;
 
-    let bp_data = fs::read_to_string(bp_path)?;
+    let bp_data = BufReader::new(File::open(bp_path)?);
 
-    let bp_list = BlueprintList::new(&bp_data)?;
+    let bp_list = BlueprintList::new(bp_data)?;
 
     let mut bp_per_month = BTreeMap::new();
 

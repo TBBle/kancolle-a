@@ -3,7 +3,8 @@ use chrono::Datelike;
 use chrono::TimeZone;
 use chrono_tz::Asia::Tokyo;
 use std::env;
-use std::fs;
+use std::fs::File;
+use std::io::BufReader;
 use std::path::Path;
 
 use path_macro::path;
@@ -11,13 +12,13 @@ use path_macro::path;
 use kancolle_a::importer::kancolle_arcade_net as kca_net;
 
 #[test]
-fn parse_empty_string() {
-    kca_net::BlueprintList::new("").unwrap_err();
+fn parse_empty_reader() {
+    kca_net::BlueprintList::new(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_vector() {
-    let blueprint_list = kca_net::BlueprintList::new("[]").unwrap();
+    let blueprint_list = kca_net::BlueprintList::new("[]".as_bytes()).unwrap();
     assert_eq!(blueprint_list.len(), 0);
 }
 
@@ -77,8 +78,8 @@ fn parse_fixture_tcbook_info_20240528() {
         Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-30" / "BlueprintList_info.json"
     );
 
-    let data = fs::read_to_string(fixture).unwrap();
-    let blueprint_list = kca_net::BlueprintList::new(&data).unwrap();
+    let data = BufReader::new(File::open(fixture).unwrap());
+    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
 
     assert_eq!(blueprint_list.len(), 133);
     validate_blueprint_list_common(&blueprint_list);

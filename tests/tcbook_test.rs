@@ -1,5 +1,6 @@
 use std::env;
-use std::fs;
+use std::fs::File;
+use std::io::BufReader;
 use std::path::Path;
 
 use path_macro::path;
@@ -7,13 +8,13 @@ use path_macro::path;
 use kancolle_a::importer::kancolle_arcade_net as kca_net;
 
 #[test]
-fn parse_empty_string() {
-    kca_net::TcBook::new("").unwrap_err();
+fn parse_empty_reader() {
+    kca_net::TcBook::new(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_vector() {
-    let tcbook = kca_net::TcBook::new("[]").unwrap();
+    let tcbook = kca_net::TcBook::new("[]".as_bytes()).unwrap();
     assert_eq!(tcbook.len(), 0);
 }
 
@@ -172,8 +173,8 @@ fn parse_fixture_tcbook_info_20240528() {
     let fixture =
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-28" / "TcBook_info.json");
 
-    let data = fs::read_to_string(fixture).unwrap();
-    let tcbook = kca_net::TcBook::new(&data).unwrap();
+    let data = BufReader::new(File::open(fixture).unwrap());
+    let tcbook = kca_net::TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -293,8 +294,8 @@ fn parse_fixture_tcbook_info_20240530() {
     let fixture =
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-30" / "TcBook_info.json");
 
-    let data = fs::read_to_string(fixture).unwrap();
-    let tcbook = kca_net::TcBook::new(&data).unwrap();
+    let data = BufReader::new(File::open(fixture).unwrap());
+    let tcbook = kca_net::TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);

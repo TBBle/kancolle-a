@@ -4,16 +4,16 @@ use chrono::{DateTime, Utc};
 use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
-use std::ops::Deref;
+use std::{io::Read, ops::Deref};
 
 #[derive(Debug, Deserialize)]
 pub struct TcBook(Vec<BookShip>);
 
 impl TcBook {
-    /// Parses a TcBook from the provided JSON string.
+    /// Parses a TcBook from the provided JSON reader.
     /// Fails if not given a JSON array, or expected data structure does not match.
-    pub fn new(tcbook_json: &str) -> Result<TcBook> {
-        let result: TcBook = serde_json::from_str(tcbook_json)?;
+    pub fn new(tcbook_reader: impl Read) -> Result<TcBook> {
+        let result: TcBook = serde_json::from_reader(tcbook_reader)?;
         Ok(result)
     }
 }
@@ -66,10 +66,10 @@ pub struct BookShipCardPage {
 pub struct BlueprintList(Vec<BlueprintShip>);
 
 impl BlueprintList {
-    /// Parses a BlueprintList from the provided JSON string.
+    /// Parses a BlueprintList from the provided JSON reader.
     /// Fails if not given a JSON array, or expected data structure does not match.
-    pub fn new(blueprintlist_json: &str) -> Result<BlueprintList> {
-        let result: BlueprintList = serde_json::from_str(blueprintlist_json)?;
+    pub fn new(blueprintlist_reader: impl Read) -> Result<BlueprintList> {
+        let result: BlueprintList = serde_json::from_reader(blueprintlist_reader)?;
         Ok(result)
     }
 }
