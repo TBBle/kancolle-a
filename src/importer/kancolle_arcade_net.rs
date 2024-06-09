@@ -62,6 +62,37 @@ pub struct BookShipCardPage {
     acquire_num_in_page: u16,
 }
 
+#[derive(Debug, PartialEq, Eq)]
+pub enum BookShipCardPageSource {
+    Unknown, // Fallback
+    Normal,  // Priority 0 is always this
+
+    // 期間限定ドロップイベント
+    DecisiveBattle, // 決戦mode: May 2019 once-off
+    Swimsuit,       // 水着mode, 里帰り水着mode, 夏のお嬢さんmode: July 2019 onward
+    Christmas,      // クリスマスmode: December 2019 onward
+    Halloween,      // ハロウィンmode: Oct 2020 onward
+    Valentine,      // バレンタインmode: Feb 2021 onward
+    PacificSaury,   // 秋刀魚mode, F作業mode: Oct 2021 onward (鎮守府秋刀魚祭り)
+    SundayBest,     // 晴れ着mode: Jan 2022 onward
+    RainySeason,    // 梅雨mode: May-June 2022 onward
+    Yukata,         // 浴衣mode: Sep 2023 onward
+
+    // オリジナルイラストカード
+    OriginalIllustration, // Theory: Last page, may have a different variation_num_in_page
+}
+
+impl BookShipCardPage {
+    /// Reports the event-source for the given page ("priority") of a TcBook entry
+    pub fn source(&self) -> BookShipCardPageSource {
+        use BookShipCardPageSource::*;
+        if self.priority == 0 {
+            return Normal;
+        }
+        return Unknown;
+    }
+}
+
 #[derive(Debug, Deserialize)]
 pub struct BlueprintList(Vec<BlueprintShip>);
 

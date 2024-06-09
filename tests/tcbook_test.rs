@@ -39,6 +39,11 @@ fn validate_tcbook_common(tcbook: &kca_net::TcBook) {
                     *card_page.variation_num_in_page() == 3
                         || *card_page.variation_num_in_page() == 6
                 );
+                use kca_net::BookShipCardPageSource::*;
+                assert_eq!(card_page.source(), Normal);
+            } else {
+                use kca_net::BookShipCardPageSource::*;
+                assert_ne!(card_page.source(), Normal);
             }
             assert_eq!(
                 *card_page.variation_num_in_page() as usize,
