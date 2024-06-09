@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         let mut unknown: Vec<u16> = vec![];
         for page in &ship.card_list()[1..] {
             use BookShipCardPageSource::*;
-            match page.source() {
+            match ship.source(*page.priority()) {
                 Normal => panic!("Normal page after page 1"),
                 Unknown => {
                     if *page.acquire_num_in_page() > 0 {

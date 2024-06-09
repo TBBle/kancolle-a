@@ -4,7 +4,8 @@ use chrono::{DateTime, Utc};
 use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
-use std::{io::Read, ops::Deref};
+use std::sync::OnceLock;
+use std::{collections::HashMap, io::Read, ops::Deref};
 
 #[derive(Debug, Deserialize)]
 pub struct TcBook(Vec<BookShip>);
@@ -51,18 +52,7 @@ pub struct BookShip {
 // * Status images (i/i_xxx.png) live in https://kancolle-arcade.net/ac/resources/chara/
 // ** Status images end with _n, _bs, _bm, or _bl. (Not sure if there's one for sunk?)
 
-#[derive(Debug, Deserialize, Getters)]
-#[serde(rename_all = "camelCase")]
-#[serde(deny_unknown_fields)]
-pub struct BookShipCardPage {
-    priority: u16,
-    card_img_list: Vec<String>,
-    status_img: Option<Vec<String>>,
-    variation_num_in_page: u16,
-    acquire_num_in_page: u16,
-}
-
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub enum BookShipCardPageSource {
     Unknown, // Fallback
     Normal,  // Priority 0 is always this
@@ -82,15 +72,76 @@ pub enum BookShipCardPageSource {
     OriginalIllustration, // Theory: Last page, may have a different variation_num_in_page
 }
 
-impl BookShipCardPage {
+static BOOK_SHIP_SOURCES: OnceLock<HashMap<u16, Vec<BookShipCardPageSource>>> = OnceLock::new();
+
+fn init_book_ship_sources() {
+    use BookShipCardPageSource::*;
+    BOOK_SHIP_SOURCES.get_or_init(|| {
+        let mut sources = HashMap::new();
+        // 赤城: https://kancolle-a.sega.jp/players/information/211230_2.html
+        sources.insert(6, vec![SundayBest]);
+        sources
+    });
+}
+
+impl BookShip {
     /// Reports the event-source for the given page ("priority") of a TcBook entry
-    pub fn source(&self) -> BookShipCardPageSource {
+    pub fn source(&self, priority: u16) -> BookShipCardPageSource {
         use BookShipCardPageSource::*;
-        if self.priority == 0 {
+        if priority == 0 {
             return Normal;
         }
-        return Unknown;
+        init_book_ship_sources();
+        if let Some(sources) = BOOK_SHIP_SOURCES.get().unwrap().get(self.book_no()) {
+            sources
+                .get((priority - 1) as usize)
+                .or(Some(&Unknown))
+                .unwrap()
+                .to_owned()
+        } else {
+            Unknown
+        }
     }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_book_ship_source() {
+        let ship = BookShip {
+            book_no: 6,
+            ship_class: None,
+            ship_class_index: None,
+            ship_type: "".to_string(),
+            ship_model_num: "".to_string(),
+            ship_name: "".to_string(),
+            card_index_img: "".to_string(),
+            card_list: vec![],
+            variation_num: 6,
+            acquire_num: 0,
+            lv: 1,
+            is_married: None,
+            married_img: None,
+        };
+
+        use BookShipCardPageSource::*;
+        assert_eq!(ship.source(0), Normal);
+        assert_eq!(ship.source(1), SundayBest);
+        assert_eq!(ship.source(2), Unknown);
+    }
+}
+
+#[derive(Debug, Deserialize, Getters)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+pub struct BookShipCardPage {
+    priority: u16,
+    card_img_list: Vec<String>,
+    status_img: Option<Vec<String>>,
+    variation_num_in_page: u16,
+    acquire_num_in_page: u16,
 }
 
 #[derive(Debug, Deserialize)]
