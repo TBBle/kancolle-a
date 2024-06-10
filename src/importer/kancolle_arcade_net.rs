@@ -153,6 +153,10 @@ fn init_book_ship_sources() {
         sources.insert(86, vec![Fishing]);
         // 満潮, 満潮改: https://kancolle-a.sega.jp/players/information/211005_1.html
         sources.insert(87, vec![PacificSaury]);
+        // 祥鳳, 祥鳳改:
+        // * https://kancolle-a.sega.jp/players/information/2206_rainy_season_addition.html
+        // * https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
+        sources.insert(94, vec![RainySeason, PacificSaury]);
         // 大井改: https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
         sources.insert(97, vec![RainySeason]);
         // 最上改:
@@ -290,10 +294,6 @@ fn init_book_ship_sources() {
         // These cannot be determined yet, as there's multiple variations I don't
         // have in my current data
 
-        // 祥鳳, 祥鳳改:
-        // * (RainySeason) https://kancolle-a.sega.jp/players/information/2206_rainy_season_addition.html
-        // * (PacificSaury) https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
-        sources.insert(94, vec![Unknown, Unknown]);
         // 大和:
         // * (Swimsuit) https://kancolle-a.sega.jp/players/information/190813_1.html
         // * (SundayBest) https://kancolle-a.sega.jp/players/information/211230_2.html
