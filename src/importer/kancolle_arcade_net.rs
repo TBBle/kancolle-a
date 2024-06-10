@@ -339,6 +339,15 @@ impl BookShip {
         }
         init_book_ship_sources();
         if let Some(sources) = BOOK_SHIP_SOURCES.get().unwrap().get(self.book_no()) {
+            if sources.len() + 1 != self.card_list().len() {
+                // Old data. Not sure if there's a good way to handle this; as new events are inserted before
+                // Original Illustration Cards, but otherwise in order of addition, it appears.
+                // Note that Surigao Strait cards in particular were from an in-person event many
+                // years before the actual in-game event in 2024, which is why it's first when there's multiple such events.
+                // We _could_ assume the last slot is the original illustration slot if it is the wrong shape, but without
+                // particular value in reading old data sets (except for tests) it's not particularly worth it.
+                return Unknown;
+            };
             sources
                 .get((priority - 1) as usize)
                 .or(Some(&Unknown))
@@ -364,7 +373,22 @@ mod tests {
             ship_model_num: "".to_string(),
             ship_name: "".to_string(),
             card_index_img: "".to_string(),
-            card_list: vec![],
+            card_list: vec![
+                BookShipCardPage {
+                    priority: 0,
+                    card_img_list: vec!["".to_string(), "".to_string()],
+                    status_img: None,
+                    variation_num_in_page: 3,
+                    acquire_num_in_page: 0,
+                },
+                BookShipCardPage {
+                    priority: 0,
+                    card_img_list: vec!["".to_string(), "".to_string()],
+                    status_img: None,
+                    variation_num_in_page: 3,
+                    acquire_num_in_page: 0,
+                },
+            ],
             variation_num: 6,
             acquire_num: 0,
             lv: 1,

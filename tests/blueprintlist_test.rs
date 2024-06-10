@@ -150,3 +150,33 @@ fn parse_fixture_blueprint_list_info_20240528() {
     assert_eq!(*卯月_1.blueprint_num(), 1);
     assert_eq!(*卯月_1.expire_this_month(), false);
 }
+
+#[test]
+fn parse_fixture_blueprint_list_info_20240609() {
+    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
+    // https://kancolle-arcade.net/ac/api/BlueprintList/info
+    let fixture = path!(
+        Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-09" / "BlueprintList_info.json"
+    );
+
+    let data = BufReader::new(File::open(fixture).unwrap());
+    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
+
+    assert_eq!(blueprint_list.len(), 136);
+    validate_blueprint_list_common(&blueprint_list);
+}
+
+#[test]
+fn parse_fixture_blueprint_list_info_20240610() {
+    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
+    // https://kancolle-arcade.net/ac/api/BlueprintList/info
+    let fixture = path!(
+        Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-10" / "BlueprintList_info.json"
+    );
+
+    let data = BufReader::new(File::open(fixture).unwrap());
+    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
+
+    assert_eq!(blueprint_list.len(), 135);
+    validate_blueprint_list_common(&blueprint_list);
+}
