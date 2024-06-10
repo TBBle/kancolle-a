@@ -14,7 +14,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let mut unknown_pages: Vec<(u16, &str, Vec<u16>, Vec<u16>)> = vec![];
 
-    for ship in tc_list.iter().filter(|ship| ship.card_list().len() > 1) {
+    for ship in tc_list.iter().filter(|ship| *ship.acquire_num() > 0) {
         let mut knowable: Vec<u16> = vec![];
         let mut unknown: Vec<u16> = vec![];
         for page in &ship.card_list()[1..] {
