@@ -203,7 +203,6 @@ fn parse_fixture_tcbook_info_20240528() {
     assert_eq!(長門.married_img().as_ref().unwrap().len(), 0);
     let 長門_card_list_0 = &長門.card_list()[0];
     assert_eq!(*長門_card_list_0.priority(), 0);
-    // This is the number of rows on this page. TODO: Rename the field?
     assert_eq!(長門_card_list_0.card_img_list().len(), 6);
     assert_eq!(
         長門_card_list_0.card_img_list(),
@@ -240,7 +239,6 @@ fn parse_fixture_tcbook_info_20240528() {
     assert_eq!(扶桑.married_img().as_ref().unwrap().len(), 0);
     let 扶桑_card_list_0 = &扶桑.card_list()[0];
     assert_eq!(*扶桑_card_list_0.priority(), 0);
-    // This is the number of rows on this page. TODO: Rename the field?
     assert_eq!(扶桑_card_list_0.card_img_list().len(), 6);
     assert_eq!(
         扶桑_card_list_0.card_img_list(),
@@ -277,7 +275,6 @@ fn parse_fixture_tcbook_info_20240528() {
     assert_eq!(扶桑改二.married_img().as_ref().unwrap().len(), 0);
     let 扶桑改二_card_list_0 = &扶桑改二.card_list()[0];
     assert_eq!(*扶桑改二_card_list_0.priority(), 0);
-    // This is the number of rows on this page. TODO: Rename the field?
     assert_eq!(扶桑改二_card_list_0.card_img_list().len(), 3);
     assert_eq!(
         扶桑改二_card_list_0.card_img_list(),
@@ -324,7 +321,6 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(長門.married_img().as_ref().unwrap().len(), 0);
     let 長門_card_list_0 = &長門.card_list()[0];
     assert_eq!(*長門_card_list_0.priority(), 0);
-    // This is the number of rows on this page. TODO: Rename the field?
     assert_eq!(長門_card_list_0.card_img_list().len(), 6);
     assert_eq!(
         長門_card_list_0.card_img_list(),
@@ -362,7 +358,6 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(扶桑.married_img().as_ref().unwrap().len(), 1);
     let 扶桑_card_list_0 = &扶桑.card_list()[0];
     assert_eq!(*扶桑_card_list_0.priority(), 0);
-    // This is the number of rows on this page. TODO: Rename the field?
     assert_eq!(扶桑_card_list_0.card_img_list().len(), 6);
     assert_eq!(
         扶桑_card_list_0.card_img_list(),
@@ -399,7 +394,6 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(扶桑改二.married_img().as_ref().unwrap().len(), 0);
     let 扶桑改二_card_list_0 = &扶桑改二.card_list()[0];
     assert_eq!(*扶桑改二_card_list_0.priority(), 0);
-    // This is the number of rows on this page. TODO: Rename the field?
     assert_eq!(扶桑改二_card_list_0.card_img_list().len(), 3);
     assert_eq!(
         扶桑改二_card_list_0.card_img_list(),
