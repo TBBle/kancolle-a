@@ -12,12 +12,12 @@ use path_macro::path;
 use kancolle_a::importer::kancolle_arcade_net as kca_net;
 
 #[test]
-fn parse_empty_reader() {
+fn parse_empty_blueprint_list_reader() {
     kca_net::BlueprintList::new(std::io::empty()).unwrap_err();
 }
 
 #[test]
-fn parse_empty_vector() {
+fn parse_empty_blueprint_list_vector() {
     let blueprint_list = kca_net::BlueprintList::new("[]".as_bytes()).unwrap();
     assert_eq!(blueprint_list.len(), 0);
 }
@@ -71,7 +71,7 @@ fn validate_blueprint_list_common(blueprint_list: &kca_net::BlueprintList) {
 }
 
 #[test]
-fn parse_fixture_tcbook_info_20240528() {
+fn parse_fixture_blueprint_list_info_20240528() {
     let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
     // https://kancolle-arcade.net/ac/api/BlueprintList/info
     let fixture = path!(

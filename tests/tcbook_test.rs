@@ -8,12 +8,12 @@ use path_macro::path;
 use kancolle_a::importer::kancolle_arcade_net as kca_net;
 
 #[test]
-fn parse_empty_reader() {
+fn parse_empty_tcbook_reader() {
     kca_net::TcBook::new(std::io::empty()).unwrap_err();
 }
 
 #[test]
-fn parse_empty_vector() {
+fn parse_empty_tcbook_vector() {
     let tcbook = kca_net::TcBook::new("[]".as_bytes()).unwrap();
     assert_eq!(tcbook.len(), 0);
 }
