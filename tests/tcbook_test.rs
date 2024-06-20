@@ -480,6 +480,10 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(*扶桑.lv(), 100);
     assert_eq!(扶桑.is_married().as_ref().unwrap(), &vec![false, true]);
     assert_eq!(扶桑.married_img().as_ref().unwrap().len(), 1);
+    assert_eq!(
+        扶桑.married_img().as_ref().unwrap(),
+        &vec!["s/tc_26_tg21e17c6cre.jpg"]
+    );
     let 扶桑_card_list_0 = &扶桑.card_list()[0];
     assert_eq!(*扶桑_card_list_0.priority(), 0);
     assert_eq!(扶桑_card_list_0.card_img_list().len(), 6);
@@ -661,6 +665,10 @@ fn parse_fixture_tcbook_info_20240609() {
         &vec![false, true, false, true]
     );
     assert_eq!(扶桑.married_img().as_ref().unwrap().len(), 1);
+    assert_eq!(
+        扶桑.married_img().as_ref().unwrap(),
+        &vec!["s/tc_26_tg21e17c6cre.jpg"]
+    );
     let 扶桑_card_list_0 = &扶桑.card_list()[0];
     assert_eq!(*扶桑_card_list_0.priority(), 0);
     assert_eq!(扶桑_card_list_0.card_img_list().len(), 6);
@@ -875,6 +883,10 @@ fn parse_fixture_tcbook_info_20240610() {
         &vec![false, true, false, true]
     );
     assert_eq!(扶桑.married_img().as_ref().unwrap().len(), 1);
+    assert_eq!(
+        扶桑.married_img().as_ref().unwrap(),
+        &vec!["s/tc_26_tg21e17c6cre.jpg"]
+    );
     let 扶桑_card_list_0 = &扶桑.card_list()[0];
     assert_eq!(*扶桑_card_list_0.priority(), 0);
     assert_eq!(扶桑_card_list_0.card_img_list().len(), 6);
@@ -957,6 +969,10 @@ fn parse_fixture_tcbook_info_20240610() {
         &vec!["", "", "", "s/tc_209_qt3tt1rukzxr.jpg", "", "",]
     );
     assert_eq!(早霜_card_list_1.status_img().as_ref().unwrap().len(), 1);
+    assert_eq!(
+        早霜_card_list_1.status_img().as_ref().unwrap(),
+        &vec!["i/i_zp6ze49mx4qw_n.png"]
+    );
     assert_eq!(*早霜_card_list_1.variation_num_in_page(), 6);
     assert_eq!(*早霜_card_list_1.acquire_num_in_page(), 1);
     let 早霜_card_list_2 = &早霜.card_list()[2];
