@@ -4,11 +4,11 @@ use std::io::BufReader;
 use std::{env, fs::File};
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let bp_path = env::args()
+    let tc_path = env::args()
         .nth(1)
         .ok_or("Need an info file to open".to_owned())?;
 
-    let tc_data = BufReader::new(File::open(bp_path)?);
+    let tc_data = BufReader::new(File::open(tc_path)?);
 
     let tc_list = TcBook::new(tc_data)?;
 
@@ -17,7 +17,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // TODO: CLI, rather than editing the code.
     use BookShipCardPageSource::*;
     let target_source = Normal;
-    let skip_kai = true;
+    let skip_kai = false;
 
     for ship in tc_list.iter().filter(|ship| *ship.acquire_num() > 0) {
         for page in ship
