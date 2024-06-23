@@ -44,7 +44,7 @@ pub struct BookShip {
     acquire_num: u16,
     lv: u16,
     is_married: Option<Vec<bool>>,
-    married_img: Option<Vec<String>>, // Probably... No married ships to validate this.
+    married_img: Option<Vec<String>>,
 }
 
 // Notes for future functions
