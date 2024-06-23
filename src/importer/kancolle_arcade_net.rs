@@ -275,6 +275,8 @@ fn init_book_ship_sources() {
         sources.insert(257, vec![Swimsuit]);
         // 速吸, 速吸改: https://kancolle-a.sega.jp/players/information/2312_xmas.html
         sources.insert(260, vec![Christmas]);
+        // 朝潮改二: https://kancolle-a.sega.jp/players/information/201013_1.html
+        sources.insert(263, vec![Halloween]);
         // 鹿島, 鹿島改: https://kancolle-a.sega.jp/players/information/201201_1.html
         sources.insert(265, vec![Christmas]);
         // 霞改二乙: https://kancolle-a.sega.jp/players/information/200805_1.html
