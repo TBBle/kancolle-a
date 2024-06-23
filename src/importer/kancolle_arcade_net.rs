@@ -471,3 +471,42 @@ pub struct BlueprintExpirationDate {
     blueprint_num: u16,
     expire_this_month: bool,
 }
+
+#[derive(Debug, Deserialize, Getters)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+pub struct PlaceTopRegion {
+    top_region_enum: String,
+    name: String,
+    prefecture_beans: Vec<PlacePrefectureBean>,
+}
+
+#[derive(Debug, Deserialize, Getters)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+pub struct PlacePrefectureBean {
+    region_enum: String,
+    name: String,
+    jis_code: u8,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct PlaceDistricts(Vec<PlaceTopRegion>);
+
+impl PlaceDistricts {
+    /// Parses a PlaceDistricts from the provided JSON reader.
+    /// Fails if not given a JSON array, or expected data structure does not match.
+    pub fn new(reader: impl Read) -> Result<PlaceDistricts> {
+        let result: PlaceDistricts = serde_json::from_reader(reader)?;
+        Ok(result)
+    }
+}
+
+// Implementing Deref but not DerefMut so it can't be mutated.
+impl Deref for PlaceDistricts {
+    type Target = Vec<PlaceTopRegion>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
