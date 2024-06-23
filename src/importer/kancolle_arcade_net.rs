@@ -476,6 +476,12 @@ pub struct BlueprintExpirationDate {
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct PlaceTopRegion {
+    // If this is actually a standard list, I can't find the source.
+    // But these specific divisions (e.g., merged HOKKAIDO_TOHOKU) show
+    // up in URLs a lot, so there's presumably some standard data list somewhere, or just something
+    // taught in school that no one's actually documented anywhere formal. (Or coincidence/parallel thinking)
+    // Notably, the break-down doesn't match any of the ones shown at
+    // https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E5%9C%B0%E5%9F%9F#%E4%B8%BB%E3%81%AA%E5%9C%B0%E5%9F%9F%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF
     top_region_enum: String,
     name: String,
     prefecture_beans: Vec<PlacePrefectureBean>,
@@ -487,6 +493,7 @@ pub struct PlaceTopRegion {
 pub struct PlacePrefectureBean {
     region_enum: String,
     name: String,
+    /// JIS X 0401 都道府県コード: 01..47 (Also ISO 3166-2:JP)
     jis_code: u8,
 }
 
