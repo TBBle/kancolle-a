@@ -191,6 +191,10 @@ fn init_book_ship_sources() {
         sources.insert(135, vec![OriginalIllustration(1)]);
         // 衣笠改二: https://kancolle-a.sega.jp/players/information/210205_1.html
         sources.insert(142, vec![Valentine]);
+        // 夕立改二:
+        // * https://kancolle-a.sega.jp/players/information/201027_1.html
+        // * https://kancolle-a.sega.jp/players/information/2205_rainy_season.html
+        sources.insert(144, vec![RainySeason, Halloween, OriginalIllustration(2)]);
         // 時雨改二:
         // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
         // * https://kancolle-a.sega.jp/players/information/190805_1.html
@@ -312,7 +316,6 @@ fn init_book_ship_sources() {
         // Info store for ships I don't have at all.
         // 霞改二: https://kancolle-a.sega.jp/players/information/200805_1.html
         // 朝潮改二, 朝潮改二丁: https://kancolle-a.sega.jp/players/information/201013_1.html
-        // 夕立改二: https://kancolle-a.sega.jp/players/information/201027_1.html, https://kancolle-a.sega.jp/players/information/2205_rainy_season.html
         // 呂500: https://kancolle-a.sega.jp/players/information/210914_1.html
         // Grecale, Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
         // 瑞鶴改二: https://kancolle-a.sega.jp/players/information/211214_1.html
