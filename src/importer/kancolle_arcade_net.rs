@@ -517,3 +517,47 @@ impl Deref for PlaceDistricts {
         &self.0
     }
 }
+
+#[derive(Debug, Deserialize)]
+pub struct PlacePlaces(Vec<Place>);
+
+impl PlacePlaces {
+    /// Parses a PlacePlaces from the provided JSON reader.
+    /// Fails if not given a JSON array, or expected data structure does not match.
+    pub fn new(reader: impl Read) -> Result<PlacePlaces> {
+        let result: PlacePlaces = serde_json::from_reader(reader)?;
+        Ok(result)
+    }
+}
+
+// Implementing Deref but not DerefMut so it can't be mutated.
+impl Deref for PlacePlaces {
+    type Target = Vec<Place>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+// TODO: This struct should also be used for placesFromHere handling, but there's
+// a few differences that need to be handled.
+#[derive(Debug, Deserialize, Getters)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+pub struct Place {
+    id: u32,
+    distance: String, // No data in places output.
+    name: String,
+    tel: String,
+    address: String,
+    station: String,
+    open_time: String,
+    close_time: String,
+    special_info: String,
+    country: String,
+    /// Reference to PlaceStructureBean.region_enum
+    region_enum: String,
+    latitude: String,  // Float-in-string.
+    longitude: String, // Float-in-string.
+    zoom_level: u8,    // Google Maps API zoom level.
+}

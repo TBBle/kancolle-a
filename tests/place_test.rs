@@ -46,3 +46,32 @@ fn parse_fixture_place_districts_info_20240623() {
 
     validate_place_districts_common(&place_districts);
 }
+
+#[test]
+fn parse_empty_place_paces_reader() {
+    kca_net::PlacePlaces::new(std::io::empty()).unwrap_err();
+}
+
+#[test]
+fn parse_empty_place_places_vector() {
+    let place_places = kca_net::PlacePlaces::new("[]".as_bytes()).unwrap();
+    assert_eq!(place_places.len(), 0);
+}
+
+fn validate_place_places_common(_place_places: &kca_net::PlacePlaces) {
+    // TODO: Does this data have any internal consistency to maintain?
+}
+
+#[test]
+fn parse_fixture_place_places_info_20240623() {
+    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
+    // https://kancolle-arcade.net/ac/api/BlueprintList/info
+    let fixture =
+        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "Place_places.json");
+
+    let data = BufReader::new(File::open(fixture).unwrap());
+    let place_places = kca_net::PlacePlaces::new(data).unwrap();
+
+    assert_eq!(place_places.len(), 710);
+    validate_place_places_common(&place_places);
+}
