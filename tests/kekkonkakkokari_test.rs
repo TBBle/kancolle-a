@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
 
+use chrono::NaiveDate;
 use path_macro::path;
 // TODO: Wrap a nice API around this.
 use kancolle_a::importer::kancolle_arcade_net as kca_net;
@@ -19,7 +20,7 @@ fn parse_empty_kekkonkakkokari_vector() {
 }
 
 fn validate_kekkonkakkokari_common(_kekkonkakkokari: &kca_net::KekkonKakkoKariList) {
-    // TODO: Does this data have any internal consistency to maintain?
+    // TODO: The list appears date-ordered, maybe validate that? Not really using it as a precondition though.
 }
 
 #[test]
@@ -34,4 +35,13 @@ fn parse_fixture_kekkonkakkokari_info_20240623() {
 
     assert_eq!(kekkonkakkokari.len(), 441);
     validate_kekkonkakkokari_common(&kekkonkakkokari);
+
+    assert_eq!(
+        *kekkonkakkokari[0].start_time(),
+        NaiveDate::from_ymd_opt(2018, 2, 16).unwrap()
+    );
+    assert_eq!(
+        *kekkonkakkokari[440].start_time(),
+        NaiveDate::from_ymd_opt(2024, 6, 13).unwrap()
+    );
 }
