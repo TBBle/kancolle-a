@@ -561,3 +561,37 @@ pub struct Place {
     longitude: String, // Float-in-string.
     zoom_level: u8,    // Google Maps API zoom level.
 }
+
+// ケッコンカッコカリ, aka 結婚（仮）
+#[derive(Debug, Deserialize)]
+pub struct KekkonKakkoKariList(Vec<KekkonKakkoKari>);
+
+impl KekkonKakkoKariList {
+    /// Parses a PlacePlaces from the provided JSON reader.
+    /// Fails if not given a JSON array, or expected data structure does not match.
+    pub fn new(reader: impl Read) -> Result<KekkonKakkoKariList> {
+        let result: KekkonKakkoKariList = serde_json::from_reader(reader)?;
+        Ok(result)
+    }
+}
+
+// Implementing Deref but not DerefMut so it can't be mutated.
+impl Deref for KekkonKakkoKariList {
+    type Target = Vec<KekkonKakkoKari>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+#[derive(Debug, Deserialize, Getters)]
+#[serde(deny_unknown_fields)]
+pub struct KekkonKakkoKari {
+    id: u32,
+    web_id: u32,
+    name: String,
+    name_reading: String,
+    kind: String,
+    category: String,
+    start_time: String, // TODO: Parse this, and end up with 7am JST on this day
+}
