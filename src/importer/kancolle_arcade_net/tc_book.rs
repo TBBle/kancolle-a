@@ -5,6 +5,7 @@ use serde::Deserialize;
 use serde_json::Result;
 use std::sync::OnceLock;
 use std::{collections::HashMap, io::Read, ops::Deref};
+use strum::{AsRefStr, Display, EnumDiscriminants, EnumString, VariantNames};
 
 #[derive(Debug, Deserialize)]
 pub struct TcBook(Vec<BookShip>);
@@ -51,7 +52,8 @@ pub struct BookShip {
 // * Status images (i/i_xxx.png) live in https://kancolle-arcade.net/ac/resources/chara/
 // ** Status images end with _n, _bs, _bm, or _bl. (Not sure if there's one for sunk?)
 
-#[derive(Debug, PartialEq, Eq, Clone)]
+#[derive(Debug, PartialEq, Eq, Clone, EnumDiscriminants)]
+#[strum_discriminants(derive(EnumString, Display, AsRefStr, VariantNames))]
 pub enum BookShipCardPageSource {
     Unknown, // Fallback
     Normal,  // Priority 0 is always this
