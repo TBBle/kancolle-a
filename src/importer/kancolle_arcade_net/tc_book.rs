@@ -363,50 +363,6 @@ impl BookShip {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_book_ship_source() {
-        let ship = BookShip {
-            book_no: 6,
-            ship_class: None,
-            ship_class_index: None,
-            ship_type: "".to_string(),
-            ship_model_num: "".to_string(),
-            ship_name: "".to_string(),
-            card_index_img: "".to_string(),
-            card_list: vec![
-                BookShipCardPage {
-                    priority: 0,
-                    card_img_list: vec!["".to_string(), "".to_string()],
-                    status_img: None,
-                    variation_num_in_page: 3,
-                    acquire_num_in_page: 0,
-                },
-                BookShipCardPage {
-                    priority: 0,
-                    card_img_list: vec!["".to_string(), "".to_string()],
-                    status_img: None,
-                    variation_num_in_page: 3,
-                    acquire_num_in_page: 0,
-                },
-            ],
-            variation_num: 6,
-            acquire_num: 0,
-            lv: 1,
-            is_married: None,
-            married_img: None,
-        };
-
-        use BookShipCardPageSource::*;
-        assert_eq!(ship.source(0), Normal);
-        assert_eq!(ship.source(1), SundayBest);
-        assert_eq!(ship.source(2), Unknown);
-    }
-}
-
 #[derive(Debug, Deserialize, Getters)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
@@ -417,3 +373,6 @@ pub struct BookShipCardPage {
     variation_num_in_page: u16,
     acquire_num_in_page: u16,
 }
+
+#[cfg(test)]
+mod tests;

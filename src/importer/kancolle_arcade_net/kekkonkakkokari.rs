@@ -66,3 +66,6 @@ pub mod kanmusu_list {
         }
     }
 }
+
+#[cfg(test)]
+mod tests;

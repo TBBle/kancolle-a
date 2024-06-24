@@ -7,22 +7,22 @@ use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
 
+use super::*;
+
 use path_macro::path;
-// TODO: Wrap a nice API around this.
-use kancolle_a::importer::kancolle_arcade_net as kca_net;
 
 #[test]
 fn parse_empty_blueprint_list_reader() {
-    kca_net::BlueprintList::new(std::io::empty()).unwrap_err();
+    BlueprintList::new(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_blueprint_list_vector() {
-    let blueprint_list = kca_net::BlueprintList::new("[]".as_bytes()).unwrap();
+    let blueprint_list = BlueprintList::new("[]".as_bytes()).unwrap();
     assert_eq!(blueprint_list.len(), 0);
 }
 
-fn validate_blueprint_list_common(blueprint_list: &kca_net::BlueprintList) {
+fn validate_blueprint_list_common(blueprint_list: &BlueprintList) {
     const STATUS_IMAGE_PREFIX: &str = "i/i_";
     const STATUS_IMAGE_SUFFIXES: [&'static str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
 
@@ -79,7 +79,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
     );
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
+    let blueprint_list = BlueprintList::new(data).unwrap();
 
     assert_eq!(blueprint_list.len(), 133);
     validate_blueprint_list_common(&blueprint_list);
@@ -160,7 +160,7 @@ fn parse_fixture_blueprint_list_info_20240609() {
     );
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
+    let blueprint_list = BlueprintList::new(data).unwrap();
 
     assert_eq!(blueprint_list.len(), 136);
     validate_blueprint_list_common(&blueprint_list);
@@ -175,7 +175,7 @@ fn parse_fixture_blueprint_list_info_20240610() {
     );
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
+    let blueprint_list = BlueprintList::new(data).unwrap();
 
     assert_eq!(blueprint_list.len(), 135);
     validate_blueprint_list_common(&blueprint_list);
@@ -190,7 +190,7 @@ fn parse_fixture_blueprint_list_info_20240620() {
     );
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
+    let blueprint_list = BlueprintList::new(data).unwrap();
 
     assert_eq!(blueprint_list.len(), 135);
     validate_blueprint_list_common(&blueprint_list);
@@ -205,7 +205,7 @@ fn parse_fixture_blueprint_list_info_20240623() {
     );
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let blueprint_list = kca_net::BlueprintList::new(data).unwrap();
+    let blueprint_list = BlueprintList::new(data).unwrap();
 
     assert_eq!(blueprint_list.len(), 133);
     validate_blueprint_list_common(&blueprint_list);

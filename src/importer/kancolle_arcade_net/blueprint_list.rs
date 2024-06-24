@@ -58,3 +58,6 @@ pub struct BlueprintExpirationDate {
     blueprint_num: u16,
     expire_this_month: bool,
 }
+
+#[cfg(test)]
+mod tests;

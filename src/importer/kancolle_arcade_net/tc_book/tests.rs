@@ -3,22 +3,61 @@ use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
 
+use super::*;
+
 use path_macro::path;
-// TODO: Wrap a nice API around this.
-use kancolle_a::importer::kancolle_arcade_net as kca_net;
+
+#[test]
+fn test_book_ship_source() {
+    let ship = BookShip {
+        book_no: 6,
+        ship_class: None,
+        ship_class_index: None,
+        ship_type: "".to_string(),
+        ship_model_num: "".to_string(),
+        ship_name: "".to_string(),
+        card_index_img: "".to_string(),
+        card_list: vec![
+            BookShipCardPage {
+                priority: 0,
+                card_img_list: vec!["".to_string(), "".to_string()],
+                status_img: None,
+                variation_num_in_page: 3,
+                acquire_num_in_page: 0,
+            },
+            BookShipCardPage {
+                priority: 0,
+                card_img_list: vec!["".to_string(), "".to_string()],
+                status_img: None,
+                variation_num_in_page: 3,
+                acquire_num_in_page: 0,
+            },
+        ],
+        variation_num: 6,
+        acquire_num: 0,
+        lv: 1,
+        is_married: None,
+        married_img: None,
+    };
+
+    use BookShipCardPageSource::*;
+    assert_eq!(ship.source(0), Normal);
+    assert_eq!(ship.source(1), SundayBest);
+    assert_eq!(ship.source(2), Unknown);
+}
 
 #[test]
 fn parse_empty_tcbook_reader() {
-    kca_net::TcBook::new(std::io::empty()).unwrap_err();
+    TcBook::new(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_tcbook_vector() {
-    let tcbook = kca_net::TcBook::new("[]".as_bytes()).unwrap();
+    let tcbook = TcBook::new("[]".as_bytes()).unwrap();
     assert_eq!(tcbook.len(), 0);
 }
 
-fn validate_tcbook_common(tcbook: &kca_net::TcBook) {
+fn validate_tcbook_common(tcbook: &TcBook) {
     const CARD_IMAGE_SUFFIX: &str = ".jpg";
     const STATUS_IMAGE_PREFIX: &str = "i/i_";
     const STATUS_IMAGE_SUFFIXES: [&'static str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
@@ -32,7 +71,7 @@ fn validate_tcbook_common(tcbook: &kca_net::TcBook) {
         let mut variation_num = 0;
         let mut normal_variation: u16 = 0;
         for (priority, card_page) in ship.card_list().iter().enumerate() {
-            use kca_net::BookShipCardPageSource::*;
+            use BookShipCardPageSource::*;
             assert_eq!(*card_page.priority() as usize, priority);
             // First page is the 3 generic images, and possibly a second row if modified version has the same book number.
             // The other pages are for event variations, 3-image sets and then individual original illustrations last.
@@ -154,7 +193,7 @@ fn validate_tcbook_common(tcbook: &kca_net::TcBook) {
         // Test for overshoot returning Unknown
         assert_eq!(
             ship.source(ship.card_list().len() as u16),
-            kca_net::BookShipCardPageSource::Unknown
+            BookShipCardPageSource::Unknown
         );
         assert_ne!(*ship.variation_num(), 0);
         assert_ne!(*ship.acquire_num(), 0);
@@ -166,7 +205,7 @@ fn validate_tcbook_common(tcbook: &kca_net::TcBook) {
             .card_list()
             .iter()
             .filter(|page| {
-                if let kca_net::BookShipCardPageSource::OriginalIllustration(_) =
+                if let BookShipCardPageSource::OriginalIllustration(_) =
                     ship.source(*page.priority())
                 {
                     false
@@ -204,7 +243,7 @@ fn validate_tcbook_common(tcbook: &kca_net::TcBook) {
             // Empty page: Empty status image list for normal page or Original Illustation, no
             // status image list used otherwise.
             // TODO: Original Illustation status icon list should always match Normal list.
-            use kca_net::BookShipCardPageSource::*;
+            use BookShipCardPageSource::*;
             if card_list_page.status_img().is_none() {
                 assert!(match ship.source(*card_list_page.priority()) {
                     Unknown => true, // We can't assume anything...
@@ -248,7 +287,7 @@ fn parse_fixture_tcbook_info_20240528() {
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-28" / "TcBook_info.json");
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = kca_net::TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -266,7 +305,7 @@ fn parse_fixture_tcbook_info_20240528() {
     assert_eq!(長門.card_index_img(), "s/tc_1_d7ju63kolamj.jpg");
     assert_eq!(長門.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(長門.source(0), Normal);
     }
     assert_eq!(*長門.variation_num(), 6);
@@ -306,7 +345,7 @@ fn parse_fixture_tcbook_info_20240528() {
     assert_eq!(扶桑.card_index_img(), "s/tc_26_p9u490qtc1a4.jpg");
     assert_eq!(扶桑.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(扶桑.source(0), Normal);
     }
     assert_eq!(*扶桑.variation_num(), 6);
@@ -347,7 +386,7 @@ fn parse_fixture_tcbook_info_20240528() {
     assert_eq!(早霜.card_index_img(), "s/tc_209_6uqm0rr6azd9.jpg");
     assert_eq!(早霜.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), Unknown /*OriginalIllustration(1)*/);
     }
@@ -392,7 +431,7 @@ fn parse_fixture_tcbook_info_20240528() {
     assert_eq!(扶桑改二.card_index_img(), "s/tc_211_xkrpspyq72qz.jpg");
     assert_eq!(扶桑改二.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
     }
     assert_eq!(*扶桑改二.variation_num(), 3);
@@ -424,7 +463,7 @@ fn parse_fixture_tcbook_info_20240530() {
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-30" / "TcBook_info.json");
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = kca_net::TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -442,7 +481,7 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(長門.card_index_img(), "s/tc_1_d7ju63kolamj.jpg");
     assert_eq!(長門.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(長門.source(0), Normal);
     }
     assert_eq!(*長門.variation_num(), 6);
@@ -483,7 +522,7 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(扶桑.card_index_img(), "s/tc_26_p9u490qtc1a4.jpg");
     assert_eq!(扶桑.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(扶桑.source(0), Normal);
     }
     assert_eq!(*扶桑.variation_num(), 6);
@@ -528,7 +567,7 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(早霜.card_index_img(), "s/tc_209_6uqm0rr6azd9.jpg");
     assert_eq!(早霜.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), Unknown /*OriginalIllustration(1)*/);
     }
@@ -573,7 +612,7 @@ fn parse_fixture_tcbook_info_20240530() {
     assert_eq!(扶桑改二.card_index_img(), "s/tc_211_xkrpspyq72qz.jpg");
     assert_eq!(扶桑改二.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
     }
     assert_eq!(*扶桑改二.variation_num(), 3);
@@ -605,7 +644,7 @@ fn parse_fixture_tcbook_info_20240609() {
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-09" / "TcBook_info.json");
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = kca_net::TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -623,7 +662,7 @@ fn parse_fixture_tcbook_info_20240609() {
     assert_eq!(長門.card_index_img(), "s/tc_1_d7ju63kolamj.jpg");
     assert_eq!(長門.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(長門.source(0), Normal);
     }
     assert_eq!(*長門.variation_num(), 6);
@@ -664,7 +703,7 @@ fn parse_fixture_tcbook_info_20240609() {
     assert_eq!(扶桑.card_index_img(), "s/tc_26_p9u490qtc1a4.jpg");
     assert_eq!(扶桑.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(扶桑.source(0), Normal);
         assert_eq!(扶桑.source(1), RainySeason);
     }
@@ -727,7 +766,7 @@ fn parse_fixture_tcbook_info_20240609() {
     assert_eq!(早霜.card_index_img(), "s/tc_209_6uqm0rr6azd9.jpg");
     assert_eq!(早霜.card_list().len(), 3);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
         assert_eq!(早霜.source(2), OriginalIllustration(1));
@@ -783,7 +822,7 @@ fn parse_fixture_tcbook_info_20240609() {
     assert_eq!(扶桑改二.card_index_img(), "s/tc_211_xkrpspyq72qz.jpg");
     assert_eq!(扶桑改二.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
     }
@@ -823,7 +862,7 @@ fn parse_fixture_tcbook_info_20240610() {
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-10" / "TcBook_info.json");
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = kca_net::TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -841,7 +880,7 @@ fn parse_fixture_tcbook_info_20240610() {
     assert_eq!(長門.card_index_img(), "s/tc_1_d7ju63kolamj.jpg");
     assert_eq!(長門.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(長門.source(0), Normal);
     }
     assert_eq!(*長門.variation_num(), 6);
@@ -882,7 +921,7 @@ fn parse_fixture_tcbook_info_20240610() {
     assert_eq!(扶桑.card_index_img(), "s/tc_26_p9u490qtc1a4.jpg");
     assert_eq!(扶桑.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(扶桑.source(0), Normal);
         assert_eq!(扶桑.source(1), RainySeason);
     }
@@ -945,7 +984,7 @@ fn parse_fixture_tcbook_info_20240610() {
     assert_eq!(早霜.card_index_img(), "s/tc_209_6uqm0rr6azd9.jpg");
     assert_eq!(早霜.card_list().len(), 3);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
         assert_eq!(早霜.source(2), OriginalIllustration(1));
@@ -1008,7 +1047,7 @@ fn parse_fixture_tcbook_info_20240610() {
     assert_eq!(扶桑改二.card_index_img(), "s/tc_211_xkrpspyq72qz.jpg");
     assert_eq!(扶桑改二.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
     }
@@ -1048,7 +1087,7 @@ fn parse_fixture_tcbook_info_20240620() {
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-20" / "TcBook_info.json");
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = kca_net::TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -1066,7 +1105,7 @@ fn parse_fixture_tcbook_info_20240620() {
     assert_eq!(長門.card_index_img(), "s/tc_1_d7ju63kolamj.jpg");
     assert_eq!(長門.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(長門.source(0), Normal);
     }
     assert_eq!(*長門.variation_num(), 6);
@@ -1107,7 +1146,7 @@ fn parse_fixture_tcbook_info_20240620() {
     assert_eq!(扶桑.card_index_img(), "s/tc_26_p9u490qtc1a4.jpg");
     assert_eq!(扶桑.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(扶桑.source(0), Normal);
         assert_eq!(扶桑.source(1), RainySeason);
     }
@@ -1177,7 +1216,7 @@ fn parse_fixture_tcbook_info_20240620() {
     assert_eq!(早霜.card_index_img(), "s/tc_209_6uqm0rr6azd9.jpg");
     assert_eq!(早霜.card_list().len(), 3);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
         assert_eq!(早霜.source(2), OriginalIllustration(1));
@@ -1247,7 +1286,7 @@ fn parse_fixture_tcbook_info_20240620() {
     assert_eq!(扶桑改二.card_index_img(), "s/tc_211_xkrpspyq72qz.jpg");
     assert_eq!(扶桑改二.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
     }
@@ -1287,7 +1326,7 @@ fn parse_fixture_tcbook_info_20240623() {
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "TcBook_info.json");
 
     let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = kca_net::TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(data).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -1305,7 +1344,7 @@ fn parse_fixture_tcbook_info_20240623() {
     assert_eq!(長門.card_index_img(), "s/tc_1_d7ju63kolamj.jpg");
     assert_eq!(長門.card_list().len(), 1);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(長門.source(0), Normal);
     }
     assert_eq!(*長門.variation_num(), 6);
@@ -1346,7 +1385,7 @@ fn parse_fixture_tcbook_info_20240623() {
     assert_eq!(扶桑.card_index_img(), "s/tc_26_p9u490qtc1a4.jpg");
     assert_eq!(扶桑.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(扶桑.source(0), Normal);
         assert_eq!(扶桑.source(1), RainySeason);
     }
@@ -1416,7 +1455,7 @@ fn parse_fixture_tcbook_info_20240623() {
     assert_eq!(早霜.card_index_img(), "s/tc_209_6uqm0rr6azd9.jpg");
     assert_eq!(早霜.card_list().len(), 3);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
         assert_eq!(早霜.source(2), OriginalIllustration(1));
@@ -1486,7 +1525,7 @@ fn parse_fixture_tcbook_info_20240623() {
     assert_eq!(扶桑改二.card_index_img(), "s/tc_211_xkrpspyq72qz.jpg");
     assert_eq!(扶桑改二.card_list().len(), 2);
     {
-        use kca_net::BookShipCardPageSource::*;
+        use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
     }

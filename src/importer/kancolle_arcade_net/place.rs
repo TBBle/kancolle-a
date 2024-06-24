@@ -103,3 +103,6 @@ pub mod places {
         zoom_level: u8,    // Google Maps API zoom level.
     }
 }
+
+#[cfg(test)]
+mod tests;
