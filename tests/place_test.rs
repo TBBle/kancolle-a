@@ -36,7 +36,7 @@ fn validate_place_districts_common(place_districts: &kca_net::PlaceDistricts) {
 #[test]
 fn parse_fixture_place_districts_info_20240623() {
     let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/BlueprintList/info
+    // https://kancolle-arcade.net/ac/api/Place/districts
     let fixture = path!(
         Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "Place_districts.json"
     );
@@ -65,7 +65,7 @@ fn validate_place_places_common(_place_places: &kca_net::PlacePlaces) {
 #[test]
 fn parse_fixture_place_places_info_20240623() {
     let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/BlueprintList/info
+    // https://kancolle-arcade.net/ac/api/Place/places
     let fixture =
         path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "Place_places.json");
 
