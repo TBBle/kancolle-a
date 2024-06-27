@@ -9,6 +9,7 @@ pub(crate) mod args {
     use std::path::PathBuf;
 
     use bpaf::*;
+    use kancolle_a::cli_helpers;
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
@@ -16,9 +17,7 @@ pub(crate) mod args {
     }
 
     pub fn options() -> OptionParser<Options> {
-        let bplist = long("bplist")
-            .help("A copy of your https://kancolle-arcade.net/ac/api/BlueprintList/info")
-            .argument::<PathBuf>("BPLIST");
+        let bplist = cli_helpers::bplist_path_parser();
         construct!(Options { bplist })
             .to_options()
             .descr("A tool to dump your current blueprint inventory.")

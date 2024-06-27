@@ -1,7 +1,7 @@
 use kancolle_a::importer::kancolle_arcade_net::{BlueprintList, TcBook};
+use std::fs::File;
 use std::io::BufReader;
 use std::{collections::HashMap, error::Error};
-use std::{env, fs::File};
 
 /// Determine the blueprint/unmodified ship name for the given ship
 /// This should probably become an internal utility function in the library.
@@ -53,18 +53,41 @@ fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: usize) -> Optio
         .and_then(|costs| Some((costs.0 as u16, costs.1 as u8)));
 }
 
+pub(crate) mod args {
+    use std::path::PathBuf;
+
+    use bpaf::*;
+    use kancolle_a::cli_helpers;
+
+    #[derive(Debug, Clone)]
+    pub(crate) struct Options {
+        pub(crate) tcbook: PathBuf,
+        pub(crate) bplist: PathBuf,
+    }
+
+    pub fn options() -> OptionParser<Options> {
+        let tcbook = cli_helpers::tcbook_path_parser();
+        let bplist = cli_helpers::bplist_path_parser();
+        construct!(Options { tcbook, bplist })
+            .to_options()
+            .descr("A tool to report on blueprint status for your collection.")
+    }
+
+    #[test]
+    fn check_options() {
+        options().check_invariants(false)
+    }
+}
+
 fn main() -> Result<(), Box<dyn Error>> {
-    let tc_path = env::args()
-        .nth(1)
-        .ok_or("Need a TCBook info file to open".to_owned())?;
+    let args = args::options().run();
+    let tc_path = args.tcbook;
 
     let tc_data = BufReader::new(File::open(tc_path)?);
 
     let tc_list = TcBook::new(tc_data)?;
 
-    let bp_path = env::args()
-        .nth(2)
-        .ok_or("Need a BlueprintList info file to open".to_owned())?;
+    let bp_path = args.bplist;
 
     let bp_data = BufReader::new(File::open(bp_path)?);
 

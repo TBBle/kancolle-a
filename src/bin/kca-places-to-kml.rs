@@ -3,8 +3,8 @@ use kml::{
     types::{Coord, Element, Geometry, Placemark, Point},
     Kml, KmlDocument, KmlVersion, KmlWriter,
 };
+use std::fs::File;
 use std::{collections::HashMap, io::BufReader};
-use std::{env, fs::File};
 use std::{error::Error, io};
 
 fn place_to_kml(place: &Place) -> Kml<f64> {
@@ -45,10 +45,33 @@ fn place_to_kml(place: &Place) -> Kml<f64> {
     Kml::Placemark(placemark)
 }
 
+pub(crate) mod args {
+    use std::path::PathBuf;
+
+    use bpaf::*;
+    use kancolle_a::cli_helpers;
+
+    #[derive(Debug, Clone)]
+    pub(crate) struct Options {
+        pub(crate) places: PathBuf,
+    }
+
+    pub fn options() -> OptionParser<Options> {
+        let places = cli_helpers::places_path_parser();
+        construct!(Options { places })
+            .to_options()
+            .descr("A tool to convert the Kancolle Arcade locations list into KML.")
+    }
+
+    #[test]
+    fn check_options() {
+        options().check_invariants(false)
+    }
+}
+
 fn main() -> Result<(), Box<dyn Error>> {
-    let places_path = env::args()
-        .nth(1)
-        .ok_or("Need an info file to open".to_owned())?;
+    let args = args::options().run();
+    let places_path = args.places;
 
     let places_data = BufReader::new(File::open(places_path)?);
 

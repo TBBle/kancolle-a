@@ -4,39 +4,11 @@ use std::fs::File;
 use std::io::BufReader;
 
 pub(crate) mod args {
-    use itertools;
     use kancolle_a::importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants;
     use std::path::PathBuf;
-    use strum::VariantNames;
 
     use bpaf::*;
-
-    // Per https://github.com/pacak/bpaf/discussions/197
-    fn source() -> impl Parser<BookShipCardPageSourceDiscriminants> {
-        const DEFAULT: BookShipCardPageSourceDiscriminants =
-            BookShipCardPageSourceDiscriminants::Normal;
-
-        let mut help_msg = Doc::from("The event source to show cards for.\n One of ");
-
-        // TODO: intersperse will move into the core library at some point.
-        // https://github.com/rust-lang/rust/issues/79524
-        for (index, &text) in
-            itertools::intersperse(BookShipCardPageSourceDiscriminants::VARIANTS, &", ").enumerate()
-        {
-            if index % 2 == 0 {
-                help_msg.literal(text)
-            } else {
-                help_msg.text(text)
-            }
-        }
-
-        long("source")
-            .help(help_msg)
-            .argument::<String>("SOURCE")
-            .parse(|x| x.parse())
-            .fallback(DEFAULT)
-            .display_fallback()
-    }
+    use kancolle_a::cli_helpers;
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
@@ -46,10 +18,8 @@ pub(crate) mod args {
     }
 
     pub fn options() -> OptionParser<Options> {
-        let tcbook = long("tcbook")
-            .help("A copy of your https://kancolle-arcade.net/ac/api/TcBook/info")
-            .argument::<PathBuf>("TCBOOK");
-        let source = source();
+        let tcbook = cli_helpers::tcbook_path_parser();
+        let source = cli_helpers::book_ship_card_page_source_parser();
 
         // TODO: What did I want this flag for? I _might_ have wanted to show only droppable
         // ships, or maybe it was actually for Blueprint checks?
