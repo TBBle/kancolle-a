@@ -28,7 +28,7 @@ impl Deref for TcBook {
     }
 }
 
-#[derive(Debug, Deserialize, Getters)]
+#[derive(Debug, Deserialize, Getters, Clone)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShip {
@@ -365,7 +365,7 @@ impl BookShip {
     }
 }
 
-#[derive(Debug, Deserialize, Getters)]
+#[derive(Debug, Deserialize, Getters, Clone)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShipCardPage {

@@ -50,3 +50,29 @@ pub fn places_path_parser() -> impl Parser<PathBuf> {
         .help("A copy of https://kancolle-arcade.net/ac/api/Place/places")
         .argument::<PathBuf>("PLACES")
 }
+
+pub fn kekkon_path_parser() -> impl Parser<PathBuf> {
+    long("kekkon")
+        .help("A copy of https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json")
+        .argument::<PathBuf>("KEKKON")
+}
+
+/// A common CLI parser for getting the data needed to populate ships::DataSources
+// TODO: These will get complex, so write it once and share it.
+#[derive(Debug, Clone)]
+pub struct ShipSourceDataOptions {
+    pub tcbook: PathBuf,
+    pub bplist: PathBuf,
+    pub kekkon: PathBuf,
+}
+
+pub fn ship_file_sources_parser() -> impl Parser<ShipSourceDataOptions> {
+    let tcbook = tcbook_path_parser();
+    let bplist = bplist_path_parser();
+    let kekkon = kekkon_path_parser();
+    construct!(ShipSourceDataOptions {
+        tcbook,
+        bplist,
+        kekkon
+    })
+}

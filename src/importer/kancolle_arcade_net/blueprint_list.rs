@@ -34,7 +34,7 @@ impl Deref for BlueprintList {
 // ** True expiration date is 23:59 on the last date of the month.
 // ** Or I made a mistake, I guess?
 
-#[derive(Debug, Deserialize, Getters)]
+#[derive(Debug, Deserialize, Getters, Clone)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BlueprintShip {
@@ -49,7 +49,7 @@ pub struct BlueprintShip {
     expiration_date_list: Vec<BlueprintExpirationDate>,
 }
 
-#[derive(Debug, Deserialize, Getters)]
+#[derive(Debug, Deserialize, Getters, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BlueprintExpirationDate {

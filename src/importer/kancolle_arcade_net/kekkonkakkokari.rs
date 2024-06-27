@@ -28,7 +28,7 @@ pub mod kanmusu_list {
         }
     }
 
-    #[derive(Debug, Deserialize, Getters)]
+    #[derive(Debug, Deserialize, Getters, Clone)]
     #[serde(deny_unknown_fields)]
     pub struct KekkonKakkoKari {
         id: u32,
