@@ -1,11 +1,16 @@
-use std::env;
-use std::fs::File;
-use std::io::BufReader;
-use std::path::Path;
-
 use super::*;
 
-use path_macro::path;
+use lazy_static_include::*;
+
+// https://kancolle-arcade.net/ac/api/TcBook/info
+lazy_static_include_bytes! {
+    TCBOOK_2024_05_28 => "tests/fixtures/2024-05-28/TcBook_info.json",
+    TCBOOK_2024_05_30 => "tests/fixtures/2024-05-30/TcBook_info.json",
+    TCBOOK_2024_06_09 => "tests/fixtures/2024-06-09/TcBook_info.json",
+    TCBOOK_2024_06_10 => "tests/fixtures/2024-06-10/TcBook_info.json",
+    TCBOOK_2024_06_20 => "tests/fixtures/2024-06-20/TcBook_info.json",
+    TCBOOK_2024_06_23 => "tests/fixtures/2024-06-23/TcBook_info.json",
+}
 
 #[test]
 fn test_book_ship_source() {
@@ -281,13 +286,7 @@ fn validate_tcbook_common(tcbook: &TcBook) {
 
 #[test]
 fn parse_fixture_tcbook_info_20240528() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/TcBook/info
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-28" / "TcBook_info.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(TCBOOK_2024_05_28.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -457,13 +456,7 @@ fn parse_fixture_tcbook_info_20240528() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240530() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/TcBook/info
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-05-30" / "TcBook_info.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(TCBOOK_2024_05_30.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -638,13 +631,7 @@ fn parse_fixture_tcbook_info_20240530() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240609() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/TcBook/info
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-09" / "TcBook_info.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(TCBOOK_2024_06_09.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -856,13 +843,7 @@ fn parse_fixture_tcbook_info_20240609() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240610() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/TcBook/info
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-10" / "TcBook_info.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(TCBOOK_2024_06_10.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -1081,13 +1062,7 @@ fn parse_fixture_tcbook_info_20240610() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240620() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/TcBook/info
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-20" / "TcBook_info.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(TCBOOK_2024_06_20.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -1320,13 +1295,7 @@ fn parse_fixture_tcbook_info_20240620() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240623() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/TcBook/info
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "TcBook_info.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let tcbook = TcBook::new(data).unwrap();
+    let tcbook = TcBook::new(TCBOOK_2024_06_23.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);

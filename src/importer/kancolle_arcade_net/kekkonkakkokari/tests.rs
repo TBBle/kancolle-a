@@ -1,12 +1,13 @@
-use std::env;
-use std::fs::File;
-use std::io::BufReader;
-use std::path::Path;
-
 use super::kanmusu_list::*;
 
 use chrono::NaiveDate;
-use path_macro::path;
+
+use lazy_static_include::*;
+
+// https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json (Not an API, no auth required)
+lazy_static_include_bytes! {
+    KANMUSU_2024_06_23 => "tests/fixtures/2024-06-23/kanmusu_list.json",
+}
 
 #[test]
 fn parse_empty_kekkonkakkokari_reader() {
@@ -25,13 +26,7 @@ fn validate_kekkonkakkokari_common(_kekkonkakkokari: &KekkonKakkoKariList) {
 
 #[test]
 fn parse_fixture_kekkonkakkokari_info_20240623() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json (Not an API, no auth required)
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "kanmusu_list.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let kekkonkakkokari = KekkonKakkoKariList::new(data).unwrap();
+    let kekkonkakkokari = KekkonKakkoKariList::new(KANMUSU_2024_06_23.as_ref()).unwrap();
 
     assert_eq!(kekkonkakkokari.len(), 441);
     validate_kekkonkakkokari_common(&kekkonkakkokari);

@@ -1,12 +1,14 @@
-use std::env;
-use std::fs::File;
-use std::io::BufReader;
-use std::path::Path;
-
 use super::districts::*;
 use super::places::*;
 
-use path_macro::path;
+use lazy_static_include::*;
+
+// https://kancolle-arcade.net/ac/api/Place/districts
+// https://kancolle-arcade.net/ac/api/Place/places
+lazy_static_include_bytes! {
+    DISTRICTS_2024_06_23 => "tests/fixtures/2024-06-23/Place_districts.json",
+    PLACES_2024_06_23 => "tests/fixtures/2024-06-23/Place_places.json",
+}
 
 #[test]
 fn parse_empty_place_districts_reader() {
@@ -36,14 +38,7 @@ fn validate_place_districts_common(place_districts: &PlaceDistricts) {
 
 #[test]
 fn parse_fixture_place_districts_info_20240623() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/Place/districts
-    let fixture = path!(
-        Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "Place_districts.json"
-    );
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let place_districts = PlaceDistricts::new(data).unwrap();
+    let place_districts = PlaceDistricts::new(DISTRICTS_2024_06_23.as_ref()).unwrap();
 
     validate_place_districts_common(&place_districts);
 }
@@ -65,13 +60,7 @@ fn validate_place_places_common(_place_places: &PlacePlaces) {
 
 #[test]
 fn parse_fixture_place_places_info_20240623() {
-    let manfest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    // https://kancolle-arcade.net/ac/api/Place/places
-    let fixture =
-        path!(Path::new(&manfest_dir) / "tests" / "fixtures" / "2024-06-23" / "Place_places.json");
-
-    let data = BufReader::new(File::open(fixture).unwrap());
-    let place_places = PlacePlaces::new(data).unwrap();
+    let place_places = PlacePlaces::new(PLACES_2024_06_23.as_ref()).unwrap();
 
     assert_eq!(place_places.len(), 710);
     validate_place_places_common(&place_places);
