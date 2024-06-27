@@ -2,13 +2,38 @@ use chrono::{Datelike, Utc};
 use kancolle_a::importer::kancolle_arcade_net::BlueprintList;
 use std::collections::BTreeMap;
 use std::error::Error;
+use std::fs::File;
 use std::io::BufReader;
-use std::{env, fs::File};
+
+pub(crate) mod args {
+    use std::path::PathBuf;
+
+    use bpaf::*;
+
+    #[derive(Debug, Clone)]
+    pub(crate) struct Options {
+        pub(crate) bplist: PathBuf,
+    }
+
+    pub fn options() -> OptionParser<Options> {
+        let bplist = long("bplist")
+            .help("A copy of your https://kancolle-arcade.net/ac/api/BlueprintList/info")
+            .argument::<PathBuf>("BPLIST");
+        construct!(Options { bplist })
+            .to_options()
+            .descr("A tool to dump your current blueprint inventory.")
+            .header("Output is grouped by expiry month.")
+    }
+
+    #[test]
+    fn check_options() {
+        options().check_invariants(false)
+    }
+}
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let bp_path = env::args()
-        .nth(1)
-        .ok_or("Need an info file to open".to_owned())?;
+    let args = args::options().run();
+    let bp_path = args.bplist;
 
     let bp_data = BufReader::new(File::open(bp_path)?);
 
