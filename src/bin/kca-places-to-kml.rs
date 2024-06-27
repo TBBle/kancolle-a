@@ -64,7 +64,7 @@ pub(crate) mod args {
     }
 
     #[test]
-    fn check_options() {
+    fn kca_places_to_kml_check_options() {
         options().check_invariants(false)
     }
 }

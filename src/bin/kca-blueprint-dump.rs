@@ -25,7 +25,7 @@ pub(crate) mod args {
     }
 
     #[test]
-    fn check_options() {
+    fn kca_blueprint_dump_check_options() {
         options().check_invariants(false)
     }
 }

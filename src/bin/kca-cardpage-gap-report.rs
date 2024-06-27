@@ -23,7 +23,7 @@ pub(crate) mod args {
     }
 
     #[test]
-    fn check_options() {
+    fn kca_cardpage_gap_report_check_options() {
         options().check_invariants(false)
     }
 }
