@@ -1,0 +1,273 @@
+[
+    {
+        "topRegionEnum": "HOKKAIDO_TOHOKU",
+        "name": "北海道・東北",
+        "prefectureBeans": [
+            {
+                "regionEnum": "HOKKAIDO",
+                "name": "北海道",
+                "jisCode": 1
+            },
+            {
+                "regionEnum": "AOMORI",
+                "name": "青森県",
+                "jisCode": 2
+            },
+            {
+                "regionEnum": "IWATE",
+                "name": "岩手県",
+                "jisCode": 3
+            },
+            {
+                "regionEnum": "MIYAGI",
+                "name": "宮城県",
+                "jisCode": 4
+            },
+            {
+                "regionEnum": "AKITA",
+                "name": "秋田県",
+                "jisCode": 5
+            },
+            {
+                "regionEnum": "YAMAGATA",
+                "name": "山形県",
+                "jisCode": 6
+            },
+            {
+                "regionEnum": "FUKUSHIMA",
+                "name": "福島県",
+                "jisCode": 7
+            }
+        ]
+    },
+    {
+        "topRegionEnum": "KANTO",
+        "name": "関東",
+        "prefectureBeans": [
+            {
+                "regionEnum": "IBARAKI",
+                "name": "茨城県",
+                "jisCode": 8
+            },
+            {
+                "regionEnum": "TOCHIGI",
+                "name": "栃木県",
+                "jisCode": 9
+            },
+            {
+                "regionEnum": "GUNMA",
+                "name": "群馬県",
+                "jisCode": 10
+            },
+            {
+                "regionEnum": "SAITAMA",
+                "name": "埼玉県",
+                "jisCode": 11
+            },
+            {
+                "regionEnum": "CHIBA",
+                "name": "千葉県",
+                "jisCode": 12
+            },
+            {
+                "regionEnum": "TOKYO",
+                "name": "東京都",
+                "jisCode": 13
+            },
+            {
+                "regionEnum": "KANAGAWA",
+                "name": "神奈川県",
+                "jisCode": 14
+            }
+        ]
+    },
+    {
+        "topRegionEnum": "CHUBU",
+        "name": "中部",
+        "prefectureBeans": [
+            {
+                "regionEnum": "NIIGATA",
+                "name": "新潟県",
+                "jisCode": 15
+            },
+            {
+                "regionEnum": "TOYAMA",
+                "name": "富山県",
+                "jisCode": 16
+            },
+            {
+                "regionEnum": "ISHIKAWA",
+                "name": "石川県",
+                "jisCode": 17
+            },
+            {
+                "regionEnum": "FUKUI",
+                "name": "福井県",
+                "jisCode": 18
+            },
+            {
+                "regionEnum": "YAMANASHI",
+                "name": "山梨県",
+                "jisCode": 19
+            },
+            {
+                "regionEnum": "NAGANO",
+                "name": "長野県",
+                "jisCode": 20
+            },
+            {
+                "regionEnum": "GIFU",
+                "name": "岐阜県",
+                "jisCode": 21
+            },
+            {
+                "regionEnum": "SHIZUOKA",
+                "name": "静岡県",
+                "jisCode": 22
+            },
+            {
+                "regionEnum": "AICHI",
+                "name": "愛知県",
+                "jisCode": 23
+            },
+            {
+                "regionEnum": "MIE",
+                "name": "三重県",
+                "jisCode": 24
+            }
+        ]
+    },
+    {
+        "topRegionEnum": "KINKI",
+        "name": "近畿",
+        "prefectureBeans": [
+            {
+                "regionEnum": "SHIGA",
+                "name": "滋賀県",
+                "jisCode": 25
+            },
+            {
+                "regionEnum": "KYOUTO",
+                "name": "京都府",
+                "jisCode": 26
+            },
+            {
+                "regionEnum": "OSAKA",
+                "name": "大阪府",
+                "jisCode": 27
+            },
+            {
+                "regionEnum": "HYOGO",
+                "name": "兵庫県",
+                "jisCode": 28
+            },
+            {
+                "regionEnum": "NARA",
+                "name": "奈良県",
+                "jisCode": 29
+            },
+            {
+                "regionEnum": "WAKAYAMA",
+                "name": "和歌山県",
+                "jisCode": 30
+            }
+        ]
+    },
+    {
+        "topRegionEnum": "CHUGOKU_SHIKOKU",
+        "name": "中国・四国",
+        "prefectureBeans": [
+            {
+                "regionEnum": "TOTTORI",
+                "name": "鳥取県",
+                "jisCode": 31
+            },
+            {
+                "regionEnum": "SHIMANE",
+                "name": "島根県",
+                "jisCode": 32
+            },
+            {
+                "regionEnum": "OKAYAMA",
+                "name": "岡山県",
+                "jisCode": 33
+            },
+            {
+                "regionEnum": "HIROSHIMA",
+                "name": "広島県",
+                "jisCode": 34
+            },
+            {
+                "regionEnum": "YAMAGUCHI",
+                "name": "山口県",
+                "jisCode": 35
+            },
+            {
+                "regionEnum": "TOKUSHIMA",
+                "name": "徳島県",
+                "jisCode": 36
+            },
+            {
+                "regionEnum": "KAGAWA",
+                "name": "香川県",
+                "jisCode": 37
+            },
+            {
+                "regionEnum": "EHIME",
+                "name": "愛媛県",
+                "jisCode": 38
+            },
+            {
+                "regionEnum": "KOCHI",
+                "name": "高知県",
+                "jisCode": 39
+            }
+        ]
+    },
+    {
+        "topRegionEnum": "KYUSYU_OKINAWA",
+        "name": "九州・沖縄",
+        "prefectureBeans": [
+            {
+                "regionEnum": "FUKUOKA",
+                "name": "福岡県",
+                "jisCode": 40
+            },
+            {
+                "regionEnum": "SAGA",
+                "name": "佐賀県",
+                "jisCode": 41
+            },
+            {
+                "regionEnum": "NAGASAKI",
+                "name": "長崎県",
+                "jisCode": 42
+            },
+            {
+                "regionEnum": "KUMAMOTO",
+                "name": "熊本県",
+                "jisCode": 43
+            },
+            {
+                "regionEnum": "OITA",
+                "name": "大分県",
+                "jisCode": 44
+            },
+            {
+                "regionEnum": "MIYAZAKI",
+                "name": "宮崎県",
+                "jisCode": 45
+            },
+            {
+                "regionEnum": "KAGOSHIMA",
+                "name": "鹿児島県",
+                "jisCode": 46
+            },
+            {
+                "regionEnum": "OKINAWA",
+                "name": "沖縄県",
+                "jisCode": 47
+            }
+        ]
+    }
+]
