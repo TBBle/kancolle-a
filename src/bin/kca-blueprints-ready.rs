@@ -10,7 +10,8 @@ use std::{collections::HashMap, error::Error};
 fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: usize) -> Option<(u16, u8)> {
     // Special ships.
     let stage_costs = match ship_name {
-        // 千歳型, might be shipClassId 5, but I have no 千代田 blueprints to verify.
+        // TODO: This is shipClassId 5 (千歳型), better than name-matching?
+        // That said, the only data we can be fairly sure of having is name and (base?) ship type.
         "千歳" | "千代田" => vec![(3, 0), (4, 0), (5, 0), (6, 0), (8, 2)],
         // Called 大鷹型 which is actually the first kai level on the wiki, need to find shipClassId
         // TODO: Confirm that this forms an actual ship series: 春日丸, 大鷹, 大鷹改
