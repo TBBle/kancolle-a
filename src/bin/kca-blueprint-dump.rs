@@ -1,24 +1,22 @@
 use chrono::{Datelike, Utc};
-use kancolle_a::importer::kancolle_arcade_net::BlueprintList;
+use kancolle_a::ships::{DataSources, GlobalDataSource, Ships, UserDataSource};
 use std::collections::BTreeMap;
 use std::error::Error;
 use std::fs::File;
 use std::io::BufReader;
 
 pub(crate) mod args {
-    use std::path::PathBuf;
-
     use bpaf::*;
-    use kancolle_a::cli_helpers;
+    use kancolle_a::cli_helpers::{self, ShipSourceDataOptions};
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
-        pub(crate) bplist: PathBuf,
+        pub(crate) data: ShipSourceDataOptions,
     }
 
     pub fn options() -> OptionParser<Options> {
-        let bplist = cli_helpers::bplist_path_parser();
-        construct!(Options { bplist })
+        let data = cli_helpers::ship_file_sources_parser();
+        construct!(Options { data })
             .to_options()
             .descr("A tool to dump your current blueprint inventory.")
             .header("Output is grouped by expiry month.")
@@ -32,15 +30,31 @@ pub(crate) mod args {
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
-    let bp_path = args.bplist;
 
-    let bp_data = BufReader::new(File::open(bp_path)?);
+    let mut tc_reader = BufReader::new(File::open(args.data.tcbook)?);
+    let mut bp_reader = BufReader::new(File::open(args.data.bplist)?);
+    let mut kk_reader = BufReader::new(File::open(args.data.kekkon)?);
 
-    let bp_list = BlueprintList::new(bp_data)?;
+    let data_source = DataSources {
+        book: UserDataSource::FromReader(&mut tc_reader),
+        blueprint: UserDataSource::FromReader(&mut bp_reader),
+        kekkon: GlobalDataSource::FromReader(&mut kk_reader),
+    };
+
+    let ships = Ships::new(data_source)?;
 
     let mut bp_per_month = BTreeMap::new();
 
-    for bp in bp_list.iter() {
+    // TODO: The Ships abstraction makes this a little messy, since Blueprint data is duplicated.
+    // A "base ship" or "blueprint ship" flag might improve the aesthetics.
+    for bp in ships
+        .iter()
+        .filter(|(ship_name, ship)| {
+            ship.blueprint().is_some()
+                && ship.blueprint().as_ref().unwrap().ship_name() == *ship_name
+        })
+        .map(|(_, ship)| ship.blueprint().as_ref().unwrap())
+    {
         for entry in bp.expiration_date_list() {
             if !bp_per_month.contains_key(entry.expiration_date()) {
                 bp_per_month.insert(entry.expiration_date(), Vec::<(&String, u16)>::new());

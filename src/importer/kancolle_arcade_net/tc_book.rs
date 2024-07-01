@@ -13,7 +13,7 @@ pub struct TcBook(Vec<BookShip>);
 impl TcBook {
     /// Parses a TcBook from the provided JSON reader.
     /// Fails if not given a JSON array, or expected data structure does not match.
-    pub fn new(tcbook_reader: impl Read) -> Result<TcBook> {
+    pub(crate) fn new(tcbook_reader: impl Read) -> Result<TcBook> {
         let result: TcBook = serde_json::from_reader(tcbook_reader)?;
         Ok(result)
     }

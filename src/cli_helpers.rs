@@ -33,13 +33,13 @@ pub fn book_ship_card_page_source_parser() -> impl Parser<BookShipCardPageSource
         .display_fallback()
 }
 
-pub fn tcbook_path_parser() -> impl Parser<PathBuf> {
+fn tcbook_path_parser() -> impl Parser<PathBuf> {
     long("tcbook")
         .help("A copy of your https://kancolle-arcade.net/ac/api/TcBook/info")
         .argument::<PathBuf>("TCBOOK")
 }
 
-pub fn bplist_path_parser() -> impl Parser<PathBuf> {
+fn bplist_path_parser() -> impl Parser<PathBuf> {
     long("bplist")
         .help("A copy of your https://kancolle-arcade.net/ac/api/BlueprintList/info")
         .argument::<PathBuf>("BPLIST")
@@ -51,7 +51,7 @@ pub fn places_path_parser() -> impl Parser<PathBuf> {
         .argument::<PathBuf>("PLACES")
 }
 
-pub fn kekkon_path_parser() -> impl Parser<PathBuf> {
+fn kekkon_path_parser() -> impl Parser<PathBuf> {
     long("kekkon")
         .help("A copy of https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json")
         .argument::<PathBuf>("KEKKON")
@@ -67,9 +67,14 @@ pub struct ShipSourceDataOptions {
 }
 
 pub fn ship_file_sources_parser() -> impl Parser<ShipSourceDataOptions> {
+    // TODO: Make book and/or bplist optional.
     let tcbook = tcbook_path_parser();
     let bplist = bplist_path_parser();
+    // TODO: Make this optional, once Static is implemented.
     let kekkon = kekkon_path_parser();
+    // TODO: Can we actually output a DataSources, or set of UserDataSournce/GlobalDataSource here?
+    // Lifetime is tricky, those reference mut dyn readers. (Might have to Box them...)
+    // Maybe a helper function to call on the run-time result of this parser...
     construct!(ShipSourceDataOptions {
         tcbook,
         bplist,

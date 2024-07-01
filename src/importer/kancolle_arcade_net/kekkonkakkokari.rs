@@ -13,7 +13,7 @@ pub mod kanmusu_list {
     impl KekkonKakkoKariList {
         /// Parses a PlacePlaces from the provided JSON reader.
         /// Fails if not given a JSON array, or expected data structure does not match.
-        pub fn new(reader: impl Read) -> Result<KekkonKakkoKariList> {
+        pub(crate) fn new(reader: impl Read) -> Result<KekkonKakkoKariList> {
             let result: KekkonKakkoKariList = serde_json::from_reader(reader)?;
             Ok(result)
         }

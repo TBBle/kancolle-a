@@ -1,24 +1,23 @@
-use kancolle_a::importer::kancolle_arcade_net::{BookShipCardPageSource, TcBook};
+use kancolle_a::{
+    importer::kancolle_arcade_net::BookShipCardPageSource,
+    ships::{DataSources, GlobalDataSource, Ships, UserDataSource},
+};
 use std::error::Error;
 use std::fs::File;
 use std::io::BufReader;
 
 pub(crate) mod args {
-    use std::path::PathBuf;
-
     use bpaf::*;
-    use kancolle_a::cli_helpers;
+    use kancolle_a::cli_helpers::{self, ShipSourceDataOptions};
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
-        pub(crate) tcbook: PathBuf,
+        pub(crate) data: ShipSourceDataOptions,
     }
 
     pub fn options() -> OptionParser<Options> {
-        let tcbook = cli_helpers::tcbook_path_parser();
-        construct!(Options {
-            tcbook,
-        })
+        let data = cli_helpers::ship_file_sources_parser();
+        construct!(Options { data })
         .to_options().descr("A tool to report on cardpage data gaps.").header("Please share any reported knowable gaps with the tool author to update the source.")
     }
 
@@ -30,15 +29,22 @@ pub(crate) mod args {
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
-    let tc_path = args.tcbook;
 
-    let tc_data = BufReader::new(File::open(tc_path)?);
+    let mut tc_reader = BufReader::new(File::open(args.data.tcbook)?);
+    let mut bp_reader = BufReader::new(File::open(args.data.bplist)?);
+    let mut kk_reader = BufReader::new(File::open(args.data.kekkon)?);
 
-    let tc_list = TcBook::new(tc_data)?;
+    let data_source = DataSources {
+        book: UserDataSource::FromReader(&mut tc_reader),
+        blueprint: UserDataSource::FromReader(&mut bp_reader),
+        kekkon: GlobalDataSource::FromReader(&mut kk_reader),
+    };
+
+    let ships = Ships::new(data_source)?;
 
     let mut unknown_pages: Vec<(u16, &str, Vec<u16>, Vec<u16>)> = vec![];
 
-    for ship in tc_list.iter().filter(|ship| *ship.acquire_num() > 0) {
+    for ship in ships.iter().filter_map(|(_, ship)| ship.book().as_ref()) {
         let mut knowable: Vec<u16> = vec![];
         let mut unknown: Vec<u16> = vec![];
         for page in &ship.card_list()[1..] {

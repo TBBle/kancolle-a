@@ -12,7 +12,7 @@ pub struct BlueprintList(Vec<BlueprintShip>);
 impl BlueprintList {
     /// Parses a BlueprintList from the provided JSON reader.
     /// Fails if not given a JSON array, or expected data structure does not match.
-    pub fn new(blueprintlist_reader: impl Read) -> Result<BlueprintList> {
+    pub(crate) fn new(blueprintlist_reader: impl Read) -> Result<BlueprintList> {
         let result: BlueprintList = serde_json::from_reader(blueprintlist_reader)?;
         Ok(result)
     }
