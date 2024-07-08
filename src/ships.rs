@@ -91,17 +91,6 @@ impl Ships {
             }
         };
 
-        let mut bp_used: Vec<bool> = vec![];
-
-        if let Some(bplist) = bplist.as_ref() {
-            bp_used.resize(bplist.len(), false);
-        };
-
-        let mut book_used: Vec<bool> = vec![];
-        if let Some(book) = book.as_ref() {
-            book_used.resize(book.len(), false);
-        };
-
         // TODO: Can we precalculate capacity? What happens if we undershoot by a bit?
         // HACK: 500 is more than the kekkon list, so it'll do for now.
         let mut ships: HashMap<String, Ship> = HashMap::with_capacity(500);
@@ -118,7 +107,6 @@ impl Ships {
                         None => None,
                         Some(index) => {
                             assert!(*book[index].acquire_num() > 0);
-                            book_used[index] = true;
                             Some(book[index].clone())
                         }
                     }
@@ -131,10 +119,7 @@ impl Ships {
                         bp_ship.ship_name() == ship_blueprint_name(kekkon.name())
                     }) {
                         None => None,
-                        Some(index) => {
-                            bp_used[index] = true;
-                            Some(bplist[index].clone())
-                        }
+                        Some(index) => Some(bplist[index].clone()),
                     }
                 } else {
                     None
@@ -151,67 +136,53 @@ impl Ships {
         };
 
         if let Some(book) = book {
-            for book_ship in book
-                .into_iter()
-                .enumerate()
-                .filter(|(index, _)| !book_used[*index])
-                .map(|(_, ship)| ship)
-            {
+            for book_ship in book.into_iter() {
                 let bp_ship = if let Some(bplist) = bplist.as_ref() {
                     match bplist.iter().position(|bp_ship| {
                         bp_ship.ship_name() == ship_blueprint_name(book_ship.ship_name())
                     }) {
                         None => None,
-                        Some(index) => {
-                            bp_used[index] = true;
-                            Some(bplist[index].clone())
-                        }
+                        Some(index) => Some(bplist[index].clone()),
                     }
                 } else {
                     None
                 };
-                if *book_ship.card_list()[0].variation_num_in_page() == 6 {
-                    match ships.insert(
-                        format!("{}改", book_ship.ship_name()),
-                        Ship::new(
-                            format!("{}改", book_ship.ship_name()),
-                            Some(book_ship.clone()),
-                            None,
-                            bp_ship.clone(),
-                        )?,
-                    ) {
-                        Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
-                        None => (),
-                    }
+                let kai_name = format!("{}改", book_ship.ship_name());
+                if *book_ship.card_list()[0].variation_num_in_page() == 6
+                    && !ships.contains_key(&kai_name)
+                {
+                    assert!(ships
+                        .insert(
+                            kai_name.clone(),
+                            Ship::new(kai_name, Some(book_ship.clone()), None, bp_ship.clone())?,
+                        )
+                        .is_none());
                 }
-                match ships.insert(
-                    book_ship.ship_name().clone(),
-                    Ship::new(
-                        book_ship.ship_name().clone(),
-                        Some(book_ship),
-                        None,
-                        bp_ship,
-                    )?,
-                ) {
-                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
-                    None => (),
+                if !ships.contains_key(book_ship.ship_name()) {
+                    assert!(ships
+                        .insert(
+                            book_ship.ship_name().clone(),
+                            Ship::new(
+                                book_ship.ship_name().clone(),
+                                Some(book_ship),
+                                None,
+                                bp_ship,
+                            )?,
+                        )
+                        .is_none());
                 }
             }
         }
 
         if let Some(bplist) = bplist {
-            for bp_ship in bplist
-                .into_iter()
-                .enumerate()
-                .filter(|(index, _)| !bp_used[*index])
-                .map(|(_, ship)| ship)
-            {
-                match ships.insert(
-                    bp_ship.ship_name().clone(),
-                    Ship::new(bp_ship.ship_name().clone(), None, None, Some(bp_ship))?,
-                ) {
-                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
-                    None => (),
+            for bp_ship in bplist.into_iter() {
+                if !ships.contains_key(bp_ship.ship_name()) {
+                    assert!(ships
+                        .insert(
+                            bp_ship.ship_name().clone(),
+                            Ship::new(bp_ship.ship_name().clone(), None, None, Some(bp_ship))?,
+                        )
+                        .is_none());
                 }
             }
         }
