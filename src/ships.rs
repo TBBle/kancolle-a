@@ -147,43 +147,34 @@ impl Ships {
                 } else {
                     None
                 };
-                let kai_name = format!("{}改", book_ship.ship_name());
-                if *book_ship.card_list()[0].variation_num_in_page() == 6
-                    && !ships.contains_key(&kai_name)
-                {
-                    assert!(ships
-                        .insert(
-                            kai_name.clone(),
-                            Ship::new(kai_name, Some(book_ship.clone()), None, bp_ship.clone())?,
-                        )
-                        .is_none());
-                }
-                if !ships.contains_key(book_ship.ship_name()) {
-                    assert!(ships
-                        .insert(
-                            book_ship.ship_name().clone(),
+                if *book_ship.card_list()[0].variation_num_in_page() == 6 {
+                    ships
+                        .entry(format!("{}改", book_ship.ship_name()))
+                        .or_insert_with_key(|ship_name| {
                             Ship::new(
-                                book_ship.ship_name().clone(),
-                                Some(book_ship),
+                                ship_name.clone(),
+                                Some(book_ship.clone()),
                                 None,
-                                bp_ship,
-                            )?,
-                        )
-                        .is_none());
+                                bp_ship.clone(),
+                            )
+                            .unwrap()
+                        });
                 }
+                ships
+                    .entry(book_ship.ship_name().clone())
+                    .or_insert_with_key(|ship_name| {
+                        Ship::new(ship_name.clone(), Some(book_ship), None, bp_ship).unwrap()
+                    });
             }
         }
 
         if let Some(bplist) = bplist {
             for bp_ship in bplist.into_iter() {
-                if !ships.contains_key(bp_ship.ship_name()) {
-                    assert!(ships
-                        .insert(
-                            bp_ship.ship_name().clone(),
-                            Ship::new(bp_ship.ship_name().clone(), None, None, Some(bp_ship))?,
-                        )
-                        .is_none());
-                }
+                ships
+                    .entry(bp_ship.ship_name().clone())
+                    .or_insert_with_key(|ship_name| {
+                        Ship::new(ship_name.clone(), None, None, Some(bp_ship)).unwrap()
+                    });
             }
         }
 
