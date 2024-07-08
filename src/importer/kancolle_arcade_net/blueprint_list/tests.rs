@@ -18,12 +18,12 @@ lazy_static_include_bytes! {
 
 #[test]
 fn parse_empty_blueprint_list_reader() {
-    BlueprintList::new(std::io::empty()).unwrap_err();
+    read_blueprintlist(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_blueprint_list_vector() {
-    let blueprint_list = BlueprintList::new("[]".as_bytes()).unwrap();
+    let blueprint_list = read_blueprintlist("[]".as_bytes()).unwrap();
     assert_eq!(blueprint_list.len(), 0);
 }
 
@@ -77,7 +77,7 @@ fn validate_blueprint_list_common(blueprint_list: &BlueprintList) {
 
 #[test]
 fn parse_fixture_blueprint_list_info_20240528() {
-    let blueprint_list = BlueprintList::new(BPLIST_2024_05_30.as_ref()).unwrap();
+    let blueprint_list = read_blueprintlist(BPLIST_2024_05_30.as_ref()).unwrap();
 
     assert_eq!(blueprint_list.len(), 133);
     validate_blueprint_list_common(&blueprint_list);
@@ -151,7 +151,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
 
 #[test]
 fn parse_fixture_blueprint_list_info_20240609() {
-    let blueprint_list = BlueprintList::new(BPLIST_2024_06_09.as_ref()).unwrap();
+    let blueprint_list = read_blueprintlist(BPLIST_2024_06_09.as_ref()).unwrap();
 
     assert_eq!(blueprint_list.len(), 136);
     validate_blueprint_list_common(&blueprint_list);
@@ -159,7 +159,7 @@ fn parse_fixture_blueprint_list_info_20240609() {
 
 #[test]
 fn parse_fixture_blueprint_list_info_20240610() {
-    let blueprint_list = BlueprintList::new(BPLIST_2024_06_10.as_ref()).unwrap();
+    let blueprint_list = read_blueprintlist(BPLIST_2024_06_10.as_ref()).unwrap();
 
     assert_eq!(blueprint_list.len(), 135);
     validate_blueprint_list_common(&blueprint_list);
@@ -167,7 +167,7 @@ fn parse_fixture_blueprint_list_info_20240610() {
 
 #[test]
 fn parse_fixture_blueprint_list_info_20240620() {
-    let blueprint_list = BlueprintList::new(BPLIST_2024_06_20.as_ref()).unwrap();
+    let blueprint_list = read_blueprintlist(BPLIST_2024_06_20.as_ref()).unwrap();
 
     assert_eq!(blueprint_list.len(), 135);
     validate_blueprint_list_common(&blueprint_list);
@@ -175,7 +175,7 @@ fn parse_fixture_blueprint_list_info_20240620() {
 
 #[test]
 fn parse_fixture_blueprint_list_info_20240623() {
-    let blueprint_list = BlueprintList::new(BPLIST_2024_06_23.as_ref()).unwrap();
+    let blueprint_list = read_blueprintlist(BPLIST_2024_06_23.as_ref()).unwrap();
 
     assert_eq!(blueprint_list.len(), 133);
     validate_blueprint_list_common(&blueprint_list);

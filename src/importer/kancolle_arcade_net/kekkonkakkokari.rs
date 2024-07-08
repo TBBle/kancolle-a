@@ -4,28 +4,16 @@ pub mod kanmusu_list {
     use derive_getters::Getters;
     use serde::Deserialize;
     use serde_json::Result;
-    use std::{io::Read, ops::Deref};
+    use std::io::Read;
 
     // ケッコンカッコカリ, aka 結婚（仮）
-    #[derive(Debug, Deserialize)]
-    pub struct KekkonKakkoKariList(Vec<KekkonKakkoKari>);
+    pub(crate) type KekkonKakkoKariList = Vec<KekkonKakkoKari>;
 
-    impl KekkonKakkoKariList {
-        /// Parses a PlacePlaces from the provided JSON reader.
-        /// Fails if not given a JSON array, or expected data structure does not match.
-        pub(crate) fn new(reader: impl Read) -> Result<KekkonKakkoKariList> {
-            let result: KekkonKakkoKariList = serde_json::from_reader(reader)?;
-            Ok(result)
-        }
-    }
-
-    // Implementing Deref but not DerefMut so it can't be mutated.
-    impl Deref for KekkonKakkoKariList {
-        type Target = Vec<KekkonKakkoKari>;
-
-        fn deref(&self) -> &Self::Target {
-            &self.0
-        }
+    /// Parses a PlacePlaces from the provided JSON reader.
+    /// Fails if not given a JSON array, or expected data structure does not match.
+    pub(crate) fn read_kekkonkakkokarilist(reader: impl Read) -> Result<KekkonKakkoKariList> {
+        let result: KekkonKakkoKariList = serde_json::from_reader(reader)?;
+        Ok(result)
     }
 
     #[derive(Debug, Deserialize, Getters, Clone)]

@@ -12,12 +12,12 @@ lazy_static_include_bytes! {
 
 #[test]
 fn parse_empty_place_districts_reader() {
-    PlaceDistricts::new(std::io::empty()).unwrap_err();
+    read_place_districts(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_place_districts_vector() {
-    let place_districts = PlaceDistricts::new("[]".as_bytes()).unwrap();
+    let place_districts = read_place_districts("[]".as_bytes()).unwrap();
     assert_eq!(place_districts.len(), 0);
 }
 
@@ -38,19 +38,19 @@ fn validate_place_districts_common(place_districts: &PlaceDistricts) {
 
 #[test]
 fn parse_fixture_place_districts_info_20240623() {
-    let place_districts = PlaceDistricts::new(DISTRICTS_2024_06_23.as_ref()).unwrap();
+    let place_districts = read_place_districts(DISTRICTS_2024_06_23.as_ref()).unwrap();
 
     validate_place_districts_common(&place_districts);
 }
 
 #[test]
 fn parse_empty_place_paces_reader() {
-    PlacePlaces::new(std::io::empty()).unwrap_err();
+    read_place_places(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_place_places_vector() {
-    let place_places = PlacePlaces::new("[]".as_bytes()).unwrap();
+    let place_places = read_place_places("[]".as_bytes()).unwrap();
     assert_eq!(place_places.len(), 0);
 }
 
@@ -60,7 +60,7 @@ fn validate_place_places_common(_place_places: &PlacePlaces) {
 
 #[test]
 fn parse_fixture_place_places_info_20240623() {
-    let place_places = PlacePlaces::new(PLACES_2024_06_23.as_ref()).unwrap();
+    let place_places = read_place_places(PLACES_2024_06_23.as_ref()).unwrap();
 
     assert_eq!(place_places.len(), 710);
     validate_place_places_common(&place_places);

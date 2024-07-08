@@ -53,12 +53,12 @@ fn test_book_ship_source() {
 
 #[test]
 fn parse_empty_tcbook_reader() {
-    TcBook::new(std::io::empty()).unwrap_err();
+    read_tclist(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_tcbook_vector() {
-    let tcbook = TcBook::new("[]".as_bytes()).unwrap();
+    let tcbook = read_tclist("[]".as_bytes()).unwrap();
     assert_eq!(tcbook.len(), 0);
 }
 
@@ -286,7 +286,7 @@ fn validate_tcbook_common(tcbook: &TcBook) {
 
 #[test]
 fn parse_fixture_tcbook_info_20240528() {
-    let tcbook = TcBook::new(TCBOOK_2024_05_28.as_ref()).unwrap();
+    let tcbook = read_tclist(TCBOOK_2024_05_28.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -456,7 +456,7 @@ fn parse_fixture_tcbook_info_20240528() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240530() {
-    let tcbook = TcBook::new(TCBOOK_2024_05_30.as_ref()).unwrap();
+    let tcbook = read_tclist(TCBOOK_2024_05_30.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -631,7 +631,7 @@ fn parse_fixture_tcbook_info_20240530() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240609() {
-    let tcbook = TcBook::new(TCBOOK_2024_06_09.as_ref()).unwrap();
+    let tcbook = read_tclist(TCBOOK_2024_06_09.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -843,7 +843,7 @@ fn parse_fixture_tcbook_info_20240609() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240610() {
-    let tcbook = TcBook::new(TCBOOK_2024_06_10.as_ref()).unwrap();
+    let tcbook = read_tclist(TCBOOK_2024_06_10.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -1062,7 +1062,7 @@ fn parse_fixture_tcbook_info_20240610() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240620() {
-    let tcbook = TcBook::new(TCBOOK_2024_06_20.as_ref()).unwrap();
+    let tcbook = read_tclist(TCBOOK_2024_06_20.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);
@@ -1295,7 +1295,7 @@ fn parse_fixture_tcbook_info_20240620() {
 
 #[test]
 fn parse_fixture_tcbook_info_20240623() {
-    let tcbook = TcBook::new(TCBOOK_2024_06_23.as_ref()).unwrap();
+    let tcbook = read_tclist(TCBOOK_2024_06_23.as_ref()).unwrap();
     assert_eq!(tcbook.len(), 284);
 
     validate_tcbook_common(&tcbook);

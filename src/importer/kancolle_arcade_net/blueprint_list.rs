@@ -4,27 +4,15 @@ use chrono::{DateTime, Utc};
 use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
-use std::{io::Read, ops::Deref};
+use std::io::Read;
 
-#[derive(Debug, Deserialize)]
-pub struct BlueprintList(Vec<BlueprintShip>);
+type BlueprintList = Vec<BlueprintShip>;
 
-impl BlueprintList {
-    /// Parses a BlueprintList from the provided JSON reader.
-    /// Fails if not given a JSON array, or expected data structure does not match.
-    pub(crate) fn new(blueprintlist_reader: impl Read) -> Result<BlueprintList> {
-        let result: BlueprintList = serde_json::from_reader(blueprintlist_reader)?;
-        Ok(result)
-    }
-}
-
-// Implementing Deref but not DerefMut so it can't be mutated.
-impl Deref for BlueprintList {
-    type Target = Vec<BlueprintShip>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+/// Parses a BlueprintList from the provided JSON reader.
+/// Fails if not given a JSON array, or expected data structure does not match.
+pub(crate) fn read_blueprintlist(blueprintlist_reader: impl Read) -> Result<BlueprintList> {
+    let result: BlueprintList = serde_json::from_reader(blueprintlist_reader)?;
+    Ok(result)
 }
 
 // Notes for future functions

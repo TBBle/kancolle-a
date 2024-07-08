@@ -3,27 +3,15 @@ pub mod districts {
     use derive_getters::Getters;
     use serde::Deserialize;
     use serde_json::Result;
-    use std::{io::Read, ops::Deref};
+    use std::io::Read;
 
-    #[derive(Debug, Deserialize)]
-    pub struct PlaceDistricts(Vec<PlaceTopRegion>);
+    pub type PlaceDistricts = Vec<PlaceTopRegion>;
 
-    impl PlaceDistricts {
-        /// Parses a PlaceDistricts from the provided JSON reader.
-        /// Fails if not given a JSON array, or expected data structure does not match.
-        pub fn new(reader: impl Read) -> Result<PlaceDistricts> {
-            let result: PlaceDistricts = serde_json::from_reader(reader)?;
-            Ok(result)
-        }
-    }
-
-    // Implementing Deref but not DerefMut so it can't be mutated.
-    impl Deref for PlaceDistricts {
-        type Target = Vec<PlaceTopRegion>;
-
-        fn deref(&self) -> &Self::Target {
-            &self.0
-        }
+    /// Parses a PlaceDistricts from the provided JSON reader.
+    /// Fails if not given a JSON array, or expected data structure does not match.
+    pub fn read_place_districts(reader: impl Read) -> Result<PlaceDistricts> {
+        let result: PlaceDistricts = serde_json::from_reader(reader)?;
+        Ok(result)
     }
 
     #[derive(Debug, Deserialize, Getters)]
@@ -57,27 +45,15 @@ pub mod places {
     use derive_getters::Getters;
     use serde::Deserialize;
     use serde_json::Result;
-    use std::{io::Read, ops::Deref};
+    use std::io::Read;
 
-    #[derive(Debug, Deserialize)]
-    pub struct PlacePlaces(Vec<Place>);
+    pub type PlacePlaces = Vec<Place>;
 
-    impl PlacePlaces {
-        /// Parses a PlacePlaces from the provided JSON reader.
-        /// Fails if not given a JSON array, or expected data structure does not match.
-        pub fn new(reader: impl Read) -> Result<PlacePlaces> {
-            let result: PlacePlaces = serde_json::from_reader(reader)?;
-            Ok(result)
-        }
-    }
-
-    // Implementing Deref but not DerefMut so it can't be mutated.
-    impl Deref for PlacePlaces {
-        type Target = Vec<Place>;
-
-        fn deref(&self) -> &Self::Target {
-            &self.0
-        }
+    /// Parses a PlacePlaces from the provided JSON reader.
+    /// Fails if not given a JSON array, or expected data structure does not match.
+    pub fn read_place_places(reader: impl Read) -> Result<PlacePlaces> {
+        let result: PlacePlaces = serde_json::from_reader(reader)?;
+        Ok(result)
     }
 
     // TODO: This struct should also be used for placesFromHere handling, but there's

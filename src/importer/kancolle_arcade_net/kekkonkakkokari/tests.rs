@@ -11,12 +11,12 @@ lazy_static_include_bytes! {
 
 #[test]
 fn parse_empty_kekkonkakkokari_reader() {
-    KekkonKakkoKariList::new(std::io::empty()).unwrap_err();
+    read_kekkonkakkokarilist(std::io::empty()).unwrap_err();
 }
 
 #[test]
 fn parse_empty_kekkonkakkokari_vector() {
-    let kekkonkakkokari = KekkonKakkoKariList::new("[]".as_bytes()).unwrap();
+    let kekkonkakkokari = read_kekkonkakkokarilist("[]".as_bytes()).unwrap();
     assert_eq!(kekkonkakkokari.len(), 0);
 }
 
@@ -26,7 +26,7 @@ fn validate_kekkonkakkokari_common(_kekkonkakkokari: &KekkonKakkoKariList) {
 
 #[test]
 fn parse_fixture_kekkonkakkokari_info_20240623() {
-    let kekkonkakkokari = KekkonKakkoKariList::new(KANMUSU_2024_06_23.as_ref()).unwrap();
+    let kekkonkakkokari = read_kekkonkakkokarilist(KANMUSU_2024_06_23.as_ref()).unwrap();
 
     assert_eq!(kekkonkakkokari.len(), 441);
     validate_kekkonkakkokari_common(&kekkonkakkokari);

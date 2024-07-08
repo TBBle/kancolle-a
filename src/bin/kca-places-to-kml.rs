@@ -1,4 +1,4 @@
-use kancolle_a::importer::kancolle_arcade_net::{Place, PlacePlaces};
+use kancolle_a::importer::kancolle_arcade_net::{self, Place};
 use kml::{
     types::{Coord, Element, Geometry, Placemark, Point},
     Kml, KmlDocument, KmlVersion, KmlWriter,
@@ -75,7 +75,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let places_data = BufReader::new(File::open(places_path)?);
 
-    let places = PlacePlaces::new(places_data)?;
+    let places = kancolle_arcade_net::read_place_places(places_data)?;
 
     // Useful structure references:
     // * https://support.vgis.io/hc/en-us/articles/360035415013-KML-File-Structure-Requirements-KB-GI006

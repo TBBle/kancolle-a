@@ -3,9 +3,7 @@
 use derive_getters::Getters;
 use std::{collections::HashMap, error::Error, io::Read, ops::Deref};
 
-use crate::importer::kancolle_arcade_net::{
-    BlueprintList, BlueprintShip, BookShip, KekkonKakkoKari, KekkonKakkoKariList, TcBook,
-};
+use crate::importer::kancolle_arcade_net::{self, BlueprintShip, BookShip, KekkonKakkoKari};
 
 pub struct Ships(HashMap<String, Ship>);
 
@@ -72,17 +70,21 @@ impl Ships {
     pub fn new(data_sources: DataSources) -> Result<Self, Box<dyn Error>> {
         let book = match data_sources.book {
             UserDataSource::None => None,
-            UserDataSource::FromReader(reader) => Some(TcBook::new(reader)?),
+            UserDataSource::FromReader(reader) => Some(kancolle_arcade_net::read_tclist(reader)?),
         };
 
         let bplist = match data_sources.blueprint {
             UserDataSource::None => None,
-            UserDataSource::FromReader(reader) => Some(BlueprintList::new(reader)?),
+            UserDataSource::FromReader(reader) => {
+                Some(kancolle_arcade_net::read_blueprintlist(reader)?)
+            }
         };
 
         let kekkonlist = match data_sources.kekkon {
             GlobalDataSource::Static => None, // TODO.
-            GlobalDataSource::FromReader(reader) => Some(KekkonKakkoKariList::new(reader)?),
+            GlobalDataSource::FromReader(reader) => {
+                Some(kancolle_arcade_net::read_kekkonkakkokarilist(reader)?)
+            }
         };
 
         let mut bp_used: Vec<bool> = vec![];

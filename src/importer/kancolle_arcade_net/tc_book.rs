@@ -4,28 +4,16 @@ use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
 use std::sync::OnceLock;
-use std::{collections::HashMap, io::Read, ops::Deref};
+use std::{collections::HashMap, io::Read};
 use strum::{AsRefStr, Display, EnumDiscriminants, EnumString, VariantNames};
 
-#[derive(Debug, Deserialize)]
-pub struct TcBook(Vec<BookShip>);
+pub type TcBook = Vec<BookShip>;
 
-impl TcBook {
-    /// Parses a TcBook from the provided JSON reader.
-    /// Fails if not given a JSON array, or expected data structure does not match.
-    pub(crate) fn new(tcbook_reader: impl Read) -> Result<TcBook> {
-        let result: TcBook = serde_json::from_reader(tcbook_reader)?;
-        Ok(result)
-    }
-}
-
-// Implementing Deref but not DerefMut so it can't be mutated.
-impl Deref for TcBook {
-    type Target = Vec<BookShip>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+/// Parses a TcBook from the provided JSON reader.
+/// Fails if not given a JSON array, or expected data structure does not match.
+pub(crate) fn read_tclist(tcbook_reader: impl Read) -> Result<TcBook> {
+    let result: TcBook = serde_json::from_reader(tcbook_reader)?;
+    Ok(result)
 }
 
 #[derive(Debug, Deserialize, Getters, Clone)]
