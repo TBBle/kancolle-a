@@ -70,7 +70,11 @@ impl Ships {
     pub fn new(data_sources: DataSources) -> Result<Self, Box<dyn Error>> {
         let book = match data_sources.book {
             UserDataSource::None => None,
-            UserDataSource::FromReader(reader) => Some(kancolle_arcade_net::read_tclist(reader)?),
+            UserDataSource::FromReader(reader) => {
+                let mut book = kancolle_arcade_net::read_tclist(reader)?;
+                book.retain(|ship| *ship.acquire_num() > 0);
+                Some(book)
+            }
         };
 
         let bplist = match data_sources.blueprint {
@@ -104,10 +108,8 @@ impl Ships {
 
         // Kekkon list is a convenient source of distinct ship names, if we have it.
         // TODO: This should never be None, once Static is implemented.
-        // TODO: Fix the underlying APIs so I can move things out of kekkonlist.
-        // Actually, what does that iteration look like? I actually want to repeatedly pop-front.
         if let Some(kekkonlist) = kekkonlist {
-            for kekkon in kekkonlist.iter() {
+            for kekkon in kekkonlist.into_iter() {
                 let book_ship = if let Some(book) = book.as_ref() {
                     match book
                         .iter()
@@ -115,13 +117,9 @@ impl Ships {
                     {
                         None => None,
                         Some(index) => {
-                            // TODO: Eliminate these ships earlier, once we can mutate book.
-                            if *book[index].acquire_num() > 0 {
-                                book_used[index] = true;
-                                Some(book[index].clone())
-                            } else {
-                                None
-                            }
+                            assert!(*book[index].acquire_num() > 0);
+                            book_used[index] = true;
+                            Some(book[index].clone())
                         }
                     }
                 } else {
@@ -144,31 +142,21 @@ impl Ships {
 
                 match ships.insert(
                     kekkon.name().clone(),
-                    Ship::new(
-                        kekkon.name().clone(),
-                        book_ship,
-                        Some(kekkon.clone()),
-                        bp_ship,
-                    )?,
+                    Ship::new(kekkon.name().clone(), book_ship, Some(kekkon), bp_ship)?,
                 ) {
-                    Some(_) => panic!("Duplicate ship {}", kekkon.name()),
+                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
                     None => (),
                 }
             }
         };
 
-        // TODO: Fix the underlying APIs so I can move things out of book.
         if let Some(book) = book {
             for book_ship in book
-                .iter()
+                .into_iter()
                 .enumerate()
                 .filter(|(index, _)| !book_used[*index])
                 .map(|(_, ship)| ship)
             {
-                // TODO: Eliminate these ships earlier, once we can mutate book.
-                if *book_ship.acquire_num() == 0 {
-                    continue;
-                }
                 let bp_ship = if let Some(bplist) = bplist.as_ref() {
                     match bplist.iter().position(|bp_ship| {
                         bp_ship.ship_name() == ship_blueprint_name(book_ship.ship_name())
@@ -182,18 +170,6 @@ impl Ships {
                 } else {
                     None
                 };
-                match ships.insert(
-                    book_ship.ship_name().clone(),
-                    Ship::new(
-                        book_ship.ship_name().clone(),
-                        Some(book_ship.clone()),
-                        None,
-                        bp_ship.clone(),
-                    )?,
-                ) {
-                    Some(_) => panic!("Duplicate ship {}", book_ship.ship_name()),
-                    None => (),
-                }
                 if *book_ship.card_list()[0].variation_num_in_page() == 6 {
                     match ships.insert(
                         format!("{}改", book_ship.ship_name()),
@@ -201,34 +177,40 @@ impl Ships {
                             format!("{}改", book_ship.ship_name()),
                             Some(book_ship.clone()),
                             None,
-                            bp_ship,
+                            bp_ship.clone(),
                         )?,
                     ) {
-                        Some(_) => panic!("Duplicate ship {}", book_ship.ship_name()),
+                        Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
                         None => (),
                     }
+                }
+                match ships.insert(
+                    book_ship.ship_name().clone(),
+                    Ship::new(
+                        book_ship.ship_name().clone(),
+                        Some(book_ship),
+                        None,
+                        bp_ship,
+                    )?,
+                ) {
+                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
+                    None => (),
                 }
             }
         }
 
-        // TODO: Fix the underlying APIs so I can move things out of bplist.
         if let Some(bplist) = bplist {
             for bp_ship in bplist
-                .iter()
+                .into_iter()
                 .enumerate()
                 .filter(|(index, _)| !bp_used[*index])
                 .map(|(_, ship)| ship)
             {
                 match ships.insert(
                     bp_ship.ship_name().clone(),
-                    Ship::new(
-                        bp_ship.ship_name().clone(),
-                        None,
-                        None,
-                        Some(bp_ship.clone()),
-                    )?,
+                    Ship::new(bp_ship.ship_name().clone(), None, None, Some(bp_ship))?,
                 ) {
-                    Some(_) => panic!("Duplicate ship {}", bp_ship.ship_name()),
+                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
                     None => (),
                 }
             }
