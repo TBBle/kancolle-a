@@ -6608,22 +6608,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 105644,
-        "distance": "",
-        "name": "ｎａｍｃｏイオンモール広島府中",
-        "tel": "0822845891",
-        "address": "広島県安芸郡府中町大須2-1-1イオンモール広島府中3階",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "23:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "HIROSHIMA",
-        "latitude": "34.394622",
-        "longitude": "132.499793",
-        "zoomLevel": 16
-    },
-    {
         "id": 105719,
         "distance": "",
         "name": "アミパラ岡山店",
@@ -7410,9 +7394,9 @@
     {
         "id": 107685,
         "distance": "",
-        "name": "ｎａｍｃｏイオンモールＫＹＯＴＯ店",
-        "tel": "0756923360",
-        "address": "京都府京都市南区西九条鳥居口町1ｲｵﾝﾓｰﾙKYOTO SAKURA館4階",
+        "name": "バンダイナムコＣｒｏｓｓＳｔｏｒｅ京都",
+        "tel": "0000000000",
+        "address": "京都市南区西九条鳥居口町１イオンモールＫＹＯＴＯ　ＳＡＫＵＲ",
         "station": "",
         "openTime": "10:00   ",
         "closeTime": "21:00   ",
@@ -9136,22 +9120,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 100136,
-        "distance": "",
-        "name": "ゲームプラザセントラル八王子店",
-        "tel": "0426440078",
-        "address": "東京都八王子市東町12-15第5セントラル",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "TOKYO",
-        "latitude": "35.658001",
-        "longitude": "139.338176",
-        "zoomLevel": 16
-    },
-    {
         "id": 101272,
         "distance": "",
         "name": "ＢＩＮＧＯ一関",
@@ -10269,6 +10237,22 @@
         "regionEnum": "SHIZUOKA",
         "latitude": "34.696688",
         "longitude": "137.650923",
+        "zoomLevel": 16
+    },
+    {
+        "id": 112498,
+        "distance": "",
+        "name": "ＣＬＵＢ　ＥＸＡ",
+        "tel": "08015697845",
+        "address": "東京都立川市羽衣町２丁目７−３小川ビル１階",
+        "station": "",
+        "openTime": "        ",
+        "closeTime": "        ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "TOKYO",
+        "latitude": "35.696117",
+        "longitude": "139.428413",
         "zoomLevel": 16
     },
     {

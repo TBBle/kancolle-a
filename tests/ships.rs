@@ -5,9 +5,9 @@ use kancolle_a::ships::{DataSources, GlobalDataSource, Ships, UserDataSource};
 use lazy_static_include::*;
 
 lazy_static_include_bytes! {
-    TCBOOK => "tests/fixtures/2024-07-02/TcBook_info.json",
-    KANMUSU => "tests/fixtures/2024-07-01/kanmusu_list.json",
-    BPLIST => "tests/fixtures/2024-07-02/BlueprintList_info.json",
+    TCBOOK => "tests/fixtures/latest/TcBook_info.json",
+    KANMUSU => "tests/fixtures/latest/kanmusu_list.json",
+    BPLIST => "tests/fixtures/latest/BlueprintList_info.json",
 }
 
 #[test]
@@ -48,7 +48,7 @@ fn test_ships_blueprint_only_import() {
     };
     let ships = Ships::new(data_sources).unwrap();
 
-    assert_eq!(ships.len(), 129);
+    assert_eq!(ships.len(), 133);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.book().is_none()));
@@ -64,8 +64,8 @@ fn test_ships_book_only_import() {
     };
     let ships = Ships::new(data_sources).unwrap();
 
-    // 284 entries, 61 未取得, and of the remaining 223, 148 have two rows.
-    assert_eq!(ships.len(), 223 + 148);
+    // 284 entries, 59 未取得, and of the remaining 225, 148 have two rows.
+    assert_eq!(ships.len(), 225 + 148);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.book().is_some()));
@@ -75,7 +75,7 @@ fn test_ships_book_only_import() {
             .iter()
             .filter(|(_, ship)| !*ship.book_secondrow())
             .count(),
-        223
+        225
     );
     assert_eq!(
         ships
@@ -113,14 +113,14 @@ fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        315
+        322
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.book().is_some() && !*ship.book_secondrow())
             .count(),
-        223
+        225
     );
     assert_eq!(
         ships
