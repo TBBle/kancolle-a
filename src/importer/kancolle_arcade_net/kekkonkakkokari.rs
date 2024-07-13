@@ -1,7 +1,6 @@
 /// Module for importer for https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json
 pub mod kanmusu_list {
     use chrono::NaiveDate;
-    use derive_getters::Getters;
     use serde::Deserialize;
     use serde_json::Result;
     use std::io::Read;
@@ -16,17 +15,17 @@ pub mod kanmusu_list {
         Ok(result)
     }
 
-    #[derive(Debug, Deserialize, Getters, Clone)]
+    #[derive(Debug, Deserialize, Clone)]
     #[serde(deny_unknown_fields)]
     pub struct KekkonKakkoKari {
-        id: u32,
-        web_id: u32,
-        name: String,
-        name_reading: String,
-        kind: String,
-        category: String,
+        pub id: u32,
+        pub web_id: u32,
+        pub name: String,
+        pub name_reading: String,
+        pub kind: String,
+        pub category: String,
         #[serde(with = "kekkonkakkokari_date_format")]
-        start_time: NaiveDate, // Technically 7am JST on this day, AFAIK.
+        pub start_time: NaiveDate, // Technically 7am JST on this day, AFAIK.
     }
 
     mod kekkonkakkokari_date_format {

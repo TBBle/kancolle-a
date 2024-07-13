@@ -102,7 +102,7 @@ impl Ships {
                 let book_ship = if let Some(book) = book.as_ref() {
                     match book
                         .iter()
-                        .position(|book_ship| (*book_ship.book_no() as u32) == *kekkon.id())
+                        .position(|book_ship| (*book_ship.book_no() as u32) == kekkon.id)
                     {
                         None => None,
                         Some(index) => {
@@ -116,7 +116,7 @@ impl Ships {
 
                 let bp_ship = if let Some(bplist) = bplist.as_ref() {
                     match bplist.iter().position(|bp_ship| {
-                        bp_ship.ship_name() == ship_blueprint_name(kekkon.name())
+                        bp_ship.ship_name() == ship_blueprint_name(&kekkon.name)
                     }) {
                         None => None,
                         Some(index) => Some(bplist[index].clone()),
@@ -126,8 +126,8 @@ impl Ships {
                 };
 
                 match ships.insert(
-                    kekkon.name().clone(),
-                    Ship::new(kekkon.name().clone(), book_ship, Some(kekkon), bp_ship)?,
+                    kekkon.name.clone(),
+                    Ship::new(kekkon.name.clone(), book_ship, Some(kekkon), bp_ship)?,
                 ) {
                     Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
                     None => (),

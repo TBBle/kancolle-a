@@ -32,11 +32,11 @@ fn parse_fixture_kekkonkakkokari_info_20240623() {
     validate_kekkonkakkokari_common(&kekkonkakkokari);
 
     assert_eq!(
-        *kekkonkakkokari[0].start_time(),
+        kekkonkakkokari[0].start_time,
         NaiveDate::from_ymd_opt(2018, 2, 16).unwrap()
     );
     assert_eq!(
-        *kekkonkakkokari[440].start_time(),
+        kekkonkakkokari[440].start_time,
         NaiveDate::from_ymd_opt(2024, 6, 13).unwrap()
     );
 }
