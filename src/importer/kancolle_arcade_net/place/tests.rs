@@ -27,13 +27,13 @@ fn validate_place_districts_common(place_districts: &PlaceDistricts) {
     // TODO: We could burn this into the compile if we wanted... Save a fetch?
     assert_eq!(place_districts.len(), 6);
     let 北海道_東北 = &place_districts[0];
-    assert_eq!(北海道_東北.top_region_enum(), "HOKKAIDO_TOHOKU");
-    assert_eq!(北海道_東北.name(), "北海道・東北");
-    assert_eq!(北海道_東北.prefecture_beans().len(), 7);
-    let 北海道 = &北海道_東北.prefecture_beans()[0];
-    assert_eq!(北海道.region_enum(), "HOKKAIDO");
-    assert_eq!(北海道.name(), "北海道");
-    assert_eq!(*北海道.jis_code(), 1);
+    assert_eq!(北海道_東北.top_region_enum, "HOKKAIDO_TOHOKU");
+    assert_eq!(北海道_東北.name, "北海道・東北");
+    assert_eq!(北海道_東北.prefecture_beans.len(), 7);
+    let 北海道 = &北海道_東北.prefecture_beans[0];
+    assert_eq!(北海道.region_enum, "HOKKAIDO");
+    assert_eq!(北海道.name, "北海道");
+    assert_eq!(北海道.jis_code, 1);
 }
 
 #[test]

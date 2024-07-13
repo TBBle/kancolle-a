@@ -9,8 +9,8 @@ use std::{error::Error, io};
 
 fn place_to_kml(place: &Place) -> Kml<f64> {
     let coord = Coord::<f64> {
-        x: place.longitude().parse::<f64>().unwrap(),
-        y: place.latitude().parse::<f64>().unwrap(),
+        x: place.longitude.parse::<f64>().unwrap(),
+        y: place.latitude.parse::<f64>().unwrap(),
         ..Default::default()
     };
     let geometry = Geometry::Point(Point::<f64> {
@@ -19,24 +19,24 @@ fn place_to_kml(place: &Place) -> Kml<f64> {
     });
     // TODO: Generate a nice description. We can apparently use HTML here.
     let placemark = Placemark::<f64> {
-        name: Some(place.name().clone()),
+        name: Some(place.name.clone()),
         geometry: Some(geometry),
         attrs: HashMap::from([(
             // This needs to be NCName per XML Schema, which can't start with a number.
             "id".to_string(),
-            "Place_".to_string() + &place.id().to_string(),
+            "Place_".to_string() + &place.id.to_string(),
         )]),
         // Google My Maps appears to ignore these attributes. Oh well.
         // (Tested that removing the geometry does try to use the address, so the format is correct.)
         children: vec![
             Element {
                 name: "address".to_string(),
-                content: Some(place.address().clone()),
+                content: Some(place.address.clone()),
                 ..Default::default()
             },
             Element {
                 name: "phoneNumber".to_string(),
-                content: Some(place.tel().clone()),
+                content: Some(place.tel.clone()),
                 ..Default::default()
             },
         ],
