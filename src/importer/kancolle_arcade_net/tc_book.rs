@@ -1,6 +1,5 @@
 //! Module for importer for https://kancolle-arcade.net/ac/api/TcBook/info
 
-use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
 use std::sync::OnceLock;
@@ -16,23 +15,23 @@ pub(crate) fn read_tclist(tcbook_reader: impl Read) -> Result<TcBook> {
     Ok(result)
 }
 
-#[derive(Debug, Deserialize, Getters, Clone)]
+#[derive(Debug, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShip {
-    book_no: u16,
-    ship_class: Option<String>,
-    ship_class_index: Option<i16>,
-    ship_type: String,
-    ship_model_num: String,
-    ship_name: String,
-    card_index_img: String,
-    card_list: Vec<BookShipCardPage>,
-    variation_num: u16,
-    acquire_num: u16,
-    lv: u16,
-    is_married: Option<Vec<bool>>,
-    married_img: Option<Vec<String>>,
+    pub book_no: u16,
+    pub ship_class: Option<String>,
+    pub ship_class_index: Option<i16>,
+    pub ship_type: String,
+    pub ship_model_num: String,
+    pub ship_name: String,
+    pub card_index_img: String,
+    pub card_list: Vec<BookShipCardPage>,
+    pub variation_num: u16,
+    pub acquire_num: u16,
+    pub lv: u16,
+    pub is_married: Option<Vec<bool>>,
+    pub married_img: Option<Vec<String>>,
 }
 
 // Notes for future functions
@@ -332,8 +331,8 @@ impl BookShip {
             return Normal;
         }
         init_book_ship_sources();
-        if let Some(sources) = BOOK_SHIP_SOURCES.get().unwrap().get(self.book_no()) {
-            if sources.len() + 1 != self.card_list().len() {
+        if let Some(sources) = BOOK_SHIP_SOURCES.get().unwrap().get(&self.book_no) {
+            if sources.len() + 1 != self.card_list.len() {
                 // Old data. Not sure if there's a good way to handle this; as new events are inserted before
                 // Original Illustration Cards, but otherwise in order of addition, it appears.
                 // Note that Surigao Strait cards in particular were from an in-person event many
@@ -353,15 +352,15 @@ impl BookShip {
     }
 }
 
-#[derive(Debug, Deserialize, Getters, Clone)]
+#[derive(Debug, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShipCardPage {
-    priority: u16,
-    card_img_list: Vec<String>,
-    status_img: Option<Vec<String>>,
-    variation_num_in_page: u16,
-    acquire_num_in_page: u16,
+    pub priority: u16,
+    pub card_img_list: Vec<String>,
+    pub status_img: Option<Vec<String>>,
+    pub variation_num_in_page: u16,
+    pub acquire_num_in_page: u16,
 }
 
 #[cfg(test)]

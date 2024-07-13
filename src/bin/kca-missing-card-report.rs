@@ -66,14 +66,13 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     for (ship_name, ship) in ships.iter().filter(|(_, ship)| ship.book().is_some()) {
         let book = ship.book().as_ref().unwrap();
-        for page in book.card_list().iter().filter(|page| {
-            BookShipCardPageSourceDiscriminants::from(book.source(*page.priority()))
-                == target_source
+        for page in book.card_list.iter().filter(|page| {
+            BookShipCardPageSourceDiscriminants::from(book.source(page.priority)) == target_source
         }) {
-            let (row1, row2) = page.card_img_list().split_at(3);
+            let (row1, row2) = page.card_img_list.split_at(3);
             if !ship.book_secondrow() {
                 card_status.push((
-                    *book.book_no(),
+                    book.book_no,
                     ship_name.clone(),
                     !row1[0].is_empty(),
                     !row1[1].is_empty(),
@@ -81,7 +80,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 ));
             } else {
                 card_status.push((
-                    *book.book_no(),
+                    book.book_no,
                     ship_name.clone(),
                     !row2[0].is_empty(),
                     !row2[1].is_empty(),

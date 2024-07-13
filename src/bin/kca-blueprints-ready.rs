@@ -80,9 +80,9 @@ fn main() -> Result<(), Box<dyn Error>> {
             None => false,
             Some(bookship) => {
                 if *ship.book_secondrow() {
-                    !bookship.card_list()[0].card_img_list()[3].is_empty()
+                    !bookship.card_list[0].card_img_list[3].is_empty()
                 } else {
-                    !bookship.card_list()[0].card_img_list()[0].is_empty()
+                    !bookship.card_list[0].card_img_list[0].is_empty()
                 }
             }
         };
@@ -100,7 +100,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         chain.sort_unstable_by_key(|(ship_name, _)| match ships[ship_name].book().as_ref() {
             None => 10000, // HACK: Put 'em last, at this point order between them doesn't matter.
             Some(book) => {
-                book.book_no() * 10
+                book.book_no * 10
                     + if *ships[ship_name].book_secondrow() {
                         5
                     } else {

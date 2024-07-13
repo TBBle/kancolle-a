@@ -72,7 +72,7 @@ impl Ships {
             UserDataSource::None => None,
             UserDataSource::FromReader(reader) => {
                 let mut book = kancolle_arcade_net::read_tclist(reader)?;
-                book.retain(|ship| *ship.acquire_num() > 0);
+                book.retain(|ship| ship.acquire_num > 0);
                 Some(book)
             }
         };
@@ -102,11 +102,11 @@ impl Ships {
                 let book_ship = if let Some(book) = book.as_ref() {
                     match book
                         .iter()
-                        .position(|book_ship| (*book_ship.book_no() as u32) == kekkon.id)
+                        .position(|book_ship| (book_ship.book_no as u32) == kekkon.id)
                     {
                         None => None,
                         Some(index) => {
-                            assert!(*book[index].acquire_num() > 0);
+                            assert!(book[index].acquire_num > 0);
                             Some(book[index].clone())
                         }
                     }
@@ -140,7 +140,7 @@ impl Ships {
             for book_ship in book.into_iter() {
                 let bp_ship = if let Some(bplist) = bplist.as_ref() {
                     match bplist.iter().position(|bp_ship| {
-                        bp_ship.ship_name == ship_blueprint_name(book_ship.ship_name())
+                        bp_ship.ship_name == ship_blueprint_name(&book_ship.ship_name)
                     }) {
                         None => None,
                         Some(index) => Some(bplist[index].clone()),
@@ -148,9 +148,9 @@ impl Ships {
                 } else {
                     None
                 };
-                if *book_ship.card_list()[0].variation_num_in_page() == 6 {
+                if book_ship.card_list[0].variation_num_in_page == 6 {
                     ships
-                        .entry(format!("{}改", book_ship.ship_name()))
+                        .entry(format!("{}改", book_ship.ship_name))
                         .or_insert_with_key(|ship_name| {
                             Ship::new(
                                 ship_name.clone(),
@@ -162,7 +162,7 @@ impl Ships {
                         });
                 }
                 ships
-                    .entry(book_ship.ship_name().clone())
+                    .entry(book_ship.ship_name.clone())
                     .or_insert_with_key(|ship_name| {
                         Ship::new(ship_name.clone(), Some(book_ship), None, bp_ship).unwrap()
                     });
@@ -221,24 +221,23 @@ impl Ship {
         let book_secondrow = match &book {
             None => false,
             // TODO: We should error here.
-            Some(book) if *book.acquire_num() == 0 => {
+            Some(book) if book.acquire_num == 0 => {
                 panic!(
                     "Ship {} created from \"Unknown\" book entry {}",
-                    name,
-                    book.book_no()
+                    name, book.book_no
                 )
             }
             Some(book) => {
-                let normal_page = &book.card_list()[0];
+                let normal_page = &book.card_list[0];
                 // TODO: We should probably error here.
                 assert_eq!(
-                    normal_page.variation_num_in_page() % 3,
+                    normal_page.variation_num_in_page % 3,
                     0,
                     "Unexpected variation count {} on normal page of {}",
-                    normal_page.variation_num_in_page(),
-                    book.book_no()
+                    normal_page.variation_num_in_page,
+                    book.book_no
                 );
-                let row_count = normal_page.variation_num_in_page() / 3;
+                let row_count = normal_page.variation_num_in_page / 3;
                 if row_count > 1 && name.ends_with("改") {
                     true
                 } else {

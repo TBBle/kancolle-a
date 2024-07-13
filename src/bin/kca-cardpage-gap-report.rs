@@ -47,23 +47,23 @@ fn main() -> Result<(), Box<dyn Error>> {
     for ship in ships.iter().filter_map(|(_, ship)| ship.book().as_ref()) {
         let mut knowable: Vec<u16> = vec![];
         let mut unknown: Vec<u16> = vec![];
-        for page in &ship.card_list()[1..] {
+        for page in &ship.card_list[1..] {
             use BookShipCardPageSource::*;
-            match ship.source(*page.priority()) {
+            match ship.source(page.priority) {
                 Normal => panic!("Normal page after page 1"),
                 Unknown => {
-                    if *page.acquire_num_in_page() > 0 {
+                    if page.acquire_num_in_page > 0 {
                         &mut knowable
                     } else {
                         &mut unknown
                     }
                 }
-                .push(*page.priority()),
+                .push(page.priority),
                 _ => (),
             }
         }
         if !knowable.is_empty() || !unknown.is_empty() {
-            unknown_pages.push((*ship.book_no(), ship.ship_name(), knowable, unknown));
+            unknown_pages.push((ship.book_no, &ship.ship_name, knowable, unknown));
         }
     }
 
