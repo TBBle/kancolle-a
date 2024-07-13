@@ -1,7 +1,6 @@
 //! Module for importer for https://kancolle-arcade.net/ac/api/BlueprintList/info
 
 use chrono::{DateTime, Utc};
-use derive_getters::Getters;
 use serde::Deserialize;
 use serde_json::Result;
 use std::io::Read;
@@ -22,29 +21,29 @@ pub(crate) fn read_blueprintlist(blueprintlist_reader: impl Read) -> Result<Blue
 // ** True expiration date is 23:59 on the last date of the month.
 // ** Or I made a mistake, I guess?
 
-#[derive(Debug, Deserialize, Getters, Clone)]
+#[derive(Debug, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BlueprintShip {
-    ship_class_id: u16,
-    ship_class_index: u16,
-    ship_sort_no: u16,
-    ship_type: String,
-    ship_name: String,
-    status_img: String,
-    blueprint_total_num: u16,
-    exists_warning_for_expiration: bool,
-    expiration_date_list: Vec<BlueprintExpirationDate>,
+    pub ship_class_id: u16,
+    pub ship_class_index: u16,
+    pub ship_sort_no: u16,
+    pub ship_type: String,
+    pub ship_name: String,
+    pub status_img: String,
+    pub blueprint_total_num: u16,
+    pub exists_warning_for_expiration: bool,
+    pub expiration_date_list: Vec<BlueprintExpirationDate>,
 }
 
-#[derive(Debug, Deserialize, Getters, Clone, Copy)]
+#[derive(Debug, Deserialize, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BlueprintExpirationDate {
     #[serde(with = "chrono::serde::ts_milliseconds")]
-    expiration_date: DateTime<Utc>,
-    blueprint_num: u16,
-    expire_this_month: bool,
+    pub expiration_date: DateTime<Utc>,
+    pub blueprint_num: u16,
+    pub expire_this_month: bool,
 }
 
 #[cfg(test)]

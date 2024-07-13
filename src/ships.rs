@@ -115,9 +115,10 @@ impl Ships {
                 };
 
                 let bp_ship = if let Some(bplist) = bplist.as_ref() {
-                    match bplist.iter().position(|bp_ship| {
-                        bp_ship.ship_name() == ship_blueprint_name(&kekkon.name)
-                    }) {
+                    match bplist
+                        .iter()
+                        .position(|bp_ship| bp_ship.ship_name == ship_blueprint_name(&kekkon.name))
+                    {
                         None => None,
                         Some(index) => Some(bplist[index].clone()),
                     }
@@ -139,7 +140,7 @@ impl Ships {
             for book_ship in book.into_iter() {
                 let bp_ship = if let Some(bplist) = bplist.as_ref() {
                     match bplist.iter().position(|bp_ship| {
-                        bp_ship.ship_name() == ship_blueprint_name(book_ship.ship_name())
+                        bp_ship.ship_name == ship_blueprint_name(book_ship.ship_name())
                     }) {
                         None => None,
                         Some(index) => Some(bplist[index].clone()),
@@ -171,7 +172,7 @@ impl Ships {
         if let Some(bplist) = bplist {
             for bp_ship in bplist.into_iter() {
                 ships
-                    .entry(bp_ship.ship_name().clone())
+                    .entry(bp_ship.ship_name.clone())
                     .or_insert_with_key(|ship_name| {
                         Ship::new(ship_name.clone(), None, None, Some(bp_ship)).unwrap()
                     });

@@ -51,16 +51,16 @@ fn main() -> Result<(), Box<dyn Error>> {
         .iter()
         .filter(|(ship_name, ship)| {
             ship.blueprint().is_some()
-                && ship.blueprint().as_ref().unwrap().ship_name() == *ship_name
+                && ship.blueprint().as_ref().unwrap().ship_name == **ship_name
         })
         .map(|(_, ship)| ship.blueprint().as_ref().unwrap())
     {
-        for entry in bp.expiration_date_list() {
-            if !bp_per_month.contains_key(entry.expiration_date()) {
-                bp_per_month.insert(entry.expiration_date(), Vec::<(&String, u16)>::new());
+        for entry in &bp.expiration_date_list {
+            if !bp_per_month.contains_key(&entry.expiration_date) {
+                bp_per_month.insert(entry.expiration_date, Vec::<(&String, u16)>::new());
             }
-            let month_ships = bp_per_month.get_mut(entry.expiration_date()).unwrap();
-            month_ships.push((bp.ship_name(), *entry.blueprint_num()));
+            let month_ships = bp_per_month.get_mut(&entry.expiration_date).unwrap();
+            month_ships.push((&bp.ship_name, entry.blueprint_num));
         }
     }
 

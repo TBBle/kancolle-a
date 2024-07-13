@@ -87,7 +87,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             }
         };
 
-        let base_name = ship.blueprint().as_ref().unwrap().ship_name().to_string();
+        let base_name = ship.blueprint().as_ref().unwrap().ship_name.to_string();
 
         card_chains
             .entry(base_name)
@@ -143,19 +143,19 @@ fn main() -> Result<(), Box<dyn Error>> {
             if stage == 0 {
                 ship_status.push((
                     ship_name,
-                    *bp_ship.blueprint_total_num(),
+                    bp_ship.blueprint_total_num,
                     0,
                     Status::MissingBase,
                 ));
             } else {
-                let bp_needed = ship_blueprint_costs(base_name, bp_ship.ship_type(), stage - 1)
+                let bp_needed = ship_blueprint_costs(base_name, &bp_ship.ship_type, stage - 1)
                     .unwrap()
                     .0;
                 ship_status.push((
                     ship_name,
-                    *bp_ship.blueprint_total_num(),
+                    bp_ship.blueprint_total_num,
                     bp_needed,
-                    if *bp_ship.blueprint_total_num() >= bp_needed {
+                    if bp_ship.blueprint_total_num >= bp_needed {
                         Status::ReadyFor
                     } else {
                         Status::SavingFor
@@ -165,13 +165,13 @@ fn main() -> Result<(), Box<dyn Error>> {
         } else {
             let (last_stage, (last_ship, _)) = chain.iter().enumerate().last().unwrap();
             if let Some((bp_needed, _)) =
-                ship_blueprint_costs(base_name, bp_ship.ship_type(), last_stage)
+                ship_blueprint_costs(base_name, &bp_ship.ship_type, last_stage)
             {
                 ship_status.push((
                     last_ship,
-                    *bp_ship.blueprint_total_num(),
+                    bp_ship.blueprint_total_num,
                     bp_needed,
-                    if *bp_ship.blueprint_total_num() >= bp_needed {
+                    if bp_ship.blueprint_total_num >= bp_needed {
                         Status::MaybeReady
                     } else {
                         Status::MaybeSaving
@@ -180,8 +180,8 @@ fn main() -> Result<(), Box<dyn Error>> {
             } else {
                 ship_status.push((
                     last_ship,
-                    *bp_ship.blueprint_total_num(),
-                    ship_blueprint_costs(bp_ship.ship_name(), bp_ship.ship_type(), last_stage - 1)
+                    bp_ship.blueprint_total_num,
+                    ship_blueprint_costs(&bp_ship.ship_name, &bp_ship.ship_type, last_stage - 1)
                         .or(Some((0, 0)))
                         .unwrap()
                         .0,
