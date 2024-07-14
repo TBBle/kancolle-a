@@ -1,4 +1,4 @@
-use kancolle_a::ships::{DataSources, GlobalDataSource, Ships, UserDataSource};
+use kancolle_a::ships::ShipsBuilder;
 
 // This is an integration test, so we're only using it against "current" data.
 
@@ -12,25 +12,24 @@ lazy_static_include_bytes! {
 
 #[test]
 fn test_ships_null_import() {
-    let data_sources = DataSources {
-        book: UserDataSource::None,
-        blueprint: UserDataSource::None,
-        kekkon: GlobalDataSource::Static,
-    };
-    let ships = Ships::new(data_sources).unwrap();
+    let ships = ShipsBuilder::new()
+        .no_kekkon()
+        .no_book()
+        .no_blueprint()
+        .build()
+        .unwrap();
 
     assert_eq!(ships.len(), 0);
 }
 
 #[test]
 fn test_ships_kekkon_only_import() {
-    let mut kanmusu_bytes = KANMUSU.as_ref();
-    let data_sources = DataSources {
-        book: UserDataSource::None,
-        blueprint: UserDataSource::None,
-        kekkon: GlobalDataSource::FromReader(&mut kanmusu_bytes),
-    };
-    let ships = Ships::new(data_sources).unwrap();
+    let ships = ShipsBuilder::new()
+        .kekkon_from_reader(KANMUSU.as_ref())
+        .no_book()
+        .no_blueprint()
+        .build()
+        .unwrap();
 
     assert_eq!(ships.len(), 441);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_some()));
@@ -40,13 +39,12 @@ fn test_ships_kekkon_only_import() {
 
 #[test]
 fn test_ships_blueprint_only_import() {
-    let mut blueprint_bytes = BPLIST.as_ref();
-    let data_sources = DataSources {
-        book: UserDataSource::None,
-        blueprint: UserDataSource::FromReader(&mut blueprint_bytes),
-        kekkon: GlobalDataSource::Static,
-    };
-    let ships = Ships::new(data_sources).unwrap();
+    let ships = ShipsBuilder::new()
+        .no_kekkon()
+        .no_book()
+        .blueprint_from_reader(BPLIST.as_ref())
+        .build()
+        .unwrap();
 
     assert_eq!(ships.len(), 133);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
@@ -56,13 +54,12 @@ fn test_ships_blueprint_only_import() {
 
 #[test]
 fn test_ships_book_only_import() {
-    let mut book_bytes = TCBOOK.as_ref();
-    let data_sources = DataSources {
-        book: UserDataSource::FromReader(&mut book_bytes),
-        blueprint: UserDataSource::None,
-        kekkon: GlobalDataSource::Static,
-    };
-    let ships = Ships::new(data_sources).unwrap();
+    let ships = ShipsBuilder::new()
+        .no_kekkon()
+        .book_from_reader(TCBOOK.as_ref())
+        .no_blueprint()
+        .build()
+        .unwrap();
 
     // 284 entries, 59 未取得, and of the remaining 225, 148 have two rows.
     assert_eq!(ships.len(), 225 + 148);
@@ -88,15 +85,12 @@ fn test_ships_book_only_import() {
 
 #[test]
 fn test_ships_full_import() {
-    let mut kanmusu_bytes = KANMUSU.as_ref();
-    let mut blueprint_bytes = BPLIST.as_ref();
-    let mut book_bytes = TCBOOK.as_ref();
-    let data_sources = DataSources {
-        book: UserDataSource::FromReader(&mut book_bytes),
-        blueprint: UserDataSource::FromReader(&mut blueprint_bytes),
-        kekkon: GlobalDataSource::FromReader(&mut kanmusu_bytes),
-    };
-    let ships = Ships::new(data_sources).unwrap();
+    let ships = ShipsBuilder::new()
+        .kekkon_from_reader(KANMUSU.as_ref())
+        .book_from_reader(TCBOOK.as_ref())
+        .blueprint_from_reader(BPLIST.as_ref())
+        .build()
+        .unwrap();
 
     assert_eq!(ships.len(), 444);
     assert_eq!(

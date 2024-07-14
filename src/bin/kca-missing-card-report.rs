@@ -1,6 +1,5 @@
 use kancolle_a::{
-    importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants,
-    ships::{DataSources, GlobalDataSource, Ships, UserDataSource},
+    importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants, ships::ShipsBuilder,
 };
 use std::error::Error;
 use std::fs::File;
@@ -45,17 +44,11 @@ pub(crate) mod args {
 fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
 
-    let mut tc_reader = BufReader::new(File::open(args.data.tcbook)?);
-    let mut bp_reader = BufReader::new(File::open(args.data.bplist)?);
-    let mut kk_reader = BufReader::new(File::open(args.data.kekkon)?);
-
-    let data_source = DataSources {
-        book: UserDataSource::FromReader(&mut tc_reader),
-        blueprint: UserDataSource::FromReader(&mut bp_reader),
-        kekkon: GlobalDataSource::FromReader(&mut kk_reader),
-    };
-
-    let ships = Ships::new(data_source)?;
+    let ships = ShipsBuilder::default()
+        .book_from_reader(BufReader::new(File::open(args.data.tcbook)?))
+        .blueprint_from_reader(BufReader::new(File::open(args.data.bplist)?))
+        .kekkon_from_reader(BufReader::new(File::open(args.data.kekkon)?))
+        .build()?;
 
     let mut card_status: Vec<(u16, String, bool, bool, bool)> = vec![];
 

@@ -5,6 +5,76 @@ use std::{collections::HashMap, error::Error, io::Read, ops::Deref};
 
 use crate::importer::kancolle_arcade_net::{self, BlueprintShip, BookShip, KekkonKakkoKari};
 
+// Based on https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+pub struct ShipsBuilder {
+    book: Option<Box<dyn Read>>,
+    blueprint: Option<Box<dyn Read>>,
+    kekkon: Option<Box<dyn Read>>,
+}
+
+impl Default for ShipsBuilder {
+    fn default() -> Self {
+        Self {
+            book: None,
+            blueprint: None,
+            kekkon: None,
+        }
+    }
+}
+
+impl ShipsBuilder {
+    pub fn new() -> ShipsBuilder {
+        ShipsBuilder {
+            book: None,
+            blueprint: None,
+            kekkon: None,
+        }
+    }
+
+    pub fn build(self) -> Result<Ships, Box<dyn Error>> {
+        Ships::new(self)
+    }
+
+    pub fn no_book(mut self) -> ShipsBuilder {
+        self.book = None;
+        self
+    }
+
+    pub fn book_from_reader<R>(mut self, reader: R) -> ShipsBuilder
+    where
+        R: Read + 'static,
+    {
+        self.book = Some(Box::new(reader));
+        self
+    }
+
+    pub fn no_blueprint(mut self) -> ShipsBuilder {
+        self.blueprint = None;
+        self
+    }
+
+    pub fn blueprint_from_reader<R>(mut self, reader: R) -> ShipsBuilder
+    where
+        R: Read + 'static,
+    {
+        self.blueprint = Some(Box::new(reader));
+        self
+    }
+
+    pub fn no_kekkon(mut self) -> ShipsBuilder {
+        self.kekkon = None;
+        self
+    }
+
+    pub fn kekkon_from_reader<R>(mut self, reader: R) -> ShipsBuilder
+    where
+        R: Read + 'static,
+    {
+        self.kekkon = Some(Box::new(reader));
+        self
+    }
+}
+
 pub struct Ships(HashMap<String, Ship>);
 
 // Implementing Deref but not DerefMut so it can't be mutated.
@@ -14,30 +84,6 @@ impl Deref for Ships {
     fn deref(&self) -> &Self::Target {
         &self.0
     }
-}
-
-#[derive(Default)]
-pub enum UserDataSource<'a> {
-    #[default]
-    None,
-    FromReader(&'a mut dyn Read),
-    // FromSega // TODO: Authentication data needed.
-}
-
-#[derive(Default)]
-pub enum GlobalDataSource<'a> {
-    #[default]
-    Static,
-    FromReader(&'a mut dyn Read),
-    // FromUpstream // TODO: Authentication data needed in some cases...
-}
-
-#[derive(Default)]
-pub struct DataSources<'a> {
-    pub book: UserDataSource<'a>,
-    pub blueprint: UserDataSource<'a>,
-
-    pub kekkon: GlobalDataSource<'a>,
 }
 
 /// Determine the blueprint/unmodified ship name for the given ship
@@ -67,28 +113,24 @@ fn ship_blueprint_name(ship_name: &str) -> &str {
 
 impl Ships {
     /// Import a list of ships from the given datasource
-    pub fn new(data_sources: DataSources) -> Result<Self, Box<dyn Error>> {
-        let book = match data_sources.book {
-            UserDataSource::None => None,
-            UserDataSource::FromReader(reader) => {
+    fn new(builder: ShipsBuilder) -> Result<Self, Box<dyn Error>> {
+        let book = match builder.book {
+            None => None,
+            Some(reader) => {
                 let mut book = kancolle_arcade_net::read_tclist(reader)?;
                 book.retain(|ship| ship.acquire_num > 0);
                 Some(book)
             }
         };
 
-        let bplist = match data_sources.blueprint {
-            UserDataSource::None => None,
-            UserDataSource::FromReader(reader) => {
-                Some(kancolle_arcade_net::read_blueprintlist(reader)?)
-            }
+        let bplist = match builder.blueprint {
+            None => None,
+            Some(reader) => Some(kancolle_arcade_net::read_blueprintlist(reader)?),
         };
 
-        let kekkonlist = match data_sources.kekkon {
-            GlobalDataSource::Static => None, // TODO.
-            GlobalDataSource::FromReader(reader) => {
-                Some(kancolle_arcade_net::read_kekkonkakkokarilist(reader)?)
-            }
+        let kekkonlist = match builder.kekkon {
+            None => None,
+            Some(reader) => Some(kancolle_arcade_net::read_kekkonkakkokarilist(reader)?),
         };
 
         // TODO: Can we precalculate capacity? What happens if we undershoot by a bit?

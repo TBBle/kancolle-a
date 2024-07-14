@@ -57,7 +57,7 @@ fn kekkon_path_parser() -> impl Parser<PathBuf> {
         .argument::<PathBuf>("KEKKON")
 }
 
-/// A common CLI parser for getting the data needed to populate ships::DataSources
+/// A common CLI parser for getting the data needed to populate ships::ShipsBuilder
 // TODO: These will get complex, so write it once and share it.
 #[derive(Debug, Clone)]
 pub struct ShipSourceDataOptions {
@@ -72,8 +72,7 @@ pub fn ship_file_sources_parser() -> impl Parser<ShipSourceDataOptions> {
     let bplist = bplist_path_parser();
     // TODO: Make this optional, once Static is implemented.
     let kekkon = kekkon_path_parser();
-    // TODO: Can we actually output a DataSources, or set of UserDataSournce/GlobalDataSource here?
-    // Lifetime is tricky, those reference mut dyn readers. (Might have to Box them...)
+    // TODO: Can we actually output a single ShipsBuilder here?
     // Maybe a helper function to call on the run-time result of this parser...
     construct!(ShipSourceDataOptions {
         tcbook,
