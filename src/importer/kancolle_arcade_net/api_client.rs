@@ -62,10 +62,10 @@ fn url_for_endpoint(endpoint: &ApiEndpoint) -> String {
             "https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json".to_string()
         }
 
-        TcBookInfo => format!("{API_BASE}/TcBook/info"),
-        BlueprintListInfo => format!("{API_BASE}/BlueprintList/info"),
-        PlaceDistricts => format!("{API_BASE}/Place/districts"),
-        PlacePlaces => format!("{API_BASE}/Place/places"),
+        TcBookInfo => format!("{API_BASE}TcBook/info"),
+        BlueprintListInfo => format!("{API_BASE}BlueprintList/info"),
+        PlaceDistricts => format!("{API_BASE}Place/districts"),
+        PlacePlaces => format!("{API_BASE}Place/places"),
         Other(raw_path) => format!("{API_BASE}/{raw_path}"),
     }
 }
