@@ -35,7 +35,7 @@ pub(crate) mod args {
     }
 
     #[test]
-    fn kca_missing_card_reports_check_options() {
+    fn kca_missing_card_report_check_options() {
         options().check_invariants(false)
     }
 }

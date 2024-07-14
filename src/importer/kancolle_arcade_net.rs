@@ -15,3 +15,8 @@ pub use place::places::*;
 
 mod kekkonkakkokari;
 pub use kekkonkakkokari::kanmusu_list::*;
+
+#[cfg(not(target_family = "wasm"))]
+mod api_client;
+#[cfg(not(target_family = "wasm"))]
+pub use api_client::*;
