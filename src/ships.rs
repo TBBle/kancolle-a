@@ -4,7 +4,7 @@ use derive_getters::Getters;
 use std::{collections::HashMap, error::Error, io::Read, ops::Deref};
 
 use crate::importer::kancolle_arcade_net::{
-    self, BlueprintShip, BookShip, KekkonKakkoKari, KANMUSU,
+    self, ApiEndpoint, BlueprintShip, BookShip, ClientBuilder, KekkonKakkoKari, KANMUSU,
 };
 
 // Based on https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
@@ -12,16 +12,12 @@ pub struct ShipsBuilder {
     book: Option<Box<dyn Read>>,
     blueprint: Option<Box<dyn Read>>,
     kekkon: Option<Box<dyn Read>>,
+    api_client_builder: Option<ClientBuilder>,
 }
 
 impl Default for ShipsBuilder {
     fn default() -> Self {
-        Self {
-            book: None,
-            blueprint: None,
-            kekkon: None,
-        }
-        .static_kekkon()
+        Self::new().static_kekkon()
     }
 }
 
@@ -31,10 +27,22 @@ impl ShipsBuilder {
             book: None,
             blueprint: None,
             kekkon: None,
+            api_client_builder: None,
         }
     }
 
-    pub fn build(self) -> Result<Ships, Box<dyn Error>> {
+    pub fn build(mut self) -> Result<Ships, Box<dyn Error>> {
+        if let Some(ref api_client_builder) = self.api_client_builder {
+            if self.book.is_none() || self.blueprint.is_none() {
+                let client = api_client_builder.build()?;
+                if self.book.is_none() {
+                    self.book = Some(client.fetch(ApiEndpoint::TcBookInfo)?)
+                };
+                if self.blueprint.is_none() {
+                    self.blueprint = Some(client.fetch(ApiEndpoint::BlueprintListInfo)?)
+                }
+            }
+        }
         Ships::new(self)
     }
 
@@ -78,6 +86,11 @@ impl ShipsBuilder {
         R: Read + 'static,
     {
         self.kekkon = Some(Box::new(reader));
+        self
+    }
+
+    pub fn jsessionid(mut self, jsessionid: String) -> ShipsBuilder {
+        self.api_client_builder = Some(ClientBuilder::new().jsessionid(jsessionid));
         self
     }
 }
@@ -145,7 +158,6 @@ impl Ships {
         let mut ships: HashMap<String, Ship> = HashMap::with_capacity(500);
 
         // Kekkon list is a convenient source of distinct ship names, if we have it.
-        // TODO: This should never be None, once Static is implemented.
         if let Some(kekkonlist) = kekkonlist {
             for kekkon in kekkonlist.into_iter() {
                 let book_ship = if let Some(book) = book.as_ref() {

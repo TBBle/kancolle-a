@@ -36,16 +36,25 @@ pub fn book_ship_card_page_source_parser() -> impl Parser<BookShipCardPageSource
         .display_fallback()
 }
 
-fn tcbook_path_parser() -> impl Parser<PathBuf> {
+fn jsessionid_parser() -> impl Parser<Option<String>> {
+    long("jsessionid")
+        .help("The JSESSIONID cookie value from https://kancolle-arcade.net/ac/")
+        .argument("JSESSIONID")
+        .optional()
+}
+
+fn tcbook_path_parser() -> impl Parser<Option<PathBuf>> {
     long("tcbook")
         .help("A copy of your https://kancolle-arcade.net/ac/api/TcBook/info")
         .argument::<PathBuf>("TCBOOK")
+        .optional()
 }
 
-fn bplist_path_parser() -> impl Parser<PathBuf> {
+fn bplist_path_parser() -> impl Parser<Option<PathBuf>> {
     long("bplist")
         .help("A copy of your https://kancolle-arcade.net/ac/api/BlueprintList/info")
         .argument::<PathBuf>("BPLIST")
+        .optional()
 }
 
 pub fn places_path_parser() -> impl Parser<PathBuf> {
@@ -64,17 +73,19 @@ fn kekkon_path_parser() -> impl Parser<Option<PathBuf>> {
 /// A common CLI parser for getting the data needed to populate ships::ShipsBuilder
 #[derive(Debug, Clone)]
 pub struct ShipSourceDataOptions {
-    pub tcbook: PathBuf,
-    pub bplist: PathBuf,
+    pub tcbook: Option<PathBuf>,
+    pub bplist: Option<PathBuf>,
     pub kekkon: Option<PathBuf>,
+    pub jsessionid: Option<String>,
 }
 
 pub fn ship_source_data_parser() -> impl Parser<ShipSourceDataOptions> {
-    // TODO: Make book and/or bplist optional.
+    let jsessionid = jsessionid_parser();
     let tcbook = tcbook_path_parser();
     let bplist = bplist_path_parser();
     let kekkon = kekkon_path_parser();
     construct!(ShipSourceDataOptions {
+        jsessionid,
         tcbook,
         bplist,
         kekkon
@@ -83,13 +94,19 @@ pub fn ship_source_data_parser() -> impl Parser<ShipSourceDataOptions> {
 
 pub fn ship_source_data_applier(
     args: &ShipSourceDataOptions,
-    builder: ShipsBuilder,
+    mut builder: ShipsBuilder,
 ) -> Result<ShipsBuilder, Box<dyn Error>> {
-    let mut builder = builder
-        .book_from_reader(BufReader::new(File::open(&args.tcbook)?))
-        .blueprint_from_reader(BufReader::new(File::open(&args.bplist)?));
+    if let Some(tcbook) = &args.tcbook {
+        builder = builder.book_from_reader(BufReader::new(File::open(tcbook)?));
+    }
+    if let Some(bplist) = &args.bplist {
+        builder = builder.blueprint_from_reader(BufReader::new(File::open(bplist)?));
+    }
     if let Some(kekkon) = &args.kekkon {
         builder = builder.kekkon_from_reader(BufReader::new(File::open(kekkon)?));
+    }
+    if let Some(jsessionid) = &args.jsessionid {
+        builder = builder.jsessionid(jsessionid.clone());
     }
 
     Ok(builder)
