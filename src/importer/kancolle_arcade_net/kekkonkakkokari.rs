@@ -5,6 +5,12 @@ pub mod kanmusu_list {
     use serde_json::Result;
     use std::io::Read;
 
+    use lazy_static_include::*;
+
+    lazy_static_include_bytes! {
+        pub(crate) KANMUSU => "src/importer/kancolle_arcade_net/kekkonkakkokari/kanmusu_list.json",
+    }
+
     // ケッコンカッコカリ, aka 結婚（仮）
     pub(crate) type KekkonKakkoKariList = Vec<KekkonKakkoKari>;
 

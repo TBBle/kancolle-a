@@ -23,6 +23,16 @@ fn test_ships_null_import() {
 }
 
 #[test]
+fn test_ships_default_import() {
+    let ships = ShipsBuilder::default().build().unwrap();
+
+    assert_eq!(ships.len(), 441);
+    assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_some()));
+    assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
+    assert!(ships.iter().all(|(_, ship)| ship.book().is_none()));
+}
+
+#[test]
 fn test_ships_kekkon_only_import() {
     let ships = ShipsBuilder::new()
         .kekkon_from_reader(KANMUSU.as_ref())

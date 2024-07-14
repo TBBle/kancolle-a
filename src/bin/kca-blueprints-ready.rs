@@ -1,6 +1,4 @@
-use kancolle_a::ships::ShipsBuilder;
-use std::fs::File;
-use std::io::BufReader;
+use kancolle_a::{cli_helpers, ships::ShipsBuilder};
 use std::{collections::HashMap, error::Error};
 
 /// Report the number of blueprints and large-scale blueprints needed for each stage.
@@ -38,7 +36,7 @@ pub(crate) mod args {
     }
 
     pub fn options() -> OptionParser<Options> {
-        let data = cli_helpers::ship_file_sources_parser();
+        let data = cli_helpers::ship_source_data_parser();
         construct!(Options { data })
             .to_options()
             .descr("A tool to report on blueprint status for your collection.")
@@ -53,11 +51,8 @@ pub(crate) mod args {
 fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
 
-    let ships = ShipsBuilder::default()
-        .book_from_reader(BufReader::new(File::open(args.data.tcbook)?))
-        .blueprint_from_reader(BufReader::new(File::open(args.data.bplist)?))
-        .kekkon_from_reader(BufReader::new(File::open(args.data.kekkon)?))
-        .build()?;
+    let ships =
+        cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?.build()?;
 
     // Build card chain lists. This should probably be in the library somewhere.
 

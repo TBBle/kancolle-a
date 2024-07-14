@@ -3,7 +3,9 @@
 use derive_getters::Getters;
 use std::{collections::HashMap, error::Error, io::Read, ops::Deref};
 
-use crate::importer::kancolle_arcade_net::{self, BlueprintShip, BookShip, KekkonKakkoKari};
+use crate::importer::kancolle_arcade_net::{
+    self, BlueprintShip, BookShip, KekkonKakkoKari, KANMUSU,
+};
 
 // Based on https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 pub struct ShipsBuilder {
@@ -19,6 +21,7 @@ impl Default for ShipsBuilder {
             blueprint: None,
             kekkon: None,
         }
+        .static_kekkon()
     }
 }
 
@@ -64,6 +67,10 @@ impl ShipsBuilder {
     pub fn no_kekkon(mut self) -> ShipsBuilder {
         self.kekkon = None;
         self
+    }
+
+    pub fn static_kekkon(self) -> ShipsBuilder {
+        self.kekkon_from_reader(KANMUSU.as_ref())
     }
 
     pub fn kekkon_from_reader<R>(mut self, reader: R) -> ShipsBuilder

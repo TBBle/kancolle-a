@@ -1,9 +1,8 @@
 use kancolle_a::{
-    importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants, ships::ShipsBuilder,
+    cli_helpers, importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants,
+    ships::ShipsBuilder,
 };
 use std::error::Error;
-use std::fs::File;
-use std::io::BufReader;
 
 pub(crate) mod args {
     use kancolle_a::cli_helpers::{self, ShipSourceDataOptions};
@@ -19,7 +18,7 @@ pub(crate) mod args {
     }
 
     pub fn options() -> OptionParser<Options> {
-        let data = cli_helpers::ship_file_sources_parser();
+        let data = cli_helpers::ship_source_data_parser();
         let source = cli_helpers::book_ship_card_page_source_parser();
 
         let skip_unseen = long("skip-unseen")
@@ -44,11 +43,8 @@ pub(crate) mod args {
 fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
 
-    let ships = ShipsBuilder::default()
-        .book_from_reader(BufReader::new(File::open(args.data.tcbook)?))
-        .blueprint_from_reader(BufReader::new(File::open(args.data.bplist)?))
-        .kekkon_from_reader(BufReader::new(File::open(args.data.kekkon)?))
-        .build()?;
+    let ships =
+        cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?.build()?;
 
     let mut card_status: Vec<(u16, String, bool, bool, bool)> = vec![];
 

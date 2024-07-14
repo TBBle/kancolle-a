@@ -1,10 +1,13 @@
-use std::path::PathBuf;
-
-use crate::importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants;
-use itertools;
-use strum::VariantNames;
-
+use crate::{
+    importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants, ships::ShipsBuilder,
+};
 use bpaf::*;
+use itertools;
+use std::error::Error;
+use std::fs::File;
+use std::io::BufReader;
+use std::path::PathBuf;
+use strum::VariantNames;
 
 // Per https://github.com/pacak/bpaf/discussions/197
 pub fn book_ship_card_page_source_parser() -> impl Parser<BookShipCardPageSourceDiscriminants> {
@@ -51,32 +54,43 @@ pub fn places_path_parser() -> impl Parser<PathBuf> {
         .argument::<PathBuf>("PLACES")
 }
 
-fn kekkon_path_parser() -> impl Parser<PathBuf> {
+fn kekkon_path_parser() -> impl Parser<Option<PathBuf>> {
     long("kekkon")
-        .help("A copy of https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json")
+        .help("An optional copy of https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json to override the builtin data")
         .argument::<PathBuf>("KEKKON")
+        .optional()
 }
 
 /// A common CLI parser for getting the data needed to populate ships::ShipsBuilder
-// TODO: These will get complex, so write it once and share it.
 #[derive(Debug, Clone)]
 pub struct ShipSourceDataOptions {
     pub tcbook: PathBuf,
     pub bplist: PathBuf,
-    pub kekkon: PathBuf,
+    pub kekkon: Option<PathBuf>,
 }
 
-pub fn ship_file_sources_parser() -> impl Parser<ShipSourceDataOptions> {
+pub fn ship_source_data_parser() -> impl Parser<ShipSourceDataOptions> {
     // TODO: Make book and/or bplist optional.
     let tcbook = tcbook_path_parser();
     let bplist = bplist_path_parser();
-    // TODO: Make this optional, once Static is implemented.
     let kekkon = kekkon_path_parser();
-    // TODO: Can we actually output a single ShipsBuilder here?
-    // Maybe a helper function to call on the run-time result of this parser...
     construct!(ShipSourceDataOptions {
         tcbook,
         bplist,
         kekkon
     })
+}
+
+pub fn ship_source_data_applier(
+    args: &ShipSourceDataOptions,
+    builder: ShipsBuilder,
+) -> Result<ShipsBuilder, Box<dyn Error>> {
+    let mut builder = builder
+        .book_from_reader(BufReader::new(File::open(&args.tcbook)?))
+        .blueprint_from_reader(BufReader::new(File::open(&args.bplist)?));
+    if let Some(kekkon) = &args.kekkon {
+        builder = builder.kekkon_from_reader(BufReader::new(File::open(kekkon)?));
+    }
+
+    Ok(builder)
 }
