@@ -59,6 +59,29 @@ fn main() -> Result<(), Box<dyn Error>> {
             BookShipCardPageSourceDiscriminants::from(book.source(page.priority)) == target_source
         }) {
             let (row1, row2) = page.card_img_list.split_at(3);
+            // 雪風 has no swimsuits, but 雪風改 does. And they share a book entry.
+            // TODO: Handle this in the library somehow.
+            // Probably need to replace direct card_img_list access with a function that returns the right list.
+            // That'll nicely also take a source name, rather than an index.
+            if target_source == BookShipCardPageSourceDiscriminants::Swimsuit {
+                if ship_name == "雪風" {
+                    assert!(row1.len() == 3);
+                    assert!(row2.len() == 0);
+                    continue;
+                }
+                if ship_name == "雪風改" {
+                    assert!(row1.len() == 3);
+                    assert!(row2.len() == 0);
+                    card_status.push((
+                        book.book_no,
+                        ship_name.clone(),
+                        !row1[0].is_empty(),
+                        !row1[1].is_empty(),
+                        !row1[2].is_empty(),
+                    ));
+                    continue;
+                }
+            }
             if !ship.book_secondrow() {
                 card_status.push((
                     book.book_no,
