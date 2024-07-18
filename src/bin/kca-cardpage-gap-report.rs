@@ -32,7 +32,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let mut unknown_pages: Vec<(u16, &str, Vec<u16>, Vec<u16>)> = vec![];
 
-    for ship in ships.iter().filter_map(|(_, ship)| ship.book().as_ref()) {
+    for (ship_name, ship) in ships
+        .iter()
+        .filter_map(|(ship_name, ship)| ship.book().as_ref().map(|ship| (ship_name, ship)))
+    {
         let mut knowable: Vec<u16> = vec![];
         let mut unknown: Vec<u16> = vec![];
         for page in &ship.card_list[1..] {
@@ -51,7 +54,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             }
         }
         if !knowable.is_empty() || !unknown.is_empty() {
-            unknown_pages.push((ship.book_no, &ship.ship_name, knowable, unknown));
+            unknown_pages.push((ship.book_no, ship_name, knowable, unknown));
         }
     }
 

@@ -257,6 +257,8 @@ fn init_book_ship_sources() {
         sources.insert(242, vec![Halloween]);
         // Libeccio, Libeccio改: https://kancolle-a.sega.jp/players/information/190729_1.html
         sources.insert(243, vec![Swimsuit]);
+        // 秋津洲, 秋津洲改: https://kancolle-a.sega.jp/players/information/2207_join_akitusima_swim.html
+        sources.insert(245, vec![Swimsuit]);
         // Italia: https://kancolle-a.sega.jp/players/information/200728_1.html
         sources.insert(246, vec![Swimsuit]);
         // Zara, Zara改: https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
@@ -284,6 +286,8 @@ fn init_book_ship_sources() {
         // Richelieu, Richelieu改: https://kancolle-a.sega.jp/players/information/2312_haregimode.html
         sources.insert(292, vec![SundayBest]);
         sources.insert(391, vec![OriginalIllustration(1)]);
+        // Fletcher, Fletcher改: https://kancolle-a.sega.jp/players/information/2407_join_fletcher_swim.html
+        sources.insert(396, vec![Swimsuit]);
 
         // These cannot be determined yet, as there's multiple variations I don't
         // have in my current data
@@ -312,7 +316,6 @@ fn init_book_ship_sources() {
         // 翔鶴改二甲: https://kancolle-a.sega.jp/players/information/211214_1.html
         // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
         // 鈴谷改二: https://kancolle-a.sega.jp/players/information/201201_1.html
-        // 秋津洲, 秋津洲改: https://kancolle-a.sega.jp/players/information/2207_join_akitusima_swim.html
         // Johnston, Johnston改: https://kancolle-a.sega.jp/players/information/2207_join_Johnston_swim.html
         // Gotland, Gotland改: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
 
