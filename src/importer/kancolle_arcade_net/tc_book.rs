@@ -271,6 +271,8 @@ fn init_book_ship_sources() {
         sources.insert(260, vec![Christmas]);
         // 朝潮改二: https://kancolle-a.sega.jp/players/information/201013_1.html
         sources.insert(263, vec![Halloween]);
+        // 霞改二: https://kancolle-a.sega.jp/players/information/200805_1.html
+        sources.insert(264, vec![Swimsuit]);
         // 鹿島, 鹿島改: https://kancolle-a.sega.jp/players/information/201201_1.html
         sources.insert(265, vec![Christmas]);
         // 霞改二乙: https://kancolle-a.sega.jp/players/information/200805_1.html
@@ -306,7 +308,6 @@ fn init_book_ship_sources() {
         sources.insert(288, vec![Unknown, Unknown]);
 
         // Info store for ships I don't have at all.
-        // 霞改二: https://kancolle-a.sega.jp/players/information/200805_1.html
         // 朝潮改二, 朝潮改二丁: https://kancolle-a.sega.jp/players/information/201013_1.html
         // 呂500: https://kancolle-a.sega.jp/players/information/210914_1.html
         // Grecale, Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
