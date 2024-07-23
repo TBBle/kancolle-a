@@ -287,6 +287,8 @@ fn init_book_ship_sources() {
         sources.insert(289, vec![SurigaoStrait, PacificSaury]);
         // Richelieu, Richelieu改: https://kancolle-a.sega.jp/players/information/2312_haregimode.html
         sources.insert(292, vec![SundayBest]);
+        // Johnston, Johnston改: https://kancolle-a.sega.jp/players/information/2207_join_Johnston_swim.html
+        sources.insert(362, vec![Swimsuit]);
         sources.insert(391, vec![OriginalIllustration(1)]);
         // Fletcher, Fletcher改: https://kancolle-a.sega.jp/players/information/2407_join_fletcher_swim.html
         sources.insert(396, vec![Swimsuit]);
@@ -317,7 +319,6 @@ fn init_book_ship_sources() {
         // 翔鶴改二甲: https://kancolle-a.sega.jp/players/information/211214_1.html
         // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
         // 鈴谷改二: https://kancolle-a.sega.jp/players/information/201201_1.html
-        // Johnston, Johnston改: https://kancolle-a.sega.jp/players/information/2207_join_Johnston_swim.html
         // Gotland, Gotland改: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
 
         // TODO: Original Illustration details
