@@ -1,3 +1,4 @@
+use jsonxf::Formatter;
 use kancolle_a::importer::kancolle_arcade_net::{ApiEndpoint, Client, ClientBuilder};
 use std::io::Read;
 use std::{error::Error, fs};
@@ -24,11 +25,20 @@ pub(crate) mod args {
     }
 }
 
-fn fetch_to_fixture(client: &Client, endpoint: &ApiEndpoint) -> Result<(), Box<dyn Error>> {
+fn fetch_to_fixture(
+    client: &Client,
+    formatter: &mut Formatter,
+    endpoint: &ApiEndpoint,
+) -> Result<(), Box<dyn Error>> {
     let mut data = String::new();
     let filename = fixture_filename(&endpoint);
     client.fetch(&endpoint)?.read_to_string(&mut data)?;
-    fs::write(format!("tests/fixtures/latest/{filename}"), data)?;
+    let data = formatter.format(&data)?;
+    fs::write(
+        format!("tests/fixtures/latest/{filename}"),
+        // Not sure why there's a leading newline here. jsonxf docs don't show it.
+        data.trim_start(),
+    )?;
     Ok(())
 }
 
@@ -74,41 +84,44 @@ fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
 
     let client = ClientBuilder::new().jsessionid(args.jsessionid).build()?;
+    let mut formatter = Formatter::pretty_printer();
+    formatter.indent = "    ".to_string();
+    formatter.trailing_output = "\n".to_string();
 
     // Auth not required for these
 
-    fetch_to_fixture(&client, &ApiEndpoint::KanmusuList)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::KanmusuList)?;
 
-    fetch_to_fixture(&client, &ApiEndpoint::EventHold)?;
-    fetch_to_fixture(&client, &ApiEndpoint::EventInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::PlaceDistricts)?;
-    fetch_to_fixture(&client, &ApiEndpoint::PlacePlaces)?;
-    fetch_to_fixture(&client, &ApiEndpoint::RankingMonthlyCurrent)?;
-    fetch_to_fixture(&client, &ApiEndpoint::RankingMonthlyPrev)?;
-    fetch_to_fixture(&client, &ApiEndpoint::RankingTotal)?;
-    fetch_to_fixture(&client, &ApiEndpoint::TcErrorDispFlag)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EventHold)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EventInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::PlaceDistricts)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::PlacePlaces)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::RankingMonthlyCurrent)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::RankingMonthlyPrev)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::RankingTotal)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::TcErrorDispFlag)?;
 
     // Auth is required for the below
 
-    fetch_to_fixture(&client, &ApiEndpoint::AimeCampaignHold)?;
-    fetch_to_fixture(&client, &ApiEndpoint::AimeCampaignInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::AreaCaptureInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::BlueprintListInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::CampaignHistory)?;
-    fetch_to_fixture(&client, &ApiEndpoint::CampaignInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::CampaignPresent)?;
-    fetch_to_fixture(&client, &ApiEndpoint::CharacterListInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::CopCheckreward)?;
-    fetch_to_fixture(&client, &ApiEndpoint::EpFesHold)?;
-    fetch_to_fixture(&client, &ApiEndpoint::EpFesProgress)?;
-    fetch_to_fixture(&client, &ApiEndpoint::EquipBookInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::EquipListInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::ExerciseInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::NCampInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::PersonalBasicInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::QuestInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::RoomItemListInfo)?;
-    fetch_to_fixture(&client, &ApiEndpoint::TcBookInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::AimeCampaignHold)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::AimeCampaignInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::AreaCaptureInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::BlueprintListInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CampaignHistory)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CampaignInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CampaignPresent)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CharacterListInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CopCheckreward)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EpFesHold)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EpFesProgress)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EquipBookInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EquipListInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::ExerciseInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::NCampInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::PersonalBasicInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::QuestInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::RoomItemListInfo)?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::TcBookInfo)?;
 
     Ok(())
 }
