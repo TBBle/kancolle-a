@@ -49,10 +49,16 @@ pub enum ApiEndpoint {
     EventHold,
     EventInfo,
     PlaceDistricts,
+    // PlaceExclude,
     PlacePlaces,
+    // PlacePlacesFromHere, // Takes query parameters
+    // PlaceVerified,
     RankingMonthlyCurrent,
     RankingMonthlyPrev,
     RankingTotal,
+    // TcErrorInfo,
+    // TcErrorRequest, // POST
+    // TcErrorReceive, // POST
     TcErrorDispFlag,
 
     // Per-user data: Authentication needed, contains personal info
@@ -65,19 +71,32 @@ pub enum ApiEndpoint {
     CampaignPresent,
     CharacterListInfo,
     CopCheckreward,
+    // CopInfo,
+    // CopHold,
     EpFesHold,
     EpFesProgress,
     EquipBookInfo,
     EquipListInfo,
     ExerciseInfo,
+    // NCampExchange, // POST
+    // NCampHistory,
     NCampInfo,
+    // NCampJoin,
+    // NCampPlace, // Takes query parameters
     PersonalBasicInfo,
     QuestInfo,
     RoomItemListInfo,
     TcBookInfo,
 
-    // TODO: Takes parameters, will need special handling. Maybe not in this enum.
-    // AuthAutoLogin // POST
+    // TODO: Auth stuff, will need special handling. Maybe not in this enum?
+    // AuthAutoLogin, // POST
+    // AuthLogin, // POST
+    // AuthTokenDelete, // POST
+    // AuthLoginState,
+    // AuthLogout,
+    // AuthAccessCode, // POST
+    // SegaIdRegistration, // POST
+    // AimeCardRegistration, // POST
 
     // User-specified
     Other(String),
