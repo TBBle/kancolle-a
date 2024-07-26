@@ -1,0 +1,554 @@
+{
+    "limit": true,
+    "questList": [
+        {
+            "questDescription": "艦隊を出撃させ、**敵主力艦隊**を捕捉！これを**撃退**せよ！",
+            "questName": "敵主力艦隊を撃退せよ！",
+            "questCategory": 0,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34084,
+            "questNorma": 1,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                },
+                {
+                    "rewardKind": "BUCKET",
+                    "rewardValue": 1
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1721944800000,
+            "questEndTime": 1722031200000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "艦隊を**南西諸島海域**に全力出撃させ、多数の**敵艦隊**を捕捉、\r\n**撃退**せよ！",
+            "questName": "南西諸島海域の制海権を握れ！",
+            "questCategory": 0,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34085,
+            "questNorma": 5,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_COIN",
+                    "rewardValue": 10
+                }
+            ],
+            "questCurrentValue": 1,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1721944800000,
+            "questEndTime": 1722031200000,
+            "questDetailMessageList": [
+                {
+                    "groupNo": 0,
+                    "questCurrentValue": 1,
+                    "questNorma": 5,
+                    "infoList": [
+                        "沖ノ島沖戦闘哨戒",
+                        "沖ノ島海域",
+                        "東部オリョール海",
+                        "バシー島沖",
+                        "カムラン半島"
+                    ]
+                }
+            ]
+        },
+        {
+            "questDescription": "航空攻撃隊を編成、捕捉した**複数の敵艦隊**に**先制攻撃**を敢行せよ！",
+            "questName": "航空攻撃を敢行せよ！",
+            "questCategory": 0,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34091,
+            "questNorma": 3,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1721944800000,
+            "questEndTime": 1722031200000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "全力出撃を行い、可能な限り多くの**敵主力艦隊**を捕捉、\r\nこれを**撃滅**せよ！",
+            "questName": "敵主力艦隊を撃滅せよ！",
+            "questCategory": 1,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34133,
+            "questNorma": 3,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 10
+                }
+            ],
+            "questCurrentValue": 2,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "**アルフォンシーノ方面**または**北方海域全域**に出撃し、\r\n敵北方艦隊を捕捉、これを**撃退**せよ！",
+            "questName": "北方海域、掃討作戦！",
+            "questCategory": 1,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34136,
+            "questNorma": 5,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 20
+                }
+            ],
+            "questCurrentValue": 2,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": [
+                {
+                    "groupNo": 0,
+                    "questCurrentValue": 2,
+                    "questNorma": 5,
+                    "infoList": [
+                        "北方海域戦闘哨戒",
+                        "北方海域艦隊決戦",
+                        "アルフォンシーノ方面進出"
+                    ]
+                }
+            ]
+        },
+        {
+            "questDescription": "索敵機を発艦させ、敵艦隊を**１０回**以上**発見**せよ！",
+            "questName": "索敵機、発艦せよ！",
+            "questCategory": 1,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34142,
+            "questNorma": 10,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 20
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "艦隊の練度向上のため「**単独演習**」を**３回**実施せよ！",
+            "questName": "「単独演習」で練度向上！",
+            "questCategory": 1,
+            "questKind": 2,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34144,
+            "questNorma": 3,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 10
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "「**単独演習**」で高い練度を示し、**演習結果Ｓ**を**３回**獲得せよ！",
+            "questName": "「単独演習」で高成績を獲得せよ！",
+            "questCategory": 1,
+            "questKind": 2,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34145,
+            "questNorma": 3,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 20
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "艦隊の練度向上のため「**合同演習**」を**５回**実施せよ",
+            "questName": "「合同演習」で練度向上！",
+            "questCategory": 1,
+            "questKind": 2,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34146,
+            "questNorma": 5,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 30
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "「**合同演習**」で高い練度を示し、**演習結果Ｓ**を**３回**獲得せよ！",
+            "questName": "「合同演習」で高成績を獲得せよ！",
+            "questCategory": 1,
+            "questKind": 2,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34147,
+            "questNorma": 3,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 50
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "海上警備任務：**南西諸島沖警備、海上護衛作戦、**\r\n**南1号作戦、南西諸島哨戒**を実施、各作戦海域の敵を**撃滅**せよ！",
+            "questName": "兵站線確保！海上警備を強化実施せよ！",
+            "questCategory": 1,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34148,
+            "questNorma": 4,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 100
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_COIN",
+                    "rewardValue": 500
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": [
+                {
+                    "groupNo": 0,
+                    "questCurrentValue": 0,
+                    "questNorma": 1,
+                    "infoList": [
+                        "南西諸島沖"
+                    ]
+                },
+                {
+                    "groupNo": 1,
+                    "questCurrentValue": 0,
+                    "questNorma": 1,
+                    "infoList": [
+                        "製油所地帯沿岸"
+                    ]
+                },
+                {
+                    "groupNo": 2,
+                    "questCurrentValue": 0,
+                    "questNorma": 1,
+                    "infoList": [
+                        "南西諸島防衛線"
+                    ]
+                },
+                {
+                    "groupNo": 3,
+                    "questCurrentValue": 0,
+                    "questNorma": 1,
+                    "infoList": [
+                        "カムラン半島"
+                    ]
+                }
+            ]
+        },
+        {
+            "questDescription": "艦隊を**沖ノ島海域**に出撃させ、作戦内に**主力を含め３艦隊撃滅**し、\r\n残作戦時間「**３：００**」以上で作戦を遂行せよ！",
+            "questName": "緊急出撃！沖ノ島海域を奪取せよ！",
+            "questCategory": 1,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34149,
+            "questNorma": 1,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 50
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1721599200000,
+            "questEndTime": 1722204000000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "「**雷撃演習**」で、高い雷撃能力を示し\r\n**全ての標的**で**☆５評価**を獲得せよ！",
+            "questName": "「雷撃演習」で高成績を獲得せよ！",
+            "questCategory": 2,
+            "questKind": 2,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 11132,
+            "questNorma": 1,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 600
+                },
+                {
+                    "rewardKind": "EQUIPMENT",
+                    "rewardValue": 1
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "「**飛龍改二**」**を旗艦とし、**「**蒼龍**」**他駆逐艦２隻**を基幹とした\r\n新編「二航戦」で出撃、**珊瑚諸島沖**で敵主力艦隊を**撃滅**せよ！",
+            "questName": "新編「第二航空戦隊」出撃せよ！",
+            "questCategory": 2,
+            "questKind": 0,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 15931,
+            "questNorma": 1,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 250
+                },
+                {
+                    "rewardKind": "BUCKET",
+                    "rewardValue": 2
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "改装航空巡洋艦「**鈴谷改二**」**を旗艦**とした艦隊を編成し南方海域に\r\n展開、**南方海域前面、サブ島沖海域**に遊弋する敵艦隊群を**撃破**せよ",
+            "questName": "改装航空巡洋艦、出撃！",
+            "questCategory": 2,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 19147,
+            "questNorma": 2,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 250
+                },
+                {
+                    "rewardKind": "EQUIPMENT",
+                    "rewardValue": 1
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questDetailMessageList": [
+                {
+                    "groupNo": 0,
+                    "questCurrentValue": 0,
+                    "questNorma": 1,
+                    "infoList": [
+                        "南方海域進出作戦"
+                    ]
+                },
+                {
+                    "groupNo": 1,
+                    "questCurrentValue": 0,
+                    "questNorma": 1,
+                    "infoList": [
+                        "第一次サーモン沖海戦"
+                    ]
+                }
+            ]
+        },
+        {
+            "questDescription": "新型電探運用試験のため、**旗艦に**\r\n「**妙高改二**」を配備し、**出撃**せよ！",
+            "questName": "新型電探運用試験を実施せよ！",
+            "questCategory": 2,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 19150,
+            "questNorma": 1,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 250
+                },
+                {
+                    "rewardKind": "EQUIPMENT",
+                    "rewardValue": 1
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "「**摩耶改二**」「**鳥海改二**」**いずれかを旗艦**にした艦隊を編成、\r\n**アルフォンシーノ方面、カレー洋リランカ島沖**で敵を叩け！",
+            "questName": "精鋭「四戦隊」第二小隊、抜錨せよ！",
+            "questCategory": 2,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 23845,
+            "questNorma": 2,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 200
+                },
+                {
+                    "rewardKind": "EQUIPMENT",
+                    "rewardValue": 1
+                }
+            ],
+            "questCurrentValue": 1,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
+            "questDetailMessageList": [
+                {
+                    "groupNo": 0,
+                    "questCurrentValue": 0,
+                    "questNorma": 1,
+                    "infoList": [
+                        "アルフォンシーノ方面進出"
+                    ]
+                },
+                {
+                    "groupNo": 1,
+                    "questCurrentValue": 1,
+                    "questNorma": 1,
+                    "infoList": [
+                        "深海東洋艦隊漸減作戦"
+                    ]
+                }
+            ]
+        },
+        {
+            "questDescription": "「**長波改二**」を編成した艦隊で**南方海域**「**東京急行**」を実施、同海\r\n域に展開する敵艦艇を**撃滅**し、強行鼠輸送作戦を反復完遂せよ!",
+            "questName": "精鋭「三一駆」、鉄底海域に突入せよ！",
+            "questCategory": 2,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 27963,
+            "questNorma": 3,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 200
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_MEISTER",
+                    "rewardValue": 1
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_COIN",
+                    "rewardValue": 500
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "また<UKWW>集めですか？\r\nいくつ貰っても嬉しいですね！",
+            "questName": "提督、<UKWW>集めはお任せを。",
+            "questCategory": 2,
+            "questKind": 5,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34343,
+            "questNorma": 100,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 300
+                },
+                {
+                    "rewardKind": "EQUIPMENT",
+                    "rewardValue": 1
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_MEISTER",
+                    "rewardValue": 1
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_COIN",
+                    "rewardValue": 200
+                }
+            ],
+            "questCurrentValue": 38,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1721253600000,
+            "questEndTime": 1725487200000,
+            "questDetailMessageList": []
+        }
+    ]
+}

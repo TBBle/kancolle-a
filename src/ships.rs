@@ -36,10 +36,10 @@ impl ShipsBuilder {
             if self.book.is_none() || self.blueprint.is_none() {
                 let client = api_client_builder.build()?;
                 if self.book.is_none() {
-                    self.book = Some(client.fetch(ApiEndpoint::TcBookInfo)?)
+                    self.book = Some(client.fetch(&ApiEndpoint::TcBookInfo)?)
                 };
                 if self.blueprint.is_none() {
-                    self.blueprint = Some(client.fetch(ApiEndpoint::BlueprintListInfo)?)
+                    self.blueprint = Some(client.fetch(&ApiEndpoint::BlueprintListInfo)?)
                 }
             }
         }

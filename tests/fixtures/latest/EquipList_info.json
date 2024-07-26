@@ -1,0 +1,873 @@
+{
+    "maxSlotNum": 500,
+    "equipList": [
+        {
+            "type": 5,
+            "equipmentId": 256,
+            "name": "TBF",
+            "num": 1,
+            "img": "equip_icon_6_a2e6kq8r27wg.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 2,
+            "name": "12.7cm連装砲",
+            "num": 1,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 3,
+            "name": "10cm連装高角砲",
+            "num": 17,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 5,
+            "name": "15.5cm三連装砲",
+            "num": 9,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 6,
+            "name": "20.3cm連装砲",
+            "num": 21,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 7,
+            "name": "35.6cm連装砲",
+            "num": 12,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 8,
+            "name": "41cm連装砲",
+            "num": 11,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 9,
+            "name": "46cm三連装砲",
+            "num": 9,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 266,
+            "name": "12.7cm連装砲C型改二",
+            "num": 2,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 12,
+            "name": "15.5cm三連装副砲",
+            "num": 6,
+            "img": "equip_icon_4_mgy58yrghven.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 15,
+            "name": "61cm四連装(酸素)魚雷",
+            "num": 39,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 272,
+            "name": "遊撃部隊 艦隊司令部",
+            "num": 1,
+            "img": "equip_icon_28_kzmcmuxwe3q3.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 17,
+            "name": "天山",
+            "num": 6,
+            "img": "equip_icon_6_a2e6kq8r27wg.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 18,
+            "name": "流星",
+            "num": 7,
+            "img": "equip_icon_6_a2e6kq8r27wg.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 275,
+            "name": "10cm連装高角砲改＋増設機銃",
+            "num": 1,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 4,
+            "equipmentId": 22,
+            "name": "烈風",
+            "num": 9,
+            "img": "equip_icon_7_8t376u7vpyzm.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 24,
+            "name": "彗星",
+            "num": 9,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 25,
+            "name": "零式水上偵察機",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 26,
+            "name": "瑞雲",
+            "num": 5,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 284,
+            "name": "5inch単装砲 Mk.30",
+            "num": 3,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 28,
+            "name": "22号対水上電探",
+            "num": 4,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 285,
+            "name": "61cm三連装(酸素)魚雷後期型",
+            "num": 1,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 29,
+            "name": "33号対水上電探",
+            "num": 4,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 286,
+            "name": "61cm四連装(酸素)魚雷後期型",
+            "num": 2,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 30,
+            "name": "21号対空電探",
+            "num": 10,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 287,
+            "name": "三式爆雷投射機 集中配備",
+            "num": 1,
+            "img": "equip_icon_17_t753p5s1xs0h.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 31,
+            "name": "32号対水上電探",
+            "num": 1,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 32,
+            "name": "14号対空電探",
+            "num": 2,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 34,
+            "name": "強化型艦本式缶",
+            "num": 4,
+            "img": "equip_icon_12_556qjnbtokca.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 35,
+            "name": "三式弾",
+            "num": 4,
+            "img": "equip_icon_13_jdkmrexetpvn.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 291,
+            "name": "彗星二二型(六三四空)",
+            "num": 1,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 36,
+            "name": "九一式徹甲弾",
+            "num": 7,
+            "img": "equip_icon_14_7x6o1b4mwzdx.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 41,
+            "name": "甲標的 甲型",
+            "num": 10,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 44,
+            "name": "九四式爆雷投射機",
+            "num": 1,
+            "img": "equip_icon_17_t753p5s1xs0h.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 45,
+            "name": "三式爆雷投射機",
+            "num": 7,
+            "img": "equip_icon_17_t753p5s1xs0h.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 46,
+            "name": "九三式水中聴音機",
+            "num": 6,
+            "img": "equip_icon_18_34j48vvi4jhh.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 47,
+            "name": "三式水中探信儀",
+            "num": 5,
+            "img": "equip_icon_18_34j48vvi4jhh.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 49,
+            "name": "25mm単装機銃",
+            "num": 1,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 50,
+            "name": "20.3cm(3号)連装砲",
+            "num": 3,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 51,
+            "name": "12cm30連装噴進砲",
+            "num": 7,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 52,
+            "name": "流星改",
+            "num": 10,
+            "img": "equip_icon_6_a2e6kq8r27wg.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 54,
+            "name": "彩雲",
+            "num": 1,
+            "img": "equip_icon_9_s61o68iy522i.png"
+        },
+        {
+            "type": 4,
+            "equipmentId": 55,
+            "name": "紫電改二",
+            "num": 6,
+            "img": "equip_icon_7_8t376u7vpyzm.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 57,
+            "name": "彗星一二型甲",
+            "num": 10,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 314,
+            "name": "533mm五連装魚雷(初期型)",
+            "num": 2,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 58,
+            "name": "61cm五連装(酸素)魚雷",
+            "num": 1,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 60,
+            "name": "零式艦戦62型(爆戦)",
+            "num": 7,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 61,
+            "name": "二式艦上偵察機",
+            "num": 9,
+            "img": "equip_icon_9_s61o68iy522i.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 317,
+            "name": "三式弾改",
+            "num": 2,
+            "img": "equip_icon_13_jdkmrexetpvn.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 63,
+            "name": "12.7cm連装砲B型改二",
+            "num": 5,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 65,
+            "name": "15.2cm連装砲",
+            "num": 8,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 66,
+            "name": "8cm高角砲",
+            "num": 9,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 323,
+            "name": "瑞雲改二(六三四空/熟練)",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 68,
+            "name": "大発動艇",
+            "num": 3,
+            "img": "equip_icon_19_tmq6560tf2mb.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 324,
+            "name": "オ号観測機改",
+            "num": 1,
+            "img": "equip_icon_20_dmihxxxtj22b.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 69,
+            "name": "カ号観測機",
+            "num": 1,
+            "img": "equip_icon_20_dmihxxxtj22b.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 70,
+            "name": "三式指揮連絡機(対潜)",
+            "num": 1,
+            "img": "equip_icon_21_14t4m3a3hez8.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 71,
+            "name": "10cm連装高角砲(砲架)",
+            "num": 2,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 72,
+            "name": "増設バルジ(中型艦)",
+            "num": 8,
+            "img": "equip_icon_22_5mjv6kcq8c64.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 328,
+            "name": "35.6cm連装砲改",
+            "num": 2,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 329,
+            "name": "35.6cm連装砲改二",
+            "num": 1,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 74,
+            "name": "探照灯",
+            "num": 7,
+            "img": "equip_icon_23_bbrk4s8firij.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 75,
+            "name": "ドラム缶(輸送用)",
+            "num": 14,
+            "img": "equip_icon_24_o3clfmjqgem3.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 76,
+            "name": "38cm連装砲",
+            "num": 1,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 77,
+            "name": "15cm連装副砲",
+            "num": 1,
+            "img": "equip_icon_4_mgy58yrghven.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 78,
+            "name": "12.7cm単装砲",
+            "num": 1,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 79,
+            "name": "瑞雲(六三四空)",
+            "num": 2,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 80,
+            "name": "瑞雲12型",
+            "num": 2,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 83,
+            "name": "天山(九三一空)",
+            "num": 1,
+            "img": "equip_icon_6_a2e6kq8r27wg.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 86,
+            "name": "艦艇修理施設",
+            "num": 2,
+            "img": "equip_icon_25_d7ji78arf8xw.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 87,
+            "name": "新型高温高圧缶",
+            "num": 2,
+            "img": "equip_icon_12_556qjnbtokca.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 88,
+            "name": "22号対水上電探改四",
+            "num": 1,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 90,
+            "name": "20.3cm(2号)連装砲",
+            "num": 12,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 91,
+            "name": "12.7cm連装高角砲(後期型)",
+            "num": 10,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 92,
+            "name": "10cm高角砲＋高射装置",
+            "num": 8,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 93,
+            "name": "13号対空電探改",
+            "num": 6,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 94,
+            "name": "毘式40mm連装機銃",
+            "num": 4,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 100,
+            "name": "九七式艦攻(熟練)",
+            "num": 1,
+            "img": "equip_icon_6_a2e6kq8r27wg.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 101,
+            "name": "九九式艦爆(江草隊)",
+            "num": 1,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 103,
+            "name": "照明弾",
+            "num": 3,
+            "img": "equip_icon_27_bbebcy5482dq.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 104,
+            "name": "九八式水上偵察機(夜偵)",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 106,
+            "name": "35.6cm連装砲(ダズル迷彩)",
+            "num": 2,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 107,
+            "name": "試製41cm三連装砲",
+            "num": 5,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 363,
+            "name": "GFCS Mk.37＋5inch連装両用砲(集中配備)",
+            "num": 1,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 109,
+            "name": "熟練艦載機整備員",
+            "num": 1,
+            "img": "equip_icon_29_httgpsk80smm.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 116,
+            "name": "Ar196改",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 117,
+            "name": "一式徹甲弾",
+            "num": 1,
+            "img": "equip_icon_14_7x6o1b4mwzdx.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 120,
+            "name": "14cm連装砲",
+            "num": 5,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 122,
+            "name": "94式高射装置",
+            "num": 1,
+            "img": "equip_icon_30_43j8mb5y331k.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 123,
+            "name": "SKC34 20.3cm連装砲",
+            "num": 1,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 125,
+            "name": "61cm三連装(酸素)魚雷",
+            "num": 1,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 126,
+            "name": "WG42(Wurfgerät 42)",
+            "num": 1,
+            "img": "equip_icon_31_0uwvhylzvx34.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 128,
+            "name": "試製51cm連装砲",
+            "num": 1,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 129,
+            "name": "熟練見張員",
+            "num": 3,
+            "img": "equip_icon_32_hp2hc584rvml.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 131,
+            "name": "25mm三連装機銃 集中配備",
+            "num": 1,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 133,
+            "name": "381mm/50 三連装砲",
+            "num": 4,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 134,
+            "name": "OTO 152mm三連装速射砲",
+            "num": 3,
+            "img": "equip_icon_4_mgy58yrghven.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 135,
+            "name": "90mm単装高角砲",
+            "num": 1,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 136,
+            "name": "プリエーゼ式水中防御隔壁",
+            "num": 2,
+            "img": "equip_icon_22_5mjv6kcq8c64.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 137,
+            "name": "381mm/50 三連装砲改",
+            "num": 3,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 139,
+            "name": "15.2cm連装砲改",
+            "num": 1,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 140,
+            "name": "96式150cm探照灯",
+            "num": 1,
+            "img": "equip_icon_23_bbrk4s8firij.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 142,
+            "name": "15m二重測距儀+21号電探改二",
+            "num": 1,
+            "img": "equip_icon_11_xznvoamgip59.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 146,
+            "name": "洋上補給",
+            "num": 1,
+            "img": "equip_icon_35_2bxn3jj55jsy.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 147,
+            "name": "120mm連装砲",
+            "num": 1,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 154,
+            "name": "零戦62型(爆戦/岩井隊)",
+            "num": 1,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 4,
+            "equipmentId": 157,
+            "name": "零式艦戦53型(岩本隊)",
+            "num": 1,
+            "img": "equip_icon_7_8t376u7vpyzm.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 162,
+            "name": "203mm/53 連装砲",
+            "num": 3,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 163,
+            "name": "Ro.43水偵",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 166,
+            "name": "大発動艇(八九式中戦車＆陸戦隊)",
+            "num": 2,
+            "img": "equip_icon_19_tmq6560tf2mb.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 167,
+            "name": "特二式内火艇",
+            "num": 2,
+            "img": "equip_icon_37_vbnzupbow3sw.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 174,
+            "name": "53cm連装魚雷",
+            "num": 4,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 190,
+            "name": "38.1cm Mk.I連装砲",
+            "num": 4,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 191,
+            "name": "QF 2ポンド8連装ポンポン砲",
+            "num": 1,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 193,
+            "name": "特大発動艇",
+            "num": 2,
+            "img": "equip_icon_19_tmq6560tf2mb.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 195,
+            "name": "SBD",
+            "num": 1,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 4,
+            "equipmentId": 197,
+            "name": "F4F-3",
+            "num": 1,
+            "img": "equip_icon_7_8t376u7vpyzm.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 207,
+            "name": "瑞雲(六三一空)",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 468,
+            "name": "38cm四連装砲改 deux",
+            "num": 1,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 226,
+            "name": "九五式爆雷",
+            "num": 6,
+            "img": "equip_icon_17_t753p5s1xs0h.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 237,
+            "name": "瑞雲(六三四空/熟練)",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 238,
+            "name": "零式水上偵察機11型乙",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 245,
+            "name": "38cm四連装砲",
+            "num": 2,
+            "img": "equip_icon_3_me6e2ezu084a.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 247,
+            "name": "15.2cm三連装砲",
+            "num": 1,
+            "img": "equip_icon_4_mgy58yrghven.png"
+        }
+    ]
+}

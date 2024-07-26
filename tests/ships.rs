@@ -56,7 +56,7 @@ fn test_ships_blueprint_only_import() {
         .build()
         .unwrap();
 
-    assert_eq!(ships.len(), 132);
+    assert_eq!(ships.len(), 133);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.book().is_none()));
@@ -71,8 +71,8 @@ fn test_ships_book_only_import() {
         .build()
         .unwrap();
 
-    // 284 entries, 57 未取得, and of the remaining 227, 148 have two rows.
-    assert_eq!(ships.len(), 227 + 148);
+    // 284 entries, 50 未取得, and of the remaining 234, 149 have two rows.
+    assert_eq!(ships.len(), 234 + 149);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.book().is_some()));
@@ -82,14 +82,14 @@ fn test_ships_book_only_import() {
             .iter()
             .filter(|(_, ship)| !*ship.book_secondrow())
             .count(),
-        227
+        234
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| *ship.book_secondrow())
             .count(),
-        148
+        149
     );
 }
 
@@ -117,21 +117,21 @@ fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        319
+        324
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.book().is_some() && !*ship.book_secondrow())
             .count(),
-        227
+        234
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.book().is_some() && *ship.book_secondrow())
             .count(),
-        148
+        149
     );
 
     let non_kekkon_ships: Vec<&str> = ships

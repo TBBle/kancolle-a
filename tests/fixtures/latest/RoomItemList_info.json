@@ -1,0 +1,164 @@
+[
+    {
+        "kind": "WALL",
+        "sortIndex": 1,
+        "name": "普通の壁紙",
+        "description": "前任の提督が使っていたままの壁紙です。若干汚れていますし、なんとなく新調したい気もちょっぴりしますね。",
+        "star": 1,
+        "img": "room_ekeyrujp9t9.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 1,
+        "name": "鎮守府の床",
+        "description": "鎮守府の艦隊司令官室。その通常仕様の床板です。",
+        "star": 1,
+        "img": "room_hvmrso5v0z0.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 1,
+        "name": "ただの段ボール",
+        "description": "引っ越したてのなかなか片付かない段ボール。はやく捨てたい。",
+        "star": 1,
+        "img": "room_ivewrd9ffy6.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 2,
+        "name": "提督の机",
+        "description": "１クラス上の提督の貴方にお奨めしたい、執務机。この机なら連戦連勝、間違いなし！",
+        "star": 3,
+        "img": "room_fs4crj9tv3e.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 501,
+        "name": "煎餅布団",
+        "description": "書類一式にサインした提督のみが敷くことができる、シンプルにして至高の煎餅布団。読みかけの本が平和なひと時を感じさせます。",
+        "star": 5,
+        "img": "room_77ea8vthf8l.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 1,
+        "name": "赤カーテンの窓",
+        "description": "鎮守府に備え付けの基本的なデザインの赤いカーテンと窓。母港の様子が一望できます。",
+        "star": 1,
+        "img": "room_9mt4vkgg3y3.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 1,
+        "name": "壁掛け古時計",
+        "description": "大きなのっぽではない古時計です。優しく時を刻む音が、作戦立案で疲れた提督を癒します。",
+        "star": 1,
+        "img": "room_3235h1ti2v1.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 2,
+        "name": "花の絵画",
+        "description": "なんとなく壁がさみしい…そんな提督のココロを癒す、花の絵画。司令官室を華やかに演出。",
+        "star": 1,
+        "img": "room_n8bfbtwf8g0.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 14,
+        "name": "怪獣映画ポスター",
+        "description": "ちび大怪獣の襲来！迎え撃つ艦娘の勇姿！大ヒットした総天然色映画のポスターです。",
+        "star": 1,
+        "img": "room_sm4sa7vmd4e.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 1,
+        "name": "暖炉",
+        "description": "提督の執務室には暖炉が似合う！上には自慢の品を色々と飾っちゃいましょう！火事には注意してね。",
+        "star": 2,
+        "img": "room_wdr4el8hhs1.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 11,
+        "name": "鎮守府のツリー",
+        "description": "各鎮守府や拠点に贈られた白いツリー。少しずつ飾りも充実させていきたいですね…。作戦行動中の全提督の皆さんにお贈りします。",
+        "star": 2,
+        "img": "room_62qag6z1kms.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 2,
+        "name": "サイドボード",
+        "description": "各提督御用達の落ち着いた高品質でシックなサイドボードはいかが？鎮守府の雰囲気にもぴったりです。",
+        "star": 2,
+        "img": "room_qtt4c9w2e8x.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 27,
+        "name": "艦隊大漁旗",
+        "description": "第六駆逐隊のある駆逐艦が航海の安全と大漁を祈って司令官のために作った大漁旗です。手作りなので僚艦もお手伝いしたのです！",
+        "star": 4,
+        "img": "room_03ou3hffonx.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 29,
+        "name": "一六式大漁旗",
+        "description": "最新鋭を自負するある軽巡洋艦が、いえ、主にその妹が艦隊の航海の安全と大漁を祈って作った新大漁旗。長女たちも寄書き済みです！",
+        "star": 4,
+        "img": "room_6dkrflokui0.png",
+        "touchAction": true
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 401,
+        "name": "手編みとフローリング",
+        "description": "シンプルだけど手入れが行き届いたフローリングの上にちょこんと置かれたクッションと途中まで編まれた艦娘の手編みのマフラー。",
+        "star": 3,
+        "img": "room_ktad2s01r2q.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 30,
+        "name": "一七式大漁旗",
+        "description": "朝潮型駆逐艦で編成されたある元気な駆逐隊が、艦隊の航海の安全と秋刀魚大漁を祈って作った新大漁旗。アゲアゲで参りましょう。",
+        "star": 4,
+        "img": "room_4v3dxl0vvon.png",
+        "touchAction": true
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 31,
+        "name": "1YB第三部隊掛け軸",
+        "description": "スリガオ海峡に挑んだ第一遊撃部隊第三部隊。祈りと鎮魂の気持ちが込められた掛け軸です。いつまでも、忘れることはありません。",
+        "star": 5,
+        "img": "room_nrlnc2qpeqv.png",
+        "touchAction": true
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 509,
+        "name": "「八周年記念」掛け軸",
+        "description": "艦隊の八周年を記念して、第八戦隊のある航空巡洋艦娘が書いた力作の掛け軸。八周年を祝して、第八戦隊から提督に送ります。",
+        "star": 5,
+        "img": "room_3cx9ncwxsl3.png",
+        "touchAction": false
+    }
+]
