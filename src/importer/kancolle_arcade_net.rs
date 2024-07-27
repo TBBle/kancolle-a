@@ -9,6 +9,9 @@ pub use tc_book::*;
 mod blueprint_list;
 pub use blueprint_list::*;
 
+mod character_list;
+pub use character_list::*;
+
 mod place;
 pub use place::districts::*;
 pub use place::places::*;

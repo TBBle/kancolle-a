@@ -4,13 +4,14 @@ use derive_getters::Getters;
 use std::{collections::HashMap, error::Error, io::Read, ops::Deref};
 
 use crate::importer::kancolle_arcade_net::{
-    self, ApiEndpoint, BlueprintShip, BookShip, ClientBuilder, KekkonKakkoKari, KANMUSU,
+    self, ApiEndpoint, BlueprintShip, BookShip, Character, ClientBuilder, KekkonKakkoKari, KANMUSU,
 };
 
 // Based on https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 pub struct ShipsBuilder {
     book: Option<Box<dyn Read>>,
     blueprint: Option<Box<dyn Read>>,
+    character: Option<Box<dyn Read>>,
     kekkon: Option<Box<dyn Read>>,
     api_client_builder: Option<ClientBuilder>,
 }
@@ -26,6 +27,7 @@ impl ShipsBuilder {
         ShipsBuilder {
             book: None,
             blueprint: None,
+            character: None,
             kekkon: None,
             api_client_builder: None,
         }
@@ -33,13 +35,16 @@ impl ShipsBuilder {
 
     pub fn build(mut self) -> Result<Ships, Box<dyn Error>> {
         if let Some(ref api_client_builder) = self.api_client_builder {
-            if self.book.is_none() || self.blueprint.is_none() {
+            if self.book.is_none() || self.blueprint.is_none() || self.character.is_none() {
                 let client = api_client_builder.build()?;
                 if self.book.is_none() {
                     self.book = Some(client.fetch(&ApiEndpoint::TcBookInfo)?)
                 };
                 if self.blueprint.is_none() {
                     self.blueprint = Some(client.fetch(&ApiEndpoint::BlueprintListInfo)?)
+                }
+                if self.character.is_none() {
+                    self.character = Some(client.fetch(&ApiEndpoint::CharacterListInfo)?)
                 }
             }
         }
@@ -69,6 +74,19 @@ impl ShipsBuilder {
         R: Read + 'static,
     {
         self.blueprint = Some(Box::new(reader));
+        self
+    }
+
+    pub fn no_character(mut self) -> ShipsBuilder {
+        self.character = None;
+        self
+    }
+
+    pub fn character_from_reader<R>(mut self, reader: R) -> ShipsBuilder
+    where
+        R: Read + 'static,
+    {
+        self.character = Some(Box::new(reader));
         self
     }
 
@@ -148,6 +166,11 @@ impl Ships {
             Some(reader) => Some(kancolle_arcade_net::read_blueprintlist(reader)?),
         };
 
+        let mut characters = match builder.character {
+            None => None,
+            Some(reader) => Some(kancolle_arcade_net::read_characterlist(reader)?),
+        };
+
         let kekkonlist = match builder.kekkon {
             None => None,
             Some(reader) => Some(kancolle_arcade_net::read_kekkonkakkokarilist(reader)?),
@@ -160,6 +183,21 @@ impl Ships {
         // Kekkon list is a convenient source of distinct ship names, if we have it.
         if let Some(kekkonlist) = kekkonlist {
             for kekkon in kekkonlist.into_iter() {
+                let character = if let Some(characters) = characters.as_mut() {
+                    match characters.iter().position(|character| {
+                        (character.book_no as u32) == kekkon.id
+                            && character.ship_name == kekkon.name
+                    }) {
+                        None => None,
+                        Some(index) => {
+                            // TODO: This is weirdly difficult. Good argument for inverting this walk.
+                            Some(characters.drain(index..index + 1).next().unwrap())
+                        }
+                    }
+                } else {
+                    None
+                };
+
                 let book_ship = if let Some(book) = book.as_ref() {
                     match book
                         .iter()
@@ -189,13 +227,63 @@ impl Ships {
 
                 match ships.insert(
                     kekkon.name.clone(),
-                    Ship::new(kekkon.name.clone(), book_ship, Some(kekkon), bp_ship)?,
+                    Ship::new(
+                        kekkon.name.clone(),
+                        book_ship,
+                        character,
+                        Some(kekkon),
+                        bp_ship,
+                    )?,
                 ) {
                     Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
                     None => (),
                 }
             }
         };
+
+        if let Some(characters) = characters {
+            for character in characters.into_iter() {
+                let book_ship = if let Some(book) = book.as_ref() {
+                    match book
+                        .iter()
+                        .position(|book_ship| book_ship.book_no == character.book_no)
+                    {
+                        None => None,
+                        Some(index) => {
+                            assert!(book[index].acquire_num > 0);
+                            Some(book[index].clone())
+                        }
+                    }
+                } else {
+                    None
+                };
+
+                let bp_ship = if let Some(bplist) = bplist.as_ref() {
+                    match bplist.iter().position(|bp_ship| {
+                        bp_ship.ship_name == ship_blueprint_name(&character.ship_name)
+                    }) {
+                        None => None,
+                        Some(index) => Some(bplist[index].clone()),
+                    }
+                } else {
+                    None
+                };
+
+                match ships.insert(
+                    character.ship_name.clone(),
+                    Ship::new(
+                        character.ship_name.clone(),
+                        book_ship,
+                        Some(character),
+                        None,
+                        bp_ship,
+                    )?,
+                ) {
+                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
+                    None => (),
+                }
+            }
+        }
 
         if let Some(book) = book {
             for book_ship in book.into_iter() {
@@ -217,6 +305,7 @@ impl Ships {
                                 ship_name.clone(),
                                 Some(book_ship.clone()),
                                 None,
+                                None,
                                 bp_ship.clone(),
                             )
                             .unwrap()
@@ -225,7 +314,7 @@ impl Ships {
                 ships
                     .entry(book_ship.ship_name.clone())
                     .or_insert_with_key(|ship_name| {
-                        Ship::new(ship_name.clone(), Some(book_ship), None, bp_ship).unwrap()
+                        Ship::new(ship_name.clone(), Some(book_ship), None, None, bp_ship).unwrap()
                     });
             }
         }
@@ -235,7 +324,7 @@ impl Ships {
                 ships
                     .entry(bp_ship.ship_name.clone())
                     .or_insert_with_key(|ship_name| {
-                        Ship::new(ship_name.clone(), None, None, Some(bp_ship)).unwrap()
+                        Ship::new(ship_name.clone(), None, None, None, Some(bp_ship)).unwrap()
                     });
             }
         }
@@ -261,6 +350,9 @@ pub struct Ship {
     /// Whether this is actually the second-row entry in the BookShip
     book_secondrow: bool,
 
+    /// The relevant entry in the player's character list data
+    character: Option<Character>,
+
     /// Any Kekkon Kakko Kari entry for this ship
     kekkon: Option<KekkonKakkoKari>,
 
@@ -276,6 +368,7 @@ impl Ship {
     fn new(
         name: String,
         book: Option<BookShip>,
+        character: Option<Character>,
         kekkon: Option<KekkonKakkoKari>,
         blueprint: Option<BlueprintShip>,
     ) -> Result<Self, Box<dyn Error>> {
@@ -308,11 +401,20 @@ impl Ship {
         };
 
         // TODO: Check consistency across the passed-in items where they overlap, e.g., names, types.
+        if let Some(kekkon) = kekkon.as_ref() {
+            // TODO: We should probably error here.
+            assert_eq!(name, kekkon.name);
+        }
+        if let Some(character) = character.as_ref() {
+            // TODO: We should probably error here.
+            assert_eq!(name, character.ship_name);
+        }
 
         Ok(Ship {
             name,
             book,
             book_secondrow,
+            character,
             kekkon,
             blueprint,
         })

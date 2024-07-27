@@ -57,6 +57,13 @@ fn bplist_path_parser() -> impl Parser<Option<PathBuf>> {
         .optional()
 }
 
+fn charlist_path_parser() -> impl Parser<Option<PathBuf>> {
+    long("charlist")
+        .help("A copy of your https://kancolle-arcade.net/ac/api/CharacterList/info")
+        .argument::<PathBuf>("CHARLIST")
+        .optional()
+}
+
 pub fn places_path_parser() -> impl Parser<PathBuf> {
     long("places")
         .help("A copy of https://kancolle-arcade.net/ac/api/Place/places")
@@ -75,6 +82,7 @@ fn kekkon_path_parser() -> impl Parser<Option<PathBuf>> {
 pub struct ShipSourceDataOptions {
     pub tcbook: Option<PathBuf>,
     pub bplist: Option<PathBuf>,
+    pub charlist: Option<PathBuf>,
     pub kekkon: Option<PathBuf>,
     pub jsessionid: Option<String>,
 }
@@ -83,11 +91,13 @@ pub fn ship_source_data_parser() -> impl Parser<ShipSourceDataOptions> {
     let jsessionid = jsessionid_parser();
     let tcbook = tcbook_path_parser();
     let bplist = bplist_path_parser();
+    let charlist = charlist_path_parser();
     let kekkon = kekkon_path_parser();
     construct!(ShipSourceDataOptions {
         jsessionid,
         tcbook,
         bplist,
+        charlist,
         kekkon
     })
 }
@@ -101,6 +111,9 @@ pub fn ship_source_data_applier(
     }
     if let Some(bplist) = &args.bplist {
         builder = builder.blueprint_from_reader(BufReader::new(File::open(bplist)?));
+    }
+    if let Some(charlist) = &args.charlist {
+        builder = builder.character_from_reader(BufReader::new(File::open(charlist)?));
     }
     if let Some(kekkon) = &args.kekkon {
         builder = builder.kekkon_from_reader(BufReader::new(File::open(kekkon)?));
