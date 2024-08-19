@@ -290,12 +290,14 @@ fn init_book_ship_sources() {
         sources.insert(242, vec![Halloween]);
         // Libeccio, Libeccio改: https://kancolle-a.sega.jp/players/information/190729_1.html
         sources.insert(243, vec![Swimsuit]);
-        // 秋津洲, 秋津洲改: https://kancolle-a.sega.jp/players/information/2207_join_akitusima_swim.html
+        // 秋津洲: https://kancolle-a.sega.jp/players/information/2207_join_akitusima_swim.html
         sources.insert(245, vec![Swimsuit]);
         // Italia: https://kancolle-a.sega.jp/players/information/200728_1.html
         sources.insert(246, vec![Swimsuit]);
         // Zara, Zara改: https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         sources.insert(248, vec![PacificSaury]);
+        // 秋津洲改: https://kancolle-a.sega.jp/players/information/2207_join_akitusima_swim.html
+        sources.insert(250, vec![Swimsuit]);
         // 風雲, 風雲改: https://kancolle-a.sega.jp/players/information/2208_join_kazagumo_swim.html
         sources.insert(253, vec![Swimsuit]);
         // 山風, 山風改: https://kancolle-a.sega.jp/players/information/210827_2.html
@@ -308,6 +310,8 @@ fn init_book_ship_sources() {
         sources.insert(264, vec![Swimsuit]);
         // 鹿島, 鹿島改: https://kancolle-a.sega.jp/players/information/201201_1.html
         sources.insert(265, vec![Christmas]);
+        // 朝潮改二丁: https://kancolle-a.sega.jp/players/information/201013_1.html
+        sources.insert(268, vec![Halloween]);
         // 霞改二乙: https://kancolle-a.sega.jp/players/information/200805_1.html
         sources.insert(270, vec![Swimsuit]);
         // 神風: https://kancolle-a.sega.jp/players/information/2402_valentine.html
@@ -320,6 +324,8 @@ fn init_book_ship_sources() {
         sources.insert(289, vec![SurigaoStrait, PacificSaury]);
         // Richelieu, Richelieu改: https://kancolle-a.sega.jp/players/information/2312_haregimode.html
         sources.insert(292, vec![SundayBest]);
+        // 鈴谷改二: https://kancolle-a.sega.jp/players/information/201201_1.html
+        sources.insert(303, vec![Christmas]);
         // Johnston, Johnston改: https://kancolle-a.sega.jp/players/information/2207_join_Johnston_swim.html
         sources.insert(362, vec![Swimsuit]);
         // Gotland: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
@@ -344,7 +350,6 @@ fn init_book_ship_sources() {
         sources.insert(288, vec![Unknown, Unknown]);
 
         // Info store for ships I don't have at all.
-        // 朝潮改二, 朝潮改二丁: https://kancolle-a.sega.jp/players/information/201013_1.html
         // 呂500: https://kancolle-a.sega.jp/players/information/210914_1.html
         // Grecale, Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
         // 瑞鶴改二: https://kancolle-a.sega.jp/players/information/211214_1.html
@@ -352,7 +357,6 @@ fn init_book_ship_sources() {
         // 翔鶴改二: https://kancolle-a.sega.jp/players/information/211214_1.html, https://kancolle-a.sega.jp/players/information/210805_1.html
         // 翔鶴改二甲: https://kancolle-a.sega.jp/players/information/211214_1.html
         // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
-        // 鈴谷改二: https://kancolle-a.sega.jp/players/information/201201_1.html
         // Gotland改: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
         // 明石改: https://kancolle-a.sega.jp/players/information/190914_1.html
 
