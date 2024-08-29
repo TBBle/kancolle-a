@@ -198,6 +198,10 @@ fn init_book_ship_sources() {
         sources.insert(134, vec![OriginalIllustration(1)]);
         // 長波, 長波改: (改) https://kancolle-a.sega.jp/players/information/190307_2.html
         sources.insert(135, vec![OriginalIllustration(1)]);
+        // 大和改:
+        // * (Swimsuit) https://kancolle-a.sega.jp/players/information/190813_1.html
+        // * (SundayBest) https://kancolle-a.sega.jp/players/information/211230_2.html
+        sources.insert(136, vec![SundayBest, Swimsuit]);
         // 衣笠改二: https://kancolle-a.sega.jp/players/information/210205_1.html
         sources.insert(142, vec![Valentine]);
         // 夕立改二:
@@ -342,10 +346,6 @@ fn init_book_ship_sources() {
         // These cannot be determined yet, as there's multiple variations I don't
         // have in my current data
 
-        // 大和改:
-        // * (Swimsuit) https://kancolle-a.sega.jp/players/information/190813_1.html
-        // * (SundayBest) https://kancolle-a.sega.jp/players/information/211230_2.html
-        sources.insert(136, vec![Unknown, Unknown]);
         // 由良改二:
         // * (Yukata) https://kancolle-a.sega.jp/players/information/2309_yukata_season.html
         // * (Swimsuit) https://kancolle-a.sega.jp/players/information/2307_join_yura-kai2_swim.html
