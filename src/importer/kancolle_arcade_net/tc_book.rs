@@ -249,6 +249,8 @@ fn init_book_ship_sources() {
         sources.insert(184, vec![PacificSaury]);
         // 龍鳳: https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         sources.insert(185, vec![PacificSaury]);
+        // 明石改: https://kancolle-a.sega.jp/players/information/190914_1.html
+        sources.insert(187, vec![OriginalIllustration(1)]);
         // 春雨, 春雨改:
         // * (OriginalIllustration)
         // ** https://kancolle-a.sega.jp/players/information/180316_1.html
@@ -359,7 +361,6 @@ fn init_book_ship_sources() {
         // 翔鶴改二甲: https://kancolle-a.sega.jp/players/information/211214_1.html
         // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
         // Gotland改: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
-        // 明石改: https://kancolle-a.sega.jp/players/information/190914_1.html
 
         sources
     });
