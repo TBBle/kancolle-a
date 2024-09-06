@@ -123,7 +123,7 @@ fn validate_character_list_common(character_list: &CharacterList) {
         // Not sure what's next. Probably the same as Blueprint shipClassId.
         // TODO: Validate this in Ship tests.
         let disp_sort_no = disp_sort_no / 1000;
-        // Useful fact but annoting to test: This is the base ship's book number.
+        // Useful fact but annoying to test: This is the base ship's book number.
         if ship.remodel_lv == 0 {
             assert_eq!(ship.book_no, disp_sort_no as u16);
         }
