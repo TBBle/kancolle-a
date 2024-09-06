@@ -1,12 +1,3 @@
 {
-    "endTime": 1722783540000,
-    "bannerImg": "bunner_363cb24ca905f7f8e64cb875781704de.jpg",
-    "join": true,
-    "pointList": [
-        {
-            "placeId": "bf135dad09ca7e94a3132a791ceaeed2",
-            "placeName": "ＧｉＧＯ渋谷宮益坂",
-            "point": 133
-        }
-    ]
+    "join": false
 }

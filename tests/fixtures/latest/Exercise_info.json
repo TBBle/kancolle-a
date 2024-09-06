@@ -8,14 +8,11 @@
         "limitSec": 480,
         "exerciseImg": "exercise_wuj9uz8ap14.png",
         "sortieLimitImg": "sortie_wuj9uz8ap14.png",
-        "maxExercisePoint": 12123,
+        "maxExercisePoint": 12273,
         "ngUnitImg": "ng_wuj9uz8ap14.png",
         "open": true,
-        "dropEpFesItem": [
-            "TUBE_WHITE",
-            "TUBE_BLUE"
-        ],
-        "stampCount": 0,
+        "dropEpFesItem": [],
+        "stampCount": 3,
         "stampCountMax": 3
     },
     {
@@ -29,10 +26,8 @@
         "sortieLimitImg": "sortie_s1s6eycbh0g.png",
         "maxExercisePoint": 4535,
         "open": true,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ],
-        "stampCount": 0,
+        "dropEpFesItem": [],
+        "stampCount": 6,
         "stampCountMax": 6
     },
     {
@@ -46,10 +41,8 @@
         "sortieLimitImg": "sortie_rsyz8c2uumr.png",
         "maxExercisePoint": 3340,
         "open": true,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ],
-        "stampCount": 0,
+        "dropEpFesItem": [],
+        "stampCount": 6,
         "stampCountMax": 6
     },
     {
@@ -63,11 +56,8 @@
         "sortieLimitImg": "sortie_yqa4354vlq8.png",
         "maxExercisePoint": 12324,
         "open": false,
-        "dropEpFesItem": [
-            "TUBE_WHITE",
-            "TUBE_BLUE"
-        ],
-        "stampCount": 0,
+        "dropEpFesItem": [],
+        "stampCount": 3,
         "stampCountMax": 3
     }
 ]

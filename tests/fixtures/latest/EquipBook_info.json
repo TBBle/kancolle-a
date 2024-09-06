@@ -679,9 +679,9 @@
     },
     {
         "bookNo": 118,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "水上偵察機",
+        "equipName": "紫雲",
+        "equipImg": "e/equip_118_ej00yhi2j6f.png"
     },
     {
         "bookNo": 119,
@@ -793,9 +793,9 @@
     },
     {
         "bookNo": 138,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "大型飛行艇",
+        "equipName": "二式大艇",
+        "equipImg": "e/equip_138_qqryqpxyon1.png"
     },
     {
         "bookNo": 139,
@@ -997,9 +997,9 @@
     },
     {
         "bookNo": 203,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "増設バルジ(中型艦)",
+        "equipName": "艦本新設計 増設バルジ(中型艦)",
+        "equipImg": "e/equip_203_kdkvhwtxpl4.png"
     },
     {
         "bookNo": 204,
@@ -1051,9 +1051,9 @@
     },
     {
         "bookNo": 217,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "水上戦闘機",
+        "equipName": "強風改",
+        "equipImg": "e/equip_217_vgxejg1lfnq.png"
     },
     {
         "bookNo": 220,
@@ -1357,21 +1357,21 @@
     },
     {
         "bookNo": 303,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "中口径主砲",
+        "equipName": "Bofors15.2cm連装砲 Model1930",
+        "equipImg": "e/equip_303_8tm7cnd3j8d.png"
     },
     {
         "bookNo": 304,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "水上偵察機",
+        "equipName": "S9 Osprey",
+        "equipImg": "e/equip_304_avl7ag1yu3x.png"
     },
     {
         "bookNo": 307,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "小型電探",
+        "equipName": "GFCS Mk.37",
+        "equipImg": "e/equip_307_4qunh42c5ly.png"
     },
     {
         "bookNo": 308,
@@ -1393,9 +1393,9 @@
     },
     {
         "bookNo": 313,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "小口径主砲",
+        "equipName": "5inch単装砲 Mk.30改",
+        "equipImg": "e/equip_313_ri78sfouk5y.png"
     },
     {
         "bookNo": 314,
@@ -1405,9 +1405,9 @@
     },
     {
         "bookNo": 315,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "小型電探",
+        "equipName": "SG レーダー(初期型)",
+        "equipImg": "e/equip_315_ou6ajblobrp.png"
     },
     {
         "bookNo": 317,
@@ -1438,6 +1438,18 @@
         "equipKind": "オートジャイロ",
         "equipName": "オ号観測機改",
         "equipImg": "e/equip_324_o4njznonlh6.png"
+    },
+    {
+        "bookNo": 326,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
+        "bookNo": 327,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
     },
     {
         "bookNo": 328,
@@ -1513,9 +1525,9 @@
     },
     {
         "bookNo": 377,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "爆雷",
+        "equipName": "RUR-4A Weapon Alpha改",
+        "equipImg": "e/equip_377_xsqsb6obh7a.png"
     },
     {
         "bookNo": 407,
@@ -1546,5 +1558,23 @@
         "equipKind": "大口径主砲",
         "equipName": "38cm四連装砲改 deux",
         "equipImg": "e/equip_468_jkixazp526k.png"
+    },
+    {
+        "bookNo": 470,
+        "equipKind": "小口径主砲",
+        "equipName": "12.7cm連装砲C型改三",
+        "equipImg": "e/equip_470_ez4i3l464wb.png"
+    },
+    {
+        "bookNo": 505,
+        "equipKind": "対空機銃",
+        "equipName": "25mm対空機銃増備",
+        "equipImg": "e/equip_505_zort68qpwxn.png"
+    },
+    {
+        "bookNo": 506,
+        "equipKind": "小型電探",
+        "equipName": "電探装備マスト(13号改+22号電探改四)",
+        "equipImg": "e/equip_506_x8v12m5q1t6.png"
     }
 ]

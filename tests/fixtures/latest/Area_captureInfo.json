@@ -26,8 +26,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": []
+        "periodEndTime": 0
     },
     {
         "areaId": 1,
@@ -56,10 +55,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 1,
@@ -88,10 +84,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 1,
@@ -120,10 +113,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 1,
@@ -158,10 +148,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1722438000000,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 1727708400000
     },
     {
         "areaId": 2,
@@ -190,8 +177,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": []
+        "periodEndTime": 0
     },
     {
         "areaId": 2,
@@ -220,14 +206,13 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": []
+        "periodEndTime": 0
     },
     {
         "areaId": 2,
         "areaSubId": 2,
         "pursuitMap": false,
-        "pursuitMapOpen": true,
+        "pursuitMapOpen": false,
         "stageClearItemInfo": "NONE",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -250,42 +235,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
-    },
-    {
-        "areaId": 2,
-        "areaSubId": 2,
-        "pursuitMap": true,
-        "pursuitMapOpen": false,
-        "stageClearItemInfo": "NONE",
-        "stageClearItemAmount": 0,
-        "stageClearItemAmount2": 0,
-        "areaClearState": "CLEAR",
-        "limitSec": 90,
-        "requireGp": 150,
-        "sortieLimit": false,
-        "stageImageName": "area_fd46kmpuln.png",
-        "stageMissionName": "柳輸送作戦",
-        "stageMissionInfo": "ボーキサイト資材輸送のためにバシー島沖の敵艦隊を追撃せよ！",
-        "stageDropItemInfo": [
-            "NONE",
-            "NONE",
-            "NONE",
-            "NONE"
-        ],
-        "sortieLimitDrum": 0,
-        "strategyPointDrumBounus": false,
-        "allLvRaidFlag": false,
-        "supportFleetFlag": false,
-        "ssopStartTime": 4102412399900,
-        "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 2,
@@ -314,10 +264,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 2,
@@ -346,10 +293,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 2,
@@ -378,10 +322,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 2,
@@ -392,11 +333,11 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 1800,
-        "areaClearState": "CLEAR",
+        "areaClearState": "NOTCLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "BREAK",
+            "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2000,
-            "militaryGaugeLeft": 0,
+            "militaryGaugeLeft": 1000,
             "bossStatus": "NONE"
         },
         "limitSec": 360,
@@ -415,11 +356,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1722438000000,
-        "dropEpFesItem": [
-            "TUBE_WHITE",
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 1727708400000
     },
     {
         "areaId": 3,
@@ -448,10 +385,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 3,
@@ -480,10 +414,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 3,
@@ -512,16 +443,13 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 3,
         "areaSubId": 3,
         "pursuitMap": false,
-        "pursuitMapOpen": false,
+        "pursuitMapOpen": true,
         "stageClearItemInfo": "NONE",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -544,10 +472,36 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
+    },
+    {
+        "areaId": 3,
+        "areaSubId": 3,
+        "pursuitMap": true,
+        "pursuitMapOpen": false,
+        "stageClearItemInfo": "NONE",
+        "stageClearItemAmount": 0,
+        "stageClearItemAmount2": 0,
+        "areaClearState": "CLEAR",
+        "limitSec": 90,
+        "requireGp": 200,
+        "sortieLimit": true,
+        "stageImageName": "area_d23zup8bq4.png",
+        "stageMissionName": "アルフォンシーノ方面進出",
+        "stageMissionInfo": "北方海域での追撃戦を敢行せよ！",
+        "stageDropItemInfo": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimitDrum": 0,
+        "strategyPointDrumBounus": false,
+        "allLvRaidFlag": false,
+        "supportFleetFlag": false,
+        "ssopStartTime": 4102412399900,
+        "ssopEndTime": 4102412399900,
+        "periodEndTime": 0
     },
     {
         "areaId": 3,
@@ -576,11 +530,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE",
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 3,
@@ -595,8 +545,8 @@
         "bossInfo": {
             "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2000,
-            "militaryGaugeLeft": 500,
-            "bossStatus": "FORM_2"
+            "militaryGaugeLeft": 2000,
+            "bossStatus": "NONE"
         },
         "limitSec": 360,
         "requireGp": 400,
@@ -614,10 +564,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1722438000000,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 1727708400000
     },
     {
         "areaId": 4,
@@ -646,10 +593,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 4,
@@ -678,10 +622,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 4,
@@ -710,16 +651,13 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 4,
         "areaSubId": 3,
         "pursuitMap": false,
-        "pursuitMapOpen": true,
+        "pursuitMapOpen": false,
         "stageClearItemInfo": "NONE",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -742,42 +680,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
-    },
-    {
-        "areaId": 4,
-        "areaSubId": 3,
-        "pursuitMap": true,
-        "pursuitMapOpen": false,
-        "stageClearItemInfo": "NONE",
-        "stageClearItemAmount": 0,
-        "stageClearItemAmount2": 0,
-        "areaClearState": "CLEAR",
-        "limitSec": 90,
-        "requireGp": 200,
-        "sortieLimit": true,
-        "stageImageName": "area_5kitwrzojc.png",
-        "stageMissionName": "リランカ島空襲",
-        "stageMissionInfo": "リランカ島の敵母港に展開する敵艦隊を追撃せよ！",
-        "stageDropItemInfo": [
-            "NONE",
-            "NONE",
-            "NONE",
-            "NONE"
-        ],
-        "sortieLimitDrum": 0,
-        "strategyPointDrumBounus": false,
-        "allLvRaidFlag": false,
-        "supportFleetFlag": false,
-        "ssopStartTime": 4102412399900,
-        "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 4,
@@ -812,11 +715,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE",
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 4,
@@ -827,12 +726,12 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 2800,
-        "areaClearState": "CLEAR",
+        "areaClearState": "NOTCLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "BREAK",
+            "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 0,
-            "bossStatus": "FORM_1"
+            "militaryGaugeLeft": 2500,
+            "bossStatus": "NONE"
         },
         "limitSec": 390,
         "requireGp": 450,
@@ -850,17 +749,13 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1722438000000,
-        "dropEpFesItem": [
-            "TUBE_WHITE",
-            "TUBE_RED"
-        ]
+        "periodEndTime": 1727708400000
     },
     {
         "areaId": 5,
         "areaSubId": 1,
         "pursuitMap": false,
-        "pursuitMapOpen": true,
+        "pursuitMapOpen": false,
         "stageClearItemInfo": "NONE",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -883,42 +778,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
-    },
-    {
-        "areaId": 5,
-        "areaSubId": 1,
-        "pursuitMap": true,
-        "pursuitMapOpen": false,
-        "stageClearItemInfo": "NONE",
-        "stageClearItemAmount": 0,
-        "stageClearItemAmount2": 0,
-        "areaClearState": "CLEAR",
-        "limitSec": 90,
-        "requireGp": 200,
-        "sortieLimit": true,
-        "stageImageName": "area_1c0c42ljy2.png",
-        "stageMissionName": "南方海域進出作戦",
-        "stageMissionInfo": "練度の高い水上打撃部隊を編成し、敵前線司令艦隊を追撃せよ！",
-        "stageDropItemInfo": [
-            "NONE",
-            "NONE",
-            "NONE",
-            "NONE"
-        ],
-        "sortieLimitDrum": 0,
-        "strategyPointDrumBounus": false,
-        "allLvRaidFlag": false,
-        "supportFleetFlag": false,
-        "ssopStartTime": 4102412399900,
-        "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 5,
@@ -953,10 +813,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 5,
@@ -985,10 +842,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 5,
@@ -1024,10 +878,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 5,
@@ -1063,10 +914,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 5,
@@ -1102,11 +950,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE",
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 5,
@@ -1142,11 +986,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE",
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 5,
@@ -1157,11 +997,11 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 3000,
-        "areaClearState": "CLEAR",
+        "areaClearState": "NOTCLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "BREAK",
+            "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 0,
+            "militaryGaugeLeft": 2500,
             "bossStatus": "NONE"
         },
         "limitSec": 390,
@@ -1180,16 +1020,13 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1722438000000,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 1727708400000
     },
     {
         "areaId": 6,
         "areaSubId": 1,
         "pursuitMap": false,
-        "pursuitMapOpen": true,
+        "pursuitMapOpen": false,
         "stageClearItemInfo": "NONE",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -1212,48 +1049,13 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
-    },
-    {
-        "areaId": 6,
-        "areaSubId": 1,
-        "pursuitMap": true,
-        "pursuitMapOpen": false,
-        "stageClearItemInfo": "NONE",
-        "stageClearItemAmount": 0,
-        "stageClearItemAmount2": 0,
-        "areaClearState": "CLEAR",
-        "limitSec": 90,
-        "requireGp": 200,
-        "sortieLimit": true,
-        "stageImageName": "area_u764htn7ne.png",
-        "stageMissionName": "潜水艦作戦",
-        "stageMissionInfo": "有力な潜水艦隊を編成し、敵攻略部隊本体を追撃せよ！",
-        "stageDropItemInfo": [
-            "NONE",
-            "NONE",
-            "NONE",
-            "NONE"
-        ],
-        "sortieLimitDrum": 0,
-        "strategyPointDrumBounus": false,
-        "allLvRaidFlag": false,
-        "supportFleetFlag": false,
-        "ssopStartTime": 4102412399900,
-        "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 6,
         "areaSubId": 2,
         "pursuitMap": false,
-        "pursuitMapOpen": true,
+        "pursuitMapOpen": false,
         "stageClearItemInfo": "NONE",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -1282,42 +1084,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
-    },
-    {
-        "areaId": 6,
-        "areaSubId": 2,
-        "pursuitMap": true,
-        "pursuitMapOpen": false,
-        "stageClearItemInfo": "NONE",
-        "stageClearItemAmount": 0,
-        "stageClearItemAmount2": 0,
-        "areaClearState": "CLEAR",
-        "limitSec": 90,
-        "requireGp": 200,
-        "sortieLimit": false,
-        "stageImageName": "area_v3ccq6fv3t.png",
-        "stageMissionName": "MS諸島防衛戦",
-        "stageMissionInfo": "MS諸島方面に残存する敵攻略部隊を追撃し撃滅せよ！",
-        "stageDropItemInfo": [
-            "NONE",
-            "NONE",
-            "NONE",
-            "NONE"
-        ],
-        "sortieLimitDrum": 0,
-        "strategyPointDrumBounus": false,
-        "allLvRaidFlag": false,
-        "supportFleetFlag": false,
-        "ssopStartTime": 4102412399900,
-        "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 6,
@@ -1353,10 +1120,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 6,
@@ -1386,10 +1150,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_BLUE"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 6,
@@ -1426,11 +1187,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE",
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 6,
@@ -1467,11 +1224,7 @@
         "supportFleetFlag": false,
         "ssopStartTime": 4102412399900,
         "ssopEndTime": 4102412399900,
-        "periodEndTime": 0,
-        "dropEpFesItem": [
-            "TUBE_WHITE",
-            "TUBE_RED"
-        ]
+        "periodEndTime": 0
     },
     {
         "areaId": 6,

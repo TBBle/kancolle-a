@@ -16,22 +16,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 107545,
-        "distance": "",
-        "name": "ＧｉＧＯ秋葉原３号館１",
-        "tel": "07014582284",
-        "address": "東京都千代田区外神田１−１１−１１外神田１丁目ビルディング",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "23:30   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "TOKYO",
-        "latitude": "35.699257",
-        "longitude": "139.770904",
-        "zoomLevel": 16
-    },
-    {
         "id": 100005,
         "distance": "",
         "name": "ＧｉＧＯ秋葉原１号館",
@@ -544,22 +528,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 111727,
-        "distance": "",
-        "name": "THE 3RD PLANET 隼人店",
-        "tel": "0995568233",
-        "address": "鹿児島県霧島市隼人町見次４２７−１",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "KAGOSHIMA",
-        "latitude": "31.741183",
-        "longitude": "130.737675",
-        "zoomLevel": 16
-    },
-    {
         "id": 111708,
         "distance": "",
         "name": "ソユーゲームフィールド小名浜店",
@@ -813,22 +781,6 @@
         "regionEnum": "OKAYAMA",
         "latitude": "34.679176",
         "longitude": "133.927498",
-        "zoomLevel": 16
-    },
-    {
-        "id": 100166,
-        "distance": "",
-        "name": "ラウンドワン東大阪店",
-        "tel": "0662241700",
-        "address": "大阪府東大阪市若江南町１−２−１２",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "23:50   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "OSAKA",
-        "latitude": "34.653044",
-        "longitude": "135.606326",
         "zoomLevel": 16
     },
     {
@@ -1298,7 +1250,7 @@
     {
         "id": 100402,
         "distance": "",
-        "name": "ムトス相模原店",
+        "name": "ＧｉＧＯ相模原",
         "tel": "08031743013",
         "address": "神奈川県相模原市中央区中央２−１−５",
         "station": "",
@@ -2688,22 +2640,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 109237,
-        "distance": "",
-        "name": "アップル島田店",
-        "tel": "0547544351",
-        "address": "静岡県島田市宝来町8-5",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "SHIZUOKA",
-        "latitude": "34.826601",
-        "longitude": "138.187411",
-        "zoomLevel": 16
-    },
-    {
         "id": 102682,
         "distance": "",
         "name": "ラウンドワン横浜綱島店",
@@ -3014,8 +2950,8 @@
         "tel": "0582790085",
         "address": "岐阜県岐阜市柳津町上佐波西3-68",
         "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "24:00   ",
+        "openTime": "        ",
+        "closeTime": "        ",
         "specialInfo": "",
         "country": "JPN",
         "regionEnum": "GIFU",
@@ -3293,22 +3229,6 @@
         "regionEnum": "HIROSHIMA",
         "latitude": "34.393701",
         "longitude": "132.460104",
-        "zoomLevel": 16
-    },
-    {
-        "id": 105037,
-        "distance": "",
-        "name": "本八幡ゲームUNO",
-        "tel": "0473028621",
-        "address": "千葉県市川市八幡２丁目１６ー６八幡ハタビルB1F",
-        "station": "",
-        "openTime": "09:00   ",
-        "closeTime": "24:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "CHIBA",
-        "latitude": "35.721728",
-        "longitude": "139.926837",
         "zoomLevel": 16
     },
     {
@@ -3821,22 +3741,6 @@
         "regionEnum": "KANAGAWA",
         "latitude": "35.491496",
         "longitude": "139.454823",
-        "zoomLevel": 16
-    },
-    {
-        "id": 105838,
-        "distance": "",
-        "name": "サープラ京都あそびタウン",
-        "tel": "0758132150",
-        "address": "京都府京都市中京区西ノ京栂尾町１０７",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "KYOUTO",
-        "latitude": "35.010431",
-        "longitude": "135.741246",
         "zoomLevel": 16
     },
     {
@@ -5154,12 +5058,12 @@
     {
         "id": 107339,
         "distance": "",
-        "name": "フタバ図書アルティランド",
-        "tel": "0822705734",
-        "address": "広島県広島市西区草津南４−７−１　アルパーク北棟２Ｆ",
+        "name": "ＧｉＧＯアルパーク北棟",
+        "tel": "09091551362",
+        "address": "広島県広島市西区草津南４ー７ー１アルパーク北棟２Ｆ",
         "station": "",
         "openTime": "10:00   ",
-        "closeTime": "24:00   ",
+        "closeTime": "22:00   ",
         "specialInfo": "",
         "country": "JPN",
         "regionEnum": "HIROSHIMA",
@@ -5997,22 +5901,6 @@
         "regionEnum": "TOTTORI",
         "latitude": "35.437774",
         "longitude": "133.339197",
-        "zoomLevel": 16
-    },
-    {
-        "id": 100848,
-        "distance": "",
-        "name": "天王寺パスカ",
-        "tel": "09032296768",
-        "address": "大阪府大阪市阿倍野区阿倍野筋２−４−５１",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "23:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "OSAKA",
-        "latitude": "34.643949",
-        "longitude": "135.512732",
         "zoomLevel": 16
     },
     {
@@ -7168,22 +7056,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 106132,
-        "distance": "",
-        "name": "モーリーファンタジーｆ 茨木",
-        "tel": "07031004308",
-        "address": "大阪府茨木市松ケ本町８−３０−５　イオンSC4F",
-        "station": "",
-        "openTime": "09:00   ",
-        "closeTime": "22:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "OSAKA",
-        "latitude": "34.810615",
-        "longitude": "135.558538",
-        "zoomLevel": 16
-    },
-    {
         "id": 102825,
         "distance": "",
         "name": "ゲームシティ川口店",
@@ -7346,9 +7218,9 @@
     {
         "id": 107035,
         "distance": "",
-        "name": "ピンクパンサー水戸けやき台店",
+        "name": "ゲームメガ水戸けやき台店",
         "tel": "0292471983",
-        "address": "茨城県水戸市酒門町3276-1",
+        "address": "茨城県水戸市酒門町３２７６−１",
         "station": "",
         "openTime": "        ",
         "closeTime": "        ",
@@ -9165,22 +9037,6 @@
         "regionEnum": "KANAGAWA",
         "latitude": "35.480069",
         "longitude": "139.432166",
-        "zoomLevel": 16
-    },
-    {
-        "id": 105563,
-        "distance": "",
-        "name": "Ｇ３ポロスイオンタウン北上店",
-        "tel": "0197657888",
-        "address": "岩手県北上市里分四地割２０番地１",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "23:45   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "IWATE",
-        "latitude": "39.294861",
-        "longitude": "141.133983",
         "zoomLevel": 16
     },
     {
@@ -11293,6 +11149,22 @@
         "regionEnum": "AICHI",
         "latitude": "35.244961",
         "longitude": "136.871771",
+        "zoomLevel": 16
+    },
+    {
+        "id": 105470,
+        "distance": "",
+        "name": "ｎａｍｃｏイオンタウン大館西店",
+        "tel": "0186424997",
+        "address": "秋田県大館市根下戸新町18-121イオンタウン大館西内",
+        "station": "",
+        "openTime": "10:00   ",
+        "closeTime": "24:00   ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "AKITA",
+        "latitude": "40.273678",
+        "longitude": "140.530021",
         "zoomLevel": 16
     }
 ]

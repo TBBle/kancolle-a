@@ -61,7 +61,7 @@ fn test_ships_blueprint_only_import() {
         .build()
         .unwrap();
 
-    assert_eq!(ships.len(), 133);
+    assert_eq!(ships.len(), 135);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
@@ -78,8 +78,8 @@ fn test_ships_book_only_import() {
         .build()
         .unwrap();
 
-    // 284 entries, 50 未取得, and of the remaining 234, 149 have two rows.
-    assert_eq!(ships.len(), 234 + 149);
+    // 285 entries, 37 未取得, and of the remaining 248, 151 have two rows.
+    assert_eq!(ships.len(), 248 + 151);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
@@ -90,14 +90,14 @@ fn test_ships_book_only_import() {
             .iter()
             .filter(|(_, ship)| !*ship.book_secondrow())
             .count(),
-        234
+        248
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| *ship.book_secondrow())
             .count(),
-        149
+        151
     );
 }
 
@@ -111,7 +111,7 @@ fn test_ships_characters_only_import() {
         .build()
         .unwrap();
 
-    assert_eq!(ships.len(), 354);
+    assert_eq!(ships.len(), 377);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.character().is_some()));
@@ -128,7 +128,7 @@ fn test_ships_full_import() {
         .build()
         .unwrap();
 
-    assert_eq!(ships.len(), 444);
+    assert_eq!(ships.len(), 445);
     assert_eq!(
         ships
             .iter()
@@ -143,28 +143,28 @@ fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        324
+        331
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.book().is_some() && !*ship.book_secondrow())
             .count(),
-        234
+        248
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.book().is_some() && *ship.book_secondrow())
             .count(),
-        149
+        151
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.character().is_some())
             .count(),
-        354
+        377
     );
 
     let non_kekkon_ships: Vec<&str> = ships
@@ -173,8 +173,9 @@ fn test_ships_full_import() {
         .map(|(name, _)| name.as_ref())
         .collect();
     // I happen to have these ships from the most-recent event.
-    assert_eq!(non_kekkon_ships.len(), 3);
+    assert_eq!(non_kekkon_ships.len(), 4);
     assert!(non_kekkon_ships.contains(&"Ranger"));
     assert!(non_kekkon_ships.contains(&"武蔵改二"));
     assert!(non_kekkon_ships.contains(&"Ranger改"));
+    assert!(non_kekkon_ships.contains(&"時雨改三"));
 }
