@@ -180,7 +180,7 @@ impl Ships {
         // HACK: 500 is more than the kekkon list, so it'll do for now.
         let mut ships: HashMap<String, Ship> = HashMap::with_capacity(500);
 
-        // TODO: Avoid cloning and panic in and_modify, and unwrap() in or_insert_with_key.
+        // TODO: Avoid cloning and panic in and_modify.
         // For the cloning issue, refactor Ship to be dumber, and use or_default instead, I guess.
 
         // For blueprints and book pages, it'd be nice if Ship could just hold references into the relevant
@@ -198,8 +198,13 @@ impl Ships {
                             panic!("Duplicate kekkon entry for {}", kekkon.name.clone())
                         }
                     })
-                    .or_insert_with_key(|ship_name| {
-                        Ship::new(ship_name.clone(), None, None, Some(kekkon), None).unwrap()
+                    .or_insert_with_key(|ship_name| Ship {
+                        name: ship_name.clone(),
+                        book: None,
+                        book_secondrow: false,
+                        character: None,
+                        kekkon: Some(kekkon),
+                        blueprint: None,
                     });
             }
         };
@@ -215,8 +220,13 @@ impl Ships {
                             character.ship_name.clone()
                         ),
                     })
-                    .or_insert_with_key(|ship_name| {
-                        Ship::new(ship_name.clone(), None, Some(character), None, None).unwrap()
+                    .or_insert_with_key(|ship_name| Ship {
+                        name: ship_name.clone(),
+                        book: None,
+                        book_secondrow: false,
+                        character: Some(character),
+                        kekkon: None,
+                        blueprint: None,
                     });
             }
         }
@@ -237,8 +247,13 @@ impl Ships {
                             }
                             Some(_) => panic!("Duplicate book entry for {}", ship_name.clone()),
                         })
-                        .or_insert_with_key(|ship_name| {
-                            Ship::new(ship_name.clone(), Some(book_ship), None, None, None).unwrap()
+                        .or_insert_with_key(|ship_name| Ship {
+                            name: ship_name.clone(),
+                            book: Some(book_ship),
+                            book_secondrow: true,
+                            character: None,
+                            kekkon: None,
+                            blueprint: None,
                         });
                 }
 
@@ -253,8 +268,13 @@ impl Ships {
                             panic!("Duplicate book entry for {}", book_ship.ship_name.clone())
                         }
                     })
-                    .or_insert_with_key(|ship_name| {
-                        Ship::new(ship_name.clone(), Some(book_ship), None, None, None).unwrap()
+                    .or_insert_with_key(|ship_name| Ship {
+                        name: ship_name.clone(),
+                        book: Some(book_ship),
+                        book_secondrow: false,
+                        character: None,
+                        kekkon: None,
+                        blueprint: None,
                     });
             }
         }
@@ -283,8 +303,13 @@ impl Ships {
                             bp_ship.ship_name.clone()
                         ),
                     })
-                    .or_insert_with_key(|ship_name| {
-                        Ship::new(ship_name.clone(), None, None, None, Some(bp_ship)).unwrap()
+                    .or_insert_with_key(|ship_name| Ship {
+                        name: ship_name.clone(),
+                        book: None,
+                        book_secondrow: false,
+                        character: None,
+                        kekkon: None,
+                        blueprint: Some(bp_ship),
                     });
             }
         }
@@ -327,48 +352,8 @@ pub struct Ship {
 }
 
 impl Ship {
-    /// Instantiate a new ship from various sources of ship data.
-    /// TODO: Establish a library-wide error type. Probably using thiserror.
-    fn new(
-        name: String,
-        book: Option<BookShip>,
-        character: Option<Character>,
-        kekkon: Option<KekkonKakkoKari>,
-        blueprint: Option<BlueprintShip>,
-    ) -> Result<Self, Box<dyn Error>> {
-        let book_secondrow = match &book {
-            None => false,
-            // TODO: We should error here.
-            Some(book) => {
-                let normal_page = &book.card_list[0];
-                // TODO: We should probably error here.
-                assert_eq!(
-                    normal_page.variation_num_in_page % 3,
-                    0,
-                    "Unexpected variation count {} on normal page of {}",
-                    normal_page.variation_num_in_page,
-                    book.book_no
-                );
-                let row_count = normal_page.variation_num_in_page / 3;
-                if row_count > 1 && name.ends_with("改") {
-                    true
-                } else {
-                    false
-                }
-            }
-        };
-
-        Ok(Ship {
-            name,
-            book,
-            book_secondrow,
-            character,
-            kekkon,
-            blueprint,
-        })
-    }
-
     /// Validate the various data elements agree when present
+    /// TODO: Establish a library-wide error type. Probably using thiserror.
     fn validate(&self) -> Result<(), Box<dyn Error>> {
         // TODO: We should error in the failure cases, not panic.
 
