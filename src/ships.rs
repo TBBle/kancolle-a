@@ -180,54 +180,49 @@ impl Ships {
         // HACK: 500 is more than the kekkon list, so it'll do for now.
         let mut ships: HashMap<String, Ship> = HashMap::with_capacity(500);
 
-        // TODO: Avoid cloning and panic in and_modify.
-        // For the cloning issue, refactor Ship to be dumber, and use or_default instead, I guess.
+        // TODO: Don't panic in case of duplicates, return an error.
 
         // For blueprints and book pages, it'd be nice if Ship could just hold references into the relevant
         // lists rather than moving/cloning, but Rust data model makes that hard.
         // See https://docs.rs/rental/latest/rental/ but I don't know if that crate can solve this instance.
 
+        // Helper function for use with or_insert_with_key. This isn't Ship::new because it takes a
+        // String reference, and a well-designed API takes a moved String.
+        let ship_inserter = |ship_name: &String| Ship {
+            name: ship_name.clone(),
+            book: None,
+            book_secondrow: false,
+            character: None,
+            kekkon: None,
+            blueprint: None,
+        };
+
         // Kekkon list is a convenient source of distinct ship names, if we have it.
         if let Some(kekkonlist) = kekkonlist {
             for kekkon in kekkonlist.into_iter() {
-                ships
+                let ship = ships
                     .entry(kekkon.name.clone())
-                    .and_modify(|ship| match &ship.kekkon {
-                        None => ship.kekkon = Some(kekkon.clone()),
-                        Some(_) => {
-                            panic!("Duplicate kekkon entry for {}", kekkon.name.clone())
-                        }
-                    })
-                    .or_insert_with_key(|ship_name| Ship {
-                        name: ship_name.clone(),
-                        book: None,
-                        book_secondrow: false,
-                        character: None,
-                        kekkon: Some(kekkon),
-                        blueprint: None,
-                    });
+                    .or_insert_with_key(ship_inserter);
+                match &mut ship.kekkon {
+                    None => ship.kekkon = Some(kekkon),
+                    Some(_) => {
+                        panic!("Duplicate kekkon entry for {}", kekkon.name)
+                    }
+                };
             }
         };
 
         if let Some(characters) = characters {
             for character in characters.into_iter() {
-                ships
+                let ship = ships
                     .entry(character.ship_name.clone())
-                    .and_modify(|ship| match &ship.character {
-                        None => ship.character = Some(character.clone()),
-                        Some(_) => panic!(
-                            "Duplicate character entry for {}",
-                            character.ship_name.clone()
-                        ),
-                    })
-                    .or_insert_with_key(|ship_name| Ship {
-                        name: ship_name.clone(),
-                        book: None,
-                        book_secondrow: false,
-                        character: Some(character),
-                        kekkon: None,
-                        blueprint: None,
-                    });
+                    .or_insert_with_key(ship_inserter);
+                match &mut ship.character {
+                    None => ship.character = Some(character),
+                    Some(_) => {
+                        panic!("Duplicate character entry for {}", character.ship_name)
+                    }
+                };
             }
         }
 
@@ -236,48 +231,33 @@ impl Ships {
                 if book_ship.card_list[0].variation_num_in_page == 6 {
                     // Clone book entry for the 改 modification which shares it
                     let book_ship = book_ship.clone();
-                    let ship_name = format!("{}改", book_ship.ship_name);
+                    let book_ship_name = format!("{}改", book_ship.ship_name);
 
-                    ships
-                        .entry(ship_name.clone())
-                        .and_modify(|ship| match &ship.book {
-                            None => {
-                                ship.book = Some(book_ship.clone());
-                                ship.book_secondrow = true
-                            }
-                            Some(_) => panic!("Duplicate book entry for {}", ship_name.clone()),
-                        })
-                        .or_insert_with_key(|ship_name| Ship {
-                            name: ship_name.clone(),
-                            book: Some(book_ship),
-                            book_secondrow: true,
-                            character: None,
-                            kekkon: None,
-                            blueprint: None,
-                        });
+                    let ship = ships
+                        .entry(book_ship_name)
+                        .or_insert_with_key(ship_inserter);
+                    ship.book_secondrow = true;
+                    match &mut ship.book {
+                        None => ship.book = Some(book_ship),
+                        Some(_) => {
+                            panic!("Duplicate book entry for {}", book_ship.ship_name)
+                        }
+                    };
                 }
 
-                ships
+                let ship = ships
                     .entry(book_ship.ship_name.clone())
-                    .and_modify(|ship| match &ship.book {
-                        None => {
-                            ship.book = Some(book_ship.clone());
-                            ship.book_secondrow = false
-                        }
-                        Some(_) => {
-                            panic!("Duplicate book entry for {}", book_ship.ship_name.clone())
-                        }
-                    })
-                    .or_insert_with_key(|ship_name| Ship {
-                        name: ship_name.clone(),
-                        book: Some(book_ship),
-                        book_secondrow: false,
-                        character: None,
-                        kekkon: None,
-                        blueprint: None,
-                    });
+                    .or_insert_with_key(ship_inserter);
+                match &mut ship.book {
+                    None => ship.book = Some(book_ship),
+                    Some(_) => {
+                        panic!("Duplicate book entry for {}", book_ship.ship_name)
+                    }
+                };
             }
         }
+
+        // Blueprints must be last as we clone them to matching modified ships first before consuming the list.
 
         if let Some(bplist) = bplist {
             for bp_ship in bplist.into_iter() {
@@ -294,23 +274,15 @@ impl Ships {
                     }
                 }
 
-                ships
+                let ship = ships
                     .entry(bp_ship.ship_name.clone())
-                    .and_modify(|ship| match &ship.blueprint {
-                        None => ship.blueprint = Some(bp_ship.clone()),
-                        Some(_) => panic!(
-                            "Duplicate blueprint entry for {}",
-                            bp_ship.ship_name.clone()
-                        ),
-                    })
-                    .or_insert_with_key(|ship_name| Ship {
-                        name: ship_name.clone(),
-                        book: None,
-                        book_secondrow: false,
-                        character: None,
-                        kekkon: None,
-                        blueprint: Some(bp_ship),
-                    });
+                    .or_insert_with_key(ship_inserter);
+                match &mut ship.blueprint {
+                    None => ship.blueprint = Some(bp_ship),
+                    Some(_) => {
+                        panic!("Duplicate blueprint entry for {}", bp_ship.ship_name)
+                    }
+                };
             }
         }
 
