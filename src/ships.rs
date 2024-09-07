@@ -166,7 +166,7 @@ impl Ships {
             Some(reader) => Some(kancolle_arcade_net::read_blueprintlist(reader)?),
         };
 
-        let mut characters = match builder.character {
+        let characters = match builder.character {
             None => None,
             Some(reader) => Some(kancolle_arcade_net::read_characterlist(reader)?),
         };
@@ -180,153 +180,117 @@ impl Ships {
         // HACK: 500 is more than the kekkon list, so it'll do for now.
         let mut ships: HashMap<String, Ship> = HashMap::with_capacity(500);
 
+        // TODO: Avoid cloning and panic in and_modify, and unwrap() in or_insert_with_key.
+        // For the cloning issue, refactor Ship to be dumber, and use or_default instead, I guess.
+
+        // For blueprints and book pages, it'd be nice if Ship could just hold references into the relevant
+        // lists rather than moving/cloning, but Rust data model makes that hard.
+        // See https://docs.rs/rental/latest/rental/ but I don't know if that crate can solve this instance.
+
         // Kekkon list is a convenient source of distinct ship names, if we have it.
         if let Some(kekkonlist) = kekkonlist {
             for kekkon in kekkonlist.into_iter() {
-                let character = if let Some(characters) = characters.as_mut() {
-                    match characters.iter().position(|character| {
-                        (character.book_no as u32) == kekkon.id
-                            && character.ship_name == kekkon.name
-                    }) {
-                        None => None,
-                        Some(index) => {
-                            // TODO: This is weirdly difficult. Good argument for inverting this walk.
-                            Some(characters.drain(index..index + 1).next().unwrap())
+                ships
+                    .entry(kekkon.name.clone())
+                    .and_modify(|ship| match &ship.kekkon {
+                        None => ship.kekkon = Some(kekkon.clone()),
+                        Some(_) => {
+                            panic!("Duplicate kekkon entry for {}", kekkon.name.clone())
                         }
-                    }
-                } else {
-                    None
-                };
-
-                let book_ship = if let Some(book) = book.as_ref() {
-                    match book
-                        .iter()
-                        .position(|book_ship| (book_ship.book_no as u32) == kekkon.id)
-                    {
-                        None => None,
-                        Some(index) => {
-                            assert!(book[index].acquire_num > 0);
-                            Some(book[index].clone())
-                        }
-                    }
-                } else {
-                    None
-                };
-
-                let bp_ship = if let Some(bplist) = bplist.as_ref() {
-                    match bplist
-                        .iter()
-                        .position(|bp_ship| bp_ship.ship_name == ship_blueprint_name(&kekkon.name))
-                    {
-                        None => None,
-                        Some(index) => Some(bplist[index].clone()),
-                    }
-                } else {
-                    None
-                };
-
-                match ships.insert(
-                    kekkon.name.clone(),
-                    Ship::new(
-                        kekkon.name.clone(),
-                        book_ship,
-                        character,
-                        Some(kekkon),
-                        bp_ship,
-                    )?,
-                ) {
-                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
-                    None => (),
-                }
+                    })
+                    .or_insert_with_key(|ship_name| {
+                        Ship::new(ship_name.clone(), None, None, Some(kekkon), None).unwrap()
+                    });
             }
         };
 
         if let Some(characters) = characters {
             for character in characters.into_iter() {
-                let book_ship = if let Some(book) = book.as_ref() {
-                    match book
-                        .iter()
-                        .position(|book_ship| book_ship.book_no == character.book_no)
-                    {
-                        None => None,
-                        Some(index) => {
-                            assert!(book[index].acquire_num > 0);
-                            Some(book[index].clone())
-                        }
-                    }
-                } else {
-                    None
-                };
-
-                let bp_ship = if let Some(bplist) = bplist.as_ref() {
-                    match bplist.iter().position(|bp_ship| {
-                        bp_ship.ship_name == ship_blueprint_name(&character.ship_name)
-                    }) {
-                        None => None,
-                        Some(index) => Some(bplist[index].clone()),
-                    }
-                } else {
-                    None
-                };
-
-                match ships.insert(
-                    character.ship_name.clone(),
-                    Ship::new(
-                        character.ship_name.clone(),
-                        book_ship,
-                        Some(character),
-                        None,
-                        bp_ship,
-                    )?,
-                ) {
-                    Some(old_ship) => panic!("Duplicate ship {}", old_ship.name()),
-                    None => (),
-                }
+                ships
+                    .entry(character.ship_name.clone())
+                    .and_modify(|ship| match &ship.character {
+                        None => ship.character = Some(character.clone()),
+                        Some(_) => panic!(
+                            "Duplicate character entry for {}",
+                            character.ship_name.clone()
+                        ),
+                    })
+                    .or_insert_with_key(|ship_name| {
+                        Ship::new(ship_name.clone(), None, Some(character), None, None).unwrap()
+                    });
             }
         }
 
         if let Some(book) = book {
             for book_ship in book.into_iter() {
-                let bp_ship = if let Some(bplist) = bplist.as_ref() {
-                    match bplist.iter().position(|bp_ship| {
-                        bp_ship.ship_name == ship_blueprint_name(&book_ship.ship_name)
-                    }) {
-                        None => None,
-                        Some(index) => Some(bplist[index].clone()),
-                    }
-                } else {
-                    None
-                };
                 if book_ship.card_list[0].variation_num_in_page == 6 {
+                    // Clone book entry for the 改 modification which shares it
+                    let book_ship = book_ship.clone();
+                    let ship_name = format!("{}改", book_ship.ship_name);
+
                     ships
-                        .entry(format!("{}改", book_ship.ship_name))
+                        .entry(ship_name.clone())
+                        .and_modify(|ship| match &ship.book {
+                            None => {
+                                ship.book = Some(book_ship.clone());
+                                ship.book_secondrow = true
+                            }
+                            Some(_) => panic!("Duplicate book entry for {}", ship_name.clone()),
+                        })
                         .or_insert_with_key(|ship_name| {
-                            Ship::new(
-                                ship_name.clone(),
-                                Some(book_ship.clone()),
-                                None,
-                                None,
-                                bp_ship.clone(),
-                            )
-                            .unwrap()
+                            Ship::new(ship_name.clone(), Some(book_ship), None, None, None).unwrap()
                         });
                 }
+
                 ships
                     .entry(book_ship.ship_name.clone())
+                    .and_modify(|ship| match &ship.book {
+                        None => {
+                            ship.book = Some(book_ship.clone());
+                            ship.book_secondrow = false
+                        }
+                        Some(_) => {
+                            panic!("Duplicate book entry for {}", book_ship.ship_name.clone())
+                        }
+                    })
                     .or_insert_with_key(|ship_name| {
-                        Ship::new(ship_name.clone(), Some(book_ship), None, None, bp_ship).unwrap()
+                        Ship::new(ship_name.clone(), Some(book_ship), None, None, None).unwrap()
                     });
             }
         }
 
         if let Some(bplist) = bplist {
             for bp_ship in bplist.into_iter() {
+                // Find existing ships which are modified from this blueprint, and clone the blueprint to them.
+                for (_, ship) in ships.iter_mut().filter(|(name, _)| {
+                    name != &&bp_ship.ship_name && ship_blueprint_name(name) == bp_ship.ship_name
+                }) {
+                    match &ship.blueprint {
+                        None => ship.blueprint = Some(bp_ship.clone()),
+                        Some(_) => panic!(
+                            "Duplicate blueprint entry for {}",
+                            bp_ship.ship_name.clone()
+                        ),
+                    }
+                }
+
                 ships
                     .entry(bp_ship.ship_name.clone())
+                    .and_modify(|ship| match &ship.blueprint {
+                        None => ship.blueprint = Some(bp_ship.clone()),
+                        Some(_) => panic!(
+                            "Duplicate blueprint entry for {}",
+                            bp_ship.ship_name.clone()
+                        ),
+                    })
                     .or_insert_with_key(|ship_name| {
                         Ship::new(ship_name.clone(), None, None, None, Some(bp_ship)).unwrap()
                     });
             }
+        }
+
+        for ship in ships.values() {
+            ship.validate()?
         }
 
         Ok(Ships(ships))
@@ -375,12 +339,6 @@ impl Ship {
         let book_secondrow = match &book {
             None => false,
             // TODO: We should error here.
-            Some(book) if book.acquire_num == 0 => {
-                panic!(
-                    "Ship {} created from \"Unknown\" book entry {}",
-                    name, book.book_no
-                )
-            }
             Some(book) => {
                 let normal_page = &book.card_list[0];
                 // TODO: We should probably error here.
@@ -400,16 +358,6 @@ impl Ship {
             }
         };
 
-        // TODO: Check consistency across the passed-in items where they overlap, e.g., names, types.
-        if let Some(kekkon) = kekkon.as_ref() {
-            // TODO: We should probably error here.
-            assert_eq!(name, kekkon.name);
-        }
-        if let Some(character) = character.as_ref() {
-            // TODO: We should probably error here.
-            assert_eq!(name, character.ship_name);
-        }
-
         Ok(Ship {
             name,
             book,
@@ -418,6 +366,48 @@ impl Ship {
             kekkon,
             blueprint,
         })
+    }
+
+    /// Validate the various data elements agree when present
+    fn validate(&self) -> Result<(), Box<dyn Error>> {
+        // TODO: We should error in the failure cases, not panic.
+
+        if let Some(book) = self.book.as_ref() {
+            assert_ne!(
+                book.acquire_num, 0,
+                "Ship {} created from \"Unknown\" book entry {}",
+                self.name, book.book_no
+            );
+
+            let normal_page = &book.card_list[0];
+            assert_eq!(
+                normal_page.variation_num_in_page % 3,
+                0,
+                "Unexpected variation count {} on normal page of {}",
+                normal_page.variation_num_in_page,
+                book.book_no
+            );
+            let row_count = normal_page.variation_num_in_page / 3;
+            assert_eq!(
+                self.book_secondrow,
+                if row_count > 1 && self.name.ends_with("改") {
+                    true
+                } else {
+                    false
+                }
+            );
+        }
+
+        if let Some(kekkon) = self.kekkon.as_ref() {
+            assert_eq!(self.name, kekkon.name);
+        }
+        if let Some(character) = self.character.as_ref() {
+            assert_eq!(self.name, character.ship_name);
+        }
+
+        // TODO: Check consistency across the passed-in items where they overlap, e.g., names, types.
+
+        Ok(())
     }
 
     // TODO: More APIs, particulary when there's multiple sources of truth, and some are more trustworthy
