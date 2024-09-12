@@ -46,16 +46,16 @@ pub enum BookShipCardPageSource {
     Normal,  // Priority 0 is always this
 
     // 期間限定ドロップイベント
-    DecisiveBattle, // 決戦mode: May 2019 once-off
-    Swimsuit,       // 水着mode, 里帰り水着mode, 夏のお嬢さんmode: July 2019 onward
-    Christmas,      // クリスマスmode: December 2019 onward
-    Halloween,      // ハロウィンmode: Oct 2020 onward
-    Valentine,      // バレンタインmode: Feb 2021 onward
-    PacificSaury,   // 秋刀魚mode: Oct 2021 onward (鎮守府秋刀魚祭り)
-    Fishing,        // F作業mode: Oct 2021 onward (鎮守府秋刀魚祭り)
-    SundayBest,     // 晴れ着mode: Jan 2022 onward
-    RainySeason,    // 梅雨mode: May-June 2022 onward
-    Yukata,         // 浴衣mode: Sep 2023 onward
+    CapeEngano, // エンガノ岬決戦mode, aka 決戦mode. May 2019 once-off, September 2024 once-off.
+    Swimsuit,   // 水着mode, 里帰り水着mode, 夏のお嬢さんmode: July 2019 onward
+    Christmas,  // クリスマスmode: December 2019 onward
+    Halloween,  // ハロウィンmode: Oct 2020 onward
+    Valentine,  // バレンタインmode: Feb 2021 onward
+    PacificSaury, // 秋刀魚mode: Oct 2021 onward (鎮守府秋刀魚祭り)
+    Fishing,    // F作業mode: Oct 2021 onward (鎮守府秋刀魚祭り)
+    SundayBest, // 晴れ着mode: Jan 2022 onward
+    RainySeason, // 梅雨mode: May-June 2022 onward
+    Yukata,     // 浴衣mode: Sep 2023 onward
     SurigaoStrait, // スリガオ海峡突入mode: Jan 2024 event (第拾肆回期間限定海域：捷号決戦！邀撃、レイテ沖海戦（前篇）)
 
     // オリジナルイラストカード
@@ -82,11 +82,11 @@ fn init_book_ship_sources() {
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/2206_seaarea_event12_detail.html
         sources.insert(7, vec![SundayBest, OriginalIllustration(1)]);
         // 島風, 島風改:
-        // * (DecisiveBattle) https://kancolle-a.sega.jp/players/information/190508_1.html
+        // * (CapeEngano) https://kancolle-a.sega.jp/players/information/190508_1.html
         // * (OriginalIllustration)
         // ** (改) https://kancolle-a.sega.jp/players/information/200901_2.html
         // ** (改) https://kancolle-a.sega.jp/players/information/210409_1.html
-        sources.insert(10, vec![DecisiveBattle, OriginalIllustration(2)]);
+        sources.insert(10, vec![CapeEngano, OriginalIllustration(2)]);
         // 敷波, 敷波改: (改) https://kancolle-a.sega.jp/players/information/211005_1.html
         sources.insert(18, vec![OriginalIllustration(1)]);
         // 大井: https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
@@ -356,7 +356,9 @@ fn init_book_ship_sources() {
         // Info store for ships I don't have at all.
         // 呂500: https://kancolle-a.sega.jp/players/information/210914_1.html
         // Grecale, Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
-        // 瑞鶴改二甲: https://kancolle-a.sega.jp/players/information/211214_1.html
+        // 瑞鶴改二甲:
+        // * (Christmas) https://kancolle-a.sega.jp/players/information/211214_1.html
+        // * (CapeEngano) https://kancolle-a.sega.jp/players/information/2409_join_zuikaku_kai_2_engano.html
         // 翔鶴改二: https://kancolle-a.sega.jp/players/information/211214_1.html, https://kancolle-a.sega.jp/players/information/210805_1.html
         // 翔鶴改二甲: https://kancolle-a.sega.jp/players/information/211214_1.html
         // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
