@@ -3,9 +3,15 @@
 use derive_getters::Getters;
 use std::{collections::HashMap, error::Error, io::Read, ops::Deref};
 
-use crate::importer::kancolle_arcade_net::{
-    self, ApiEndpoint, BlueprintShip, BookShip, Character, ClientBuilder, KekkonKakkoKari, KANMUSU,
+use crate::importer::{
+    kancolle_arcade_net::{
+        self, ApiEndpoint, BlueprintShip, BookShip, Character, ClientBuilder, KekkonKakkoKari,
+        KANMUSU,
+    },
+    wikiwiki_jp_kancolle_a::KansenShip,
 };
+
+use crate::importer::wikiwiki_jp_kancolle_a::{self, KAIZOU_KANSEN, KANSEN};
 
 // Based on https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 pub struct ShipsBuilder {
@@ -13,12 +19,17 @@ pub struct ShipsBuilder {
     blueprint: Option<Box<dyn Read>>,
     character: Option<Box<dyn Read>>,
     kekkon: Option<Box<dyn Read>>,
+    wiki_kansen_list: Option<Box<dyn Read>>,
+    wiki_kaizou_kansen_list: Option<Box<dyn Read>>,
     api_client_builder: Option<ClientBuilder>,
 }
 
 impl Default for ShipsBuilder {
     fn default() -> Self {
-        Self::new().static_kekkon()
+        Self::new()
+            .static_kekkon()
+            .static_wiki_kansen_list()
+            .static_wiki_kaizou_kansen_list()
     }
 }
 
@@ -29,6 +40,8 @@ impl ShipsBuilder {
             blueprint: None,
             character: None,
             kekkon: None,
+            wiki_kansen_list: None,
+            wiki_kaizou_kansen_list: None,
             api_client_builder: None,
         }
     }
@@ -107,6 +120,40 @@ impl ShipsBuilder {
         self
     }
 
+    pub fn no_wiki_kansen_list(mut self) -> ShipsBuilder {
+        self.wiki_kansen_list = None;
+        self
+    }
+
+    pub fn static_wiki_kansen_list(self) -> ShipsBuilder {
+        self.wiki_kansen_list_from_reader(KANSEN.as_ref())
+    }
+
+    pub fn wiki_kansen_list_from_reader<R>(mut self, reader: R) -> ShipsBuilder
+    where
+        R: Read + 'static,
+    {
+        self.wiki_kansen_list = Some(Box::new(reader));
+        self
+    }
+
+    pub fn no_wiki_kaizou_kansen_list(mut self) -> ShipsBuilder {
+        self.wiki_kaizou_kansen_list = None;
+        self
+    }
+
+    pub fn static_wiki_kaizou_kansen_list(self) -> ShipsBuilder {
+        self.wiki_kaizou_kansen_list_from_reader(KAIZOU_KANSEN.as_ref())
+    }
+
+    pub fn wiki_kaizou_kansen_list_from_reader<R>(mut self, reader: R) -> ShipsBuilder
+    where
+        R: Read + 'static,
+    {
+        self.wiki_kaizou_kansen_list = Some(Box::new(reader));
+        self
+    }
+
     pub fn jsessionid(mut self, jsessionid: String) -> ShipsBuilder {
         self.api_client_builder = Some(ClientBuilder::new().jsessionid(jsessionid));
         self
@@ -176,6 +223,16 @@ impl Ships {
             Some(reader) => Some(kancolle_arcade_net::read_kekkonkakkokarilist(reader)?),
         };
 
+        let wiki_kansen_list = match builder.wiki_kansen_list {
+            None => None,
+            Some(reader) => Some(wikiwiki_jp_kancolle_a::read_kansen_table(reader)?),
+        };
+
+        let wiki_kaizou_kansen_list = match builder.wiki_kaizou_kansen_list {
+            None => None,
+            Some(reader) => Some(wikiwiki_jp_kancolle_a::read_kansen_table(reader)?),
+        };
+
         // TODO: Can we precalculate capacity? What happens if we undershoot by a bit?
         // HACK: 500 is more than the kekkon list, so it'll do for now.
         let mut ships: HashMap<String, Ship> = HashMap::with_capacity(500);
@@ -195,7 +252,33 @@ impl Ships {
             character: None,
             kekkon: None,
             blueprint: None,
+            wiki_list_entry: None,
         };
+
+        // The wiki lists should be complete. And there should be no overlaps.
+        let wiki_iter: Option<Box<dyn Iterator<Item = KansenShip>>> =
+            match (wiki_kansen_list, wiki_kaizou_kansen_list) {
+                (None, None) => None,
+                (Some(list), None) => Some(Box::new(list.into_iter())),
+                (None, Some(list)) => Some(Box::new(list.into_iter())),
+                (Some(left), Some(right)) => {
+                    Some(Box::new(left.into_iter().chain(right.into_iter())))
+                }
+            };
+
+        if let Some(wiki_iter) = wiki_iter {
+            for wiki_row in wiki_iter {
+                let ship = ships
+                    .entry(wiki_row.ship_name.clone())
+                    .or_insert_with_key(ship_inserter);
+                match &mut ship.wiki_list_entry {
+                    None => ship.wiki_list_entry = Some(wiki_row),
+                    Some(_) => {
+                        panic!("Duplicate wiki list entry for {}", wiki_row.ship_name)
+                    }
+                }
+            }
+        }
 
         // Kekkon list is a convenient source of distinct ship names, if we have it.
         if let Some(kekkonlist) = kekkonlist {
@@ -321,6 +404,10 @@ pub struct Ship {
     /// May be empty because the player has no blueprints, or
     /// because the base ship is not identified correctly.
     blueprint: Option<BlueprintShip>,
+
+    /// The kansen ship list entry for this ship from
+    /// https://wikiwiki.jp/kancolle-a/
+    wiki_list_entry: Option<KansenShip>,
 }
 
 impl Ship {
