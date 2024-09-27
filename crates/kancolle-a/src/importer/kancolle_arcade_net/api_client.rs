@@ -2,22 +2,31 @@
 //! https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json
 
 // TODO WASI Support (Which means non-blocking, and maybe no cookies?)
-use reqwest::{cookie::Jar, header::HeaderMap};
+use reqwest::{
+    cookie::Jar,
+    header::{HeaderMap, USER_AGENT},
+    StatusCode,
+};
 use reqwest::{Client as ReqwestClient, Url};
+use serde::{Deserialize, Serialize};
 use std::{collections::VecDeque, error::Error, io::Read, sync::Arc};
 
 const API_BASE: &str = "https://kancolle-arcade.net/ac/api/";
 
 pub struct ClientBuilder {
     jsessionid: Option<String>,
+    userpass: Option<(String, String)>,
 }
 
 impl ClientBuilder {
     pub fn new() -> ClientBuilder {
-        ClientBuilder { jsessionid: None }
+        ClientBuilder {
+            jsessionid: None,
+            userpass: None,
+        }
     }
 
-    pub fn build(&self) -> Result<Client, Box<dyn Error>> {
+    pub fn build(self) -> Result<Client, Box<dyn Error>> {
         let mut headers = HeaderMap::default();
         headers.insert("X-Requested-With", "XMLHttpRequest".parse()?);
 
@@ -34,11 +43,17 @@ impl ClientBuilder {
                 .cookie_provider(Arc::new(cookies))
                 .default_headers(headers)
                 .build()?,
+            userpass: self.userpass,
         })
     }
 
     pub fn jsessionid(mut self, jsessionid: String) -> ClientBuilder {
         self.jsessionid = Some(jsessionid);
+        self
+    }
+
+    pub fn userpass(mut self, username: String, password: String) -> ClientBuilder {
+        self.userpass = Some((username, password));
         self
     }
 }
@@ -96,7 +111,7 @@ pub enum ApiEndpoint {
 
     // TODO: Auth stuff, will need special handling. Maybe not in this enum?
     // AuthAutoLogin, // POST
-    // AuthLogin, // POST
+    AuthLogin, // POST
     // AuthTokenDelete, // POST
     // AuthLoginState,
     // AuthLogout,
@@ -121,6 +136,7 @@ fn url_for_endpoint(endpoint: &ApiEndpoint) -> String {
         AimeCampaignHold => format!("{API_BASE}AimeCampaign/hold"),
         AimeCampaignInfo => format!("{API_BASE}AimeCampaign/info"),
         AreaCaptureInfo => format!("{API_BASE}Area/captureInfo"),
+        AuthLogin => format!("{API_BASE}Auth/login"),
         BlueprintListInfo => format!("{API_BASE}BlueprintList/info"),
         CampaignHistory => format!("{API_BASE}Campaign/history"),
         CampaignInfo => format!("{API_BASE}Campaign/info"),
@@ -146,27 +162,109 @@ fn url_for_endpoint(endpoint: &ApiEndpoint) -> String {
         TcBookInfo => format!("{API_BASE}TcBook/info"),
         TcErrorDispFlag => format!("{API_BASE}TcError/dispFlag"),
 
-        Other(raw_path) => format!("{API_BASE}/{raw_path}"),
+        Other(raw_path) => format!("{API_BASE}{raw_path}"),
     }
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+struct AuthLoginRequest<'a> {
+    id: &'a str,
+    password: &'a str,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+struct AuthLoginResponseAimeCard {
+    _accesscode: String,
+    _comment: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+struct AuthLoginResponseAimeCardList {
+    _card_num: u16,
+    _card_list: Vec<AuthLoginResponseAimeCard>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
+struct AuthLoginResponse {
+    login: bool,
+    login_code: String, // Enum?
+    _confirmed: bool,
+    _aime_card: AuthLoginResponseAimeCardList,
+    _hash_auth_key: Option<String>,
 }
 
 #[derive(Default)]
 pub struct Client {
     client: ReqwestClient,
+    userpass: Option<(String, String)>,
 }
 
 impl Client {
     pub async fn fetch(&self, endpoint: &ApiEndpoint) -> Result<Box<dyn Read>, Box<dyn Error>> {
         // TODO: Push the async higher, and return an AsyncReader here, so we don't have to
         // pull the whole response down.
-        let body_text = self
+        let mut response = self
             .client
             .get(url_for_endpoint(endpoint))
+            .send()
+            .await?
+            .error_for_status();
+        if let Err(error) = &response {
+            if let Some(status) = error.status() {
+                if status == StatusCode::FORBIDDEN && self.userpass.is_some() {
+                    self.authenticate(
+                        self.userpass.as_ref().unwrap().0.as_str(),
+                        self.userpass.as_ref().unwrap().1.as_str(),
+                    )
+                    .await?;
+
+                    response = self
+                        .client
+                        .get(url_for_endpoint(endpoint))
+                        .send()
+                        .await?
+                        .error_for_status();
+                }
+            }
+        }
+
+        let body_text = response?.text().await?;
+        Ok(Box::new(VecDeque::from(body_text.into_bytes())))
+    }
+
+    async fn authenticate(&self, id: &str, password: &str) -> Result<(), Box<dyn Error>> {
+        let body = AuthLoginRequest { id, password };
+
+        let body_response = self
+            .client
+            .post(url_for_endpoint(&ApiEndpoint::AuthLogin))
+            // Some kind of user-agent sniffing going on, without this, _success_ produces a 500 error.
+            .header(USER_AGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
+            .json(&body)
             .send()
             .await?
             .error_for_status()?
             .text()
             .await?;
-        Ok(Box::new(VecDeque::from(body_text.into_bytes())))
+
+        let auth_login_response: AuthLoginResponse = serde_json::from_str(&body_response)?;
+
+        if auth_login_response.login {
+            Ok(())
+        } else {
+            // TODO: We _really_ need a custom error code.
+            Err(Box::new(std::io::Error::new(
+                std::io::ErrorKind::InvalidData,
+                auth_login_response.login_code,
+            )))
+        }
     }
 }

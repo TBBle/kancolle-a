@@ -43,6 +43,13 @@ fn jsessionid_parser() -> impl Parser<Option<String>> {
         .optional()
 }
 
+fn username_parser() -> impl Parser<Option<String>> {
+    long("username")
+        .help("The USERNAME to log into https://kancolle-arcade.net/ac/")
+        .argument("USERNAME")
+        .optional()
+}
+
 fn tcbook_path_parser() -> impl Parser<Option<PathBuf>> {
     long("tcbook")
         .help("A copy of your https://kancolle-arcade.net/ac/api/TcBook/info")
@@ -85,16 +92,19 @@ pub struct ShipSourceDataOptions {
     pub charlist: Option<PathBuf>,
     pub kekkon: Option<PathBuf>,
     pub jsessionid: Option<String>,
+    pub username: Option<String>,
 }
 
 pub fn ship_source_data_parser() -> impl Parser<ShipSourceDataOptions> {
     let jsessionid = jsessionid_parser();
+    let username = username_parser();
     let tcbook = tcbook_path_parser();
     let bplist = bplist_path_parser();
     let charlist = charlist_path_parser();
     let kekkon = kekkon_path_parser();
     construct!(ShipSourceDataOptions {
         jsessionid,
+        username,
         tcbook,
         bplist,
         charlist,
@@ -120,6 +130,11 @@ pub fn ship_source_data_applier(
     }
     if let Some(jsessionid) = &args.jsessionid {
         builder = builder.jsessionid(jsessionid.clone());
+    }
+    if let Some(username) = &args.username {
+        let prompt = format!("Enter the password for {}:", username);
+        let password = rpassword::prompt_password(prompt)?;
+        builder = builder.userpass(username.clone(), password);
     }
 
     Ok(builder)

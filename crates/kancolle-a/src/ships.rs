@@ -47,7 +47,7 @@ impl ShipsBuilder {
     }
 
     pub async fn build(mut self) -> Result<Ships, Box<dyn Error>> {
-        if let Some(ref api_client_builder) = self.api_client_builder {
+        if let Some(api_client_builder) = self.api_client_builder {
             if self.book.is_none() || self.blueprint.is_none() || self.character.is_none() {
                 let client = api_client_builder.build()?;
                 if self.book.is_none() {
@@ -60,6 +60,7 @@ impl ShipsBuilder {
                     self.character = Some(client.fetch(&ApiEndpoint::CharacterListInfo).await?)
                 }
             }
+            self.api_client_builder = None
         }
         Ships::new(self)
     }
@@ -155,7 +156,20 @@ impl ShipsBuilder {
     }
 
     pub fn jsessionid(mut self, jsessionid: String) -> ShipsBuilder {
-        self.api_client_builder = Some(ClientBuilder::new().jsessionid(jsessionid));
+        self.api_client_builder = Some(
+            self.api_client_builder
+                .unwrap_or_default()
+                .jsessionid(jsessionid),
+        );
+        self
+    }
+
+    pub fn userpass(mut self, username: String, password: String) -> ShipsBuilder {
+        self.api_client_builder = Some(
+            self.api_client_builder
+                .unwrap_or_default()
+                .userpass(username, password),
+        );
         self
     }
 }

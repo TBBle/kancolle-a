@@ -7,15 +7,26 @@ pub(crate) mod args {
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
-        pub(crate) jsessionid: String,
+        pub(crate) jsessionid: Option<String>,
+        pub(crate) username: Option<String>,
         // TODO: Output path?
     }
 
     pub fn options() -> OptionParser<Options> {
-        let jsessionid = long("jsessionid").help("The JSESSIONID cookie from a logged-in session at https://kancolle-arcade.net/ac/api").argument::<String>("JSESSIONID");
-        construct!(Options { jsessionid })
-            .to_options()
-            .descr("A tool to fetch all supported data from https://kancolle-arcade.net/ac/")
+        let jsessionid = long("jsessionid")
+            .help("The JSESSIONID cookie from a logged-in session at https://kancolle-arcade.net/ac/api")
+            .argument::<String>("JSESSIONID")
+            .optional();
+        let username = long("username")
+            .help("The USERNAME to log into https://kancolle-arcade.net/ac/")
+            .argument("USERNAME")
+            .optional();
+        construct!(Options {
+            jsessionid,
+            username
+        })
+        .to_options()
+        .descr("A tool to fetch all supported data from https://kancolle-arcade.net/ac/")
     }
 
     #[test]
@@ -74,6 +85,8 @@ fn fixture_filename(endpoint: &ApiEndpoint) -> String {
         TcBookInfo => "TcBook_info.json".to_string(),
         TcErrorDispFlag => "TcError_dispFlag.json".to_string(),
 
+        AuthLogin => panic!("Unsupported data fixture"),
+
         // TODO: Turn slash into underscore, and drop prefix
         Other(path) => format!("other_{path}.json"),
     }
@@ -83,7 +96,16 @@ fn fixture_filename(endpoint: &ApiEndpoint) -> String {
 async fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
 
-    let client = ClientBuilder::new().jsessionid(args.jsessionid).build()?;
+    let mut client_builder = ClientBuilder::new();
+    if let Some(jsessionid) = args.jsessionid {
+        client_builder = client_builder.jsessionid(jsessionid);
+    }
+    if let Some(username) = args.username {
+        let prompt = format!("Enter the password for {}:", username);
+        let password = rpassword::prompt_password(prompt)?;
+        client_builder = client_builder.userpass(username, password);
+    }
+    let client = client_builder.build()?;
     let mut formatter = Formatter::pretty_printer();
     formatter.indent = "    ".to_string();
     formatter.trailing_output = "\n".to_string();
