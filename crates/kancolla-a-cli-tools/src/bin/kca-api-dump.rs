@@ -34,7 +34,7 @@ async fn fetch_to_fixture(
     client.fetch(endpoint).await?.read_to_string(&mut data)?;
     let data = formatter.format(&data)?;
     fs::write(
-        format!("tests/fixtures/latest/{filename}"),
+        format!("crates/kancolle-a/tests/fixtures/latest/{filename}"),
         // Not sure why there's a leading newline here. jsonxf docs don't show it.
         data.trim_start(),
     )?;
