@@ -103,7 +103,6 @@ fn main() -> Result<(), Box<dyn Error>> {
                     .to_string(),
             ),
         ]),
-        ..Default::default()
     });
 
     let mut writer = KmlWriter::from_writer(io::stdout());

@@ -31,8 +31,8 @@ fn fetch_to_fixture(
     endpoint: &ApiEndpoint,
 ) -> Result<(), Box<dyn Error>> {
     let mut data = String::new();
-    let filename = fixture_filename(&endpoint);
-    client.fetch(&endpoint)?.read_to_string(&mut data)?;
+    let filename = fixture_filename(endpoint);
+    client.fetch(endpoint)?.read_to_string(&mut data)?;
     let data = formatter.format(&data)?;
     fs::write(
         format!("tests/fixtures/latest/{filename}"),

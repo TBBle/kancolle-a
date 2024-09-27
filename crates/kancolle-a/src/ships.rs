@@ -174,7 +174,7 @@ impl Deref for Ships {
 /// Determine the blueprint/unmodified ship name for the given ship
 fn ship_blueprint_name(ship_name: &str) -> &str {
     // Base case: Ships
-    let base_name = if let Some(split_name) = ship_name.split_once("改") {
+    let base_name = if let Some(split_name) = ship_name.split_once('改') {
         split_name.0
     } else {
         ship_name
@@ -261,9 +261,7 @@ impl Ships {
                 (None, None) => None,
                 (Some(list), None) => Some(Box::new(list.into_iter())),
                 (None, Some(list)) => Some(Box::new(list.into_iter())),
-                (Some(left), Some(right)) => {
-                    Some(Box::new(left.into_iter().chain(right.into_iter())))
-                }
+                (Some(left), Some(right)) => Some(Box::new(left.into_iter().chain(right))),
             };
 
         if let Some(wiki_iter) = wiki_iter {
@@ -434,11 +432,7 @@ impl Ship {
             let row_count = normal_page.variation_num_in_page / 3;
             assert_eq!(
                 self.book_secondrow,
-                if row_count > 1 && self.name.ends_with("改") {
-                    true
-                } else {
-                    false
-                }
+                row_count > 1 && self.name.ends_with('改')
             );
         }
 

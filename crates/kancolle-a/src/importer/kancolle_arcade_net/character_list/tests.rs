@@ -22,7 +22,7 @@ fn parse_empty_character_list_vector() {
 fn validate_character_list_common(character_list: &CharacterList) {
     const CARD_IMAGE_SUFFIX: &str = ".jpg";
     const STATUS_IMAGE_PREFIX: &str = "i/i_";
-    const STATUS_IMAGE_SUFFIXES: [&'static str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
+    const STATUS_IMAGE_SUFFIXES: [&str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
     const EQUIP_IMAGE_PREFIX: &str = "equip_icon_";
 
     // Validating some dependent values to ensure we are making good assumptions
@@ -52,7 +52,7 @@ fn validate_character_list_common(character_list: &CharacterList) {
             ship.slot_disp[..(ship.slot_num as usize)].iter(),
             ship.slot_img[..(ship.slot_num as usize)].iter()
         ) {
-            if equip == "" {
+            if equip.is_empty() {
                 assert_eq!(image, "");
                 if *amount == 0 {
                     // TODO: Why can this be NOT_EQUIPPED_AIRCRAFT? See 鳳翔改.
@@ -105,7 +105,7 @@ fn validate_character_list_common(character_list: &CharacterList) {
         assert!(ship.tc_img.starts_with(&card_image_prefix));
         assert!(ship.tc_img.ends_with(CARD_IMAGE_SUFFIX));
 
-        for image in ship.slot_img.iter().filter(|img| *img != "") {
+        for image in ship.slot_img.iter().filter(|img| !img.is_empty()) {
             assert!(image.starts_with(EQUIP_IMAGE_PREFIX));
         }
 

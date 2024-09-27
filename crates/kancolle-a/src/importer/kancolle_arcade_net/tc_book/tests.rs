@@ -65,7 +65,7 @@ fn parse_empty_tcbook_vector() {
 fn validate_tcbook_common(tcbook: &TcBook) {
     const CARD_IMAGE_SUFFIX: &str = ".jpg";
     const STATUS_IMAGE_PREFIX: &str = "i/i_";
-    const STATUS_IMAGE_SUFFIXES: [&'static str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
+    const STATUS_IMAGE_SUFFIXES: [&str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
 
     // Validating some dependent values to ensure we are making good assumptions
 
@@ -155,10 +155,10 @@ fn validate_tcbook_common(tcbook: &TcBook) {
     // Universally-true facts about all ships we've scanned already.
 
     // ... And exceptions thereof.
-    let ship_types_without_class = vec!["工作艦"]; // Unique repair ship
+    let ship_types_without_class = ["工作艦"]; // Unique repair ship
 
     // Ships with a model num also don't have an index, e.g., DD-445. Is that just for US ships?
-    let ship_classes_without_index = vec![
+    let ship_classes_without_index = [
         "特種船丙型",
         "三式潜航輸送艇",
         "潜特型(伊400型潜水艦)",
@@ -181,7 +181,7 @@ fn validate_tcbook_common(tcbook: &TcBook) {
             assert_eq!(ship.ship_model_num, "");
         } else {
             assert_ne!(ship.ship_class.as_ref().unwrap(), "");
-            if ship.ship_model_num != ""
+            if !ship.ship_model_num.is_empty()
                 || ship_classes_without_index.contains(&&ship.ship_class.as_ref().unwrap()[..])
             {
                 assert!(ship.ship_class_index.is_none());
@@ -210,12 +210,10 @@ fn validate_tcbook_common(tcbook: &TcBook) {
             .card_list
             .iter()
             .filter(|page| {
-                if let BookShipCardPageSource::OriginalIllustration(_) = ship.source(page.priority)
-                {
-                    false
-                } else {
-                    true
-                }
+                !matches!(
+                    ship.source(page.priority),
+                    BookShipCardPageSource::OriginalIllustration(_)
+                )
             })
             .count();
         let expected_married_imgs = ship
@@ -255,7 +253,7 @@ fn validate_tcbook_common(tcbook: &TcBook) {
                     _ => true,
                 });
                 continue;
-            } else if card_list_page.status_img.as_ref().unwrap().len() == 0 {
+            } else if card_list_page.status_img.as_ref().unwrap().is_empty() {
                 assert!(match ship.source(card_list_page.priority) {
                     Unknown => true, // We can't assume anything...
                     Normal | OriginalIllustration(_) => true,

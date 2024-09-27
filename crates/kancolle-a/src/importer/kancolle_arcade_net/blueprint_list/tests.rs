@@ -29,7 +29,7 @@ fn parse_empty_blueprint_list_vector() {
 
 fn validate_blueprint_list_common(blueprint_list: &BlueprintList) {
     const STATUS_IMAGE_PREFIX: &str = "i/i_";
-    const STATUS_IMAGE_SUFFIXES: [&'static str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
+    const STATUS_IMAGE_SUFFIXES: [&str; 4] = ["_n.png", "_bs.png", "_bm.png", "_bl.png"];
 
     // Validating some dependent values to ensure we are making good assumptions
 
@@ -92,7 +92,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
     assert_eq!(弥生.ship_name, "弥生");
     assert_eq!(弥生.status_img, "i/i_4ma06a97am0r_n.png");
     assert_eq!(弥生.blueprint_total_num, 2);
-    assert_eq!(弥生.exists_warning_for_expiration, false);
+    assert!(!弥生.exists_warning_for_expiration);
     assert_eq!(弥生.expiration_date_list.len(), 2);
     let 弥生_0 = &弥生.expiration_date_list[0];
     // No idea why the expiration date is actually the 11th...
@@ -104,7 +104,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
             .to_utc()
     );
     assert_eq!(弥生_0.blueprint_num, 1);
-    assert_eq!(弥生_0.expire_this_month, false);
+    assert!(!弥生_0.expire_this_month);
     let 弥生_1 = &弥生.expiration_date_list[1];
     assert_eq!(
         弥生_1.expiration_date,
@@ -114,7 +114,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
             .to_utc()
     );
     assert_eq!(弥生_1.blueprint_num, 1);
-    assert_eq!(弥生_1.expire_this_month, false);
+    assert!(!弥生_1.expire_this_month);
 
     // Expiring blueprint.
     let 卯月 = &blueprint_list[12];
@@ -125,7 +125,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
     assert_eq!(卯月.ship_name, "卯月");
     assert_eq!(卯月.status_img, "i/i_mj1x41twqqw6_n.png");
     assert_eq!(卯月.blueprint_total_num, 2);
-    assert_eq!(卯月.exists_warning_for_expiration, true);
+    assert!(卯月.exists_warning_for_expiration);
     assert_eq!(卯月.expiration_date_list.len(), 2);
     let 卯月_0 = &卯月.expiration_date_list[0];
     assert_eq!(
@@ -136,7 +136,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
             .to_utc()
     );
     assert_eq!(卯月_0.blueprint_num, 1);
-    assert_eq!(卯月_0.expire_this_month, true);
+    assert!(卯月_0.expire_this_month);
     let 卯月_1 = &卯月.expiration_date_list[1];
     assert_eq!(
         卯月_1.expiration_date,
@@ -146,7 +146,7 @@ fn parse_fixture_blueprint_list_info_20240528() {
             .to_utc()
     );
     assert_eq!(卯月_1.blueprint_num, 1);
-    assert_eq!(卯月_1.expire_this_month, false);
+    assert!(!卯月_1.expire_this_month);
 }
 
 #[test]

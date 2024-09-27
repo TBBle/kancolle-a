@@ -66,12 +66,12 @@ fn main() -> Result<(), Box<dyn Error>> {
             if target_source == BookShipCardPageSourceDiscriminants::Swimsuit {
                 if ship_name == "雪風" {
                     assert!(row1.len() == 3);
-                    assert!(row2.len() == 0);
+                    assert!(row2.is_empty());
                     continue;
                 }
                 if ship_name == "雪風改" {
                     assert!(row1.len() == 3);
-                    assert!(row2.len() == 0);
+                    assert!(row2.is_empty());
                     card_status.push((
                         book.book_no,
                         ship_name.clone(),

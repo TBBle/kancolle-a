@@ -24,7 +24,7 @@ fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: usize) -> Optio
     };
     return stage_costs
         .get(stage)
-        .and_then(|costs| Some((costs.0 as u16, costs.1 as u8)));
+        .map(|costs| (costs.0 as u16, costs.1 as u8));
 }
 
 pub(crate) mod args {
@@ -81,7 +81,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         card_chains
             .entry(base_name)
-            .or_insert(vec![])
+            .or_default()
             .push((ship_name.clone(), has_normal_card));
     }
 
@@ -172,8 +172,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                     last_ship,
                     bp_ship.blueprint_total_num,
                     ship_blueprint_costs(&bp_ship.ship_name, &bp_ship.ship_type, last_stage - 1)
-                        .or(Some((0, 0)))
-                        .unwrap()
+                        .unwrap_or((0, 0))
                         .0,
                     Status::Complete,
                 ));

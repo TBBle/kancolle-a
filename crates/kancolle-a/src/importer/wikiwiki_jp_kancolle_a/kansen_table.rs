@@ -44,7 +44,7 @@ fn clean_record(original: &StringRecord) -> StringRecord {
         let field = field.replace("&br;", " ");
         let field = field.trim();
         let field = field.trim_start_matches('~');
-        let field = complex_link_regex.replace_all(&field, "$1");
+        let field = complex_link_regex.replace_all(field, "$1");
         let field = simple_link_regex.replace_all(&field, "$1");
 
         result.push_field(&field);
@@ -85,7 +85,7 @@ pub(crate) fn read_kansen_table(reader: impl Read) -> Result<KansenTable, Box<dy
         if record.iter().last().unwrap() != "" {
             continue;
         }
-        if record[1].starts_with("~") {
+        if record[1].starts_with('~') {
             continue;
         }
 

@@ -43,6 +43,12 @@ impl ClientBuilder {
     }
 }
 
+impl Default for ClientBuilder {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 pub enum ApiEndpoint {
     // Global data: no authentication needed, unaffected by auth status
     KanmusuList,

@@ -391,8 +391,7 @@ impl BookShip {
             };
             sources
                 .get((priority - 1) as usize)
-                .or(Some(&Unknown))
-                .unwrap()
+                .unwrap_or(&Unknown)
                 .to_owned()
         } else {
             Unknown
