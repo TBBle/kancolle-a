@@ -1,8 +1,8 @@
-use crate::{
-    importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants, ships::ShipsBuilder,
-};
 use bpaf::*;
 use itertools;
+use kancolle_a::{
+    importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants, ships::ShipsBuilder,
+};
 use std::error::Error;
 use std::fs::File;
 use std::io::BufReader;

@@ -49,7 +49,7 @@ pub(crate) mod args {
     use std::path::PathBuf;
 
     use bpaf::*;
-    use kancolle_a::cli_helpers;
+    use kancolle_a_cli_tools::cli_helpers;
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {

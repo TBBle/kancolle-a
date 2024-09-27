@@ -1,11 +1,11 @@
-use kancolle_a::{
-    cli_helpers, importer::kancolle_arcade_net::BookShipCardPageSource, ships::ShipsBuilder,
-};
+use kancolle_a::{importer::kancolle_arcade_net::BookShipCardPageSource, ships::ShipsBuilder};
+use kancolle_a_cli_tools::cli_helpers;
+
 use std::error::Error;
 
 pub(crate) mod args {
     use bpaf::*;
-    use kancolle_a::cli_helpers::{self, ShipSourceDataOptions};
+    use kancolle_a_cli_tools::cli_helpers::{self, ShipSourceDataOptions};
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
@@ -39,10 +39,9 @@ fn main() -> Result<(), Box<dyn Error>> {
         let mut knowable: Vec<u16> = vec![];
         let mut unknown: Vec<u16> = vec![];
         for page in &ship.card_list[1..] {
-            use BookShipCardPageSource::*;
             match ship.source(page.priority) {
-                Normal => panic!("Normal page after page 1"),
-                Unknown => {
+                BookShipCardPageSource::Normal => panic!("Normal page after page 1"),
+                BookShipCardPageSource::Unknown => {
                     if page.acquire_num_in_page > 0 {
                         &mut knowable
                     } else {

@@ -632,19 +632,29 @@ dependencies = [
 name = "kancolle-a"
 version = "0.1.0"
 dependencies = [
- "bpaf",
  "chrono",
  "chrono-tz",
  "csv",
  "derive-getters",
  "itertools",
- "jsonxf",
- "kml",
  "lazy-static-include",
  "regex",
  "reqwest",
  "serde",
  "serde_json",
+ "strum",
+]
+
+[[package]]
+name = "kancolle-a-cli-tools"
+version = "0.1.0"
+dependencies = [
+ "bpaf",
+ "chrono",
+ "itertools",
+ "jsonxf",
+ "kancolle-a",
+ "kml",
  "strum",
 ]
 

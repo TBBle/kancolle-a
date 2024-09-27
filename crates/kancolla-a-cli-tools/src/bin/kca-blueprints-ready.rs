@@ -1,4 +1,5 @@
-use kancolle_a::{cli_helpers, ships::ShipsBuilder};
+use kancolle_a::ships::ShipsBuilder;
+use kancolle_a_cli_tools::cli_helpers;
 use std::{collections::HashMap, error::Error};
 
 /// Report the number of blueprints and large-scale blueprints needed for each stage.
@@ -28,7 +29,7 @@ fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: usize) -> Optio
 
 pub(crate) mod args {
     use bpaf::*;
-    use kancolle_a::cli_helpers::{self, ShipSourceDataOptions};
+    use kancolle_a_cli_tools::cli_helpers::{self, ShipSourceDataOptions};
 
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
