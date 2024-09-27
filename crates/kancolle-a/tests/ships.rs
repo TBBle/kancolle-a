@@ -11,21 +11,22 @@ lazy_static_include_bytes! {
     CHARLIST => "tests/fixtures/latest/CharacterList_info.json",
 }
 
-#[test]
-fn test_ships_null_import() {
+#[tokio::test]
+async fn test_ships_null_import() {
     let ships = ShipsBuilder::new()
         .no_kekkon()
         .no_book()
         .no_blueprint()
         .build()
+        .await
         .unwrap();
 
     assert_eq!(ships.len(), 0);
 }
 
-#[test]
-fn test_ships_default_import() {
-    let ships = ShipsBuilder::default().build().unwrap();
+#[tokio::test]
+async fn test_ships_default_import() {
+    let ships = ShipsBuilder::default().build().await.unwrap();
 
     // Per the wiki ship lists
     assert_eq!(ships.len(), 285 + 160);
@@ -44,14 +45,15 @@ fn test_ships_default_import() {
         .all(|(_, ship)| ship.wiki_list_entry().is_some()));
 }
 
-#[test]
-fn test_ships_kekkon_only_import() {
+#[tokio::test]
+async fn test_ships_kekkon_only_import() {
     let ships = ShipsBuilder::new()
         .kekkon_from_reader(KANMUSU.as_ref())
         .no_book()
         .no_character()
         .no_blueprint()
         .build()
+        .await
         .unwrap();
 
     assert_eq!(ships.len(), 441);
@@ -64,14 +66,15 @@ fn test_ships_kekkon_only_import() {
         .all(|(_, ship)| ship.wiki_list_entry().is_none()));
 }
 
-#[test]
-fn test_ships_blueprint_only_import() {
+#[tokio::test]
+async fn test_ships_blueprint_only_import() {
     let ships = ShipsBuilder::new()
         .no_kekkon()
         .no_book()
         .no_character()
         .blueprint_from_reader(BPLIST.as_ref())
         .build()
+        .await
         .unwrap();
 
     assert_eq!(ships.len(), 135);
@@ -87,14 +90,15 @@ fn test_ships_blueprint_only_import() {
         .all(|(_, ship)| ship.wiki_list_entry().is_none()));
 }
 
-#[test]
-fn test_ships_book_only_import() {
+#[tokio::test]
+async fn test_ships_book_only_import() {
     let ships = ShipsBuilder::new()
         .no_kekkon()
         .book_from_reader(TCBOOK.as_ref())
         .no_character()
         .no_blueprint()
         .build()
+        .await
         .unwrap();
 
     // 285 entries, 37 未取得, and of the remaining 248, 151 have two rows.
@@ -123,14 +127,15 @@ fn test_ships_book_only_import() {
     );
 }
 
-#[test]
-fn test_ships_characters_only_import() {
+#[tokio::test]
+async fn test_ships_characters_only_import() {
     let ships = ShipsBuilder::new()
         .no_kekkon()
         .no_book()
         .character_from_reader(CHARLIST.as_ref())
         .no_blueprint()
         .build()
+        .await
         .unwrap();
 
     assert_eq!(ships.len(), 377);
@@ -143,8 +148,8 @@ fn test_ships_characters_only_import() {
         .all(|(_, ship)| ship.wiki_list_entry().is_none()));
 }
 
-#[test]
-fn test_ships_full_import() {
+#[tokio::test]
+async fn test_ships_full_import() {
     let ships = ShipsBuilder::new()
         .kekkon_from_reader(KANMUSU.as_ref())
         .book_from_reader(TCBOOK.as_ref())
@@ -153,6 +158,7 @@ fn test_ships_full_import() {
         .static_wiki_kansen_list()
         .static_wiki_kaizou_kansen_list()
         .build()
+        .await
         .unwrap();
 
     // Per the wiki ship lists

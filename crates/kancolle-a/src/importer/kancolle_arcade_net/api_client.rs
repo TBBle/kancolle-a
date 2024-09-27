@@ -2,9 +2,9 @@
 //! https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json
 
 // TODO WASI Support (Which means non-blocking, and maybe no cookies?)
-use reqwest::{blocking::Client as ReqwestClient, Url};
 use reqwest::{cookie::Jar, header::HeaderMap};
-use std::{error::Error, io::Read, sync::Arc};
+use reqwest::{Client as ReqwestClient, Url};
+use std::{collections::VecDeque, error::Error, io::Read, sync::Arc};
 
 const API_BASE: &str = "https://kancolle-arcade.net/ac/api/";
 
@@ -156,12 +156,17 @@ pub struct Client {
 }
 
 impl Client {
-    pub fn fetch(&self, endpoint: &ApiEndpoint) -> Result<Box<dyn Read>, Box<dyn Error>> {
-        Ok(Box::new(
-            self.client
-                .get(url_for_endpoint(endpoint))
-                .send()?
-                .error_for_status()?,
-        ))
+    pub async fn fetch(&self, endpoint: &ApiEndpoint) -> Result<Box<dyn Read>, Box<dyn Error>> {
+        // TODO: Push the async higher, and return an AsyncReader here, so we don't have to
+        // pull the whole response down.
+        let body_text = self
+            .client
+            .get(url_for_endpoint(endpoint))
+            .send()
+            .await?
+            .error_for_status()?
+            .text()
+            .await?;
+        Ok(Box::new(VecDeque::from(body_text.into_bytes())))
     }
 }

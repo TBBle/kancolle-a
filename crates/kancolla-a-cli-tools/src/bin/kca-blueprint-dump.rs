@@ -27,11 +27,13 @@ pub(crate) mod args {
     }
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
 
-    let ships =
-        cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?.build()?;
+    let ships = cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?
+        .build()
+        .await?;
 
     let mut bp_per_month = BTreeMap::new();
 

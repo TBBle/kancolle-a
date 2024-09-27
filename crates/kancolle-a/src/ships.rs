@@ -46,18 +46,18 @@ impl ShipsBuilder {
         }
     }
 
-    pub fn build(mut self) -> Result<Ships, Box<dyn Error>> {
+    pub async fn build(mut self) -> Result<Ships, Box<dyn Error>> {
         if let Some(ref api_client_builder) = self.api_client_builder {
             if self.book.is_none() || self.blueprint.is_none() || self.character.is_none() {
                 let client = api_client_builder.build()?;
                 if self.book.is_none() {
-                    self.book = Some(client.fetch(&ApiEndpoint::TcBookInfo)?)
+                    self.book = Some(client.fetch(&ApiEndpoint::TcBookInfo).await?)
                 };
                 if self.blueprint.is_none() {
-                    self.blueprint = Some(client.fetch(&ApiEndpoint::BlueprintListInfo)?)
+                    self.blueprint = Some(client.fetch(&ApiEndpoint::BlueprintListInfo).await?)
                 }
                 if self.character.is_none() {
-                    self.character = Some(client.fetch(&ApiEndpoint::CharacterListInfo)?)
+                    self.character = Some(client.fetch(&ApiEndpoint::CharacterListInfo).await?)
                 }
             }
         }
