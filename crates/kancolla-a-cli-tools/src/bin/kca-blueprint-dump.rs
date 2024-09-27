@@ -27,7 +27,7 @@ pub(crate) mod args {
     }
 }
 
-#[tokio::main]
+#[tokio::main(flavor = "current_thread")]
 async fn main() -> Result<(), Box<dyn Error>> {
     let args = args::options().run();
 

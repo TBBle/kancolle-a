@@ -1,21 +1,50 @@
 //! Module for HTTPS client for https://kancolle-arcade.net/ac/api/ and
 //! https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json
 
-// TODO WASI Support (Which means non-blocking, and maybe no cookies?)
+#[cfg(not(target_family = "wasm"))]
+use reqwest::{cookie::Jar, Url};
 use reqwest::{
-    cookie::Jar,
     header::{HeaderMap, USER_AGENT},
     StatusCode,
 };
-use reqwest::{Client as ReqwestClient, Url};
+use reqwest::{Client as ReqwestClient, ClientBuilder as ReqwestBuilder};
 use serde::{Deserialize, Serialize};
-use std::{collections::VecDeque, error::Error, io::Read, sync::Arc};
+#[cfg(not(target_family = "wasm"))]
+use std::sync::Arc;
+use std::{collections::VecDeque, error::Error, io::Read};
 
 const API_BASE: &str = "https://kancolle-arcade.net/ac/api/";
 
 pub struct ClientBuilder {
     jsessionid: Option<String>,
     userpass: Option<(String, String)>,
+}
+
+#[cfg(not(target_family = "wasm"))]
+fn setup_cookies(
+    jsessionid: Option<String>,
+    builder: ReqwestBuilder,
+) -> Result<ReqwestBuilder, Box<dyn Error>> {
+    Ok(if let Some(jsessionid) = jsessionid {
+        let cookies = Jar::default();
+        cookies.add_cookie_str(
+            &format!("JSESSIONID={}; Path=/; HttpOnly", jsessionid),
+            &API_BASE.parse::<Url>()?,
+        );
+        builder.cookie_provider(Arc::new(cookies))
+    } else {
+        builder.cookie_store(true)
+    })
+}
+
+#[cfg(target_family = "wasm")]
+fn setup_cookies(
+    jsessionid: Option<String>,
+    builder: ReqwestBuilder,
+) -> Result<ReqwestBuilder, Box<dyn Error>> {
+    // TODO: wasm-cookies-rs could be used in the browser
+    assert!(jsessionid.is_none());
+    Ok(builder)
 }
 
 impl ClientBuilder {
@@ -27,22 +56,16 @@ impl ClientBuilder {
     }
 
     pub fn build(self) -> Result<Client, Box<dyn Error>> {
+        let mut reqwest_builder = ReqwestBuilder::new();
+
         let mut headers = HeaderMap::default();
         headers.insert("X-Requested-With", "XMLHttpRequest".parse()?);
+        reqwest_builder = reqwest_builder.default_headers(headers);
 
-        let cookies = Jar::default();
-        if let Some(ref jsessionid) = self.jsessionid {
-            cookies.add_cookie_str(
-                &format!("JSESSIONID={}; Path=/; HttpOnly", jsessionid),
-                &API_BASE.parse::<Url>()?,
-            )
-        };
+        reqwest_builder = setup_cookies(self.jsessionid, reqwest_builder)?;
 
         Ok(Client {
-            client: ReqwestClient::builder()
-                .cookie_provider(Arc::new(cookies))
-                .default_headers(headers)
-                .build()?,
+            client: reqwest_builder.build()?,
             userpass: self.userpass,
         })
     }
