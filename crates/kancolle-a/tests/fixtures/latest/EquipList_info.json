@@ -1,5 +1,5 @@
 {
-    "maxSlotNum": 530,
+    "maxSlotNum": 540,
     "equipList": [
         {
             "type": 5,
@@ -7,13 +7,6 @@
             "name": "TBF",
             "num": 1,
             "img": "equip_icon_6_a2e6kq8r27wg.png"
-        },
-        {
-            "type": 1,
-            "equipmentId": 2,
-            "name": "12.7cm連装砲",
-            "num": 1,
-            "img": "equip_icon_1_1984kzwm2f7s.png"
         },
         {
             "type": 1,
@@ -73,16 +66,9 @@
         },
         {
             "type": 3,
-            "equipmentId": 13,
-            "name": "61cm三連装魚雷",
-            "num": 1,
-            "img": "equip_icon_5_c4bcdscek33o.png"
-        },
-        {
-            "type": 3,
             "equipmentId": 15,
             "name": "61cm四連装(酸素)魚雷",
-            "num": 39,
+            "num": 41,
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
@@ -257,7 +243,7 @@
             "type": 7,
             "equipmentId": 45,
             "name": "三式爆雷投射機",
-            "num": 6,
+            "num": 4,
             "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {
@@ -404,7 +390,7 @@
             "type": 2,
             "equipmentId": 66,
             "name": "8cm高角砲",
-            "num": 10,
+            "num": 11,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -572,7 +558,7 @@
             "type": 8,
             "equipmentId": 93,
             "name": "13号対空電探改",
-            "num": 8,
+            "num": 9,
             "img": "equip_icon_11_xznvoamgip59.png"
         },
         {
@@ -684,21 +670,21 @@
             "type": 8,
             "equipmentId": 122,
             "name": "94式高射装置",
-            "num": 1,
+            "num": 2,
             "img": "equip_icon_30_43j8mb5y331k.png"
         },
         {
             "type": 1,
             "equipmentId": 123,
             "name": "SKC34 20.3cm連装砲",
-            "num": 1,
+            "num": 2,
             "img": "equip_icon_2_n8b0sex6xclf.png"
         },
         {
             "type": 3,
             "equipmentId": 125,
             "name": "61cm三連装(酸素)魚雷",
-            "num": 1,
+            "num": 2,
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
@@ -929,7 +915,7 @@
             "type": 7,
             "equipmentId": 226,
             "name": "九五式爆雷",
-            "num": 7,
+            "num": 6,
             "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {

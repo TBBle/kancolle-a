@@ -2,25 +2,160 @@
     "limit": false,
     "questList": [
         {
-            "questDescription": "航空攻撃隊を編成し、捕捉した**複数の敵艦隊**に**先制攻撃**を敢行せよ！",
-            "questName": "大規模な航空攻撃を敢行せよ！",
+            "questDescription": "艦隊を出撃させ、**敵艦隊**を捕捉、これを**撃退**せよ！",
+            "questName": "敵艦隊を撃退せよ！",
             "questCategory": 0,
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34641,
+            "questId": 34893,
             "questNorma": 3,
             "questRewardList": [
                 {
                     "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 0,
+            "questStartTime": 1727388000000,
+            "questEndTime": 1727474400000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "艦隊を**南西諸島海域**に全力出撃させ、多数の**敵艦隊**を捕捉、\r\n**撃退**せよ！",
+            "questName": "南西諸島海域の制海権を握れ！",
+            "questCategory": 0,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34895,
+            "questNorma": 5,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_COIN",
                     "rewardValue": 10
                 }
             ],
             "questCurrentValue": 0,
             "questContractStatus": 0,
-            "questProgressStatus": 1,
-            "questStartTime": 1725573600000,
-            "questEndTime": 1725660000000,
+            "questProgressStatus": 0,
+            "questStartTime": 1727388000000,
+            "questEndTime": 1727474400000,
+            "questDetailMessageList": [
+                {
+                    "groupNo": 0,
+                    "questCurrentValue": 0,
+                    "questNorma": 5,
+                    "infoList": [
+                        "沖ノ島沖戦闘哨戒",
+                        "沖ノ島海域",
+                        "東部オリョール海",
+                        "バシー島沖",
+                        "カムラン半島"
+                    ]
+                }
+            ]
+        },
+        {
+            "questDescription": "整備が必要な艦を**５隻以上**「**入渠**」させ、大規模な整備をしよう！",
+            "questName": "艦隊大整備！",
+            "questCategory": 0,
+            "questKind": 3,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34896,
+            "questNorma": 5,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                },
+                {
+                    "rewardKind": "BUCKET",
+                    "rewardValue": 1
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 0,
+            "questStartTime": 1727388000000,
+            "questEndTime": 1727474400000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "燃料と弾薬あわせて**６００以上**の資源を艦娘に補給せよ！",
+            "questName": "艦隊大規模補給！",
+            "questCategory": 0,
+            "questKind": 3,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34897,
+            "questNorma": 600,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                },
+                {
+                    "rewardKind": "BUCKET",
+                    "rewardValue": 1
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 0,
+            "questStartTime": 1727388000000,
+            "questEndTime": 1727474400000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "資源を使って**装備**を新たに「**開発**」しよう！",
+            "questName": "新装備「開発」指令",
+            "questCategory": 0,
+            "questKind": 4,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34898,
+            "questNorma": 1,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 0,
+            "questStartTime": 1727388000000,
+            "questEndTime": 1727474400000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "艦隊の脅威となる**敵空母群**。これを捕捉し、**３隻轟沈**せよ！",
+            "questName": "敵空母群を撃沈せよ！",
+            "questCategory": 0,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34901,
+            "questNorma": 3,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 0,
+            "questStartTime": 1727388000000,
+            "questEndTime": 1727474400000,
             "questDetailMessageList": []
         },
         {
@@ -30,7 +165,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34683,
+            "questId": 34944,
             "questNorma": 5,
             "questRewardList": [
                 {
@@ -39,32 +174,58 @@
                 }
             ],
             "questCurrentValue": 0,
-            "questContractStatus": 1,
-            "questProgressStatus": 2,
-            "questStartTime": 1725228000000,
-            "questEndTime": 1725832800000,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
+            "questStartTime": 1727042400000,
+            "questEndTime": 1727647200000,
             "questDetailMessageList": []
         },
         {
-            "questDescription": "全力出撃を行い、可能な限り多くの**敵空母**を**撃滅**せよ！",
-            "questName": "い号作戦",
+            "questDescription": "有力な母艦航空隊で全力出撃を行い、可能な限り多くの**敵空母**を\r\n**撃滅**せよ！",
+            "questName": "敵空母群を撃滅せよ！",
             "questCategory": 1,
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34689,
-            "questNorma": 20,
+            "questId": 34945,
+            "questNorma": 6,
             "questRewardList": [
                 {
                     "rewardKind": "STRATEGY_POINT",
-                    "rewardValue": 30
+                    "rewardValue": 10
                 }
             ],
-            "questCurrentValue": 12,
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
+            "questStartTime": 1727042400000,
+            "questEndTime": 1727647200000,
+            "questDetailMessageList": []
+        },
+        {
+            "questDescription": "海域での探索や装備の廃棄で、**家具コイン３０枚以上**を集めよう！",
+            "questName": "提督執務室、模様替え準備！",
+            "questCategory": 1,
+            "questKind": 5,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 34947,
+            "questNorma": 30,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 20
+                },
+                {
+                    "rewardKind": "ROOM_ITEM_COIN",
+                    "rewardValue": 5
+                }
+            ],
+            "questCurrentValue": 29,
             "questContractStatus": 1,
             "questProgressStatus": 2,
-            "questStartTime": 1725228000000,
-            "questEndTime": 1725832800000,
+            "questStartTime": 1727042400000,
+            "questEndTime": 1727647200000,
             "questDetailMessageList": []
         },
         {
@@ -74,7 +235,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34692,
+            "questId": 34953,
             "questNorma": 10,
             "questRewardList": [
                 {
@@ -85,8 +246,8 @@
             "questCurrentValue": 0,
             "questContractStatus": 0,
             "questProgressStatus": 1,
-            "questStartTime": 1725228000000,
-            "questEndTime": 1725832800000,
+            "questStartTime": 1727042400000,
+            "questEndTime": 1727647200000,
             "questDetailMessageList": []
         },
         {
@@ -96,7 +257,7 @@
             "questKind": 2,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34695,
+            "questId": 34956,
             "questNorma": 5,
             "questRewardList": [
                 {
@@ -104,11 +265,11 @@
                     "rewardValue": 30
                 }
             ],
-            "questCurrentValue": 3,
-            "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1725228000000,
-            "questEndTime": 1725832800000,
+            "questCurrentValue": 0,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1727042400000,
+            "questEndTime": 1727647200000,
             "questDetailMessageList": []
         },
         {
@@ -118,7 +279,7 @@
             "questKind": 2,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34696,
+            "questId": 34957,
             "questNorma": 3,
             "questRewardList": [
                 {
@@ -126,11 +287,11 @@
                     "rewardValue": 50
                 }
             ],
-            "questCurrentValue": 2,
-            "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1725228000000,
-            "questEndTime": 1725832800000,
+            "questCurrentValue": 0,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1727042400000,
+            "questEndTime": 1727647200000,
             "questDetailMessageList": []
         },
         {
@@ -140,7 +301,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34697,
+            "questId": 34958,
             "questNorma": 4,
             "questRewardList": [
                 {
@@ -155,8 +316,8 @@
             "questCurrentValue": 0,
             "questContractStatus": 0,
             "questProgressStatus": 1,
-            "questStartTime": 1725228000000,
-            "questEndTime": 1725832800000,
+            "questStartTime": 1727042400000,
+            "questEndTime": 1727647200000,
             "questDetailMessageList": [
                 {
                     "groupNo": 0,
@@ -193,28 +354,6 @@
             ]
         },
         {
-            "questDescription": "艦隊を**キス島沖**に出撃させ、作戦内に**主力を含め２艦隊撃滅**し、\r\n残作戦時間「**２：３０**」以上で作戦を遂行せよ！",
-            "questName": "北方海域を急襲せよ！",
-            "questCategory": 1,
-            "questKind": 1,
-            "questGroup": 0,
-            "questSortIndex": 0,
-            "questId": 34698,
-            "questNorma": 1,
-            "questRewardList": [
-                {
-                    "rewardKind": "STRATEGY_POINT",
-                    "rewardValue": 50
-                }
-            ],
-            "questCurrentValue": 0,
-            "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1725228000000,
-            "questEndTime": 1725832800000,
-            "questDetailMessageList": []
-        },
-        {
             "questDescription": "「**雷撃演習**」で、高い雷撃能力を示し\r\n**全ての標的**で**☆５評価**を獲得せよ！",
             "questName": "「雷撃演習」で高成績を獲得せよ！",
             "questCategory": 2,
@@ -234,8 +373,8 @@
                 }
             ],
             "questCurrentValue": 0,
-            "questContractStatus": 1,
-            "questProgressStatus": 2,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
             "questDetailMessageList": []
         },
         {

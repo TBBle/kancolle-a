@@ -77,7 +77,7 @@ async fn test_ships_blueprint_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 135);
+    assert_eq!(ships.len(), 142);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
@@ -101,8 +101,8 @@ async fn test_ships_book_only_import() {
         .await
         .unwrap();
 
-    // 285 entries, 37 未取得, and of the remaining 248, 151 have two rows.
-    assert_eq!(ships.len(), 248 + 151);
+    // 285 entries, 35 未取得, and of the remaining 250, 151 have two rows.
+    assert_eq!(ships.len(), 250 + 151);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
@@ -116,7 +116,7 @@ async fn test_ships_book_only_import() {
             .iter()
             .filter(|(_, ship)| !*ship.book_secondrow())
             .count(),
-        248
+        250
     );
     assert_eq!(
         ships
@@ -138,7 +138,7 @@ async fn test_ships_characters_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 377);
+    assert_eq!(ships.len(), 379);
     assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.character().is_some()));
@@ -177,14 +177,14 @@ async fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        331
+        348
     );
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.book().is_some() && !*ship.book_secondrow())
             .count(),
-        248
+        250
     );
     assert_eq!(
         ships
@@ -198,7 +198,7 @@ async fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.character().is_some())
             .count(),
-        377
+        379
     );
     assert_eq!(
         ships

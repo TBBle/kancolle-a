@@ -802,12 +802,12 @@
     {
         "id": 100177,
         "distance": "",
-        "name": "ゲーム キングジョイ",
+        "name": "ゲームキングジョイ",
         "tel": "0522419515",
-        "address": "愛知県名古屋市中区栄3-3-32",
+        "address": "愛知県名古屋市中区栄３‐３‐３２",
         "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
+        "openTime": "09:00   ",
+        "closeTime": "00:00   ",
         "specialInfo": "",
         "country": "JPN",
         "regionEnum": "AICHI",
@@ -1803,8 +1803,8 @@
         "specialInfo": "",
         "country": "JPN",
         "regionEnum": "TOKYO",
-        "latitude": "35.700731",
-        "longitude": "139.481363",
+        "latitude": "35.701848",
+        "longitude": "139.479889",
         "zoomLevel": 16
     },
     {
@@ -2637,6 +2637,22 @@
         "regionEnum": "CHIBA",
         "latitude": "35.66518",
         "longitude": "139.893346",
+        "zoomLevel": 16
+    },
+    {
+        "id": 109237,
+        "distance": "",
+        "name": "アップル島田店",
+        "tel": "0547544351",
+        "address": "静岡県島田市宝来町8-5",
+        "station": "",
+        "openTime": "        ",
+        "closeTime": "        ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "SHIZUOKA",
+        "latitude": "34.826601",
+        "longitude": "138.187411",
         "zoomLevel": 16
     },
     {
@@ -5188,7 +5204,7 @@
         "distance": "",
         "name": "ラウンドワン静岡・駿河店",
         "tel": "0542011601",
-        "address": "静岡県静岡市駿河区手越７５",
+        "address": "静岡県静岡市駿河区向手越１丁目１０−１",
         "station": "",
         "openTime": "10:00   ",
         "closeTime": "23:50   ",
@@ -9984,22 +10000,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 107681,
-        "distance": "",
-        "name": "タイトーステーション 藤沢店",
-        "tel": "0466479153",
-        "address": "神奈川県藤沢市南藤沢２１−１",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "KANAGAWA",
-        "latitude": "35.337282",
-        "longitude": "139.487336",
-        "zoomLevel": 16
-    },
-    {
         "id": 108488,
         "distance": "",
         "name": "ユーズランド大河原店",
@@ -10301,22 +10301,6 @@
         "regionEnum": "TOYAMA",
         "latitude": "36.641228",
         "longitude": "136.946981",
-        "zoomLevel": 16
-    },
-    {
-        "id": 112503,
-        "distance": "",
-        "name": "ＨａｐｉｐｉＬａｎｄ常盤平店",
-        "tel": "07014796701",
-        "address": "千葉県松戸市常盤平3-11-1西友常盤平店4F",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "CHIBA",
-        "latitude": "35.801955",
-        "longitude": "139.95151",
         "zoomLevel": 16
     },
     {

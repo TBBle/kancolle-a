@@ -333,11 +333,11 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 1800,
-        "areaClearState": "NOTCLEAR",
+        "areaClearState": "CLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "NORMAL",
+            "militaryGaugeStatus": "BREAK",
             "eneMilitaryGaugeVal": 2000,
-            "militaryGaugeLeft": 1000,
+            "militaryGaugeLeft": 0,
             "bossStatus": "NONE"
         },
         "limitSec": 360,
@@ -541,12 +541,12 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 2500,
-        "areaClearState": "NOTCLEAR",
+        "areaClearState": "CLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "NORMAL",
+            "militaryGaugeStatus": "BREAK",
             "eneMilitaryGaugeVal": 2000,
-            "militaryGaugeLeft": 2000,
-            "bossStatus": "NONE"
+            "militaryGaugeLeft": 0,
+            "bossStatus": "FORM_1"
         },
         "limitSec": 360,
         "requireGp": 400,
@@ -726,12 +726,12 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 2800,
-        "areaClearState": "NOTCLEAR",
+        "areaClearState": "CLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "NORMAL",
+            "militaryGaugeStatus": "BREAK",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 2500,
-            "bossStatus": "NONE"
+            "militaryGaugeLeft": 0,
+            "bossStatus": "FORM_1"
         },
         "limitSec": 390,
         "requireGp": 450,
@@ -997,11 +997,11 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 3000,
-        "areaClearState": "NOTCLEAR",
+        "areaClearState": "CLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "NORMAL",
+            "militaryGaugeStatus": "BREAK",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 2500,
+            "militaryGaugeLeft": 0,
             "bossStatus": "NONE"
         },
         "limitSec": 390,
@@ -1164,7 +1164,7 @@
         "bossInfo": {
             "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 4500,
-            "militaryGaugeLeft": 2500,
+            "militaryGaugeLeft": 2000,
             "bossStatus": "FORM_2"
         },
         "limitSec": 420,
@@ -1201,7 +1201,7 @@
         "bossInfo": {
             "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 4500,
-            "militaryGaugeLeft": 2500,
+            "militaryGaugeLeft": 2000,
             "bossStatus": "FORM_2"
         },
         "limitSec": 420,
