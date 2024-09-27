@@ -9,7 +9,7 @@ license.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bpaf = { version = "0.9.12", features = ["dull-color"] }
+bpaf = { version = "0.9.14", features = ["dull-color"] }
 chrono = { version = "0.4.38", features = ["serde"] }
 itertools = "0.13.0"
 jsonxf = "1.1.1"
