@@ -1,9 +1,9 @@
 //! Module for importer from https://wikiwiki.jp/kancolle-a/艦船/テーブル or https://wikiwiki.jp/kancolle-a/改造艦船/テーブル
 
+use crate::Result;
 use csv::{ReaderBuilder, StringRecord};
 use regex::Regex;
 use serde::Deserialize;
-use std::error::Error;
 use std::io::Read;
 
 use lazy_static_include::*;
@@ -55,8 +55,7 @@ fn clean_record(original: &StringRecord) -> StringRecord {
 
 /// Parses a Kansen Table from the provided Wikiwiki table reader.
 /// Fails if not given a Wikiwiki table, or expected data structure does not match.
-// TODO: Proper error
-pub(crate) fn read_kansen_table(reader: impl Read) -> Result<KansenTable, Box<dyn Error>> {
+pub(crate) fn read_kansen_table(reader: impl Read) -> Result<KansenTable> {
     // Theory: Wikiwiki tables are basically pipe-separator CSV files with some special behaviours
     let mut rdr = ReaderBuilder::new()
         .delimiter(b'|')

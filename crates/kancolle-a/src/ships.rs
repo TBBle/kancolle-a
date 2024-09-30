@@ -1,7 +1,7 @@
 //! The abstract concept of a ship(girl) in Kancolle Arcade
 
 use derive_getters::Getters;
-use std::{collections::HashMap, error::Error, io::Read, ops::Deref};
+use std::{collections::HashMap, io::Read, ops::Deref};
 
 use crate::importer::{
     kancolle_arcade_net::{
@@ -10,6 +10,7 @@ use crate::importer::{
     },
     wikiwiki_jp_kancolle_a::KansenShip,
 };
+use crate::Result;
 
 use crate::importer::wikiwiki_jp_kancolle_a::{self, KAIZOU_KANSEN, KANSEN};
 
@@ -46,7 +47,7 @@ impl ShipsBuilder {
         }
     }
 
-    pub async fn build(mut self) -> Result<Ships, Box<dyn Error>> {
+    pub async fn build(mut self) -> Result<Ships> {
         if let Some(api_client_builder) = self.api_client_builder {
             if self.book.is_none() || self.blueprint.is_none() || self.character.is_none() {
                 let client = api_client_builder.build()?;
@@ -212,7 +213,7 @@ fn ship_blueprint_name(ship_name: &str) -> &str {
 
 impl Ships {
     /// Import a list of ships from the given datasource
-    fn new(builder: ShipsBuilder) -> Result<Self, Box<dyn Error>> {
+    fn new(builder: ShipsBuilder) -> Result<Self> {
         let book = match builder.book {
             None => None,
             Some(reader) => {
@@ -424,8 +425,7 @@ pub struct Ship {
 
 impl Ship {
     /// Validate the various data elements agree when present
-    /// TODO: Establish a library-wide error type. Probably using thiserror.
-    fn validate(&self) -> Result<(), Box<dyn Error>> {
+    fn validate(&self) -> Result<()> {
         // TODO: We should error in the failure cases, not panic.
 
         if let Some(book) = self.book.as_ref() {
