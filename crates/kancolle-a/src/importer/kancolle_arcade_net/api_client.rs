@@ -2,45 +2,22 @@
 //! https://kancolle-a.sega.jp/players/kekkonkakkokari/kanmusu_list.json
 
 use crate::{Error, Result};
-use reqwest::cookie::Jar;
 use reqwest::{
     header::{HeaderMap, USER_AGENT},
     StatusCode,
 };
 use reqwest::{Client as ReqwestClient, ClientBuilder as ReqwestBuilder};
 use serde::{Deserialize, Serialize};
-#[cfg(not(target_family = "wasm"))]
-use std::sync::Arc;
 use std::{collections::VecDeque, io::Read};
-#[cfg(not(target_family = "wasm"))]
-use url::Url;
+
+#[cfg_attr(target_arch = "wasm32", path = "api_client/cookie_helper_wasm32.rs")]
+mod cookie_helper;
 
 const API_BASE: &str = "https://kancolle-arcade.net/ac/api/";
 
 pub struct ClientBuilder {
     jsessionid: Option<String>,
     userpass: Option<(String, String)>,
-}
-
-#[cfg(not(target_family = "wasm"))]
-fn setup_cookies(jsessionid: Option<String>, builder: ReqwestBuilder) -> Result<ReqwestBuilder> {
-    Ok(if let Some(jsessionid) = jsessionid {
-        let cookies = Jar::default();
-        cookies.add_cookie_str(
-            &format!("JSESSIONID={}; Path=/; HttpOnly", jsessionid),
-            &API_BASE.parse::<Url>()?,
-        );
-        builder.cookie_provider(Arc::new(cookies))
-    } else {
-        builder.cookie_store(true)
-    })
-}
-
-#[cfg(target_family = "wasm")]
-fn setup_cookies(jsessionid: Option<String>, builder: ReqwestBuilder) -> Result<ReqwestBuilder> {
-    // TODO: wasm-cookies-rs could be used in the browser
-    assert!(jsessionid.is_none());
-    Ok(builder)
 }
 
 impl ClientBuilder {
@@ -58,7 +35,7 @@ impl ClientBuilder {
         headers.insert("X-Requested-With", "XMLHttpRequest".parse()?);
         reqwest_builder = reqwest_builder.default_headers(headers);
 
-        reqwest_builder = setup_cookies(self.jsessionid, reqwest_builder)?;
+        reqwest_builder = cookie_helper::setup_cookies(self.jsessionid, reqwest_builder)?;
 
         Ok(Client {
             client: reqwest_builder.build()?,

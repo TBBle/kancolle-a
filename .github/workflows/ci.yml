@@ -10,13 +10,34 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  test:
-    name: cargo test
+  test_ubuntu:
+    name: cargo test (Ubuntu)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
       - run: cargo test --all-features
+
+  test_wasip1:
+    name: cargo test (wasip1)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: wasm32-wasip1
+      - name: Install latest wasmedge
+        # Cadged from https://github.com/second-state/wasmedge-containers-examples/blob/main/crio/install.sh
+        run: |
+          wget -q https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh
+          chmod a+x install.sh
+          sudo ./install.sh --path="/usr/local"
+          rm -rf install.sh
+          wasmedge --version
+      - run: cargo test --all-features --target wasm32-wasip1 --release
+        # For some reason, filesystem access isn't working. It works on Windows though...
+        env:
+          CARGO_TARGET_WASM32_WASIP1_RUNNER: wasmedge
 
   formatting:
     runs-on: ubuntu-latest
