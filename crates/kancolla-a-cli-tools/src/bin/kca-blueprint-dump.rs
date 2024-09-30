@@ -1,8 +1,8 @@
+use anyhow::Result;
 use chrono::{Datelike, Utc};
 use kancolle_a::ships::ShipsBuilder;
 use kancolle_a_cli_tools::cli_helpers;
 use std::collections::BTreeMap;
-use std::error::Error;
 
 pub(crate) mod args {
     use bpaf::*;
@@ -28,7 +28,7 @@ pub(crate) mod args {
 }
 
 #[tokio::main(flavor = "current_thread")]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<()> {
     let args = args::options().run();
 
     let ships = cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?

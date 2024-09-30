@@ -1,9 +1,9 @@
+use anyhow::Result;
 use bpaf::*;
 use itertools;
 use kancolle_a::{
     importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants, ships::ShipsBuilder,
 };
-use std::error::Error;
 use std::fs::File;
 use std::io::BufReader;
 use std::path::PathBuf;
@@ -115,7 +115,7 @@ pub fn ship_source_data_parser() -> impl Parser<ShipSourceDataOptions> {
 pub fn ship_source_data_applier(
     args: &ShipSourceDataOptions,
     mut builder: ShipsBuilder,
-) -> Result<ShipsBuilder, Box<dyn Error>> {
+) -> Result<ShipsBuilder> {
     if let Some(tcbook) = &args.tcbook {
         builder = builder.book_from_reader(BufReader::new(File::open(tcbook)?));
     }

@@ -1,6 +1,7 @@
+use anyhow::Result;
 use kancolle_a::ships::ShipsBuilder;
 use kancolle_a_cli_tools::cli_helpers;
-use std::{collections::HashMap, error::Error};
+use std::collections::HashMap;
 
 /// Report the number of blueprints and large-scale blueprints needed for each stage.
 /// `stage` is 0-indexed, i.e. it's the cost to upgrade _from_ that level.
@@ -50,7 +51,7 @@ pub(crate) mod args {
 }
 
 #[tokio::main(flavor = "current_thread")]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<()> {
     let args = args::options().run();
 
     let ships = cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?

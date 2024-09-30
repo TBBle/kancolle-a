@@ -1,11 +1,12 @@
+use anyhow::Result;
 use kancolle_a::importer::kancolle_arcade_net::{self, Place};
 use kml::{
     types::{Coord, Element, Geometry, Placemark, Point},
     Kml, KmlDocument, KmlVersion, KmlWriter,
 };
 use std::fs::File;
+use std::io;
 use std::{collections::HashMap, io::BufReader};
-use std::{error::Error, io};
 
 fn place_to_kml(place: &Place) -> Kml<f64> {
     let coord = Coord::<f64> {
@@ -69,7 +70,7 @@ pub(crate) mod args {
     }
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<()> {
     let args = args::options().run();
     let places_path = args.places;
 

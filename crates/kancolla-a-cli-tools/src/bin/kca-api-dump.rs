@@ -1,6 +1,7 @@
+use anyhow::{bail, Result};
 use jsonxf::Formatter;
 use kancolle_a::importer::kancolle_arcade_net::{ApiEndpoint, Client, ClientBuilder};
-use std::{error::Error, fs};
+use std::fs;
 
 pub(crate) mod args {
     use bpaf::*;
@@ -39,11 +40,16 @@ async fn fetch_to_fixture(
     client: &Client,
     formatter: &mut Formatter,
     endpoint: &ApiEndpoint,
-) -> Result<(), Box<dyn Error>> {
+) -> Result<()> {
     let mut data = String::new();
     let filename = fixture_filename(endpoint);
     client.fetch(endpoint).await?.read_to_string(&mut data)?;
-    let data = formatter.format(&data)?;
+    let data = match formatter.format(&data) {
+        Ok(data) => data,
+        // Erk, it returns a Result<_, String>. We could open-code it, it
+        // only calls public APIs and they retrun Result<_, Error>.
+        Err(failure) => bail!("JSON formatter failure: {}", failure),
+    };
     fs::write(
         format!("crates/kancolle-a/tests/fixtures/latest/{filename}"),
         // Not sure why there's a leading newline here. jsonxf docs don't show it.
@@ -93,7 +99,7 @@ fn fixture_filename(endpoint: &ApiEndpoint) -> String {
 }
 
 #[tokio::main(flavor = "current_thread")]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<()> {
     let args = args::options().run();
 
     let mut client_builder = ClientBuilder::new();

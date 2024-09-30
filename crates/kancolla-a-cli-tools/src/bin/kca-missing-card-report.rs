@@ -1,8 +1,8 @@
+use anyhow::Result;
 use kancolle_a::{
     importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants, ships::ShipsBuilder,
 };
 use kancolle_a_cli_tools::cli_helpers;
-use std::error::Error;
 
 pub(crate) mod args {
     use kancolle_a::importer::kancolle_arcade_net::BookShipCardPageSourceDiscriminants;
@@ -41,7 +41,7 @@ pub(crate) mod args {
 }
 
 #[tokio::main(flavor = "current_thread")]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<()> {
     let args = args::options().run();
 
     let ships = cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?
