@@ -33,14 +33,14 @@ async fn main() -> Result<()> {
 
     let mut unknown_pages: Vec<(u16, &str, Vec<u16>, Vec<u16>)> = vec![];
 
-    for (ship_name, ship) in ships
-        .iter()
-        .filter_map(|(ship_name, ship)| ship.book().as_ref().map(|ship| (ship_name, ship)))
+    for (ship_name, book_ship) in ships
+        .shipmod_iter()
+        .filter_map(|shipmod| shipmod.book().as_ref().map(|ship| (shipmod.name(), ship)))
     {
         let mut knowable: Vec<u16> = vec![];
         let mut unknown: Vec<u16> = vec![];
-        for page in &ship.card_list[1..] {
-            match ship.source(page.priority) {
+        for page in &book_ship.card_list[1..] {
+            match book_ship.source(page.priority) {
                 BookShipCardPageSource::Normal => panic!("Normal page after page 1"),
                 BookShipCardPageSource::Unknown => {
                     if page.acquire_num_in_page > 0 {
@@ -54,7 +54,7 @@ async fn main() -> Result<()> {
             }
         }
         if !knowable.is_empty() || !unknown.is_empty() {
-            unknown_pages.push((ship.book_no, ship_name, knowable, unknown));
+            unknown_pages.push((book_ship.book_no, ship_name, knowable, unknown));
         }
     }
 

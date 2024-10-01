@@ -1,7 +1,12 @@
 //! The abstract concept of a ship(girl) in Kancolle Arcade
 
 use derive_getters::Getters;
-use std::{collections::HashMap, io::Read, ops::Deref};
+use std::{
+    collections::{hash_map::Iter as HashMapIter, HashMap},
+    io::Read,
+    iter::FusedIterator,
+    ops::Deref,
+};
 
 use crate::importer::{
     kancolle_arcade_net::{
@@ -177,6 +182,51 @@ impl ShipsBuilder {
 
 pub struct Ships(HashMap<String, Ship>);
 
+struct ShipModIter<'a> {
+    ship_iter: HashMapIter<'a, String, Ship>,
+    shipmod_iter: Option<std::slice::Iter<'a, ShipMod>>,
+}
+
+impl FusedIterator for ShipModIter<'_> {}
+
+impl<'a> Iterator for ShipModIter<'a> {
+    type Item = &'a ShipMod;
+    fn next(&mut self) -> Option<Self::Item> {
+        // Already exhausted case, covers "Started empty", and makes us Fused
+        self.shipmod_iter.as_ref()?;
+
+        // Current ship has another mod
+        let next_mod = self.shipmod_iter.as_mut().unwrap().next();
+        if next_mod.is_some() {
+            return next_mod;
+        }
+
+        // Current ship exhausted, advance to next ship
+        self.shipmod_iter = self.ship_iter.next().map(|(_, ship)| ship.mods.iter());
+
+        // Tail-call since we changed ships
+        self.next()
+    }
+}
+
+impl Ships {
+    pub fn shipmod_by_name(&self, shipmod_name: &str) -> Option<&ShipMod> {
+        let ship_name = ship_blueprint_name(shipmod_name);
+        self.0
+            .get(ship_name)
+            .and_then(|ship| ship.shipmod_by_name(shipmod_name))
+    }
+
+    pub fn shipmod_iter(&self) -> impl Iterator<Item = &ShipMod> + '_ {
+        let mut ship_iter = self.0.iter();
+        let shipmod_iter = ship_iter.next().map(|(_, ship)| ship.mods.iter());
+        ShipModIter {
+            ship_iter,
+            shipmod_iter,
+        }
+    }
+}
+
 // Implementing Deref but not DerefMut so it can't be mutated.
 impl Deref for Ships {
     type Target = HashMap<String, Ship>;
@@ -186,7 +236,7 @@ impl Deref for Ships {
     }
 }
 
-/// Determine the blueprint/unmodified ship name for the given ship
+/// Determine the unmodified (blueprint) ship name for the given ship
 fn ship_blueprint_name(ship_name: &str) -> &str {
     // Base case: Ships
     let base_name = if let Some(split_name) = ship_name.split_once('改') {
@@ -201,14 +251,47 @@ fn ship_blueprint_name(ship_name: &str) -> &str {
         "龍鳳" => "大鯨",
         "Верный" => "響",
         "Italia" => "Littorio",
-        // Untested against data as I don't own them.
-        "呂500" => "U-511",
         "千代田甲" | "千代田航" => "千代田",
         "千歳甲" | "千歳航" => "千歳",
+        // Untested against data as I don't own them.
+        "呂500" => "U-511",
         "Октябрьская революция" => "Гангут",
         "大鷹" => "春日丸",
         _ => base_name,
     }
+}
+
+/// Determine how many levels of remodel predated a rename
+fn ship_remodel_level_guess(ship_name: &str) -> u16 {
+    let (base_name, kai_name) = match ship_name.find('改') {
+        None => (ship_name, ""),
+        Some(index) => ship_name.split_at(index),
+    };
+
+    let base_level: u16 = match base_name {
+        // Tested against data
+        "龍鳳" => 1,
+        "Верный" => 2,
+        "Italia" => 1,
+        "千代田甲" | "千歳甲" => 2,
+        "千代田航" | "千歳航" => 3,
+        // Untested against data as I don't own them.
+        "呂500" => 2,
+        "Октябрьская революция" => 1,
+        "大鷹" => 1,
+        _ => 0,
+    };
+
+    let kai_level: u16 = match kai_name {
+        "" => 0,
+        "改" => 1,
+        "改二" => 2,
+        // TODO: 改二＿ perhaps, for some future-proofing?
+        "改三" | "改二甲" | "改二丁" | "改二乙" | "改二特" | "改二丙" => 3,
+        _ => panic!("Unknown kai_level {kai_name}"),
+    };
+
+    base_level + kai_level
 }
 
 impl Ships {
@@ -248,27 +331,21 @@ impl Ships {
             Some(reader) => Some(wikiwiki_jp_kancolle_a::read_kansen_table(reader)?),
         };
 
-        // TODO: Can we precalculate capacity? What happens if we undershoot by a bit?
-        // HACK: 500 is more than the kekkon list, so it'll do for now.
-        let mut ships: HashMap<String, Ship> = HashMap::with_capacity(500);
+        // TODO: Can we precalculate capacity?
+        // HACK: 500 is more than the wiki list (445), so it'll do for now. This is a temporary array anyway.
+        let mut shipmods: HashMap<String, ShipMod> = HashMap::with_capacity(500);
 
         // TODO: Don't panic in case of duplicates, return an error.
 
-        // For blueprints and book pages, it'd be nice if Ship could just hold references into the relevant
-        // lists rather than moving/cloning, but Rust data model makes that hard.
+        // For two-row book pages, it'd be nice if Ship could just hold references into the relevant
+        // lists rather than cloning, but Rust data model makes that hard.
         // See https://docs.rs/rental/latest/rental/ but I don't know if that crate can solve this instance.
 
-        // Helper function for use with or_insert_with_key. This isn't Ship::new because it takes a
-        // String reference, and a well-designed API takes a moved String.
-        let ship_inserter = |ship_name: &String| Ship {
-            name: ship_name.clone(),
-            book: None,
-            book_secondrow: false,
-            character: None,
-            kekkon: None,
-            blueprint: None,
-            wiki_list_entry: None,
-        };
+        // Helper function for use with or_insert_with_key.
+        let ship_inserter = |ship_name: &String| Ship::new(ship_name.clone());
+
+        // Helper function for use with or_insert_with_key.
+        let shipmod_inserter = |ship_name: &String| ShipMod::new(ship_name.clone());
 
         // The wiki lists should be complete. And there should be no overlaps.
         let wiki_iter: Option<Box<dyn Iterator<Item = KansenShip>>> =
@@ -281,9 +358,9 @@ impl Ships {
 
         if let Some(wiki_iter) = wiki_iter {
             for wiki_row in wiki_iter {
-                let ship = ships
+                let ship = shipmods
                     .entry(wiki_row.ship_name.clone())
-                    .or_insert_with_key(ship_inserter);
+                    .or_insert_with_key(shipmod_inserter);
                 match &mut ship.wiki_list_entry {
                     None => ship.wiki_list_entry = Some(wiki_row),
                     Some(_) => {
@@ -296,9 +373,9 @@ impl Ships {
         // Kekkon list is a convenient source of distinct ship names, if we have it.
         if let Some(kekkonlist) = kekkonlist {
             for kekkon in kekkonlist.into_iter() {
-                let ship = ships
+                let ship = shipmods
                     .entry(kekkon.name.clone())
-                    .or_insert_with_key(ship_inserter);
+                    .or_insert_with_key(shipmod_inserter);
                 match &mut ship.kekkon {
                     None => ship.kekkon = Some(kekkon),
                     Some(_) => {
@@ -310,9 +387,9 @@ impl Ships {
 
         if let Some(characters) = characters {
             for character in characters.into_iter() {
-                let ship = ships
+                let ship = shipmods
                     .entry(character.ship_name.clone())
-                    .or_insert_with_key(ship_inserter);
+                    .or_insert_with_key(shipmod_inserter);
                 match &mut ship.character {
                     None => ship.character = Some(character),
                     Some(_) => {
@@ -329,9 +406,9 @@ impl Ships {
                     let book_ship = book_ship.clone();
                     let book_ship_name = format!("{}改", book_ship.ship_name);
 
-                    let ship = ships
+                    let ship = shipmods
                         .entry(book_ship_name)
-                        .or_insert_with_key(ship_inserter);
+                        .or_insert_with_key(shipmod_inserter);
                     ship.book_secondrow = true;
                     match &mut ship.book {
                         None => ship.book = Some(book_ship),
@@ -341,9 +418,9 @@ impl Ships {
                     };
                 }
 
-                let ship = ships
+                let ship = shipmods
                     .entry(book_ship.ship_name.clone())
-                    .or_insert_with_key(ship_inserter);
+                    .or_insert_with_key(shipmod_inserter);
                 match &mut ship.book {
                     None => ship.book = Some(book_ship),
                     Some(_) => {
@@ -353,23 +430,27 @@ impl Ships {
             }
         }
 
-        // Blueprints must be last as we clone them to matching modified ships first before consuming the list.
+        if let Some(bplist) = bplist.as_ref() {
+            for bp_ship in bplist.iter() {
+                shipmods
+                    .entry(bp_ship.ship_name.clone())
+                    .or_insert_with_key(shipmod_inserter);
+                // TODO: Fail if we have a duplicate blueprint.
+            }
+        }
 
+        for ship in shipmods.values() {
+            ship.validate()?
+        }
+
+        // TODO: Can we precalculate capacity more accurately?
+        // HACK: 200 is more than the wiki table count (see test_ships_default_import),
+        // so it'll do for now. We'll shrink-to-fit later, so being a little over is fine.
+        let mut ships: HashMap<String, Ship> = HashMap::with_capacity(200);
+
+        // First, distribute the blueprints.
         if let Some(bplist) = bplist {
             for bp_ship in bplist.into_iter() {
-                // Find existing ships which are modified from this blueprint, and clone the blueprint to them.
-                for (_, ship) in ships.iter_mut().filter(|(name, _)| {
-                    name != &&bp_ship.ship_name && ship_blueprint_name(name) == bp_ship.ship_name
-                }) {
-                    match &ship.blueprint {
-                        None => ship.blueprint = Some(bp_ship.clone()),
-                        Some(_) => panic!(
-                            "Duplicate blueprint entry for {}",
-                            bp_ship.ship_name.clone()
-                        ),
-                    }
-                }
-
                 let ship = ships
                     .entry(bp_ship.ship_name.clone())
                     .or_insert_with_key(ship_inserter);
@@ -378,23 +459,106 @@ impl Ships {
                     Some(_) => {
                         panic!("Duplicate blueprint entry for {}", bp_ship.ship_name)
                     }
-                };
+                }
             }
         }
 
-        for ship in ships.values() {
-            ship.validate()?
+        // Now distribute the ShipMods.
+        for (modname, shipmod) in shipmods.into_iter() {
+            let basename = ship_blueprint_name(&modname);
+            let ship = ships
+                .entry(basename.to_string())
+                .or_insert_with_key(ship_inserter);
+            ship.mods.push(shipmod);
         }
+
+        // Validate, pack it down, we're done.
+
+        for (_, ship) in ships.iter_mut() {
+            ship.sort_ship_mods();
+            ship.validate()?;
+        }
+
+        ships.shrink_to_fit();
 
         Ok(Ships(ships))
     }
 }
 
-/// A Kancolle Arcade shipgirl
+/// A Kancolle Arcade shipgirl, covering all modification stages.
 /// Only the name is reliably unique.
 /// Many other fields may either surprisingly overlap, or are optional.
 #[derive(Debug, Getters)]
 pub struct Ship {
+    /// Base ship name
+    name: String,
+
+    /// The Blueprint data for this Ship, if any blueprints are held.
+    blueprint: Option<BlueprintShip>,
+
+    /// The various mod stages of this shipgirl, in order of modification stage.
+    /// If there are gaps in our data (which should be unlikely) they will not
+    /// be visible here.
+    mods: Vec<ShipMod>,
+}
+
+impl Ship {
+    pub fn shipmod_by_name(&self, shipmod_name: &str) -> Option<&ShipMod> {
+        self.mods
+            .iter()
+            .find(|shipmod| shipmod.name() == shipmod_name)
+    }
+
+    fn new(name: String) -> Ship {
+        Ship {
+            name,
+            blueprint: None,
+            // Big enough for 千代田 and 千歳航, we'll shrink-to-fit when sorting.
+            mods: Vec::with_capacity(6),
+        }
+    }
+
+    /// Validate that the ShipMods match and are sorted correctly.
+    fn validate(&self) -> Result<()> {
+        if let Some(ref blueprint) = self.blueprint() {
+            assert_eq!(self.name(), &blueprint.ship_name);
+        }
+
+        let mut last_remodel_level = match self.mods().first() {
+            Some(shipmod) => shipmod.remodel_level(),
+            None => 0,
+        };
+
+        let mut first = true;
+
+        for shipmod in self.mods().iter() {
+            assert_eq!(self.name(), ship_blueprint_name(shipmod.name()));
+            if !first {
+                assert!(shipmod.remodel_level() > last_remodel_level);
+                last_remodel_level = shipmod.remodel_level();
+            }
+            first = false;
+
+            if self.name() == shipmod.name() {
+                assert_eq!(shipmod.remodel_level(), 0);
+            }
+        }
+
+        Ok(())
+    }
+
+    /// Sort our ShipMods and pack the storage vector
+    fn sort_ship_mods(&mut self) {
+        self.mods.sort_by_key(|shipmod| shipmod.remodel_level());
+        self.mods.shrink_to_fit();
+    }
+}
+
+/// A Kancolle Arcade shipgirl at a particular modification stage
+/// Only the name is reliably unique.
+/// Many other fields may either surprisingly overlap, or are optional.
+#[derive(Debug, Getters)]
+pub struct ShipMod {
     /// Full ship name
     name: String,
 
@@ -413,17 +577,36 @@ pub struct Ship {
     /// Any Kekkon Kakko Kari entry for this ship
     kekkon: Option<KekkonKakkoKari>,
 
-    /// The Blueprint data for this ship's base ship
-    /// May be empty because the player has no blueprints, or
-    /// because the base ship is not identified correctly.
-    blueprint: Option<BlueprintShip>,
-
     /// The kansen ship list entry for this ship from
     /// https://wikiwiki.jp/kancolle-a/
     wiki_list_entry: Option<KansenShip>,
 }
 
-impl Ship {
+impl ShipMod {
+    pub fn remodel_level(&self) -> u16 {
+        // Trivial if we have a character
+        if let Some(character) = self.character() {
+            return character.remodel_lv;
+        }
+
+        // Otherwise, we need to guess.
+        ship_remodel_level_guess(self.name())
+    }
+
+    // TODO: More APIs, particulary when there's multiple sources of truth, and some are more trustworthy
+    // than others.
+
+    fn new(name: String) -> ShipMod {
+        ShipMod {
+            name,
+            book: None,
+            book_secondrow: false,
+            character: None,
+            kekkon: None,
+            wiki_list_entry: None,
+        }
+    }
+
     /// Validate the various data elements agree when present
     fn validate(&self) -> Result<()> {
         // TODO: We should error in the failure cases, not panic.
@@ -461,7 +644,4 @@ impl Ship {
 
         Ok(())
     }
-
-    // TODO: More APIs, particulary when there's multiple sources of truth, and some are more trustworthy
-    // than others.
 }

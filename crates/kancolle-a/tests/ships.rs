@@ -28,21 +28,25 @@ async fn test_ships_null_import() {
 async fn test_ships_default_import() {
     let ships = ShipsBuilder::default().build().await.unwrap();
 
+    // Regex against the ships table `^\|\d\d\d\|\d\|\[\[[^\]改甲航]*\]\]\|[^|]+\|` gives 195
+    // Then there's 6 ships that are renamed per `ship_blueprint_name`.
+    assert_eq!(ships.len(), 189);
+    assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
+
     // Per the wiki ship lists
-    assert_eq!(ships.len(), 285 + 160);
+    assert_eq!(ships.shipmod_iter().count(), 285 + 160);
     assert_eq!(
         ships
-            .iter()
-            .filter(|(_, ship)| ship.kekkon().is_some())
+            .shipmod_iter()
+            .filter(|ship| ship.kekkon().is_some())
             .count(),
         441
     );
-    assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.book().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
     assert!(ships
-        .iter()
-        .all(|(_, ship)| ship.wiki_list_entry().is_some()));
+        .shipmod_iter()
+        .all(|ship| ship.wiki_list_entry().is_some()));
 }
 
 #[tokio::test]
@@ -56,14 +60,17 @@ async fn test_ships_kekkon_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 441);
-    assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_some()));
+    // 441 entries in kanmusu_list.json, Regex `"name": ".*[改甲航].*",` hits 247, plus 6 renames
+    assert_eq!(ships.len(), 441 - 247 - 6);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.book().is_none()));
+
+    assert_eq!(ships.shipmod_iter().count(), 441);
+    assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_some()));
+    assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
     assert!(ships
-        .iter()
-        .all(|(_, ship)| ship.wiki_list_entry().is_none()));
+        .shipmod_iter()
+        .all(|ship| ship.wiki_list_entry().is_none()));
 }
 
 #[tokio::test]
@@ -78,16 +85,16 @@ async fn test_ships_blueprint_only_import() {
         .unwrap();
 
     assert_eq!(ships.len(), 142);
-    assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
-    assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.book().is_none()));
+    assert!(ships.iter().all(|(_, ship)| ship.mods().len() == 1));
+
+    assert_eq!(ships.shipmod_iter().count(), 142);
+    assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
     assert!(ships
-        .iter()
-        .all(|(_, ship)| ship.wiki_list_entry().is_none()));
-    assert!(ships
-        .iter()
-        .all(|(_, ship)| ship.wiki_list_entry().is_none()));
+        .shipmod_iter()
+        .all(|ship| ship.wiki_list_entry().is_none()));
 }
 
 #[tokio::test]
@@ -101,27 +108,31 @@ async fn test_ships_book_only_import() {
         .await
         .unwrap();
 
-    // 285 entries, 35 未取得, and of the remaining 250, 151 have two rows.
-    assert_eq!(ships.len(), 250 + 151);
-    assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
+    // Regex `"shipName": ".*[改甲航].*",` gives 70 book entries with modified names
+    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 3 are not in my data.
+    assert_eq!(ships.len(), 250 - 70 - 3);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.character().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.book().is_some()));
+
+    // 285 entries, 35 未取得, and of the remaining 250, 151 have two rows.
+    assert_eq!(ships.shipmod_iter().count(), 250 + 151);
+    assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.book().is_some()));
     assert!(ships
-        .iter()
-        .all(|(_, ship)| ship.wiki_list_entry().is_none()));
+        .shipmod_iter()
+        .all(|ship| ship.wiki_list_entry().is_none()));
 
     assert_eq!(
         ships
-            .iter()
-            .filter(|(_, ship)| !*ship.book_secondrow())
+            .shipmod_iter()
+            .filter(|ship| !*ship.book_secondrow())
             .count(),
         250
     );
     assert_eq!(
         ships
-            .iter()
-            .filter(|(_, ship)| *ship.book_secondrow())
+            .shipmod_iter()
+            .filter(|ship| *ship.book_secondrow())
             .count(),
         151
     );
@@ -138,14 +149,18 @@ async fn test_ships_characters_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 379);
-    assert!(ships.iter().all(|(_, ship)| ship.kekkon().is_none()));
+    // Regex `"shipName": ".*[改甲航].*",` gives 199 characters with modified names
+    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 3 are not in my data.
+    assert_eq!(ships.len(), 379 - 199 - 3);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
-    assert!(ships.iter().all(|(_, ship)| ship.character().is_some()));
-    assert!(ships.iter().all(|(_, ship)| ship.book().is_none()));
+
+    assert_eq!(ships.shipmod_iter().count(), 379);
+    assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
+    assert!(ships.shipmod_iter().all(|ship| ship.character().is_some()));
+    assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
     assert!(ships
-        .iter()
-        .all(|(_, ship)| ship.wiki_list_entry().is_none()));
+        .shipmod_iter()
+        .all(|ship| ship.wiki_list_entry().is_none()));
 }
 
 #[tokio::test]
@@ -161,57 +176,57 @@ async fn test_ships_full_import() {
         .await
         .unwrap();
 
-    // Per the wiki ship lists
-    assert_eq!(ships.len(), 285 + 160);
-    assert_eq!(
-        ships
-            .iter()
-            .filter(|(_, ship)| ship.kekkon().is_some())
-            .count(),
-        441
-    );
-    // TODO: Independently verify this... It's not much of a test if I just change the
-    // value to be the failure case.
+    assert_eq!(ships.len(), 189);
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        348
+        142
+    );
+
+    // Per the wiki ship lists
+    assert_eq!(ships.shipmod_iter().count(), 285 + 160);
+    assert_eq!(
+        ships
+            .shipmod_iter()
+            .filter(|ship| ship.kekkon().is_some())
+            .count(),
+        441
     );
     assert_eq!(
         ships
-            .iter()
-            .filter(|(_, ship)| ship.book().is_some() && !*ship.book_secondrow())
+            .shipmod_iter()
+            .filter(|ship| ship.book().is_some() && !*ship.book_secondrow())
             .count(),
         250
     );
     assert_eq!(
         ships
-            .iter()
-            .filter(|(_, ship)| ship.book().is_some() && *ship.book_secondrow())
+            .shipmod_iter()
+            .filter(|ship| ship.book().is_some() && *ship.book_secondrow())
             .count(),
         151
     );
     assert_eq!(
         ships
-            .iter()
-            .filter(|(_, ship)| ship.character().is_some())
+            .shipmod_iter()
+            .filter(|ship| ship.character().is_some())
             .count(),
         379
     );
     assert_eq!(
         ships
-            .iter()
-            .filter(|(_, ship)| ship.wiki_list_entry().is_some())
+            .shipmod_iter()
+            .filter(|ship| ship.wiki_list_entry().is_some())
             .count(),
         285 + 160
     );
 
     let non_kekkon_ships: Vec<&str> = ships
-        .iter()
-        .filter(|(_, ship)| ship.kekkon().is_none())
-        .map(|(name, _)| name.as_ref())
+        .shipmod_iter()
+        .filter(|ship| ship.kekkon().is_none())
+        .map(|ship| ship.name().as_ref())
         .collect();
 
     assert_eq!(non_kekkon_ships.len(), 4);
@@ -219,4 +234,33 @@ async fn test_ships_full_import() {
     assert!(non_kekkon_ships.contains(&"武蔵改二"));
     assert!(non_kekkon_ships.contains(&"Ranger改"));
     assert!(non_kekkon_ships.contains(&"時雨改三"));
+
+    // Not really a test, more a record of the data in the integration tests.
+    let unowned_ships: Vec<&str> = ships
+        .iter()
+        .filter_map(|(_, ship)| {
+            if ship
+                .mods()
+                .iter()
+                .all(|shipmod| shipmod.book().is_none() && shipmod.character().is_none())
+            {
+                Some(ship.name().as_ref())
+            } else {
+                None
+            }
+        })
+        .collect();
+    assert_eq!(unowned_ships.len(), 12);
+    assert!(unowned_ships.contains(&"Ark Royal"));
+    assert!(unowned_ships.contains(&"Hornet"));
+    assert!(unowned_ships.contains(&"伊14"));
+    assert!(unowned_ships.contains(&"Ташкент"));
+    assert!(unowned_ships.contains(&"神威"));
+    assert!(unowned_ships.contains(&"Saratoga"));
+    assert!(unowned_ships.contains(&"Grecale"));
+    assert!(unowned_ships.contains(&"Commandant Teste"));
+    assert!(unowned_ships.contains(&"伊13"));
+    assert!(unowned_ships.contains(&"Atlanta"));
+    assert!(unowned_ships.contains(&"Гангут"));
+    assert!(unowned_ships.contains(&"Z3"));
 }
