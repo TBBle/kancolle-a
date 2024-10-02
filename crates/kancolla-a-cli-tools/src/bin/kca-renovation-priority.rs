@@ -11,11 +11,15 @@ pub(crate) mod args {
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
         pub(crate) data: ShipSourceDataOptions,
+        pub(crate) ship_names: Vec<String>,
     }
 
     pub fn options() -> OptionParser<Options> {
         let data = cli_helpers::ship_source_data_parser();
-        construct!(Options { data })
+        let ship_names = positional("SHIP")
+            .help("Ships to filter the search by")
+            .many();
+        construct!(Options { data, ship_names })
             .to_options()
             .descr("A tool to report on renovation priorities for your collection.")
     }
@@ -76,7 +80,10 @@ async fn main() -> Result<()> {
             .is_empty()
     };
 
-    for (ship_name, ship) in ships.iter() {
+    for (ship_name, ship) in ships
+        .iter()
+        .filter(|(ship_name, _)| args.ship_names.is_empty() || args.ship_names.contains(ship_name))
+    {
         if ship.mods().is_empty() || ship.mods().iter().all(missing) {
             results.push(State::MissingAll(ship_name));
             continue;
