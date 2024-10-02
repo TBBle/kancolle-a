@@ -11,17 +11,25 @@ pub(crate) mod args {
     #[derive(Debug, Clone)]
     pub(crate) struct Options {
         pub(crate) data: ShipSourceDataOptions,
+        pub(crate) char_only: bool,
         pub(crate) ship_names: Vec<String>,
     }
 
     pub fn options() -> OptionParser<Options> {
         let data = cli_helpers::ship_source_data_parser();
+        let char_only = long("character-only")
+            .help("Don't consider missing normal card as missing")
+            .switch();
         let ship_names = positional("SHIP")
             .help("Ships to filter the search by")
             .many();
-        construct!(Options { data, ship_names })
-            .to_options()
-            .descr("A tool to report on renovation priorities for your collection.")
+        construct!(Options {
+            data,
+            char_only,
+            ship_names
+        })
+        .to_options()
+        .descr("A tool to report on renovation priorities for your collection.")
     }
 
     #[test]
@@ -66,18 +74,22 @@ async fn main() -> Result<()> {
     let mut results: Vec<State> = Vec::new();
 
     // No character entry, no book entry, or Normal page Normal card is missing.
-    let missing = |ship_mod: &ShipMod| {
-        ship_mod.character().is_none()
-            || ship_mod.book().is_none()
-            || ship_mod
-                .book()
-                .as_ref()
-                .unwrap()
-                .card_list
-                .first()
-                .unwrap()
-                .card_img_list[if *ship_mod.book_secondrow() { 3 } else { 0 }]
-            .is_empty()
+    let missing = if args.char_only {
+        |ship_mod: &ShipMod| ship_mod.character().is_none()
+    } else {
+        |ship_mod: &ShipMod| {
+            ship_mod.character().is_none()
+                || ship_mod.book().is_none()
+                || ship_mod
+                    .book()
+                    .as_ref()
+                    .unwrap()
+                    .card_list
+                    .first()
+                    .unwrap()
+                    .card_img_list[if *ship_mod.book_secondrow() { 3 } else { 0 }]
+                .is_empty()
+        }
     };
 
     for (ship_name, ship) in ships
