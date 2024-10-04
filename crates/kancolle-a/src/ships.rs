@@ -237,7 +237,7 @@ impl Deref for Ships {
 }
 
 /// Determine the unmodified (blueprint) ship name for the given ship
-fn ship_blueprint_name(ship_name: &str) -> &str {
+pub fn ship_blueprint_name(ship_name: &str) -> &str {
     // Base case: Ships
     let base_name = if let Some(split_name) = ship_name.split_once('改') {
         split_name.0

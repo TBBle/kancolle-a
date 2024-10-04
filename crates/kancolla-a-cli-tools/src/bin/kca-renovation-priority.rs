@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 
 use anyhow::Result;
-use kancolle_a::ships::{ShipMod, ShipsBuilder};
+use kancolle_a::ships::{self, ShipMod, ShipsBuilder};
 use kancolle_a_cli_tools::cli_helpers;
 
 pub(crate) mod args {
@@ -45,6 +45,12 @@ async fn main() -> Result<()> {
     let ships = cli_helpers::ship_source_data_applier(&args.data, ShipsBuilder::default())?
         .build()
         .await?;
+
+    let ship_names: Vec<&str> = args
+        .ship_names
+        .iter()
+        .map(|ship_name| ships::ship_blueprint_name(ship_name))
+        .collect();
 
     // Plan: Report ShipMods in the following states, in order:
     // * Ships with no characters or missing base character: Need drops
@@ -94,7 +100,7 @@ async fn main() -> Result<()> {
 
     for (ship_name, ship) in ships
         .iter()
-        .filter(|(ship_name, _)| args.ship_names.is_empty() || args.ship_names.contains(ship_name))
+        .filter(|(ship_name, _)| ship_names.is_empty() || ship_names.contains(&ship_name.as_str()))
     {
         if ship.mods().is_empty() || ship.mods().iter().all(missing) {
             results.push(State::MissingAll(ship_name));
