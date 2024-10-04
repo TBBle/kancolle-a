@@ -261,8 +261,8 @@ pub fn ship_blueprint_name(ship_name: &str) -> &str {
     }
 }
 
-/// Determine how many levels of remodel predated a rename
-fn ship_remodel_level_guess(ship_name: &str) -> u16 {
+/// Guess the ship remodel level based on its name
+pub fn ship_remodel_level_guess(ship_name: &str) -> u16 {
     let (base_name, kai_name) = match ship_name.find('改') {
         None => (ship_name, ""),
         Some(index) => ship_name.split_at(index),

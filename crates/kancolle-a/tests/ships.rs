@@ -1,4 +1,4 @@
-use kancolle_a::ships::ShipsBuilder;
+use kancolle_a::ships::{self, ShipsBuilder};
 
 // This is an integration test, so we're only using it against "current" data.
 
@@ -161,6 +161,12 @@ async fn test_ships_characters_only_import() {
     assert!(ships
         .shipmod_iter()
         .all(|ship| ship.wiki_list_entry().is_none()));
+
+    // Opportunistic test for ship_remodel_level_guess
+    assert!(ships
+        .shipmod_iter()
+        .all(|ship| ships::ship_remodel_level_guess(ship.name())
+            == ship.character().as_ref().unwrap().remodel_lv));
 }
 
 #[tokio::test]
