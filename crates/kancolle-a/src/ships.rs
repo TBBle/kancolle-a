@@ -557,6 +557,8 @@ impl Ship {
 /// A Kancolle Arcade shipgirl at a particular modification stage
 /// Only the name is reliably unique.
 /// Many other fields may either surprisingly overlap, or are optional.
+/// TODO: Replace derive_getters with hand-written getters that return Option<&T>
+/// instead of &Option<T> so I can remove all the as_ref calls in callers.
 #[derive(Debug, Getters)]
 pub struct ShipMod {
     /// Full ship name
