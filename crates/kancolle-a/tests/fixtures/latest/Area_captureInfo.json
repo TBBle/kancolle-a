@@ -148,7 +148,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1727708400000
+        "periodEndTime": 1730386800000
     },
     {
         "areaId": 2,
@@ -356,7 +356,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1727708400000
+        "periodEndTime": 1730386800000
     },
     {
         "areaId": 3,
@@ -449,7 +449,7 @@
         "areaId": 3,
         "areaSubId": 3,
         "pursuitMap": false,
-        "pursuitMapOpen": true,
+        "pursuitMapOpen": false,
         "stageClearItemInfo": "NONE",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -464,35 +464,6 @@
             "BUCKET",
             "MEDIUMBOX",
             "SMALLREC",
-            "NONE"
-        ],
-        "sortieLimitDrum": 0,
-        "strategyPointDrumBounus": false,
-        "allLvRaidFlag": false,
-        "supportFleetFlag": false,
-        "ssopStartTime": 4102412399900,
-        "ssopEndTime": 4102412399900,
-        "periodEndTime": 0
-    },
-    {
-        "areaId": 3,
-        "areaSubId": 3,
-        "pursuitMap": true,
-        "pursuitMapOpen": false,
-        "stageClearItemInfo": "NONE",
-        "stageClearItemAmount": 0,
-        "stageClearItemAmount2": 0,
-        "areaClearState": "CLEAR",
-        "limitSec": 90,
-        "requireGp": 200,
-        "sortieLimit": true,
-        "stageImageName": "area_d23zup8bq4.png",
-        "stageMissionName": "アルフォンシーノ方面進出",
-        "stageMissionInfo": "北方海域での追撃戦を敢行せよ！",
-        "stageDropItemInfo": [
-            "NONE",
-            "NONE",
-            "NONE",
             "NONE"
         ],
         "sortieLimitDrum": 0,
@@ -564,7 +535,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1727708400000
+        "periodEndTime": 1730386800000
     },
     {
         "areaId": 4,
@@ -686,7 +657,7 @@
         "areaId": 4,
         "areaSubId": 4,
         "pursuitMap": false,
-        "pursuitMapOpen": false,
+        "pursuitMapOpen": true,
         "stageClearItemInfo": "MEISTER",
         "stageClearItemAmount": 1,
         "stageClearItemAmount2": 0,
@@ -719,6 +690,35 @@
     },
     {
         "areaId": 4,
+        "areaSubId": 4,
+        "pursuitMap": true,
+        "pursuitMapOpen": false,
+        "stageClearItemInfo": "NONE",
+        "stageClearItemAmount": 0,
+        "stageClearItemAmount2": 0,
+        "areaClearState": "CLEAR",
+        "limitSec": 90,
+        "requireGp": 200,
+        "sortieLimit": false,
+        "stageImageName": "area_rwcr2jocm4.png",
+        "stageMissionName": "カスガダマ沖海戦",
+        "stageMissionInfo": "カスガダマ島沖へ侵攻し、敵東方艦隊の中枢部隊を追撃せよ！",
+        "stageDropItemInfo": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimitDrum": 0,
+        "strategyPointDrumBounus": false,
+        "allLvRaidFlag": false,
+        "supportFleetFlag": false,
+        "ssopStartTime": 4102412399900,
+        "ssopEndTime": 4102412399900,
+        "periodEndTime": 0
+    },
+    {
+        "areaId": 4,
         "areaSubId": 5,
         "pursuitMap": false,
         "pursuitMapOpen": false,
@@ -726,12 +726,12 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 2800,
-        "areaClearState": "CLEAR",
+        "areaClearState": "NOTCLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "BREAK",
+            "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 0,
-            "bossStatus": "FORM_1"
+            "militaryGaugeLeft": 2500,
+            "bossStatus": "NONE"
         },
         "limitSec": 390,
         "requireGp": 450,
@@ -749,7 +749,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1727708400000
+        "periodEndTime": 1730386800000
     },
     {
         "areaId": 5,
@@ -997,11 +997,11 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 3000,
-        "areaClearState": "CLEAR",
+        "areaClearState": "NOTCLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "BREAK",
+            "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 0,
+            "militaryGaugeLeft": 2500,
             "bossStatus": "NONE"
         },
         "limitSec": 390,
@@ -1020,7 +1020,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1727708400000
+        "periodEndTime": 1730386800000
     },
     {
         "areaId": 6,

@@ -888,6 +888,12 @@
         "equipImg": "e/equip_157_vb8yea7aqrg.png"
     },
     {
+        "bookNo": 161,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 162,
         "equipKind": "中口径主砲",
         "equipName": "203mm/53 連装砲",
@@ -937,6 +943,12 @@
     },
     {
         "bookNo": 179,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
+        "bookNo": 183,
         "equipKind": "",
         "equipName": "",
         "equipImg": ""
