@@ -228,7 +228,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 300200100,
         "developEquipmentList": [],
@@ -275,7 +275,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 300200101,
         "developEquipmentList": [
@@ -320,7 +320,7 @@
             2,
             22,
             22,
-            9
+            0
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -336,7 +336,7 @@
             "equip_icon_9_s61o68iy522i.png",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 300200102,
         "developEquipmentList": [
@@ -404,7 +404,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 400200200,
         "developEquipmentList": [],
@@ -451,7 +451,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 400200201,
         "developEquipmentList": [
@@ -512,7 +512,7 @@
             "equip_icon_9_s61o68iy522i.png",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 400200202,
         "developEquipmentList": [
@@ -674,7 +674,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 8,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 602800100,
         "developEquipmentList": [],
@@ -721,7 +721,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 8,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 602800101,
         "developEquipmentList": [
@@ -884,7 +884,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 803000100,
         "developEquipmentList": [],
@@ -931,7 +931,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 803000101,
         "developEquipmentList": [
@@ -989,7 +989,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 803000102,
         "developEquipmentList": [
@@ -1032,7 +1032,7 @@
         "slotAmount": [
             10,
             24,
-            14,
+            15,
             7
         ],
         "slotDisp": [
@@ -1079,7 +1079,7 @@
         "slotAmount": [
             15,
             24,
-            14,
+            15,
             10
         ],
         "slotDisp": [
@@ -1107,6 +1107,64 @@
                 "developCount": 0,
                 "maxDevelopCount": 3,
                 "developEquipImg": "e/equip_24_jz3lecx28o0.png"
+            }
+        ],
+        "shipModelNum": ""
+    },
+    {
+        "bookNo": 196,
+        "lv": 26,
+        "shipType": "正規空母",
+        "shipSortNo": 1000,
+        "remodelLv": 2,
+        "shipName": "飛龍改二",
+        "statusImg": "i/i_agnjknm62pgj_n.png",
+        "starNum": 1,
+        "shipClass": "飛龍型",
+        "shipClassIndex": 1,
+        "tcImg": "s/tc_196_06mc2qrsksdt.jpg",
+        "expPercent": 46,
+        "maxHp": 67,
+        "realHp": 67,
+        "damageStatus": "NORMAL",
+        "slotNum": 4,
+        "slotEquipName": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "slotAmount": [
+            15,
+            32,
+            18,
+            3
+        ],
+        "slotDisp": [
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT"
+        ],
+        "slotImg": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "blueprintTotalNum": 7,
+        "married": false,
+        "dispSortNo": 903100102,
+        "developEquipmentList": [
+            {
+                "planKind": 2,
+                "sortIndex": 3,
+                "requireLv": 77,
+                "requireStrategyPoint": 480,
+                "requireMaterialMedal": 2,
+                "developCount": 0,
+                "maxDevelopCount": 3,
+                "developEquipImg": "e/equip_93_swi1vmjhe3v.png"
             }
         ],
         "shipModelNum": ""
@@ -1152,7 +1210,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 1002200100,
         "developEquipmentList": [],
@@ -1172,7 +1230,7 @@
         "tcImg": "s/tc_10_znq1sk6qmerg.jpg",
         "expPercent": 71,
         "maxHp": 36,
-        "realHp": 11,
+        "realHp": 12,
         "damageStatus": "M_BREAK",
         "slotNum": 3,
         "slotEquipName": [
@@ -1199,7 +1257,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 1002200101,
         "developEquipmentList": [],
@@ -1653,7 +1711,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 1501500500,
         "developEquipmentList": [],
@@ -1700,7 +1758,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 1501500501,
         "developEquipmentList": [],
@@ -1956,7 +2014,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 1801600200,
         "developEquipmentList": [],
@@ -2003,7 +2061,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 1801600201,
         "developEquipmentList": [],
@@ -2262,15 +2320,15 @@
         "shipSortNo": 1200,
         "remodelLv": 0,
         "shipName": "金剛",
-        "statusImg": "i/i_esqkcgkcuent_n.png",
+        "statusImg": "i/i_esqkcgkcuent_bm.png",
         "starNum": 5,
         "shipClass": "金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_21_esqkcgkcuent.jpg",
-        "expPercent": 29,
+        "expPercent": 53,
         "maxHp": 63,
-        "realHp": 63,
-        "damageStatus": "NORMAL",
+        "realHp": 22,
+        "damageStatus": "M_BREAK",
         "slotNum": 3,
         "slotEquipName": [
             "",
@@ -2309,15 +2367,15 @@
         "shipSortNo": 1200,
         "remodelLv": 1,
         "shipName": "金剛改",
-        "statusImg": "i/i_ktxfp6kq3fjs_n.png",
+        "statusImg": "i/i_ktxfp6kq3fjs_bm.png",
         "starNum": 5,
         "shipClass": "金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_21_ktxfp6kq3fjs.jpg",
-        "expPercent": 29,
+        "expPercent": 53,
         "maxHp": 75,
-        "realHp": 75,
-        "damageStatus": "NORMAL",
+        "realHp": 26,
+        "damageStatus": "M_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "",
@@ -2356,15 +2414,15 @@
         "shipSortNo": 1200,
         "remodelLv": 2,
         "shipName": "金剛改二",
-        "statusImg": "i/i_p4mqfkggfder_n.png",
+        "statusImg": "i/i_p4mqfkggfder_bm.png",
         "starNum": 5,
         "shipClass": "金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_149_kr4qq4rrp9s9.jpg",
-        "expPercent": 29,
+        "expPercent": 53,
         "maxHp": 82,
-        "realHp": 82,
-        "damageStatus": "NORMAL",
+        "realHp": 28,
+        "damageStatus": "M_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "",
@@ -2403,15 +2461,15 @@
         "shipSortNo": 1250,
         "remodelLv": 3,
         "shipName": "金剛改二丙",
-        "statusImg": "i/i_mzsttyqtpenf_n.png",
+        "statusImg": "i/i_mzsttyqtpenf_bm.png",
         "starNum": 5,
         "shipClass": "改金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_391_wk4unmq3nzru.jpg",
-        "expPercent": 29,
+        "expPercent": 53,
         "maxHp": 86,
-        "realHp": 86,
-        "damageStatus": "NORMAL",
+        "realHp": 29,
+        "damageStatus": "M_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "35.6cm連装砲(ダズル迷彩)",
@@ -2466,7 +2524,7 @@
     },
     {
         "bookNo": 22,
-        "lv": 70,
+        "lv": 71,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -2476,9 +2534,9 @@
         "shipClass": "金剛型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_22_dn9eg6ckdmzw.jpg",
-        "expPercent": 73,
+        "expPercent": 10,
         "maxHp": 63,
-        "realHp": 63,
+        "realHp": 54,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -2505,7 +2563,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 2200000200,
         "developEquipmentList": [],
@@ -2513,7 +2571,7 @@
     },
     {
         "bookNo": 22,
-        "lv": 70,
+        "lv": 71,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 1,
@@ -2523,9 +2581,9 @@
         "shipClass": "金剛型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_22_u4ku9qfsj7g0.jpg",
-        "expPercent": 73,
+        "expPercent": 10,
         "maxHp": 75,
-        "realHp": 75,
+        "realHp": 65,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
@@ -2552,7 +2610,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 2200000201,
         "developEquipmentList": [],
@@ -2560,7 +2618,7 @@
     },
     {
         "bookNo": 150,
-        "lv": 70,
+        "lv": 71,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 2,
@@ -2570,9 +2628,9 @@
         "shipClass": "金剛型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_150_y79kru2mgf4z.jpg",
-        "expPercent": 73,
+        "expPercent": 10,
         "maxHp": 83,
-        "realHp": 83,
+        "realHp": 71,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
@@ -2599,7 +2657,7 @@
             "equip_icon_3_me6e2ezu084a.png",
             "equip_icon_13_jdkmrexetpvn.png"
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 2200000202,
         "developEquipmentList": [],
@@ -2612,15 +2670,15 @@
         "shipSortNo": 1200,
         "remodelLv": 0,
         "shipName": "榛名",
-        "statusImg": "i/i_9t77p71k36f0_n.png",
+        "statusImg": "i/i_9t77p71k36f0_bl.png",
         "starNum": 5,
         "shipClass": "金剛型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_23_9t77p71k36f0.jpg",
-        "expPercent": 53,
+        "expPercent": 85,
         "maxHp": 63,
-        "realHp": 63,
-        "damageStatus": "NORMAL",
+        "realHp": 1,
+        "damageStatus": "L_BREAK",
         "slotNum": 3,
         "slotEquipName": [
             "",
@@ -2659,15 +2717,15 @@
         "shipSortNo": 1200,
         "remodelLv": 1,
         "shipName": "榛名改",
-        "statusImg": "i/i_1tczj3c9t06a_n.png",
+        "statusImg": "i/i_1tczj3c9t06a_bl.png",
         "starNum": 5,
         "shipClass": "金剛型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_23_1tczj3c9t06a.jpg",
-        "expPercent": 53,
+        "expPercent": 85,
         "maxHp": 75,
-        "realHp": 75,
-        "damageStatus": "NORMAL",
+        "realHp": 1,
+        "damageStatus": "L_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "",
@@ -2706,15 +2764,15 @@
         "shipSortNo": 1200,
         "remodelLv": 2,
         "shipName": "榛名改二",
-        "statusImg": "i/i_gwzcq6gk9dd6_n.png",
+        "statusImg": "i/i_gwzcq6gk9dd6_bl.png",
         "starNum": 5,
         "shipClass": "金剛型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_151_y1egmmjkrgqk.jpg",
-        "expPercent": 53,
+        "expPercent": 85,
         "maxHp": 81,
-        "realHp": 81,
-        "damageStatus": "NORMAL",
+        "realHp": 1,
+        "damageStatus": "L_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "35.6cm連装砲(ダズル迷彩)",
@@ -2769,7 +2827,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_24_k2q9maf2wm1n.jpg",
-        "expPercent": 26,
+        "expPercent": 72,
         "maxHp": 63,
         "realHp": 63,
         "damageStatus": "NORMAL",
@@ -2816,7 +2874,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_24_2gte7493ctk7.jpg",
-        "expPercent": 26,
+        "expPercent": 72,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -2863,7 +2921,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_152_2ge19zm4pmqk.jpg",
-        "expPercent": 26,
+        "expPercent": 72,
         "maxHp": 82,
         "realHp": 82,
         "damageStatus": "NORMAL",
@@ -2950,7 +3008,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 2503200100,
         "developEquipmentList": [],
@@ -2997,7 +3055,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 2503200101,
         "developEquipmentList": [],
@@ -3206,7 +3264,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 9,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 2700100200,
         "developEquipmentList": [],
@@ -3253,7 +3311,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 9,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 2700100201,
         "developEquipmentList": [],
@@ -3300,7 +3358,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 9,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 2700100202,
         "developEquipmentList": [
@@ -3566,7 +3624,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 12,
+        "blueprintTotalNum": 10,
         "married": false,
         "dispSortNo": 3003300100,
         "developEquipmentList": [],
@@ -3613,7 +3671,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 12,
+        "blueprintTotalNum": 10,
         "married": false,
         "dispSortNo": 3003300101,
         "developEquipmentList": [
@@ -3671,7 +3729,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 12,
+        "blueprintTotalNum": 10,
         "married": false,
         "dispSortNo": 3003300102,
         "developEquipmentList": [
@@ -4418,7 +4476,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 3801401100,
         "developEquipmentList": [],
@@ -4465,7 +4523,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 3801401101,
         "developEquipmentList": [],
@@ -4606,7 +4664,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 4001300200,
         "developEquipmentList": [],
@@ -4653,7 +4711,7 @@
             "equip_icon_15_wpoe5ai203dt.png",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 4001300201,
         "developEquipmentList": [],
@@ -5134,7 +5192,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 11,
+        "blueprintTotalNum": 10,
         "married": false,
         "dispSortNo": 4501100400,
         "developEquipmentList": [],
@@ -5154,7 +5212,7 @@
         "tcImg": "s/tc_45_rkqxpkqdznas.jpg",
         "expPercent": 44,
         "maxHp": 43,
-        "realHp": 6,
+        "realHp": 7,
         "damageStatus": "L_BREAK",
         "slotNum": 3,
         "slotEquipName": [
@@ -5166,7 +5224,7 @@
         "slotAmount": [
             1,
             1,
-            1,
+            0,
             0
         ],
         "slotDisp": [
@@ -5181,7 +5239,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 11,
+        "blueprintTotalNum": 10,
         "married": false,
         "dispSortNo": 4501100401,
         "developEquipmentList": [],
@@ -5201,7 +5259,7 @@
         "tcImg": "s/tc_288_4rjnkyzeyesg.jpg",
         "expPercent": 44,
         "maxHp": 45,
-        "realHp": 6,
+        "realHp": 7,
         "damageStatus": "L_BREAK",
         "slotNum": 3,
         "slotEquipName": [
@@ -5213,7 +5271,7 @@
         "slotAmount": [
             1,
             2,
-            1,
+            0,
             0
         ],
         "slotDisp": [
@@ -5228,7 +5286,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 11,
+        "blueprintTotalNum": 10,
         "married": false,
         "dispSortNo": 4501100402,
         "developEquipmentList": [
@@ -5712,7 +5770,7 @@
     },
     {
         "bookNo": 49,
-        "lv": 40,
+        "lv": 41,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 0,
@@ -5722,9 +5780,9 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_49_x44xgkjc9a4z.jpg",
-        "expPercent": 95,
+        "expPercent": 85,
         "maxHp": 40,
-        "realHp": 35,
+        "realHp": 36,
         "damageStatus": "NORMAL",
         "slotNum": 2,
         "slotEquipName": [
@@ -5734,8 +5792,8 @@
             ""
         ],
         "slotAmount": [
-            7,
-            9,
+            12,
+            12,
             0,
             0
         ],
@@ -5759,7 +5817,7 @@
     },
     {
         "bookNo": 95,
-        "lv": 40,
+        "lv": 41,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 1,
@@ -5769,9 +5827,9 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_95_6a3eccmpq03x.jpg",
-        "expPercent": 95,
+        "expPercent": 85,
         "maxHp": 41,
-        "realHp": 36,
+        "realHp": 37,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -5781,9 +5839,9 @@
             ""
         ],
         "slotAmount": [
-            7,
-            5,
-            4,
+            12,
+            6,
+            6,
             0
         ],
         "slotDisp": [
@@ -5806,7 +5864,7 @@
     },
     {
         "bookNo": 99,
-        "lv": 40,
+        "lv": 41,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 2,
@@ -5816,9 +5874,9 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_99_96g3y2zr6sq7.jpg",
-        "expPercent": 95,
+        "expPercent": 85,
         "maxHp": 42,
-        "realHp": 37,
+        "realHp": 38,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -5828,9 +5886,9 @@
             ""
         ],
         "slotAmount": [
-            7,
-            5,
-            4,
+            12,
+            6,
+            6,
             0
         ],
         "slotDisp": [
@@ -5853,7 +5911,7 @@
     },
     {
         "bookNo": 104,
-        "lv": 40,
+        "lv": 41,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 3,
@@ -5863,9 +5921,9 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_104_apqs9x1kdkat.jpg",
-        "expPercent": 95,
+        "expPercent": 85,
         "maxHp": 47,
-        "realHp": 41,
+        "realHp": 43,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -5875,9 +5933,9 @@
             ""
         ],
         "slotAmount": [
-            12,
-            7,
-            4,
+            21,
+            9,
+            6,
             0
         ],
         "slotDisp": [
@@ -5900,7 +5958,7 @@
     },
     {
         "bookNo": 104,
-        "lv": 40,
+        "lv": 41,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 4,
@@ -5910,9 +5968,67 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_104_4r41tdzrqxwn.jpg",
-        "expPercent": 95,
+        "expPercent": 85,
         "maxHp": 57,
-        "realHp": 49,
+        "realHp": 52,
+        "damageStatus": "NORMAL",
+        "slotNum": 4,
+        "slotEquipName": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "slotAmount": [
+            24,
+            16,
+            8,
+            8
+        ],
+        "slotDisp": [
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT"
+        ],
+        "slotImg": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "blueprintTotalNum": 5,
+        "married": false,
+        "dispSortNo": 4900500104,
+        "developEquipmentList": [
+            {
+                "planKind": 0,
+                "sortIndex": 0,
+                "requireLv": 35,
+                "requireStrategyPoint": 440,
+                "requireMaterialMedal": 0,
+                "developCount": 0,
+                "maxDevelopCount": 1,
+                "developEquipImg": "e/equip_51_sgjrmnbcbb7.png"
+            }
+        ],
+        "shipModelNum": ""
+    },
+    {
+        "bookNo": 121,
+        "lv": 41,
+        "shipType": "軽空母",
+        "shipSortNo": 1300,
+        "remodelLv": 5,
+        "shipName": "千歳航改二",
+        "statusImg": "i/i_q9szeyawp9gq_n.png",
+        "starNum": 1,
+        "shipClass": "千歳型",
+        "shipClassIndex": 1,
+        "tcImg": "s/tc_121_319cc4a2pkk6.jpg",
+        "expPercent": 85,
+        "maxHp": 58,
+        "realHp": 52,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
@@ -5922,10 +6038,10 @@
             "流星改"
         ],
         "slotAmount": [
-            13,
+            24,
+            16,
             11,
-            5,
-            5
+            8
         ],
         "slotDisp": [
             "EQUIPPED_AIRCRAFT",
@@ -5941,16 +6057,16 @@
         ],
         "blueprintTotalNum": 5,
         "married": false,
-        "dispSortNo": 4900500104,
+        "dispSortNo": 4900500105,
         "developEquipmentList": [
             {
                 "planKind": 0,
                 "sortIndex": 0,
-                "requireLv": 35,
+                "requireLv": 50,
                 "requireStrategyPoint": 440,
                 "requireMaterialMedal": 0,
                 "developCount": 0,
-                "maxDevelopCount": 1,
+                "maxDevelopCount": 2,
                 "developEquipImg": "e/equip_51_sgjrmnbcbb7.png"
             }
         ],
@@ -6500,7 +6616,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 5200600100,
         "developEquipmentList": [],
@@ -6547,7 +6663,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 5200600101,
         "developEquipmentList": [],
@@ -6782,7 +6898,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 6,
         "married": false,
         "dispSortNo": 5500700100,
         "developEquipmentList": [],
@@ -6815,7 +6931,7 @@
             2,
             2,
             2,
-            2
+            0
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -6829,7 +6945,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 6,
         "married": false,
         "dispSortNo": 5500700101,
         "developEquipmentList": [],
@@ -6862,7 +6978,7 @@
             2,
             2,
             4,
-            4
+            0
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -6876,7 +6992,7 @@
             "equip_icon_2_n8b0sex6xclf.png",
             ""
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 6,
         "married": false,
         "dispSortNo": 5500700102,
         "developEquipmentList": [
@@ -7086,7 +7202,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 5700700300,
         "developEquipmentList": [],
@@ -7133,7 +7249,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 5700700301,
         "developEquipmentList": [],
@@ -7180,7 +7296,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 5700700302,
         "developEquipmentList": [
@@ -7390,7 +7506,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 5900800100,
         "developEquipmentList": [],
@@ -7423,7 +7539,7 @@
             2,
             2,
             2,
-            2
+            0
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -7437,7 +7553,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 5900800101,
         "developEquipmentList": [],
@@ -7740,7 +7856,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 11,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 6200800400,
         "developEquipmentList": [],
@@ -7787,7 +7903,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 11,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 6200800401,
         "developEquipmentList": [],
@@ -7834,7 +7950,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 11,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 6200800402,
         "developEquipmentList": [
@@ -8502,7 +8618,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 6701600700,
         "developEquipmentList": [],
@@ -8549,7 +8665,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 6701600701,
         "developEquipmentList": [],
@@ -8690,7 +8806,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 6901600900,
         "developEquipmentList": [],
@@ -8737,7 +8853,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 6901600901,
         "developEquipmentList": [],
@@ -8784,7 +8900,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 7001601000,
         "developEquipmentList": [],
@@ -8804,7 +8920,7 @@
         "tcImg": "s/tc_70_zm44zx1p630g.jpg",
         "expPercent": 95,
         "maxHp": 30,
-        "realHp": 1,
+        "realHp": 2,
         "damageStatus": "L_BREAK",
         "slotNum": 3,
         "slotEquipName": [
@@ -8831,7 +8947,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 7001601001,
         "developEquipmentList": [],
@@ -8851,7 +8967,7 @@
         "tcImg": "s/tc_207_gffd74g231a6.jpg",
         "expPercent": 95,
         "maxHp": 33,
-        "realHp": 1,
+        "realHp": 3,
         "damageStatus": "L_BREAK",
         "slotNum": 3,
         "slotEquipName": [
@@ -8878,7 +8994,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 7001601002,
         "developEquipmentList": [],
@@ -9019,7 +9135,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 7201700200,
         "developEquipmentList": [],
@@ -9066,7 +9182,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 7201700201,
         "developEquipmentList": [],
@@ -9113,7 +9229,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 7201700202,
         "developEquipmentList": [],
@@ -9933,7 +10049,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 8101900300,
         "developEquipmentList": [],
@@ -9980,7 +10096,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 8101900301,
         "developEquipmentList": [],
@@ -10555,7 +10671,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 8602000200,
         "developEquipmentList": [],
@@ -10602,7 +10718,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 8602000201,
         "developEquipmentList": [],
@@ -10649,7 +10765,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 8702000300,
         "developEquipmentList": [],
@@ -10696,7 +10812,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 8702000301,
         "developEquipmentList": [],
@@ -10743,7 +10859,7 @@
             "equip_icon_32_hp2hc584rvml.png",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 8702000302,
         "developEquipmentList": [
@@ -10952,7 +11068,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 9002001000,
         "developEquipmentList": [],
@@ -10999,7 +11115,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 9002001001,
         "developEquipmentList": [],
@@ -11046,7 +11162,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 9002001002,
         "developEquipmentList": [],
@@ -11093,7 +11209,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 9002001003,
         "developEquipmentList": [],
@@ -11328,7 +11444,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 9302300300,
         "developEquipmentList": [],
@@ -11375,7 +11491,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 9302300301,
         "developEquipmentList": [],
@@ -11383,20 +11499,20 @@
     },
     {
         "bookNo": 94,
-        "lv": 30,
+        "lv": 32,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 0,
         "shipName": "祥鳳",
-        "statusImg": "i/i_qkt1244tdtdz_bl.png",
+        "statusImg": "i/i_qkt1244tdtdz_bm.png",
         "starNum": 4,
         "shipClass": "祥鳳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_94_qkt1244tdtdz.jpg",
-        "expPercent": 24,
+        "expPercent": 38,
         "maxHp": 32,
-        "realHp": 7,
-        "damageStatus": "L_BREAK",
+        "realHp": 15,
+        "damageStatus": "M_BREAK",
         "slotNum": 3,
         "slotEquipName": [
             "",
@@ -11405,9 +11521,9 @@
             ""
         ],
         "slotAmount": [
-            13,
-            6,
-            2,
+            18,
+            9,
+            3,
             0
         ],
         "slotDisp": [
@@ -11422,7 +11538,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 9402700100,
         "developEquipmentList": [],
@@ -11430,20 +11546,20 @@
     },
     {
         "bookNo": 94,
-        "lv": 30,
+        "lv": 32,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 1,
         "shipName": "祥鳳改",
-        "statusImg": "i/i_rjryqp7a763n_bl.png",
-        "starNum": 2,
+        "statusImg": "i/i_rjryqp7a763n_bm.png",
+        "starNum": 3,
         "shipClass": "祥鳳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_94_rjryqp7a763n.jpg",
-        "expPercent": 24,
+        "expPercent": 38,
         "maxHp": 45,
-        "realHp": 9,
-        "damageStatus": "L_BREAK",
+        "realHp": 20,
+        "damageStatus": "M_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "零式艦戦53型(岩本隊)",
@@ -11452,10 +11568,10 @@
             "流星改"
         ],
         "slotAmount": [
-            13,
-            7,
-            7,
-            2
+            18,
+            11,
+            11,
+            6
         ],
         "slotDisp": [
             "EQUIPPED_AIRCRAFT",
@@ -11469,7 +11585,7 @@
             "equip_icon_6_a2e6kq8r27wg.png",
             "equip_icon_6_a2e6kq8r27wg.png"
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 9402700101,
         "developEquipmentList": [],
@@ -11820,7 +11936,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 10901100500,
         "developEquipmentList": [],
@@ -11840,7 +11956,7 @@
         "tcImg": "s/tc_109_7g9mgjg400ug.jpg",
         "expPercent": 56,
         "maxHp": 41,
-        "realHp": 12,
+        "realHp": 13,
         "damageStatus": "M_BREAK",
         "slotNum": 3,
         "slotEquipName": [
@@ -11852,7 +11968,7 @@
         "slotAmount": [
             1,
             1,
-            1,
+            0,
             0
         ],
         "slotDisp": [
@@ -11867,7 +11983,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 10901100501,
         "developEquipmentList": [],
@@ -12730,7 +12846,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 12304100300,
         "developEquipmentList": [],
@@ -12760,8 +12876,8 @@
             ""
         ],
         "slotAmount": [
-            1,
-            1,
+            0,
+            0,
             0,
             0
         ],
@@ -12777,7 +12893,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 12304100301,
         "developEquipmentList": [],
@@ -13341,7 +13457,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 0,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 13103700100,
         "developEquipmentList": [
@@ -13409,7 +13525,7 @@
             "equip_icon_14_7x6o1b4mwzdx.png",
             ""
         ],
-        "blueprintTotalNum": 0,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 13103700101,
         "developEquipmentList": [
@@ -13561,7 +13677,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 13303600100,
         "developEquipmentList": [],
@@ -13608,7 +13724,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 13303600101,
         "developEquipmentList": [],
@@ -13865,7 +13981,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 13704200100,
         "developEquipmentList": [
@@ -13923,7 +14039,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 13704200101,
         "developEquipmentList": [
@@ -14745,7 +14861,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 0,
         "married": false,
         "dispSortNo": 16104500100,
         "developEquipmentList": [
@@ -14785,9 +14901,9 @@
             ""
         ],
         "slotAmount": [
-            8,
-            8,
-            8,
+            0,
+            0,
+            0,
             0
         ],
         "slotDisp": [
@@ -14802,7 +14918,7 @@
             "equip_icon_19_tmq6560tf2mb.png",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 0,
         "married": false,
         "dispSortNo": 16104500101,
         "developEquipmentList": [
@@ -14859,7 +14975,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 16304600100,
         "developEquipmentList": [],
@@ -14905,7 +15021,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 16304600101,
         "developEquipmentList": [],
@@ -16259,7 +16375,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 20501900500,
         "developEquipmentList": [
@@ -16317,7 +16433,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 20501900501,
         "developEquipmentList": [
@@ -17140,7 +17256,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 22302100400,
         "developEquipmentList": [
@@ -17198,7 +17314,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 1,
         "married": false,
         "dispSortNo": 22302100401,
         "developEquipmentList": [
@@ -17371,7 +17487,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 22503601600,
         "developEquipmentList": [],
@@ -17418,7 +17534,7 @@
             "equip_icon_5_c4bcdscek33o.png",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 2,
         "married": false,
         "dispSortNo": 22503601601,
         "developEquipmentList": [
@@ -17546,6 +17662,63 @@
         "married": false,
         "dispSortNo": 23105400101,
         "developEquipmentList": [],
+        "shipModelNum": ""
+    },
+    {
+        "bookNo": 236,
+        "lv": 27,
+        "shipType": "潜水艦",
+        "shipSortNo": 900,
+        "remodelLv": 2,
+        "shipName": "呂500",
+        "statusImg": "i/i_7jkkc2fgqwcg_bl.png",
+        "starNum": 1,
+        "shipClass": "呂号潜水艦",
+        "tcImg": "s/tc_236_a70cz674yjak.jpg",
+        "expPercent": 59,
+        "maxHp": 13,
+        "realHp": 1,
+        "damageStatus": "L_BREAK",
+        "slotNum": 2,
+        "slotEquipName": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "slotAmount": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "slotDisp": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "slotImg": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "blueprintTotalNum": 2,
+        "married": false,
+        "dispSortNo": 23105400102,
+        "developEquipmentList": [
+            {
+                "planKind": 3,
+                "sortIndex": 1,
+                "requireLv": 55,
+                "requireStrategyPoint": 540,
+                "requireMaterialMedal": 3,
+                "developCount": 0,
+                "maxDevelopCount": 2,
+                "developEquipImg": "e/equip_127_6xay7hy4by8.png"
+            }
+        ],
         "shipModelNum": ""
     },
     {
@@ -18062,7 +18235,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 24807200100,
         "developEquipmentList": [],
@@ -18095,7 +18268,7 @@
             2,
             2,
             2,
-            2
+            0
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -18109,7 +18282,7 @@
             "",
             ""
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 24807200101,
         "developEquipmentList": [

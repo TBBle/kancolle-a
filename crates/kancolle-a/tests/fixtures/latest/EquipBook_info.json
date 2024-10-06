@@ -541,9 +541,9 @@
     },
     {
         "bookNo": 93,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上攻撃機",
+        "equipName": "九七式艦攻(友永隊)",
+        "equipImg": "e/equip_93_swi1vmjhe3v.png"
     },
     {
         "bookNo": 94,
@@ -565,9 +565,9 @@
     },
     {
         "bookNo": 97,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上爆撃機",
+        "equipName": "九九式艦爆(熟練)",
+        "equipImg": "e/equip_97_wnjstndc8ef.png"
     },
     {
         "bookNo": 98,
@@ -727,9 +727,9 @@
     },
     {
         "bookNo": 127,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "潜水艦魚雷",
+        "equipName": "試製FaT仕様九五式酸素魚雷改",
+        "equipImg": "e/equip_127_6xay7hy4by8.png"
     },
     {
         "bookNo": 128,

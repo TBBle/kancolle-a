@@ -4,189 +4,373 @@
         {
             "rank": 1,
             "title": 9,
-            "admiralName": "うみさち",
+            "admiralName": "ゆら",
             "plate": "is-platinum",
-            "score": 64287,
-            "kouMedal": 4
+            "score": 95604,
+            "kouMedal": 14
         },
         {
             "rank": 2,
             "title": 9,
-            "admiralName": "ゆら",
+            "admiralName": "うみさち",
             "plate": "is-platinum",
-            "score": 64181,
-            "kouMedal": 14
+            "score": 75567,
+            "kouMedal": 4
         },
         {
             "rank": 3,
             "title": 9,
-            "admiralName": "ＦＩＸ",
+            "admiralName": "ＪＥＴ－Ｘ",
             "plate": "is-platinum",
-            "score": 58297,
-            "kouMedal": 14
+            "score": 75254,
+            "kouMedal": 13
         },
         {
             "rank": 4,
             "title": 9,
-            "admiralName": "ひみつ",
+            "admiralName": "ＦＩＸ",
             "plate": "is-platinum",
-            "score": 53167,
+            "score": 71079,
             "kouMedal": 14
         },
         {
             "rank": 5,
             "title": 9,
-            "admiralName": "ＰＦＦ",
+            "admiralName": "ひみつ",
             "plate": "is-platinum",
-            "score": 52814,
+            "score": 68845,
             "kouMedal": 14
         },
         {
             "rank": 6,
             "title": 9,
-            "admiralName": "ＪＥＴ－Ｘ",
+            "admiralName": "ＰＦＦ",
             "plate": "is-gold",
-            "score": 45246,
-            "kouMedal": 13
+            "score": 68220,
+            "kouMedal": 14
         },
         {
             "rank": 7,
             "title": 9,
-            "admiralName": "ジョー",
+            "admiralName": "ＫＵＲＯＭ",
             "plate": "is-gold",
-            "score": 44463,
-            "kouMedal": 14
+            "score": 59565,
+            "kouMedal": 8
         },
         {
             "rank": 8,
             "title": 9,
-            "admiralName": "ミラクルＫ",
+            "admiralName": "ＮＷＯ",
             "plate": "is-gold",
-            "score": 42974,
-            "kouMedal": 12
+            "score": 55063,
+            "kouMedal": 8
         },
         {
             "rank": 9,
             "title": 9,
-            "admiralName": "ＮＷＯ",
+            "admiralName": "ジョー",
             "plate": "is-gold",
-            "score": 41850,
-            "kouMedal": 8
+            "score": 53628,
+            "kouMedal": 14
         },
         {
             "rank": 10,
             "title": 9,
-            "admiralName": "ＫＵＲＯＭ",
+            "admiralName": "ミラクルＫ",
             "plate": "is-gold",
-            "score": 40538,
-            "kouMedal": 8
+            "score": 53422,
+            "kouMedal": 12
         },
         {
             "rank": 11,
             "title": 9,
             "admiralName": "ＮｅｗＢ",
             "plate": "is-gold",
-            "score": 39330,
+            "score": 53075,
             "kouMedal": 11
         },
         {
             "rank": 12,
             "title": 9,
-            "admiralName": "ＳＡＫＡ",
+            "admiralName": "神宮司",
             "plate": "is-gold",
-            "score": 39053,
-            "kouMedal": 14
+            "score": 51340,
+            "kouMedal": 8
         },
         {
             "rank": 13,
             "title": 9,
             "admiralName": "カイ",
             "plate": "is-gold",
-            "score": 37718,
+            "score": 48805,
             "kouMedal": 14
         },
         {
             "rank": 14,
             "title": 9,
-            "admiralName": "神宮司",
+            "admiralName": "ＮＯＮＡＭＥ",
             "plate": "is-gold",
-            "score": 36877,
-            "kouMedal": 8
+            "score": 48408,
+            "kouMedal": 13
         },
         {
             "rank": 15,
             "title": 9,
             "admiralName": "あけみ",
             "plate": "is-gold",
-            "score": 36031,
+            "score": 46991,
             "kouMedal": 10
         },
         {
             "rank": 16,
             "title": 9,
-            "admiralName": "火拳のエース",
+            "admiralName": "鈴木",
             "plate": "is-gold",
-            "score": 35168,
-            "kouMedal": 9
+            "score": 43639,
+            "kouMedal": 2
         },
         {
             "rank": 17,
             "title": 9,
-            "admiralName": "ドラむすめ",
+            "admiralName": "daityan",
             "plate": "is-gold",
-            "score": 33887,
-            "kouMedal": 14
+            "score": 43594,
+            "kouMedal": 6
         },
         {
             "rank": 18,
             "title": 9,
-            "admiralName": "Tarpon",
+            "admiralName": "火拳のエース",
             "plate": "is-gold",
-            "score": 33507,
-            "kouMedal": 14
+            "score": 43064,
+            "kouMedal": 9
         },
         {
             "rank": 19,
             "title": 9,
-            "admiralName": "ＮＯＮＡＭＥ",
+            "admiralName": "ドラむすめ",
             "plate": "is-gold",
-            "score": 32776,
-            "kouMedal": 13
+            "score": 42788,
+            "kouMedal": 14
         },
         {
             "rank": 20,
             "title": 9,
             "admiralName": "神威",
             "plate": "is-gold",
-            "score": 32440,
+            "score": 41710,
             "kouMedal": 6
         },
         {
             "rank": 21,
             "title": 9,
-            "admiralName": "山本竹一",
+            "admiralName": "ほたる",
             "plate": "is-silver",
-            "score": 32053,
-            "kouMedal": 0
+            "score": 40896,
+            "kouMedal": 14
         },
         {
             "rank": 22,
             "title": 9,
-            "admiralName": "ほたる",
+            "admiralName": "山本竹一",
             "plate": "is-silver",
-            "score": 32031,
-            "kouMedal": 14
+            "score": 40611,
+            "kouMedal": 0
         },
         {
             "rank": 23,
             "title": 9,
-            "admiralName": "まこと",
+            "admiralName": "ＳＡＫＡ",
             "plate": "is-silver",
-            "score": 31184,
+            "score": 39053,
             "kouMedal": 14
         },
         {
             "rank": 24,
+            "title": 9,
+            "admiralName": "Tarpon",
+            "plate": "is-silver",
+            "score": 36403,
+            "kouMedal": 14
+        },
+        {
+            "rank": 25,
+            "title": 9,
+            "admiralName": "　しなの　",
+            "plate": "is-silver",
+            "score": 36099,
+            "kouMedal": 14
+        },
+        {
+            "rank": 26,
+            "title": 9,
+            "admiralName": "すーさん",
+            "plate": "is-silver",
+            "score": 35590,
+            "kouMedal": 11
+        },
+        {
+            "rank": 27,
+            "title": 9,
+            "admiralName": "まこと",
+            "plate": "is-silver",
+            "score": 35327,
+            "kouMedal": 14
+        },
+        {
+            "rank": 28,
+            "title": 9,
+            "admiralName": "柚希",
+            "plate": "is-silver",
+            "score": 34824,
+            "kouMedal": 14
+        },
+        {
+            "rank": 29,
+            "title": 9,
+            "admiralName": "ＩＧＫ",
+            "plate": "is-silver",
+            "score": 34428,
+            "kouMedal": 14
+        },
+        {
+            "rank": 30,
+            "title": 9,
+            "admiralName": "ｔｏｒｏｂｅａｔ",
+            "plate": "is-silver",
+            "score": 33873,
+            "kouMedal": 14
+        },
+        {
+            "rank": 31,
+            "title": 9,
+            "admiralName": "じん",
+            "plate": "is-silver",
+            "score": 33705,
+            "kouMedal": 4
+        },
+        {
+            "rank": 32,
+            "title": 9,
+            "admiralName": "つき",
+            "plate": "is-silver",
+            "score": 33646,
+            "kouMedal": 14
+        },
+        {
+            "rank": 33,
+            "title": 9,
+            "admiralName": "Ｆ・Ｋｏｒｙｕ",
+            "plate": "is-silver",
+            "score": 33087,
+            "kouMedal": 12
+        },
+        {
+            "rank": 34,
+            "title": 9,
+            "admiralName": "ヤン提督",
+            "plate": "is-silver",
+            "score": 33000,
+            "kouMedal": 8
+        },
+        {
+            "rank": 35,
+            "title": 9,
+            "admiralName": "しのさん",
+            "plate": "is-silver",
+            "score": 32854,
+            "kouMedal": 8
+        },
+        {
+            "rank": 36,
+            "title": 9,
+            "admiralName": "かるかん",
+            "plate": "is-silver",
+            "score": 32705,
+            "kouMedal": 14
+        },
+        {
+            "rank": 37,
+            "title": 9,
+            "admiralName": "マンサン",
+            "plate": "is-silver",
+            "score": 32701,
+            "kouMedal": 14
+        },
+        {
+            "rank": 38,
+            "title": 9,
+            "admiralName": "ハルカ☆ルカ",
+            "plate": "is-silver",
+            "score": 32643,
+            "kouMedal": 2
+        },
+        {
+            "rank": 39,
+            "title": 9,
+            "admiralName": "ハッチー",
+            "plate": "is-silver",
+            "score": 32469,
+            "kouMedal": 8
+        },
+        {
+            "rank": 40,
+            "title": 9,
+            "admiralName": "スナギツネ",
+            "plate": "is-silver",
+            "score": 32111,
+            "kouMedal": 14
+        },
+        {
+            "rank": 41,
+            "title": 9,
+            "admiralName": "みっふぃー",
+            "plate": "is-silver",
+            "score": 32050,
+            "kouMedal": 0
+        },
+        {
+            "rank": 42,
+            "title": 9,
+            "admiralName": "マック",
+            "plate": "is-silver",
+            "score": 31750,
+            "kouMedal": 14
+        },
+        {
+            "rank": 43,
+            "title": 9,
+            "admiralName": "あおきゃーん",
+            "plate": "is-silver",
+            "score": 31710,
+            "kouMedal": 8
+        },
+        {
+            "rank": 44,
+            "title": 9,
+            "admiralName": "ポンポコ艦隊",
+            "plate": "is-silver",
+            "score": 31590,
+            "kouMedal": 14
+        },
+        {
+            "rank": 45,
+            "title": 9,
+            "admiralName": "とことこ",
+            "plate": "is-silver",
+            "score": 31419,
+            "kouMedal": 14
+        },
+        {
+            "rank": 46,
+            "title": 9,
+            "admiralName": "コロ",
+            "plate": "is-silver",
+            "score": 31258,
+            "kouMedal": 6
+        },
+        {
+            "rank": 47,
             "title": 9,
             "admiralName": "よかトン",
             "plate": "is-silver",
@@ -194,39 +378,79 @@
             "kouMedal": 14
         },
         {
-            "rank": 25,
+            "rank": 48,
             "title": 9,
-            "admiralName": "じん",
+            "admiralName": "ダバ",
             "plate": "is-silver",
-            "score": 30839,
+            "score": 30588,
+            "kouMedal": 7
+        },
+        {
+            "rank": 49,
+            "title": 9,
+            "admiralName": "コウ",
+            "plate": "is-silver",
+            "score": 30328,
+            "kouMedal": 14
+        },
+        {
+            "rank": 50,
+            "title": 9,
+            "admiralName": "富高",
+            "plate": "is-silver",
+            "score": 30001,
+            "kouMedal": 10
+        },
+        {
+            "rank": 51,
+            "title": 9,
+            "admiralName": "ブエナビスタ",
+            "plate": "is-silver",
+            "score": 29680,
             "kouMedal": 4
         },
         {
-            "rank": 26,
+            "rank": 52,
             "title": 9,
-            "admiralName": "すーさん",
+            "admiralName": "大樹",
             "plate": "is-silver",
-            "score": 30119,
-            "kouMedal": 11
+            "score": 29589,
+            "kouMedal": 14
         },
         {
-            "rank": 27,
+            "rank": 53,
             "title": 9,
-            "admiralName": "ヤン提督",
+            "admiralName": "シア（Ｃ６）",
             "plate": "is-silver",
-            "score": 30000,
+            "score": 29054,
+            "kouMedal": 14
+        },
+        {
+            "rank": 54,
+            "title": 9,
+            "admiralName": "ニミッツ",
+            "plate": "is-silver",
+            "score": 29053,
             "kouMedal": 8
         },
         {
-            "rank": 28,
+            "rank": 55,
             "title": 9,
-            "admiralName": "daityan",
+            "admiralName": "バルデシオン",
             "plate": "is-silver",
-            "score": 28546,
-            "kouMedal": 6
+            "score": 28861,
+            "kouMedal": 14
         },
         {
-            "rank": 29,
+            "rank": 56,
+            "title": 9,
+            "admiralName": "とよず",
+            "plate": "is-silver",
+            "score": 28859,
+            "kouMedal": 5
+        },
+        {
+            "rank": 57,
             "title": 9,
             "admiralName": "ローエル",
             "plate": "is-silver",
@@ -234,7 +458,7 @@
             "kouMedal": 14
         },
         {
-            "rank": 30,
+            "rank": 58,
             "title": 9,
             "admiralName": "ひでぶ",
             "plate": "is-silver",
@@ -242,7 +466,15 @@
             "kouMedal": 14
         },
         {
-            "rank": 31,
+            "rank": 59,
+            "title": 9,
+            "admiralName": "なかエツ",
+            "plate": "is-silver",
+            "score": 28482,
+            "kouMedal": 14
+        },
+        {
+            "rank": 60,
             "title": 9,
             "admiralName": "隻眼将の大喝",
             "plate": "is-silver",
@@ -250,15 +482,15 @@
             "kouMedal": 14
         },
         {
-            "rank": 32,
+            "rank": 61,
             "title": 9,
-            "admiralName": "鈴木",
+            "admiralName": "深海棲艦はんた",
             "plate": "is-silver",
-            "score": 28310,
-            "kouMedal": 2
+            "score": 28301,
+            "kouMedal": 13
         },
         {
-            "rank": 33,
+            "rank": 62,
             "title": 9,
             "admiralName": "ルナ＠メシア",
             "plate": "is-silver",
@@ -266,7 +498,7 @@
             "kouMedal": 8
         },
         {
-            "rank": 34,
+            "rank": 63,
             "title": 9,
             "admiralName": "パフューム",
             "plate": "is-silver",
@@ -274,39 +506,151 @@
             "kouMedal": 14
         },
         {
-            "rank": 35,
+            "rank": 64,
             "title": 9,
-            "admiralName": "つき",
+            "admiralName": "龍飛",
             "plate": "is-silver",
-            "score": 27674,
+            "score": 27889,
+            "kouMedal": 6
+        },
+        {
+            "rank": 65,
+            "title": 9,
+            "admiralName": "blac",
+            "plate": "is-silver",
+            "score": 27781,
+            "kouMedal": 4
+        },
+        {
+            "rank": 66,
+            "title": 9,
+            "admiralName": "リムゾン",
+            "plate": "is-silver",
+            "score": 27610,
             "kouMedal": 14
         },
         {
-            "rank": 36,
+            "rank": 67,
             "title": 9,
-            "admiralName": "シア（Ｃ６）",
+            "admiralName": "ハム",
             "plate": "is-silver",
-            "score": 27598,
+            "score": 27164,
             "kouMedal": 14
         },
         {
-            "rank": 37,
+            "rank": 68,
             "title": 9,
-            "admiralName": "　しなの　",
+            "admiralName": "ｗａｓｉｏ",
             "plate": "is-silver",
-            "score": 27360,
+            "score": 27044,
+            "kouMedal": 3
+        },
+        {
+            "rank": 69,
+            "title": 9,
+            "admiralName": "Ｂｏｇｇｉｅ",
+            "plate": "is-silver",
+            "score": 27020,
             "kouMedal": 14
         },
         {
-            "rank": 38,
+            "rank": 70,
             "title": 9,
-            "admiralName": "ＩＧＫ",
+            "admiralName": "創世御名　麻雪",
             "plate": "is-silver",
-            "score": 27118,
+            "score": 26911,
+            "kouMedal": 0
+        },
+        {
+            "rank": 71,
+            "title": 9,
+            "admiralName": "やなぎぃ",
+            "plate": "is-silver",
+            "score": 26703,
             "kouMedal": 14
         },
         {
-            "rank": 39,
+            "rank": 72,
+            "title": 9,
+            "admiralName": "まろろＦ",
+            "plate": "is-silver",
+            "score": 26694,
+            "kouMedal": 14
+        },
+        {
+            "rank": 73,
+            "title": 9,
+            "admiralName": "いりさわ",
+            "plate": "is-silver",
+            "score": 26619,
+            "kouMedal": 14
+        },
+        {
+            "rank": 74,
+            "title": 9,
+            "admiralName": "コンテ",
+            "plate": "is-silver",
+            "score": 26607,
+            "kouMedal": 6
+        },
+        {
+            "rank": 75,
+            "title": 9,
+            "admiralName": "いが",
+            "plate": "is-silver",
+            "score": 26597,
+            "kouMedal": 13
+        },
+        {
+            "rank": 76,
+            "title": 9,
+            "admiralName": "ＮＡＧＵＭＯ",
+            "plate": "is-silver",
+            "score": 26519,
+            "kouMedal": 2
+        },
+        {
+            "rank": 77,
+            "title": 9,
+            "admiralName": "Ｚｅｒｏ",
+            "plate": "is-silver",
+            "score": 26515,
+            "kouMedal": 2
+        },
+        {
+            "rank": 78,
+            "title": 9,
+            "admiralName": "ＥＫＪ",
+            "plate": "is-silver",
+            "score": 26414,
+            "kouMedal": 10
+        },
+        {
+            "rank": 79,
+            "title": 9,
+            "admiralName": "無限　真人",
+            "plate": "is-silver",
+            "score": 26280,
+            "kouMedal": 11
+        },
+        {
+            "rank": 80,
+            "title": 9,
+            "admiralName": "あじさい",
+            "plate": "is-silver",
+            "score": 26236,
+            "kouMedal": 4
+        },
+        {
+            "rank": 81,
+            "title": 9,
+            "admiralName": "たかまち",
+            "plate": "is-silver",
+            "score": 26086,
+            "kouMedal": 8
+        },
+        {
+            "rank": 82,
             "title": 9,
             "admiralName": "艦これ",
             "plate": "is-silver",
@@ -314,7 +658,47 @@
             "kouMedal": 14
         },
         {
-            "rank": 40,
+            "rank": 83,
+            "title": 9,
+            "admiralName": "伊藤　整一",
+            "plate": "is-silver",
+            "score": 26079,
+            "kouMedal": 11
+        },
+        {
+            "rank": 84,
+            "title": 9,
+            "admiralName": "となん",
+            "plate": "is-silver",
+            "score": 26026,
+            "kouMedal": 14
+        },
+        {
+            "rank": 85,
+            "title": 9,
+            "admiralName": "ＳＩＬ・キャノン",
+            "plate": "is-silver",
+            "score": 25960,
+            "kouMedal": 11
+        },
+        {
+            "rank": 86,
+            "title": 9,
+            "admiralName": "トンプソン",
+            "plate": "is-silver",
+            "score": 25842,
+            "kouMedal": 10
+        },
+        {
+            "rank": 87,
+            "title": 9,
+            "admiralName": "武",
+            "plate": "is-silver",
+            "score": 25811,
+            "kouMedal": 14
+        },
+        {
+            "rank": 88,
             "title": 9,
             "admiralName": "シュウ",
             "plate": "is-silver",
@@ -322,15 +706,15 @@
             "kouMedal": 14
         },
         {
-            "rank": 41,
+            "rank": 89,
             "title": 9,
-            "admiralName": "ＳＩＬ・キャノン",
+            "admiralName": "健",
             "plate": "is-silver",
-            "score": 25540,
-            "kouMedal": 11
+            "score": 25657,
+            "kouMedal": 3
         },
         {
-            "rank": 42,
+            "rank": 90,
             "title": 9,
             "admiralName": "シュラウド",
             "plate": "is-silver",
@@ -338,23 +722,39 @@
             "kouMedal": 11
         },
         {
-            "rank": 43,
+            "rank": 91,
             "title": 9,
-            "admiralName": "かるかん",
+            "admiralName": "オラタコ",
             "plate": "is-silver",
-            "score": 25355,
+            "score": 25438,
             "kouMedal": 14
         },
         {
-            "rank": 44,
+            "rank": 92,
             "title": 9,
-            "admiralName": "Ｆ・Ｋｏｒｙｕ",
+            "admiralName": "ＳＴＥＶＥＳ",
             "plate": "is-silver",
-            "score": 25082,
+            "score": 25367,
             "kouMedal": 12
         },
         {
-            "rank": 45,
+            "rank": 93,
+            "title": 9,
+            "admiralName": "らとれいゆ",
+            "plate": "is-silver",
+            "score": 25316,
+            "kouMedal": 13
+        },
+        {
+            "rank": 94,
+            "title": 9,
+            "admiralName": "あいび～",
+            "plate": "is-silver",
+            "score": 25106,
+            "kouMedal": 14
+        },
+        {
+            "rank": 95,
             "title": 9,
             "admiralName": "はせぽん",
             "plate": "is-silver",
@@ -362,839 +762,1703 @@
             "kouMedal": 14
         },
         {
-            "rank": 46,
-            "title": 9,
-            "admiralName": "ポンポコ艦隊",
-            "plate": "is-silver",
-            "score": 24927,
-            "kouMedal": 14
-        },
-        {
-            "rank": 47,
-            "title": 9,
-            "admiralName": "マック",
-            "plate": "is-silver",
-            "score": 24730,
-            "kouMedal": 14
-        },
-        {
-            "rank": 48,
-            "title": 9,
-            "admiralName": "コロ",
-            "plate": "is-silver",
-            "score": 24457,
-            "kouMedal": 6
-        },
-        {
-            "rank": 49,
-            "title": 9,
-            "admiralName": "とよず",
-            "plate": "is-silver",
-            "score": 24248,
-            "kouMedal": 5
-        },
-        {
-            "rank": 50,
-            "title": 9,
-            "admiralName": "らとれいゆ",
-            "plate": "is-silver",
-            "score": 24047,
-            "kouMedal": 13
-        },
-        {
-            "rank": 51,
-            "title": 9,
-            "admiralName": "周防豚",
-            "plate": "is-silver",
-            "score": 23274,
-            "kouMedal": 9
-        },
-        {
-            "rank": 52,
-            "title": 9,
-            "admiralName": "クロ",
-            "plate": "is-silver",
-            "score": 22695,
-            "kouMedal": 0
-        },
-        {
-            "rank": 53,
-            "title": 9,
-            "admiralName": "とことこ",
-            "plate": "is-silver",
-            "score": 22431,
-            "kouMedal": 14
-        },
-        {
-            "rank": 54,
-            "title": 9,
-            "admiralName": "ＥＫＪ",
-            "plate": "is-silver",
-            "score": 22027,
-            "kouMedal": 10
-        },
-        {
-            "rank": 55,
-            "title": 9,
-            "admiralName": "てぃたん",
-            "plate": "is-silver",
-            "score": 21935,
-            "kouMedal": 9
-        },
-        {
-            "rank": 56,
-            "title": 9,
-            "admiralName": "ゾマ",
-            "plate": "is-silver",
-            "score": 21918,
-            "kouMedal": 4
-        },
-        {
-            "rank": 57,
-            "title": 9,
-            "admiralName": "なかエツ",
-            "plate": "is-silver",
-            "score": 21836,
-            "kouMedal": 14
-        },
-        {
-            "rank": 58,
-            "title": 9,
-            "admiralName": "健",
-            "plate": "is-silver",
-            "score": 21633,
-            "kouMedal": 3
-        },
-        {
-            "rank": 59,
-            "title": 9,
-            "admiralName": "武",
-            "plate": "is-silver",
-            "score": 21602,
-            "kouMedal": 14
-        },
-        {
-            "rank": 60,
-            "title": 9,
-            "admiralName": "ＮＡＧＵＭＯ",
-            "plate": "is-silver",
-            "score": 21541,
-            "kouMedal": 2
-        },
-        {
-            "rank": 61,
-            "title": 9,
-            "admiralName": "はんせん",
-            "plate": "is-silver",
-            "score": 21261,
-            "kouMedal": 13
-        },
-        {
-            "rank": 62,
-            "title": 9,
-            "admiralName": "創世御名　麻雪",
-            "plate": "is-silver",
-            "score": 21125,
-            "kouMedal": 0
-        },
-        {
-            "rank": 63,
-            "title": 9,
-            "admiralName": "Ｚｅｒｏ",
-            "plate": "is-silver",
-            "score": 20861,
-            "kouMedal": 2
-        },
-        {
-            "rank": 64,
-            "title": 9,
-            "admiralName": "みっふぃー",
-            "plate": "is-silver",
-            "score": 20780,
-            "kouMedal": 0
-        },
-        {
-            "rank": 65,
-            "title": 9,
-            "admiralName": "くろぶたくん",
-            "plate": "is-silver",
-            "score": 20578,
-            "kouMedal": 14
-        },
-        {
-            "rank": 66,
-            "title": 9,
-            "admiralName": "ニミッツ",
-            "plate": "is-silver",
-            "score": 20183,
-            "kouMedal": 8
-        },
-        {
-            "rank": 67,
-            "title": 9,
-            "admiralName": "ＤＥ２３２",
-            "plate": "is-silver",
-            "score": 19839,
-            "kouMedal": 12
-        },
-        {
-            "rank": 68,
-            "title": 9,
-            "admiralName": "大樹",
-            "plate": "is-silver",
-            "score": 19542,
-            "kouMedal": 14
-        },
-        {
-            "rank": 69,
-            "title": 9,
-            "admiralName": "けい",
-            "plate": "is-silver",
-            "score": 19288,
-            "kouMedal": 4
-        },
-        {
-            "rank": 70,
-            "title": 9,
-            "admiralName": "ブエナビスタ",
-            "plate": "is-silver",
-            "score": 19194,
-            "kouMedal": 4
-        },
-        {
-            "rank": 71,
-            "title": 9,
-            "admiralName": "Ｂｏｇｇｉｅ",
-            "plate": "is-silver",
-            "score": 19015,
-            "kouMedal": 14
-        },
-        {
-            "rank": 72,
-            "title": 9,
-            "admiralName": "HANNIBAL",
-            "plate": "is-silver",
-            "score": 18939,
-            "kouMedal": 5
-        },
-        {
-            "rank": 73,
-            "title": 9,
-            "admiralName": "コウ",
-            "plate": "is-silver",
-            "score": 18833,
-            "kouMedal": 14
-        },
-        {
-            "rank": 74,
-            "title": 9,
-            "admiralName": "バイオアザラシ",
-            "plate": "is-silver",
-            "score": 18792,
-            "kouMedal": 7
-        },
-        {
-            "rank": 75,
-            "title": 9,
-            "admiralName": "あい",
-            "plate": "is-silver",
-            "score": 18622,
-            "kouMedal": 8
-        },
-        {
-            "rank": 76,
-            "title": 9,
-            "admiralName": "バルデシオン",
-            "plate": "is-silver",
-            "score": 18558,
-            "kouMedal": 14
-        },
-        {
-            "rank": 77,
-            "title": 9,
-            "admiralName": "ＳＴＥＶＥＳ",
-            "plate": "is-silver",
-            "score": 18328,
-            "kouMedal": 12
-        },
-        {
-            "rank": 78,
-            "title": 9,
-            "admiralName": "富高",
-            "plate": "is-silver",
-            "score": 18322,
-            "kouMedal": 10
-        },
-        {
-            "rank": 79,
-            "title": 9,
-            "admiralName": "輝夜",
-            "plate": "is-silver",
-            "score": 18187,
-            "kouMedal": 2
-        },
-        {
-            "rank": 80,
-            "title": 9,
-            "admiralName": "ハッチー",
-            "plate": "is-silver",
-            "score": 18111,
-            "kouMedal": 8
-        },
-        {
-            "rank": 81,
-            "title": 9,
-            "admiralName": "からす",
-            "plate": "is-silver",
-            "score": 18108,
-            "kouMedal": 14
-        },
-        {
-            "rank": 82,
-            "title": 9,
-            "admiralName": "ＵＰＯＮ",
-            "plate": "is-silver",
-            "score": 18060,
-            "kouMedal": 14
-        },
-        {
-            "rank": 83,
-            "title": 9,
-            "admiralName": "ＫＵＲＯＮＥＫＯ",
-            "plate": "is-silver",
-            "score": 18051,
-            "kouMedal": 14
-        },
-        {
-            "rank": 84,
-            "title": 9,
-            "admiralName": "ブンブン",
-            "plate": "is-silver",
-            "score": 18037,
-            "kouMedal": 11
-        },
-        {
-            "rank": 85,
-            "title": 9,
-            "admiralName": "みや",
-            "plate": "is-silver",
-            "score": 17999,
-            "kouMedal": 8
-        },
-        {
-            "rank": 86,
-            "title": 9,
-            "admiralName": "深海棲艦スレイヤー",
-            "plate": "is-silver",
-            "score": 17977,
-            "kouMedal": 2
-        },
-        {
-            "rank": 87,
-            "title": 9,
-            "admiralName": "のっち",
-            "plate": "is-silver",
-            "score": 17833,
-            "kouMedal": 5
-        },
-        {
-            "rank": 88,
-            "title": 9,
-            "admiralName": "きのこる",
-            "plate": "is-silver",
-            "score": 17705,
-            "kouMedal": 14
-        },
-        {
-            "rank": 89,
-            "title": 9,
-            "admiralName": "かと",
-            "plate": "is-silver",
-            "score": 17507,
-            "kouMedal": 14
-        },
-        {
-            "rank": 90,
-            "title": 9,
-            "admiralName": "五一六",
-            "plate": "is-silver",
-            "score": 17506,
-            "kouMedal": 8
-        },
-        {
-            "rank": 91,
-            "title": 9,
-            "admiralName": "ねこぷう",
-            "plate": "is-silver",
-            "score": 17446,
-            "kouMedal": 14
-        },
-        {
-            "rank": 92,
-            "title": 9,
-            "admiralName": "ブルーマーメイド",
-            "plate": "is-silver",
-            "score": 17075,
-            "kouMedal": 9
-        },
-        {
-            "rank": 93,
-            "title": 9,
-            "admiralName": "オーフェン",
-            "plate": "is-silver",
-            "score": 16907,
-            "kouMedal": 14
-        },
-        {
-            "rank": 94,
-            "title": 9,
-            "admiralName": "ぴよーみん",
-            "plate": "is-silver",
-            "score": 16848,
-            "kouMedal": 8
-        },
-        {
-            "rank": 95,
-            "title": 9,
-            "admiralName": "Kanchi",
-            "plate": "is-silver",
-            "score": 16742,
-            "kouMedal": 0
-        },
-        {
             "rank": 96,
             "title": 9,
-            "admiralName": "ヘルメス",
+            "admiralName": "ミント",
             "plate": "is-silver",
-            "score": 16420,
-            "kouMedal": 2
+            "score": 25006,
+            "kouMedal": 14
         },
         {
             "rank": 97,
             "title": 9,
-            "admiralName": "はく",
+            "admiralName": "ＵＰＯＮ",
             "plate": "is-silver",
-            "score": 16388,
-            "kouMedal": 13
+            "score": 24906,
+            "kouMedal": 14
         },
         {
             "rank": 98,
             "title": 9,
-            "admiralName": "カルタ",
+            "admiralName": "太田",
             "plate": "is-silver",
-            "score": 16382,
-            "kouMedal": 8
+            "score": 24842,
+            "kouMedal": 14
         },
         {
             "rank": 99,
             "title": 9,
-            "admiralName": "やなぎぃ",
+            "admiralName": "おかぴ",
             "plate": "is-silver",
-            "score": 16310,
-            "kouMedal": 14
+            "score": 24835,
+            "kouMedal": 9
         },
         {
             "rank": 100,
             "title": 9,
-            "admiralName": "鞘木",
+            "admiralName": "Ｂａｎ　Ｐｒｉｃｅ",
             "plate": "is-silver",
-            "score": 16126,
-            "kouMedal": 4
+            "score": 24821,
+            "kouMedal": 6
         },
         {
             "rank": 101,
             "title": 9,
+            "admiralName": "ガノバトス",
+            "plate": "is-bronze",
+            "score": 24678,
+            "kouMedal": 13
+        },
+        {
+            "rank": 102,
+            "title": 9,
+            "admiralName": "ｈｂｒｋ",
+            "plate": "is-bronze",
+            "score": 24666,
+            "kouMedal": 14
+        },
+        {
+            "rank": 103,
+            "title": 9,
+            "admiralName": "秋月十五",
+            "plate": "is-bronze",
+            "score": 24601,
+            "kouMedal": 13
+        },
+        {
+            "rank": 104,
+            "title": 9,
+            "admiralName": "トンヌラ",
+            "plate": "is-bronze",
+            "score": 24463,
+            "kouMedal": 14
+        },
+        {
+            "rank": 105,
+            "title": 9,
+            "admiralName": "周防豚",
+            "plate": "is-bronze",
+            "score": 24446,
+            "kouMedal": 9
+        },
+        {
+            "rank": 106,
+            "title": 9,
+            "admiralName": "トモ",
+            "plate": "is-bronze",
+            "score": 24381,
+            "kouMedal": 8
+        },
+        {
+            "rank": 107,
+            "title": 9,
+            "admiralName": "たけ",
+            "plate": "is-bronze",
+            "score": 24221,
+            "kouMedal": 14
+        },
+        {
+            "rank": 108,
+            "title": 9,
+            "admiralName": "カピバラさん",
+            "plate": "is-bronze",
+            "score": 24192,
+            "kouMedal": 6
+        },
+        {
+            "rank": 109,
+            "title": 9,
+            "admiralName": "はんせん",
+            "plate": "is-bronze",
+            "score": 24108,
+            "kouMedal": 13
+        },
+        {
+            "rank": 110,
+            "title": 9,
+            "admiralName": "ＷＲＯＮＧ",
+            "plate": "is-bronze",
+            "score": 24055,
+            "kouMedal": 10
+        },
+        {
+            "rank": 111,
+            "title": 9,
+            "admiralName": "ＭＩＲＡＧＥ",
+            "plate": "is-bronze",
+            "score": 24054,
+            "kouMedal": 13
+        },
+        {
+            "rank": 112,
+            "title": 9,
+            "admiralName": "恵",
+            "plate": "is-bronze",
+            "score": 24028,
+            "kouMedal": 6
+        },
+        {
+            "rank": 113,
+            "title": 9,
+            "admiralName": "くうねる改",
+            "plate": "is-bronze",
+            "score": 23533,
+            "kouMedal": 11
+        },
+        {
+            "rank": 114,
+            "title": 9,
+            "admiralName": "蛭子能収",
+            "plate": "is-bronze",
+            "score": 23519,
+            "kouMedal": 0
+        },
+        {
+            "rank": 115,
+            "title": 9,
+            "admiralName": "輝夜",
+            "plate": "is-bronze",
+            "score": 23301,
+            "kouMedal": 2
+        },
+        {
+            "rank": 116,
+            "title": 9,
+            "admiralName": "ＫＩＳＡＲＡＧＩ",
+            "plate": "is-bronze",
+            "score": 23245,
+            "kouMedal": 6
+        },
+        {
+            "rank": 117,
+            "title": 9,
+            "admiralName": "迷い=^_^=",
+            "plate": "is-bronze",
+            "score": 23190,
+            "kouMedal": 8
+        },
+        {
+            "rank": 118,
+            "title": 9,
+            "admiralName": "のっち",
+            "plate": "is-bronze",
+            "score": 23055,
+            "kouMedal": 5
+        },
+        {
+            "rank": 119,
+            "title": 9,
+            "admiralName": "ユエ",
+            "plate": "is-bronze",
+            "score": 23051,
+            "kouMedal": 3
+        },
+        {
+            "rank": 120,
+            "title": 9,
+            "admiralName": "新ラコ",
+            "plate": "is-bronze",
+            "score": 22853,
+            "kouMedal": 14
+        },
+        {
+            "rank": 121,
+            "title": 9,
+            "admiralName": "クロ",
+            "plate": "is-bronze",
+            "score": 22695,
+            "kouMedal": 0
+        },
+        {
+            "rank": 122,
+            "title": 9,
+            "admiralName": "Ｐｅｎｇｉｎ",
+            "plate": "is-bronze",
+            "score": 22665,
+            "kouMedal": 14
+        },
+        {
+            "rank": 123,
+            "title": 9,
+            "admiralName": "五一六",
+            "plate": "is-bronze",
+            "score": 22660,
+            "kouMedal": 8
+        },
+        {
+            "rank": 124,
+            "title": 9,
+            "admiralName": "ねこぷう",
+            "plate": "is-bronze",
+            "score": 22418,
+            "kouMedal": 14
+        },
+        {
+            "rank": 125,
+            "title": 9,
+            "admiralName": "カヲル",
+            "plate": "is-bronze",
+            "score": 22095,
+            "kouMedal": 4
+        },
+        {
+            "rank": 126,
+            "title": 9,
+            "admiralName": "ＨＥＮＡ",
+            "plate": "is-bronze",
+            "score": 22015,
+            "kouMedal": 13
+        },
+        {
+            "rank": 127,
+            "title": 9,
+            "admiralName": "てぃたん",
+            "plate": "is-bronze",
+            "score": 21935,
+            "kouMedal": 9
+        },
+        {
+            "rank": 128,
+            "title": 9,
+            "admiralName": "ゾマ",
+            "plate": "is-bronze",
+            "score": 21918,
+            "kouMedal": 4
+        },
+        {
+            "rank": 129,
+            "title": 9,
+            "admiralName": "しょうくん",
+            "plate": "is-bronze",
+            "score": 21900,
+            "kouMedal": 14
+        },
+        {
+            "rank": 130,
+            "title": 9,
+            "admiralName": "練馬大根",
+            "plate": "is-bronze",
+            "score": 21727,
+            "kouMedal": 14
+        },
+        {
+            "rank": 131,
+            "title": 9,
+            "admiralName": "だけん",
+            "plate": "is-bronze",
+            "score": 21721,
+            "kouMedal": 13
+        },
+        {
+            "rank": 132,
+            "title": 9,
+            "admiralName": "サンクロ",
+            "plate": "is-bronze",
+            "score": 21631,
+            "kouMedal": 10
+        },
+        {
+            "rank": 133,
+            "title": 9,
+            "admiralName": "みや",
+            "plate": "is-bronze",
+            "score": 21560,
+            "kouMedal": 8
+        },
+        {
+            "rank": 134,
+            "title": 9,
+            "admiralName": "タヨロム",
+            "plate": "is-bronze",
+            "score": 21549,
+            "kouMedal": 14
+        },
+        {
+            "rank": 135,
+            "title": 9,
+            "admiralName": "ていとく",
+            "plate": "is-bronze",
+            "score": 21531,
+            "kouMedal": 14
+        },
+        {
+            "rank": 136,
+            "title": 9,
+            "admiralName": "多々羅",
+            "plate": "is-bronze",
+            "score": 21524,
+            "kouMedal": 3
+        },
+        {
+            "rank": 137,
+            "title": 9,
+            "admiralName": "いんてー",
+            "plate": "is-bronze",
+            "score": 21466,
+            "kouMedal": 11
+        },
+        {
+            "rank": 138,
+            "title": 9,
+            "admiralName": "ＩＳＯ４５０",
+            "plate": "is-bronze",
+            "score": 21392,
+            "kouMedal": 14
+        },
+        {
+            "rank": 139,
+            "title": 9,
+            "admiralName": "ブンブン",
+            "plate": "is-bronze",
+            "score": 21364,
+            "kouMedal": 11
+        },
+        {
+            "rank": 140,
+            "title": 9,
+            "admiralName": "くろぶたくん",
+            "plate": "is-bronze",
+            "score": 21270,
+            "kouMedal": 14
+        },
+        {
+            "rank": 141,
+            "title": 9,
+            "admiralName": "鞘木",
+            "plate": "is-bronze",
+            "score": 21234,
+            "kouMedal": 4
+        },
+        {
+            "rank": 142,
+            "title": 9,
+            "admiralName": "あきな",
+            "plate": "is-bronze",
+            "score": 21097,
+            "kouMedal": 0
+        },
+        {
+            "rank": 143,
+            "title": 9,
+            "admiralName": "ヘルメス",
+            "plate": "is-bronze",
+            "score": 21068,
+            "kouMedal": 2
+        },
+        {
+            "rank": 144,
+            "title": 9,
+            "admiralName": "龍貴",
+            "plate": "is-bronze",
+            "score": 20903,
+            "kouMedal": 10
+        },
+        {
+            "rank": 145,
+            "title": 9,
+            "admiralName": "海風",
+            "plate": "is-bronze",
+            "score": 20804,
+            "kouMedal": 2
+        },
+        {
+            "rank": 146,
+            "title": 9,
+            "admiralName": "更紗",
+            "plate": "is-bronze",
+            "score": 20693,
+            "kouMedal": 12
+        },
+        {
+            "rank": 147,
+            "title": 9,
+            "admiralName": "はく",
+            "plate": "is-bronze",
+            "score": 20628,
+            "kouMedal": 13
+        },
+        {
+            "rank": 148,
+            "title": 9,
+            "admiralName": "ミッターマイヤー",
+            "plate": "is-bronze",
+            "score": 20497,
+            "kouMedal": 14
+        },
+        {
+            "rank": 149,
+            "title": 9,
+            "admiralName": "けい",
+            "plate": "is-bronze",
+            "score": 20496,
+            "kouMedal": 4
+        },
+        {
+            "rank": 150,
+            "title": 9,
+            "admiralName": "ＫＵＲＯＮＥＫＯ",
+            "plate": "is-bronze",
+            "score": 20411,
+            "kouMedal": 14
+        },
+        {
+            "rank": 151,
+            "title": 9,
+            "admiralName": "ミヤト",
+            "plate": "is-bronze",
+            "score": 20408,
+            "kouMedal": 8
+        },
+        {
+            "rank": 152,
+            "title": 9,
+            "admiralName": "かみなりもやし",
+            "plate": "is-bronze",
+            "score": 20382,
+            "kouMedal": 14
+        },
+        {
+            "rank": 153,
+            "title": 8,
+            "admiralName": "あおい",
+            "plate": "is-bronze",
+            "score": 20366,
+            "kouMedal": 14
+        },
+        {
+            "rank": 154,
+            "title": 8,
+            "admiralName": "理不尽",
+            "plate": "is-bronze",
+            "score": 20321,
+            "kouMedal": 14
+        },
+        {
+            "rank": 155,
+            "title": 8,
+            "admiralName": "Ｘｅｈａｎｏｒｔ",
+            "plate": "is-bronze",
+            "score": 20260,
+            "kouMedal": 2
+        },
+        {
+            "rank": 156,
+            "title": 8,
+            "admiralName": "アッテンボロー",
+            "plate": "is-bronze",
+            "score": 20206,
+            "kouMedal": 3
+        },
+        {
+            "rank": 157,
+            "title": 8,
+            "admiralName": "テッド２",
+            "plate": "is-bronze",
+            "score": 20102,
+            "kouMedal": 14
+        },
+        {
+            "rank": 158,
+            "title": 8,
+            "admiralName": "ＦＴＨ　７",
+            "plate": "is-bronze",
+            "score": 20076,
+            "kouMedal": 14
+        },
+        {
+            "rank": 159,
+            "title": 8,
+            "admiralName": "尾留川",
+            "plate": "is-bronze",
+            "score": 19947,
+            "kouMedal": 2
+        },
+        {
+            "rank": 160,
+            "title": 8,
+            "admiralName": "烏丸",
+            "plate": "is-bronze",
+            "score": 19872,
+            "kouMedal": 14
+        },
+        {
+            "rank": 161,
+            "title": 8,
+            "admiralName": "ＤＥ２３２",
+            "plate": "is-bronze",
+            "score": 19839,
+            "kouMedal": 12
+        },
+        {
+            "rank": 162,
+            "title": 8,
+            "admiralName": "たけやん",
+            "plate": "is-bronze",
+            "score": 19729,
+            "kouMedal": 14
+        },
+        {
+            "rank": 163,
+            "title": 8,
+            "admiralName": "カシュー",
+            "plate": "is-bronze",
+            "score": 19577,
+            "kouMedal": 8
+        },
+        {
+            "rank": 164,
+            "title": 8,
+            "admiralName": "ゆりあん",
+            "plate": "is-bronze",
+            "score": 19510,
+            "kouMedal": 14
+        },
+        {
+            "rank": 165,
+            "title": 8,
+            "admiralName": "トシ",
+            "plate": "is-bronze",
+            "score": 19476,
+            "kouMedal": 11
+        },
+        {
+            "rank": 166,
+            "title": 8,
+            "admiralName": "からす",
+            "plate": "is-bronze",
+            "score": 19460,
+            "kouMedal": 14
+        },
+        {
+            "rank": 167,
+            "title": 8,
+            "admiralName": "ＣＨＩＡＫＩ",
+            "plate": "is-bronze",
+            "score": 19390,
+            "kouMedal": 2
+        },
+        {
+            "rank": 168,
+            "title": 8,
+            "admiralName": "ＥＧＯＩＳＴ",
+            "plate": "is-bronze",
+            "score": 19272,
+            "kouMedal": 4
+        },
+        {
+            "rank": 169,
+            "title": 8,
+            "admiralName": "かと",
+            "plate": "is-bronze",
+            "score": 19216,
+            "kouMedal": 14
+        },
+        {
+            "rank": 170,
+            "title": 8,
+            "admiralName": "HANNIBAL",
+            "plate": "is-bronze",
+            "score": 19089,
+            "kouMedal": 5
+        },
+        {
+            "rank": 171,
+            "title": 8,
+            "admiralName": "サブゼロ",
+            "plate": "is-bronze",
+            "score": 19031,
+            "kouMedal": 6
+        },
+        {
+            "rank": 172,
+            "title": 8,
+            "admiralName": "ｍｉｙａ",
+            "plate": "is-bronze",
+            "score": 19030,
+            "kouMedal": 13
+        },
+        {
+            "rank": 173,
+            "title": 8,
+            "admiralName": "タイセー",
+            "plate": "is-bronze",
+            "score": 18905,
+            "kouMedal": 14
+        },
+        {
+            "rank": 174,
+            "title": 8,
+            "admiralName": "ＳＹＡ",
+            "plate": "is-bronze",
+            "score": 18865,
+            "kouMedal": 4
+        },
+        {
+            "rank": 175,
+            "title": 8,
+            "admiralName": "ＳＯＵ",
+            "plate": "is-bronze",
+            "score": 18841,
+            "kouMedal": 5
+        },
+        {
+            "rank": 176,
+            "title": 8,
+            "admiralName": "ＫＯＮＧＯＵ",
+            "plate": "is-bronze",
+            "score": 18809,
+            "kouMedal": 0
+        },
+        {
+            "rank": 177,
+            "title": 8,
+            "admiralName": "バイオアザラシ",
+            "plate": "is-bronze",
+            "score": 18792,
+            "kouMedal": 7
+        },
+        {
+            "rank": 178,
+            "title": 8,
+            "admiralName": "あい",
+            "plate": "is-bronze",
+            "score": 18622,
+            "kouMedal": 8
+        },
+        {
+            "rank": 179,
+            "title": 8,
+            "admiralName": "Ｐｏｕｌ",
+            "plate": "is-bronze",
+            "score": 18617,
+            "kouMedal": 6
+        },
+        {
+            "rank": 180,
+            "title": 8,
+            "admiralName": "無名",
+            "plate": "is-bronze",
+            "score": 18598,
+            "kouMedal": 14
+        },
+        {
+            "rank": 181,
+            "title": 8,
+            "admiralName": "まぁちょ",
+            "plate": "is-bronze",
+            "score": 18592,
+            "kouMedal": 14
+        },
+        {
+            "rank": 182,
+            "title": 8,
+            "admiralName": "ムラサメ",
+            "plate": "is-bronze",
+            "score": 18583,
+            "kouMedal": 8
+        },
+        {
+            "rank": 183,
+            "title": 8,
+            "admiralName": "あしゅら",
+            "plate": "is-bronze",
+            "score": 18489,
+            "kouMedal": 14
+        },
+        {
+            "rank": 184,
+            "title": 8,
+            "admiralName": "青音海斗",
+            "plate": "is-bronze",
+            "score": 18465,
+            "kouMedal": 12
+        },
+        {
+            "rank": 185,
+            "title": 8,
+            "admiralName": "ガノンドロフ",
+            "plate": "is-bronze",
+            "score": 18439,
+            "kouMedal": 0
+        },
+        {
+            "rank": 186,
+            "title": 8,
+            "admiralName": "HIZ",
+            "plate": "is-bronze",
+            "score": 18384,
+            "kouMedal": 14
+        },
+        {
+            "rank": 187,
+            "title": 8,
+            "admiralName": "司",
+            "plate": "is-bronze",
+            "score": 18376,
+            "kouMedal": 9
+        },
+        {
+            "rank": 188,
+            "title": 8,
+            "admiralName": "くろぎつね",
+            "plate": "is-bronze",
+            "score": 18366,
+            "kouMedal": 7
+        },
+        {
+            "rank": 189,
+            "title": 8,
+            "admiralName": "またい",
+            "plate": "is-bronze",
+            "score": 18365,
+            "kouMedal": 2
+        },
+        {
+            "rank": 190,
+            "title": 8,
+            "admiralName": "カルタ",
+            "plate": "is-bronze",
+            "score": 18239,
+            "kouMedal": 8
+        },
+        {
+            "rank": 191,
+            "title": 8,
+            "admiralName": "バベル",
+            "plate": "is-bronze",
+            "score": 18227,
+            "kouMedal": 14
+        },
+        {
+            "rank": 192,
+            "title": 8,
+            "admiralName": "あしゆら",
+            "plate": "is-bronze",
+            "score": 18170,
+            "kouMedal": 14
+        },
+        {
+            "rank": 193,
+            "title": 8,
+            "admiralName": "ローエングラム",
+            "plate": "is-bronze",
+            "score": 18159,
+            "kouMedal": 10
+        },
+        {
+            "rank": 194,
+            "title": 8,
+            "admiralName": "ゆずりはいのり",
+            "plate": "is-bronze",
+            "score": 18085,
+            "kouMedal": 14
+        },
+        {
+            "rank": 195,
+            "title": 8,
+            "admiralName": "深海棲艦スレイヤー",
+            "plate": "is-bronze",
+            "score": 17977,
+            "kouMedal": 2
+        },
+        {
+            "rank": 196,
+            "title": 8,
+            "admiralName": "ＲＥＮ",
+            "plate": "is-bronze",
+            "score": 17880,
+            "kouMedal": 5
+        },
+        {
+            "rank": 197,
+            "title": 8,
+            "admiralName": "Ａリス☆",
+            "plate": "is-bronze",
+            "score": 17832,
+            "kouMedal": 7
+        },
+        {
+            "rank": 198,
+            "title": 8,
+            "admiralName": "鳴上悠",
+            "plate": "is-bronze",
+            "score": 17754,
+            "kouMedal": 9
+        },
+        {
+            "rank": 199,
+            "title": 8,
+            "admiralName": "根本",
+            "plate": "is-bronze",
+            "score": 17716,
+            "kouMedal": 0
+        },
+        {
+            "rank": 200,
+            "title": 8,
+            "admiralName": "きのこる",
+            "plate": "is-bronze",
+            "score": 17705,
+            "kouMedal": 14
+        },
+        {
+            "rank": 201,
+            "title": 8,
+            "admiralName": "Ｎｅｕｎ",
+            "plate": "is-bronze",
+            "score": 17598,
+            "kouMedal": 14
+        },
+        {
+            "rank": 202,
+            "title": 8,
+            "admiralName": "へるにゃん",
+            "plate": "is-bronze",
+            "score": 17586,
+            "kouMedal": 4
+        },
+        {
+            "rank": 203,
+            "title": 8,
+            "admiralName": "あろは",
+            "plate": "is-bronze",
+            "score": 17439,
+            "kouMedal": 10
+        },
+        {
+            "rank": 204,
+            "title": 8,
+            "admiralName": "ひかり",
+            "plate": "is-bronze",
+            "score": 17437,
+            "kouMedal": 3
+        },
+        {
+            "rank": 205,
+            "title": 8,
+            "admiralName": "ＬｅＭ",
+            "plate": "is-bronze",
+            "score": 17412,
+            "kouMedal": 14
+        },
+        {
+            "rank": 206,
+            "title": 8,
+            "admiralName": "すいぽ",
+            "plate": "is-bronze",
+            "score": 17369,
+            "kouMedal": 4
+        },
+        {
+            "rank": 207,
+            "title": 8,
+            "admiralName": "ゴップ",
+            "plate": "is-bronze",
+            "score": 17211,
+            "kouMedal": 8
+        },
+        {
+            "rank": 208,
+            "title": 8,
+            "admiralName": "たに",
+            "plate": "is-bronze",
+            "score": 17194,
+            "kouMedal": 0
+        },
+        {
+            "rank": 209,
+            "title": 8,
+            "admiralName": "しき",
+            "plate": "is-bronze",
+            "score": 17176,
+            "kouMedal": 12
+        },
+        {
+            "rank": 210,
+            "title": 8,
+            "admiralName": "Ｄボゥイ",
+            "plate": "is-bronze",
+            "score": 17126,
+            "kouMedal": 14
+        },
+        {
+            "rank": 211,
+            "title": 8,
+            "admiralName": "ブルーマーメイド",
+            "plate": "is-bronze",
+            "score": 17075,
+            "kouMedal": 9
+        },
+        {
+            "rank": 212,
+            "title": 8,
+            "admiralName": "ｂ.うえすと",
+            "plate": "is-bronze",
+            "score": 17070,
+            "kouMedal": 14
+        },
+        {
+            "rank": 213,
+            "title": 8,
+            "admiralName": "たか",
+            "plate": "is-bronze",
+            "score": 17050,
+            "kouMedal": 3
+        },
+        {
+            "rank": 214,
+            "title": 8,
+            "admiralName": "しののめ",
+            "plate": "is-bronze",
+            "score": 17012,
+            "kouMedal": 10
+        },
+        {
+            "rank": 215,
+            "title": 8,
+            "admiralName": "ＷＥＮＤＹ",
+            "plate": "is-bronze",
+            "score": 16998,
+            "kouMedal": 1
+        },
+        {
+            "rank": 216,
+            "title": 8,
+            "admiralName": "Ａ",
+            "plate": "is-bronze",
+            "score": 16930,
+            "kouMedal": 10
+        },
+        {
+            "rank": 217,
+            "title": 8,
+            "admiralName": "オーフェン",
+            "plate": "is-bronze",
+            "score": 16907,
+            "kouMedal": 14
+        },
+        {
+            "rank": 218,
+            "title": 8,
+            "admiralName": "ぴよーみん",
+            "plate": "is-bronze",
+            "score": 16848,
+            "kouMedal": 8
+        },
+        {
+            "rank": 219,
+            "title": 8,
+            "admiralName": "島田愛里寿",
+            "plate": "is-bronze",
+            "score": 16833,
+            "kouMedal": 14
+        },
+        {
+            "rank": 220,
+            "title": 8,
+            "admiralName": "武蔵",
+            "plate": "is-bronze",
+            "score": 16831,
+            "kouMedal": 13
+        },
+        {
+            "rank": 221,
+            "title": 8,
+            "admiralName": "Kanchi",
+            "plate": "is-bronze",
+            "score": 16742,
+            "kouMedal": 0
+        },
+        {
+            "rank": 222,
+            "title": 8,
+            "admiralName": "とらそ",
+            "plate": "is-bronze",
+            "score": 16717,
+            "kouMedal": 14
+        },
+        {
+            "rank": 223,
+            "title": 8,
+            "admiralName": "ロバート",
+            "plate": "is-bronze",
+            "score": 16713,
+            "kouMedal": 2
+        },
+        {
+            "rank": 224,
+            "title": 8,
+            "admiralName": "かつらぎ",
+            "plate": "is-bronze",
+            "score": 16537,
+            "kouMedal": 6
+        },
+        {
+            "rank": 225,
+            "title": 8,
+            "admiralName": "ＮＩＮＡ",
+            "plate": "is-bronze",
+            "score": 16534,
+            "kouMedal": 1
+        },
+        {
+            "rank": 226,
+            "title": 8,
+            "admiralName": "くまきち",
+            "plate": "is-bronze",
+            "score": 16522,
+            "kouMedal": 9
+        },
+        {
+            "rank": 227,
+            "title": 8,
+            "admiralName": "ひぽ",
+            "plate": "is-bronze",
+            "score": 16439,
+            "kouMedal": 4
+        },
+        {
+            "rank": 228,
+            "title": 8,
+            "admiralName": "まっちゃん",
+            "plate": "is-bronze",
+            "score": 16436,
+            "kouMedal": 6
+        },
+        {
+            "rank": 229,
+            "title": 8,
+            "admiralName": "フィン",
+            "plate": "is-bronze",
+            "score": 16422,
+            "kouMedal": 14
+        },
+        {
+            "rank": 230,
+            "title": 8,
+            "admiralName": "ハムスケ",
+            "plate": "is-bronze",
+            "score": 16405,
+            "kouMedal": 14
+        },
+        {
+            "rank": 231,
+            "title": 8,
+            "admiralName": "ロイ・マスタング",
+            "plate": "is-bronze",
+            "score": 16286,
+            "kouMedal": 13
+        },
+        {
+            "rank": 232,
+            "title": 8,
+            "admiralName": "寧庁",
+            "plate": "is-bronze",
+            "score": 16277,
+            "kouMedal": 0
+        },
+        {
+            "rank": 233,
+            "title": 8,
+            "admiralName": "ＺＥＮ５",
+            "plate": "is-bronze",
+            "score": 16233,
+            "kouMedal": 10
+        },
+        {
+            "rank": 234,
+            "title": 8,
+            "admiralName": "優",
+            "plate": "is-bronze",
+            "score": 16185,
+            "kouMedal": 3
+        },
+        {
+            "rank": 235,
+            "title": 8,
+            "admiralName": "いなぐり",
+            "plate": "is-bronze",
+            "score": 16128,
+            "kouMedal": 14
+        },
+        {
+            "rank": 236,
+            "title": 8,
             "admiralName": "ゆややん",
             "plate": "is-bronze",
             "score": 16033,
             "kouMedal": 14
         },
         {
-            "rank": 102,
-            "title": 9,
-            "admiralName": "くうねる改",
+            "rank": 237,
+            "title": 8,
+            "admiralName": "久世零華",
             "plate": "is-bronze",
-            "score": 16010,
-            "kouMedal": 11
+            "score": 16006,
+            "kouMedal": 13
         },
         {
-            "rank": 103,
-            "title": 9,
-            "admiralName": "ＫＩＳＡＲＡＧＩ",
+            "rank": 238,
+            "title": 8,
+            "admiralName": "くもじい",
             "plate": "is-bronze",
-            "score": 15817,
-            "kouMedal": 6
+            "score": 15994,
+            "kouMedal": 14
         },
         {
-            "rank": 104,
-            "title": 9,
+            "rank": 239,
+            "title": 8,
+            "admiralName": "石川",
+            "plate": "is-bronze",
+            "score": 15894,
+            "kouMedal": 7
+        },
+        {
+            "rank": 240,
+            "title": 8,
+            "admiralName": "つばす",
+            "plate": "is-bronze",
+            "score": 15770,
+            "kouMedal": 8
+        },
+        {
+            "rank": 241,
+            "title": 8,
             "admiralName": "ぢっぺ",
             "plate": "is-bronze",
             "score": 15758,
             "kouMedal": 14
         },
         {
-            "rank": 105,
-            "title": 9,
-            "admiralName": "いんてー",
+            "rank": 242,
+            "title": 8,
+            "admiralName": "まやユリ",
             "plate": "is-bronze",
-            "score": 15606,
-            "kouMedal": 11
+            "score": 15741,
+            "kouMedal": 14
         },
         {
-            "rank": 106,
-            "title": 9,
-            "admiralName": "だけん",
+            "rank": 243,
+            "title": 8,
+            "admiralName": "ナベ",
             "plate": "is-bronze",
-            "score": 15485,
-            "kouMedal": 13
+            "score": 15731,
+            "kouMedal": 0
         },
         {
-            "rank": 107,
-            "title": 9,
-            "admiralName": "ユエ",
+            "rank": 244,
+            "title": 8,
+            "admiralName": "児玉源太郎",
             "plate": "is-bronze",
-            "score": 15475,
+            "score": 15725,
+            "kouMedal": 8
+        },
+        {
+            "rank": 245,
+            "title": 8,
+            "admiralName": "ヤナギヤ",
+            "plate": "is-bronze",
+            "score": 15680,
+            "kouMedal": 0
+        },
+        {
+            "rank": 246,
+            "title": 8,
+            "admiralName": "山口多門",
+            "plate": "is-bronze",
+            "score": 15650,
+            "kouMedal": 8
+        },
+        {
+            "rank": 247,
+            "title": 8,
+            "admiralName": "ｋ＿ｓｋ",
+            "plate": "is-bronze",
+            "score": 15641,
+            "kouMedal": 12
+        },
+        {
+            "rank": 248,
+            "title": 8,
+            "admiralName": "アドミラル　グンゾー",
+            "plate": "is-bronze",
+            "score": 15618,
+            "kouMedal": 14
+        },
+        {
+            "rank": 249,
+            "title": 8,
+            "admiralName": "とみや",
+            "plate": "is-bronze",
+            "score": 15541,
             "kouMedal": 3
         },
         {
-            "rank": 108,
-            "title": 9,
+            "rank": 250,
+            "title": 8,
+            "admiralName": "まこっち",
+            "plate": "is-bronze",
+            "score": 15518,
+            "kouMedal": 3
+        },
+        {
+            "rank": 251,
+            "title": 8,
+            "admiralName": "あやみや",
+            "plate": "is-bronze",
+            "score": 15484,
+            "kouMedal": 8
+        },
+        {
+            "rank": 252,
+            "title": 8,
             "admiralName": "弐有無",
             "plate": "is-bronze",
             "score": 15380,
             "kouMedal": 1
         },
         {
-            "rank": 109,
-            "title": 9,
-            "admiralName": "Ｄボゥイ",
+            "rank": 253,
+            "title": 8,
+            "admiralName": "ボス",
             "plate": "is-bronze",
-            "score": 15314,
+            "score": 15210,
             "kouMedal": 14
         },
         {
-            "rank": 110,
-            "title": 9,
-            "admiralName": "トモ",
+            "rank": 254,
+            "title": 8,
+            "admiralName": "提督なめこ",
             "plate": "is-bronze",
-            "score": 15304,
-            "kouMedal": 8
+            "score": 15163,
+            "kouMedal": 10
         },
         {
-            "rank": 111,
-            "title": 9,
-            "admiralName": "新ラコ",
+            "rank": 255,
+            "title": 8,
+            "admiralName": "エンペラー",
             "plate": "is-bronze",
-            "score": 15264,
-            "kouMedal": 14
+            "score": 15146,
+            "kouMedal": 1
         },
         {
-            "rank": 112,
-            "title": 9,
-            "admiralName": "マンサン",
+            "rank": 256,
+            "title": 8,
+            "admiralName": "ライス",
             "plate": "is-bronze",
-            "score": 15212,
-            "kouMedal": 14
-        },
-        {
-            "rank": 113,
-            "title": 9,
-            "admiralName": "Ｐｅｎｇｉｎ",
-            "plate": "is-bronze",
-            "score": 15204,
-            "kouMedal": 14
-        },
-        {
-            "rank": 114,
-            "title": 9,
-            "admiralName": "アッテンボロー",
-            "plate": "is-bronze",
-            "score": 15195,
-            "kouMedal": 3
-        },
-        {
-            "rank": 115,
-            "title": 9,
-            "admiralName": "ＳＯＵ",
-            "plate": "is-bronze",
-            "score": 15121,
-            "kouMedal": 5
-        },
-        {
-            "rank": 116,
-            "title": 9,
-            "admiralName": "寧庁",
-            "plate": "is-bronze",
-            "score": 15095,
-            "kouMedal": 0
-        },
-        {
-            "rank": 117,
-            "title": 9,
-            "admiralName": "ｋ＿ｓｋ",
-            "plate": "is-bronze",
-            "score": 15091,
-            "kouMedal": 12
-        },
-        {
-            "rank": 118,
-            "title": 9,
-            "admiralName": "ゆりあん",
-            "plate": "is-bronze",
-            "score": 14883,
-            "kouMedal": 14
-        },
-        {
-            "rank": 119,
-            "title": 9,
-            "admiralName": "ｍｉｙａ",
-            "plate": "is-bronze",
-            "score": 14857,
+            "score": 15030,
             "kouMedal": 13
         },
         {
-            "rank": 120,
-            "title": 9,
-            "admiralName": "Ｂａｎ　Ｐｒｉｃｅ",
+            "rank": 257,
+            "title": 8,
+            "admiralName": "Rag",
             "plate": "is-bronze",
-            "score": 14849,
-            "kouMedal": 6
+            "score": 14980,
+            "kouMedal": 14
         },
         {
-            "rank": 121,
-            "title": 9,
+            "rank": 258,
+            "title": 8,
+            "admiralName": "ひかり",
+            "plate": "is-bronze",
+            "score": 14970,
+            "kouMedal": 0
+        },
+        {
+            "rank": 259,
+            "title": 8,
+            "admiralName": "Ｐ助",
+            "plate": "is-bronze",
+            "score": 14896,
+            "kouMedal": 3
+        },
+        {
+            "rank": 260,
+            "title": 8,
+            "admiralName": "さとう",
+            "plate": "is-bronze",
+            "score": 14850,
+            "kouMedal": 0
+        },
+        {
+            "rank": 261,
+            "title": 8,
             "admiralName": "ヒマワリＣＺ７５",
             "plate": "is-bronze",
             "score": 14836,
             "kouMedal": 0
         },
         {
-            "rank": 122,
-            "title": 9,
+            "rank": 262,
+            "title": 8,
+            "admiralName": "フリー",
+            "plate": "is-bronze",
+            "score": 14817,
+            "kouMedal": 14
+        },
+        {
+            "rank": 263,
+            "title": 8,
+            "admiralName": "ｍｉｓｈｉ＠３４",
+            "plate": "is-bronze",
+            "score": 14729,
+            "kouMedal": 14
+        },
+        {
+            "rank": 264,
+            "title": 8,
+            "admiralName": "ＪＡＺＺ",
+            "plate": "is-bronze",
+            "score": 14725,
+            "kouMedal": 14
+        },
+        {
+            "rank": 265,
+            "title": 8,
+            "admiralName": "ＤＤＲＡＭ",
+            "plate": "is-bronze",
+            "score": 14704,
+            "kouMedal": 6
+        },
+        {
+            "rank": 266,
+            "title": 8,
+            "admiralName": "でに",
+            "plate": "is-bronze",
+            "score": 14684,
+            "kouMedal": 6
+        },
+        {
+            "rank": 267,
+            "title": 8,
             "admiralName": "やすおさん",
             "plate": "is-bronze",
             "score": 14679,
             "kouMedal": 1
         },
         {
-            "rank": 123,
-            "title": 9,
-            "admiralName": "あしゅら",
+            "rank": 268,
+            "title": 8,
+            "admiralName": "まんしゅたいん",
             "plate": "is-bronze",
-            "score": 14621,
+            "score": 14672,
             "kouMedal": 14
         },
         {
-            "rank": 124,
-            "title": 9,
+            "rank": 269,
+            "title": 8,
+            "admiralName": "Ｓｎｏｗ",
+            "plate": "is-bronze",
+            "score": 14658,
+            "kouMedal": 0
+        },
+        {
+            "rank": 270,
+            "title": 8,
+            "admiralName": "ぶにょ",
+            "plate": "is-bronze",
+            "score": 14653,
+            "kouMedal": 5
+        },
+        {
+            "rank": 271,
+            "title": 8,
+            "admiralName": "ゆず",
+            "plate": "is-bronze",
+            "score": 14617,
+            "kouMedal": 2
+        },
+        {
+            "rank": 272,
+            "title": 8,
             "admiralName": "ＣａｔＬｏｖｅ",
             "plate": "is-bronze",
             "score": 14588,
             "kouMedal": 10
         },
         {
-            "rank": 125,
-            "title": 9,
-            "admiralName": "タイセー",
+            "rank": 273,
+            "title": 8,
+            "admiralName": "キリコ　キュウベエ",
             "plate": "is-bronze",
-            "score": 14529,
+            "score": 14578,
             "kouMedal": 14
         },
         {
-            "rank": 126,
-            "title": 9,
-            "admiralName": "理不尽",
+            "rank": 274,
+            "title": 8,
+            "admiralName": "うなじゅう",
             "plate": "is-bronze",
-            "score": 14398,
+            "score": 14572,
+            "kouMedal": 0
+        },
+        {
+            "rank": 275,
+            "title": 8,
+            "admiralName": "アソおやじ８",
+            "plate": "is-bronze",
+            "score": 14370,
             "kouMedal": 14
         },
         {
-            "rank": 127,
-            "title": 9,
-            "admiralName": "あしゆら",
+            "rank": 276,
+            "title": 8,
+            "admiralName": "まこ",
             "plate": "is-bronze",
-            "score": 14375,
-            "kouMedal": 14
+            "score": 14363,
+            "kouMedal": 8
         },
         {
-            "rank": 128,
-            "title": 9,
-            "admiralName": "とみや",
+            "rank": 277,
+            "title": 8,
+            "admiralName": "シヴァ　シンドウ",
             "plate": "is-bronze",
-            "score": 14287,
-            "kouMedal": 3
+            "score": 14275,
+            "kouMedal": 5
         },
         {
-            "rank": 129,
-            "title": 9,
-            "admiralName": "深海棲艦はんた",
+            "rank": 278,
+            "title": 8,
+            "admiralName": "ヒガシ",
             "plate": "is-bronze",
-            "score": 14192,
+            "score": 14253,
             "kouMedal": 13
         },
         {
-            "rank": 130,
-            "title": 9,
-            "admiralName": "あじさい",
+            "rank": 279,
+            "title": 8,
+            "admiralName": "せんぞう",
             "plate": "is-bronze",
-            "score": 14128,
-            "kouMedal": 4
-        },
-        {
-            "rank": 131,
-            "title": 9,
-            "admiralName": "リムゾン",
-            "plate": "is-bronze",
-            "score": 14113,
-            "kouMedal": 14
-        },
-        {
-            "rank": 132,
-            "title": 9,
-            "admiralName": "HIZ",
-            "plate": "is-bronze",
-            "score": 14056,
-            "kouMedal": 14
-        },
-        {
-            "rank": 133,
-            "title": 9,
-            "admiralName": "またい",
-            "plate": "is-bronze",
-            "score": 14003,
+            "score": 14169,
             "kouMedal": 2
         },
         {
-            "rank": 134,
-            "title": 9,
+            "rank": 280,
+            "title": 8,
+            "admiralName": "ピンクだま",
+            "plate": "is-bronze",
+            "score": 14134,
+            "kouMedal": 14
+        },
+        {
+            "rank": 281,
+            "title": 8,
+            "admiralName": "リンチャン",
+            "plate": "is-bronze",
+            "score": 14121,
+            "kouMedal": 0
+        },
+        {
+            "rank": 282,
+            "title": 8,
+            "admiralName": "ぽくてん",
+            "plate": "is-bronze",
+            "score": 14003,
+            "kouMedal": 0
+        },
+        {
+            "rank": 283,
+            "title": 8,
             "admiralName": "ふらんどる",
             "plate": "is-bronze",
             "score": 13971,
             "kouMedal": 14
         },
         {
-            "rank": 135,
-            "title": 9,
+            "rank": 284,
+            "title": 8,
+            "admiralName": "贅沢なビール",
+            "plate": "is-bronze",
+            "score": 13933,
+            "kouMedal": 14
+        },
+        {
+            "rank": 285,
+            "title": 8,
+            "admiralName": "伊葉大輔",
+            "plate": "is-bronze",
+            "score": 13865,
+            "kouMedal": 6
+        },
+        {
+            "rank": 286,
+            "title": 8,
             "admiralName": "よーさん",
             "plate": "is-bronze",
             "score": 13829,
             "kouMedal": 14
         },
         {
-            "rank": 136,
-            "title": 9,
-            "admiralName": "まこっち",
+            "rank": 287,
+            "title": 8,
+            "admiralName": "ジユー",
             "plate": "is-bronze",
-            "score": 13822,
+            "score": 13818,
             "kouMedal": 3
         },
         {
-            "rank": 137,
-            "title": 9,
-            "admiralName": "へるにゃん",
+            "rank": 288,
+            "title": 8,
+            "admiralName": "エール",
             "plate": "is-bronze",
-            "score": 13757,
-            "kouMedal": 4
+            "score": 13801,
+            "kouMedal": 8
         },
         {
-            "rank": 138,
-            "title": 9,
-            "admiralName": "たけ",
+            "rank": 289,
+            "title": 8,
+            "admiralName": "ヤマハシツカサ",
             "plate": "is-bronze",
-            "score": 13734,
-            "kouMedal": 14
+            "score": 13711,
+            "kouMedal": 0
         },
         {
-            "rank": 139,
-            "title": 9,
+            "rank": 290,
+            "title": 8,
+            "admiralName": "鈴",
+            "plate": "is-bronze",
+            "score": 13690,
+            "kouMedal": 3
+        },
+        {
+            "rank": 291,
+            "title": 8,
+            "admiralName": "にもにも",
+            "plate": "is-bronze",
+            "score": 13673,
+            "kouMedal": 3
+        },
+        {
+            "rank": 292,
+            "title": 8,
             "admiralName": "みやびまる",
             "plate": "is-bronze",
             "score": 13640,
             "kouMedal": 8
         },
         {
-            "rank": 140,
-            "title": 9,
-            "admiralName": "無名",
+            "rank": 293,
+            "title": 8,
+            "admiralName": "ｍｅｔ",
             "plate": "is-bronze",
-            "score": 13580,
-            "kouMedal": 14
+            "score": 13570,
+            "kouMedal": 0
         },
         {
-            "rank": 141,
-            "title": 9,
+            "rank": 294,
+            "title": 8,
             "admiralName": "Ｇ",
             "plate": "is-bronze",
             "score": 13544,
             "kouMedal": 10
         },
         {
-            "rank": 142,
-            "title": 9,
-            "admiralName": "すいぽ",
+            "rank": 295,
+            "title": 8,
+            "admiralName": "れあ",
             "plate": "is-bronze",
-            "score": 13479,
-            "kouMedal": 4
+            "score": 13516,
+            "kouMedal": 14
         },
         {
-            "rank": 143,
-            "title": 9,
+            "rank": 296,
+            "title": 8,
+            "admiralName": "パナメーラ",
+            "plate": "is-bronze",
+            "score": 13515,
+            "kouMedal": 0
+        },
+        {
+            "rank": 297,
+            "title": 8,
+            "admiralName": "CUTE矢島舞美",
+            "plate": "is-bronze",
+            "score": 13511,
+            "kouMedal": 14
+        },
+        {
+            "rank": 298,
+            "title": 8,
+            "admiralName": "結城リトリト",
+            "plate": "is-bronze",
+            "score": 13498,
+            "kouMedal": 2
+        },
+        {
+            "rank": 299,
+            "title": 8,
+            "admiralName": "大和と武蔵",
+            "plate": "is-bronze",
+            "score": 13496,
+            "kouMedal": 8
+        },
+        {
+            "rank": 300,
+            "title": 8,
+            "admiralName": "よっち",
+            "plate": "is-bronze",
+            "score": 13481,
+            "kouMedal": 2
+        },
+        {
+            "rank": 301,
+            "title": 8,
             "admiralName": "虹の羽根のリコ",
             "plate": "is-bronze",
             "score": 13426,
             "kouMedal": 14
         },
         {
-            "rank": 144,
-            "title": 9,
-            "admiralName": "迷い=^_^=",
-            "plate": "is-bronze",
-            "score": 13376,
-            "kouMedal": 8
-        },
-        {
-            "rank": 145,
-            "title": 9,
+            "rank": 302,
+            "title": 8,
             "admiralName": "ヒロ",
             "plate": "is-bronze",
             "score": 13340,
             "kouMedal": 8
         },
         {
-            "rank": 146,
-            "title": 9,
-            "admiralName": "武蔵",
+            "rank": 303,
+            "title": 8,
+            "admiralName": "ヒカリ",
+            "plate": "is-bronze",
+            "score": 13340,
+            "kouMedal": 3
+        },
+        {
+            "rank": 304,
+            "title": 8,
+            "admiralName": "新米提督",
             "plate": "is-bronze",
             "score": 13285,
-            "kouMedal": 13
+            "kouMedal": 10
         },
         {
-            "rank": 147,
-            "title": 9,
-            "admiralName": "オラタコ",
+            "rank": 305,
+            "title": 8,
+            "admiralName": "LUCY",
             "plate": "is-bronze",
-            "score": 13274,
-            "kouMedal": 14
+            "score": 13261,
+            "kouMedal": 6
         },
         {
-            "rank": 148,
-            "title": 9,
-            "admiralName": "ＬｅＭ",
-            "plate": "is-bronze",
-            "score": 13257,
-            "kouMedal": 14
-        },
-        {
-            "rank": 149,
-            "title": 9,
+            "rank": 306,
+            "title": 8,
             "admiralName": "山内",
             "plate": "is-bronze",
             "score": 13225,
             "kouMedal": 11
         },
         {
-            "rank": 150,
+            "rank": 307,
+            "title": 8,
+            "admiralName": "ひろた",
+            "plate": "is-bronze",
+            "score": 13215,
+            "kouMedal": 7
+        },
+        {
+            "rank": 308,
             "title": 8,
             "admiralName": "恋",
             "plate": "is-bronze",
@@ -1202,7 +2466,7 @@
             "kouMedal": 0
         },
         {
-            "rank": 151,
+            "rank": 309,
             "title": 8,
             "admiralName": "ヨシムメ",
             "plate": "is-bronze",
@@ -1210,39 +2474,71 @@
             "kouMedal": 14
         },
         {
-            "rank": 152,
+            "rank": 310,
             "title": 8,
-            "admiralName": "ＣＨＩＡＫＩ",
+            "admiralName": "たけっち",
             "plate": "is-bronze",
-            "score": 13188,
-            "kouMedal": 2
+            "score": 13191,
+            "kouMedal": 14
         },
         {
-            "rank": 153,
+            "rank": 311,
             "title": 8,
-            "admiralName": "まこ",
+            "admiralName": "FJT",
             "plate": "is-bronze",
-            "score": 13180,
-            "kouMedal": 8
-        },
-        {
-            "rank": 154,
-            "title": 8,
-            "admiralName": "エンペラー",
-            "plate": "is-bronze",
-            "score": 13178,
-            "kouMedal": 1
-        },
-        {
-            "rank": 155,
-            "title": 8,
-            "admiralName": "蛭子能収",
-            "plate": "is-bronze",
-            "score": 13174,
+            "score": 13165,
             "kouMedal": 0
         },
         {
-            "rank": 156,
+            "rank": 312,
+            "title": 8,
+            "admiralName": "かっちゃん",
+            "plate": "is-bronze",
+            "score": 13164,
+            "kouMedal": 2
+        },
+        {
+            "rank": 313,
+            "title": 8,
+            "admiralName": "ピカード",
+            "plate": "is-bronze",
+            "score": 13150,
+            "kouMedal": 7
+        },
+        {
+            "rank": 314,
+            "title": 8,
+            "admiralName": "（＾",
+            "plate": "is-bronze",
+            "score": 13138,
+            "kouMedal": 0
+        },
+        {
+            "rank": 315,
+            "title": 8,
+            "admiralName": "まっつん",
+            "plate": "is-bronze",
+            "score": 13078,
+            "kouMedal": 13
+        },
+        {
+            "rank": 316,
+            "title": 8,
+            "admiralName": "アカメ",
+            "plate": "is-bronze",
+            "score": 13043,
+            "kouMedal": 14
+        },
+        {
+            "rank": 317,
+            "title": 8,
+            "admiralName": "ブラックベリー",
+            "plate": "is-bronze",
+            "score": 13041,
+            "kouMedal": 2
+        },
+        {
+            "rank": 318,
             "title": 8,
             "admiralName": "えいと",
             "plate": "is-bronze",
@@ -1250,39 +2546,71 @@
             "kouMedal": 3
         },
         {
-            "rank": 157,
+            "rank": 319,
             "title": 8,
-            "admiralName": "贅沢なビール",
+            "admiralName": "アカツキ",
             "plate": "is-bronze",
-            "score": 13005,
+            "score": 12914,
+            "kouMedal": 11
+        },
+        {
+            "rank": 320,
+            "title": 8,
+            "admiralName": "風王結界",
+            "plate": "is-bronze",
+            "score": 12853,
             "kouMedal": 14
         },
         {
-            "rank": 158,
+            "rank": 321,
             "title": 8,
-            "admiralName": "ＥＧＯＩＳＴ",
+            "admiralName": "Θ",
             "plate": "is-bronze",
-            "score": 12979,
-            "kouMedal": 4
+            "score": 12813,
+            "kouMedal": 5
         },
         {
-            "rank": 159,
+            "rank": 322,
             "title": 8,
-            "admiralName": "ゴップ",
+            "admiralName": "じかんない",
             "plate": "is-bronze",
-            "score": 12807,
+            "score": 12801,
             "kouMedal": 8
         },
         {
-            "rank": 160,
+            "rank": 323,
             "title": 8,
-            "admiralName": "Ａ",
+            "admiralName": "コウメイ",
             "plate": "is-bronze",
-            "score": 12706,
-            "kouMedal": 10
+            "score": 12778,
+            "kouMedal": 14
         },
         {
-            "rank": 161,
+            "rank": 324,
+            "title": 8,
+            "admiralName": "みかづき",
+            "plate": "is-bronze",
+            "score": 12751,
+            "kouMedal": 9
+        },
+        {
+            "rank": 325,
+            "title": 8,
+            "admiralName": "没斗",
+            "plate": "is-bronze",
+            "score": 12701,
+            "kouMedal": 13
+        },
+        {
+            "rank": 326,
+            "title": 8,
+            "admiralName": "マーシャ",
+            "plate": "is-bronze",
+            "score": 12696,
+            "kouMedal": 11
+        },
+        {
+            "rank": 327,
             "title": 8,
             "admiralName": "ＭａｒｙＣｅｌｅｓ",
             "plate": "is-bronze",
@@ -1290,15 +2618,15 @@
             "kouMedal": 14
         },
         {
-            "rank": 162,
+            "rank": 328,
             "title": 8,
-            "admiralName": "あおい",
+            "admiralName": "ゲマ",
             "plate": "is-bronze",
-            "score": 12655,
+            "score": 12630,
             "kouMedal": 14
         },
         {
-            "rank": 163,
+            "rank": 329,
             "title": 8,
             "admiralName": "シャオクウリン",
             "plate": "is-bronze",
@@ -1306,39 +2634,63 @@
             "kouMedal": 0
         },
         {
-            "rank": 164,
+            "rank": 330,
             "title": 8,
-            "admiralName": "サンクロ",
+            "admiralName": "わがなはゆんゆんノ",
             "plate": "is-bronze",
-            "score": 12516,
-            "kouMedal": 10
+            "score": 12575,
+            "kouMedal": 5
         },
         {
-            "rank": 165,
+            "rank": 331,
             "title": 8,
-            "admiralName": "ＪＡＺＺ",
+            "admiralName": "りょう",
             "plate": "is-bronze",
-            "score": 12509,
+            "score": 12575,
+            "kouMedal": 2
+        },
+        {
+            "rank": 332,
+            "title": 8,
+            "admiralName": "ガン",
+            "plate": "is-bronze",
+            "score": 12549,
+            "kouMedal": 12
+        },
+        {
+            "rank": 333,
+            "title": 8,
+            "admiralName": "なぎ",
+            "plate": "is-bronze",
+            "score": 12546,
             "kouMedal": 14
         },
         {
-            "rank": 166,
+            "rank": 334,
             "title": 8,
-            "admiralName": "ＨＥＮＡ",
+            "admiralName": "うにぎり",
             "plate": "is-bronze",
-            "score": 12504,
-            "kouMedal": 13
+            "score": 12505,
+            "kouMedal": 0
         },
         {
-            "rank": 167,
+            "rank": 335,
             "title": 8,
-            "admiralName": "ハム",
+            "admiralName": "逢坂桜",
             "plate": "is-bronze",
-            "score": 12413,
+            "score": 12457,
+            "kouMedal": 3
+        },
+        {
+            "rank": 336,
+            "title": 8,
+            "admiralName": "ＭＫ２",
+            "plate": "is-bronze",
+            "score": 12451,
             "kouMedal": 14
         },
         {
-            "rank": 168,
+            "rank": 337,
             "title": 8,
             "admiralName": "ガイ",
             "plate": "is-bronze",
@@ -1346,143 +2698,199 @@
             "kouMedal": 14
         },
         {
-            "rank": 169,
+            "rank": 338,
             "title": 8,
-            "admiralName": "カヲル",
+            "admiralName": "まこと",
             "plate": "is-bronze",
-            "score": 12276,
-            "kouMedal": 4
-        },
-        {
-            "rank": 170,
-            "title": 8,
-            "admiralName": "となん",
-            "plate": "is-bronze",
-            "score": 12174,
-            "kouMedal": 14
-        },
-        {
-            "rank": 171,
-            "title": 8,
-            "admiralName": "いりさわ",
-            "plate": "is-bronze",
-            "score": 12149,
-            "kouMedal": 14
-        },
-        {
-            "rank": 172,
-            "title": 8,
-            "admiralName": "たけやん",
-            "plate": "is-bronze",
-            "score": 12145,
-            "kouMedal": 14
-        },
-        {
-            "rank": 173,
-            "title": 8,
-            "admiralName": "タヨロム",
-            "plate": "is-bronze",
-            "score": 12125,
-            "kouMedal": 14
-        },
-        {
-            "rank": 174,
-            "title": 8,
-            "admiralName": "さとう",
-            "plate": "is-bronze",
-            "score": 12121,
+            "score": 12311,
             "kouMedal": 0
         },
         {
-            "rank": 175,
+            "rank": 339,
             "title": 8,
-            "admiralName": "スナギツネ",
+            "admiralName": "はちまん",
             "plate": "is-bronze",
-            "score": 12111,
+            "score": 12302,
+            "kouMedal": 7
+        },
+        {
+            "rank": 340,
+            "title": 8,
+            "admiralName": "レム",
+            "plate": "is-bronze",
+            "score": 12232,
             "kouMedal": 14
         },
         {
-            "rank": 176,
-            "title": 8,
-            "admiralName": "しののめ",
-            "plate": "is-bronze",
-            "score": 12100,
-            "kouMedal": 10
-        },
-        {
-            "rank": 177,
-            "title": 8,
-            "admiralName": "キリコ　キュウベエ",
-            "plate": "is-bronze",
-            "score": 12093,
-            "kouMedal": 14
-        },
-        {
-            "rank": 178,
-            "title": 8,
-            "admiralName": "たに",
-            "plate": "is-bronze",
-            "score": 12068,
-            "kouMedal": 0
-        },
-        {
-            "rank": 179,
-            "title": 8,
-            "admiralName": "無限　真人",
-            "plate": "is-bronze",
-            "score": 11910,
-            "kouMedal": 11
-        },
-        {
-            "rank": 180,
-            "title": 8,
-            "admiralName": "かみなりもやし",
-            "plate": "is-bronze",
-            "score": 11906,
-            "kouMedal": 14
-        },
-        {
-            "rank": 181,
-            "title": 8,
-            "admiralName": "根本",
-            "plate": "is-bronze",
-            "score": 11875,
-            "kouMedal": 0
-        },
-        {
-            "rank": 182,
-            "title": 8,
-            "admiralName": "逢坂桜",
-            "plate": "is-bronze",
-            "score": 11837,
-            "kouMedal": 3
-        },
-        {
-            "rank": 183,
-            "title": 8,
-            "admiralName": "尾留川",
-            "plate": "is-bronze",
-            "score": 11776,
-            "kouMedal": 2
-        },
-        {
-            "rank": 184,
+            "rank": 341,
             "title": 8,
             "admiralName": "シャナン",
             "plate": "is-bronze",
-            "score": 11770,
+            "score": 12220,
             "kouMedal": 14
         },
         {
-            "rank": 185,
+            "rank": 342,
             "title": 8,
-            "admiralName": "くもじい",
+            "admiralName": "利",
             "plate": "is-bronze",
-            "score": 11747,
+            "score": 12219,
             "kouMedal": 14
         },
         {
-            "rank": 186,
+            "rank": 343,
+            "title": 8,
+            "admiralName": "津名魅",
+            "plate": "is-bronze",
+            "score": 12217,
+            "kouMedal": 14
+        },
+        {
+            "rank": 344,
+            "title": 8,
+            "admiralName": "さむい",
+            "plate": "is-bronze",
+            "score": 12201,
+            "kouMedal": 11
+        },
+        {
+            "rank": 345,
+            "title": 8,
+            "admiralName": "うたいけゆさ",
+            "plate": "is-bronze",
+            "score": 12186,
+            "kouMedal": 0
+        },
+        {
+            "rank": 346,
+            "title": 8,
+            "admiralName": "ミヤビさん",
+            "plate": "is-bronze",
+            "score": 12177,
+            "kouMedal": 10
+        },
+        {
+            "rank": 347,
+            "title": 8,
+            "admiralName": "ＸＹＺ",
+            "plate": "is-bronze",
+            "score": 12155,
+            "kouMedal": 3
+        },
+        {
+            "rank": 348,
+            "title": 8,
+            "admiralName": "見た感じ住職",
+            "plate": "is-bronze",
+            "score": 12084,
+            "kouMedal": 14
+        },
+        {
+            "rank": 349,
+            "title": 8,
+            "admiralName": "ニャムせんぱい",
+            "plate": "is-bronze",
+            "score": 12038,
+            "kouMedal": 14
+        },
+        {
+            "rank": 350,
+            "title": 8,
+            "admiralName": "まーに",
+            "plate": "is-bronze",
+            "score": 12017,
+            "kouMedal": 6
+        },
+        {
+            "rank": 351,
+            "title": 8,
+            "admiralName": "zuvsnic",
+            "plate": "is-bronze",
+            "score": 12013,
+            "kouMedal": 2
+        },
+        {
+            "rank": 352,
+            "title": 8,
+            "admiralName": "ノラ",
+            "plate": "is-bronze",
+            "score": 11958,
+            "kouMedal": 12
+        },
+        {
+            "rank": 353,
+            "title": 8,
+            "admiralName": "ふの",
+            "plate": "is-bronze",
+            "score": 11943,
+            "kouMedal": 14
+        },
+        {
+            "rank": 354,
+            "title": 8,
+            "admiralName": "ベルモット",
+            "plate": "is-bronze",
+            "score": 11936,
+            "kouMedal": 13
+        },
+        {
+            "rank": 355,
+            "title": 8,
+            "admiralName": "イエヤス",
+            "plate": "is-bronze",
+            "score": 11931,
+            "kouMedal": 14
+        },
+        {
+            "rank": 356,
+            "title": 8,
+            "admiralName": "くろびかり",
+            "plate": "is-bronze",
+            "score": 11910,
+            "kouMedal": 7
+        },
+        {
+            "rank": 357,
+            "title": 8,
+            "admiralName": "ゼクス",
+            "plate": "is-bronze",
+            "score": 11889,
+            "kouMedal": 2
+        },
+        {
+            "rank": 358,
+            "title": 8,
+            "admiralName": "Ｆｕｙｕｔｕｋｉ",
+            "plate": "is-bronze",
+            "score": 11839,
+            "kouMedal": 14
+        },
+        {
+            "rank": 359,
+            "title": 8,
+            "admiralName": "ＳＩＮＳＥＩ",
+            "plate": "is-bronze",
+            "score": 11837,
+            "kouMedal": 11
+        },
+        {
+            "rank": 360,
+            "title": 8,
+            "admiralName": "トラッキー",
+            "plate": "is-bronze",
+            "score": 11827,
+            "kouMedal": 2
+        },
+        {
+            "rank": 361,
+            "title": 8,
+            "admiralName": "アルタイル",
+            "plate": "is-bronze",
+            "score": 11773,
+            "kouMedal": 0
+        },
+        {
+            "rank": 362,
             "title": 8,
             "admiralName": "lis",
             "plate": "is-bronze",
@@ -1490,31 +2898,39 @@
             "kouMedal": 14
         },
         {
-            "rank": 187,
+            "rank": 363,
             "title": 8,
-            "admiralName": "トンヌラ",
+            "admiralName": "ＲーＳＥＲＩＥＳ",
             "plate": "is-bronze",
-            "score": 11726,
-            "kouMedal": 14
+            "score": 11700,
+            "kouMedal": 10
         },
         {
-            "rank": 188,
+            "rank": 364,
             "title": 8,
-            "admiralName": "海風",
+            "admiralName": "コバヤシ",
             "plate": "is-bronze",
-            "score": 11640,
-            "kouMedal": 2
-        },
-        {
-            "rank": 189,
-            "title": 8,
-            "admiralName": "カピバラさん",
-            "plate": "is-bronze",
-            "score": 11637,
+            "score": 11699,
             "kouMedal": 6
         },
         {
-            "rank": 190,
+            "rank": 365,
+            "title": 8,
+            "admiralName": "（４６４９）",
+            "plate": "is-bronze",
+            "score": 11685,
+            "kouMedal": 14
+        },
+        {
+            "rank": 366,
+            "title": 8,
+            "admiralName": "りく",
+            "plate": "is-bronze",
+            "score": 11665,
+            "kouMedal": 0
+        },
+        {
+            "rank": 367,
             "title": 8,
             "admiralName": "やさぐれ",
             "plate": "is-bronze",
@@ -1522,47 +2938,31 @@
             "kouMedal": 14
         },
         {
-            "rank": 191,
+            "rank": 368,
             "title": 8,
-            "admiralName": "ｍｅｔ",
+            "admiralName": "Ｉｚｕ",
             "plate": "is-bronze",
-            "score": 11596,
-            "kouMedal": 0
+            "score": 11537,
+            "kouMedal": 12
         },
         {
-            "rank": 192,
+            "rank": 369,
             "title": 8,
-            "admiralName": "ＤＤＲＡＭ",
+            "admiralName": "新米提督",
             "plate": "is-bronze",
-            "score": 11588,
-            "kouMedal": 6
+            "score": 11430,
+            "kouMedal": 8
         },
         {
-            "rank": 193,
+            "rank": 370,
             "title": 8,
-            "admiralName": "ＺＥＮ５",
+            "admiralName": "たか",
             "plate": "is-bronze",
-            "score": 11513,
-            "kouMedal": 10
+            "score": 11422,
+            "kouMedal": 14
         },
         {
-            "rank": 194,
-            "title": 8,
-            "admiralName": "マーシャ",
-            "plate": "is-bronze",
-            "score": 11492,
-            "kouMedal": 11
-        },
-        {
-            "rank": 195,
-            "title": 8,
-            "admiralName": "いが",
-            "plate": "is-bronze",
-            "score": 11431,
-            "kouMedal": 13
-        },
-        {
-            "rank": 196,
+            "rank": 371,
             "title": 8,
             "admiralName": "への",
             "plate": "is-bronze",
@@ -1570,7 +2970,7 @@
             "kouMedal": 8
         },
         {
-            "rank": 197,
+            "rank": 372,
             "title": 8,
             "admiralName": "Ｘ",
             "plate": "is-bronze",
@@ -1578,175 +2978,279 @@
             "kouMedal": 14
         },
         {
-            "rank": 198,
+            "rank": 373,
             "title": 8,
-            "admiralName": "ハルカ☆ルカ",
+            "admiralName": "レギオス",
             "plate": "is-bronze",
-            "score": 11312,
-            "kouMedal": 2
-        },
-        {
-            "rank": 199,
-            "title": 8,
-            "admiralName": "Ｘｅｈａｎｏｒｔ",
-            "plate": "is-bronze",
-            "score": 11274,
-            "kouMedal": 2
-        },
-        {
-            "rank": 200,
-            "title": 8,
-            "admiralName": "さむい",
-            "plate": "is-bronze",
-            "score": 11265,
-            "kouMedal": 11
-        },
-        {
-            "rank": 201,
-            "title": 8,
-            "admiralName": "ふの",
-            "plate": "is-bronze",
-            "score": 11192,
-            "kouMedal": 14
-        },
-        {
-            "rank": 202,
-            "title": 8,
-            "admiralName": "練馬大根",
-            "plate": "is-bronze",
-            "score": 11152,
-            "kouMedal": 14
-        },
-        {
-            "rank": 203,
-            "title": 8,
-            "admiralName": "ぶにょ",
-            "plate": "is-bronze",
-            "score": 11150,
-            "kouMedal": 5
-        },
-        {
-            "rank": 204,
-            "title": 8,
-            "admiralName": "リンチャン",
-            "plate": "is-bronze",
-            "score": 11128,
-            "kouMedal": 0
-        },
-        {
-            "rank": 205,
-            "title": 8,
-            "admiralName": "blac",
-            "plate": "is-bronze",
-            "score": 11089,
+            "score": 11389,
             "kouMedal": 4
         },
         {
-            "rank": 206,
+            "rank": 374,
             "title": 8,
-            "admiralName": "シヴァ　シンドウ",
+            "admiralName": "うねび",
             "plate": "is-bronze",
-            "score": 11077,
-            "kouMedal": 5
+            "score": 11334,
+            "kouMedal": 8
         },
         {
-            "rank": 207,
+            "rank": 375,
             "title": 8,
-            "admiralName": "かつらぎ",
+            "admiralName": "ひゅうが",
             "plate": "is-bronze",
-            "score": 11027,
-            "kouMedal": 6
+            "score": 11318,
+            "kouMedal": 9
         },
         {
-            "rank": 208,
+            "rank": 376,
             "title": 8,
-            "admiralName": "フリー",
+            "admiralName": "アブドヤパロフ",
             "plate": "is-bronze",
-            "score": 11000,
+            "score": 11284,
             "kouMedal": 14
         },
         {
-            "rank": 209,
+            "rank": 377,
             "title": 8,
-            "admiralName": "うにぎり",
+            "admiralName": "るんたった",
             "plate": "is-bronze",
-            "score": 10867,
+            "score": 11214,
+            "kouMedal": 14
+        },
+        {
+            "rank": 378,
+            "title": 8,
+            "admiralName": "ういんどないと",
+            "plate": "is-bronze",
+            "score": 11202,
+            "kouMedal": 5
+        },
+        {
+            "rank": 379,
+            "title": 8,
+            "admiralName": "白銀",
+            "plate": "is-bronze",
+            "score": 11171,
+            "kouMedal": 13
+        },
+        {
+            "rank": 380,
+            "title": 8,
+            "admiralName": "ＣＬＥＡＲ",
+            "plate": "is-bronze",
+            "score": 11149,
+            "kouMedal": 8
+        },
+        {
+            "rank": 381,
+            "title": 8,
+            "admiralName": "シン",
+            "plate": "is-bronze",
+            "score": 11123,
+            "kouMedal": 14
+        },
+        {
+            "rank": 382,
+            "title": 8,
+            "admiralName": "シド",
+            "plate": "is-bronze",
+            "score": 11024,
+            "kouMedal": 13
+        },
+        {
+            "rank": 383,
+            "title": 8,
+            "admiralName": "浅葱",
+            "plate": "is-bronze",
+            "score": 11013,
             "kouMedal": 0
         },
         {
-            "rank": 210,
+            "rank": 384,
             "title": 8,
-            "admiralName": "青音海斗",
+            "admiralName": "ユ～ペル",
             "plate": "is-bronze",
-            "score": 10847,
+            "score": 10978,
+            "kouMedal": 7
+        },
+        {
+            "rank": 385,
+            "title": 8,
+            "admiralName": "けんしろう",
+            "plate": "is-bronze",
+            "score": 10966,
+            "kouMedal": 7
+        },
+        {
+            "rank": 386,
+            "title": 8,
+            "admiralName": "ＴＯＭＹ",
+            "plate": "is-bronze",
+            "score": 10924,
+            "kouMedal": 14
+        },
+        {
+            "rank": 387,
+            "title": 8,
+            "admiralName": "あきやまーさん",
+            "plate": "is-bronze",
+            "score": 10924,
+            "kouMedal": 9
+        },
+        {
+            "rank": 388,
+            "title": 8,
+            "admiralName": "アリア",
+            "plate": "is-bronze",
+            "score": 10923,
+            "kouMedal": 14
+        },
+        {
+            "rank": 389,
+            "title": 8,
+            "admiralName": "２４３０",
+            "plate": "is-bronze",
+            "score": 10906,
+            "kouMedal": 8
+        },
+        {
+            "rank": 390,
+            "title": 8,
+            "admiralName": "けん",
+            "plate": "is-bronze",
+            "score": 10852,
             "kouMedal": 12
         },
         {
-            "rank": 211,
+            "rank": 391,
             "title": 8,
-            "admiralName": "ＲＥＮ",
+            "admiralName": "ＴＢＢｌｅ",
             "plate": "is-bronze",
-            "score": 10829,
-            "kouMedal": 5
+            "score": 10831,
+            "kouMedal": 0
         },
         {
-            "rank": 212,
+            "rank": 392,
             "title": 8,
-            "admiralName": "バベル",
+            "admiralName": "雷電",
             "plate": "is-bronze",
-            "score": 10732,
+            "score": 10775,
             "kouMedal": 14
         },
         {
-            "rank": 213,
+            "rank": 393,
             "title": 8,
-            "admiralName": "トシ",
+            "admiralName": "さみ",
             "plate": "is-bronze",
-            "score": 10712,
-            "kouMedal": 11
+            "score": 10774,
+            "kouMedal": 1
         },
         {
-            "rank": 214,
+            "rank": 394,
             "title": 8,
-            "admiralName": "Ｐｏｕｌ",
+            "admiralName": "まいづる",
             "plate": "is-bronze",
-            "score": 10703,
-            "kouMedal": 6
-        },
-        {
-            "rank": 215,
-            "title": 8,
-            "admiralName": "ゆずりはいのり",
-            "plate": "is-bronze",
-            "score": 10682,
-            "kouMedal": 14
-        },
-        {
-            "rank": 216,
-            "title": 8,
-            "admiralName": "伊藤　整一",
-            "plate": "is-bronze",
-            "score": 10627,
-            "kouMedal": 11
-        },
-        {
-            "rank": 217,
-            "title": 8,
-            "admiralName": "せんぞう",
-            "plate": "is-bronze",
-            "score": 10579,
-            "kouMedal": 2
-        },
-        {
-            "rank": 218,
-            "title": 8,
-            "admiralName": "ＳＹＡ",
-            "plate": "is-bronze",
-            "score": 10557,
+            "score": 10758,
             "kouMedal": 4
         },
         {
-            "rank": 219,
+            "rank": 395,
+            "title": 8,
+            "admiralName": "金剛の鉄の塊",
+            "plate": "is-bronze",
+            "score": 10755,
+            "kouMedal": 14
+        },
+        {
+            "rank": 396,
+            "title": 8,
+            "admiralName": "ヤマト",
+            "plate": "is-bronze",
+            "score": 10734,
+            "kouMedal": 1
+        },
+        {
+            "rank": 397,
+            "title": 8,
+            "admiralName": "そんそん",
+            "plate": "is-bronze",
+            "score": 10713,
+            "kouMedal": 2
+        },
+        {
+            "rank": 398,
+            "title": 8,
+            "admiralName": "フシマ",
+            "plate": "is-bronze",
+            "score": 10701,
+            "kouMedal": 8
+        },
+        {
+            "rank": 399,
+            "title": 8,
+            "admiralName": "とりがら",
+            "plate": "is-bronze",
+            "score": 10684,
+            "kouMedal": 14
+        },
+        {
+            "rank": 400,
+            "title": 8,
+            "admiralName": "Ｄ　アッテンボロー",
+            "plate": "is-bronze",
+            "score": 10670,
+            "kouMedal": 0
+        },
+        {
+            "rank": 401,
+            "title": 8,
+            "admiralName": "英",
+            "plate": "is-bronze",
+            "score": 10657,
+            "kouMedal": 1
+        },
+        {
+            "rank": 402,
+            "title": 8,
+            "admiralName": "かんりゅうさい",
+            "plate": "is-bronze",
+            "score": 10636,
+            "kouMedal": 8
+        },
+        {
+            "rank": 403,
+            "title": 8,
+            "admiralName": "かすが",
+            "plate": "is-bronze",
+            "score": 10600,
+            "kouMedal": 11
+        },
+        {
+            "rank": 404,
+            "title": 8,
+            "admiralName": "トン",
+            "plate": "is-bronze",
+            "score": 10598,
+            "kouMedal": 0
+        },
+        {
+            "rank": 405,
+            "title": 8,
+            "admiralName": "ＭＡＸ",
+            "plate": "is-bronze",
+            "score": 10568,
+            "kouMedal": 10
+        },
+        {
+            "rank": 406,
+            "title": 8,
+            "admiralName": "こんごう　はるな",
+            "plate": "is-bronze",
+            "score": 10568,
+            "kouMedal": 8
+        },
+        {
+            "rank": 407,
             "title": 8,
             "admiralName": "ほり",
             "plate": "is-bronze",
@@ -1754,47 +3258,31 @@
             "kouMedal": 12
         },
         {
-            "rank": 220,
+            "rank": 408,
             "title": 8,
-            "admiralName": "ｔｏｒｏｂｅａｔ",
+            "admiralName": "山口　",
             "plate": "is-bronze",
-            "score": 10551,
-            "kouMedal": 14
+            "score": 10543,
+            "kouMedal": 1
         },
         {
-            "rank": 221,
+            "rank": 409,
             "title": 8,
-            "admiralName": "ボス",
+            "admiralName": "たかし",
             "plate": "is-bronze",
-            "score": 10517,
-            "kouMedal": 14
+            "score": 10527,
+            "kouMedal": 2
         },
         {
-            "rank": 222,
+            "rank": 410,
             "title": 8,
-            "admiralName": "しのさん",
+            "admiralName": "ＴＯＳＨＩ",
             "plate": "is-bronze",
-            "score": 10501,
-            "kouMedal": 8
+            "score": 10477,
+            "kouMedal": 4
         },
         {
-            "rank": 223,
-            "title": 8,
-            "admiralName": "CUTE矢島舞美",
-            "plate": "is-bronze",
-            "score": 10473,
-            "kouMedal": 14
-        },
-        {
-            "rank": 224,
-            "title": 8,
-            "admiralName": "浅葱",
-            "plate": "is-bronze",
-            "score": 10473,
-            "kouMedal": 0
-        },
-        {
-            "rank": 225,
+            "rank": 411,
             "title": 8,
             "admiralName": "ヴィヴィッド",
             "plate": "is-bronze",
@@ -1802,47 +3290,159 @@
             "kouMedal": 14
         },
         {
-            "rank": 226,
+            "rank": 412,
             "title": 8,
-            "admiralName": "太田",
+            "admiralName": "ＡＬＴＩＡ",
             "plate": "is-bronze",
-            "score": 10457,
-            "kouMedal": 14
+            "score": 10448,
+            "kouMedal": 13
         },
         {
-            "rank": 227,
+            "rank": 413,
             "title": 8,
-            "admiralName": "つばす",
+            "admiralName": "にくきゅう",
             "plate": "is-bronze",
-            "score": 10336,
-            "kouMedal": 8
-        },
-        {
-            "rank": 228,
-            "title": 8,
-            "admiralName": "提督なめこ",
-            "plate": "is-bronze",
-            "score": 10271,
-            "kouMedal": 10
-        },
-        {
-            "rank": 229,
-            "title": 8,
-            "admiralName": "大和と武蔵",
-            "plate": "is-bronze",
-            "score": 10165,
-            "kouMedal": 8
-        },
-        {
-            "rank": 230,
-            "title": 8,
-            "admiralName": "まこと",
-            "plate": "is-bronze",
-            "score": 10156,
+            "score": 10419,
             "kouMedal": 0
         },
         {
-            "rank": 231,
+            "rank": 414,
+            "title": 8,
+            "admiralName": "山崎",
+            "plate": "is-bronze",
+            "score": 10413,
+            "kouMedal": 1
+        },
+        {
+            "rank": 415,
+            "title": 8,
+            "admiralName": "ソフィア",
+            "plate": "is-bronze",
+            "score": 10392,
+            "kouMedal": 14
+        },
+        {
+            "rank": 416,
+            "title": 8,
+            "admiralName": "ＨＥＮＴＡＩ",
+            "plate": "is-bronze",
+            "score": 10385,
+            "kouMedal": 6
+        },
+        {
+            "rank": 417,
+            "title": 8,
+            "admiralName": "銀河の妖精",
+            "plate": "is-bronze",
+            "score": 10379,
+            "kouMedal": 14
+        },
+        {
+            "rank": 418,
+            "title": 8,
+            "admiralName": "るるす",
+            "plate": "is-bronze",
+            "score": 10369,
+            "kouMedal": 14
+        },
+        {
+            "rank": 419,
+            "title": 8,
+            "admiralName": "？？？？？",
+            "plate": "is-bronze",
+            "score": 10359,
+            "kouMedal": 0
+        },
+        {
+            "rank": 420,
+            "title": 8,
+            "admiralName": "河田繁隆",
+            "plate": "is-bronze",
+            "score": 10321,
+            "kouMedal": 12
+        },
+        {
+            "rank": 421,
+            "title": 8,
+            "admiralName": "愛の地獄突き",
+            "plate": "is-bronze",
+            "score": 10305,
+            "kouMedal": 14
+        },
+        {
+            "rank": 422,
+            "title": 8,
+            "admiralName": "真のクラフター",
+            "plate": "is-bronze",
+            "score": 10291,
+            "kouMedal": 0
+        },
+        {
+            "rank": 423,
+            "title": 8,
+            "admiralName": "ばるく",
+            "plate": "is-bronze",
+            "score": 10280,
+            "kouMedal": 11
+        },
+        {
+            "rank": 424,
+            "title": 8,
+            "admiralName": "ダージリン",
+            "plate": "is-bronze",
+            "score": 10267,
+            "kouMedal": 13
+        },
+        {
+            "rank": 425,
+            "title": 8,
+            "admiralName": "ニャン吉",
+            "plate": "is-bronze",
+            "score": 10249,
+            "kouMedal": 14
+        },
+        {
+            "rank": 426,
+            "title": 8,
+            "admiralName": "フロスト",
+            "plate": "is-bronze",
+            "score": 10248,
+            "kouMedal": 0
+        },
+        {
+            "rank": 427,
+            "title": 8,
+            "admiralName": "マリアンヌ",
+            "plate": "is-bronze",
+            "score": 10215,
+            "kouMedal": 7
+        },
+        {
+            "rank": 428,
+            "title": 8,
+            "admiralName": "ＡＫＺ",
+            "plate": "is-bronze",
+            "score": 10185,
+            "kouMedal": 0
+        },
+        {
+            "rank": 429,
+            "title": 8,
+            "admiralName": "ＢＳ９１０",
+            "plate": "is-bronze",
+            "score": 10175,
+            "kouMedal": 6
+        },
+        {
+            "rank": 430,
+            "title": 8,
+            "admiralName": "ねこぱんち",
+            "plate": "is-bronze",
+            "score": 10169,
+            "kouMedal": 13
+        },
+        {
+            "rank": 431,
             "title": 8,
             "admiralName": "カサトカ",
             "plate": "is-bronze",
@@ -1850,7 +3450,23 @@
             "kouMedal": 14
         },
         {
-            "rank": 232,
+            "rank": 432,
+            "title": 8,
+            "admiralName": "とっしー",
+            "plate": "is-bronze",
+            "score": 10151,
+            "kouMedal": 14
+        },
+        {
+            "rank": 433,
+            "title": 8,
+            "admiralName": "雪泉",
+            "plate": "is-bronze",
+            "score": 10146,
+            "kouMedal": 0
+        },
+        {
+            "rank": 434,
             "title": 8,
             "admiralName": "このは",
             "plate": "is-bronze",
@@ -1858,47 +3474,23 @@
             "kouMedal": 2
         },
         {
-            "rank": 233,
+            "rank": 435,
             "title": 8,
-            "admiralName": "コンテ",
+            "admiralName": "直火屋",
             "plate": "is-bronze",
-            "score": 10142,
-            "kouMedal": 6
+            "score": 10116,
+            "kouMedal": 2
         },
         {
-            "rank": 234,
+            "rank": 436,
             "title": 8,
-            "admiralName": "柚希",
+            "admiralName": "ＢＵＲＥ",
             "plate": "is-bronze",
-            "score": 10130,
-            "kouMedal": 14
+            "score": 10110,
+            "kouMedal": 0
         },
         {
-            "rank": 235,
-            "title": 8,
-            "admiralName": "Ｆｕｙｕｔｕｋｉ",
-            "plate": "is-bronze",
-            "score": 10107,
-            "kouMedal": 14
-        },
-        {
-            "rank": 236,
-            "title": 8,
-            "admiralName": "まっつん",
-            "plate": "is-bronze",
-            "score": 10029,
-            "kouMedal": 13
-        },
-        {
-            "rank": 237,
-            "title": 8,
-            "admiralName": "フィン",
-            "plate": "is-bronze",
-            "score": 10017,
-            "kouMedal": 14
-        },
-        {
-            "rank": 238,
+            "rank": 437,
             "title": 8,
             "admiralName": "ヘルシング",
             "plate": "is-bronze",
@@ -1906,7 +3498,7 @@
             "kouMedal": 13
         },
         {
-            "rank": 239,
+            "rank": 438,
             "title": 8,
             "admiralName": "まるも",
             "plate": "is-bronze",
@@ -1914,7 +3506,7 @@
             "kouMedal": 9
         },
         {
-            "rank": 240,
+            "rank": 439,
             "title": 8,
             "admiralName": "ナイスメン",
             "plate": "is-bronze",
@@ -1922,7 +3514,7 @@
             "kouMedal": 14
         },
         {
-            "rank": 241,
+            "rank": 440,
             "title": 8,
             "admiralName": "Ｄ",
             "plate": "is-bronze",
@@ -1930,15 +3522,7 @@
             "kouMedal": 14
         },
         {
-            "rank": 242,
-            "title": 8,
-            "admiralName": "ＴＯＭＹ",
-            "plate": "is-bronze",
-            "score": 9994,
-            "kouMedal": 14
-        },
-        {
-            "rank": 243,
+            "rank": 441,
             "title": 8,
             "admiralName": "こざわぢさぶろう",
             "plate": "is-bronze",
@@ -1946,15 +3530,23 @@
             "kouMedal": 3
         },
         {
-            "rank": 244,
+            "rank": 442,
             "title": 8,
-            "admiralName": "アドミラル　グンゾー",
+            "admiralName": "クリゴハン",
             "plate": "is-bronze",
-            "score": 9990,
+            "score": 9986,
             "kouMedal": 14
         },
         {
-            "rank": 245,
+            "rank": 443,
+            "title": 8,
+            "admiralName": "タイキノーシン",
+            "plate": "is-bronze",
+            "score": 9983,
+            "kouMedal": 14
+        },
+        {
+            "rank": 444,
             "title": 8,
             "admiralName": "コトブキかんたい",
             "plate": "is-bronze",
@@ -1962,7 +3554,23 @@
             "kouMedal": 6
         },
         {
-            "rank": 246,
+            "rank": 445,
+            "title": 8,
+            "admiralName": "おおがみ",
+            "plate": "is-bronze",
+            "score": 9926,
+            "kouMedal": 0
+        },
+        {
+            "rank": 446,
+            "title": 8,
+            "admiralName": "Ｆ・スズキ",
+            "plate": "is-bronze",
+            "score": 9876,
+            "kouMedal": 0
+        },
+        {
+            "rank": 447,
             "title": 8,
             "admiralName": "ｊｕｎｎｏ３５７",
             "plate": "is-bronze",
@@ -1970,47 +3578,47 @@
             "kouMedal": 13
         },
         {
-            "rank": 247,
+            "rank": 448,
             "title": 8,
-            "admiralName": "Ｓｎｏｗ",
+            "admiralName": "豆柴",
             "plate": "is-bronze",
-            "score": 9849,
+            "score": 9856,
             "kouMedal": 0
         },
         {
-            "rank": 248,
+            "rank": 449,
             "title": 8,
-            "admiralName": "ＷＥＮＤＹ",
+            "admiralName": "あきにぃ",
             "plate": "is-bronze",
-            "score": 9817,
-            "kouMedal": 1
+            "score": 9840,
+            "kouMedal": 4
         },
         {
-            "rank": 249,
+            "rank": 450,
             "title": 8,
-            "admiralName": "コウメイ",
+            "admiralName": "鍋島宗茂",
             "plate": "is-bronze",
-            "score": 9815,
+            "score": 9838,
             "kouMedal": 14
         },
         {
-            "rank": 250,
+            "rank": 451,
             "title": 8,
-            "admiralName": "とらそ",
+            "admiralName": "ビッテン",
             "plate": "is-bronze",
-            "score": 9805,
+            "score": 9826,
+            "kouMedal": 7
+        },
+        {
+            "rank": 452,
+            "title": 8,
+            "admiralName": "ナバール",
+            "plate": "is-bronze",
+            "score": 9825,
             "kouMedal": 14
         },
         {
-            "rank": 251,
-            "title": 8,
-            "admiralName": "雪泉",
-            "plate": "is-bronze",
-            "score": 9796,
-            "kouMedal": 0
-        },
-        {
-            "rank": 252,
+            "rank": 453,
             "title": 8,
             "admiralName": "ＥＸティガ",
             "plate": "is-bronze",
@@ -2018,39 +3626,31 @@
             "kouMedal": 3
         },
         {
-            "rank": 253,
+            "rank": 454,
             "title": 8,
-            "admiralName": "ライス",
+            "admiralName": "水島賢弐",
             "plate": "is-bronze",
-            "score": 9731,
-            "kouMedal": 13
+            "score": 9739,
+            "kouMedal": 10
         },
         {
-            "rank": 254,
+            "rank": 455,
             "title": 8,
-            "admiralName": "ガノンドロフ",
+            "admiralName": "ＣＯＤＥ８",
             "plate": "is-bronze",
-            "score": 9713,
-            "kouMedal": 0
+            "score": 9720,
+            "kouMedal": 9
         },
         {
-            "rank": 255,
+            "rank": 456,
             "title": 8,
-            "admiralName": "たか",
+            "admiralName": "ＴＡＫＡ",
             "plate": "is-bronze",
-            "score": 9713,
-            "kouMedal": 14
+            "score": 9686,
+            "kouMedal": 11
         },
         {
-            "rank": 256,
-            "title": 8,
-            "admiralName": "しょうくん",
-            "plate": "is-bronze",
-            "score": 9683,
-            "kouMedal": 14
-        },
-        {
-            "rank": 257,
+            "rank": 457,
             "title": 8,
             "admiralName": "坂井享介",
             "plate": "is-bronze",
@@ -2058,23 +3658,31 @@
             "kouMedal": 6
         },
         {
-            "rank": 258,
+            "rank": 458,
             "title": 8,
-            "admiralName": "アソおやじ８",
+            "admiralName": "まこ",
             "plate": "is-bronze",
-            "score": 9663,
-            "kouMedal": 14
+            "score": 9672,
+            "kouMedal": 3
         },
         {
-            "rank": 259,
+            "rank": 459,
             "title": 8,
-            "admiralName": "ヤマト",
+            "admiralName": "神無月",
             "plate": "is-bronze",
-            "score": 9630,
-            "kouMedal": 1
+            "score": 9649,
+            "kouMedal": 9
         },
         {
-            "rank": 260,
+            "rank": 460,
+            "title": 8,
+            "admiralName": "ハンターカリヤ",
+            "plate": "is-bronze",
+            "score": 9632,
+            "kouMedal": 4
+        },
+        {
+            "rank": 461,
             "title": 8,
             "admiralName": "イルマ",
             "plate": "is-bronze",
@@ -2082,23 +3690,39 @@
             "kouMedal": 12
         },
         {
-            "rank": 261,
+            "rank": 462,
             "title": 8,
-            "admiralName": "あきな",
+            "admiralName": "たますけ",
             "plate": "is-bronze",
-            "score": 9603,
+            "score": 9606,
             "kouMedal": 0
         },
         {
-            "rank": 262,
+            "rank": 463,
             "title": 8,
-            "admiralName": "れあ",
+            "admiralName": "汚い忍者",
             "plate": "is-bronze",
-            "score": 9575,
+            "score": 9600,
             "kouMedal": 14
         },
         {
-            "rank": 263,
+            "rank": 464,
+            "title": 8,
+            "admiralName": "ぱんだ",
+            "plate": "is-bronze",
+            "score": 9566,
+            "kouMedal": 14
+        },
+        {
+            "rank": 465,
+            "title": 8,
+            "admiralName": "ｉｕｌｕｓ",
+            "plate": "is-bronze",
+            "score": 9565,
+            "kouMedal": 2
+        },
+        {
+            "rank": 466,
             "title": 8,
             "admiralName": "いそろく",
             "plate": "is-bronze",
@@ -2106,23 +3730,39 @@
             "kouMedal": 8
         },
         {
-            "rank": 264,
+            "rank": 467,
             "title": 8,
-            "admiralName": "アブドヤパロフ",
+            "admiralName": "ＳＫＲＡＰ",
             "plate": "is-bronze",
-            "score": 9558,
-            "kouMedal": 14
+            "score": 9542,
+            "kouMedal": 7
         },
         {
-            "rank": 265,
+            "rank": 468,
             "title": 8,
-            "admiralName": "まんしゅたいん",
+            "admiralName": "８ＢＡＮ",
             "plate": "is-bronze",
-            "score": 9553,
-            "kouMedal": 14
+            "score": 9536,
+            "kouMedal": 12
         },
         {
-            "rank": 266,
+            "rank": 469,
+            "title": 8,
+            "admiralName": "たごさく",
+            "plate": "is-bronze",
+            "score": 9530,
+            "kouMedal": 7
+        },
+        {
+            "rank": 470,
+            "title": 8,
+            "admiralName": "ふじ",
+            "plate": "is-bronze",
+            "score": 9523,
+            "kouMedal": 4
+        },
+        {
+            "rank": 471,
             "title": 8,
             "admiralName": "たもん",
             "plate": "is-bronze",
@@ -2130,23 +3770,31 @@
             "kouMedal": 0
         },
         {
-            "rank": 267,
+            "rank": 472,
             "title": 8,
-            "admiralName": "Ｉｚｕ",
+            "admiralName": "レオン",
             "plate": "is-bronze",
-            "score": 9494,
+            "score": 9498,
             "kouMedal": 12
         },
         {
-            "rank": 268,
+            "rank": 473,
             "title": 8,
-            "admiralName": "ひろた",
+            "admiralName": "ねこ☆ぱんち♪",
             "plate": "is-bronze",
-            "score": 9462,
-            "kouMedal": 7
+            "score": 9481,
+            "kouMedal": 8
         },
         {
-            "rank": 269,
+            "rank": 474,
+            "title": 8,
+            "admiralName": "ＤＥ-ＳＫＥ",
+            "plate": "is-bronze",
+            "score": 9468,
+            "kouMedal": 13
+        },
+        {
+            "rank": 475,
             "title": 8,
             "admiralName": "ナイト",
             "plate": "is-bronze",
@@ -2154,15 +3802,23 @@
             "kouMedal": 9
         },
         {
-            "rank": 270,
+            "rank": 476,
             "title": 8,
-            "admiralName": "くろびかり",
+            "admiralName": "にしえもん",
             "plate": "is-bronze",
-            "score": 9443,
-            "kouMedal": 7
+            "score": 9433,
+            "kouMedal": 8
         },
         {
-            "rank": 271,
+            "rank": 477,
+            "title": 8,
+            "admiralName": "葵さん",
+            "plate": "is-bronze",
+            "score": 9426,
+            "kouMedal": 3
+        },
+        {
+            "rank": 478,
             "title": 8,
             "admiralName": "ＮＥＲＶ",
             "plate": "is-bronze",
@@ -2170,7 +3826,71 @@
             "kouMedal": 14
         },
         {
-            "rank": 272,
+            "rank": 479,
+            "title": 8,
+            "admiralName": "恐竜帝国",
+            "plate": "is-bronze",
+            "score": 9395,
+            "kouMedal": 14
+        },
+        {
+            "rank": 480,
+            "title": 8,
+            "admiralName": "タ　メロン",
+            "plate": "is-bronze",
+            "score": 9394,
+            "kouMedal": 14
+        },
+        {
+            "rank": 481,
+            "title": 8,
+            "admiralName": "らっきょう",
+            "plate": "is-bronze",
+            "score": 9385,
+            "kouMedal": 5
+        },
+        {
+            "rank": 482,
+            "title": 8,
+            "admiralName": "Ａｊｉ五十六",
+            "plate": "is-bronze",
+            "score": 9372,
+            "kouMedal": 1
+        },
+        {
+            "rank": 483,
+            "title": 8,
+            "admiralName": "ジュン",
+            "plate": "is-bronze",
+            "score": 9362,
+            "kouMedal": 0
+        },
+        {
+            "rank": 484,
+            "title": 8,
+            "admiralName": "ぺろーな",
+            "plate": "is-bronze",
+            "score": 9352,
+            "kouMedal": 14
+        },
+        {
+            "rank": 485,
+            "title": 8,
+            "admiralName": "六郎",
+            "plate": "is-bronze",
+            "score": 9349,
+            "kouMedal": 7
+        },
+        {
+            "rank": 486,
+            "title": 8,
+            "admiralName": "ＴＡＫＡ",
+            "plate": "is-bronze",
+            "score": 9338,
+            "kouMedal": 11
+        },
+        {
+            "rank": 487,
             "title": 8,
             "admiralName": "カルカン",
             "plate": "is-bronze",
@@ -2178,47 +3898,23 @@
             "kouMedal": 13
         },
         {
-            "rank": 273,
+            "rank": 488,
             "title": 8,
-            "admiralName": "かすが",
+            "admiralName": "ハルシヲン",
             "plate": "is-bronze",
-            "score": 9312,
-            "kouMedal": 11
+            "score": 9309,
+            "kouMedal": 13
         },
         {
-            "rank": 274,
+            "rank": 489,
             "title": 8,
-            "admiralName": "らっきょう",
+            "admiralName": "あき２",
             "plate": "is-bronze",
-            "score": 9291,
-            "kouMedal": 5
+            "score": 9248,
+            "kouMedal": 7
         },
         {
-            "rank": 275,
-            "title": 8,
-            "admiralName": "まぁちょ",
-            "plate": "is-bronze",
-            "score": 9280,
-            "kouMedal": 14
-        },
-        {
-            "rank": 276,
-            "title": 8,
-            "admiralName": "新米提督",
-            "plate": "is-bronze",
-            "score": 9274,
-            "kouMedal": 8
-        },
-        {
-            "rank": 277,
-            "title": 8,
-            "admiralName": "ＷＲＯＮＧ",
-            "plate": "is-bronze",
-            "score": 9266,
-            "kouMedal": 10
-        },
-        {
-            "rank": 278,
+            "rank": 490,
             "title": 8,
             "admiralName": "ぱかひろ",
             "plate": "is-bronze",
@@ -2226,39 +3922,39 @@
             "kouMedal": 0
         },
         {
-            "rank": 279,
+            "rank": 491,
             "title": 8,
-            "admiralName": "山口　",
+            "admiralName": "バミューダ",
             "plate": "is-bronze",
-            "score": 9227,
-            "kouMedal": 1
+            "score": 9181,
+            "kouMedal": 3
         },
         {
-            "rank": 280,
+            "rank": 492,
             "title": 8,
-            "admiralName": "テッド２",
+            "admiralName": "ＶＣＢ",
             "plate": "is-bronze",
             "score": 9169,
             "kouMedal": 14
         },
         {
-            "rank": 281,
+            "rank": 493,
             "title": 8,
-            "admiralName": "イエヤス",
+            "admiralName": "れい",
             "plate": "is-bronze",
-            "score": 9141,
+            "score": 9135,
+            "kouMedal": 10
+        },
+        {
+            "rank": 494,
+            "title": 8,
+            "admiralName": "ｋｍ",
+            "plate": "is-bronze",
+            "score": 9129,
             "kouMedal": 14
         },
         {
-            "rank": 282,
-            "title": 8,
-            "admiralName": "河田繁隆",
-            "plate": "is-bronze",
-            "score": 9130,
-            "kouMedal": 12
-        },
-        {
-            "rank": 283,
+            "rank": 495,
             "title": 8,
             "admiralName": "えむけ",
             "plate": "is-bronze",
@@ -2266,7 +3962,7 @@
             "kouMedal": 9
         },
         {
-            "rank": 284,
+            "rank": 496,
             "title": 8,
             "admiralName": "チマメ隊",
             "plate": "is-bronze",
@@ -2274,15 +3970,15 @@
             "kouMedal": 10
         },
         {
-            "rank": 285,
+            "rank": 497,
             "title": 8,
-            "admiralName": "ＴＯＳＨＩ",
+            "admiralName": "見研",
             "plate": "is-bronze",
-            "score": 9087,
+            "score": 9110,
             "kouMedal": 4
         },
         {
-            "rank": 286,
+            "rank": 498,
             "title": 8,
             "admiralName": "ＢＢＢＢ",
             "plate": "is-bronze",
@@ -2290,1716 +3986,20 @@
             "kouMedal": 8
         },
         {
-            "rank": 287,
-            "title": 8,
-            "admiralName": "ゆきなな",
-            "plate": "is-bronze",
-            "score": 9061,
-            "kouMedal": 14
-        },
-        {
-            "rank": 288,
-            "title": 8,
-            "admiralName": "烏丸",
-            "plate": "is-bronze",
-            "score": 9057,
-            "kouMedal": 14
-        },
-        {
-            "rank": 289,
-            "title": 8,
-            "admiralName": "Θ",
-            "plate": "is-bronze",
-            "score": 8959,
-            "kouMedal": 5
-        },
-        {
-            "rank": 290,
-            "title": 8,
-            "admiralName": "山ちゃん",
-            "plate": "is-bronze",
-            "score": 8867,
-            "kouMedal": 11
-        },
-        {
-            "rank": 291,
-            "title": 8,
-            "admiralName": "かっちゃん",
-            "plate": "is-bronze",
-            "score": 8842,
-            "kouMedal": 2
-        },
-        {
-            "rank": 292,
-            "title": 8,
-            "admiralName": "ＢＵＲＥ",
-            "plate": "is-bronze",
-            "score": 8793,
-            "kouMedal": 0
-        },
-        {
-            "rank": 293,
-            "title": 8,
-            "admiralName": "まろろＦ",
-            "plate": "is-bronze",
-            "score": 8786,
-            "kouMedal": 14
-        },
-        {
-            "rank": 294,
-            "title": 8,
-            "admiralName": "さ",
-            "plate": "is-bronze",
-            "score": 8641,
-            "kouMedal": 14
-        },
-        {
-            "rank": 295,
-            "title": 8,
-            "admiralName": "ＸＹＺ",
-            "plate": "is-bronze",
-            "score": 8621,
-            "kouMedal": 3
-        },
-        {
-            "rank": 296,
-            "title": 8,
-            "admiralName": "ブラックベリー",
-            "plate": "is-bronze",
-            "score": 8609,
-            "kouMedal": 2
-        },
-        {
-            "rank": 297,
-            "title": 8,
-            "admiralName": "うねび",
-            "plate": "is-bronze",
-            "score": 8576,
-            "kouMedal": 8
-        },
-        {
-            "rank": 298,
-            "title": 8,
-            "admiralName": "ニャムせんぱい",
-            "plate": "is-bronze",
-            "score": 8570,
-            "kouMedal": 14
-        },
-        {
-            "rank": 299,
-            "title": 8,
-            "admiralName": "ネクストデイガンバー",
-            "plate": "is-bronze",
-            "score": 8468,
-            "kouMedal": 6
-        },
-        {
-            "rank": 300,
-            "title": 8,
-            "admiralName": "トラッキー",
-            "plate": "is-bronze",
-            "score": 8458,
-            "kouMedal": 2
-        },
-        {
-            "rank": 301,
-            "title": 8,
-            "admiralName": "山口多門",
-            "plate": "is-bronze",
-            "score": 8446,
-            "kouMedal": 8
-        },
-        {
-            "rank": 302,
-            "title": 8,
-            "admiralName": "真のクラフター",
-            "plate": "is-bronze",
-            "score": 8427,
-            "kouMedal": 0
-        },
-        {
-            "rank": 303,
-            "title": 8,
-            "admiralName": "鍋島宗茂",
-            "plate": "is-bronze",
-            "score": 8423,
-            "kouMedal": 14
-        },
-        {
-            "rank": 304,
-            "title": 8,
-            "admiralName": "神無月",
-            "plate": "is-bronze",
-            "score": 8419,
-            "kouMedal": 9
-        },
-        {
-            "rank": 305,
-            "title": 8,
-            "admiralName": "ｗａｓｉｏ",
-            "plate": "is-bronze",
-            "score": 8405,
-            "kouMedal": 3
-        },
-        {
-            "rank": 306,
-            "title": 8,
-            "admiralName": "愛の地獄突き",
-            "plate": "is-bronze",
-            "score": 8382,
-            "kouMedal": 14
-        },
-        {
-            "rank": 307,
-            "title": 8,
-            "admiralName": "ぺろーな",
-            "plate": "is-bronze",
-            "score": 8381,
-            "kouMedal": 14
-        },
-        {
-            "rank": 308,
-            "title": 8,
-            "admiralName": "まーに",
-            "plate": "is-bronze",
-            "score": 8378,
-            "kouMedal": 6
-        },
-        {
-            "rank": 309,
-            "title": 8,
-            "admiralName": "あきやまーさん",
-            "plate": "is-bronze",
-            "score": 8360,
-            "kouMedal": 9
-        },
-        {
-            "rank": 310,
-            "title": 8,
-            "admiralName": "直火屋",
-            "plate": "is-bronze",
-            "score": 8327,
-            "kouMedal": 2
-        },
-        {
-            "rank": 311,
-            "title": 8,
-            "admiralName": "ピカード",
-            "plate": "is-bronze",
-            "score": 8281,
-            "kouMedal": 7
-        },
-        {
-            "rank": 312,
-            "title": 8,
-            "admiralName": "Ｆ・スズキ",
-            "plate": "is-bronze",
-            "score": 8232,
-            "kouMedal": 0
-        },
-        {
-            "rank": 313,
-            "title": 8,
-            "admiralName": "カヲル",
-            "plate": "is-bronze",
-            "score": 8222,
-            "kouMedal": 2
-        },
-        {
-            "rank": 314,
-            "title": 8,
-            "admiralName": "マリアンヌ",
-            "plate": "is-bronze",
-            "score": 8213,
-            "kouMedal": 7
-        },
-        {
-            "rank": 315,
-            "title": 8,
-            "admiralName": "ナバール",
-            "plate": "is-bronze",
-            "score": 8212,
-            "kouMedal": 14
-        },
-        {
-            "rank": 316,
-            "title": 8,
-            "admiralName": "フォント　ボー",
-            "plate": "is-bronze",
-            "score": 8207,
-            "kouMedal": 0
-        },
-        {
-            "rank": 317,
-            "title": 8,
-            "admiralName": "うなじゅう",
-            "plate": "is-bronze",
-            "score": 8201,
-            "kouMedal": 0
-        },
-        {
-            "rank": 318,
-            "title": 8,
-            "admiralName": "ＭＵＮＯＯＯＯＯＯＯ",
-            "plate": "is-bronze",
-            "score": 8197,
-            "kouMedal": 9
-        },
-        {
-            "rank": 319,
-            "title": 8,
-            "admiralName": "ヤナギヤ",
-            "plate": "is-bronze",
-            "score": 8120,
-            "kouMedal": 0
-        },
-        {
-            "rank": 320,
-            "title": 8,
-            "admiralName": "アイ",
-            "plate": "is-bronze",
-            "score": 8111,
-            "kouMedal": 8
-        },
-        {
-            "rank": 321,
-            "title": 8,
-            "admiralName": "ＭＩＲＡＧＥ",
-            "plate": "is-bronze",
-            "score": 8106,
-            "kouMedal": 13
-        },
-        {
-            "rank": 322,
-            "title": 8,
-            "admiralName": "じかんない",
-            "plate": "is-bronze",
-            "score": 8104,
-            "kouMedal": 8
-        },
-        {
-            "rank": 323,
-            "title": 8,
-            "admiralName": "りく",
-            "plate": "is-bronze",
-            "score": 8096,
-            "kouMedal": 0
-        },
-        {
-            "rank": 324,
-            "title": 8,
-            "admiralName": "ＴＡＫＡ",
-            "plate": "is-bronze",
-            "score": 8067,
-            "kouMedal": 11
-        },
-        {
-            "rank": 325,
-            "title": 8,
-            "admiralName": "（４６４９）",
-            "plate": "is-bronze",
-            "score": 8065,
-            "kouMedal": 14
-        },
-        {
-            "rank": 326,
-            "title": 8,
-            "admiralName": "津名魅",
-            "plate": "is-bronze",
-            "score": 8035,
-            "kouMedal": 14
-        },
-        {
-            "rank": 327,
-            "title": 8,
-            "admiralName": "まやユリ",
-            "plate": "is-bronze",
-            "score": 8018,
-            "kouMedal": 14
-        },
-        {
-            "rank": 328,
-            "title": 8,
-            "admiralName": "ダージリン",
-            "plate": "is-bronze",
-            "score": 7982,
-            "kouMedal": 13
-        },
-        {
-            "rank": 329,
-            "title": 8,
-            "admiralName": "不良",
-            "plate": "is-bronze",
-            "score": 7972,
-            "kouMedal": 0
-        },
-        {
-            "rank": 330,
-            "title": 8,
-            "admiralName": "ガヴェイン",
-            "plate": "is-bronze",
-            "score": 7953,
-            "kouMedal": 0
-        },
-        {
-            "rank": 331,
-            "title": 8,
-            "admiralName": "ｍｉｓｈｉ＠３４",
-            "plate": "is-bronze",
-            "score": 7923,
-            "kouMedal": 14
-        },
-        {
-            "rank": 332,
-            "title": 8,
-            "admiralName": "よっしゃー",
-            "plate": "is-bronze",
-            "score": 7901,
-            "kouMedal": 0
-        },
-        {
-            "rank": 333,
-            "title": 8,
-            "admiralName": "ヒカリ",
-            "plate": "is-bronze",
-            "score": 7896,
-            "kouMedal": 3
-        },
-        {
-            "rank": 334,
-            "title": 8,
-            "admiralName": "ＡＫＺ",
-            "plate": "is-bronze",
-            "score": 7831,
-            "kouMedal": 0
-        },
-        {
-            "rank": 335,
-            "title": 8,
-            "admiralName": "あき２",
-            "plate": "is-bronze",
-            "score": 7765,
-            "kouMedal": 7
-        },
-        {
-            "rank": 336,
-            "title": 8,
-            "admiralName": "いなぐり",
-            "plate": "is-bronze",
-            "score": 7751,
-            "kouMedal": 14
-        },
-        {
-            "rank": 337,
-            "title": 8,
-            "admiralName": "Ｅ－２０００",
-            "plate": "is-bronze",
-            "score": 7748,
-            "kouMedal": 9
-        },
-        {
-            "rank": 338,
-            "title": 8,
-            "admiralName": "もぐたん",
-            "plate": "is-bronze",
-            "score": 7724,
-            "kouMedal": 7
-        },
-        {
-            "rank": 339,
-            "title": 8,
-            "admiralName": "りょう",
-            "plate": "is-bronze",
-            "score": 7645,
-            "kouMedal": 2
-        },
-        {
-            "rank": 340,
-            "title": 8,
-            "admiralName": "コバヤシ",
-            "plate": "is-bronze",
-            "score": 7624,
-            "kouMedal": 6
-        },
-        {
-            "rank": 341,
-            "title": 8,
-            "admiralName": "けん",
-            "plate": "is-bronze",
-            "score": 7583,
-            "kouMedal": 12
-        },
-        {
-            "rank": 342,
-            "title": 8,
-            "admiralName": "龍飛",
-            "plate": "is-bronze",
-            "score": 7547,
-            "kouMedal": 6
-        },
-        {
-            "rank": 343,
-            "title": 8,
-            "admiralName": "しき",
-            "plate": "is-bronze",
-            "score": 7544,
-            "kouMedal": 12
-        },
-        {
-            "rank": 344,
-            "title": 8,
-            "admiralName": "奏凪",
-            "plate": "is-bronze",
-            "score": 7502,
-            "kouMedal": 14
-        },
-        {
-            "rank": 345,
-            "title": 8,
-            "admiralName": "Ｄ　アッテンボロー",
-            "plate": "is-bronze",
-            "score": 7500,
-            "kouMedal": 0
-        },
-        {
-            "rank": 346,
-            "title": 8,
-            "admiralName": "中者",
-            "plate": "is-bronze",
-            "score": 7457,
-            "kouMedal": 0
-        },
-        {
-            "rank": 347,
-            "title": 8,
-            "admiralName": "結城リトリト",
-            "plate": "is-bronze",
-            "score": 7453,
-            "kouMedal": 2
-        },
-        {
-            "rank": 348,
-            "title": 8,
-            "admiralName": "りんちゃん",
-            "plate": "is-bronze",
-            "score": 7422,
-            "kouMedal": 0
-        },
-        {
-            "rank": 349,
-            "title": 8,
-            "admiralName": "たかし",
-            "plate": "is-bronze",
-            "score": 7401,
-            "kouMedal": 2
-        },
-        {
-            "rank": 350,
-            "title": 8,
-            "admiralName": "石川",
-            "plate": "is-bronze",
-            "score": 7346,
-            "kouMedal": 7
-        },
-        {
-            "rank": 351,
-            "title": 8,
-            "admiralName": "ＭＡＸ",
-            "plate": "is-bronze",
-            "score": 7335,
-            "kouMedal": 10
-        },
-        {
-            "rank": 352,
-            "title": 8,
-            "admiralName": "アカメ",
-            "plate": "is-bronze",
-            "score": 7319,
-            "kouMedal": 14
-        },
-        {
-            "rank": 353,
-            "title": 8,
-            "admiralName": "ゆかりはな",
-            "plate": "is-bronze",
-            "score": 7318,
-            "kouMedal": 0
-        },
-        {
-            "rank": 354,
-            "title": 8,
-            "admiralName": "ＭｏＹｏ",
-            "plate": "is-bronze",
-            "score": 7308,
-            "kouMedal": 12
-        },
-        {
-            "rank": 355,
-            "title": 8,
-            "admiralName": "ねこ☆ぱんち♪",
-            "plate": "is-bronze",
-            "score": 7295,
-            "kouMedal": 8
-        },
-        {
-            "rank": 356,
-            "title": 8,
-            "admiralName": "ミヤト",
-            "plate": "is-bronze",
-            "score": 7292,
-            "kouMedal": 8
-        },
-        {
-            "rank": 357,
-            "title": 8,
-            "admiralName": "バミューダ",
-            "plate": "is-bronze",
-            "score": 7279,
-            "kouMedal": 3
-        },
-        {
-            "rank": 358,
-            "title": 8,
-            "admiralName": "やくも",
-            "plate": "is-bronze",
-            "score": 7277,
-            "kouMedal": 13
-        },
-        {
-            "rank": 359,
-            "title": 8,
-            "admiralName": "黒雪",
-            "plate": "is-bronze",
-            "score": 7265,
-            "kouMedal": 0
-        },
-        {
-            "rank": 360,
-            "title": 8,
-            "admiralName": "大正ロビン",
-            "plate": "is-bronze",
-            "score": 7257,
-            "kouMedal": 3
-        },
-        {
-            "rank": 361,
-            "title": 8,
-            "admiralName": "南雲太白",
-            "plate": "is-bronze",
-            "score": 7251,
-            "kouMedal": 14
-        },
-        {
-            "rank": 362,
-            "title": 8,
-            "admiralName": "英",
-            "plate": "is-bronze",
-            "score": 7251,
-            "kouMedal": 1
-        },
-        {
-            "rank": 363,
-            "title": 8,
-            "admiralName": "ＴＢＢｌｅ",
-            "plate": "is-bronze",
-            "score": 7183,
-            "kouMedal": 0
-        },
-        {
-            "rank": 364,
-            "title": 8,
-            "admiralName": "ローエングラム",
-            "plate": "is-bronze",
-            "score": 7178,
-            "kouMedal": 10
-        },
-        {
-            "rank": 365,
-            "title": 8,
-            "admiralName": "ハンターカリヤ",
-            "plate": "is-bronze",
-            "score": 7174,
-            "kouMedal": 4
-        },
-        {
-            "rank": 366,
-            "title": 8,
-            "admiralName": "けんしろう",
-            "plate": "is-bronze",
-            "score": 7173,
-            "kouMedal": 7
-        },
-        {
-            "rank": 367,
-            "title": 8,
-            "admiralName": "アリア",
-            "plate": "is-bronze",
-            "score": 7168,
-            "kouMedal": 14
-        },
-        {
-            "rank": 368,
-            "title": 8,
-            "admiralName": "はるる",
-            "plate": "is-bronze",
-            "score": 7164,
-            "kouMedal": 0
-        },
-        {
-            "rank": 369,
-            "title": 8,
-            "admiralName": "るんたった",
-            "plate": "is-bronze",
-            "score": 7152,
-            "kouMedal": 14
-        },
-        {
-            "rank": 370,
-            "title": 8,
-            "admiralName": "ＲーＳＥＲＩＥＳ",
-            "plate": "is-bronze",
-            "score": 7096,
-            "kouMedal": 10
-        },
-        {
-            "rank": 371,
-            "title": 8,
-            "admiralName": "妃乃ひかり",
-            "plate": "is-bronze",
-            "score": 7044,
-            "kouMedal": 14
-        },
-        {
-            "rank": 372,
-            "title": 8,
-            "admiralName": "ィフリーテス",
-            "plate": "is-bronze",
-            "score": 7033,
-            "kouMedal": 7
-        },
-        {
-            "rank": 373,
-            "title": 8,
-            "admiralName": "ＫＦ",
-            "plate": "is-bronze",
-            "score": 6981,
-            "kouMedal": 14
-        },
-        {
-            "rank": 374,
-            "title": 8,
-            "admiralName": "シメノコ",
-            "plate": "is-bronze",
-            "score": 6973,
-            "kouMedal": 0
-        },
-        {
-            "rank": 375,
-            "title": 8,
-            "admiralName": "児玉源太郎",
-            "plate": "is-bronze",
-            "score": 6964,
-            "kouMedal": 8
-        },
-        {
-            "rank": 376,
-            "title": 8,
-            "admiralName": "ＦＡＢＳ",
-            "plate": "is-bronze",
-            "score": 6959,
-            "kouMedal": 0
-        },
-        {
-            "rank": 377,
-            "title": 8,
-            "admiralName": "ハルシヲン",
-            "plate": "is-bronze",
-            "score": 6951,
-            "kouMedal": 13
-        },
-        {
-            "rank": 378,
-            "title": 8,
-            "admiralName": "利",
-            "plate": "is-bronze",
-            "score": 6949,
-            "kouMedal": 14
-        },
-        {
-            "rank": 379,
-            "title": 8,
-            "admiralName": "ｋａｂａｎ",
-            "plate": "is-bronze",
-            "score": 6942,
-            "kouMedal": 0
-        },
-        {
-            "rank": 380,
-            "title": 8,
-            "admiralName": "てるひこ",
-            "plate": "is-bronze",
-            "score": 6927,
-            "kouMedal": 13
-        },
-        {
-            "rank": 381,
-            "title": 8,
-            "admiralName": "ユキオ",
-            "plate": "is-bronze",
-            "score": 6926,
-            "kouMedal": 6
-        },
-        {
-            "rank": 382,
-            "title": 8,
-            "admiralName": "Hiro",
-            "plate": "is-bronze",
-            "score": 6925,
-            "kouMedal": 13
-        },
-        {
-            "rank": 383,
-            "title": 8,
-            "admiralName": "ガン",
-            "plate": "is-bronze",
-            "score": 6915,
-            "kouMedal": 12
-        },
-        {
-            "rank": 384,
-            "title": 8,
-            "admiralName": "シド",
-            "plate": "is-bronze",
-            "score": 6914,
-            "kouMedal": 13
-        },
-        {
-            "rank": 385,
-            "title": 8,
-            "admiralName": "銀河の妖精",
-            "plate": "is-bronze",
-            "score": 6912,
-            "kouMedal": 14
-        },
-        {
-            "rank": 386,
-            "title": 8,
-            "admiralName": "ヒラリー",
-            "plate": "is-bronze",
-            "score": 6908,
-            "kouMedal": 8
-        },
-        {
-            "rank": 387,
-            "title": 8,
-            "admiralName": "さむかよ",
-            "plate": "is-bronze",
-            "score": 6889,
-            "kouMedal": 1
-        },
-        {
-            "rank": 388,
-            "title": 8,
-            "admiralName": "パナメーラ",
-            "plate": "is-bronze",
-            "score": 6861,
-            "kouMedal": 0
-        },
-        {
-            "rank": 389,
-            "title": 8,
-            "admiralName": "エレルデルタ",
-            "plate": "is-bronze",
-            "score": 6831,
-            "kouMedal": 9
-        },
-        {
-            "rank": 390,
-            "title": 8,
-            "admiralName": "ふ",
-            "plate": "is-bronze",
-            "score": 6821,
-            "kouMedal": 8
-        },
-        {
-            "rank": 391,
-            "title": 8,
-            "admiralName": "ハムスケ",
-            "plate": "is-bronze",
-            "score": 6783,
-            "kouMedal": 14
-        },
-        {
-            "rank": 392,
-            "title": 8,
-            "admiralName": "ぺけの",
-            "plate": "is-bronze",
-            "score": 6776,
-            "kouMedal": 14
-        },
-        {
-            "rank": 393,
-            "title": 8,
-            "admiralName": "ガノバトス",
-            "plate": "is-bronze",
-            "score": 6770,
-            "kouMedal": 13
-        },
-        {
-            "rank": 394,
-            "title": 8,
-            "admiralName": "もっさん",
-            "plate": "is-bronze",
-            "score": 6740,
-            "kouMedal": 0
-        },
-        {
-            "rank": 395,
-            "title": 8,
-            "admiralName": "イトケン",
-            "plate": "is-bronze",
-            "score": 6725,
-            "kouMedal": 3
-        },
-        {
-            "rank": 396,
-            "title": 8,
-            "admiralName": "ＳＩＮＳＥＩ",
-            "plate": "is-bronze",
-            "score": 6701,
-            "kouMedal": 11
-        },
-        {
-            "rank": 397,
-            "title": 8,
-            "admiralName": "あおきゃーん",
-            "plate": "is-bronze",
-            "score": 6677,
-            "kouMedal": 8
-        },
-        {
-            "rank": 398,
-            "title": 8,
-            "admiralName": "こんごう　はるな",
-            "plate": "is-bronze",
-            "score": 6657,
-            "kouMedal": 8
-        },
-        {
-            "rank": 399,
-            "title": 8,
-            "admiralName": "豆柴",
-            "plate": "is-bronze",
-            "score": 6652,
-            "kouMedal": 0
-        },
-        {
-            "rank": 400,
-            "title": 8,
-            "admiralName": "百万石と時雨",
-            "plate": "is-bronze",
-            "score": 6640,
-            "kouMedal": 9
-        },
-        {
-            "rank": 401,
-            "title": 8,
-            "admiralName": "井上",
-            "plate": "is-bronze",
-            "score": 6617,
-            "kouMedal": 13
-        },
-        {
-            "rank": 402,
-            "title": 8,
-            "admiralName": "Ｗｈｉｔｅ・Ｆ",
-            "plate": "is-bronze",
-            "score": 6611,
-            "kouMedal": 11
-        },
-        {
-            "rank": 403,
-            "title": 8,
-            "admiralName": "まこ",
-            "plate": "is-bronze",
-            "score": 6610,
-            "kouMedal": 3
-        },
-        {
-            "rank": 404,
-            "title": 8,
-            "admiralName": "第一艦隊旗艦",
-            "plate": "is-bronze",
-            "score": 6596,
-            "kouMedal": 0
-        },
-        {
-            "rank": 405,
-            "title": 8,
-            "admiralName": "☆Syu2.Α☆",
-            "plate": "is-bronze",
-            "score": 6589,
-            "kouMedal": 13
-        },
-        {
-            "rank": 406,
-            "title": 8,
-            "admiralName": "イカルガ",
-            "plate": "is-bronze",
-            "score": 6581,
-            "kouMedal": 14
-        },
-        {
-            "rank": 407,
-            "title": 8,
-            "admiralName": "ういんどないと",
-            "plate": "is-bronze",
-            "score": 6535,
-            "kouMedal": 5
-        },
-        {
-            "rank": 408,
-            "title": 8,
-            "admiralName": "れいじ",
-            "plate": "is-bronze",
-            "score": 6517,
-            "kouMedal": 0
-        },
-        {
-            "rank": 409,
-            "title": 8,
-            "admiralName": "ひかり",
-            "plate": "is-bronze",
-            "score": 6511,
-            "kouMedal": 3
-        },
-        {
-            "rank": 410,
-            "title": 8,
-            "admiralName": "ＡＭＦ１",
-            "plate": "is-bronze",
-            "score": 6497,
-            "kouMedal": 1
-        },
-        {
-            "rank": 411,
-            "title": 8,
-            "admiralName": "おくと",
-            "plate": "is-bronze",
-            "score": 6493,
-            "kouMedal": 2
-        },
-        {
-            "rank": 412,
-            "title": 8,
-            "admiralName": "ｙｕ－ｒｉ",
-            "plate": "is-bronze",
-            "score": 6458,
-            "kouMedal": 13
-        },
-        {
-            "rank": 413,
-            "title": 8,
-            "admiralName": "渡瀬道彦",
-            "plate": "is-bronze",
-            "score": 6437,
-            "kouMedal": 8
-        },
-        {
-            "rank": 414,
-            "title": 8,
-            "admiralName": "ＴＯＭ",
-            "plate": "is-bronze",
-            "score": 6433,
-            "kouMedal": 0
-        },
-        {
-            "rank": 415,
-            "title": 8,
-            "admiralName": "板野　友美",
-            "plate": "is-bronze",
-            "score": 6429,
-            "kouMedal": 0
-        },
-        {
-            "rank": 416,
-            "title": 8,
-            "admiralName": "なべ",
-            "plate": "is-bronze",
-            "score": 6424,
-            "kouMedal": 11
-        },
-        {
-            "rank": 417,
-            "title": 8,
-            "admiralName": "わがなはゆんゆんノ",
-            "plate": "is-bronze",
-            "score": 6418,
-            "kouMedal": 5
-        },
-        {
-            "rank": 418,
-            "title": 8,
-            "admiralName": "やくもれい",
-            "plate": "is-bronze",
-            "score": 6394,
-            "kouMedal": 0
-        },
-        {
-            "rank": 419,
-            "title": 8,
-            "admiralName": "どめる",
-            "plate": "is-bronze",
-            "score": 6392,
-            "kouMedal": 8
-        },
-        {
-            "rank": 420,
-            "title": 8,
-            "admiralName": "ふじ",
-            "plate": "is-bronze",
-            "score": 6368,
-            "kouMedal": 4
-        },
-        {
-            "rank": 421,
-            "title": 8,
-            "admiralName": "あまぎ",
-            "plate": "is-bronze",
-            "score": 6360,
-            "kouMedal": 2
-        },
-        {
-            "rank": 422,
-            "title": 8,
-            "admiralName": "ふじかつ",
-            "plate": "is-bronze",
-            "score": 6349,
-            "kouMedal": 0
-        },
-        {
-            "rank": 423,
-            "title": 8,
-            "admiralName": "Ａｃｅ",
-            "plate": "is-bronze",
-            "score": 6341,
-            "kouMedal": 0
-        },
-        {
-            "rank": 424,
-            "title": 8,
-            "admiralName": "きん",
-            "plate": "is-bronze",
-            "score": 6332,
-            "kouMedal": 3
-        },
-        {
-            "rank": 425,
-            "title": 8,
-            "admiralName": "見た感じ住職",
-            "plate": "is-bronze",
-            "score": 6303,
-            "kouMedal": 14
-        },
-        {
-            "rank": 426,
-            "title": 8,
-            "admiralName": "さだきち",
-            "plate": "is-bronze",
-            "score": 6290,
-            "kouMedal": 13
-        },
-        {
-            "rank": 427,
-            "title": 8,
-            "admiralName": "ハリス",
-            "plate": "is-bronze",
-            "score": 6290,
-            "kouMedal": 14
-        },
-        {
-            "rank": 428,
-            "title": 8,
-            "admiralName": "Ａｊｉ五十六",
-            "plate": "is-bronze",
-            "score": 6288,
-            "kouMedal": 1
-        },
-        {
-            "rank": 429,
-            "title": 8,
-            "admiralName": "ＹｕＩ",
-            "plate": "is-bronze",
-            "score": 6285,
-            "kouMedal": 11
-        },
-        {
-            "rank": 430,
-            "title": 8,
-            "admiralName": "シン",
-            "plate": "is-bronze",
-            "score": 6273,
-            "kouMedal": 14
-        },
-        {
-            "rank": 431,
-            "title": 8,
-            "admiralName": "けーたん",
-            "plate": "is-bronze",
-            "score": 6272,
-            "kouMedal": 0
-        },
-        {
-            "rank": 432,
-            "title": 8,
-            "admiralName": "ＨＩＲＯ",
-            "plate": "is-bronze",
-            "score": 6267,
-            "kouMedal": 8
-        },
-        {
-            "rank": 433,
-            "title": 8,
-            "admiralName": "エスペランザ",
-            "plate": "is-bronze",
-            "score": 6244,
-            "kouMedal": 0
-        },
-        {
-            "rank": 434,
-            "title": 8,
-            "admiralName": "ふるしま",
-            "plate": "is-bronze",
-            "score": 6243,
-            "kouMedal": 0
-        },
-        {
-            "rank": 435,
-            "title": 8,
-            "admiralName": "ゆず",
-            "plate": "is-bronze",
-            "score": 6220,
-            "kouMedal": 2
-        },
-        {
-            "rank": 436,
-            "title": 8,
-            "admiralName": "とうえん",
-            "plate": "is-bronze",
-            "score": 6210,
-            "kouMedal": 6
-        },
-        {
-            "rank": 437,
-            "title": 8,
-            "admiralName": "快盗天使",
-            "plate": "is-bronze",
-            "score": 6198,
-            "kouMedal": 3
-        },
-        {
-            "rank": 438,
-            "title": 8,
-            "admiralName": "ひゅうが",
-            "plate": "is-bronze",
-            "score": 6194,
-            "kouMedal": 9
-        },
-        {
-            "rank": 439,
-            "title": 8,
-            "admiralName": "ＳＹＵ",
-            "plate": "is-bronze",
-            "score": 6182,
-            "kouMedal": 14
-        },
-        {
-            "rank": 440,
-            "title": 8,
-            "admiralName": "ＤＡＬＴＡ",
-            "plate": "is-bronze",
-            "score": 6139,
-            "kouMedal": 11
-        },
-        {
-            "rank": 441,
-            "title": 8,
-            "admiralName": "ツナミ",
-            "plate": "is-bronze",
-            "score": 6139,
-            "kouMedal": 14
-        },
-        {
-            "rank": 442,
-            "title": 8,
-            "admiralName": "直木五十六",
-            "plate": "is-bronze",
-            "score": 6124,
-            "kouMedal": 7
-        },
-        {
-            "rank": 443,
-            "title": 8,
-            "admiralName": "見研",
-            "plate": "is-bronze",
-            "score": 6091,
-            "kouMedal": 4
-        },
-        {
-            "rank": 444,
-            "title": 8,
-            "admiralName": "ソフィア",
-            "plate": "is-bronze",
-            "score": 6080,
-            "kouMedal": 14
-        },
-        {
-            "rank": 445,
-            "title": 8,
-            "admiralName": "RN:絶対匿名匿住所",
-            "plate": "is-bronze",
-            "score": 6074,
-            "kouMedal": 11
-        },
-        {
-            "rank": 446,
-            "title": 8,
-            "admiralName": "ほよ",
-            "plate": "is-bronze",
-            "score": 6064,
-            "kouMedal": 13
-        },
-        {
-            "rank": 447,
-            "title": 8,
-            "admiralName": "みかづき",
-            "plate": "is-bronze",
-            "score": 6059,
-            "kouMedal": 9
-        },
-        {
-            "rank": 448,
-            "title": 8,
-            "admiralName": "電ちゃん",
-            "plate": "is-bronze",
-            "score": 6047,
-            "kouMedal": 14
-        },
-        {
-            "rank": 449,
-            "title": 8,
-            "admiralName": "田中熊五郎",
-            "plate": "is-bronze",
-            "score": 6001,
-            "kouMedal": 14
-        },
-        {
-            "rank": 450,
-            "title": 8,
-            "admiralName": "ねこきつね",
-            "plate": "is-bronze",
-            "score": 5992,
-            "kouMedal": 5
-        },
-        {
-            "rank": 451,
-            "title": 8,
-            "admiralName": "８ＢＡＮ",
-            "plate": "is-bronze",
-            "score": 5969,
-            "kouMedal": 12
-        },
-        {
-            "rank": 452,
-            "title": 8,
-            "admiralName": "ポンチ・ハンター",
-            "plate": "is-bronze",
-            "score": 5967,
-            "kouMedal": 1
-        },
-        {
-            "rank": 453,
-            "title": 8,
-            "admiralName": "更紗",
-            "plate": "is-bronze",
-            "score": 5946,
-            "kouMedal": 12
-        },
-        {
-            "rank": 454,
-            "title": 8,
-            "admiralName": "ロン",
-            "plate": "is-bronze",
-            "score": 5944,
-            "kouMedal": 0
-        },
-        {
-            "rank": 455,
-            "title": 8,
-            "admiralName": "ダバ",
-            "plate": "is-bronze",
-            "score": 5936,
-            "kouMedal": 7
-        },
-        {
-            "rank": 456,
-            "title": 8,
-            "admiralName": "ミラクル　ヤン",
-            "plate": "is-bronze",
-            "score": 5935,
-            "kouMedal": 14
-        },
-        {
-            "rank": 457,
-            "title": 8,
-            "admiralName": "たけっち",
-            "plate": "is-bronze",
-            "score": 5912,
-            "kouMedal": 14
-        },
-        {
-            "rank": 458,
-            "title": 8,
-            "admiralName": "戦艦大和榛名",
-            "plate": "is-bronze",
-            "score": 5890,
-            "kouMedal": 12
-        },
-        {
-            "rank": 459,
-            "title": 8,
-            "admiralName": "ミュラー",
-            "plate": "is-bronze",
-            "score": 5869,
-            "kouMedal": 12
-        },
-        {
-            "rank": 460,
-            "title": 8,
-            "admiralName": "ブサおやじ",
-            "plate": "is-bronze",
-            "score": 5867,
-            "kouMedal": 6
-        },
-        {
-            "rank": 461,
-            "title": 8,
-            "admiralName": "ローパー",
-            "plate": "is-bronze",
-            "score": 5866,
-            "kouMedal": 14
-        },
-        {
-            "rank": 462,
-            "title": 8,
-            "admiralName": "あると",
-            "plate": "is-bronze",
-            "score": 5856,
-            "kouMedal": 14
-        },
-        {
-            "rank": 463,
-            "title": 8,
-            "admiralName": "蒼鴨",
-            "plate": "is-bronze",
-            "score": 5853,
-            "kouMedal": 0
-        },
-        {
-            "rank": 464,
-            "title": 8,
-            "admiralName": "お米",
-            "plate": "is-bronze",
-            "score": 5843,
-            "kouMedal": 0
-        },
-        {
-            "rank": 465,
-            "title": 8,
-            "admiralName": "_geth_zack",
-            "plate": "is-bronze",
-            "score": 5834,
-            "kouMedal": 14
-        },
-        {
-            "rank": 466,
-            "title": 8,
-            "admiralName": "ぱんだ",
-            "plate": "is-bronze",
-            "score": 5819,
-            "kouMedal": 14
-        },
-        {
-            "rank": 467,
-            "title": 8,
-            "admiralName": "マンチーニ",
-            "plate": "is-bronze",
-            "score": 5797,
-            "kouMedal": 6
-        },
-        {
-            "rank": 468,
-            "title": 8,
-            "admiralName": "ニャン吉",
-            "plate": "is-bronze",
-            "score": 5782,
-            "kouMedal": 14
-        },
-        {
-            "rank": 469,
-            "title": 8,
-            "admiralName": "一式陸攻",
-            "plate": "is-bronze",
-            "score": 5763,
-            "kouMedal": 8
-        },
-        {
-            "rank": 470,
-            "title": 8,
-            "admiralName": "もも",
-            "plate": "is-bronze",
-            "score": 5738,
-            "kouMedal": 9
-        },
-        {
-            "rank": 471,
-            "title": 8,
-            "admiralName": "いとうせいいち",
-            "plate": "is-bronze",
-            "score": 5732,
-            "kouMedal": 14
-        },
-        {
-            "rank": 472,
-            "title": 8,
-            "admiralName": "ふくろう",
-            "plate": "is-bronze",
-            "score": 5729,
-            "kouMedal": 10
-        },
-        {
-            "rank": 473,
-            "title": 8,
-            "admiralName": "ノウマン",
-            "plate": "is-bronze",
-            "score": 5722,
-            "kouMedal": 0
-        },
-        {
-            "rank": 474,
-            "title": 8,
-            "admiralName": "超連射６８ｋ",
-            "plate": "is-bronze",
-            "score": 5715,
-            "kouMedal": 12
-        },
-        {
-            "rank": 475,
-            "title": 8,
-            "admiralName": "さくら",
-            "plate": "is-bronze",
-            "score": 5710,
-            "kouMedal": 14
-        },
-        {
-            "rank": 476,
-            "title": 8,
-            "admiralName": "ミヤ",
-            "plate": "is-bronze",
-            "score": 5709,
-            "kouMedal": 10
-        },
-        {
-            "rank": 477,
-            "title": 8,
-            "admiralName": "ばるく",
-            "plate": "is-bronze",
-            "score": 5698,
-            "kouMedal": 11
-        },
-        {
-            "rank": 478,
-            "title": 8,
-            "admiralName": "ＫＹ２",
-            "plate": "is-bronze",
-            "score": 5695,
-            "kouMedal": 12
-        },
-        {
-            "rank": 479,
-            "title": 8,
-            "admiralName": "マービー",
-            "plate": "is-bronze",
-            "score": 5689,
-            "kouMedal": 14
-        },
-        {
-            "rank": 480,
-            "title": 8,
-            "admiralName": "まっちゃん",
-            "plate": "is-bronze",
-            "score": 5679,
-            "kouMedal": 6
-        },
-        {
-            "rank": 481,
-            "title": 8,
-            "admiralName": "たなぶまん",
-            "plate": "is-bronze",
-            "score": 5677,
-            "kouMedal": 2
-        },
-        {
-            "rank": 482,
-            "title": 8,
-            "admiralName": "レイチェル",
-            "plate": "is-bronze",
-            "score": 5671,
-            "kouMedal": 1
-        },
-        {
-            "rank": 483,
-            "title": 8,
-            "admiralName": "突放",
-            "plate": "is-bronze",
-            "score": 5667,
-            "kouMedal": 8
-        },
-        {
-            "rank": 484,
-            "title": 8,
-            "admiralName": "高橋",
-            "plate": "is-bronze",
-            "score": 5634,
-            "kouMedal": 14
-        },
-        {
-            "rank": 485,
-            "title": 8,
-            "admiralName": "Rag",
-            "plate": "is-bronze",
-            "score": 5634,
-            "kouMedal": 14
-        },
-        {
-            "rank": 486,
-            "title": 8,
-            "admiralName": "ベルモット",
-            "plate": "is-bronze",
-            "score": 5633,
-            "kouMedal": 13
-        },
-        {
-            "rank": 487,
-            "title": 8,
-            "admiralName": "周防七瀬",
-            "plate": "is-bronze",
-            "score": 5629,
-            "kouMedal": 13
-        },
-        {
-            "rank": 488,
-            "title": 8,
-            "admiralName": "ＡＬＩＣＥ",
-            "plate": "is-bronze",
-            "score": 5625,
-            "kouMedal": 8
-        },
-        {
-            "rank": 489,
-            "title": 8,
-            "admiralName": "伊葉大輔",
-            "plate": "is-bronze",
-            "score": 5624,
-            "kouMedal": 6
-        },
-        {
-            "rank": 490,
-            "title": 8,
-            "admiralName": "タウラス",
-            "plate": "is-bronze",
-            "score": 5624,
-            "kouMedal": 13
-        },
-        {
-            "rank": 491,
-            "title": 8,
-            "admiralName": "ぶろりー",
-            "plate": "is-bronze",
-            "score": 5621,
-            "kouMedal": 1
-        },
-        {
-            "rank": 492,
-            "title": 8,
-            "admiralName": "たますけ",
-            "plate": "is-bronze",
-            "score": 5587,
-            "kouMedal": 0
-        },
-        {
-            "rank": 493,
-            "title": 8,
-            "admiralName": "司",
-            "plate": "is-bronze",
-            "score": 5564,
-            "kouMedal": 9
-        },
-        {
-            "rank": 494,
-            "title": 8,
-            "admiralName": "花菱にて",
-            "plate": "is-bronze",
-            "score": 5547,
-            "kouMedal": 0
-        },
-        {
-            "rank": 495,
-            "title": 8,
-            "admiralName": "ゆうき",
-            "plate": "is-bronze",
-            "score": 5533,
-            "kouMedal": 4
-        },
-        {
-            "rank": 496,
-            "title": 8,
-            "admiralName": "夜明け",
-            "plate": "is-bronze",
-            "score": 5512,
-            "kouMedal": 10
-        },
-        {
-            "rank": 497,
-            "title": 8,
-            "admiralName": "ジンｰﾊﾞﾌﾞｴﾄﾞ",
-            "plate": "is-bronze",
-            "score": 5511,
-            "kouMedal": 9
-        },
-        {
-            "rank": 498,
-            "title": 8,
-            "admiralName": "ニジンケツ",
-            "plate": "is-bronze",
-            "score": 5509,
-            "kouMedal": 0
-        },
-        {
             "rank": 499,
             "title": 8,
-            "admiralName": "アマテラス",
+            "admiralName": "山口",
             "plate": "is-bronze",
-            "score": 5477,
+            "score": 9063,
             "kouMedal": 14
         },
         {
             "rank": 500,
             "title": 8,
-            "admiralName": "井戸隆",
+            "admiralName": "ゆきなな",
             "plate": "is-bronze",
-            "score": 5468,
-            "kouMedal": 11
+            "score": 9061,
+            "kouMedal": 14
         }
     ]
 }

@@ -253,8 +253,8 @@ pub fn ship_blueprint_name(ship_name: &str) -> &str {
         "Italia" => "Littorio",
         "千代田甲" | "千代田航" => "千代田",
         "千歳甲" | "千歳航" => "千歳",
-        // Untested against data as I don't own them.
         "呂500" => "U-511",
+        // Untested against data as I don't own them.
         "Октябрьская революция" => "Гангут",
         "大鷹" => "春日丸",
         _ => base_name,
@@ -275,8 +275,8 @@ pub fn ship_remodel_level_guess(ship_name: &str) -> u16 {
         "Italia" => 1,
         "千代田甲" | "千歳甲" => 2,
         "千代田航" | "千歳航" => 3,
-        // Untested against data as I don't own them.
         "呂500" => 2,
+        // Untested against data as I don't own them.
         "Октябрьская революция" => 1,
         "大鷹" => 1,
         _ => 0,

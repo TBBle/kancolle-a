@@ -11150,5 +11150,21 @@
         "latitude": "40.273678",
         "longitude": "140.530021",
         "zoomLevel": 16
+    },
+    {
+        "id": 113202,
+        "distance": "",
+        "name": "ＧｉＧＯ三宮北口",
+        "tel": "07069493872",
+        "address": "兵庫県神戸市中央区北長狭通一丁目８番１号",
+        "station": "",
+        "openTime": "10:00   ",
+        "closeTime": "23:30   ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "HYOGO",
+        "latitude": "34.69312",
+        "longitude": "135.192193",
+        "zoomLevel": 16
     }
 ]

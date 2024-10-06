@@ -730,8 +730,8 @@
         "bossInfo": {
             "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 2500,
-            "bossStatus": "NONE"
+            "militaryGaugeLeft": 1500,
+            "bossStatus": "FORM_2"
         },
         "limitSec": 390,
         "requireGp": 450,

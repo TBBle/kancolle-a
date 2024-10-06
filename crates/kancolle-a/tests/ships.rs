@@ -108,13 +108,13 @@ async fn test_ships_book_only_import() {
         .await
         .unwrap();
 
-    // Regex `"shipName": ".*[改甲航].*",` gives 70 book entries with modified names
-    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 3 are not in my data.
-    assert_eq!(ships.len(), 250 - 70 - 3);
+    // Regex `"shipName": ".*[改甲航].*",` gives 72 book entries with modified names
+    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
+    assert_eq!(ships.len(), 253 - 72 - 4);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    // 285 entries, 35 未取得, and of the remaining 250, 151 have two rows.
-    assert_eq!(ships.shipmod_iter().count(), 250 + 151);
+    // 285 entries, 32 未取得, and of the remaining 253, 151 have two rows.
+    assert_eq!(ships.shipmod_iter().count(), 253 + 151);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_some()));
@@ -127,7 +127,7 @@ async fn test_ships_book_only_import() {
             .shipmod_iter()
             .filter(|ship| !*ship.book_secondrow())
             .count(),
-        250
+        253
     );
     assert_eq!(
         ships
@@ -149,12 +149,12 @@ async fn test_ships_characters_only_import() {
         .await
         .unwrap();
 
-    // Regex `"shipName": ".*[改甲航].*",` gives 200 characters with modified names
-    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 3 are not in my data.
-    assert_eq!(ships.len(), 380 - 200 - 3);
+    // Regex `"shipName": ".*[改甲航].*",` gives 202 characters with modified names
+    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
+    assert_eq!(ships.len(), 383 - 202 - 4);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    assert_eq!(ships.shipmod_iter().count(), 380);
+    assert_eq!(ships.shipmod_iter().count(), 383);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_some()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -205,7 +205,7 @@ async fn test_ships_full_import() {
             .shipmod_iter()
             .filter(|ship| ship.book().is_some() && !*ship.book_secondrow())
             .count(),
-        250
+        253
     );
     assert_eq!(
         ships
@@ -219,7 +219,7 @@ async fn test_ships_full_import() {
             .shipmod_iter()
             .filter(|ship| ship.character().is_some())
             .count(),
-        380
+        383
     );
     assert_eq!(
         ships

@@ -8,7 +8,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34982,
+            "questId": 35002,
             "questNorma": 5,
             "questRewardList": [
                 {
@@ -23,8 +23,8 @@
             "questCurrentValue": 0,
             "questContractStatus": 0,
             "questProgressStatus": 1,
-            "questStartTime": 1727992800000,
-            "questEndTime": 1728079200000,
+            "questStartTime": 1728165600000,
+            "questEndTime": 1728252000000,
             "questDetailMessageList": [
                 {
                     "groupNo": 0,
@@ -41,13 +41,35 @@
             ]
         },
         {
+            "questDescription": "艦隊全力出撃！遊弋する**敵艦隊**と交戦し、**５回**撃退せよ！",
+            "questName": "敵艦隊を５回撃退せよ！",
+            "questCategory": 0,
+            "questKind": 1,
+            "questGroup": 0,
+            "questSortIndex": 0,
+            "questId": 35007,
+            "questNorma": 5,
+            "questRewardList": [
+                {
+                    "rewardKind": "STRATEGY_POINT",
+                    "rewardValue": 5
+                }
+            ],
+            "questCurrentValue": 0,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
+            "questStartTime": 1728165600000,
+            "questEndTime": 1728252000000,
+            "questDetailMessageList": []
+        },
+        {
             "questDescription": "航空攻撃隊を編成、捕捉した**複数の敵艦隊**に**先制攻撃**を敢行せよ！",
             "questName": "航空攻撃を敢行せよ！",
             "questCategory": 0,
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 34988,
+            "questId": 35008,
             "questNorma": 3,
             "questRewardList": [
                 {
@@ -55,31 +77,31 @@
                     "rewardValue": 5
                 }
             ],
-            "questCurrentValue": 1,
-            "questContractStatus": 1,
-            "questProgressStatus": 2,
-            "questStartTime": 1727992800000,
-            "questEndTime": 1728079200000,
+            "questCurrentValue": 2,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
+            "questStartTime": 1728165600000,
+            "questEndTime": 1728252000000,
             "questDetailMessageList": []
         },
         {
-            "questDescription": "**敵輸送船**を**５隻**以上撃沈せよ！",
-            "questName": "海上通商破壊作戦",
+            "questDescription": "全力出撃を行い、可能な限り多くの**敵主力艦隊**を捕捉、\r\nこれを**撃滅**せよ！",
+            "questName": "あ号作戦",
             "questCategory": 1,
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35031,
-            "questNorma": 5,
+            "questId": 35035,
+            "questNorma": 10,
             "questRewardList": [
                 {
                     "rewardKind": "STRATEGY_POINT",
-                    "rewardValue": 20
+                    "rewardValue": 30
                 }
             ],
             "questCurrentValue": 0,
-            "questContractStatus": 1,
-            "questProgressStatus": 2,
+            "questContractStatus": 0,
+            "questProgressStatus": 1,
             "questStartTime": 1727647200000,
             "questEndTime": 1728252000000,
             "questDetailMessageList": []
@@ -99,9 +121,9 @@
                     "rewardValue": 30
                 }
             ],
-            "questCurrentValue": 12,
-            "questContractStatus": 1,
-            "questProgressStatus": 2,
+            "questCurrentValue": 15,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
             "questStartTime": 1727647200000,
             "questEndTime": 1728252000000,
             "questDetailMessageList": []
@@ -122,8 +144,8 @@
                 }
             ],
             "questCurrentValue": 0,
-            "questContractStatus": 1,
-            "questProgressStatus": 2,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
             "questStartTime": 1727647200000,
             "questEndTime": 1728252000000,
             "questDetailMessageList": []
@@ -192,8 +214,8 @@
                 }
             ],
             "questCurrentValue": 1,
-            "questContractStatus": 1,
-            "questProgressStatus": 2,
+            "questContractStatus": 0,
+            "questProgressStatus": 3,
             "questStartTime": 1727647200000,
             "questEndTime": 1728252000000,
             "questDetailMessageList": [
