@@ -284,6 +284,8 @@ fn init_book_ship_sources() {
         sources.insert(224, vec![RainySeason]);
         // U-511, U-511改: https://kancolle-a.sega.jp/players/information/210914_1.html (里帰り水着mode)
         sources.insert(231, vec![Swimsuit]);
+        // 呂500: https://kancolle-a.sega.jp/players/information/210914_1.html
+        sources.insert(236, vec![Swimsuit]);
         // Warspite, Warspite改:
         // * https://kancolle-a.sega.jp/players/information/2212_haregimode.html
         // * (OriginalIllustration)
@@ -358,7 +360,6 @@ fn init_book_ship_sources() {
         sources.insert(288, vec![Unknown, Unknown]);
 
         // Info store for ships I don't have at all.
-        // 呂500: https://kancolle-a.sega.jp/players/information/210914_1.html
         // Grecale, Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
         // 瑞鶴改二甲:
         // * (Christmas) https://kancolle-a.sega.jp/players/information/211214_1.html
