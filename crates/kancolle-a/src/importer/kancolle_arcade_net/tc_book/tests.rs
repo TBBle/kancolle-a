@@ -83,12 +83,19 @@ fn validate_tcbook_common(tcbook: &TcBook) {
             // The image set pages are not always the same, e.g. 雪風 has no swimsuit set, but 雪風改 (same number) does.
             // But we should never see more cards on a page than on the first page.
             match ship.source(card_page.priority) {
-                OriginalIllustration(count) => {
+                OriginalIllustration1(is_kai) => {
                     assert_ne!(card_page.priority, 0);
-                    // Not much we can assume about these pages.
-                    // Not sure what happens if it gets higher than the front page, in fact, at this point
-                    // no ship has more than two original illustration cards.
-                    assert!(count > 0);
+                    assert_eq!(card_page.variation_num_in_page, 1);
+                    if is_kai {
+                        assert_eq!(normal_variation, 6)
+                    };
+                }
+                OriginalIllustration2(is_kai1, is_kai2) => {
+                    assert_ne!(card_page.priority, 0);
+                    assert_eq!(card_page.variation_num_in_page, 2);
+                    if is_kai1 || is_kai2 {
+                        assert_eq!(normal_variation, 6)
+                    };
                 }
                 Normal => {
                     assert_eq!(card_page.priority, 0);
@@ -212,7 +219,8 @@ fn validate_tcbook_common(tcbook: &TcBook) {
             .filter(|page| {
                 !matches!(
                     ship.source(page.priority),
-                    BookShipCardPageSource::OriginalIllustration(_)
+                    BookShipCardPageSource::OriginalIllustration1(_)
+                        | BookShipCardPageSource::OriginalIllustration2(_, _)
                 )
             })
             .count();
@@ -249,14 +257,14 @@ fn validate_tcbook_common(tcbook: &TcBook) {
             if card_list_page.status_img.is_none() {
                 assert!(match ship.source(card_list_page.priority) {
                     Unknown => true, // We can't assume anything...
-                    Normal | OriginalIllustration(_) => false,
+                    Normal | OriginalIllustration1(_) | OriginalIllustration2(_, _) => false,
                     _ => true,
                 });
                 continue;
             } else if card_list_page.status_img.as_ref().unwrap().is_empty() {
                 assert!(match ship.source(card_list_page.priority) {
                     Unknown => true, // We can't assume anything...
-                    Normal | OriginalIllustration(_) => true,
+                    Normal | OriginalIllustration1(_) | OriginalIllustration2(_, _) => true,
                     _ => false,
                 });
                 continue;
@@ -384,7 +392,7 @@ fn parse_fixture_tcbook_info_20240528() {
     {
         use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
-        assert_eq!(早霜.source(1), Unknown /*OriginalIllustration(1)*/);
+        assert_eq!(早霜.source(1), Unknown /*OriginalIllustration1(true)*/);
     }
     assert_eq!(早霜.variation_num, 7);
     assert_eq!(早霜.acquire_num, 1);
@@ -559,7 +567,7 @@ fn parse_fixture_tcbook_info_20240530() {
     {
         use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
-        assert_eq!(早霜.source(1), Unknown /*OriginalIllustration(1)*/);
+        assert_eq!(早霜.source(1), Unknown /*OriginalIllustration1(true)*/);
     }
     assert_eq!(早霜.variation_num, 7);
     assert_eq!(早霜.acquire_num, 1);
@@ -753,7 +761,7 @@ fn parse_fixture_tcbook_info_20240609() {
         use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
-        assert_eq!(早霜.source(2), OriginalIllustration(1));
+        assert_eq!(早霜.source(2), OriginalIllustration1(true));
     }
     assert_eq!(早霜.variation_num, 13);
     assert_eq!(早霜.acquire_num, 1);
@@ -965,7 +973,7 @@ fn parse_fixture_tcbook_info_20240610() {
         use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
-        assert_eq!(早霜.source(2), OriginalIllustration(1));
+        assert_eq!(早霜.source(2), OriginalIllustration1(true));
     }
     assert_eq!(早霜.variation_num, 13);
     assert_eq!(早霜.acquire_num, 2);
@@ -1191,7 +1199,7 @@ fn parse_fixture_tcbook_info_20240620() {
         use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
-        assert_eq!(早霜.source(2), OriginalIllustration(1));
+        assert_eq!(早霜.source(2), OriginalIllustration1(true));
     }
     assert_eq!(早霜.variation_num, 13);
     assert_eq!(早霜.acquire_num, 3);
@@ -1424,7 +1432,7 @@ fn parse_fixture_tcbook_info_20240623() {
         use BookShipCardPageSource::*;
         assert_eq!(早霜.source(0), Normal);
         assert_eq!(早霜.source(1), RainySeason);
-        assert_eq!(早霜.source(2), OriginalIllustration(1));
+        assert_eq!(早霜.source(2), OriginalIllustration1(true));
     }
     assert_eq!(早霜.variation_num, 13);
     assert_eq!(早霜.acquire_num, 3);

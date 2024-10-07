@@ -50,8 +50,7 @@ async fn main() -> Result<()> {
 
     let mut card_status: Vec<(u16, String, bool, bool, bool)> = vec![];
 
-    // TODO: OriginalIllustration needs to be handled specially, card_status assumes badly.
-    // Note: It's possible that Original Illustrations are actually Normal, Holo, Damaged too.
+    // TODO: OriginalIllustration1/2 needs to be handled specially, card_status assumes badly.
     let target_source = args.source;
     let skip_unseen = args.skip_unseen;
 

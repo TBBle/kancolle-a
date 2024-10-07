@@ -59,7 +59,10 @@ pub enum BookShipCardPageSource {
     SurigaoStrait, // スリガオ海峡突入mode: Jan 2024 event (第拾肆回期間限定海域：捷号決戦！邀撃、レイテ沖海戦（前篇）)
 
     // オリジナルイラストカード
-    OriginalIllustration(u8), // Theory: Last page, may have a different variation_num_in_page
+    // Should be the last page, if present; not enough data to know if kai/non-kai are grouped.
+    // True if the card belongs to the second row, i.e. 改
+    OriginalIllustration1(bool),
+    OriginalIllustration2(bool, bool),
 }
 
 static BOOK_SHIP_SOURCES: OnceLock<HashMap<u16, Vec<BookShipCardPageSource>>> = OnceLock::new();
@@ -80,19 +83,19 @@ fn init_book_ship_sources() {
         // 加賀, 加賀改:
         // * https://kancolle-a.sega.jp/players/information/211230_2.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/2206_seaarea_event12_detail.html
-        sources.insert(7, vec![SundayBest, OriginalIllustration(1)]);
+        sources.insert(7, vec![SundayBest, OriginalIllustration1(true)]);
         // 島風, 島風改:
         // * (CapeEngano) https://kancolle-a.sega.jp/players/information/190508_1.html
         // * (OriginalIllustration)
         // ** (改) https://kancolle-a.sega.jp/players/information/200901_2.html
         // ** (改) https://kancolle-a.sega.jp/players/information/210409_1.html
-        sources.insert(10, vec![CapeEngano, OriginalIllustration(2)]);
+        sources.insert(10, vec![CapeEngano, OriginalIllustration2(true, true)]);
         // 敷波, 敷波改: (改) https://kancolle-a.sega.jp/players/information/211005_1.html
-        sources.insert(18, vec![OriginalIllustration(1)]);
+        sources.insert(18, vec![OriginalIllustration1(true)]);
         // 大井: https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
         sources.insert(19, vec![RainySeason]);
         // 鳳翔, 鳳翔改: (改) https://kancolle-a.sega.jp/players/information/2303_seaarea_event13_detail.html
-        sources.insert(25, vec![OriginalIllustration(1)]);
+        sources.insert(25, vec![OriginalIllustration1(true)]);
         // 扶桑, 扶桑改: https://kancolle-a.sega.jp/players/information/2406_rainy_season.html
         sources.insert(26, vec![RainySeason]);
         // 球磨, 球磨改: https://kancolle-a.sega.jp/players/information/2212_xmas.html
@@ -102,9 +105,9 @@ fn init_book_ship_sources() {
         // 由良, 由良改: https://kancolle-a.sega.jp/players/information/2309_yukata_season.html
         sources.insert(45, vec![Yukata]);
         // 川内, 川内改: (改) https://kancolle-a.sega.jp/players/information/2302_card_tsuika.html
-        sources.insert(46, vec![OriginalIllustration(1)]);
+        sources.insert(46, vec![OriginalIllustration1(true)]);
         // 那珂, 那珂改: (改) https://kancolle-a.sega.jp/players/information/190914_1.html
-        sources.insert(48, vec![OriginalIllustration(1)]);
+        sources.insert(48, vec![OriginalIllustration1(true)]);
         // 最上:
         // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
         // * https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
@@ -114,40 +117,46 @@ fn init_book_ship_sources() {
         // 朧, 朧改:
         // * https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/2404_spring_seaarea_detail.html
-        sources.insert(67, vec![Fishing, OriginalIllustration(1)]);
+        sources.insert(67, vec![Fishing, OriginalIllustration1(true)]);
         // 曙, 曙改:
         // * https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         // * https://kancolle-a.sega.jp/players/information/211005_1.html
         // * (OriginalIllustration)
         // ** (改) https://kancolle-a.sega.jp/players/information/211027_1.html
         // ** (改) https://kancolle-a.sega.jp/players/information/210409_1.html
-        sources.insert(68, vec![PacificSaury, Fishing, OriginalIllustration(2)]);
+        sources.insert(
+            68,
+            vec![PacificSaury, Fishing, OriginalIllustration2(true, true)],
+        );
         // 漣, 漣改:
         // * https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/2404_spring_seaarea_detail.html
-        sources.insert(69, vec![PacificSaury, OriginalIllustration(1)]);
+        sources.insert(69, vec![PacificSaury, OriginalIllustration1(true)]);
         // 潮, 潮改:
         // * https://kancolle-a.sega.jp/players/information/2201_valentine.html
         // * https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/211027_1.html
-        sources.insert(70, vec![Valentine, PacificSaury, OriginalIllustration(1)]);
+        sources.insert(
+            70,
+            vec![Valentine, PacificSaury, OriginalIllustration1(true)],
+        );
         // 暁, 暁改: (改) https://kancolle-a.sega.jp/players/information/210409_1.html
-        sources.insert(71, vec![OriginalIllustration(1)]);
+        sources.insert(71, vec![OriginalIllustration1(true)]);
         // 雷, 雷改: https://kancolle-a.sega.jp/players/information/2309_yukata_season.html
         sources.insert(73, vec![Yukata]);
         // 電, 電改: https://kancolle-a.sega.jp/players/information/2309_yukata_season.html
         sources.insert(74, vec![Yukata]);
         // 白露, 白露改: (改) https://kancolle-a.sega.jp/players/information/180316_1.html
-        sources.insert(79, vec![OriginalIllustration(1)]);
+        sources.insert(79, vec![OriginalIllustration1(true)]);
         // 村雨:
         // * (OriginalIllustration)
         // ** (改) https://kancolle-a.sega.jp/players/information/2206_seaarea_event12_detail.html
         // ** (改) https://kancolle-a.sega.jp/players/information/180316_1.html
-        sources.insert(81, vec![OriginalIllustration(2)]);
+        sources.insert(81, vec![OriginalIllustration2(true, true)]);
         // 夕立, 夕立改:
         // * https://kancolle-a.sega.jp/players/information/201026_1.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/190425_2.html
-        sources.insert(82, vec![Halloween, OriginalIllustration(1)]);
+        sources.insert(82, vec![Halloween, OriginalIllustration1(true)]);
         // 朝潮, 朝潮改: https://kancolle-a.sega.jp/players/information/201013_1.html
         sources.insert(85, vec![Halloween]);
         // 大潮, 大潮改: https://kancolle-a.sega.jp/players/information/2310_sauryfestival.html
@@ -165,9 +174,9 @@ fn init_book_ship_sources() {
         // * https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
         sources.insert(101, vec![SurigaoStrait, RainySeason]);
         // 伊勢改: https://kancolle-a.sega.jp/players/information/170420_1.html
-        sources.insert(102, vec![OriginalIllustration(1)]);
+        sources.insert(102, vec![OriginalIllustration1(false)]);
         // 日向改: https://kancolle-a.sega.jp/players/information/170420_1.html
-        sources.insert(103, vec![OriginalIllustration(1)]);
+        sources.insert(103, vec![OriginalIllustration1(false)]);
         // 翔鶴, 翔鶴改: https://kancolle-a.sega.jp/players/information/211214_1.html
         sources.insert(106, vec![Christmas]);
         // 瑞鶴: https://kancolle-a.sega.jp/players/information/211214_1.html
@@ -193,11 +202,11 @@ fn init_book_ship_sources() {
         // 夕雲, 夕雲改:
         // * https://kancolle-a.sega.jp/players/information/2310_sauryfestival.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/190307_2.html
-        sources.insert(133, vec![PacificSaury, OriginalIllustration(1)]);
+        sources.insert(133, vec![PacificSaury, OriginalIllustration1(true)]);
         // 巻雲, 巻雲改: (改) https://kancolle-a.sega.jp/players/information/190307_2.html
-        sources.insert(134, vec![OriginalIllustration(1)]);
+        sources.insert(134, vec![OriginalIllustration1(true)]);
         // 長波, 長波改: (改) https://kancolle-a.sega.jp/players/information/190307_2.html
-        sources.insert(135, vec![OriginalIllustration(1)]);
+        sources.insert(135, vec![OriginalIllustration1(true)]);
         // 大和改:
         // * (Swimsuit) https://kancolle-a.sega.jp/players/information/190813_1.html
         // * (SundayBest) https://kancolle-a.sega.jp/players/information/211230_2.html
@@ -210,7 +219,10 @@ fn init_book_ship_sources() {
         // * (OriginalIllustration)
         // ** https://kancolle-a.sega.jp/players/information/180316_1.html
         // ** https://kancolle-a.sega.jp/players/information/171124_3.html
-        sources.insert(144, vec![RainySeason, Halloween, OriginalIllustration(2)]);
+        sources.insert(
+            144,
+            vec![RainySeason, Halloween, OriginalIllustration2(false, false)],
+        );
         // 時雨改二:
         // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
         // * https://kancolle-a.sega.jp/players/information/190805_1.html
@@ -224,7 +236,7 @@ fn init_book_ship_sources() {
                 SurigaoStrait,
                 Swimsuit,
                 PacificSaury,
-                OriginalIllustration(2),
+                OriginalIllustration2(false, false),
             ],
         );
         // 榛名改二: https://kancolle-a.sega.jp/players/information/190722_1.html
@@ -232,7 +244,7 @@ fn init_book_ship_sources() {
         // 卯月, 卯月改:
         // * https://kancolle-a.sega.jp/players/information/210205_1.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/190425_2.html
-        sources.insert(165, vec![Valentine, OriginalIllustration(1)]);
+        sources.insert(165, vec![Valentine, OriginalIllustration1(true)]);
         // 磯風, 磯風改: https://kancolle-a.sega.jp/players/information/211005_1.html
         sources.insert(167, vec![PacificSaury]);
         // 浦風, 浦風改: https://kancolle-a.sega.jp/players/information/2309_yukata_season.html
@@ -240,22 +252,22 @@ fn init_book_ship_sources() {
         // 浜風, 浜風改: https://kancolle-a.sega.jp/players/information/2309_yukata_season.html
         sources.insert(170, vec![Yukata]);
         // 天津風, 天津風改: (改) https://kancolle-a.sega.jp/players/information/200901_2.html
-        sources.insert(181, vec![OriginalIllustration(1)]);
+        sources.insert(181, vec![OriginalIllustration1(true)]);
         // 大淀, 大淀改:
         // * https://kancolle-a.sega.jp/players/information/210907_1.html
         // * (OriginalIllustration) https://kancolle-a.sega.jp/players/information/190508_1.html
-        sources.insert(183, vec![Swimsuit, OriginalIllustration(1)]);
+        sources.insert(183, vec![Swimsuit, OriginalIllustration1(false)]);
         // 大鯨: https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         sources.insert(184, vec![PacificSaury]);
         // 龍鳳: https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         sources.insert(185, vec![PacificSaury]);
         // 明石改: https://kancolle-a.sega.jp/players/information/190914_1.html
-        sources.insert(187, vec![OriginalIllustration(1)]);
+        sources.insert(187, vec![OriginalIllustration1(false)]);
         // 春雨, 春雨改:
         // * (OriginalIllustration)
         // ** https://kancolle-a.sega.jp/players/information/180316_1.html
         // ** (改) https://kancolle-a.sega.jp/players/information/200623_1.html
-        sources.insert(205, vec![OriginalIllustration(2)]);
+        sources.insert(205, vec![OriginalIllustration2(false, true)]);
         // 潮改二:
         // * https://kancolle-a.sega.jp/players/information/2201_valentine.html
         // * https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
@@ -263,11 +275,11 @@ fn init_book_ship_sources() {
         // 早霜, 早霜改:
         // * https://kancolle-a.sega.jp/players/information/2406_rainy_season.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/190307_2.html
-        sources.insert(209, vec![RainySeason, OriginalIllustration(1)]);
+        sources.insert(209, vec![RainySeason, OriginalIllustration1(true)]);
         // 清霜, 清霜改:
         // * https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/190307_2.html
-        sources.insert(210, vec![RainySeason, OriginalIllustration(1)]);
+        sources.insert(210, vec![RainySeason, OriginalIllustration1(true)]);
         // 扶桑改二: https://kancolle-a.sega.jp/players/information/2406_rainy_season.html
         sources.insert(211, vec![RainySeason]);
         // 朝雲, 朝雲改: https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
@@ -291,7 +303,7 @@ fn init_book_ship_sources() {
         // * (OriginalIllustration)
         // ** https://kancolle-a.sega.jp/players/information/190914_1.html
         // ** (改) https://kancolle-a.sega.jp/players/information/200623_1.html
-        sources.insert(239, vec![SundayBest, OriginalIllustration(2)]);
+        sources.insert(239, vec![SundayBest, OriginalIllustration2(false, true)]);
         // Littorio: https://kancolle-a.sega.jp/players/information/200728_1.html
         sources.insert(241, vec![Swimsuit]);
         // Roma, Roma改: https://kancolle-a.sega.jp/players/information/211005_1.html
@@ -315,7 +327,7 @@ fn init_book_ship_sources() {
         // 翔鶴改二:
         // * https://kancolle-a.sega.jp/players/information/211214_1.html
         // * (OriginalIllustration) https://kancolle-a.sega.jp/players/information/210805_1.html
-        sources.insert(261, vec![Christmas, OriginalIllustration(1)]);
+        sources.insert(261, vec![Christmas, OriginalIllustration1(false)]);
         // 瑞鶴改二: https://kancolle-a.sega.jp/players/information/211214_1.html
         sources.insert(262, vec![Christmas]);
         // 朝潮改二: https://kancolle-a.sega.jp/players/information/201013_1.html
@@ -345,7 +357,7 @@ fn init_book_ship_sources() {
         // Gotland: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
         sources.insert(374, vec![Swimsuit]);
         // 金剛改二丙: https://kancolle-a.sega.jp/players/information/201225_1.html
-        sources.insert(391, vec![OriginalIllustration(1)]);
+        sources.insert(391, vec![OriginalIllustration1(false)]);
         // Fletcher, Fletcher改: https://kancolle-a.sega.jp/players/information/2407_join_fletcher_swim.html
         sources.insert(396, vec![Swimsuit]);
         // 時雨改三: https://kancolle-a.sega.jp/players/information/2408_join_shigure_swim_start.html
