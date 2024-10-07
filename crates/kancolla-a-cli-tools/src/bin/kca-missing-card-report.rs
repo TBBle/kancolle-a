@@ -70,24 +70,13 @@ async fn main() -> Result<()> {
                 continue;
             }
 
-            let (row1, row2) = page.card_img_list.split_at(3);
-            if !shipmod.book_secondrow() {
-                card_status.push((
-                    book_ship.book_no,
-                    shipmod.name().clone(),
-                    !row1[0].is_empty(),
-                    !row1[1].is_empty(),
-                    !row1[2].is_empty(),
-                ));
-            } else {
-                card_status.push((
-                    book_ship.book_no,
-                    shipmod.name().clone(),
-                    !row2[0].is_empty(),
-                    !row2[1].is_empty(),
-                    !row2[2].is_empty(),
-                ));
-            }
+            card_status.push((
+                book_ship.book_no,
+                shipmod.name().clone(),
+                !page.card_img_list[0].is_empty(),
+                !page.card_img_list[1].is_empty(),
+                !page.card_img_list[2].is_empty(),
+            ));
         }
     }
 

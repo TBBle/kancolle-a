@@ -121,21 +121,6 @@ async fn test_ships_book_only_import() {
     assert!(ships
         .shipmod_iter()
         .all(|ship| ship.wiki_list_entry().is_none()));
-
-    assert_eq!(
-        ships
-            .shipmod_iter()
-            .filter(|ship| !*ship.book_secondrow())
-            .count(),
-        404
-    );
-    assert_eq!(
-        ships
-            .shipmod_iter()
-            .filter(|ship| *ship.book_secondrow())
-            .count(),
-        0
-    );
 }
 
 #[tokio::test]
@@ -203,16 +188,9 @@ async fn test_ships_full_import() {
     assert_eq!(
         ships
             .shipmod_iter()
-            .filter(|ship| ship.book().is_some() && !*ship.book_secondrow())
+            .filter(|ship| ship.book().is_some())
             .count(),
         404
-    );
-    assert_eq!(
-        ships
-            .shipmod_iter()
-            .filter(|ship| ship.book().is_some() && *ship.book_secondrow())
-            .count(),
-        0
     );
     assert_eq!(
         ships

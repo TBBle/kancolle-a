@@ -77,13 +77,7 @@ async fn main() -> Result<()> {
 
     let has_normal_card = |shipmod: &ShipMod| match shipmod.book() {
         None => false,
-        Some(book_ship) => {
-            if *shipmod.book_secondrow() {
-                !book_ship.card_list[0].card_img_list[3].is_empty()
-            } else {
-                !book_ship.card_list[0].card_img_list[0].is_empty()
-            }
-        }
+        Some(book_ship) => !book_ship.card_list[0].card_img_list[0].is_empty(),
     };
 
     // Reference: https://wikiwiki.jp/kancolle-a/%E5%BB%BA%E9%80%A0#kaizou

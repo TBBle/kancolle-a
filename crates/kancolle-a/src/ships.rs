@@ -563,8 +563,6 @@ pub struct ShipMod {
     // copy everything for now.
     /// The relevant entry in the player's picture book data
     book: Option<BookShip>,
-    /// Whether this is actually the second-row entry in the BookShip
-    book_secondrow: bool,
 
     /// The relevant entry in the player's character list data
     character: Option<Character>,
@@ -595,7 +593,6 @@ impl ShipMod {
         ShipMod {
             name,
             book: None,
-            book_secondrow: false,
             character: None,
             kekkon: None,
             wiki_list_entry: None,
@@ -619,8 +616,6 @@ impl ShipMod {
                 "Unexpected variation count {} on normal page of {}",
                 normal_page.variation_num_in_page, book.book_no
             );
-            // TODO: Remove book_secondrow.
-            assert!(!self.book_secondrow);
         }
 
         if let Some(kekkon) = self.kekkon.as_ref() {

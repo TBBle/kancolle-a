@@ -93,8 +93,8 @@ async fn main() -> Result<()> {
                     .card_list
                     .first()
                     .unwrap()
-                    .card_img_list[if *ship_mod.book_secondrow() { 3 } else { 0 }]
-                .is_empty()
+                    .card_img_list[0]
+                    .is_empty()
         }
     };
 
