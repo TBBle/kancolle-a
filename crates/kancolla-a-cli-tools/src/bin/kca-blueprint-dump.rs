@@ -37,14 +37,9 @@ async fn main() -> Result<()> {
 
     let mut bp_per_month = BTreeMap::new();
 
-    // TODO: The Ships abstraction makes this a little messy, since Blueprint data is duplicated.
-    // A "base ship" or "blueprint ship" flag might improve the aesthetics.
     for bp in ships
         .iter()
-        .filter(|(ship_name, ship)| {
-            ship.blueprint().is_some()
-                && ship.blueprint().as_ref().unwrap().ship_name == **ship_name
-        })
+        .filter(|(_, ship)| ship.blueprint().is_some())
         .map(|(_, ship)| ship.blueprint().as_ref().unwrap())
     {
         for entry in &bp.expiration_date_list {
