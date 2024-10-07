@@ -10,6 +10,7 @@ lazy_static_include_bytes! {
     TCBOOK_2024_06_10 => "tests/fixtures/2024-06-10/TcBook_info.json",
     TCBOOK_2024_06_20 => "tests/fixtures/2024-06-20/TcBook_info.json",
     TCBOOK_2024_06_23 => "tests/fixtures/2024-06-23/TcBook_info.json",
+    TCBOOK_2024_10_06 => "tests/fixtures/2024-10-06/TcBook_info.json",
 }
 
 #[test]
@@ -52,6 +53,18 @@ fn test_book_ship_source() {
 }
 
 #[test]
+fn test_book_split_nokai_20240623() {
+    let tcbook = read_tclist(TCBOOK_2024_06_23.as_ref()).unwrap();
+    assert_eq!(tcbook.len(), 284);
+
+    let 神風改 = &tcbook[248];
+
+    let (神風改_nonkai, 神風改_kai) = 神風改.clone().into_kai_split();
+    assert!(神風改_kai.is_none());
+    assert_eq!(神風改, &神風改_nonkai);
+}
+
+#[test]
 fn parse_empty_tcbook_reader() {
     read_tclist(std::io::empty()).unwrap_err();
 }
@@ -60,6 +73,20 @@ fn parse_empty_tcbook_reader() {
 fn parse_empty_tcbook_vector() {
     let tcbook = read_tclist("[]".as_bytes()).unwrap();
     assert_eq!(tcbook.len(), 0);
+}
+
+// Split all ships in the given tcbook, and validate that as if we got it from the server.
+fn validate_tcbook_split_common(tcbook: &TcBook) {
+    // Big enough for everything... Should be no more than 445, see the Ship integration tests.
+    let mut split_book: TcBook = Vec::with_capacity(500);
+    for book_ship in tcbook.iter().cloned() {
+        let (book_ship, kai_ship) = book_ship.into_kai_split();
+        split_book.push(book_ship);
+        if let Some(kai_ship) = kai_ship {
+            split_book.push(kai_ship);
+        }
+    }
+    validate_tcbook_common(&split_book);
 }
 
 fn validate_tcbook_common(tcbook: &TcBook) {
@@ -83,19 +110,27 @@ fn validate_tcbook_common(tcbook: &TcBook) {
             // The image set pages are not always the same, e.g. 雪風 has no swimsuit set, but 雪風改 (same number) does.
             // But we should never see more cards on a page than on the first page.
             match ship.source(card_page.priority) {
-                OriginalIllustration1(is_kai) => {
+                OriginalIllustration1(_) if normal_variation == 6 => {
                     assert_ne!(card_page.priority, 0);
                     assert_eq!(card_page.variation_num_in_page, 1);
-                    if is_kai {
-                        assert_eq!(normal_variation, 6)
-                    };
                 }
-                OriginalIllustration2(is_kai1, is_kai2) => {
+                OriginalIllustration1(_) => {
+                    assert_ne!(card_page.priority, 0);
+                    // <= because it may have been split. Ideally'd have removed this page in that case.
+                    // Precisely validating variation_num_in_page of a split ship requires knowing whether
+                    // this was the kai side of the original ship.
+                    // TODO: Can we make source() return the right values for split ships? Same problem as
+                    // removing pages for Swimsuit, really...
+                    assert!(card_page.variation_num_in_page <= 1);
+                }
+                OriginalIllustration2(_, _) if normal_variation == 6 => {
                     assert_ne!(card_page.priority, 0);
                     assert_eq!(card_page.variation_num_in_page, 2);
-                    if is_kai1 || is_kai2 {
-                        assert_eq!(normal_variation, 6)
-                    };
+                }
+                OriginalIllustration2(_, _) => {
+                    assert_ne!(card_page.priority, 0);
+                    // <= because it may have been split. Ideally'd have removed this page in that case.
+                    assert!(card_page.variation_num_in_page <= 2);
                 }
                 Normal => {
                     assert_eq!(card_page.priority, 0);
@@ -108,6 +143,17 @@ fn validate_tcbook_common(tcbook: &TcBook) {
                 Unknown => {
                     // We can't assume this isn't an unmarked Original Illustration page.
                     assert_ne!(card_page.priority, 0);
+                    assert!(card_page.variation_num_in_page <= normal_variation);
+                }
+                Swimsuit => {
+                    // Special case of _: 雪風 after splitting ends up with a Swimsuit page with 0 entries.
+                    // TODO: Drop this page or something.
+                    assert_ne!(card_page.priority, 0);
+                    assert!(
+                        card_page.variation_num_in_page == 0
+                            || card_page.variation_num_in_page == 3
+                            || card_page.variation_num_in_page == 6
+                    );
                     assert!(card_page.variation_num_in_page <= normal_variation);
                 }
                 _ => {
@@ -171,6 +217,7 @@ fn validate_tcbook_common(tcbook: &TcBook) {
         "潜特型(伊400型潜水艦)",
         "UボートIXC型",
         "改伊勢型",
+        "呂号潜水艦",
     ];
 
     let owned_ships = tcbook.iter().filter(|ship| ship.ship_name != "未取得");
@@ -208,7 +255,8 @@ fn validate_tcbook_common(tcbook: &TcBook) {
             BookShipCardPageSource::Unknown
         );
         assert_ne!(ship.variation_num, 0);
-        assert_ne!(ship.acquire_num, 0);
+        // Can't assert this, a split ship may not have both parts acquired.
+        // assert_ne!(ship.acquire_num, 0);
         assert_ne!(ship.lv, 0);
         assert!(ship.is_married.is_some());
         assert!(ship.married_img.is_some());
@@ -1529,4 +1577,691 @@ fn parse_fixture_tcbook_info_20240623() {
     assert!(扶桑改二_card_list_1.status_img.is_none());
     assert_eq!(扶桑改二_card_list_1.variation_num_in_page, 3);
     assert_eq!(扶桑改二_card_list_1.acquire_num_in_page, 0);
+
+    // Interesting because it has a variation only in its kai form.
+    let 雪風 = &tcbook[4];
+    assert_eq!(雪風.book_no, 5);
+    assert_eq!(雪風.ship_class.as_ref().unwrap(), "陽炎型");
+    assert_eq!(雪風.ship_class_index.unwrap(), 8);
+    assert_eq!(雪風.ship_type, "駆逐艦");
+    assert_eq!(雪風.ship_model_num, "");
+    assert_eq!(雪風.ship_name, "雪風");
+    assert_eq!(雪風.card_index_img, "s/tc_5_gc3ynk3f42p4.jpg");
+    assert_eq!(雪風.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(雪風.source(0), Normal);
+        assert_eq!(雪風.source(1), Swimsuit);
+    }
+    assert_eq!(雪風.variation_num, 9);
+    assert_eq!(雪風.acquire_num, 2);
+    assert_eq!(雪風.lv, 1);
+    assert_eq!(雪風.is_married.as_ref().unwrap(), &vec![false]);
+    assert_eq!(雪風.married_img.as_ref().unwrap().len(), 0);
+    let 雪風_card_list_0 = &雪風.card_list[0];
+    assert_eq!(雪風_card_list_0.priority, 0);
+    assert_eq!(雪風_card_list_0.card_img_list.len(), 6);
+    assert_eq!(
+        &雪風_card_list_0.card_img_list,
+        &vec![
+            "s/tc_5_gc3ynk3f42p4.jpg",
+            "s/tc_5_grzytq71dazm.jpg",
+            "",
+            "",
+            "",
+            "",
+        ]
+    );
+    assert_eq!(雪風_card_list_0.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        雪風_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_gc3ynk3f42p4_n.png"]
+    );
+    assert_eq!(雪風_card_list_0.variation_num_in_page, 6);
+    assert_eq!(雪風_card_list_0.acquire_num_in_page, 2);
+    let 雪風_card_list_1 = &雪風.card_list[1];
+    assert_eq!(雪風_card_list_1.priority, 1);
+    assert_eq!(雪風_card_list_1.card_img_list.len(), 3);
+    assert_eq!(&雪風_card_list_1.card_img_list, &vec!["", "", "",]);
+    assert!(雪風_card_list_1.status_img.is_none());
+    assert_eq!(雪風_card_list_1.variation_num_in_page, 3);
+    assert_eq!(雪風_card_list_1.acquire_num_in_page, 0);
+}
+
+#[test]
+fn parse_fixture_tcbook_info_20241006() {
+    let tcbook = read_tclist(TCBOOK_2024_10_06.as_ref()).unwrap();
+    assert_eq!(tcbook.len(), 285);
+
+    validate_tcbook_common(&tcbook);
+
+    // Specific interesting ships.
+
+    // I'm sure there's a number of reasons not to name variables like this.
+    let 長門 = &tcbook[0];
+    assert_eq!(長門.book_no, 1);
+    assert_eq!(長門.ship_class.as_ref().unwrap(), "長門型");
+    assert_eq!(長門.ship_class_index.unwrap(), 1);
+    assert_eq!(長門.ship_type, "戦艦");
+    assert_eq!(長門.ship_model_num, "");
+    assert_eq!(長門.ship_name, "長門");
+    assert_eq!(長門.card_index_img, "s/tc_1_d7ju63kolamj.jpg");
+    assert_eq!(長門.card_list.len(), 1);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(長門.source(0), Normal);
+    }
+    assert_eq!(長門.variation_num, 6);
+    assert_eq!(長門.acquire_num, 3);
+    assert_eq!(長門.lv, 56);
+    assert_eq!(長門.is_married.as_ref().unwrap(), &vec![false, false]);
+    assert_eq!(長門.married_img.as_ref().unwrap().len(), 0);
+    let 長門_card_list_0 = &長門.card_list[0];
+    assert_eq!(長門_card_list_0.priority, 0);
+    assert_eq!(長門_card_list_0.card_img_list.len(), 6);
+    assert_eq!(
+        &長門_card_list_0.card_img_list,
+        &vec![
+            "s/tc_1_d7ju63kolamj.jpg",
+            "s/tc_1_kgsz396y04p3.jpg",
+            "",
+            "s/tc_1_2wp6daq4fn42.jpg",
+            "",
+            ""
+        ]
+    );
+    assert_eq!(長門_card_list_0.status_img.as_ref().unwrap().len(), 2);
+    assert_eq!(
+        長門_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_d7ju63kolamj_n.png", "i/i_2wp6daq4fn42_n.png"]
+    );
+    assert_eq!(長門_card_list_0.variation_num_in_page, 6);
+    assert_eq!(長門_card_list_0.acquire_num_in_page, 3);
+
+    // Interesting because I hit level 99 and triggered 扶桑改's ケッコンカッコカリ
+    let 扶桑 = &tcbook[25];
+    assert_eq!(扶桑.book_no, 26);
+    assert_eq!(扶桑.ship_class.as_ref().unwrap(), "扶桑型");
+    assert_eq!(扶桑.ship_class_index.unwrap(), 1);
+    assert_eq!(扶桑.ship_type, "戦艦");
+    assert_eq!(扶桑.ship_model_num, "");
+    assert_eq!(扶桑.ship_name, "扶桑");
+    assert_eq!(扶桑.card_index_img, "s/tc_26_p9u490qtc1a4.jpg");
+    assert_eq!(扶桑.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(扶桑.source(0), Normal);
+        assert_eq!(扶桑.source(1), RainySeason);
+    }
+    assert_eq!(扶桑.variation_num, 12);
+    assert_eq!(扶桑.acquire_num, 7);
+    assert_eq!(扶桑.lv, 105);
+    assert_eq!(
+        扶桑.is_married.as_ref().unwrap(),
+        &vec![true, true, true, true]
+    );
+    assert_eq!(扶桑.married_img.as_ref().unwrap().len(), 2);
+    assert_eq!(
+        扶桑.married_img.as_ref().unwrap(),
+        &vec!["s/tc_26_ktke7njfxcnx.jpg", "s/tc_26_tg21e17c6cre.jpg"]
+    );
+    let 扶桑_card_list_0 = &扶桑.card_list[0];
+    assert_eq!(扶桑_card_list_0.priority, 0);
+    assert_eq!(扶桑_card_list_0.card_img_list.len(), 6);
+    assert_eq!(
+        &扶桑_card_list_0.card_img_list,
+        &vec![
+            "s/tc_26_p9u490qtc1a4.jpg",
+            "",
+            "",
+            "s/tc_26_fskeangzj9cz.jpg",
+            "s/tc_26_z2jfdzutu1j3.jpg",
+            "s/tc_26_krjdrps6k23r.jpg"
+        ]
+    );
+    assert_eq!(扶桑_card_list_0.status_img.as_ref().unwrap().len(), 2);
+    assert_eq!(
+        扶桑_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_p9u490qtc1a4_n.png", "i/i_fskeangzj9cz_n.png"]
+    );
+    assert_eq!(扶桑_card_list_0.variation_num_in_page, 6);
+    assert_eq!(扶桑_card_list_0.acquire_num_in_page, 4);
+    let 扶桑_card_list_1 = &扶桑.card_list[1];
+    assert_eq!(扶桑_card_list_1.priority, 1);
+    assert_eq!(扶桑_card_list_1.card_img_list.len(), 6);
+    assert_eq!(
+        &扶桑_card_list_1.card_img_list,
+        &vec![
+            "s/tc_26_eexkxxukp10d.jpg",
+            "s/tc_26_pkx4u0xfe2ga.jpg",
+            "",
+            "s/tc_26_46s6pg02mm41.jpg",
+            "",
+            ""
+        ]
+    );
+    assert_eq!(扶桑_card_list_1.status_img.as_ref().unwrap().len(), 2);
+    assert_eq!(
+        扶桑_card_list_1.status_img.as_ref().unwrap(),
+        &vec!["i/i_p9u490qtc1a4_n.png", "i/i_fskeangzj9cz_n.png"]
+    );
+    assert_eq!(扶桑_card_list_1.variation_num_in_page, 6);
+    assert_eq!(扶桑_card_list_1.acquire_num_in_page, 3);
+
+    // Interesting as it gained a new card page before its last page.
+    let 早霜 = &tcbook[198];
+    assert_eq!(早霜.book_no, 209);
+    assert_eq!(早霜.ship_class.as_ref().unwrap(), "夕雲型");
+    assert_eq!(早霜.ship_class_index.unwrap(), 17);
+    assert_eq!(早霜.ship_type, "駆逐艦");
+    assert_eq!(早霜.ship_model_num, "");
+    assert_eq!(早霜.ship_name, "早霜");
+    assert_eq!(早霜.card_index_img, "s/tc_209_6uqm0rr6azd9.jpg");
+    assert_eq!(早霜.card_list.len(), 3);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(早霜.source(0), Normal);
+        assert_eq!(早霜.source(1), RainySeason);
+        assert_eq!(早霜.source(2), OriginalIllustration1(true));
+    }
+    assert_eq!(早霜.variation_num, 13);
+    assert_eq!(早霜.acquire_num, 3);
+    assert_eq!(早霜.lv, 1);
+    assert_eq!(
+        早霜.is_married.as_ref().unwrap(),
+        &vec![false, false, false, false]
+    );
+    assert_eq!(早霜.married_img.as_ref().unwrap().len(), 0);
+    let 早霜_card_list_0 = &早霜.card_list[0];
+    assert_eq!(早霜_card_list_0.priority, 0);
+    assert_eq!(早霜_card_list_0.card_img_list.len(), 6);
+    assert_eq!(
+        &早霜_card_list_0.card_img_list,
+        &vec!["s/tc_209_6uqm0rr6azd9.jpg", "", "", "", "", "",]
+    );
+    assert_eq!(早霜_card_list_0.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        早霜_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_fm346tmmjnkp_n.png"]
+    );
+    assert_eq!(早霜_card_list_0.variation_num_in_page, 6);
+    assert_eq!(早霜_card_list_0.acquire_num_in_page, 1);
+    let 早霜_card_list_1 = &早霜.card_list[1];
+    assert_eq!(早霜_card_list_1.priority, 1);
+    assert_eq!(早霜_card_list_1.card_img_list.len(), 6);
+    assert_eq!(
+        &早霜_card_list_1.card_img_list,
+        &vec![
+            "s/tc_209_7tm6p0fd3r7n.jpg",
+            "",
+            "",
+            "s/tc_209_qt3tt1rukzxr.jpg",
+            "",
+            "",
+        ]
+    );
+    assert_eq!(早霜_card_list_1.status_img.as_ref().unwrap().len(), 2);
+    assert_eq!(
+        早霜_card_list_1.status_img.as_ref().unwrap(),
+        &vec!["i/i_fm346tmmjnkp_n.png", "i/i_zp6ze49mx4qw_n.png"]
+    );
+    assert_eq!(早霜_card_list_1.variation_num_in_page, 6);
+    assert_eq!(早霜_card_list_1.acquire_num_in_page, 2);
+    let 早霜_card_list_2 = &早霜.card_list[2];
+    assert_eq!(早霜_card_list_2.priority, 2);
+    assert_eq!(早霜_card_list_2.card_img_list.len(), 1);
+    assert_eq!(&早霜_card_list_2.card_img_list, &vec!["",]);
+    assert_eq!(早霜_card_list_2.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        早霜_card_list_2.status_img.as_ref().unwrap(),
+        &vec!["i/i_fm346tmmjnkp_n.png"]
+    );
+    assert_eq!(早霜_card_list_2.variation_num_in_page, 1);
+    assert_eq!(早霜_card_list_2.acquire_num_in_page, 0);
+
+    let 扶桑改二 = &tcbook[200];
+    assert_eq!(扶桑改二.book_no, 211);
+    assert_eq!(扶桑改二.ship_class.as_ref().unwrap(), "扶桑型");
+    assert_eq!(扶桑改二.ship_class_index.unwrap(), 1);
+    assert_eq!(扶桑改二.ship_type, "航空戦艦");
+    assert_eq!(扶桑改二.ship_model_num, "");
+    assert_eq!(扶桑改二.ship_name, "扶桑改二");
+    assert_eq!(扶桑改二.card_index_img, "s/tc_211_xkrpspyq72qz.jpg");
+    assert_eq!(扶桑改二.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(早霜.source(0), Normal);
+        assert_eq!(早霜.source(1), RainySeason);
+    }
+    assert_eq!(扶桑改二.variation_num, 6);
+    assert_eq!(扶桑改二.acquire_num, 1);
+    assert_eq!(扶桑改二.lv, 105);
+    assert_eq!(扶桑改二.is_married.as_ref().unwrap(), &vec![true, true]);
+    assert_eq!(扶桑改二.married_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        扶桑改二.married_img.as_ref().unwrap(),
+        &vec!["s/tc_211_61n9a2tn6jtt.jpg"]
+    );
+    let 扶桑改二_card_list_0 = &扶桑改二.card_list[0];
+    assert_eq!(扶桑改二_card_list_0.priority, 0);
+    assert_eq!(扶桑改二_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &扶桑改二_card_list_0.card_img_list,
+        &vec!["s/tc_211_xkrpspyq72qz.jpg", "", "",]
+    );
+    assert_eq!(扶桑改二_card_list_0.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        扶桑改二_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_rpyd1nnecq4w_n.png"]
+    );
+    assert_eq!(扶桑改二_card_list_0.variation_num_in_page, 3);
+    assert_eq!(扶桑改二_card_list_0.acquire_num_in_page, 1);
+    let 扶桑改二_card_list_1 = &扶桑改二.card_list[1];
+    assert_eq!(扶桑改二_card_list_1.priority, 1);
+    assert_eq!(扶桑改二_card_list_1.card_img_list.len(), 3);
+    assert_eq!(&扶桑改二_card_list_1.card_img_list, &vec!["", "", "",]);
+    assert!(扶桑改二_card_list_1.status_img.is_none());
+    assert_eq!(扶桑改二_card_list_1.variation_num_in_page, 3);
+    assert_eq!(扶桑改二_card_list_1.acquire_num_in_page, 0);
+
+    // Interesting because it has a variation only in its kai form.
+    let 雪風 = &tcbook[4];
+    assert_eq!(雪風.book_no, 5);
+    assert_eq!(雪風.ship_class.as_ref().unwrap(), "陽炎型");
+    assert_eq!(雪風.ship_class_index.unwrap(), 8);
+    assert_eq!(雪風.ship_type, "駆逐艦");
+    assert_eq!(雪風.ship_model_num, "");
+    assert_eq!(雪風.ship_name, "雪風");
+    assert_eq!(雪風.card_index_img, "s/tc_5_gc3ynk3f42p4.jpg");
+    assert_eq!(雪風.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(雪風.source(0), Normal);
+        assert_eq!(雪風.source(1), Swimsuit);
+    }
+    assert_eq!(雪風.variation_num, 9);
+    assert_eq!(雪風.acquire_num, 4);
+    assert_eq!(雪風.lv, 41);
+    assert_eq!(
+        雪風.is_married.as_ref().unwrap(),
+        &vec![false, false, false]
+    );
+    assert_eq!(雪風.married_img.as_ref().unwrap().len(), 0);
+    let 雪風_card_list_0 = &雪風.card_list[0];
+    assert_eq!(雪風_card_list_0.priority, 0);
+    assert_eq!(雪風_card_list_0.card_img_list.len(), 6);
+    assert_eq!(
+        &雪風_card_list_0.card_img_list,
+        &vec![
+            "s/tc_5_gc3ynk3f42p4.jpg",
+            "s/tc_5_grzytq71dazm.jpg",
+            "",
+            "",
+            "s/tc_5_20f4czkuk3uq.jpg",
+            "",
+        ]
+    );
+    assert_eq!(雪風_card_list_0.status_img.as_ref().unwrap().len(), 2);
+    assert_eq!(
+        雪風_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_gc3ynk3f42p4_n.png", "i/i_7sy2x2xkfurn_n.png"]
+    );
+    assert_eq!(雪風_card_list_0.variation_num_in_page, 6);
+    assert_eq!(雪風_card_list_0.acquire_num_in_page, 3);
+    let 雪風_card_list_1 = &雪風.card_list[1];
+    assert_eq!(雪風_card_list_1.priority, 1);
+    assert_eq!(雪風_card_list_1.card_img_list.len(), 3);
+    assert_eq!(
+        &雪風_card_list_1.card_img_list,
+        &vec!["s/tc_5_nfwyfjkqnmwp.jpg", "", "",]
+    );
+    assert_eq!(雪風_card_list_1.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        雪風_card_list_1.status_img.as_ref().unwrap(),
+        &vec!["i/i_mqxamkacq4qm_n.png"]
+    );
+    assert_eq!(雪風_card_list_1.variation_num_in_page, 3);
+    assert_eq!(雪風_card_list_1.acquire_num_in_page, 1);
+}
+
+#[test]
+fn test_book_split_haskai_20240623() {
+    let tcbook = read_tclist(TCBOOK_2024_06_23.as_ref()).unwrap();
+    assert_eq!(tcbook.len(), 284);
+
+    validate_tcbook_split_common(&tcbook);
+
+    let 長門 = &tcbook[0];
+
+    let (長門_nonkai, 長門_kai) = 長門.clone().into_kai_split();
+    let 長門_kai = 長門_kai.unwrap();
+
+    assert_eq!(長門_nonkai.book_no, 1);
+    assert_eq!(長門_nonkai.ship_class.as_ref().unwrap(), "長門型");
+    assert_eq!(長門_nonkai.ship_class_index.unwrap(), 1);
+    assert_eq!(長門_nonkai.ship_type, "戦艦");
+    assert_eq!(長門_nonkai.ship_model_num, "");
+    assert_eq!(長門_nonkai.ship_name, "長門");
+    assert_eq!(長門_nonkai.card_index_img, "s/tc_1_d7ju63kolamj.jpg");
+    assert_eq!(長門_nonkai.card_list.len(), 1);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(長門_nonkai.source(0), Normal);
+    }
+    assert_eq!(長門_nonkai.variation_num, 3);
+    assert_eq!(長門_nonkai.acquire_num, 1);
+    assert_eq!(長門_nonkai.lv, 56);
+    assert_eq!(長門_nonkai.is_married.as_ref().unwrap(), &vec![false]);
+    assert_eq!(長門_nonkai.married_img.as_ref().unwrap().len(), 0);
+    let 長門_nonkai_card_list_0 = &長門_nonkai.card_list[0];
+    assert_eq!(長門_nonkai_card_list_0.priority, 0);
+    assert_eq!(長門_nonkai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &長門_nonkai_card_list_0.card_img_list,
+        &vec!["s/tc_1_d7ju63kolamj.jpg", "", "",]
+    );
+    assert_eq!(
+        長門_nonkai_card_list_0.status_img.as_ref().unwrap().len(),
+        1
+    );
+    assert_eq!(
+        長門_nonkai_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_d7ju63kolamj_n.png"]
+    );
+    assert_eq!(長門_nonkai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(長門_nonkai_card_list_0.acquire_num_in_page, 1);
+
+    assert_eq!(長門_kai.book_no, 1);
+    assert_eq!(長門_kai.ship_class.as_ref().unwrap(), "長門型");
+    assert_eq!(長門_kai.ship_class_index.unwrap(), 1);
+    assert_eq!(長門_kai.ship_type, "戦艦");
+    assert_eq!(長門_kai.ship_model_num, "");
+    assert_eq!(長門_kai.ship_name, "長門改");
+    assert_eq!(長門_kai.card_index_img, "s/tc_1_d7ju63kolamj.jpg");
+    assert_eq!(長門_kai.card_list.len(), 1);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(長門_kai.source(0), Normal);
+    }
+    assert_eq!(長門_kai.variation_num, 3);
+    assert_eq!(長門_kai.acquire_num, 1);
+    assert_eq!(長門_kai.lv, 56);
+    assert_eq!(長門_kai.is_married.as_ref().unwrap(), &vec![false]);
+    assert_eq!(長門_kai.married_img.as_ref().unwrap().len(), 0);
+    let 長門_kai_card_list_0 = &長門_kai.card_list[0];
+    assert_eq!(長門_kai_card_list_0.priority, 0);
+    assert_eq!(長門_kai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &長門_kai_card_list_0.card_img_list,
+        &vec!["s/tc_1_2wp6daq4fn42.jpg", "", ""]
+    );
+    assert_eq!(長門_kai_card_list_0.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        長門_kai_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_2wp6daq4fn42_n.png"]
+    );
+    assert_eq!(長門_kai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(長門_kai_card_list_0.acquire_num_in_page, 1);
+
+    // Interesting because it has a variation only in its kai form.
+    let 雪風 = &tcbook[4];
+
+    let (雪風_nonkai, 雪風_kai) = 雪風.clone().into_kai_split();
+    let 雪風_kai = 雪風_kai.unwrap();
+
+    // TODO: acquire_num == 0 basically never appears in real data. What do we do?
+    // Also, source data is iffy. See TODO elsewhere about that.
+    assert_eq!(雪風_nonkai.book_no, 5);
+    assert_eq!(雪風_nonkai.ship_class.as_ref().unwrap(), "陽炎型");
+    assert_eq!(雪風_nonkai.ship_class_index.unwrap(), 8);
+    assert_eq!(雪風_nonkai.ship_type, "駆逐艦");
+    assert_eq!(雪風_nonkai.ship_model_num, "");
+    assert_eq!(雪風_nonkai.ship_name, "雪風");
+    assert_eq!(雪風_nonkai.card_index_img, "s/tc_5_gc3ynk3f42p4.jpg");
+    assert_eq!(雪風_nonkai.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(雪風_nonkai.source(0), Normal);
+        assert_eq!(雪風_nonkai.source(1), Swimsuit);
+    }
+    assert_eq!(雪風_nonkai.variation_num, 3);
+    assert_eq!(雪風_nonkai.acquire_num, 2);
+    assert_eq!(雪風_nonkai.lv, 1);
+    assert_eq!(雪風_nonkai.is_married.as_ref().unwrap(), &vec![false]);
+    assert_eq!(雪風_nonkai.married_img.as_ref().unwrap().len(), 0);
+    let 雪風_nonkai_card_list_0 = &雪風_nonkai.card_list[0];
+    assert_eq!(雪風_nonkai_card_list_0.priority, 0);
+    assert_eq!(雪風_nonkai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &雪風_nonkai_card_list_0.card_img_list,
+        &vec!["s/tc_5_gc3ynk3f42p4.jpg", "s/tc_5_grzytq71dazm.jpg", "",]
+    );
+    assert_eq!(
+        雪風_nonkai_card_list_0.status_img.as_ref().unwrap().len(),
+        1
+    );
+    assert_eq!(
+        雪風_nonkai_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_gc3ynk3f42p4_n.png"]
+    );
+    assert_eq!(雪風_nonkai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(雪風_nonkai_card_list_0.acquire_num_in_page, 2);
+    let 雪風_nonkai_card_list_1 = &雪風_nonkai.card_list[1];
+    assert_eq!(雪風_nonkai_card_list_1.priority, 1);
+    // NOTE: This breaks the assumption that all pages are 3 or 6, compared to upstream data.
+    assert!(雪風_nonkai_card_list_1.card_img_list.is_empty());
+    assert!(雪風_nonkai_card_list_1.status_img.is_none());
+    assert_eq!(雪風_nonkai_card_list_1.variation_num_in_page, 0);
+    assert_eq!(雪風_nonkai_card_list_1.acquire_num_in_page, 0);
+
+    assert_eq!(雪風_kai.book_no, 5);
+    assert_eq!(雪風_kai.ship_class.as_ref().unwrap(), "陽炎型");
+    assert_eq!(雪風_kai.ship_class_index.unwrap(), 8);
+    assert_eq!(雪風_kai.ship_type, "駆逐艦");
+    assert_eq!(雪風_kai.ship_model_num, "");
+    assert_eq!(雪風_kai.ship_name, "雪風改");
+    assert_eq!(雪風_kai.card_index_img, "s/tc_5_gc3ynk3f42p4.jpg");
+    assert_eq!(雪風_kai.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(雪風_kai.source(0), Normal);
+        assert_eq!(雪風_kai.source(1), Swimsuit);
+    }
+    assert_eq!(雪風_kai.variation_num, 6);
+    assert_eq!(雪風_kai.acquire_num, 0);
+    assert_eq!(雪風_kai.lv, 1);
+    assert_eq!(雪風_kai.is_married.as_ref().unwrap(), &vec![false, false]);
+    assert_eq!(雪風_kai.married_img.as_ref().unwrap().len(), 0);
+    let 雪風_kai_card_list_0 = &雪風_kai.card_list[0];
+    assert_eq!(雪風_kai_card_list_0.priority, 0);
+    assert_eq!(雪風_kai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(&雪風_kai_card_list_0.card_img_list, &vec!["", "", "",]);
+    assert!(雪風_kai_card_list_0.status_img.as_ref().unwrap().is_empty());
+    assert_eq!(雪風_kai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(雪風_kai_card_list_0.acquire_num_in_page, 0);
+    let 雪風_kai_card_list_1 = &雪風_kai.card_list[1];
+    assert_eq!(雪風_kai_card_list_1.priority, 1);
+    assert_eq!(雪風_kai_card_list_1.card_img_list.len(), 3);
+    assert_eq!(&雪風_kai_card_list_1.card_img_list, &vec!["", "", "",]);
+    assert!(雪風_kai_card_list_1.status_img.is_none());
+    assert_eq!(雪風_kai_card_list_1.variation_num_in_page, 3);
+    assert_eq!(雪風_kai_card_list_1.acquire_num_in_page, 0);
+}
+
+#[test]
+fn test_book_split_haskai_20241006() {
+    let tcbook = read_tclist(TCBOOK_2024_10_06.as_ref()).unwrap();
+    assert_eq!(tcbook.len(), 285);
+
+    validate_tcbook_split_common(&tcbook);
+
+    let 長門 = &tcbook[0];
+
+    let (長門_nonkai, 長門_kai) = 長門.clone().into_kai_split();
+    let 長門_kai = 長門_kai.unwrap();
+
+    assert_eq!(長門_nonkai.book_no, 1);
+    assert_eq!(長門_nonkai.ship_class.as_ref().unwrap(), "長門型");
+    assert_eq!(長門_nonkai.ship_class_index.unwrap(), 1);
+    assert_eq!(長門_nonkai.ship_type, "戦艦");
+    assert_eq!(長門_nonkai.ship_model_num, "");
+    assert_eq!(長門_nonkai.ship_name, "長門");
+    assert_eq!(長門_nonkai.card_index_img, "s/tc_1_d7ju63kolamj.jpg");
+    assert_eq!(長門_nonkai.card_list.len(), 1);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(長門_nonkai.source(0), Normal);
+    }
+    assert_eq!(長門_nonkai.variation_num, 3);
+    assert_eq!(長門_nonkai.acquire_num, 2);
+    assert_eq!(長門_nonkai.lv, 56);
+    assert_eq!(長門_nonkai.is_married.as_ref().unwrap(), &vec![false]);
+    assert_eq!(長門_nonkai.married_img.as_ref().unwrap().len(), 0);
+    let 長門_nonkai_card_list_0 = &長門_nonkai.card_list[0];
+    assert_eq!(長門_nonkai_card_list_0.priority, 0);
+    assert_eq!(長門_nonkai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &長門_nonkai_card_list_0.card_img_list,
+        &vec!["s/tc_1_d7ju63kolamj.jpg", "s/tc_1_kgsz396y04p3.jpg", "",]
+    );
+    assert_eq!(
+        長門_nonkai_card_list_0.status_img.as_ref().unwrap().len(),
+        1
+    );
+    assert_eq!(
+        長門_nonkai_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_d7ju63kolamj_n.png"]
+    );
+    assert_eq!(長門_nonkai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(長門_nonkai_card_list_0.acquire_num_in_page, 2);
+
+    assert_eq!(長門_kai.book_no, 1);
+    assert_eq!(長門_kai.ship_class.as_ref().unwrap(), "長門型");
+    assert_eq!(長門_kai.ship_class_index.unwrap(), 1);
+    assert_eq!(長門_kai.ship_type, "戦艦");
+    assert_eq!(長門_kai.ship_model_num, "");
+    assert_eq!(長門_kai.ship_name, "長門改");
+    assert_eq!(長門_kai.card_index_img, "s/tc_1_d7ju63kolamj.jpg");
+    assert_eq!(長門_kai.card_list.len(), 1);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(長門_kai.source(0), Normal);
+    }
+    assert_eq!(長門_kai.variation_num, 3);
+    assert_eq!(長門_kai.acquire_num, 1);
+    assert_eq!(長門_kai.lv, 56);
+    assert_eq!(長門_kai.is_married.as_ref().unwrap(), &vec![false]);
+    assert_eq!(長門_kai.married_img.as_ref().unwrap().len(), 0);
+    let 長門_kai_card_list_0 = &長門_kai.card_list[0];
+    assert_eq!(長門_kai_card_list_0.priority, 0);
+    assert_eq!(長門_kai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &長門_kai_card_list_0.card_img_list,
+        &vec!["s/tc_1_2wp6daq4fn42.jpg", "", ""]
+    );
+    assert_eq!(長門_kai_card_list_0.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        長門_kai_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_2wp6daq4fn42_n.png"]
+    );
+    assert_eq!(長門_kai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(長門_kai_card_list_0.acquire_num_in_page, 1);
+
+    // Interesting because it has a variation only in its kai form.
+    let 雪風 = &tcbook[4];
+
+    let (雪風_nonkai, 雪風_kai) = 雪風.clone().into_kai_split();
+    let 雪風_kai = 雪風_kai.unwrap();
+
+    // TODO: acquire_num == 0 basically never appears in real data. What do we do?
+    // Also, source data is iffy. See TODO elsewhere about that.
+    assert_eq!(雪風_nonkai.book_no, 5);
+    assert_eq!(雪風_nonkai.ship_class.as_ref().unwrap(), "陽炎型");
+    assert_eq!(雪風_nonkai.ship_class_index.unwrap(), 8);
+    assert_eq!(雪風_nonkai.ship_type, "駆逐艦");
+    assert_eq!(雪風_nonkai.ship_model_num, "");
+    assert_eq!(雪風_nonkai.ship_name, "雪風");
+    assert_eq!(雪風_nonkai.card_index_img, "s/tc_5_gc3ynk3f42p4.jpg");
+    assert_eq!(雪風_nonkai.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(雪風_nonkai.source(0), Normal);
+        assert_eq!(雪風_nonkai.source(1), Swimsuit);
+    }
+    assert_eq!(雪風_nonkai.variation_num, 3);
+    assert_eq!(雪風_nonkai.acquire_num, 2);
+    assert_eq!(雪風_nonkai.lv, 41);
+    assert_eq!(雪風_nonkai.is_married.as_ref().unwrap(), &vec![false]);
+    assert_eq!(雪風_nonkai.married_img.as_ref().unwrap().len(), 0);
+    let 雪風_nonkai_card_list_0 = &雪風_nonkai.card_list[0];
+    assert_eq!(雪風_nonkai_card_list_0.priority, 0);
+    assert_eq!(雪風_nonkai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &雪風_nonkai_card_list_0.card_img_list,
+        &vec!["s/tc_5_gc3ynk3f42p4.jpg", "s/tc_5_grzytq71dazm.jpg", "",]
+    );
+    assert_eq!(
+        雪風_nonkai_card_list_0.status_img.as_ref().unwrap().len(),
+        1
+    );
+    assert_eq!(
+        雪風_nonkai_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_gc3ynk3f42p4_n.png"]
+    );
+    assert_eq!(雪風_nonkai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(雪風_nonkai_card_list_0.acquire_num_in_page, 2);
+    let 雪風_nonkai_card_list_1 = &雪風_nonkai.card_list[1];
+    assert_eq!(雪風_nonkai_card_list_1.priority, 1);
+    // NOTE: This breaks the assumption that all pages are 3 or 6, compared to upstream data.
+    assert!(雪風_nonkai_card_list_1.card_img_list.is_empty());
+    assert!(雪風_nonkai_card_list_1.status_img.is_none());
+    assert_eq!(雪風_nonkai_card_list_1.variation_num_in_page, 0);
+    assert_eq!(雪風_nonkai_card_list_1.acquire_num_in_page, 0);
+
+    assert_eq!(雪風_kai.book_no, 5);
+    assert_eq!(雪風_kai.ship_class.as_ref().unwrap(), "陽炎型");
+    assert_eq!(雪風_kai.ship_class_index.unwrap(), 8);
+    assert_eq!(雪風_kai.ship_type, "駆逐艦");
+    assert_eq!(雪風_kai.ship_model_num, "");
+    assert_eq!(雪風_kai.ship_name, "雪風改");
+    assert_eq!(雪風_kai.card_index_img, "s/tc_5_gc3ynk3f42p4.jpg");
+    assert_eq!(雪風_kai.card_list.len(), 2);
+    {
+        use BookShipCardPageSource::*;
+        assert_eq!(雪風_kai.source(0), Normal);
+        assert_eq!(雪風_kai.source(1), Swimsuit);
+    }
+    assert_eq!(雪風_kai.variation_num, 6);
+    assert_eq!(雪風_kai.acquire_num, 2);
+    assert_eq!(雪風_kai.lv, 41);
+    assert_eq!(雪風_kai.is_married.as_ref().unwrap(), &vec![false, false]);
+    assert_eq!(雪風_kai.married_img.as_ref().unwrap().len(), 0);
+    let 雪風_kai_card_list_0 = &雪風_kai.card_list[0];
+    assert_eq!(雪風_kai_card_list_0.priority, 0);
+    assert_eq!(雪風_kai_card_list_0.card_img_list.len(), 3);
+    assert_eq!(
+        &雪風_kai_card_list_0.card_img_list,
+        &vec!["", "s/tc_5_20f4czkuk3uq.jpg", "",]
+    );
+    assert_eq!(雪風_kai_card_list_0.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        雪風_kai_card_list_0.status_img.as_ref().unwrap(),
+        &vec!["i/i_7sy2x2xkfurn_n.png"]
+    );
+    assert_eq!(雪風_kai_card_list_0.variation_num_in_page, 3);
+    assert_eq!(雪風_kai_card_list_0.acquire_num_in_page, 1);
+    let 雪風_kai_card_list_1 = &雪風_kai.card_list[1];
+    assert_eq!(雪風_kai_card_list_1.priority, 1);
+    assert_eq!(雪風_kai_card_list_1.card_img_list.len(), 3);
+    assert_eq!(
+        &雪風_kai_card_list_1.card_img_list,
+        &vec!["s/tc_5_nfwyfjkqnmwp.jpg", "", "",]
+    );
+    assert_eq!(雪風_kai_card_list_1.status_img.as_ref().unwrap().len(), 1);
+    assert_eq!(
+        雪風_kai_card_list_1.status_img.as_ref().unwrap(),
+        &vec!["i/i_mqxamkacq4qm_n.png"]
+    );
+    assert_eq!(雪風_kai_card_list_1.variation_num_in_page, 3);
+    assert_eq!(雪風_kai_card_list_1.acquire_num_in_page, 1);
 }

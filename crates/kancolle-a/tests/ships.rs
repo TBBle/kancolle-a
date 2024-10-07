@@ -127,14 +127,14 @@ async fn test_ships_book_only_import() {
             .shipmod_iter()
             .filter(|ship| !*ship.book_secondrow())
             .count(),
-        253
+        404
     );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| *ship.book_secondrow())
             .count(),
-        151
+        0
     );
 }
 
@@ -205,14 +205,14 @@ async fn test_ships_full_import() {
             .shipmod_iter()
             .filter(|ship| ship.book().is_some() && !*ship.book_secondrow())
             .count(),
-        253
+        404
     );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| ship.book().is_some() && *ship.book_secondrow())
             .count(),
-        151
+        0
     );
     assert_eq!(
         ships

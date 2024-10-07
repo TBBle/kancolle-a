@@ -63,30 +63,14 @@ async fn main() -> Result<()> {
             BookShipCardPageSourceDiscriminants::from(book_ship.source(page.priority))
                 == target_source
         }) {
-            let (row1, row2) = page.card_img_list.split_at(3);
-            // 雪風 has no swimsuits, but 雪風改 does. And they share a book entry.
-            // TODO: Handle this in the library somehow.
-            // Probably need to replace direct card_img_list access with a function that returns the right list.
-            // That'll nicely also take a source name, rather than an index.
-            if target_source == BookShipCardPageSourceDiscriminants::Swimsuit {
-                if shipmod.name() == "雪風" {
-                    assert!(row1.len() == 3);
-                    assert!(row2.is_empty());
-                    continue;
-                }
-                if shipmod.name() == "雪風改" {
-                    assert!(row1.len() == 3);
-                    assert!(row2.is_empty());
-                    card_status.push((
-                        book_ship.book_no,
-                        shipmod.name().clone(),
-                        !row1[0].is_empty(),
-                        !row1[1].is_empty(),
-                        !row1[2].is_empty(),
-                    ));
-                    continue;
-                }
+            // Sort-of special case: 雪風 has no swimsuits, but 雪風改 does.
+            // So when the page was split, 雪風 page 1 ends up with an empty list of cards.
+            // TODO: Find a way to remove the page entirely without breaking callers of source()
+            if page.card_img_list.is_empty() {
+                continue;
             }
+
+            let (row1, row2) = page.card_img_list.split_at(3);
             if !shipmod.book_secondrow() {
                 card_status.push((
                     book_ship.book_no,

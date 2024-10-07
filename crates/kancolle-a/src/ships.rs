@@ -337,10 +337,6 @@ impl Ships {
 
         // TODO: Don't panic in case of duplicates, return an error.
 
-        // For two-row book pages, it'd be nice if Ship could just hold references into the relevant
-        // lists rather than cloning, but Rust data model makes that hard.
-        // See https://docs.rs/rental/latest/rental/ but I don't know if that crate can solve this instance.
-
         // Helper function for use with or_insert_with_key.
         let ship_inserter = |ship_name: &String| Ship::new(ship_name.clone());
 
@@ -401,30 +397,27 @@ impl Ships {
 
         if let Some(book) = book {
             for book_ship in book.into_iter() {
-                if book_ship.card_list[0].variation_num_in_page == 6 {
-                    // Clone book entry for the 改 modification which shares it
-                    let book_ship = book_ship.clone();
-                    let book_ship_name = format!("{}改", book_ship.ship_name);
+                let (book_nonkai, book_kai) = book_ship.into_kai_split();
 
+                if let Some(book_kai) = book_kai {
                     let ship = shipmods
-                        .entry(book_ship_name)
+                        .entry(book_kai.ship_name.clone())
                         .or_insert_with_key(shipmod_inserter);
-                    ship.book_secondrow = true;
                     match &mut ship.book {
-                        None => ship.book = Some(book_ship),
+                        None => ship.book = Some(book_kai),
                         Some(_) => {
-                            panic!("Duplicate book entry for {}", book_ship.ship_name)
+                            panic!("Duplicate book entry for {}", book_kai.ship_name)
                         }
                     };
                 }
 
                 let ship = shipmods
-                    .entry(book_ship.ship_name.clone())
+                    .entry(book_nonkai.ship_name.clone())
                     .or_insert_with_key(shipmod_inserter);
                 match &mut ship.book {
-                    None => ship.book = Some(book_ship),
+                    None => ship.book = Some(book_nonkai),
                     Some(_) => {
-                        panic!("Duplicate book entry for {}", book_ship.ship_name)
+                        panic!("Duplicate book entry for {}", book_nonkai.ship_name)
                     }
                 };
             }
@@ -615,24 +608,19 @@ impl ShipMod {
 
         if let Some(book) = self.book.as_ref() {
             assert_ne!(
-                book.acquire_num, 0,
+                book.variation_num, 0,
                 "Ship {} created from \"Unknown\" book entry {}",
                 self.name, book.book_no
             );
 
             let normal_page = &book.card_list[0];
             assert_eq!(
-                normal_page.variation_num_in_page % 3,
-                0,
+                normal_page.variation_num_in_page, 3,
                 "Unexpected variation count {} on normal page of {}",
-                normal_page.variation_num_in_page,
-                book.book_no
+                normal_page.variation_num_in_page, book.book_no
             );
-            let row_count = normal_page.variation_num_in_page / 3;
-            assert_eq!(
-                self.book_secondrow,
-                row_count > 1 && self.name.ends_with('改')
-            );
+            // TODO: Remove book_secondrow.
+            assert!(!self.book_secondrow);
         }
 
         if let Some(kekkon) = self.kekkon.as_ref() {

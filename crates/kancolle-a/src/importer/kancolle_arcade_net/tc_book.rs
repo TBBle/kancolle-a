@@ -15,7 +15,7 @@ pub(crate) fn read_tclist(tcbook_reader: impl Read) -> Result<TcBook> {
     Ok(result)
 }
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Debug, Deserialize, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShip {
@@ -410,9 +410,311 @@ impl BookShip {
             Unknown
         }
     }
+
+    /// Split ourselves into a non-kai and optional kai BookShips.
+    pub(crate) fn into_kai_split(mut self) -> (BookShip, Option<BookShip>) {
+        if self.card_list.is_empty() || self.card_list[0].variation_num_in_page == 3 {
+            return (self, None);
+        }
+
+        let mut kai = self.clone();
+        kai.ship_name += "改";
+
+        let mut variation_count = 0u16;
+        let mut owned_count = 0u16;
+        let mut self_non_original_pages = 0;
+        let mut self_normal_status_img: Option<Vec<String>> = None;
+        for card_page in self.card_list.as_mut_slice() {
+            use BookShipCardPageSource::*;
+            // Cheating using kai because the borrow checker won't let us use self due to
+            // the mut borrow to get our iterator.
+            match kai.source(card_page.priority) {
+                // 雪風 has no swimsuits, but 雪風改 does. And they share a book entry. >_<
+                Swimsuit if self.ship_name == "雪風" => {
+                    // Drop this page.
+                    card_page.acquire_num_in_page = 0;
+                    card_page.variation_num_in_page = 0;
+                    // TODO: We aren't actually dropping this page, so for sanity, clear the array.
+                    card_page.card_img_list.clear();
+                    card_page.status_img = None;
+                }
+                OriginalIllustration1(false) | OriginalIllustration2(false, false) => {
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(self_normal_status_img.is_some());
+                    card_page.status_img = self_normal_status_img.clone();
+                }
+                OriginalIllustration1(true) | OriginalIllustration2(true, true) => {
+                    // Drop this page.
+                    card_page.acquire_num_in_page = 0;
+                    card_page.variation_num_in_page = 0;
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(self_normal_status_img.is_some());
+                    card_page.status_img = self_normal_status_img.clone();
+                    // TODO: We aren't actually dropping this page, so for sanity, clear the array.
+                    card_page.card_img_list.clear();
+                }
+                OriginalIllustration2(false, true) => {
+                    // Take the first one only
+                    assert_eq!(card_page.variation_num_in_page, 2);
+                    assert_eq!(card_page.card_img_list.len(), 2);
+                    card_page.card_img_list.remove(1);
+                    card_page.variation_num_in_page = 1;
+
+                    // Fix counts
+                    card_page.acquire_num_in_page = card_page
+                        .card_img_list
+                        .iter()
+                        .filter(|s| !s.is_empty())
+                        .count() as u16;
+
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(self_normal_status_img.is_some());
+                    card_page.status_img = self_normal_status_img.clone();
+
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                }
+                OriginalIllustration2(true, false) => {
+                    // Take the second one only
+                    assert_eq!(card_page.variation_num_in_page, 2);
+                    assert_eq!(card_page.card_img_list.len(), 2);
+                    card_page.card_img_list.remove(0);
+                    card_page.variation_num_in_page = 1;
+
+                    // Fix counts
+                    card_page.acquire_num_in_page = card_page
+                        .card_img_list
+                        .iter()
+                        .filter(|s| !s.is_empty())
+                        .count() as u16;
+
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(self_normal_status_img.is_some());
+                    card_page.status_img = self_normal_status_img.clone();
+
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                }
+                source => {
+                    // Split, take the first half
+                    assert_eq!(card_page.variation_num_in_page, 6);
+                    assert_eq!(card_page.card_img_list.len(), 6);
+                    card_page.card_img_list.truncate(3);
+                    card_page.variation_num_in_page = 3;
+
+                    // Fix counts
+                    card_page.acquire_num_in_page = card_page
+                        .card_img_list
+                        .iter()
+                        .filter(|s| !s.is_empty())
+                        .count() as u16;
+
+                    // Fix status images
+                    if let Some(status_image) = card_page.status_img.as_mut() {
+                        if card_page.acquire_num_in_page > 0 {
+                            status_image.truncate(1);
+                        } else {
+                            status_image.clear();
+                        }
+                    }
+
+                    if matches!(source, Normal) {
+                        // Store a copy of the normal status page for OriginalIllustrations to use
+                        assert!(self_normal_status_img.is_none());
+                        assert!(card_page.status_img.is_some());
+                        self_normal_status_img = card_page.status_img.clone();
+                    } else if card_page
+                        .status_img
+                        .as_ref()
+                        .map_or(false, |s| s.is_empty())
+                    {
+                        // If we emptied the status image array, None it instead.
+                        card_page.status_img = None;
+                    }
+
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+
+                    self_non_original_pages += 1;
+                }
+            }
+        }
+
+        self.variation_num = variation_count;
+        self.acquire_num = owned_count;
+
+        // NOTE: We cannot remove the 0-variation pages from self yet, as we need source() to
+        // return the correct value until we finish processing the kai data.
+        // In fact, we may not be able to remove them at all, due to source() validating that.
+        // TODO: What about a function to wrap walking the pages with their source?
+        // We may need to remove source() from the public API since splitting the book like this
+        // will break it.
+        // IDEA: Push source() up into Ship, and massage things there? Still messy, but only
+        // internally-messy.
+
+        let mut variation_count = 0u16;
+        let mut owned_count = 0u16;
+        let mut kai_non_original_pages = 0;
+        let mut kai_normal_status_img: Option<Vec<String>> = None;
+        for card_page in kai.card_list.as_mut_slice() {
+            use BookShipCardPageSource::*;
+            // Cheating using self because the borrow checker won't let us use kai due to
+            // the mut borrow to get our iterator.
+            match self.source(card_page.priority) {
+                // 雪風 has no swimsuits, but 雪風改 does. And they share a book entry. >_<
+                Swimsuit if kai.ship_name == "雪風改" => {
+                    // Keep this page.
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                    kai_non_original_pages += 1;
+                }
+                OriginalIllustration1(true) | OriginalIllustration2(true, true) => {
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(kai_normal_status_img.is_some());
+                    card_page.status_img = kai_normal_status_img.clone();
+                }
+                OriginalIllustration1(false) | OriginalIllustration2(false, false) => {
+                    // Drop this page.
+                    card_page.acquire_num_in_page = 0;
+                    card_page.variation_num_in_page = 0;
+                    // TODO: We aren't actually dropping this page, so for sanity, clear the array.
+                    card_page.card_img_list.clear();
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(kai_normal_status_img.is_some());
+                    card_page.status_img = kai_normal_status_img.clone();
+                }
+                OriginalIllustration2(true, false) => {
+                    // Take the first one only
+                    assert_eq!(card_page.variation_num_in_page, 2);
+                    assert_eq!(card_page.card_img_list.len(), 2);
+                    card_page.card_img_list.remove(1);
+                    card_page.variation_num_in_page = 1;
+
+                    // Fix counts
+                    card_page.acquire_num_in_page = card_page
+                        .card_img_list
+                        .iter()
+                        .filter(|s| !s.is_empty())
+                        .count() as u16;
+
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(kai_normal_status_img.is_some());
+                    card_page.status_img = kai_normal_status_img.clone();
+
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                }
+                OriginalIllustration2(false, true) => {
+                    // Take the second one only
+                    assert_eq!(card_page.variation_num_in_page, 2);
+                    assert_eq!(card_page.card_img_list.len(), 2);
+                    card_page.card_img_list.remove(0);
+                    card_page.variation_num_in_page = 1;
+
+                    // Fix counts
+                    card_page.acquire_num_in_page = card_page
+                        .card_img_list
+                        .iter()
+                        .filter(|s| !s.is_empty())
+                        .count() as u16;
+
+                    // Original Illustrations should have the same status icons as the Normal page
+                    assert!(kai_normal_status_img.is_some());
+                    card_page.status_img = kai_normal_status_img.clone();
+
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                }
+                source => {
+                    // Split, take the second half
+                    assert_eq!(card_page.variation_num_in_page, 6);
+                    assert_eq!(card_page.card_img_list.len(), 6);
+                    drop(card_page.card_img_list.drain(0..3));
+                    card_page.variation_num_in_page = 3;
+
+                    // Fix counts
+                    card_page.acquire_num_in_page = card_page
+                        .card_img_list
+                        .iter()
+                        .filter(|s| !s.is_empty())
+                        .count() as u16;
+
+                    // Fix status images
+                    if let Some(status_img) = card_page.status_img.as_mut() {
+                        if card_page.acquire_num_in_page == 0 {
+                            status_img.clear();
+                        } else if status_img.len() == 2 {
+                            status_img.remove(0);
+                        }
+                    }
+
+                    if matches!(source, Normal) {
+                        // Store a copy of the normal status page for OriginalIllustrations to use
+                        assert!(kai_normal_status_img.is_none());
+                        assert!(card_page.status_img.is_some());
+                        kai_normal_status_img = card_page.status_img.clone();
+                    } else if card_page
+                        .status_img
+                        .as_ref()
+                        .map_or(false, |s| s.is_empty())
+                    {
+                        // If we emptied the status image array, None it instead.
+                        card_page.status_img = None;
+                    }
+
+                    variation_count += card_page.variation_num_in_page;
+                    owned_count += card_page.acquire_num_in_page;
+                    kai_non_original_pages += 1;
+                }
+            }
+        }
+
+        kai.variation_num = variation_count;
+        kai.acquire_num = owned_count;
+
+        // Fixup isMarried and marriedImg
+        if let Some(married_vec) = self.is_married.as_ref() {
+            assert!(self.married_img.is_some());
+            let self_married = if self.acquire_num > 0 {
+                *married_vec.first().unwrap()
+            } else {
+                false
+            };
+            let kai_married = if kai.acquire_num > 0 {
+                *married_vec.last().unwrap()
+            } else {
+                false
+            };
+            self.is_married = Some([self_married].repeat(self_non_original_pages));
+            kai.is_married = Some([kai_married].repeat(kai_non_original_pages));
+            if !self_married {
+                self.married_img.as_mut().unwrap().clear();
+            } else if self.married_img.as_ref().unwrap().len() == 2 {
+                self.married_img.as_mut().unwrap().remove(0);
+            }
+
+            if !kai_married {
+                kai.married_img.as_mut().unwrap().clear();
+            } else if kai.married_img.as_ref().unwrap().len() == 2 {
+                kai.married_img.as_mut().unwrap().remove(1);
+            }
+        }
+
+        // TODO: Shrink-to-fit across all the arrays we messed with?
+        // card_page.card_img_list, card_page.status_img, married_img?
+        // If we were going to do that, we could have just created new Vectors anyway...
+        // At this point, I wonder if rather than clone-and-edit, we could have just created two
+        // new BookShips, populated them, and dropped self in the end.
+
+        (self, Some(kai))
+    }
 }
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Debug, Deserialize, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
 pub struct BookShipCardPage {
