@@ -20,9 +20,9 @@ fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: u16) -> Option<
         "春日丸" => vec![(3, 0), (5, 0)],
         _ => match ship_type {
             "駆逐艦" | "軽巡洋艦" | "潜水艦" => vec![(3, 0), (6, 1), (6, 3)],
-            // TODO: As of 2024/9/26, 最上改二 and 最上改二特 are buildable, so need to get their numbers.
-            "重巡洋艦" => vec![(3, 0), (8, 2)],
-            "戦艦" | "軽空母" | "正規空母" => vec![(3, 0), (8, 2), (8, 4)],
+            "戦艦" | "軽空母" | "正規空母" | "重巡洋艦" => {
+                vec![(3, 0), (8, 2), (8, 4)]
+            }
             _ => vec![(3, 0)],
         },
     };
