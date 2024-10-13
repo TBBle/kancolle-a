@@ -6,6 +6,7 @@ use kancolle_a_cli_tools::cli_helpers;
 /// `stage` is 0-indexed, i.e. it's the cost to upgrade _from_ that level.
 /// May report 改三 stage for ships that don't have one, i.e. use it only for ships that actually exist.
 /// This should probably become an internal utility function in the library.
+/// TODO: Move into Ship or ShipMod with a better API.
 fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: u16) -> Option<(u16, u8)> {
     // Special ships.
     let stage_costs = match ship_name {

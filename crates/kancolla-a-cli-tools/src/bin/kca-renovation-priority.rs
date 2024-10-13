@@ -4,6 +4,36 @@ use anyhow::Result;
 use kancolle_a::ships::{self, ShipMod, ShipsBuilder};
 use kancolle_a_cli_tools::cli_helpers;
 
+/// Report the number of blueprints and large-scale blueprints needed for each stage.
+/// `stage` is 0-indexed, i.e. it's the cost to upgrade _from_ that level.
+/// May report 改三 stage for ships that don't have one, i.e. use it only for ships that actually exist.
+/// This should probably become an internal utility function in the library.
+/// TODO: Move into Ship or ShipMod with a better API.
+fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: u16) -> Option<(u16, u8)> {
+    // Special ships.
+    let stage_costs = match ship_name {
+        // TODO: This is shipClassId 5 (ship class name 千歳型). The id is available in blueprints, and the name
+        // is available in Character, Book, and Wiki data. Could we rely on always having at least one?
+        // Notably, kekkon list does not list ship class information at all; can we assume kekkon is a subset of the wiki?
+        // How _reliable_ is the Wiki here? Conversely, since we're matching _blueprint_ names, name-matching
+        // is probably safest, but requires maintenance.
+        "千歳" | "千代田" => vec![(3, 0), (4, 0), (5, 0), (6, 0), (8, 2)],
+        // TODO: Wiki lists base as 春日丸級 and mods as 大鷹型; need to find shipClassId to
+        // Confirm that this forms an actual ship series: 春日丸, 大鷹, 大鷹改.
+        "春日丸" => vec![(3, 0), (5, 0)],
+        _ => match ship_type {
+            "駆逐艦" | "軽巡洋艦" | "潜水艦" => vec![(3, 0), (6, 1), (6, 3)],
+            "戦艦" | "軽空母" | "正規空母" | "重巡洋艦" => {
+                vec![(3, 0), (8, 2), (8, 4)]
+            }
+            _ => vec![(3, 0)],
+        },
+    };
+    return stage_costs
+        .get(stage as usize)
+        .map(|costs| (costs.0 as u16, costs.1 as u8));
+}
+
 pub(crate) mod args {
     use bpaf::*;
     use kancolle_a_cli_tools::cli_helpers::{self, ShipSourceDataOptions};
@@ -54,6 +84,7 @@ async fn main() -> Result<()> {
 
     // Plan: Report ShipMods in the following states, in order:
     // * Ships with no characters or missing base character: Need drops
+    // * Ships with uncollected modified characters, sufficient blueprints to construct
     // * Ships with uncollected modified characters, top mod not yet 5 stars
     // * Ships with uncollected modified characters, top mod 5 stars
     // * Ships with no uncollected modified charactes, top mod not yet 5 stars
@@ -61,6 +92,11 @@ async fn main() -> Result<()> {
     pub enum State<'a> {
         MissingAll(&'a String),
         MissingBase(&'a String),
+        Constructable {
+            ship_name: &'a String,
+            current: &'a ShipMod,
+            next: &'a ShipMod,
+        },
         UpgradeAvailable {
             ship_name: &'a String,
             current: &'a ShipMod,
@@ -117,7 +153,23 @@ async fn main() -> Result<()> {
             if missing(current) || !missing(next) {
                 continue;
             }
-            if current.character().as_ref().unwrap().star_num == 5 {
+
+            if ship.blueprint().is_some()
+                && ship.blueprint().as_ref().unwrap().blueprint_total_num
+                    >= ship_blueprint_costs(
+                        &ship.blueprint().as_ref().unwrap().ship_name,
+                        &ship.blueprint().as_ref().unwrap().ship_type,
+                        current.remodel_level(),
+                    )
+                    .unwrap_or((99, 99))
+                    .0
+            {
+                results.push(State::Constructable {
+                    ship_name,
+                    current,
+                    next,
+                });
+            } else if current.character().as_ref().unwrap().star_num == 5 {
                 results.push(State::UpgradeReady {
                     ship_name,
                     current,
@@ -152,10 +204,18 @@ async fn main() -> Result<()> {
             State::MissingBase(_) => Ordering::Equal,
             _ => Ordering::Greater,
         },
+        State::Constructable { .. } => match right {
+            State::MissingAll(_) | State::MissingBase(_) => Ordering::Less,
+            State::Constructable { .. } => Ordering::Equal,
+            _ => Ordering::Greater,
+        },
+
         State::UpgradeAvailable {
             current: left_curr, ..
         } => match right {
-            State::MissingAll(_) | State::MissingBase(_) => Ordering::Less,
+            State::MissingAll(_) | State::MissingBase(_) | State::Constructable { .. } => {
+                Ordering::Less
+            }
             State::UpgradeAvailable {
                 current: right_curr,
                 ..
@@ -168,9 +228,10 @@ async fn main() -> Result<()> {
             _ => Ordering::Greater,
         },
         State::UpgradeReady { .. } => match right {
-            State::MissingAll(_) | State::MissingBase(_) | State::UpgradeAvailable { .. } => {
-                Ordering::Less
-            }
+            State::MissingAll(_)
+            | State::MissingBase(_)
+            | State::Constructable { .. }
+            | State::UpgradeAvailable { .. } => Ordering::Less,
             State::UpgradeReady { .. } => Ordering::Equal,
             _ => Ordering::Greater,
         },
@@ -194,6 +255,18 @@ async fn main() -> Result<()> {
         match result {
             State::MissingAll(ship_name) => eprintln!("MISSING ALL\t{ship_name}"),
             State::MissingBase(ship_name) => eprintln!("MISSING BASE\t{ship_name}"),
+            State::Constructable {
+                ship_name,
+                current,
+                next,
+            } => {
+                let current_name = current.name();
+                let next_name = next.name();
+                let current_stars = current.character().as_ref().unwrap().star_num;
+                eprintln!(
+                    "CONSTRUCTABLE\t{ship_name}\t{current_name}({current_stars}/5)\t=> {next_name}"
+                );
+            }
             State::UpgradeAvailable {
                 ship_name,
                 current,
