@@ -150,7 +150,7 @@ async fn main() -> Result<()> {
         for i in 0..ship.mods().len() - 1 {
             let ship_mod_pair = &ship.mods()[i..=i + 1];
             let (current, next) = (&ship_mod_pair[0], &ship_mod_pair[1]);
-            if missing(current) || !missing(next) {
+            if current.character().is_none() || !missing(next) {
                 continue;
             }
 
