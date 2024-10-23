@@ -186,7 +186,7 @@ async fn main() -> Result<()> {
 
         let last_ship = ship.mods().last().unwrap();
 
-        if !missing(last_ship) && last_ship.character().as_ref().unwrap().star_num < 5 {
+        if last_ship.character().is_some() && last_ship.character().as_ref().unwrap().star_num < 5 {
             results.push(State::StarsNeeded {
                 ship_name,
                 current: ship.mods().last().unwrap(),
