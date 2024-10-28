@@ -338,6 +338,10 @@ fn init_book_ship_sources() {
         sources.insert(265, vec![Christmas]);
         // 翔鶴改二甲: https://kancolle-a.sega.jp/players/information/211214_1.html
         sources.insert(266, vec![Christmas]);
+        // 瑞鶴改二甲:
+        // * (Christmas) https://kancolle-a.sega.jp/players/information/211214_1.html
+        // * (CapeEngano) https://kancolle-a.sega.jp/players/information/2409_join_zuikaku_kai_2_engano.html
+        sources.insert(267, vec![CapeEngano, Christmas]);
         // 朝潮改二丁: https://kancolle-a.sega.jp/players/information/201013_1.html
         sources.insert(268, vec![Halloween]);
         // 霞改二乙: https://kancolle-a.sega.jp/players/information/200805_1.html
@@ -375,9 +379,6 @@ fn init_book_ship_sources() {
 
         // Info store for ships I don't have at all.
         // Grecale, Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
-        // 瑞鶴改二甲:
-        // * (Christmas) https://kancolle-a.sega.jp/players/information/211214_1.html
-        // * (CapeEngano) https://kancolle-a.sega.jp/players/information/2409_join_zuikaku_kai_2_engano.html
         // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
         // Gotland改: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
 
