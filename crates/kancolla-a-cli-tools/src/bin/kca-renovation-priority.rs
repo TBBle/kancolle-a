@@ -260,11 +260,16 @@ async fn main() -> Result<()> {
                 current,
                 next,
             } => {
+                let next_priority = if next.character().is_none() {
+                    "※ "
+                } else {
+                    ""
+                };
                 let current_name = current.name();
                 let next_name = next.name();
                 let current_stars = current.character().as_ref().unwrap().star_num;
                 eprintln!(
-                    "CONSTRUCTABLE\t{ship_name}\t{current_name}({current_stars}/5)\t=> {next_name}"
+                    "{next_priority}CONSTRUCTABLE\t{ship_name}\t{current_name}({current_stars}/5)\t=> {next_name}"
                 );
             }
             State::UpgradeAvailable {
@@ -272,11 +277,16 @@ async fn main() -> Result<()> {
                 current,
                 next,
             } => {
+                let next_priority = if next.character().is_none() {
+                    "※ "
+                } else {
+                    ""
+                };
                 let current_name = current.name();
                 let next_name = next.name();
                 let current_stars = current.character().as_ref().unwrap().star_num;
                 eprintln!(
-                    "AVAILABLE\t{ship_name}\t{current_name}({current_stars}/5)\t=> {next_name}"
+                    "{next_priority}AVAILABLE\t{ship_name}\t{current_name}({current_stars}/5)\t=> {next_name}"
                 );
             }
             State::UpgradeReady {
@@ -284,9 +294,16 @@ async fn main() -> Result<()> {
                 current,
                 next,
             } => {
+                let next_priority = if next.character().is_none() {
+                    "※ "
+                } else {
+                    ""
+                };
                 let current_name = current.name();
                 let next_name = next.name();
-                eprintln!("READY\t\t{ship_name}\t{current_name}      \t=> {next_name}");
+                eprintln!(
+                    "{next_priority}READY\t\t{ship_name}\t{current_name}      \t=> {next_name}"
+                );
             }
             State::StarsNeeded { ship_name, current } => {
                 let current_name = current.name();
