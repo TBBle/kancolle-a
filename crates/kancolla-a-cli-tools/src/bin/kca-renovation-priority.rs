@@ -138,7 +138,12 @@ async fn main() -> Result<()> {
         .iter()
         .filter(|(ship_name, _)| ship_names.is_empty() || ship_names.contains(&ship_name.as_str()))
     {
-        if ship.mods().is_empty() || ship.mods().iter().all(missing) {
+        if ship.mods().is_empty()
+            || ship
+                .mods()
+                .iter()
+                .all(|ship_mod| ship_mod.character().is_none())
+        {
             results.push(State::MissingAll(ship_name));
             continue;
         }
