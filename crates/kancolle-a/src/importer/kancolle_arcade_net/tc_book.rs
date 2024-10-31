@@ -357,6 +357,8 @@ fn init_book_ship_sources() {
         sources.insert(292, vec![SundayBest]);
         // 鈴谷改二: https://kancolle-a.sega.jp/players/information/201201_1.html
         sources.insert(303, vec![Christmas]);
+        // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
+        sources.insert(304, vec![Christmas]);
         // Johnston, Johnston改: https://kancolle-a.sega.jp/players/information/2207_join_Johnston_swim.html
         sources.insert(362, vec![Swimsuit]);
         // Gotland: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
@@ -365,6 +367,8 @@ fn init_book_ship_sources() {
         sources.insert(391, vec![OriginalIllustration1(false)]);
         // Fletcher, Fletcher改: https://kancolle-a.sega.jp/players/information/2407_join_fletcher_swim.html
         sources.insert(396, vec![Swimsuit]);
+        // Grecale: https://kancolle-a.sega.jp/players/information/2310_halloween.html
+        sources.insert(414, vec![Halloween]);
         // 時雨改三: https://kancolle-a.sega.jp/players/information/2408_join_shigure_swim_start.html
         sources.insert(561, vec![Swimsuit]);
 
@@ -377,8 +381,7 @@ fn init_book_ship_sources() {
         sources.insert(288, vec![Unknown, Unknown]);
 
         // Info store for ships I don't have at all.
-        // Grecale, Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
-        // 熊野改二: https://kancolle-a.sega.jp/players/information/201201_1.html
+        // Grecale改: https://kancolle-a.sega.jp/players/information/2310_halloween.html
         // Gotland改: https://kancolle-a.sega.jp/players/information/2307_join_gotland_swim.html
 
         sources
