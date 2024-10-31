@@ -72,6 +72,8 @@ fn fixture_filename(endpoint: &ApiEndpoint) -> String {
         CampaignPresent => "Campaign_present.json".to_string(),
         CharacterListInfo => "CharacterList_info.json".to_string(),
         CopCheckreward => "Cop_checkreward.json".to_string(),
+        CopHold => "Cop_hold.json".to_string(),
+        CopInfo => "Cop_info.json".to_string(),
         EpFesHold => "EpFes_hold.json".to_string(),
         EpFesProgress => "EpFes_progress.json".to_string(),
         EquipBookInfo => "EquipBook_info.json".to_string(),
@@ -140,6 +142,10 @@ async fn main() -> Result<()> {
     fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CampaignPresent).await?;
     fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CharacterListInfo).await?;
     fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CopCheckreward).await?;
+    fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CopHold).await?;
+    // Skipping CopInfo, it includes store locations and as such is TMI to commit.
+    // It is an empty file when "Cop" (location) events are not running.
+    //fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::CopInfo).await?;
     fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EpFesHold).await?;
     fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EpFesProgress).await?;
     fetch_to_fixture(&client, &mut formatter, &ApiEndpoint::EquipBookInfo).await?;
