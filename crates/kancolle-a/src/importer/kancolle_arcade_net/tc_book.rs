@@ -46,17 +46,16 @@ pub enum BookShipCardPageSource {
     Normal,  // Priority 0 is always this
 
     // 期間限定ドロップイベント
-    CapeEngano, // エンガノ岬決戦mode, aka 決戦mode. May 2019 once-off, September 2024 once-off.
-    Swimsuit,   // 水着mode, 里帰り水着mode, 夏のお嬢さんmode: July 2019 onward
-    Christmas,  // クリスマスmode: December 2019 onward
-    Halloween,  // ハロウィンmode: Oct 2020 onward
-    Valentine,  // バレンタインmode: Feb 2021 onward
-    PacificSaury, // 秋刀魚mode: Oct 2021 onward (鎮守府秋刀魚祭り)
-    Fishing,    // F作業mode: Oct 2021 onward (鎮守府秋刀魚祭り)
-    SundayBest, // 晴れ着mode: Jan 2022 onward
-    RainySeason, // 梅雨mode: May-June 2022 onward
-    Yukata,     // 浴衣mode: Sep 2023 onward
-    SurigaoStrait, // スリガオ海峡突入mode: Jan 2024 event (第拾肆回期間限定海域：捷号決戦！邀撃、レイテ沖海戦（前篇）)
+    DecisiveBattle, // 決戦mode, エンガノ岬決戦mode, スリガオ海峡突入mode: Once-off events. See https://kancolle-a.sega.jp/players/information/2410_seaarea_event15_start.html
+    Swimsuit,       // 水着mode, 里帰り水着mode, 夏のお嬢さんmode: July 2019 onward
+    Christmas,      // クリスマスmode: December 2019 onward
+    Halloween,      // ハロウィンmode: Oct 2020 onward
+    Valentine,      // バレンタインmode: Feb 2021 onward
+    PacificSaury,   // 秋刀魚mode: Oct 2021 onward (鎮守府秋刀魚祭り)
+    Fishing,        // F作業mode: Oct 2021 onward (鎮守府秋刀魚祭り)
+    SundayBest,     // 晴れ着mode: Jan 2022 onward
+    RainySeason,    // 梅雨mode: May-June 2022 onward
+    Yukata,         // 浴衣mode: Sep 2023 onward
 
     // オリジナルイラストカード
     // Should be the last page, if present; not enough data to know if kai/non-kai are grouped.
@@ -85,11 +84,11 @@ fn init_book_ship_sources() {
         // * (OriginalIllustration) (改) https://kancolle-a.sega.jp/players/information/2206_seaarea_event12_detail.html
         sources.insert(7, vec![SundayBest, OriginalIllustration1(true)]);
         // 島風, 島風改:
-        // * (CapeEngano) https://kancolle-a.sega.jp/players/information/190508_1.html
+        // * (DecisiveBattle) https://kancolle-a.sega.jp/players/information/190508_1.html
         // * (OriginalIllustration)
         // ** (改) https://kancolle-a.sega.jp/players/information/200901_2.html
         // ** (改) https://kancolle-a.sega.jp/players/information/210409_1.html
-        sources.insert(10, vec![CapeEngano, OriginalIllustration2(true, true)]);
+        sources.insert(10, vec![DecisiveBattle, OriginalIllustration2(true, true)]);
         // 敷波, 敷波改: (改) https://kancolle-a.sega.jp/players/information/211005_1.html
         sources.insert(18, vec![OriginalIllustration1(true)]);
         // 大井: https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
@@ -109,9 +108,9 @@ fn init_book_ship_sources() {
         // 那珂, 那珂改: (改) https://kancolle-a.sega.jp/players/information/190914_1.html
         sources.insert(48, vec![OriginalIllustration1(true)]);
         // 最上:
-        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
+        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html (スリガオ海峡突入mode)
         // * https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
-        sources.insert(51, vec![SurigaoStrait, RainySeason]);
+        sources.insert(51, vec![DecisiveBattle, RainySeason]);
         // 加古, 加古改: https://kancolle-a.sega.jp/players/information/2406_rainy_season.html
         sources.insert(53, vec![RainySeason]);
         // 朧, 朧改:
@@ -170,9 +169,9 @@ fn init_book_ship_sources() {
         // 大井改: https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
         sources.insert(97, vec![RainySeason]);
         // 最上改:
-        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
+        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html (スリガオ海峡突入mode)
         // * https://kancolle-a.sega.jp/players/information/2306_rainy_season.html
-        sources.insert(101, vec![SurigaoStrait, RainySeason]);
+        sources.insert(101, vec![DecisiveBattle, RainySeason]);
         // 伊勢改: https://kancolle-a.sega.jp/players/information/170420_1.html
         sources.insert(102, vec![OriginalIllustration1(false)]);
         // 日向改: https://kancolle-a.sega.jp/players/information/170420_1.html
@@ -224,7 +223,7 @@ fn init_book_ship_sources() {
             vec![RainySeason, Halloween, OriginalIllustration2(false, false)],
         );
         // 時雨改二:
-        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
+        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html (スリガオ海峡突入mode)
         // * https://kancolle-a.sega.jp/players/information/190805_1.html
         // * https://kancolle-a.sega.jp/players/information/211005_1.html
         // * (OriginalIllustration)
@@ -233,7 +232,7 @@ fn init_book_ship_sources() {
         sources.insert(
             145,
             vec![
-                SurigaoStrait,
+                DecisiveBattle,
                 Swimsuit,
                 PacificSaury,
                 OriginalIllustration2(false, false),
@@ -282,10 +281,10 @@ fn init_book_ship_sources() {
         sources.insert(210, vec![RainySeason, OriginalIllustration1(true)]);
         // 扶桑改二: https://kancolle-a.sega.jp/players/information/2406_rainy_season.html
         sources.insert(211, vec![RainySeason]);
-        // 朝雲, 朝雲改: https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
-        sources.insert(213, vec![SurigaoStrait]);
-        // 山雲, 山雲改: https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
-        sources.insert(214, vec![SurigaoStrait]);
+        // 朝雲, 朝雲改: https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html (スリガオ海峡突入mode)
+        sources.insert(213, vec![DecisiveBattle]);
+        // 山雲, 山雲改: https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html (スリガオ海峡突入mode)
+        sources.insert(214, vec![DecisiveBattle]);
         // 野分, 野分改: https://kancolle-a.sega.jp/players/information/2210_halloween.html
         sources.insert(215, vec![Halloween]);
         // 秋月, 秋月改: https://kancolle-a.sega.jp/players/information/2309_yukata_season.html
@@ -340,8 +339,8 @@ fn init_book_ship_sources() {
         sources.insert(266, vec![Christmas]);
         // 瑞鶴改二甲:
         // * (Christmas) https://kancolle-a.sega.jp/players/information/211214_1.html
-        // * (CapeEngano) https://kancolle-a.sega.jp/players/information/2409_join_zuikaku_kai_2_engano.html
-        sources.insert(267, vec![CapeEngano, Christmas]);
+        // * (DecisiveBattle) https://kancolle-a.sega.jp/players/information/2409_join_zuikaku_kai_2_engano.html (エンガノ岬決戦mode)
+        sources.insert(267, vec![DecisiveBattle, Christmas]);
         // 朝潮改二丁: https://kancolle-a.sega.jp/players/information/201013_1.html
         sources.insert(268, vec![Halloween]);
         // 霞改二乙: https://kancolle-a.sega.jp/players/information/200805_1.html
@@ -351,9 +350,9 @@ fn init_book_ship_sources() {
         // 神風改: https://kancolle-a.sega.jp/players/information/2402_valentine.html
         sources.insert(276, vec![Valentine]);
         // 満潮改二:
-        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html
+        // * https://kancolle-a.sega.jp/players/information/2401_seaarea_event14_detail_report.html (スリガオ海峡突入mode)
         // * https://kancolle-a.sega.jp/players/information/2310_sauryfestival.html
-        sources.insert(289, vec![SurigaoStrait, PacificSaury]);
+        sources.insert(289, vec![DecisiveBattle, PacificSaury]);
         // Richelieu, Richelieu改: https://kancolle-a.sega.jp/players/information/2312_haregimode.html
         sources.insert(292, vec![SundayBest]);
         // 鈴谷改二: https://kancolle-a.sega.jp/players/information/201201_1.html
