@@ -1,1 +1,430 @@
-[]
+[
+    {
+        "areaId": 1017,
+        "areaSubId": 1,
+        "areaSpeId": 0,
+        "level": "HEI",
+        "areaKind": "NORMAL",
+        "stageImageName": "area_enubgewle8s.png",
+        "stageMissionName": "作戦開始 前路哨戒を厳とせよ！",
+        "stageMissionInfo": "捷一号作戦主力部隊が出撃する。\nパラワン水道の対潜哨戒を実施せよ！",
+        "requireGp": 400,
+        "limitSec": 330,
+        "rewardList": [
+            {
+                "value": 50,
+                "rewardType": "FIRST",
+                "dataId": 0,
+                "kind": "ROOM_ITEM_COIN"
+            },
+            {
+                "value": 500,
+                "rewardType": "FIRST",
+                "dataId": 1,
+                "kind": "RESULT_POINT"
+            },
+            {
+                "value": 200,
+                "rewardType": "SECOND",
+                "dataId": 0,
+                "kind": "RESULT_POINT"
+            }
+        ],
+        "stageDropItemInfo": [
+            "SMALLBOX",
+            "MEDIUMBOX",
+            "SMALLREC",
+            "NONE"
+        ],
+        "sortieLimit": true,
+        "sortieLimitImg": "sortie_enubgewle8s.png",
+        "areaClearState": "NOTCLEAR",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1500,
+        "militaryGaugeLeft": 1500,
+        "eneMilitaryGauge2d": "base_sensuisokyuu1",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": true,
+        "gimmickImg1": "",
+        "gimmickImg2": "",
+        "gimmickImg3": "",
+        "ffleet": true
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 2,
+        "areaSpeId": 0,
+        "level": "HEI",
+        "areaKind": "CHAIN",
+        "stageImageName": "area_pg1ehzdm9w1.png",
+        "stageMissionName": "？",
+        "stageMissionInfo": "？",
+        "requireGp": 0,
+        "limitSec": 0,
+        "rewardList": [
+            {
+                "value": 0,
+                "dataId": 0,
+                "kind": "NONE"
+            }
+        ],
+        "stageDropItemInfo": [
+            "UNKNOWN",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimit": false,
+        "areaClearState": "NOOPEN",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1500,
+        "militaryGaugeLeft": 1500,
+        "eneMilitaryGauge2d": "",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": false,
+        "ffleet": false
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 4,
+        "areaSpeId": 0,
+        "level": "HEI",
+        "areaKind": "CHAIN",
+        "stageImageName": "area_ex9h7ww60eb.png",
+        "stageMissionName": "？",
+        "stageMissionInfo": "？",
+        "requireGp": 0,
+        "limitSec": 0,
+        "rewardList": [
+            {
+                "value": 0,
+                "dataId": 0,
+                "kind": "NONE"
+            }
+        ],
+        "stageDropItemInfo": [
+            "UNKNOWN",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimit": false,
+        "areaClearState": "NOOPEN",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1500,
+        "militaryGaugeLeft": 1500,
+        "eneMilitaryGauge2d": "",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": false,
+        "ffleet": false
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 13,
+        "areaSpeId": 0,
+        "level": "OTU",
+        "areaKind": "NORMAL",
+        "stageImageName": "area_cril805gbjb.png",
+        "stageMissionName": "作戦開始 前路哨戒を厳とせよ！",
+        "stageMissionInfo": "捷一号作戦主力部隊が出撃する。\nパラワン水道の対潜哨戒を実施せよ！",
+        "requireGp": 400,
+        "limitSec": 330,
+        "rewardList": [
+            {
+                "value": 100,
+                "rewardType": "FIRST",
+                "dataId": 0,
+                "kind": "ROOM_ITEM_COIN"
+            },
+            {
+                "value": 1000,
+                "rewardType": "FIRST",
+                "dataId": 1,
+                "kind": "RESULT_POINT"
+            },
+            {
+                "value": 20,
+                "rewardType": "SECOND",
+                "dataId": 0,
+                "kind": "ROOM_ITEM_COIN"
+            },
+            {
+                "value": 500,
+                "rewardType": "SECOND",
+                "dataId": 1,
+                "kind": "RESULT_POINT"
+            }
+        ],
+        "stageDropItemInfo": [
+            "SMALLBOX",
+            "MEDIUMBOX",
+            "SMALLREC",
+            "NONE"
+        ],
+        "sortieLimit": true,
+        "sortieLimitImg": "sortie_cril805gbjb.png",
+        "areaClearState": "NOTCLEAR",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1600,
+        "militaryGaugeLeft": 1600,
+        "eneMilitaryGauge2d": "base_sensuisokyuu1",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "ngUnitImg": "ng_cril805gbjb.png",
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": true,
+        "gimmickImg1": "",
+        "gimmickImg2": "",
+        "gimmickImg3": "",
+        "ffleet": true
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 14,
+        "areaSpeId": 0,
+        "level": "OTU",
+        "areaKind": "CHAIN",
+        "stageImageName": "area_n7i1tad6hqg.png",
+        "stageMissionName": "？",
+        "stageMissionInfo": "？",
+        "requireGp": 0,
+        "limitSec": 0,
+        "rewardList": [
+            {
+                "value": 0,
+                "dataId": 0,
+                "kind": "NONE"
+            }
+        ],
+        "stageDropItemInfo": [
+            "UNKNOWN",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimit": false,
+        "areaClearState": "NOOPEN",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1150,
+        "militaryGaugeLeft": 1150,
+        "eneMilitaryGauge2d": "",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": false,
+        "ffleet": false
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 16,
+        "areaSpeId": 0,
+        "level": "OTU",
+        "areaKind": "CHAIN",
+        "stageImageName": "area_2v3zkjtk7ap.png",
+        "stageMissionName": "？",
+        "stageMissionInfo": "？",
+        "requireGp": 0,
+        "limitSec": 0,
+        "rewardList": [
+            {
+                "value": 0,
+                "dataId": 0,
+                "kind": "NONE"
+            }
+        ],
+        "stageDropItemInfo": [
+            "UNKNOWN",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimit": false,
+        "areaClearState": "NOOPEN",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1650,
+        "militaryGaugeLeft": 1650,
+        "eneMilitaryGauge2d": "",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": false,
+        "ffleet": false
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 25,
+        "areaSpeId": 0,
+        "level": "KOU",
+        "areaKind": "NORMAL",
+        "stageImageName": "area_vfkdbshzu50.png",
+        "stageMissionName": "？",
+        "stageMissionInfo": "？",
+        "requireGp": 0,
+        "limitSec": 0,
+        "rewardList": [
+            {
+                "value": 0,
+                "dataId": 0,
+                "kind": "NONE"
+            }
+        ],
+        "stageDropItemInfo": [
+            "UNKNOWN",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimit": false,
+        "areaClearState": "NOOPEN",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1700,
+        "militaryGaugeLeft": 1700,
+        "eneMilitaryGauge2d": "",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": false,
+        "ffleet": false
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 26,
+        "areaSpeId": 0,
+        "level": "KOU",
+        "areaKind": "CHAIN",
+        "stageImageName": "area_gerzxot62zu.png",
+        "stageMissionName": "？",
+        "stageMissionInfo": "？",
+        "requireGp": 0,
+        "limitSec": 0,
+        "rewardList": [
+            {
+                "value": 0,
+                "dataId": 0,
+                "kind": "NONE"
+            }
+        ],
+        "stageDropItemInfo": [
+            "UNKNOWN",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimit": false,
+        "areaClearState": "NOOPEN",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1250,
+        "militaryGaugeLeft": 1250,
+        "eneMilitaryGauge2d": "",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": false,
+        "ffleet": false
+    },
+    {
+        "areaId": 1017,
+        "areaSubId": 28,
+        "areaSpeId": 0,
+        "level": "KOU",
+        "areaKind": "CHAIN",
+        "stageImageName": "area_hwfaaxg87vh.png",
+        "stageMissionName": "？",
+        "stageMissionInfo": "？",
+        "requireGp": 0,
+        "limitSec": 0,
+        "rewardList": [
+            {
+                "value": 0,
+                "dataId": 0,
+                "kind": "NONE"
+            }
+        ],
+        "stageDropItemInfo": [
+            "UNKNOWN",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "sortieLimit": false,
+        "areaClearState": "NOOPEN",
+        "militaryGaugeStatus": "NORMAL",
+        "eneMilitaryGaugeVal": 1250,
+        "militaryGaugeLeft": 1250,
+        "eneMilitaryGauge2d": "",
+        "military2ndGaugeStatus": "NONE",
+        "eneMilitary2ndGaugeVal": 0,
+        "military2ndGaugeLeft": 0,
+        "eneMilitary2ndGauge2d": "",
+        "loopCount": 1,
+        "period": 0,
+        "allLvRaidFlag": false,
+        "groupId": -1,
+        "ufleet": false,
+        "tpGauge": false,
+        "suportfleet": false,
+        "ffleet": false
+    }
+]

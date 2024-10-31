@@ -150,6 +150,7 @@
         "description": "スリガオ海峡に挑んだ第一遊撃部隊第三部隊。祈りと鎮魂の気持ちが込められた掛け軸です。いつまでも、忘れることはありません。",
         "star": 5,
         "img": "room_nrlnc2qpeqv.png",
+        "bgmName": "海峡へ",
         "touchAction": true
     },
     {

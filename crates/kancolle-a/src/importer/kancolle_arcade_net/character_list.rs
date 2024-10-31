@@ -37,6 +37,7 @@ pub struct Character {
     pub slot_amount: Vec<u16>,
     pub slot_disp: Vec<String>, // How do I enum this?
     pub slot_img: Vec<String>,
+    pub slot_extension: Vec<bool>,
     pub blueprint_total_num: u16,
     pub married: bool,
     pub disp_sort_no: u64, // This is really an encoded structure...

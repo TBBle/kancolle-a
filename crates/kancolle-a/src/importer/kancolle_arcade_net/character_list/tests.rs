@@ -5,7 +5,7 @@ use lazy_static_include::*;
 
 // https://kancolle-arcade.net/ac/api/CharacterList/info
 lazy_static_include_bytes! {
-    CHARLIST_2024_07_26 => "tests/fixtures/2024-07-26/CharacterList_info.json",
+    CHARLIST_2024_10_31 => "tests/fixtures/2024-10-31/CharacterList_info.json",
 }
 
 #[test]
@@ -34,26 +34,31 @@ fn validate_character_list_common(character_list: &CharacterList) {
         assert_eq!(ship.slot_equip_name.len(), ship.slot_amount.len());
         assert_eq!(ship.slot_equip_name.len(), ship.slot_disp.len());
         assert_eq!(ship.slot_equip_name.len(), ship.slot_img.len());
+        assert_eq!(ship.slot_equip_name.len(), ship.slot_extension.len());
 
-        for (equip, amount, display, image) in izip!(
+        for (equip, amount, display, image, extension) in izip!(
             ship.slot_equip_name[(ship.slot_num as usize)..].iter(),
             ship.slot_amount[(ship.slot_num as usize)..].iter(),
             ship.slot_disp[(ship.slot_num as usize)..].iter(),
-            ship.slot_img[(ship.slot_num as usize)..].iter()
+            ship.slot_img[(ship.slot_num as usize)..].iter(),
+            ship.slot_extension[(ship.slot_num as usize)..].iter()
         ) {
             assert_eq!(equip, "");
             assert_eq!(*amount, 0);
             assert_eq!(display, "NONE");
             assert_eq!(image, "");
+            assert!(!extension);
         }
-        for (equip, amount, display, image) in izip!(
+        for (equip, amount, display, image, extension) in izip!(
             ship.slot_equip_name[..(ship.slot_num as usize)].iter(),
             ship.slot_amount[..(ship.slot_num as usize)].iter(),
             ship.slot_disp[..(ship.slot_num as usize)].iter(),
-            ship.slot_img[..(ship.slot_num as usize)].iter()
+            ship.slot_img[..(ship.slot_num as usize)].iter(),
+            ship.slot_extension[..(ship.slot_num as usize)].iter()
         ) {
             if equip.is_empty() {
                 assert_eq!(image, "");
+                assert!(!extension);
                 if *amount == 0 {
                     // TODO: Why can this be NOT_EQUIPPED_AIRCRAFT? See 鳳翔改.
                     // Wiki shows it should be 14-16-12, so data issue? Invisible damage?
@@ -64,6 +69,8 @@ fn validate_character_list_common(character_list: &CharacterList) {
                 }
             } else {
                 assert_ne!(image, "");
+                // TODO: What is this for? New in VERSION E REVISION 2
+                assert!(!extension);
                 if *amount == 0 {
                     // TODO: Why can this be NOT_EQUIPPED_AIRCRAFT? See 熊野改.
                     // Wiki shows it should be 5-6-5-6, so data issue? In this case she is damaged, but
@@ -109,6 +116,10 @@ fn validate_character_list_common(character_list: &CharacterList) {
             assert!(image.starts_with(EQUIP_IMAGE_PREFIX));
         }
 
+        for extension in ship.slot_extension.iter() {
+            assert!(!extension);
+        }
+
         // Breakdown of dispSortNo
         let disp_sort_no = ship.disp_sort_no;
         assert_eq!(ship.remodel_lv, (disp_sort_no % 100) as u16);
@@ -131,9 +142,9 @@ fn validate_character_list_common(character_list: &CharacterList) {
 }
 
 #[test]
-fn parse_fixture_character_list_info_20240726() {
-    let character_list = read_characterlist(CHARLIST_2024_07_26.as_ref()).unwrap();
+fn parse_fixture_character_list_info_20241031() {
+    let character_list = read_characterlist(CHARLIST_2024_10_31.as_ref()).unwrap();
 
-    assert_eq!(character_list.len(), 354);
+    assert_eq!(character_list.len(), 393);
     validate_character_list_common(&character_list);
 }

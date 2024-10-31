@@ -688,22 +688,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 100614,
-        "distance": "",
-        "name": "THE 3RD PLANET 焼津店",
-        "tel": "0546286503",
-        "address": "静岡県焼津市八楠3-18-5",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "SHIZUOKA",
-        "latitude": "34.878502",
-        "longitude": "138.307772",
-        "zoomLevel": 16
-    },
-    {
         "id": 100133,
         "distance": "",
         "name": "アミューズランドモナコ川越店",
@@ -877,22 +861,6 @@
         "regionEnum": "NAGANO",
         "latitude": "36.667945",
         "longitude": "138.263321",
-        "zoomLevel": 16
-    },
-    {
-        "id": 100223,
-        "distance": "",
-        "name": "ゲームインファンファン藤沢店",
-        "tel": "0466253255",
-        "address": "神奈川県藤沢市鵠沼石上１−３−８",
-        "station": "",
-        "openTime": "09:00   ",
-        "closeTime": "23:50   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "KANAGAWA",
-        "latitude": "35.336587",
-        "longitude": "139.489172",
         "zoomLevel": 16
     },
     {
@@ -2189,22 +2157,6 @@
         "regionEnum": "MIYAGI",
         "latitude": "38.250998",
         "longitude": "140.943937",
-        "zoomLevel": 16
-    },
-    {
-        "id": 101016,
-        "distance": "",
-        "name": "ＧｉＧＯ新居浜",
-        "tel": "07014595813",
-        "address": "愛媛県新居浜市徳常町６−８",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "24:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "EHIME",
-        "latitude": "33.964102",
-        "longitude": "133.278141",
         "zoomLevel": 16
     },
     {
@@ -4576,22 +4528,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 106868,
-        "distance": "",
-        "name": "ポート２４八事店",
-        "tel": "0528349200",
-        "address": "愛知県名古屋市昭和区広路町北石坂102番地4",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "AICHI",
-        "latitude": "35.13711",
-        "longitude": "136.96414",
-        "zoomLevel": 16
-    },
-    {
         "id": 106871,
         "distance": "",
         "name": "ラウンドワン豊橋店",
@@ -6640,22 +6576,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 109119,
-        "distance": "",
-        "name": "アミューズメントパレスワンダーヴュー成田",
-        "tel": "0476230561",
-        "address": "千葉県成田市飯仲11-18",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "CHIBA",
-        "latitude": "35.755394",
-        "longitude": "140.3024",
-        "zoomLevel": 16
-    },
-    {
         "id": 109265,
         "distance": "",
         "name": "アミューズメントスペース遊ランド春光店",
@@ -6781,22 +6701,6 @@
         "regionEnum": "CHIBA",
         "latitude": "35.718453",
         "longitude": "140.136218",
-        "zoomLevel": 16
-    },
-    {
-        "id": 106159,
-        "distance": "",
-        "name": "サンゲームス鹿屋店",
-        "tel": "0994655911",
-        "address": "鹿児島県肝属郡肝付町富山1008番地5",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "24:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "KAGOSHIMA",
-        "latitude": "31.388715",
-        "longitude": "130.89779",
         "zoomLevel": 16
     },
     {
@@ -10816,6 +10720,22 @@
         "zoomLevel": 16
     },
     {
+        "id": 113202,
+        "distance": "",
+        "name": "ＧｉＧＯ三宮北口",
+        "tel": "07069493872",
+        "address": "兵庫県神戸市中央区北長狭通一丁目８番１号",
+        "station": "",
+        "openTime": "10:00   ",
+        "closeTime": "23:30   ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "HYOGO",
+        "latitude": "34.69312",
+        "longitude": "135.192193",
+        "zoomLevel": 16
+    },
+    {
         "id": 109315,
         "distance": "",
         "name": "ＧｉＧＯ新三国アルゴ７",
@@ -11104,22 +11024,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 100858,
-        "distance": "",
-        "name": "サープラ福島あそびタウン",
-        "tel": "0245263536",
-        "address": "福島県福島市栄町１−１　パワーシティーピボット内",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "FUKUSHIMA",
-        "latitude": "37.754273",
-        "longitude": "140.460186",
-        "zoomLevel": 16
-    },
-    {
         "id": 113079,
         "distance": "",
         "name": "ファンタジックランド西春店",
@@ -11152,19 +11056,35 @@
         "zoomLevel": 16
     },
     {
-        "id": 113202,
+        "id": 113219,
         "distance": "",
-        "name": "ＧｉＧＯ三宮北口",
-        "tel": "07069493872",
-        "address": "兵庫県神戸市中央区北長狭通一丁目８番１号",
+        "name": "ポート２４八事店２号館",
+        "tel": "0528349200",
+        "address": "愛知県名古屋市昭和区広路町北石坂１０２ー４サンハイツ伊藤１階",
         "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "23:30   ",
+        "openTime": "09:00   ",
+        "closeTime": "00:00   ",
         "specialInfo": "",
         "country": "JPN",
-        "regionEnum": "HYOGO",
-        "latitude": "34.69312",
-        "longitude": "135.192193",
+        "regionEnum": "AICHI",
+        "latitude": "35.137163",
+        "longitude": "136.964249",
+        "zoomLevel": 16
+    },
+    {
+        "id": 100614,
+        "distance": "",
+        "name": "サープラ焼津あそびタウン",
+        "tel": "0546286503",
+        "address": "静岡県焼津市八楠３—１８—５",
+        "station": "",
+        "openTime": "        ",
+        "closeTime": "        ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "SHIZUOKA",
+        "latitude": "34.878502",
+        "longitude": "138.307772",
         "zoomLevel": 16
     }
 ]

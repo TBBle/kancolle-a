@@ -128,7 +128,7 @@
     {
         "bookNo": 22,
         "equipKind": "艦上戦闘機",
-        "equipName": "烈風",
+        "equipName": "試製烈風 後期型",
         "equipImg": "e/equip_22_dv5rvm6thwu.png"
     },
     {
@@ -547,9 +547,9 @@
     },
     {
         "bookNo": 94,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上攻撃機",
+        "equipName": "天山一二型(友永隊)",
+        "equipImg": "e/equip_94_x8dch3wttb0.png"
     },
     {
         "bookNo": 95,
@@ -583,9 +583,9 @@
     },
     {
         "bookNo": 100,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上爆撃機",
+        "equipName": "彗星(江草隊)",
+        "equipImg": "e/equip_100_6bpuqnb1mlt.png"
     },
     {
         "bookNo": 101,
@@ -930,6 +930,18 @@
         "equipImg": "e/equip_167_ep3lyox58cf.png"
     },
     {
+        "bookNo": 171,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
+        "bookNo": 172,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 173,
         "equipKind": "",
         "equipName": "",
@@ -1116,6 +1128,12 @@
         "equipImg": ""
     },
     {
+        "bookNo": 233,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 235,
         "equipKind": "",
         "equipName": "",
@@ -1249,6 +1267,12 @@
     },
     {
         "bookNo": 276,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
+        "bookNo": 277,
         "equipKind": "",
         "equipName": "",
         "equipImg": ""
@@ -1560,6 +1584,12 @@
         "equipImg": ""
     },
     {
+        "bookNo": 420,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 438,
         "equipKind": "",
         "equipName": "",
@@ -1576,6 +1606,12 @@
         "equipKind": "小口径主砲",
         "equipName": "12.7cm連装砲C型改三",
         "equipImg": "e/equip_470_ez4i3l464wb.png"
+    },
+    {
+        "bookNo": 474,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
     },
     {
         "bookNo": 505,

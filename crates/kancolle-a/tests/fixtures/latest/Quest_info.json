@@ -8,7 +8,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35002,
+            "questId": 35319,
             "questNorma": 5,
             "questRewardList": [
                 {
@@ -23,8 +23,8 @@
             "questCurrentValue": 0,
             "questContractStatus": 0,
             "questProgressStatus": 1,
-            "questStartTime": 1728165600000,
-            "questEndTime": 1728252000000,
+            "questStartTime": 1730325600000,
+            "questEndTime": 1730412000000,
             "questDetailMessageList": [
                 {
                     "groupNo": 0,
@@ -47,7 +47,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35007,
+            "questId": 35324,
             "questNorma": 5,
             "questRewardList": [
                 {
@@ -55,34 +55,45 @@
                     "rewardValue": 5
                 }
             ],
-            "questCurrentValue": 0,
-            "questContractStatus": 0,
-            "questProgressStatus": 1,
-            "questStartTime": 1728165600000,
-            "questEndTime": 1728252000000,
+            "questCurrentValue": 4,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1730325600000,
+            "questEndTime": 1730412000000,
             "questDetailMessageList": []
         },
         {
-            "questDescription": "航空攻撃隊を編成、捕捉した**複数の敵艦隊**に**先制攻撃**を敢行せよ！",
-            "questName": "航空攻撃を敢行せよ！",
-            "questCategory": 0,
+            "questDescription": "**アルフォンシーノ方面**または**北方海域全域**に出撃し、\r\n敵北方艦隊を捕捉、これを**撃退**せよ！",
+            "questName": "北方海域、掃討作戦！",
+            "questCategory": 1,
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35008,
-            "questNorma": 3,
+            "questId": 35380,
+            "questNorma": 5,
             "questRewardList": [
                 {
                     "rewardKind": "STRATEGY_POINT",
-                    "rewardValue": 5
+                    "rewardValue": 20
                 }
             ],
-            "questCurrentValue": 2,
+            "questCurrentValue": 0,
             "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1728165600000,
-            "questEndTime": 1728252000000,
-            "questDetailMessageList": []
+            "questProgressStatus": 1,
+            "questStartTime": 1730066400000,
+            "questEndTime": 1730671200000,
+            "questDetailMessageList": [
+                {
+                    "groupNo": 0,
+                    "questCurrentValue": 0,
+                    "questNorma": 5,
+                    "infoList": [
+                        "北方海域戦闘哨戒",
+                        "北方海域艦隊決戦",
+                        "アルフォンシーノ方面進出"
+                    ]
+                }
+            ]
         },
         {
             "questDescription": "全力出撃を行い、可能な限り多くの**敵主力艦隊**を捕捉、\r\nこれを**撃滅**せよ！",
@@ -91,7 +102,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35035,
+            "questId": 35382,
             "questNorma": 10,
             "questRewardList": [
                 {
@@ -99,33 +110,11 @@
                     "rewardValue": 30
                 }
             ],
-            "questCurrentValue": 0,
-            "questContractStatus": 0,
-            "questProgressStatus": 1,
-            "questStartTime": 1727647200000,
-            "questEndTime": 1728252000000,
-            "questDetailMessageList": []
-        },
-        {
-            "questDescription": "全力出撃を行い、可能な限り多くの**敵空母**を**撃滅**せよ！",
-            "questName": "い号作戦",
-            "questCategory": 1,
-            "questKind": 1,
-            "questGroup": 0,
-            "questSortIndex": 0,
-            "questId": 35037,
-            "questNorma": 20,
-            "questRewardList": [
-                {
-                    "rewardKind": "STRATEGY_POINT",
-                    "rewardValue": 30
-                }
-            ],
-            "questCurrentValue": 15,
-            "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1727647200000,
-            "questEndTime": 1728252000000,
+            "questCurrentValue": 6,
+            "questContractStatus": 1,
+            "questProgressStatus": 2,
+            "questStartTime": 1730066400000,
+            "questEndTime": 1730671200000,
             "questDetailMessageList": []
         },
         {
@@ -135,7 +124,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35040,
+            "questId": 35387,
             "questNorma": 10,
             "questRewardList": [
                 {
@@ -145,9 +134,9 @@
             ],
             "questCurrentValue": 0,
             "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1727647200000,
-            "questEndTime": 1728252000000,
+            "questProgressStatus": 1,
+            "questStartTime": 1730066400000,
+            "questEndTime": 1730671200000,
             "questDetailMessageList": []
         },
         {
@@ -157,7 +146,7 @@
             "questKind": 2,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35043,
+            "questId": 35390,
             "questNorma": 5,
             "questRewardList": [
                 {
@@ -168,30 +157,8 @@
             "questCurrentValue": 3,
             "questContractStatus": 0,
             "questProgressStatus": 3,
-            "questStartTime": 1727647200000,
-            "questEndTime": 1728252000000,
-            "questDetailMessageList": []
-        },
-        {
-            "questDescription": "「**合同演習**」で高い練度を示し、**演習結果Ｓ**を**３回**獲得せよ！",
-            "questName": "「合同演習」で高成績を獲得せよ！",
-            "questCategory": 1,
-            "questKind": 2,
-            "questGroup": 0,
-            "questSortIndex": 0,
-            "questId": 35044,
-            "questNorma": 3,
-            "questRewardList": [
-                {
-                    "rewardKind": "STRATEGY_POINT",
-                    "rewardValue": 50
-                }
-            ],
-            "questCurrentValue": 2,
-            "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1727647200000,
-            "questEndTime": 1728252000000,
+            "questStartTime": 1730066400000,
+            "questEndTime": 1730671200000,
             "questDetailMessageList": []
         },
         {
@@ -201,7 +168,7 @@
             "questKind": 1,
             "questGroup": 0,
             "questSortIndex": 0,
-            "questId": 35045,
+            "questId": 35392,
             "questNorma": 4,
             "questRewardList": [
                 {
@@ -213,11 +180,11 @@
                     "rewardValue": 500
                 }
             ],
-            "questCurrentValue": 1,
+            "questCurrentValue": 0,
             "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questStartTime": 1727647200000,
-            "questEndTime": 1728252000000,
+            "questProgressStatus": 1,
+            "questStartTime": 1730066400000,
+            "questEndTime": 1730671200000,
             "questDetailMessageList": [
                 {
                     "groupNo": 0,
@@ -229,7 +196,7 @@
                 },
                 {
                     "groupNo": 1,
-                    "questCurrentValue": 1,
+                    "questCurrentValue": 0,
                     "questNorma": 1,
                     "infoList": [
                         "製油所地帯沿岸"
@@ -270,30 +237,6 @@
                 {
                     "rewardKind": "EQUIPMENT",
                     "rewardValue": 1
-                }
-            ],
-            "questCurrentValue": 0,
-            "questContractStatus": 0,
-            "questProgressStatus": 3,
-            "questDetailMessageList": []
-        },
-        {
-            "questDescription": "「**飛龍改二**」**を旗艦とし、**「**蒼龍**」**他駆逐艦２隻**を基幹とした\r\n新編「二航戦」で出撃、**珊瑚諸島沖**で敵主力艦隊を**撃滅**せよ！",
-            "questName": "新編「第二航空戦隊」出撃せよ！",
-            "questCategory": 2,
-            "questKind": 0,
-            "questGroup": 0,
-            "questSortIndex": 0,
-            "questId": 15931,
-            "questNorma": 1,
-            "questRewardList": [
-                {
-                    "rewardKind": "STRATEGY_POINT",
-                    "rewardValue": 250
-                },
-                {
-                    "rewardKind": "BUCKET",
-                    "rewardValue": 2
                 }
             ],
             "questCurrentValue": 0,
