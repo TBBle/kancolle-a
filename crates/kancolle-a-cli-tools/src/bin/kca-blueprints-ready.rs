@@ -2,36 +2,6 @@ use anyhow::Result;
 use kancolle_a::ships::{ShipMod, ShipsBuilder};
 use kancolle_a_cli_tools::cli_helpers;
 
-/// Report the number of blueprints and large-scale blueprints needed for each stage.
-/// `stage` is 0-indexed, i.e. it's the cost to upgrade _from_ that level.
-/// May report 改三 stage for ships that don't have one, i.e. use it only for ships that actually exist.
-/// This should probably become an internal utility function in the library.
-/// TODO: Move into Ship or ShipMod with a better API.
-fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: u16) -> Option<(u16, u8)> {
-    // Special ships.
-    let stage_costs = match ship_name {
-        // TODO: This is shipClassId 5 (ship class name 千歳型). The id is available in blueprints, and the name
-        // is available in Character, Book, and Wiki data. Could we rely on always having at least one?
-        // Notably, kekkon list does not list ship class information at all; can we assume kekkon is a subset of the wiki?
-        // How _reliable_ is the Wiki here? Conversely, since we're matching _blueprint_ names, name-matching
-        // is probably safest, but requires maintenance.
-        "千歳" | "千代田" => vec![(3, 0), (4, 0), (5, 0), (6, 0), (8, 2)],
-        // TODO: Wiki lists base as 春日丸級 and mods as 大鷹型; need to find shipClassId to
-        // Confirm that this forms an actual ship series: 春日丸, 大鷹, 大鷹改.
-        "春日丸" => vec![(3, 0), (5, 0)],
-        _ => match ship_type {
-            "駆逐艦" | "軽巡洋艦" | "潜水艦" => vec![(3, 0), (6, 1), (6, 3)],
-            "戦艦" | "軽空母" | "正規空母" | "重巡洋艦" => {
-                vec![(3, 0), (8, 2), (8, 4)]
-            }
-            _ => vec![(3, 0)],
-        },
-    };
-    return stage_costs
-        .get(stage as usize)
-        .map(|costs| (costs.0 as u16, costs.1 as u8));
-}
-
 pub(crate) mod args {
     use bpaf::*;
     use kancolle_a_cli_tools::cli_helpers::{self, ShipSourceDataOptions};
@@ -63,14 +33,11 @@ async fn main() -> Result<()> {
         .await?;
 
     /// Status of the ship chain based on current blueprint inventory
-    /// The Maybe values will go away once we have a list of all known ships.
     #[derive(PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Debug)]
     enum Status {
         ReadyFor,
-        MaybeReady, // Could build the next level if one exists (check manually)
         SavingFor,
-        MaybeSaving, // Could not build the next level.
-        Complete,    // No next level possible (no upgrade cost).
+        Complete,
     }
 
     // Ship name, current count, needed for next level, status
@@ -84,7 +51,7 @@ async fn main() -> Result<()> {
     // Reference: https://wikiwiki.jp/kancolle-a/%E5%BB%BA%E9%80%A0#kaizou
     // Does not take into account ships that have just been released in events and hence are not
     // yet upgradable. (At time of writing, 最上改二/最上改二特 and 武蔵改二 are examples of this.)
-    // I doubt there's anywhere useful for that data.
+    // I doubt there's anywhere machine-readable for that data.
 
     // NOTE: This loop will prefer to save for a level we don't have a card for, versus
     // backfilling a level we can afford now. That's usually what you want, but sometimes
@@ -101,76 +68,50 @@ async fn main() -> Result<()> {
             .rev()
             .find(|shipmod| shipmod.remodel_level() > 0 && !has_normal_card(shipmod))
         {
-            Some(shipmod) => {
-                match ship_blueprint_costs(
-                    &blueprint.ship_name,
-                    &blueprint.ship_type,
-                    shipmod.remodel_level() - 1,
-                ) {
-                    None => {
-                        ship_status.push((
-                            shipmod.name(),
-                            blueprint.blueprint_total_num,
-                            0,
-                            Status::Complete,
-                        ));
-                        continue;
-                    }
-                    Some((bp_cost, _)) if bp_cost > blueprint.blueprint_total_num => {
-                        ship_status.push((
-                            shipmod.name(),
-                            blueprint.blueprint_total_num,
-                            bp_cost,
-                            Status::SavingFor,
-                        ));
-                        continue;
-                    }
-                    Some((bp_cost, _)) => {
-                        ship_status.push((
-                            shipmod.name(),
-                            blueprint.blueprint_total_num,
-                            bp_cost,
-                            Status::ReadyFor,
-                        ));
-                        continue;
-                    }
+            Some(shipmod) => match ship.shipmod_blueprint_cost(shipmod.remodel_level()) {
+                None => {
+                    ship_status.push((
+                        shipmod.name(),
+                        blueprint.blueprint_total_num,
+                        0,
+                        Status::Complete,
+                    ));
+                    continue;
                 }
-            }
+                Some((bp_cost, _)) if bp_cost > blueprint.blueprint_total_num => {
+                    ship_status.push((
+                        shipmod.name(),
+                        blueprint.blueprint_total_num,
+                        bp_cost,
+                        Status::SavingFor,
+                    ));
+                    continue;
+                }
+                Some((bp_cost, _)) => {
+                    ship_status.push((
+                        shipmod.name(),
+                        blueprint.blueprint_total_num,
+                        bp_cost,
+                        Status::ReadyFor,
+                    ));
+                    continue;
+                }
+            },
             None => {
                 let last_known_shipmod = ship.mods().last().unwrap();
-                match ship_blueprint_costs(
-                    &blueprint.ship_name,
-                    &blueprint.ship_type,
-                    last_known_shipmod.remodel_level(),
-                ) {
-                    None => {
-                        ship_status.push((
-                            last_known_shipmod.name(),
-                            blueprint.blueprint_total_num,
-                            0,
-                            Status::Complete,
-                        ));
-                        continue;
-                    }
-                    Some((bp_cost, _)) if bp_cost > blueprint.blueprint_total_num => {
-                        ship_status.push((
-                            last_known_shipmod.name(),
-                            blueprint.blueprint_total_num,
-                            bp_cost,
-                            Status::MaybeSaving,
-                        ));
-                        continue;
-                    }
-                    Some((bp_cost, _)) => {
-                        ship_status.push((
-                            last_known_shipmod.name(),
-                            blueprint.blueprint_total_num,
-                            bp_cost,
-                            Status::MaybeReady,
-                        ));
-                        continue;
-                    }
-                }
+                // Asserting this because we used to guess for unknown ships, but
+                // the current API doesn't support that; also data coverage is now
+                // good enough that guessing is more-likely wrong than right.
+                assert!(ship
+                    .shipmod_blueprint_cost(last_known_shipmod.remodel_level() + 1)
+                    .is_none());
+                ship_status.push((
+                    last_known_shipmod.name(),
+                    blueprint.blueprint_total_num,
+                    0,
+                    Status::Complete,
+                ));
+                continue;
             }
         }
     }

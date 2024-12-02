@@ -246,4 +246,19 @@ async fn test_ships_full_import() {
     assert!(unowned_ships.contains(&"Atlanta"));
     assert!(unowned_ships.contains(&"Гангут"));
     assert!(unowned_ships.contains(&"Z3"));
+
+    // Validate our assumption that the Wiki ship_type for the mod-level 0 ShipMod
+    // matches the ship_type in the Blueprint data.
+    let blueprint_and_wiki_ships = ships.iter().filter(|(_, ship)| {
+        ship.blueprint().is_some()
+            && !ship.mods().is_empty()
+            && ship.mods()[0].wiki_list_entry().is_some()
+            && ship.mods()[0].remodel_level() == 0
+    });
+    for (_, ship) in blueprint_and_wiki_ships {
+        let bp_ship = ship.blueprint().as_ref().unwrap();
+        let base_wiki_ship = ship.mods()[0].wiki_list_entry().as_ref().unwrap();
+        assert_eq!(bp_ship.ship_name, base_wiki_ship.ship_name);
+        assert_eq!(bp_ship.ship_type, base_wiki_ship.ship_type);
+    }
 }

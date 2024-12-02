@@ -255,7 +255,8 @@ pub fn ship_blueprint_name(ship_name: &str) -> &str {
         "千歳甲" | "千歳航" => "千歳",
         "呂500" => "U-511",
         // Untested against data as I don't own them.
-        "Октябрьская революция" => "Гангут",
+        // два is Russian for 二, so it should probably match /Гангут .*/...
+        "Октябрьская революция" | "Гангут два" => "Гангут",
         "大鷹" => "春日丸",
         _ => base_name,
     }
@@ -292,6 +293,34 @@ pub fn ship_remodel_level_guess(ship_name: &str) -> u16 {
     };
 
     base_level + kai_level
+}
+
+/// Report the number of blueprints and large-scale blueprints needed for each stage.
+/// `stage` is 0-indexed, i.e. it's the cost to upgrade _from_ that level.
+/// Generally based on ship type, so is not aware of which specific ships have 改二 or later mods.
+fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: u16) -> Option<(u16, u8)> {
+    // Special ships.
+    let stage_costs = match ship_name {
+        // TODO: This is shipClassId 5 (ship class name 千歳型). The id is available in blueprints, and the name
+        // is available in Character, Book, and Wiki data. Could we rely on always having at least one of those?
+        // Notably, kekkon list does not list ship class information at all.
+        // How _reliable_ is the Wiki here? Conversely, since we're matching _blueprint_ names, name-matching
+        // is probably safest, but requires maintenance.
+        "千歳" | "千代田" => vec![(3, 0), (4, 0), (5, 0), (6, 0), (8, 2)],
+        // TODO: Wiki lists base as 春日丸級 and mods as 大鷹型; need to find shipClassId too
+        // Confirm that this forms an actual ship series: 春日丸, 大鷹, 大鷹改.
+        "春日丸" => vec![(3, 0), (5, 0)],
+        _ => match ship_type {
+            "駆逐艦" | "軽巡洋艦" | "潜水艦" => vec![(3, 0), (6, 1), (6, 3)],
+            "戦艦" | "軽空母" | "正規空母" | "重巡洋艦" => {
+                vec![(3, 0), (8, 2), (8, 4)]
+            }
+            _ => vec![(3, 0)],
+        },
+    };
+    return stage_costs
+        .get(stage as usize)
+        .map(|costs| (costs.0 as u16, costs.1 as u8));
 }
 
 impl Ships {
@@ -502,6 +531,59 @@ impl Ship {
             .find(|shipmod| shipmod.name() == shipmod_name)
     }
 
+    /// Reports the cost of buying the given remodel_level with blueprints and
+    /// large-scale blueprints.
+    /// You cannot buy remodel_level 0 ships, so that will always return None.
+    /// Also returns None if the remodel_level is higher than the highest-known
+    /// remodel_level for this ship.
+    pub fn shipmod_blueprint_cost(&self, remodel_level: u16) -> Option<(u16, u8)> {
+        if remodel_level == 0 {
+            return None;
+        }
+        if self.mods.is_empty() {
+            return None;
+        }
+        if self.mods.last().unwrap().remodel_level() < remodel_level {
+            return None;
+        }
+        // Having a blueprint is the best data, otherwise check character data, tc_book data, and finally wiki data.
+        // Generally the base_name should equal our ship_name, but not building that assumption in here.
+        let (base_name, base_ship_type) = {
+            if self.blueprint().is_some() {
+                (
+                    &self.blueprint().as_ref().unwrap().ship_name,
+                    &self.blueprint().as_ref().unwrap().ship_type,
+                )
+            } else if self.mods()[0].character().is_some()
+                && self.mods()[0].character().as_ref().unwrap().remodel_lv == 0
+            {
+                (
+                    &self.mods()[0].character().as_ref().unwrap().ship_name,
+                    &self.mods()[0].character().as_ref().unwrap().ship_type,
+                )
+            } else if self.mods()[0].book().is_some()
+                && ship_remodel_level_guess(&self.mods()[0].book().as_ref().unwrap().ship_name) == 0
+            {
+                (
+                    &self.mods()[0].book().as_ref().unwrap().ship_name,
+                    &self.mods()[0].book().as_ref().unwrap().ship_type,
+                )
+            } else if self.mods()[0].wiki_list_entry().is_some()
+                && ship_remodel_level_guess(
+                    &self.mods()[0].wiki_list_entry().as_ref().unwrap().ship_name,
+                ) == 0
+            {
+                (
+                    &self.mods()[0].wiki_list_entry().as_ref().unwrap().ship_name,
+                    &self.mods()[0].wiki_list_entry().as_ref().unwrap().ship_type,
+                )
+            } else {
+                return None;
+            }
+        };
+        ship_blueprint_costs(base_name, base_ship_type, remodel_level - 1)
+    }
+
     fn new(name: String) -> Ship {
         Ship {
             name,
@@ -630,3 +712,6 @@ impl ShipMod {
         Ok(())
     }
 }
+
+#[cfg(test)]
+mod tests;
