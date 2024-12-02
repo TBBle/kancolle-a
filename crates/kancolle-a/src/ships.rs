@@ -318,9 +318,9 @@ fn ship_blueprint_costs(ship_name: &str, ship_type: &str, stage: u16) -> Option<
             _ => vec![(3, 0)],
         },
     };
-    return stage_costs
+    stage_costs
         .get(stage as usize)
-        .map(|costs| (costs.0 as u16, costs.1 as u8));
+        .map(|costs| (costs.0 as u16, costs.1 as u8))
 }
 
 impl Ships {
