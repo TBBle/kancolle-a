@@ -11,8 +11,11 @@
         "maxExercisePoint": 12273,
         "ngUnitImg": "ng_wuj9uz8ap14.png",
         "open": true,
-        "dropEpFesItem": [],
-        "stampCount": 3,
+        "dropEpFesItem": [
+            "TUBE_WHITE",
+            "TUBE_GREEN"
+        ],
+        "stampCount": 0,
         "stampCountMax": 3
     },
     {
@@ -24,10 +27,12 @@
         "limitSec": 120,
         "exerciseImg": "exercise_s1s6eycbh0g.png",
         "sortieLimitImg": "sortie_s1s6eycbh0g.png",
-        "maxExercisePoint": 4535,
+        "maxExercisePoint": 4554,
         "open": true,
-        "dropEpFesItem": [],
-        "stampCount": 6,
+        "dropEpFesItem": [
+            "TUBE_RED"
+        ],
+        "stampCount": 0,
         "stampCountMax": 6
     },
     {
@@ -41,8 +46,10 @@
         "sortieLimitImg": "sortie_rsyz8c2uumr.png",
         "maxExercisePoint": 3340,
         "open": true,
-        "dropEpFesItem": [],
-        "stampCount": 6,
+        "dropEpFesItem": [
+            "TUBE_RED"
+        ],
+        "stampCount": 0,
         "stampCountMax": 6
     },
     {
@@ -56,8 +63,11 @@
         "sortieLimitImg": "sortie_yqa4354vlq8.png",
         "maxExercisePoint": 12324,
         "open": false,
-        "dropEpFesItem": [],
-        "stampCount": 3,
+        "dropEpFesItem": [
+            "TUBE_WHITE",
+            "TUBE_GREEN"
+        ],
+        "stampCount": 0,
         "stampCountMax": 3
     }
 ]

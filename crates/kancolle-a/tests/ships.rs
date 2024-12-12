@@ -84,11 +84,11 @@ async fn test_ships_blueprint_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 150);
+    assert_eq!(ships.len(), 148);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.mods().len() == 1));
 
-    assert_eq!(ships.shipmod_iter().count(), 150);
+    assert_eq!(ships.shipmod_iter().count(), 148);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -108,13 +108,13 @@ async fn test_ships_book_only_import() {
         .await
         .unwrap();
 
-    // Regex `"shipName": ".*[改甲航].*",` gives 80 book entries with modified names
+    // Regex `"shipName": ".*[改甲航].*",` gives 81 book entries with modified names
     // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-    assert_eq!(ships.len(), 262 - 80 - 4);
+    assert_eq!(ships.len(), 263 - 81 - 4);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    // 287 entries, 25 未取得, and of the remaining 262, per JSON Path query `$..cardList[0].variationNumInPage`, 151 have two rows.
-    assert_eq!(ships.shipmod_iter().count(), 262 + 151);
+    // 287 entries, 24 未取得, and of the remaining 263, per JSON Path query `$..cardList[0].variationNumInPage`, 151 have two rows.
+    assert_eq!(ships.shipmod_iter().count(), 263 + 151);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_some()));
@@ -134,12 +134,12 @@ async fn test_ships_characters_only_import() {
         .await
         .unwrap();
 
-    // Regex `"shipName": ".*[改甲航].*",` gives 211 characters with modified names
+    // Regex `"shipName": ".*[改甲航].*",` gives 217 characters with modified names
     // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-    assert_eq!(ships.len(), 393 - 211 - 4);
+    assert_eq!(ships.len(), 399 - 217 - 4);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    assert_eq!(ships.shipmod_iter().count(), 393);
+    assert_eq!(ships.shipmod_iter().count(), 399);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_some()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -173,7 +173,7 @@ async fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        150
+        148
     );
 
     // Per the wiki ship lists
@@ -190,14 +190,14 @@ async fn test_ships_full_import() {
             .shipmod_iter()
             .filter(|ship| ship.book().is_some())
             .count(),
-        262 + 151
+        263 + 151
     );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| ship.character().is_some())
             .count(),
-        393
+        399
     );
     assert_eq!(
         ships
