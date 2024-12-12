@@ -11,6 +11,7 @@ lazy_static_include_bytes! {
     TCBOOK_2024_06_20 => "tests/fixtures/2024-06-20/TcBook_info.json",
     TCBOOK_2024_06_23 => "tests/fixtures/2024-06-23/TcBook_info.json",
     TCBOOK_2024_10_06 => "tests/fixtures/2024-10-06/TcBook_info.json",
+    TCBOOK_LATEST => "tests/fixtures/latest/TcBook_info.json",
 }
 
 #[test]
@@ -2264,4 +2265,18 @@ fn test_book_split_haskai_20241006() {
     );
     assert_eq!(雪風_kai_card_list_1.variation_num_in_page, 3);
     assert_eq!(雪風_kai_card_list_1.acquire_num_in_page, 1);
+}
+
+#[test]
+fn test_sources_against_latest() {
+    let mut tcbook = read_tclist(TCBOOK_LATEST.as_ref()).unwrap();
+    tcbook.retain(|ship| ship.acquire_num > 0);
+    init_book_ship_sources();
+
+    for book_ship in tcbook.iter() {
+        let book_no = book_ship.book_no;
+        let source = BOOK_SHIP_SOURCES.get().unwrap().get(&book_no);
+        let expected_len = source.map_or_else(|| 0, |s| s.len()) + 1;
+        assert_eq!(book_ship.card_list.len(), expected_len, "{book_no}");
+    }
 }
