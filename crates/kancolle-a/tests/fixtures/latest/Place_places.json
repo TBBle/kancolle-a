@@ -2512,22 +2512,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 102101,
-        "distance": "",
-        "name": "オートパーラーやすぎ",
-        "tel": "0854288502",
-        "address": "島根県安来市西荒島町３３番地",
-        "station": "",
-        "openTime": "08:30   ",
-        "closeTime": "24:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "SHIMANE",
-        "latitude": "35.432525",
-        "longitude": "133.191861",
-        "zoomLevel": 16
-    },
-    {
         "id": 102342,
         "distance": "",
         "name": "コミ丸アリババ大垣店",
@@ -3421,6 +3405,22 @@
         "regionEnum": "OSAKA",
         "latitude": "34.702782",
         "longitude": "135.500396",
+        "zoomLevel": 16
+    },
+    {
+        "id": 113255,
+        "distance": "",
+        "name": "ＧｉＧＯ立石",
+        "tel": "07066317803",
+        "address": "東京都葛飾区立石７丁目３番６号リ・セブン",
+        "station": "",
+        "openTime": "10:00   ",
+        "closeTime": "23:59   ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "TOKYO",
+        "latitude": "35.7396",
+        "longitude": "139.849438",
         "zoomLevel": 16
     },
     {
@@ -10861,22 +10861,6 @@
         "regionEnum": "TOKYO",
         "latitude": "35.729531",
         "longitude": "139.71471",
-        "zoomLevel": 16
-    },
-    {
-        "id": 103739,
-        "distance": "",
-        "name": "ｎａｍｃｏ札幌西町店",
-        "tel": "0116710230",
-        "address": "北海道札幌市西区西町北１３−１（旧国道五号線沿い）",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "00:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "HOKKAIDO",
-        "latitude": "43.082411",
-        "longitude": "141.283753",
         "zoomLevel": 16
     },
     {

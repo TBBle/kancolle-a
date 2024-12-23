@@ -4,22 +4,22 @@
             {
                 "limit": false,
                 "itemType": "TUBE_WHITE",
-                "haveNum": 14,
-                "aquireNum": 14,
+                "haveNum": 54,
+                "aquireNum": 54,
                 "limitNum": 300
             },
             {
                 "limit": false,
                 "itemType": "TUBE_GREEN",
-                "haveNum": 28,
-                "aquireNum": 48,
+                "haveNum": 47,
+                "aquireNum": 67,
                 "limitNum": 310
             },
             {
                 "limit": false,
                 "itemType": "TUBE_RED",
-                "haveNum": 18,
-                "aquireNum": 38,
+                "haveNum": 43,
+                "aquireNum": 63,
                 "limitNum": 295
             }
         ],

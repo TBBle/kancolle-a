@@ -40,7 +40,7 @@
             "type": 1,
             "equipmentId": 8,
             "name": "41cm連装砲",
-            "num": 12,
+            "num": 6,
             "img": "equip_icon_3_me6e2ezu084a.png"
         },
         {
@@ -229,7 +229,7 @@
             "type": 7,
             "equipmentId": 46,
             "name": "九三式水中聴音機",
-            "num": 7,
+            "num": 6,
             "img": "equip_icon_18_34j48vvi4jhh.png"
         },
         {
@@ -446,7 +446,7 @@
             "type": 8,
             "equipmentId": 75,
             "name": "ドラム缶(輸送用)",
-            "num": 19,
+            "num": 20,
             "img": "equip_icon_24_o3clfmjqgem3.png"
         },
         {

@@ -84,11 +84,11 @@ async fn test_ships_blueprint_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 148);
+    assert_eq!(ships.len(), 150);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.mods().len() == 1));
 
-    assert_eq!(ships.shipmod_iter().count(), 148);
+    assert_eq!(ships.shipmod_iter().count(), 150);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -173,7 +173,7 @@ async fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        148
+        150
     );
 
     // Per the wiki ship lists `^\|\d\d\d\|\d\|`
