@@ -28,13 +28,13 @@ async fn test_ships_null_import() {
 async fn test_ships_default_import() {
     let ships = ShipsBuilder::default().build().await.unwrap();
 
-    // Regex against the ships table `^\|\d\d\d\|\d\|\[\[[^\]改甲航]*\]\]\|[^|]+\|` gives 195
+    // Regex against the ships table `^\|\d\d\d\|\d\|\[\[[^\]改甲航]*\]\]\|[^|]+\|` gives 196
     // Then there's 6 ships that are renamed per `ship_blueprint_name`.
-    assert_eq!(ships.len(), 189);
+    assert_eq!(ships.len(), 190);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    // Per the wiki ship lists
-    assert_eq!(ships.shipmod_iter().count(), 285 + 160);
+    // Per the wiki ship lists `^\|\d\d\d\|\d\|`
+    assert_eq!(ships.shipmod_iter().count(), 286 + 161);
     assert_eq!(
         ships
             .shipmod_iter()
@@ -167,7 +167,7 @@ async fn test_ships_full_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 189);
+    assert_eq!(ships.len(), 190);
     assert_eq!(
         ships
             .iter()
@@ -176,8 +176,8 @@ async fn test_ships_full_import() {
         148
     );
 
-    // Per the wiki ship lists
-    assert_eq!(ships.shipmod_iter().count(), 285 + 160);
+    // Per the wiki ship lists `^\|\d\d\d\|\d\|`
+    assert_eq!(ships.shipmod_iter().count(), 286 + 161);
     assert_eq!(
         ships
             .shipmod_iter()
@@ -204,7 +204,7 @@ async fn test_ships_full_import() {
             .shipmod_iter()
             .filter(|ship| ship.wiki_list_entry().is_some())
             .count(),
-        285 + 160
+        286 + 161
     );
 
     let non_kekkon_ships: Vec<&str> = ships
@@ -213,11 +213,13 @@ async fn test_ships_full_import() {
         .map(|ship| ship.name().as_ref())
         .collect();
 
-    assert_eq!(non_kekkon_ships.len(), 4);
+    assert_eq!(non_kekkon_ships.len(), 6);
     assert!(non_kekkon_ships.contains(&"Ranger"));
     assert!(non_kekkon_ships.contains(&"武蔵改二"));
     assert!(non_kekkon_ships.contains(&"Ranger改"));
     assert!(non_kekkon_ships.contains(&"時雨改三"));
+    assert!(non_kekkon_ships.contains(&"Gambier Bay"));
+    assert!(non_kekkon_ships.contains(&"Gambier Bay改"));
 
     // Not really a test, more a record of the data in the integration tests.
     let unowned_ships: Vec<&str> = ships
@@ -234,7 +236,7 @@ async fn test_ships_full_import() {
             }
         })
         .collect();
-    assert_eq!(unowned_ships.len(), 11);
+    assert_eq!(unowned_ships.len(), 12);
     assert!(unowned_ships.contains(&"Ark Royal"));
     assert!(unowned_ships.contains(&"Hornet"));
     assert!(unowned_ships.contains(&"伊14"));
@@ -246,6 +248,7 @@ async fn test_ships_full_import() {
     assert!(unowned_ships.contains(&"Atlanta"));
     assert!(unowned_ships.contains(&"Гангут"));
     assert!(unowned_ships.contains(&"Z3"));
+    assert!(unowned_ships.contains(&"Gambier Bay"));
 
     // Validate our assumption that the Wiki ship_type for the mod-level 0 ShipMod
     // matches the ship_type in the Blueprint data.
