@@ -1,5 +1,7 @@
 use super::*;
 
+use crate::importer::wikiwiki_jp_kancolle_a::{read_kansen_table, KANSEN};
+
 use lazy_static_include::*;
 
 // https://kancolle-arcade.net/ac/api/TcBook/info
@@ -2279,4 +2281,44 @@ fn test_sources_against_latest() {
         let expected_len = source.map_or_else(|| 0, |s| s.len()) + 1;
         assert_eq!(book_ship.card_list.len(), expected_len, "{book_no}");
     }
+}
+
+#[test]
+fn test_tcbook_entries_missing_from_wiki() {
+    // Ensure we know which TCBook entries are missing from the Wiki data (or vice-versa).
+    // Not worried about kaizou kansen, since we can't validate unrevealed TCBook entries as two-row or not.
+    let mut kansen: HashMap<u16, String> = read_kansen_table(KANSEN.as_ref())
+        .unwrap()
+        .into_iter()
+        .map(|ship| (ship.book_no, ship.ship_name))
+        .collect();
+    let mut tcbook: HashMap<u16, String> = read_tclist(TCBOOK_LATEST.as_ref())
+        .unwrap()
+        .into_iter()
+        .map(|ship| (ship.book_no, ship.ship_name))
+        .collect();
+
+    let mut wiki_only: HashMap<u16, String> = HashMap::new();
+    let mut book_only: HashMap<u16, String> = HashMap::new();
+
+    for (book_no, ship_name) in kansen.drain() {
+        if let Some(tc_ship_name) = tcbook.remove(&book_no) {
+            if tc_ship_name != "未取得" {
+                assert_eq!(ship_name, tc_ship_name);
+            }
+        } else {
+            assert!(!wiki_only.contains_key(&book_no));
+            wiki_only.insert(book_no, ship_name);
+        }
+    }
+
+    for (book_no, ship_name) in tcbook.drain() {
+        assert!(!book_only.contains_key(&book_no));
+        book_only.insert(book_no, ship_name);
+    }
+
+    assert_eq!(wiki_only.len(), 0);
+    assert_eq!(book_only.len(), 1);
+    assert!(book_only.contains_key(&240));
+    assert_eq!(book_only[&240], "未取得"); // Iowa
 }
