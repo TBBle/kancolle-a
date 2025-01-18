@@ -2318,7 +2318,5 @@ fn test_tcbook_entries_missing_from_wiki() {
     }
 
     assert_eq!(wiki_only.len(), 0);
-    assert_eq!(book_only.len(), 1);
-    assert!(book_only.contains_key(&240));
-    assert_eq!(book_only[&240], "未取得"); // Iowa
+    assert_eq!(book_only.len(), 0);
 }
