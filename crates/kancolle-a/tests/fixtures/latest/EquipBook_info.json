@@ -889,9 +889,9 @@
     },
     {
         "bookNo": 161,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "大口径主砲",
+        "equipName": "16inch三連装砲 Mk.7",
+        "equipImg": "e/equip_161_obtt4hbneqv.png"
     },
     {
         "bookNo": 162,
@@ -937,9 +937,9 @@
     },
     {
         "bookNo": 172,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "副砲",
+        "equipName": "5inch連装砲 Mk.28 mod.2",
+        "equipImg": "e/equip_172_goqxa7i0rbr.png"
     },
     {
         "bookNo": 173,
@@ -1129,9 +1129,9 @@
     },
     {
         "bookNo": 233,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上爆撃機",
+        "equipName": "F4U-1D",
+        "equipImg": "e/equip_233_zreon4q4ty5.png"
     },
     {
         "bookNo": 235,
@@ -1153,9 +1153,9 @@
     },
     {
         "bookNo": 239,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "水上偵察機",
+        "equipName": "零式水上偵察機11型乙(熟練)",
+        "equipImg": "e/equip_239_ed8sxlmsnmd.png"
     },
     {
         "bookNo": 240,
@@ -1243,9 +1243,9 @@
     },
     {
         "bookNo": 267,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "小口径主砲",
+        "equipName": "12.7cm連装砲D型改二",
+        "equipImg": "e/equip_267_ri0vj1rk0nn.png"
     },
     {
         "bookNo": 272,
@@ -1273,9 +1273,9 @@
     },
     {
         "bookNo": 277,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上爆撃機",
+        "equipName": "FM-2",
+        "equipImg": "e/equip_277_h85obuxac3h.png"
     },
     {
         "bookNo": 278,
@@ -1411,9 +1411,9 @@
     },
     {
         "bookNo": 308,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "小口径主砲",
+        "equipName": "5inch単装砲 Mk.30改＋GFCS Mk.37",
+        "equipImg": "e/equip_308_fhms021b8tr.png"
     },
     {
         "bookNo": 309,
@@ -1423,9 +1423,9 @@
     },
     {
         "bookNo": 310,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "中口径主砲",
+        "equipName": "14cm連装砲改",
+        "equipImg": "e/equip_310_dtowhs5f43u.png"
     },
     {
         "bookNo": 313,
@@ -1477,9 +1477,9 @@
     },
     {
         "bookNo": 326,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "オートジャイロ",
+        "equipName": "S-51J",
+        "equipImg": "e/equip_326_45clpi6orqt.png"
     },
     {
         "bookNo": 327,
@@ -1510,6 +1510,12 @@
         "equipKind": "",
         "equipName": "",
         "equipImg": ""
+    },
+    {
+        "bookNo": 342,
+        "equipKind": "艦上攻撃機",
+        "equipName": "流星改(一航戦)",
+        "equipImg": "e/equip_342_w5q53cbyc0e.png"
     },
     {
         "bookNo": 346,
@@ -1585,9 +1591,9 @@
     },
     {
         "bookNo": 420,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上爆撃機",
+        "equipName": "SB2C-3",
+        "equipImg": "e/equip_420_a37vkgiuieo.png"
     },
     {
         "bookNo": 438,
@@ -1618,6 +1624,12 @@
         "equipKind": "",
         "equipName": "",
         "equipImg": ""
+    },
+    {
+        "bookNo": 488,
+        "equipKind": "爆雷",
+        "equipName": "二式爆雷改二",
+        "equipImg": "e/equip_488_mn5s4gxu2n5.png"
     },
     {
         "bookNo": 505,
