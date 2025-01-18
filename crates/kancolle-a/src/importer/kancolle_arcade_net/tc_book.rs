@@ -529,11 +529,7 @@ impl BookShip {
                         assert!(self_normal_status_img.is_none());
                         assert!(card_page.status_img.is_some());
                         self_normal_status_img = card_page.status_img.clone();
-                    } else if card_page
-                        .status_img
-                        .as_ref()
-                        .map_or(false, |s| s.is_empty())
-                    {
+                    } else if card_page.status_img.as_ref().is_some_and(|s| s.is_empty()) {
                         // If we emptied the status image array, None it instead.
                         card_page.status_img = None;
                     }
@@ -661,11 +657,7 @@ impl BookShip {
                         assert!(kai_normal_status_img.is_none());
                         assert!(card_page.status_img.is_some());
                         kai_normal_status_img = card_page.status_img.clone();
-                    } else if card_page
-                        .status_img
-                        .as_ref()
-                        .map_or(false, |s| s.is_empty())
-                    {
+                    } else if card_page.status_img.as_ref().is_some_and(|s| s.is_empty()) {
                         // If we emptied the status image array, None it instead.
                         card_page.status_img = None;
                     }
