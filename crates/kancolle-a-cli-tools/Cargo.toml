@@ -15,15 +15,15 @@ chrono = { version = "0.4.39", features = ["serde"] }
 itertools = "0.13.0"
 jsonxf = "1.1.1"
 kancolle-a = { version = ">0.0.0", path = "../kancolle-a" }
-kml = { version = "0.8.6", default-features = false }
+kml = { version = "0.8.7", default-features = false }
 rpassword = "7.3.1"
 strum = { version = "0.26.3" }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-tokio = { version = "1.42.0", features = ["full"] }
+tokio = { version = "1.43.0", features = ["full"] }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-tokio = { version = "1.42.0", features = [
+tokio = { version = "1.43.0", features = [
     "sync",
     "macros",
     "io-util",
