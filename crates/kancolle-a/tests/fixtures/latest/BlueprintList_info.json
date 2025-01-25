@@ -763,7 +763,7 @@
         "shipType": "重巡洋艦",
         "shipName": "羽黒",
         "statusImg": "i/i_u7zzy4442nay_n.png",
-        "blueprintTotalNum": 12,
+        "blueprintTotalNum": 13,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -793,7 +793,7 @@
             },
             {
                 "expirationDate": 1749653999000,
-                "blueprintNum": 1,
+                "blueprintNum": 2,
                 "expireThisMonth": false
             }
         ]
@@ -979,7 +979,7 @@
         "shipType": "駆逐艦",
         "shipName": "萩風",
         "statusImg": "i/i_40kw3q9pkmg2_n.png",
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -994,7 +994,7 @@
             },
             {
                 "expirationDate": 1749653999000,
-                "blueprintNum": 1,
+                "blueprintNum": 2,
                 "expireThisMonth": false
             }
         ]
@@ -1210,7 +1210,7 @@
         "shipType": "軽空母",
         "shipName": "鳳翔",
         "statusImg": "i/i_9gzdf9k4aud1_n.png",
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 3,
         "existsWarningForExpiration": false,
         "expirationDateList": [
             {
@@ -1220,6 +1220,11 @@
             },
             {
                 "expirationDate": 1744383599000,
+                "blueprintNum": 1,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
                 "blueprintNum": 1,
                 "expireThisMonth": false
             }
@@ -1434,7 +1439,7 @@
         "shipType": "駆逐艦",
         "shipName": "風雲",
         "statusImg": "i/i_amc0tpxk26dx_n.png",
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "existsWarningForExpiration": false,
         "expirationDateList": [
             {
@@ -1444,7 +1449,7 @@
             },
             {
                 "expirationDate": 1749653999000,
-                "blueprintNum": 1,
+                "blueprintNum": 2,
                 "expireThisMonth": false
             }
         ]
@@ -1868,7 +1873,7 @@
         "shipType": "重巡洋艦",
         "shipName": "加古",
         "statusImg": "i/i_gfq2cq264pfk_n.png",
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 5,
         "existsWarningForExpiration": false,
         "expirationDateList": [
             {
@@ -1878,6 +1883,11 @@
             },
             {
                 "expirationDate": 1746975599000,
+                "blueprintNum": 1,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
                 "blueprintNum": 1,
                 "expireThisMonth": false
             }
@@ -1890,7 +1900,7 @@
         "shipType": "駆逐艦",
         "shipName": "早霜",
         "statusImg": "i/i_fm346tmmjnkp_n.png",
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 3,
         "existsWarningForExpiration": false,
         "expirationDateList": [
             {
@@ -1900,6 +1910,11 @@
             },
             {
                 "expirationDate": 1746975599000,
+                "blueprintNum": 1,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
                 "blueprintNum": 1,
                 "expireThisMonth": false
             }
@@ -1912,7 +1927,7 @@
         "shipType": "駆逐艦",
         "shipName": "清霜",
         "statusImg": "i/i_egkkjyxznp3g_n.png",
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 7,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -1927,6 +1942,11 @@
             },
             {
                 "expirationDate": 1741705199000,
+                "blueprintNum": 2,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
                 "blueprintNum": 2,
                 "expireThisMonth": false
             }
@@ -2111,7 +2131,7 @@
         "shipType": "軽巡洋艦",
         "shipName": "那珂",
         "statusImg": "i/i_9fek3s2cwnem_n.png",
-        "blueprintTotalNum": 8,
+        "blueprintTotalNum": 9,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -2132,6 +2152,11 @@
             {
                 "expirationDate": 1744383599000,
                 "blueprintNum": 2,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
+                "blueprintNum": 1,
                 "expireThisMonth": false
             }
         ]
@@ -2416,7 +2441,7 @@
         "shipType": "潜水母艦",
         "shipName": "大鯨",
         "statusImg": "i/i_92w040dm44d3_n.png",
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "existsWarningForExpiration": false,
         "expirationDateList": [
             {
@@ -2428,22 +2453,10 @@
                 "expirationDate": 1746975599000,
                 "blueprintNum": 1,
                 "expireThisMonth": false
-            }
-        ]
-    },
-    {
-        "shipClassId": 73,
-        "shipClassIndex": 1,
-        "shipSortNo": 1200,
-        "shipType": "戦艦",
-        "shipName": "Iowa",
-        "statusImg": "i/i_ae44904uk6mq_n.png",
-        "blueprintTotalNum": 3,
-        "existsWarningForExpiration": false,
-        "expirationDateList": [
+            },
             {
                 "expirationDate": 1749653999000,
-                "blueprintNum": 3,
+                "blueprintNum": 1,
                 "expireThisMonth": false
             }
         ]
@@ -2538,7 +2551,7 @@
         "shipType": "戦艦",
         "shipName": "扶桑",
         "statusImg": "i/i_p9u490qtc1a4_n.png",
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 8,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -2563,6 +2576,11 @@
             },
             {
                 "expirationDate": 1746975599000,
+                "blueprintNum": 1,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
                 "blueprintNum": 1,
                 "expireThisMonth": false
             }
@@ -2651,7 +2669,7 @@
         "shipType": "水上機母艦",
         "shipName": "千歳",
         "statusImg": "i/i_x44xgkjc9a4z_n.png",
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 7,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -2661,6 +2679,11 @@
             },
             {
                 "expirationDate": 1746975599000,
+                "blueprintNum": 1,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
                 "blueprintNum": 1,
                 "expireThisMonth": false
             }
@@ -2712,7 +2735,7 @@
         "shipType": "軽巡洋艦",
         "shipName": "阿賀野",
         "statusImg": "i/i_kedkdkwmmwk6_n.png",
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -2727,6 +2750,11 @@
             },
             {
                 "expirationDate": 1746975599000,
+                "blueprintNum": 1,
+                "expireThisMonth": false
+            },
+            {
+                "expirationDate": 1749653999000,
                 "blueprintNum": 1,
                 "expireThisMonth": false
             }
@@ -2992,7 +3020,7 @@
         "shipType": "軽空母",
         "shipName": "瑞鳳",
         "statusImg": "i/i_aansepejw24k_n.png",
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 11,
         "existsWarningForExpiration": true,
         "expirationDateList": [
             {
@@ -3022,7 +3050,7 @@
             },
             {
                 "expirationDate": 1749653999000,
-                "blueprintNum": 2,
+                "blueprintNum": 3,
                 "expireThisMonth": false
             }
         ]

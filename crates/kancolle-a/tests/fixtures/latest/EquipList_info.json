@@ -1,5 +1,5 @@
 {
-    "maxSlotNum": 580,
+    "maxSlotNum": 590,
     "equipList": [
         {
             "type": 5,
@@ -10,9 +10,16 @@
         },
         {
             "type": 1,
+            "equipmentId": 1,
+            "name": "12cm単装砲",
+            "num": 3,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 1,
             "equipmentId": 2,
             "name": "12.7cm連装砲",
-            "num": 1,
+            "num": 3,
             "img": "equip_icon_1_1984kzwm2f7s.png"
         },
         {
@@ -21,13 +28,6 @@
             "name": "10cm連装高角砲",
             "num": 13,
             "img": "equip_icon_26_rv74l134q7an.png"
-        },
-        {
-            "type": 1,
-            "equipmentId": 4,
-            "name": "14cm単装砲",
-            "num": 1,
-            "img": "equip_icon_2_n8b0sex6xclf.png"
         },
         {
             "type": 1,
@@ -91,13 +91,6 @@
             "name": "15.5cm三連装副砲",
             "num": 6,
             "img": "equip_icon_4_mgy58yrghven.png"
-        },
-        {
-            "type": 3,
-            "equipmentId": 13,
-            "name": "61cm三連装魚雷",
-            "num": 1,
-            "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
             "type": 3,
@@ -184,13 +177,6 @@
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
-            "type": 8,
-            "equipmentId": 30,
-            "name": "21号対空電探",
-            "num": 6,
-            "img": "equip_icon_11_xznvoamgip59.png"
-        },
-        {
             "type": 7,
             "equipmentId": 287,
             "name": "三式爆雷投射機 集中配備",
@@ -241,27 +227,6 @@
         },
         {
             "type": 2,
-            "equipmentId": 37,
-            "name": "7.7mm機銃",
-            "num": 1,
-            "img": "equip_icon_15_wpoe5ai203dt.png"
-        },
-        {
-            "type": 2,
-            "equipmentId": 38,
-            "name": "12.7mm単装機銃",
-            "num": 1,
-            "img": "equip_icon_15_wpoe5ai203dt.png"
-        },
-        {
-            "type": 2,
-            "equipmentId": 39,
-            "name": "25mm連装機銃",
-            "num": 1,
-            "img": "equip_icon_15_wpoe5ai203dt.png"
-        },
-        {
-            "type": 2,
             "equipmentId": 40,
             "name": "25mm三連装機銃",
             "num": 3,
@@ -273,6 +238,13 @@
             "name": "甲標的 甲型",
             "num": 15,
             "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 44,
+            "name": "九四式爆雷投射機",
+            "num": 2,
+            "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {
             "type": 7,
@@ -308,13 +280,6 @@
             "name": "S9 Osprey",
             "num": 1,
             "img": "equip_icon_10_lpoysb3zk6s4.png"
-        },
-        {
-            "type": 2,
-            "equipmentId": 49,
-            "name": "25mm単装機銃",
-            "num": 2,
-            "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
             "type": 1,
@@ -915,7 +880,7 @@
             "type": 1,
             "equipmentId": 161,
             "name": "16inch三連装砲 Mk.7",
-            "num": 1,
+            "num": 2,
             "img": "equip_icon_3_me6e2ezu084a.png"
         },
         {
@@ -954,11 +919,25 @@
             "img": "equip_icon_37_vbnzupbow3sw.png"
         },
         {
+            "type": 6,
+            "equipmentId": 171,
+            "name": "OS2U",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
             "type": 2,
             "equipmentId": 172,
             "name": "5inch連装砲 Mk.28 mod.2",
-            "num": 1,
+            "num": 2,
             "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 173,
+            "name": "Bofors 40mm四連装機関砲",
+            "num": 1,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
             "type": 3,

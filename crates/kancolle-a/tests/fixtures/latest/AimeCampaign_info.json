@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "id": 0,
+        "order": 1,
+        "startTime": 1737669600000,
+        "endTime": 1738681140000,
+        "hasEntered": true,
+        "entryNum": 10,
+        "needCredit": 1,
+        "aimeUrl": "https://my-aime.net/campaign/165/event",
+        "status": "OPEN"
+    }
+]

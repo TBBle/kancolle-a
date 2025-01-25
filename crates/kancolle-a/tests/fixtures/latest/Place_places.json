@@ -4896,6 +4896,22 @@
         "zoomLevel": 16
     },
     {
+        "id": 107279,
+        "distance": "",
+        "name": "ラウンドワン津・高茶屋店",
+        "tel": "0592380011",
+        "address": "三重県津市高茶屋小森町２７７−８",
+        "station": "",
+        "openTime": "10:00   ",
+        "closeTime": "23:50   ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "MIE",
+        "latitude": "34.672466",
+        "longitude": "136.51947",
+        "zoomLevel": 16
+    },
+    {
         "id": 107286,
         "distance": "",
         "name": "ラウンドワン沖縄・宜野湾店",
@@ -5741,22 +5757,6 @@
         "regionEnum": "SAITAMA",
         "latitude": "35.794851",
         "longitude": "139.747529",
-        "zoomLevel": 16
-    },
-    {
-        "id": 109074,
-        "distance": "",
-        "name": "ゲームディーノ阪急茨木店",
-        "tel": "0726485222",
-        "address": "大阪府茨木市永代町５ ソシオビルＢ１",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "OSAKA",
-        "latitude": "34.817516",
-        "longitude": "135.57561",
         "zoomLevel": 16
     },
     {

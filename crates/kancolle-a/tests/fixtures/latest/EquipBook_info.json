@@ -931,9 +931,9 @@
     },
     {
         "bookNo": 171,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "水上偵察機",
+        "equipName": "OS2U",
+        "equipImg": "e/equip_171_4ikohnnsmdn.png"
     },
     {
         "bookNo": 172,
@@ -943,9 +943,9 @@
     },
     {
         "bookNo": 173,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "対空機銃",
+        "equipName": "Bofors 40mm四連装機関砲",
+        "equipImg": "e/equip_173_ymo1q07f352.png"
     },
     {
         "bookNo": 174,
@@ -1570,6 +1570,12 @@
         "equipKind": "爆雷",
         "equipName": "RUR-4A Weapon Alpha改",
         "equipImg": "e/equip_377_xsqsb6obh7a.png"
+    },
+    {
+        "bookNo": 379,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
     },
     {
         "bookNo": 407,

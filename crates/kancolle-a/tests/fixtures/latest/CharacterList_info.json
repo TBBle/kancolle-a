@@ -1,7 +1,7 @@
 [
     {
         "bookNo": 1,
-        "lv": 67,
+        "lv": 69,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -11,9 +11,9 @@
         "shipClass": "長門型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_1_d7ju63kolamj.jpg",
-        "expPercent": 6,
+        "expPercent": 52,
         "maxHp": 80,
-        "realHp": 74,
+        "realHp": 79,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
@@ -54,7 +54,7 @@
     },
     {
         "bookNo": 1,
-        "lv": 67,
+        "lv": 69,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 1,
@@ -64,16 +64,16 @@
         "shipClass": "長門型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_1_2wp6daq4fn42.jpg",
-        "expPercent": 6,
+        "expPercent": 52,
         "maxHp": 90,
-        "realHp": 83,
+        "realHp": 88,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "",
-            "",
-            "",
-            ""
+            "試製41cm三連装砲",
+            "試製41cm三連装砲",
+            "試製41cm三連装砲",
+            "九一式徹甲弾"
         ],
         "slotAmount": [
             3,
@@ -88,10 +88,10 @@
             "NOT_EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
-            "",
-            "",
-            "",
-            ""
+            "equip_icon_3_me6e2ezu084a.png",
+            "equip_icon_3_me6e2ezu084a.png",
+            "equip_icon_3_me6e2ezu084a.png",
+            "equip_icon_14_7x6o1b4mwzdx.png"
         ],
         "slotExtension": [
             false,
@@ -223,7 +223,7 @@
         "shipClass": "伊勢型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_3_cs0pmq9rcat1.jpg",
-        "expPercent": 90,
+        "expPercent": 97,
         "maxHp": 74,
         "realHp": 74,
         "damageStatus": "NORMAL",
@@ -276,7 +276,7 @@
         "shipClass": "伊勢型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_102_1t4akyd94s7r.jpg",
-        "expPercent": 90,
+        "expPercent": 97,
         "maxHp": 77,
         "realHp": 77,
         "damageStatus": "NORMAL",
@@ -290,7 +290,7 @@
         "slotAmount": [
             11,
             11,
-            11,
+            9,
             14
         ],
         "slotDisp": [
@@ -339,38 +339,38 @@
         "starNum": 5,
         "shipClass": "改伊勢型",
         "tcImg": "s/tc_353_rem4numkg6m6.jpg",
-        "expPercent": 90,
+        "expPercent": 97,
         "maxHp": 78,
         "realHp": 78,
         "damageStatus": "NORMAL",
         "slotNum": 5,
         "slotEquipName": [
-            "試製41cm三連装砲",
-            "試製41cm三連装砲",
             "瑞雲改二(六三四空/熟練)",
             "二式艦上偵察機",
-            "一式徹甲弾"
+            "",
+            "",
+            ""
         ],
         "slotAmount": [
             2,
             2,
-            21,
+            18,
             22,
             9
         ],
         "slotDisp": [
-            "NOT_EQUIPPED_AIRCRAFT",
-            "NOT_EQUIPPED_AIRCRAFT",
             "EQUIPPED_AIRCRAFT",
             "EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT",
             "NOT_EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
-            "equip_icon_3_me6e2ezu084a.png",
-            "equip_icon_3_me6e2ezu084a.png",
             "equip_icon_10_lpoysb3zk6s4.png",
             "equip_icon_9_s61o68iy522i.png",
-            "equip_icon_14_7x6o1b4mwzdx.png"
+            "",
+            "",
+            ""
         ],
         "slotExtension": [
             false,
@@ -418,7 +418,7 @@
         "shipClass": "伊勢型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_4_ctqz4d1x6qxk.jpg",
-        "expPercent": 6,
+        "expPercent": 19,
         "maxHp": 74,
         "realHp": 74,
         "damageStatus": "NORMAL",
@@ -471,7 +471,7 @@
         "shipClass": "伊勢型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_103_cu4q4xwmc4sj.jpg",
-        "expPercent": 6,
+        "expPercent": 19,
         "maxHp": 77,
         "realHp": 77,
         "damageStatus": "NORMAL",
@@ -485,7 +485,7 @@
         "slotAmount": [
             11,
             11,
-            11,
+            9,
             14
         ],
         "slotDisp": [
@@ -534,38 +534,38 @@
         "starNum": 5,
         "shipClass": "改伊勢型",
         "tcImg": "s/tc_354_7qg70fz1qqsz.jpg",
-        "expPercent": 6,
+        "expPercent": 19,
         "maxHp": 78,
         "realHp": 78,
         "damageStatus": "NORMAL",
         "slotNum": 5,
         "slotEquipName": [
             "試製41cm三連装砲",
-            "試製41cm三連装砲",
             "瑞雲(六三四空/熟練)",
             "二式艦上偵察機",
-            "一式徹甲弾"
+            "",
+            ""
         ],
         "slotAmount": [
             2,
             8,
-            22,
+            18,
             12,
             11
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
+            "EQUIPPED_AIRCRAFT",
+            "EQUIPPED_AIRCRAFT",
             "NOT_EQUIPPED_AIRCRAFT",
-            "EQUIPPED_AIRCRAFT",
-            "EQUIPPED_AIRCRAFT",
             "NOT_EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
             "equip_icon_3_me6e2ezu084a.png",
-            "equip_icon_3_me6e2ezu084a.png",
             "equip_icon_10_lpoysb3zk6s4.png",
             "equip_icon_9_s61o68iy522i.png",
-            "equip_icon_14_7x6o1b4mwzdx.png"
+            "",
+            ""
         ],
         "slotExtension": [
             false,
@@ -603,7 +603,7 @@
     },
     {
         "bookNo": 5,
-        "lv": 44,
+        "lv": 46,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
@@ -613,7 +613,7 @@
         "shipClass": "陽炎型",
         "shipClassIndex": 8,
         "tcImg": "s/tc_5_gc3ynk3f42p4.jpg",
-        "expPercent": 96,
+        "expPercent": 70,
         "maxHp": 16,
         "realHp": 16,
         "damageStatus": "NORMAL",
@@ -656,7 +656,7 @@
     },
     {
         "bookNo": 5,
-        "lv": 44,
+        "lv": 46,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 1,
@@ -666,13 +666,13 @@
         "shipClass": "陽炎型",
         "shipClassIndex": 8,
         "tcImg": "s/tc_5_7sy2x2xkfurn.jpg",
-        "expPercent": 96,
+        "expPercent": 70,
         "maxHp": 32,
         "realHp": 32,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "",
+            "12.7cm連装砲C型改二",
             "",
             "",
             ""
@@ -690,7 +690,7 @@
             "NONE"
         ],
         "slotImg": [
-            "",
+            "equip_icon_1_1984kzwm2f7s.png",
             "",
             "",
             ""
@@ -1374,9 +1374,9 @@
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "10cm高角砲＋高射装置",
-            "10cm高角砲＋高射装置",
-            "GFCS Mk.37",
+            "",
+            "",
+            "",
             ""
         ],
         "slotAmount": [
@@ -1392,9 +1392,9 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_26_rv74l134q7an.png",
-            "equip_icon_26_rv74l134q7an.png",
-            "equip_icon_11_xznvoamgip59.png",
+            "",
+            "",
+            "",
             ""
         ],
         "slotExtension": [
@@ -2704,7 +2704,7 @@
     },
     {
         "bookNo": 21,
-        "lv": 97,
+        "lv": 98,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -2714,7 +2714,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_21_esqkcgkcuent.jpg",
-        "expPercent": 78,
+        "expPercent": 14,
         "maxHp": 63,
         "realHp": 63,
         "damageStatus": "NORMAL",
@@ -2757,7 +2757,7 @@
     },
     {
         "bookNo": 21,
-        "lv": 97,
+        "lv": 98,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 1,
@@ -2767,7 +2767,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_21_ktxfp6kq3fjs.jpg",
-        "expPercent": 78,
+        "expPercent": 14,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -2810,7 +2810,7 @@
     },
     {
         "bookNo": 149,
-        "lv": 97,
+        "lv": 98,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 2,
@@ -2820,7 +2820,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_149_kr4qq4rrp9s9.jpg",
-        "expPercent": 78,
+        "expPercent": 14,
         "maxHp": 82,
         "realHp": 82,
         "damageStatus": "NORMAL",
@@ -2863,7 +2863,7 @@
     },
     {
         "bookNo": 391,
-        "lv": 97,
+        "lv": 98,
         "shipType": "高速戦艦",
         "shipSortNo": 1250,
         "remodelLv": 3,
@@ -2873,7 +2873,7 @@
         "shipClass": "改金剛型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_391_wk4unmq3nzru.jpg",
-        "expPercent": 78,
+        "expPercent": 14,
         "maxHp": 86,
         "realHp": 86,
         "damageStatus": "NORMAL",
@@ -2947,7 +2947,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_22_dn9eg6ckdmzw.jpg",
-        "expPercent": 41,
+        "expPercent": 83,
         "maxHp": 63,
         "realHp": 63,
         "damageStatus": "NORMAL",
@@ -3000,7 +3000,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_22_u4ku9qfsj7g0.jpg",
-        "expPercent": 41,
+        "expPercent": 83,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -3053,7 +3053,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_150_y79kru2mgf4z.jpg",
-        "expPercent": 41,
+        "expPercent": 83,
         "maxHp": 83,
         "realHp": 83,
         "damageStatus": "NORMAL",
@@ -3096,7 +3096,7 @@
     },
     {
         "bookNo": 23,
-        "lv": 97,
+        "lv": 98,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -3106,7 +3106,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_23_9t77p71k36f0.jpg",
-        "expPercent": 57,
+        "expPercent": 12,
         "maxHp": 63,
         "realHp": 63,
         "damageStatus": "NORMAL",
@@ -3149,7 +3149,7 @@
     },
     {
         "bookNo": 23,
-        "lv": 97,
+        "lv": 98,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 1,
@@ -3159,7 +3159,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_23_1tczj3c9t06a.jpg",
-        "expPercent": 57,
+        "expPercent": 12,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -3202,7 +3202,7 @@
     },
     {
         "bookNo": 151,
-        "lv": 97,
+        "lv": 98,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 2,
@@ -3212,7 +3212,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_151_y1egmmjkrgqk.jpg",
-        "expPercent": 57,
+        "expPercent": 12,
         "maxHp": 81,
         "realHp": 81,
         "damageStatus": "NORMAL",
@@ -3276,7 +3276,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_24_k2q9maf2wm1n.jpg",
-        "expPercent": 23,
+        "expPercent": 65,
         "maxHp": 63,
         "realHp": 63,
         "damageStatus": "NORMAL",
@@ -3329,7 +3329,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_24_2gte7493ctk7.jpg",
-        "expPercent": 23,
+        "expPercent": 65,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -3382,7 +3382,7 @@
         "shipClass": "金剛型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_152_2ge19zm4pmqk.jpg",
-        "expPercent": 23,
+        "expPercent": 65,
         "maxHp": 82,
         "realHp": 82,
         "damageStatus": "NORMAL",
@@ -3481,7 +3481,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 2503200100,
         "developEquipmentList": [],
@@ -3534,7 +3534,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 2503200101,
         "developEquipmentList": [],
@@ -3542,7 +3542,7 @@
     },
     {
         "bookNo": 26,
-        "lv": 108,
+        "lv": 109,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -3552,7 +3552,7 @@
         "shipClass": "扶桑型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_26_ktke7njfxcnx.jpg",
-        "expPercent": 64,
+        "expPercent": 49,
         "maxHp": 74,
         "realHp": 74,
         "damageStatus": "NORMAL",
@@ -3587,7 +3587,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 8,
         "married": true,
         "dispSortNo": 2600100100,
         "developEquipmentList": [],
@@ -3595,7 +3595,7 @@
     },
     {
         "bookNo": 26,
-        "lv": 108,
+        "lv": 109,
         "shipType": "航空戦艦",
         "shipSortNo": 1100,
         "remodelLv": 1,
@@ -3605,7 +3605,7 @@
         "shipClass": "扶桑型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_26_tg21e17c6cre.jpg",
-        "expPercent": 64,
+        "expPercent": 49,
         "maxHp": 83,
         "realHp": 83,
         "damageStatus": "NORMAL",
@@ -3640,7 +3640,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 8,
         "married": true,
         "dispSortNo": 2600100101,
         "developEquipmentList": [],
@@ -3648,7 +3648,7 @@
     },
     {
         "bookNo": 211,
-        "lv": 108,
+        "lv": 109,
         "shipType": "航空戦艦",
         "shipSortNo": 1100,
         "remodelLv": 2,
@@ -3658,13 +3658,13 @@
         "shipClass": "扶桑型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_211_61n9a2tn6jtt.jpg",
-        "expPercent": 64,
+        "expPercent": 49,
         "maxHp": 85,
         "realHp": 85,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "381mm/50 三連装砲",
+            "381mm/50 三連装砲改",
             "",
             "",
             ""
@@ -3693,7 +3693,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 7,
+        "blueprintTotalNum": 8,
         "married": true,
         "dispSortNo": 2600100102,
         "developEquipmentList": [
@@ -3722,7 +3722,7 @@
     },
     {
         "bookNo": 27,
-        "lv": 93,
+        "lv": 94,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -3732,7 +3732,7 @@
         "shipClass": "扶桑型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_27_1qfjcm0myyfq.jpg",
-        "expPercent": 97,
+        "expPercent": 34,
         "maxHp": 67,
         "realHp": 67,
         "damageStatus": "NORMAL",
@@ -3775,7 +3775,7 @@
     },
     {
         "bookNo": 27,
-        "lv": 93,
+        "lv": 94,
         "shipType": "航空戦艦",
         "shipSortNo": 1100,
         "remodelLv": 1,
@@ -3785,7 +3785,7 @@
         "shipClass": "扶桑型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_27_m9m3p7qfcpmf.jpg",
-        "expPercent": 97,
+        "expPercent": 34,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -3828,7 +3828,7 @@
     },
     {
         "bookNo": 212,
-        "lv": 93,
+        "lv": 94,
         "shipType": "航空戦艦",
         "shipSortNo": 1100,
         "remodelLv": 2,
@@ -3838,15 +3838,15 @@
         "shipClass": "扶桑型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_212_zztq6dqqnfxt.jpg",
-        "expPercent": 97,
+        "expPercent": 34,
         "maxHp": 77,
         "realHp": 77,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "試製41cm三連装砲",
             "381mm/50 三連装砲",
-            "96式150cm探照灯",
+            "試製41cm三連装砲",
+            "",
             ""
         ],
         "slotAmount": [
@@ -3864,7 +3864,7 @@
         "slotImg": [
             "equip_icon_3_me6e2ezu084a.png",
             "equip_icon_3_me6e2ezu084a.png",
-            "equip_icon_23_bbrk4s8firij.png",
+            "",
             ""
         ],
         "slotExtension": [
@@ -5809,7 +5809,7 @@
     },
     {
         "bookNo": 43,
-        "lv": 62,
+        "lv": 63,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 0,
@@ -5819,7 +5819,7 @@
         "shipClass": "長良型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_43_mn1pf0czztk7.jpg",
-        "expPercent": 65,
+        "expPercent": 47,
         "maxHp": 26,
         "realHp": 26,
         "damageStatus": "NORMAL",
@@ -5862,7 +5862,7 @@
     },
     {
         "bookNo": 43,
-        "lv": 62,
+        "lv": 63,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 1,
@@ -5872,7 +5872,7 @@
         "shipClass": "長良型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_43_431xkckwqmck.jpg",
-        "expPercent": 65,
+        "expPercent": 47,
         "maxHp": 37,
         "realHp": 37,
         "damageStatus": "NORMAL",
@@ -5915,25 +5915,25 @@
     },
     {
         "bookNo": 141,
-        "lv": 62,
+        "lv": 63,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 2,
         "shipName": "五十鈴改二",
         "statusImg": "i/i_nm0mrzddmnuw_n.png",
-        "starNum": 2,
+        "starNum": 3,
         "shipClass": "長良型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_141_m3sjpu42znqe.jpg",
-        "expPercent": 65,
+        "expPercent": 47,
         "maxHp": 44,
         "realHp": 44,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "",
-            "",
-            "",
+            "三式水中探信儀",
+            "九五式爆雷",
+            "三式爆雷投射機",
             ""
         ],
         "slotAmount": [
@@ -5949,9 +5949,9 @@
             "NONE"
         ],
         "slotImg": [
-            "",
-            "",
-            "",
+            "equip_icon_18_34j48vvi4jhh.png",
+            "equip_icon_17_t753p5s1xs0h.png",
+            "equip_icon_17_t753p5s1xs0h.png",
             ""
         ],
         "slotExtension": [
@@ -6615,7 +6615,7 @@
     },
     {
         "bookNo": 48,
-        "lv": 38,
+        "lv": 41,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 0,
@@ -6625,7 +6625,7 @@
         "shipClass": "川内型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_48_9fek3s2cwnem.jpg",
-        "expPercent": 57,
+        "expPercent": 95,
         "maxHp": 26,
         "realHp": 26,
         "damageStatus": "NORMAL",
@@ -6660,7 +6660,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 8,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 4801200300,
         "developEquipmentList": [],
@@ -6668,7 +6668,7 @@
     },
     {
         "bookNo": 48,
-        "lv": 38,
+        "lv": 41,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 1,
@@ -6678,7 +6678,7 @@
         "shipClass": "川内型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_48_c0sz4naksc94.jpg",
-        "expPercent": 57,
+        "expPercent": 95,
         "maxHp": 44,
         "realHp": 44,
         "damageStatus": "NORMAL",
@@ -6692,7 +6692,7 @@
         "slotAmount": [
             1,
             1,
-            0,
+            1,
             0
         ],
         "slotDisp": [
@@ -6713,7 +6713,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 8,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 4801200301,
         "developEquipmentList": [],
@@ -6721,7 +6721,7 @@
     },
     {
         "bookNo": 160,
-        "lv": 38,
+        "lv": 41,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 2,
@@ -6731,7 +6731,7 @@
         "shipClass": "川内型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_160_tm4ktxmkfkwu.jpg",
-        "expPercent": 57,
+        "expPercent": 95,
         "maxHp": 48,
         "realHp": 48,
         "damageStatus": "NORMAL",
@@ -6739,13 +6739,13 @@
         "slotEquipName": [
             "九五式爆雷",
             "三式水中探信儀",
-            "",
+            "RUR-4A Weapon Alpha改",
             ""
         ],
         "slotAmount": [
             1,
             1,
-            0,
+            1,
             0
         ],
         "slotDisp": [
@@ -6757,7 +6757,7 @@
         "slotImg": [
             "equip_icon_17_t753p5s1xs0h.png",
             "equip_icon_18_34j48vvi4jhh.png",
-            "",
+            "equip_icon_17_t753p5s1xs0h.png",
             ""
         ],
         "slotExtension": [
@@ -6766,7 +6766,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 8,
+        "blueprintTotalNum": 9,
         "married": false,
         "dispSortNo": 4801200302,
         "developEquipmentList": [],
@@ -6774,7 +6774,7 @@
     },
     {
         "bookNo": 49,
-        "lv": 46,
+        "lv": 47,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 0,
@@ -6784,7 +6784,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_49_x44xgkjc9a4z.jpg",
-        "expPercent": 6,
+        "expPercent": 85,
         "maxHp": 40,
         "realHp": 40,
         "damageStatus": "NORMAL",
@@ -6796,8 +6796,8 @@
             ""
         ],
         "slotAmount": [
-            7,
-            3,
+            10,
+            8,
             0,
             0
         ],
@@ -6819,7 +6819,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 4900500100,
         "developEquipmentList": [],
@@ -6827,7 +6827,7 @@
     },
     {
         "bookNo": 95,
-        "lv": 46,
+        "lv": 47,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 1,
@@ -6837,7 +6837,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_95_6a3eccmpq03x.jpg",
-        "expPercent": 6,
+        "expPercent": 85,
         "maxHp": 41,
         "realHp": 41,
         "damageStatus": "NORMAL",
@@ -6849,9 +6849,9 @@
             ""
         ],
         "slotAmount": [
-            7,
-            2,
-            1,
+            10,
+            4,
+            5,
             0
         ],
         "slotDisp": [
@@ -6872,7 +6872,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 4900500101,
         "developEquipmentList": [],
@@ -6880,7 +6880,7 @@
     },
     {
         "bookNo": 99,
-        "lv": 46,
+        "lv": 47,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 2,
@@ -6890,7 +6890,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_99_96g3y2zr6sq7.jpg",
-        "expPercent": 6,
+        "expPercent": 85,
         "maxHp": 42,
         "realHp": 42,
         "damageStatus": "NORMAL",
@@ -6902,9 +6902,9 @@
             ""
         ],
         "slotAmount": [
-            7,
-            2,
-            1,
+            10,
+            4,
+            5,
             0
         ],
         "slotDisp": [
@@ -6925,7 +6925,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 4900500102,
         "developEquipmentList": [],
@@ -6933,7 +6933,7 @@
     },
     {
         "bookNo": 104,
-        "lv": 46,
+        "lv": 47,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 3,
@@ -6943,7 +6943,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_104_apqs9x1kdkat.jpg",
-        "expPercent": 6,
+        "expPercent": 85,
         "maxHp": 47,
         "realHp": 47,
         "damageStatus": "NORMAL",
@@ -6955,9 +6955,9 @@
             ""
         ],
         "slotAmount": [
-            12,
-            3,
-            1,
+            18,
+            6,
+            5,
             0
         ],
         "slotDisp": [
@@ -6978,7 +6978,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 4900500103,
         "developEquipmentList": [],
@@ -6986,7 +6986,7 @@
     },
     {
         "bookNo": 104,
-        "lv": 46,
+        "lv": 47,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 4,
@@ -6996,7 +6996,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_104_4r41tdzrqxwn.jpg",
-        "expPercent": 6,
+        "expPercent": 85,
         "maxHp": 57,
         "realHp": 57,
         "damageStatus": "NORMAL",
@@ -7008,9 +7008,9 @@
             ""
         ],
         "slotAmount": [
-            13,
-            4,
-            1,
+            20,
+            10,
+            7,
             8
         ],
         "slotDisp": [
@@ -7031,7 +7031,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 4900500104,
         "developEquipmentList": [
@@ -7050,17 +7050,17 @@
     },
     {
         "bookNo": 121,
-        "lv": 46,
+        "lv": 47,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 5,
         "shipName": "千歳航改二",
         "statusImg": "i/i_q9szeyawp9gq_n.png",
-        "starNum": 3,
+        "starNum": 4,
         "shipClass": "千歳型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_121_319cc4a2pkk6.jpg",
-        "expPercent": 6,
+        "expPercent": 85,
         "maxHp": 58,
         "realHp": 58,
         "damageStatus": "NORMAL",
@@ -7072,9 +7072,9 @@
             "彩雲"
         ],
         "slotAmount": [
-            13,
-            4,
-            1,
+            20,
+            10,
+            9,
             8
         ],
         "slotDisp": [
@@ -7095,7 +7095,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 6,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 4900500105,
         "developEquipmentList": [
@@ -7114,7 +7114,7 @@
     },
     {
         "bookNo": 50,
-        "lv": 46,
+        "lv": 48,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 0,
@@ -7124,7 +7124,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_50_yzxw7mqeeqp1.jpg",
-        "expPercent": 42,
+        "expPercent": 20,
         "maxHp": 40,
         "realHp": 40,
         "damageStatus": "NORMAL",
@@ -7136,8 +7136,8 @@
             ""
         ],
         "slotAmount": [
-            7,
-            0,
+            11,
+            9,
             0,
             0
         ],
@@ -7167,7 +7167,7 @@
     },
     {
         "bookNo": 96,
-        "lv": 46,
+        "lv": 48,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 1,
@@ -7177,7 +7177,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_96_143szp9f4a1s.jpg",
-        "expPercent": 42,
+        "expPercent": 20,
         "maxHp": 41,
         "realHp": 41,
         "damageStatus": "NORMAL",
@@ -7189,9 +7189,9 @@
             ""
         ],
         "slotAmount": [
-            7,
-            0,
-            3,
+            11,
+            5,
+            4,
             0
         ],
         "slotDisp": [
@@ -7220,7 +7220,7 @@
     },
     {
         "bookNo": 100,
-        "lv": 46,
+        "lv": 48,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 2,
@@ -7230,7 +7230,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_100_mc9sqmqj2xj4.jpg",
-        "expPercent": 42,
+        "expPercent": 20,
         "maxHp": 42,
         "realHp": 42,
         "damageStatus": "NORMAL",
@@ -7242,9 +7242,9 @@
             ""
         ],
         "slotAmount": [
-            7,
-            0,
-            3,
+            11,
+            5,
+            4,
             0
         ],
         "slotDisp": [
@@ -7273,7 +7273,7 @@
     },
     {
         "bookNo": 105,
-        "lv": 46,
+        "lv": 48,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 3,
@@ -7283,7 +7283,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_105_cc94swqjp4p1.jpg",
-        "expPercent": 42,
+        "expPercent": 20,
         "maxHp": 47,
         "realHp": 47,
         "damageStatus": "NORMAL",
@@ -7295,9 +7295,9 @@
             ""
         ],
         "slotAmount": [
-            13,
-            0,
-            3,
+            19,
+            7,
+            4,
             0
         ],
         "slotDisp": [
@@ -7326,7 +7326,7 @@
     },
     {
         "bookNo": 105,
-        "lv": 46,
+        "lv": 48,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 4,
@@ -7336,7 +7336,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_105_4a3yz14r4x4k.jpg",
-        "expPercent": 42,
+        "expPercent": 20,
         "maxHp": 57,
         "realHp": 57,
         "damageStatus": "NORMAL",
@@ -7348,9 +7348,9 @@
             ""
         ],
         "slotAmount": [
-            14,
-            0,
-            3,
+            21,
+            11,
+            6,
             8
         ],
         "slotDisp": [
@@ -7390,7 +7390,7 @@
     },
     {
         "bookNo": 122,
-        "lv": 46,
+        "lv": 48,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 5,
@@ -7400,7 +7400,7 @@
         "shipClass": "千歳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_122_wura4uffawmq.jpg",
-        "expPercent": 42,
+        "expPercent": 20,
         "maxHp": 58,
         "realHp": 58,
         "damageStatus": "NORMAL",
@@ -7412,9 +7412,9 @@
             ""
         ],
         "slotAmount": [
-            14,
-            0,
-            4,
+            21,
+            11,
+            7,
             8
         ],
         "slotDisp": [
@@ -7464,7 +7464,7 @@
         "shipClass": "最上型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_51_fne6wu9qzndx.jpg",
-        "expPercent": 1,
+        "expPercent": 19,
         "maxHp": 41,
         "realHp": 41,
         "damageStatus": "NORMAL",
@@ -7517,7 +7517,7 @@
         "shipClass": "最上型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_101_dyn44mm2mfd0.jpg",
-        "expPercent": 1,
+        "expPercent": 19,
         "maxHp": 50,
         "realHp": 50,
         "damageStatus": "NORMAL",
@@ -7581,7 +7581,7 @@
         "shipClass": "最上型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_301_rxtwx9fg4k9k.jpg",
-        "expPercent": 1,
+        "expPercent": 19,
         "maxHp": 60,
         "realHp": 60,
         "damageStatus": "NORMAL",
@@ -7634,16 +7634,16 @@
         "shipClass": "最上型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_306_601s4wkp2kez.jpg",
-        "expPercent": 1,
+        "expPercent": 19,
         "maxHp": 61,
         "realHp": 61,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "特大発動艇",
-            "特大発動艇",
-            "特大発動艇",
-            "特二式内火艇"
+            "20.3cm(3号)連装砲",
+            "20.3cm(3号)連装砲",
+            "32号対水上電探",
+            ""
         ],
         "slotAmount": [
             2,
@@ -7658,10 +7658,10 @@
             "NOT_EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
-            "equip_icon_19_tmq6560tf2mb.png",
-            "equip_icon_19_tmq6560tf2mb.png",
-            "equip_icon_19_tmq6560tf2mb.png",
-            "equip_icon_37_vbnzupbow3sw.png"
+            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_11_xznvoamgip59.png",
+            ""
         ],
         "slotExtension": [
             false,
@@ -7828,7 +7828,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 5300600200,
         "developEquipmentList": [],
@@ -7881,7 +7881,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 4,
+        "blueprintTotalNum": 5,
         "married": false,
         "dispSortNo": 5300600201,
         "developEquipmentList": [],
@@ -7995,7 +7995,7 @@
     },
     {
         "bookNo": 55,
-        "lv": 51,
+        "lv": 52,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -8005,7 +8005,7 @@
         "shipClass": "妙高型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_55_q4aj6qtp4fe1.jpg",
-        "expPercent": 58,
+        "expPercent": 97,
         "maxHp": 44,
         "realHp": 44,
         "damageStatus": "NORMAL",
@@ -8048,7 +8048,7 @@
     },
     {
         "bookNo": 55,
-        "lv": 51,
+        "lv": 52,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 1,
@@ -8058,7 +8058,7 @@
         "shipClass": "妙高型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_55_2pyeqkf6k0rk.jpg",
-        "expPercent": 58,
+        "expPercent": 97,
         "maxHp": 55,
         "realHp": 55,
         "damageStatus": "NORMAL",
@@ -8073,7 +8073,7 @@
             2,
             2,
             2,
-            0
+            2
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -8101,17 +8101,17 @@
     },
     {
         "bookNo": 191,
-        "lv": 51,
+        "lv": 52,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 2,
         "shipName": "妙高改二",
         "statusImg": "i/i_qmsrftkpc1nd_n.png",
-        "starNum": 2,
+        "starNum": 3,
         "shipClass": "妙高型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_191_dq26u7mawc0c.jpg",
-        "expPercent": 58,
+        "expPercent": 97,
         "maxHp": 56,
         "realHp": 56,
         "damageStatus": "NORMAL",
@@ -8126,7 +8126,7 @@
             2,
             2,
             4,
-            0
+            4
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -8287,9 +8287,9 @@
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "14号対空電探",
-            "20.3cm(3号)連装砲",
-            "20.3cm(3号)連装砲",
+            "",
+            "",
+            "",
             ""
         ],
         "slotAmount": [
@@ -8305,9 +8305,9 @@
             "NOT_EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
-            "equip_icon_11_xznvoamgip59.png",
-            "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png",
+            "",
+            "",
+            "",
             ""
         ],
         "slotExtension": [
@@ -8457,9 +8457,9 @@
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "32号対水上電探",
-            "20.3cm(3号)連装砲",
-            "20.3cm(3号)連装砲",
+            "",
+            "",
+            "",
             ""
         ],
         "slotAmount": [
@@ -8475,9 +8475,9 @@
             "NOT_EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
-            "equip_icon_11_xznvoamgip59.png",
-            "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png",
+            "",
+            "",
+            "",
             ""
         ],
         "slotExtension": [
@@ -8505,7 +8505,7 @@
     },
     {
         "bookNo": 58,
-        "lv": 43,
+        "lv": 45,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -8515,7 +8515,7 @@
         "shipClass": "妙高型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_58_u7zzy4442nay.jpg",
-        "expPercent": 35,
+        "expPercent": 16,
         "maxHp": 44,
         "realHp": 44,
         "damageStatus": "NORMAL",
@@ -8550,7 +8550,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 12,
+        "blueprintTotalNum": 13,
         "married": false,
         "dispSortNo": 5800700400,
         "developEquipmentList": [],
@@ -8558,7 +8558,7 @@
     },
     {
         "bookNo": 58,
-        "lv": 43,
+        "lv": 45,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 1,
@@ -8568,7 +8568,7 @@
         "shipClass": "妙高型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_58_y04myp02m496.jpg",
-        "expPercent": 35,
+        "expPercent": 16,
         "maxHp": 55,
         "realHp": 55,
         "damageStatus": "NORMAL",
@@ -8583,7 +8583,7 @@
             2,
             2,
             2,
-            0
+            2
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -8603,7 +8603,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 12,
+        "blueprintTotalNum": 13,
         "married": false,
         "dispSortNo": 5800700401,
         "developEquipmentList": [],
@@ -8611,7 +8611,7 @@
     },
     {
         "bookNo": 194,
-        "lv": 43,
+        "lv": 45,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 2,
@@ -8621,14 +8621,14 @@
         "shipClass": "妙高型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_194_cqmqj4arkjf9.jpg",
-        "expPercent": 35,
+        "expPercent": 16,
         "maxHp": 57,
         "realHp": 57,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
             "20.3cm(2号)連装砲",
-            "20.3cm(2号)連装砲",
+            "13号対空電探改",
             "",
             ""
         ],
@@ -8636,7 +8636,7 @@
             2,
             2,
             4,
-            0
+            4
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -8646,7 +8646,7 @@
         ],
         "slotImg": [
             "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_11_xznvoamgip59.png",
             "",
             ""
         ],
@@ -8656,7 +8656,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 12,
+        "blueprintTotalNum": 13,
         "married": false,
         "dispSortNo": 5800700402,
         "developEquipmentList": [
@@ -8675,7 +8675,7 @@
     },
     {
         "bookNo": 59,
-        "lv": 51,
+        "lv": 53,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -8685,7 +8685,7 @@
         "shipClass": "高雄型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_59_9k3z1qzd9k1a.jpg",
-        "expPercent": 7,
+        "expPercent": 78,
         "maxHp": 45,
         "realHp": 45,
         "damageStatus": "NORMAL",
@@ -8728,17 +8728,17 @@
     },
     {
         "bookNo": 59,
-        "lv": 51,
+        "lv": 53,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 1,
         "shipName": "高雄改",
         "statusImg": "i/i_ztfk06dcsdpk_n.png",
-        "starNum": 3,
+        "starNum": 4,
         "shipClass": "高雄型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_59_ztfk06dcsdpk.jpg",
-        "expPercent": 7,
+        "expPercent": 78,
         "maxHp": 57,
         "realHp": 57,
         "damageStatus": "NORMAL",
@@ -8746,14 +8746,14 @@
         "slotEquipName": [
             "20.3cm(2号)連装砲",
             "20.3cm(2号)連装砲",
-            "21号対空電探",
+            "13号対空電探改",
             ""
         ],
         "slotAmount": [
             2,
             2,
             2,
-            0
+            2
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -8781,7 +8781,7 @@
     },
     {
         "bookNo": 60,
-        "lv": 18,
+        "lv": 22,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -8791,7 +8791,7 @@
         "shipClass": "高雄型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_60_ayeks6p4qc6u.jpg",
-        "expPercent": 8,
+        "expPercent": 9,
         "maxHp": 45,
         "realHp": 45,
         "damageStatus": "NORMAL",
@@ -8834,7 +8834,7 @@
     },
     {
         "bookNo": 60,
-        "lv": 18,
+        "lv": 22,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 1,
@@ -8844,7 +8844,7 @@
         "shipClass": "高雄型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_60_3qt1yjeckqnt.jpg",
-        "expPercent": 8,
+        "expPercent": 9,
         "maxHp": 57,
         "realHp": 57,
         "damageStatus": "NORMAL",
@@ -8852,14 +8852,14 @@
         "slotEquipName": [
             "20.3cm(2号)連装砲",
             "20.3cm(2号)連装砲",
-            "21号対空電探",
+            "13号対空電探改",
             ""
         ],
         "slotAmount": [
             2,
             2,
             2,
-            0
+            2
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -8887,7 +8887,7 @@
     },
     {
         "bookNo": 61,
-        "lv": 93,
+        "lv": 94,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -8897,9 +8897,9 @@
         "shipClass": "高雄型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_61_4qqg2w61cnmk.jpg",
-        "expPercent": 35,
+        "expPercent": 45,
         "maxHp": 45,
-        "realHp": 42,
+        "realHp": 45,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -8940,7 +8940,7 @@
     },
     {
         "bookNo": 61,
-        "lv": 93,
+        "lv": 94,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 1,
@@ -8950,9 +8950,9 @@
         "shipClass": "高雄型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_61_1eamfcpwdkkk.jpg",
-        "expPercent": 35,
+        "expPercent": 45,
         "maxHp": 55,
-        "realHp": 52,
+        "realHp": 55,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
@@ -8965,7 +8965,7 @@
             2,
             2,
             2,
-            0
+            2
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -8993,7 +8993,7 @@
     },
     {
         "bookNo": 228,
-        "lv": 93,
+        "lv": 94,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 2,
@@ -9003,34 +9003,34 @@
         "shipClass": "高雄型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_228_3znjazcxmrjy.jpg",
-        "expPercent": 35,
+        "expPercent": 45,
         "maxHp": 57,
-        "realHp": 54,
+        "realHp": 57,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
             "10cm連装高角砲改＋増設機銃",
-            "QF 2ポンド8連装ポンポン砲",
-            "",
-            ""
+            "Bofors 40mm四連装機関砲",
+            "14号対空電探",
+            "紫雲"
         ],
         "slotAmount": [
             3,
             3,
             3,
-            0
+            3
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
             "NOT_EQUIPPED_AIRCRAFT",
             "NOT_EQUIPPED_AIRCRAFT",
-            "NOT_EQUIPPED_AIRCRAFT"
+            "EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
             "equip_icon_26_rv74l134q7an.png",
             "equip_icon_15_wpoe5ai203dt.png",
-            "",
-            ""
+            "equip_icon_11_xznvoamgip59.png",
+            "equip_icon_10_lpoysb3zk6s4.png"
         ],
         "slotExtension": [
             false,
@@ -9067,7 +9067,7 @@
     },
     {
         "bookNo": 62,
-        "lv": 74,
+        "lv": 77,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -9077,7 +9077,7 @@
         "shipClass": "高雄型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_62_79g2zk67tkmm.jpg",
-        "expPercent": 74,
+        "expPercent": 48,
         "maxHp": 45,
         "realHp": 45,
         "damageStatus": "NORMAL",
@@ -9120,7 +9120,7 @@
     },
     {
         "bookNo": 62,
-        "lv": 74,
+        "lv": 77,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 1,
@@ -9130,7 +9130,7 @@
         "shipClass": "高雄型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_62_q4k120jtm02g.jpg",
-        "expPercent": 74,
+        "expPercent": 48,
         "maxHp": 57,
         "realHp": 57,
         "damageStatus": "NORMAL",
@@ -9173,7 +9173,7 @@
     },
     {
         "bookNo": 227,
-        "lv": 74,
+        "lv": 77,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 2,
@@ -9183,15 +9183,15 @@
         "shipClass": "高雄型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_227_7e1pqakgkzax.jpg",
-        "expPercent": 74,
+        "expPercent": 48,
         "maxHp": 57,
         "realHp": 57,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
             "20.3cm(2号)連装砲",
-            "20.3cm(2号)連装砲",
-            "20.3cm(2号)連装砲",
+            "20.3cm(3号)連装砲",
+            "14号対空電探",
             ""
         ],
         "slotAmount": [
@@ -9209,7 +9209,7 @@
         "slotImg": [
             "equip_icon_2_n8b0sex6xclf.png",
             "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_11_xznvoamgip59.png",
             ""
         ],
         "slotExtension": [
@@ -9437,7 +9437,7 @@
     },
     {
         "bookNo": 64,
-        "lv": 58,
+        "lv": 61,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -9447,7 +9447,7 @@
         "shipClass": "利根型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_64_47nwk7wssead.jpg",
-        "expPercent": 6,
+        "expPercent": 3,
         "maxHp": 44,
         "realHp": 44,
         "damageStatus": "NORMAL",
@@ -9490,7 +9490,7 @@
     },
     {
         "bookNo": 64,
-        "lv": 58,
+        "lv": 61,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 1,
@@ -9500,7 +9500,7 @@
         "shipClass": "利根型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_64_txkk7tcm3q1x.jpg",
-        "expPercent": 6,
+        "expPercent": 3,
         "maxHp": 56,
         "realHp": 56,
         "damageStatus": "NORMAL",
@@ -9543,7 +9543,7 @@
     },
     {
         "bookNo": 189,
-        "lv": 58,
+        "lv": 61,
         "shipType": "航空巡洋艦",
         "shipSortNo": 1400,
         "remodelLv": 2,
@@ -9553,7 +9553,7 @@
         "shipClass": "利根型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_189_1dyxey26mmn0.jpg",
-        "expPercent": 6,
+        "expPercent": 3,
         "maxHp": 58,
         "realHp": 58,
         "damageStatus": "NORMAL",
@@ -9561,7 +9561,7 @@
         "slotEquipName": [
             "20.3cm(2号)連装砲",
             "20.3cm(2号)連装砲",
-            "",
+            "13号対空電探改",
             ""
         ],
         "slotAmount": [
@@ -9579,7 +9579,7 @@
         "slotImg": [
             "equip_icon_2_n8b0sex6xclf.png",
             "equip_icon_2_n8b0sex6xclf.png",
-            "",
+            "equip_icon_11_xznvoamgip59.png",
             ""
         ],
         "slotExtension": [
@@ -10088,8 +10088,8 @@
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "10cm高角砲＋高射装置",
-            "10cm高角砲＋高射装置",
+            "",
+            "",
             "",
             ""
         ],
@@ -10106,8 +10106,8 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_26_rv74l134q7an.png",
-            "equip_icon_26_rv74l134q7an.png",
+            "",
+            "",
             "",
             ""
         ],
@@ -10353,9 +10353,9 @@
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "10cm高角砲＋高射装置",
-            "10cm高角砲＋高射装置",
-            "SG レーダー(初期型)",
+            "",
+            "",
+            "",
             ""
         ],
         "slotAmount": [
@@ -10371,9 +10371,9 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_26_rv74l134q7an.png",
-            "equip_icon_26_rv74l134q7an.png",
-            "equip_icon_11_xznvoamgip59.png",
+            "",
+            "",
+            "",
             ""
         ],
         "slotExtension": [
@@ -11354,7 +11354,7 @@
         "shipClass": "白露型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_80_npnsn6jrdstn.jpg",
-        "expPercent": 40,
+        "expPercent": 48,
         "maxHp": 16,
         "realHp": 16,
         "damageStatus": "NORMAL",
@@ -11407,7 +11407,7 @@
         "shipClass": "白露型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_80_s43us3yfzr6r.jpg",
-        "expPercent": 40,
+        "expPercent": 48,
         "maxHp": 30,
         "realHp": 30,
         "damageStatus": "NORMAL",
@@ -11460,7 +11460,7 @@
         "shipClass": "白露型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_145_qjkuy72xtkku.jpg",
-        "expPercent": 40,
+        "expPercent": 48,
         "maxHp": 31,
         "realHp": 31,
         "damageStatus": "NORMAL",
@@ -11513,15 +11513,15 @@
         "shipClass": "改装白露型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_561_fs0zn4mk16jd.jpg",
-        "expPercent": 40,
+        "expPercent": 48,
         "maxHp": 34,
         "realHp": 34,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "12.7cm連装砲C型改三",
-            "12.7cm連装砲C型改三",
-            "",
+            "探照灯",
+            "熟練見張員",
+            "12.7cm連装砲D型改二",
             ""
         ],
         "slotAmount": [
@@ -11537,9 +11537,9 @@
             "NONE"
         ],
         "slotImg": [
+            "equip_icon_23_bbrk4s8firij.png",
+            "equip_icon_32_hp2hc584rvml.png",
             "equip_icon_1_1984kzwm2f7s.png",
-            "equip_icon_1_1984kzwm2f7s.png",
-            "",
             ""
         ],
         "slotExtension": [
@@ -12065,20 +12065,20 @@
     },
     {
         "bookNo": 85,
-        "lv": 64,
+        "lv": 65,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
         "shipName": "朝潮",
-        "statusImg": "i/i_69ex6r4uutp3_bm.png",
+        "statusImg": "i/i_69ex6r4uutp3_n.png",
         "starNum": 5,
         "shipClass": "朝潮型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_85_69ex6r4uutp3.jpg",
-        "expPercent": 92,
+        "expPercent": 93,
         "maxHp": 16,
-        "realHp": 6,
-        "damageStatus": "M_BREAK",
+        "realHp": 16,
+        "damageStatus": "NORMAL",
         "slotNum": 2,
         "slotEquipName": [
             "",
@@ -12118,20 +12118,20 @@
     },
     {
         "bookNo": 85,
-        "lv": 64,
+        "lv": 65,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 1,
         "shipName": "朝潮改",
-        "statusImg": "i/i_umacfn9qcwp1_bm.png",
+        "statusImg": "i/i_umacfn9qcwp1_n.png",
         "starNum": 5,
         "shipClass": "朝潮型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_85_umacfn9qcwp1.jpg",
-        "expPercent": 92,
+        "expPercent": 93,
         "maxHp": 31,
-        "realHp": 10,
-        "damageStatus": "M_BREAK",
+        "realHp": 31,
+        "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
             "",
@@ -12171,20 +12171,20 @@
     },
     {
         "bookNo": 263,
-        "lv": 64,
+        "lv": 65,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 2,
         "shipName": "朝潮改二",
-        "statusImg": "i/i_djgkneqwgqcm_bm.png",
+        "statusImg": "i/i_djgkneqwgqcm_n.png",
         "starNum": 5,
         "shipClass": "朝潮型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_263_0z4rn7cwarkq.jpg",
-        "expPercent": 92,
+        "expPercent": 93,
         "maxHp": 31,
-        "realHp": 10,
-        "damageStatus": "M_BREAK",
+        "realHp": 31,
+        "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
             "",
@@ -12224,25 +12224,25 @@
     },
     {
         "bookNo": 268,
-        "lv": 64,
+        "lv": 65,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 3,
         "shipName": "朝潮改二丁",
-        "statusImg": "i/i_wtre7ms0x27m_bm.png",
+        "statusImg": "i/i_wtre7ms0x27m_n.png",
         "starNum": 5,
         "shipClass": "朝潮型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_268_4xmw629raxmx.jpg",
-        "expPercent": 92,
+        "expPercent": 93,
         "maxHp": 34,
-        "realHp": 11,
-        "damageStatus": "M_BREAK",
+        "realHp": 34,
+        "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
             "三式水中探信儀",
-            "",
-            "",
+            "九五式爆雷",
+            "三式爆雷投射機 集中配備",
             ""
         ],
         "slotAmount": [
@@ -12259,8 +12259,8 @@
         ],
         "slotImg": [
             "equip_icon_18_34j48vvi4jhh.png",
-            "",
-            "",
+            "equip_icon_17_t753p5s1xs0h.png",
+            "equip_icon_17_t753p5s1xs0h.png",
             ""
         ],
         "slotExtension": [
@@ -12393,7 +12393,7 @@
         "shipClass": "朝潮型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_87_x974s2canx2g.jpg",
-        "expPercent": 8,
+        "expPercent": 38,
         "maxHp": 16,
         "realHp": 16,
         "damageStatus": "NORMAL",
@@ -12446,7 +12446,7 @@
         "shipClass": "朝潮型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_87_dmwkq40u2q9s.jpg",
-        "expPercent": 8,
+        "expPercent": 38,
         "maxHp": 31,
         "realHp": 31,
         "damageStatus": "NORMAL",
@@ -12499,15 +12499,15 @@
         "shipClass": "朝潮型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_289_4a4meazmqrgf.jpg",
-        "expPercent": 8,
+        "expPercent": 38,
         "maxHp": 31,
         "realHp": 31,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
             "61cm四連装(酸素)魚雷後期型",
-            "",
-            "",
+            "61cm五連装(酸素)魚雷",
+            "61cm三連装(酸素)魚雷後期型",
             ""
         ],
         "slotAmount": [
@@ -12524,8 +12524,8 @@
         ],
         "slotImg": [
             "equip_icon_5_c4bcdscek33o.png",
-            "",
-            "",
+            "equip_icon_5_c4bcdscek33o.png",
+            "equip_icon_5_c4bcdscek33o.png",
             ""
         ],
         "slotExtension": [
@@ -13162,8 +13162,8 @@
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "10cm高角砲＋高射装置",
-            "電探装備マスト(13号改+22号電探改四)",
+            "",
+            "",
             "",
             ""
         ],
@@ -13180,8 +13180,8 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_26_rv74l134q7an.png",
-            "equip_icon_11_xznvoamgip59.png",
+            "",
+            "",
             "",
             ""
         ],
@@ -13411,7 +13411,7 @@
     },
     {
         "bookNo": 106,
-        "lv": 90,
+        "lv": 91,
         "shipType": "正規空母",
         "shipSortNo": 1000,
         "remodelLv": 0,
@@ -13421,7 +13421,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_106_7u4ku0n022zm.jpg",
-        "expPercent": 61,
+        "expPercent": 4,
         "maxHp": 62,
         "realHp": 62,
         "damageStatus": "NORMAL",
@@ -13433,10 +13433,10 @@
             ""
         ],
         "slotAmount": [
-            20,
-            19,
-            19,
-            11
+            18,
+            18,
+            18,
+            9
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -13464,7 +13464,7 @@
     },
     {
         "bookNo": 106,
-        "lv": 90,
+        "lv": 91,
         "shipType": "正規空母",
         "shipSortNo": 1000,
         "remodelLv": 1,
@@ -13474,7 +13474,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_106_7kgj9mj4srfe.jpg",
-        "expPercent": 61,
+        "expPercent": 4,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -13486,10 +13486,10 @@
             ""
         ],
         "slotAmount": [
-            23,
-            22,
-            22,
-            11
+            21,
+            20,
+            21,
+            9
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -13528,7 +13528,7 @@
     },
     {
         "bookNo": 261,
-        "lv": 90,
+        "lv": 91,
         "shipType": "正規空母",
         "shipSortNo": 1000,
         "remodelLv": 2,
@@ -13538,7 +13538,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_261_k4x23kk7c4d6.jpg",
-        "expPercent": 61,
+        "expPercent": 4,
         "maxHp": 77,
         "realHp": 77,
         "damageStatus": "NORMAL",
@@ -13550,10 +13550,10 @@
             "流星改(一航戦)"
         ],
         "slotAmount": [
-            25,
-            24,
-            24,
-            11
+            23,
+            22,
+            23,
+            9
         ],
         "slotDisp": [
             "EQUIPPED_AIRCRAFT",
@@ -13581,7 +13581,7 @@
     },
     {
         "bookNo": 266,
-        "lv": 90,
+        "lv": 91,
         "shipType": "装甲空母",
         "shipSortNo": 500,
         "remodelLv": 3,
@@ -13591,7 +13591,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_266_sq47tcy202mq.jpg",
-        "expPercent": 61,
+        "expPercent": 4,
         "maxHp": 78,
         "realHp": 78,
         "damageStatus": "NORMAL",
@@ -13603,10 +13603,10 @@
             ""
         ],
         "slotAmount": [
-            32,
-            19,
+            29,
+            18,
             11,
-            9
+            7
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -13634,7 +13634,7 @@
     },
     {
         "bookNo": 107,
-        "lv": 92,
+        "lv": 93,
         "shipType": "正規空母",
         "shipSortNo": 1000,
         "remodelLv": 0,
@@ -13644,7 +13644,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_107_qrgjmpckjcxm.jpg",
-        "expPercent": 65,
+        "expPercent": 30,
         "maxHp": 62,
         "realHp": 62,
         "damageStatus": "NORMAL",
@@ -13656,10 +13656,10 @@
             ""
         ],
         "slotAmount": [
-            20,
-            21,
-            20,
-            12
+            19,
+            17,
+            17,
+            8
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -13687,7 +13687,7 @@
     },
     {
         "bookNo": 108,
-        "lv": 92,
+        "lv": 93,
         "shipType": "正規空母",
         "shipSortNo": 1000,
         "remodelLv": 1,
@@ -13697,7 +13697,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_108_uswyd9tqk14q.jpg",
-        "expPercent": 65,
+        "expPercent": 30,
         "maxHp": 75,
         "realHp": 75,
         "damageStatus": "NORMAL",
@@ -13709,10 +13709,10 @@
             ""
         ],
         "slotAmount": [
-            23,
-            23,
             22,
-            12
+            19,
+            20,
+            8
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -13751,7 +13751,7 @@
     },
     {
         "bookNo": 262,
-        "lv": 92,
+        "lv": 93,
         "shipType": "正規空母",
         "shipSortNo": 1000,
         "remodelLv": 2,
@@ -13761,7 +13761,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_262_t7n344tsnwyr.jpg",
-        "expPercent": 65,
+        "expPercent": 30,
         "maxHp": 78,
         "realHp": 78,
         "damageStatus": "NORMAL",
@@ -13773,10 +13773,10 @@
             "天山一二型(友永隊)"
         ],
         "slotAmount": [
-            27,
             25,
-            24,
-            13
+            20,
+            21,
+            8
         ],
         "slotDisp": [
             "EQUIPPED_AIRCRAFT",
@@ -13804,7 +13804,7 @@
     },
     {
         "bookNo": 267,
-        "lv": 92,
+        "lv": 93,
         "shipType": "装甲空母",
         "shipSortNo": 500,
         "remodelLv": 3,
@@ -13814,7 +13814,7 @@
         "shipClass": "翔鶴型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_267_fdqsppprqxqr.jpg",
-        "expPercent": 65,
+        "expPercent": 30,
         "maxHp": 79,
         "realHp": 79,
         "damageStatus": "NORMAL",
@@ -13826,10 +13826,10 @@
             ""
         ],
         "slotAmount": [
-            32,
-            23,
-            11,
-            6
+            31,
+            19,
+            10,
+            4
         ],
         "slotDisp": [
             "EQUIPPED_AIRCRAFT",
@@ -13963,7 +13963,7 @@
     },
     {
         "bookNo": 110,
-        "lv": 87,
+        "lv": 88,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 0,
@@ -13973,9 +13973,9 @@
         "shipClass": "長良型",
         "shipClassIndex": 6,
         "tcImg": "s/tc_110_s4w7jpq4mxqa.jpg",
-        "expPercent": 71,
+        "expPercent": 10,
         "maxHp": 27,
-        "realHp": 27,
+        "realHp": 26,
         "damageStatus": "NORMAL",
         "slotNum": 2,
         "slotEquipName": [
@@ -14016,7 +14016,7 @@
     },
     {
         "bookNo": 110,
-        "lv": 87,
+        "lv": 88,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 1,
@@ -14026,9 +14026,9 @@
         "shipClass": "長良型",
         "shipClassIndex": 6,
         "tcImg": "s/tc_110_rf309tzzk7un.jpg",
-        "expPercent": 71,
+        "expPercent": 10,
         "maxHp": 42,
-        "realHp": 42,
+        "realHp": 41,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -14069,7 +14069,7 @@
     },
     {
         "bookNo": 200,
-        "lv": 87,
+        "lv": 88,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 2,
@@ -14079,15 +14079,15 @@
         "shipClass": "長良型",
         "shipClassIndex": 6,
         "tcImg": "s/tc_200_76dp0zjd69p4.jpg",
-        "expPercent": 71,
+        "expPercent": 10,
         "maxHp": 45,
-        "realHp": 45,
+        "realHp": 43,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "Bofors15.2cm連装砲 Model1930",
-            "Bofors15.2cm連装砲 Model1930",
-            "",
+            "三式水中探信儀",
+            "三式爆雷投射機",
+            "二式爆雷改二",
             ""
         ],
         "slotAmount": [
@@ -14103,9 +14103,9 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png",
-            "",
+            "equip_icon_18_34j48vvi4jhh.png",
+            "equip_icon_17_t753p5s1xs0h.png",
+            "equip_icon_17_t753p5s1xs0h.png",
             ""
         ],
         "slotExtension": [
@@ -14270,7 +14270,7 @@
     },
     {
         "bookNo": 112,
-        "lv": 61,
+        "lv": 64,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 0,
@@ -14280,7 +14280,7 @@
         "shipClass": "祥鳳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_112_tg4dqqkufn3f.jpg",
-        "expPercent": 76,
+        "expPercent": 28,
         "maxHp": 32,
         "realHp": 32,
         "damageStatus": "NORMAL",
@@ -14315,7 +14315,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 11,
         "married": false,
         "dispSortNo": 11202700200,
         "developEquipmentList": [],
@@ -14323,7 +14323,7 @@
     },
     {
         "bookNo": 113,
-        "lv": 61,
+        "lv": 64,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 1,
@@ -14333,7 +14333,7 @@
         "shipClass": "祥鳳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_113_mx49skqsdwjs.jpg",
-        "expPercent": 76,
+        "expPercent": 28,
         "maxHp": 45,
         "realHp": 45,
         "damageStatus": "NORMAL",
@@ -14348,7 +14348,7 @@
             18,
             12,
             12,
-            0
+            6
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -14368,7 +14368,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 11,
         "married": false,
         "dispSortNo": 11202700201,
         "developEquipmentList": [
@@ -14387,7 +14387,7 @@
     },
     {
         "bookNo": 355,
-        "lv": 61,
+        "lv": 64,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 2,
@@ -14397,7 +14397,7 @@
         "shipClass": "祥鳳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_355_gqntrfrxt4uu.jpg",
-        "expPercent": 76,
+        "expPercent": 28,
         "maxHp": 59,
         "realHp": 59,
         "damageStatus": "NORMAL",
@@ -14412,7 +14412,7 @@
             21,
             18,
             12,
-            0
+            6
         ],
         "slotDisp": [
             "EQUIPPED_AIRCRAFT",
@@ -14432,7 +14432,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 11,
         "married": false,
         "dispSortNo": 11202700202,
         "developEquipmentList": [],
@@ -14440,7 +14440,7 @@
     },
     {
         "bookNo": 360,
-        "lv": 61,
+        "lv": 64,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 3,
@@ -14450,7 +14450,7 @@
         "shipClass": "祥鳳型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_360_q0s24q4msz7q.jpg",
-        "expPercent": 76,
+        "expPercent": 28,
         "maxHp": 59,
         "realHp": 59,
         "damageStatus": "NORMAL",
@@ -14465,7 +14465,7 @@
             18,
             15,
             15,
-            0
+            2
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -14485,7 +14485,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 10,
+        "blueprintTotalNum": 11,
         "married": false,
         "dispSortNo": 11202700203,
         "developEquipmentList": [],
@@ -15204,7 +15204,7 @@
     },
     {
         "bookNo": 125,
-        "lv": 63,
+        "lv": 67,
         "shipType": "重巡洋艦",
         "shipSortNo": 1500,
         "remodelLv": 0,
@@ -15214,7 +15214,7 @@
         "shipClass": "最上型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_125_kkuqkt34m1w4.jpg",
-        "expPercent": 85,
+        "expPercent": 23,
         "maxHp": 40,
         "realHp": 40,
         "damageStatus": "NORMAL",
@@ -15257,7 +15257,7 @@
     },
     {
         "bookNo": 130,
-        "lv": 63,
+        "lv": 67,
         "shipType": "航空巡洋艦",
         "shipSortNo": 1400,
         "remodelLv": 1,
@@ -15267,7 +15267,7 @@
         "shipClass": "最上型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_130_r2nkzmtnjrnz.jpg",
-        "expPercent": 85,
+        "expPercent": 23,
         "maxHp": 50,
         "realHp": 50,
         "damageStatus": "NORMAL",
@@ -15310,7 +15310,7 @@
     },
     {
         "bookNo": 304,
-        "lv": 63,
+        "lv": 67,
         "shipType": "航空巡洋艦",
         "shipSortNo": 1400,
         "remodelLv": 2,
@@ -15320,16 +15320,16 @@
         "shipClass": "最上型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_304_j2ra0m3ymg14.jpg",
-        "expPercent": 85,
+        "expPercent": 23,
         "maxHp": 62,
         "realHp": 62,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
             "熟練艦載機整備員",
-            "",
-            "",
-            ""
+            "20.3cm(3号)連装砲",
+            "20.3cm(3号)連装砲",
+            "13号対空電探改"
         ],
         "slotAmount": [
             3,
@@ -15345,9 +15345,9 @@
         ],
         "slotImg": [
             "equip_icon_29_httgpsk80smm.png",
-            "",
-            "",
-            ""
+            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_11_xznvoamgip59.png"
         ],
         "slotExtension": [
             false,
@@ -15681,20 +15681,20 @@
     },
     {
         "bookNo": 131,
-        "lv": 81,
+        "lv": 83,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
         "shipName": "大和",
-        "statusImg": "i/i_f9441mtfp1fw_n.png",
+        "statusImg": "i/i_f9441mtfp1fw_bl.png",
         "starNum": 5,
         "shipClass": "大和型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_131_x63pfmgjwntn.jpg",
-        "expPercent": 0,
+        "expPercent": 14,
         "maxHp": 93,
-        "realHp": 72,
-        "damageStatus": "NORMAL",
+        "realHp": 1,
+        "damageStatus": "L_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "",
@@ -15755,26 +15755,26 @@
     },
     {
         "bookNo": 136,
-        "lv": 81,
+        "lv": 83,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 1,
         "shipName": "大和改",
-        "statusImg": "i/i_ukqggn1qm2qw_n.png",
+        "statusImg": "i/i_ukqggn1qm2qw_bl.png",
         "starNum": 5,
         "shipClass": "大和型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_136_ms134m4sdk41.jpg",
-        "expPercent": 0,
+        "expPercent": 14,
         "maxHp": 96,
-        "realHp": 74,
-        "damageStatus": "NORMAL",
+        "realHp": 1,
+        "damageStatus": "L_BREAK",
         "slotNum": 4,
         "slotEquipName": [
             "46cm三連装砲",
             "46cm三連装砲",
-            "",
-            ""
+            "46cm三連装砲",
+            "一式徹甲弾"
         ],
         "slotAmount": [
             7,
@@ -15791,8 +15791,8 @@
         "slotImg": [
             "equip_icon_3_me6e2ezu084a.png",
             "equip_icon_3_me6e2ezu084a.png",
-            "",
-            ""
+            "equip_icon_3_me6e2ezu084a.png",
+            "equip_icon_14_7x6o1b4mwzdx.png"
         ],
         "slotExtension": [
             false,
@@ -16148,7 +16148,7 @@
     },
     {
         "bookNo": 135,
-        "lv": 75,
+        "lv": 77,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
@@ -16158,9 +16158,9 @@
         "shipClass": "夕雲型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_135_494kkf0mcq42.jpg",
-        "expPercent": 8,
+        "expPercent": 48,
         "maxHp": 16,
-        "realHp": 13,
+        "realHp": 16,
         "damageStatus": "NORMAL",
         "slotNum": 2,
         "slotEquipName": [
@@ -16201,7 +16201,7 @@
     },
     {
         "bookNo": 135,
-        "lv": 75,
+        "lv": 77,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 1,
@@ -16211,9 +16211,9 @@
         "shipClass": "夕雲型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_135_qwt2wmdmcn2n.jpg",
-        "expPercent": 8,
+        "expPercent": 48,
         "maxHp": 32,
-        "realHp": 25,
+        "realHp": 32,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -16265,25 +16265,25 @@
     },
     {
         "bookNo": 343,
-        "lv": 75,
+        "lv": 77,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 2,
         "shipName": "長波改二",
         "statusImg": "i/i_4n14dpgw4kw4_n.png",
-        "starNum": 2,
+        "starNum": 4,
         "shipClass": "夕雲型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_343_fzkkpa6crazn.jpg",
-        "expPercent": 8,
+        "expPercent": 48,
         "maxHp": 33,
-        "realHp": 25,
+        "realHp": 33,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "61cm五連装(酸素)魚雷",
-            "ドラム缶(輸送用)",
-            "ドラム缶(輸送用)",
+            "10cm高角砲＋高射装置",
+            "10cm高角砲＋高射装置",
+            "GFCS Mk.37",
             ""
         ],
         "slotAmount": [
@@ -16299,9 +16299,9 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_5_c4bcdscek33o.png",
-            "equip_icon_24_o3clfmjqgem3.png",
-            "equip_icon_24_o3clfmjqgem3.png",
+            "equip_icon_26_rv74l134q7an.png",
+            "equip_icon_26_rv74l134q7an.png",
+            "equip_icon_11_xznvoamgip59.png",
             ""
         ],
         "slotExtension": [
@@ -16374,7 +16374,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 13704200100,
         "developEquipmentList": [
@@ -16438,7 +16438,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 13704200101,
         "developEquipmentList": [
@@ -16457,7 +16457,7 @@
     },
     {
         "bookNo": 138,
-        "lv": 36,
+        "lv": 38,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 0,
@@ -16467,7 +16467,7 @@
         "shipClass": "阿賀野型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_138_p2ejyngnw3r7.jpg",
-        "expPercent": 82,
+        "expPercent": 69,
         "maxHp": 30,
         "realHp": 30,
         "damageStatus": "NORMAL",
@@ -16521,7 +16521,7 @@
     },
     {
         "bookNo": 138,
-        "lv": 36,
+        "lv": 38,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 1,
@@ -16531,14 +16531,14 @@
         "shipClass": "阿賀野型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_138_63rgdnxe7c1k.jpg",
-        "expPercent": 82,
+        "expPercent": 69,
         "maxHp": 45,
         "realHp": 45,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
             "15.2cm連装砲",
-            "15.2cm連装砲",
+            "13号対空電探改",
             "",
             ""
         ],
@@ -16556,7 +16556,7 @@
         ],
         "slotImg": [
             "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_11_xznvoamgip59.png",
             "",
             ""
         ],
@@ -16585,7 +16585,7 @@
     },
     {
         "bookNo": 139,
-        "lv": 34,
+        "lv": 41,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 0,
@@ -16595,7 +16595,7 @@
         "shipClass": "阿賀野型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_139_s11jrzdkz96w.jpg",
-        "expPercent": 15,
+        "expPercent": 82,
         "maxHp": 31,
         "realHp": 31,
         "damageStatus": "NORMAL",
@@ -16649,23 +16649,23 @@
     },
     {
         "bookNo": 139,
-        "lv": 34,
+        "lv": 41,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 1,
         "shipName": "矢矧改",
         "statusImg": "i/i_r4kmd2nwtcqd_n.png",
-        "starNum": 4,
+        "starNum": 5,
         "shipClass": "阿賀野型",
         "shipClassIndex": 3,
         "tcImg": "s/tc_139_mcm42gykyjrm.jpg",
-        "expPercent": 15,
+        "expPercent": 82,
         "maxHp": 47,
-        "realHp": 47,
+        "realHp": 46,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "",
+            "13号対空電探改",
             "",
             "",
             ""
@@ -16683,7 +16683,7 @@
             "NONE"
         ],
         "slotImg": [
-            "",
+            "equip_icon_11_xznvoamgip59.png",
             "",
             "",
             ""
@@ -16830,7 +16830,7 @@
     },
     {
         "bookNo": 143,
-        "lv": 81,
+        "lv": 83,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -16840,9 +16840,9 @@
         "shipClass": "大和型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_143_u72deku2n379.jpg",
-        "expPercent": 39,
+        "expPercent": 54,
         "maxHp": 94,
-        "realHp": 92,
+        "realHp": 94,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
@@ -16855,7 +16855,7 @@
             7,
             7,
             7,
-            5
+            7
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -16904,7 +16904,7 @@
     },
     {
         "bookNo": 148,
-        "lv": 81,
+        "lv": 83,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 1,
@@ -16914,9 +16914,9 @@
         "shipClass": "大和型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_148_63gqf0caqrgj.jpg",
-        "expPercent": 39,
+        "expPercent": 54,
         "maxHp": 97,
-        "realHp": 95,
+        "realHp": 97,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
@@ -16929,7 +16929,7 @@
             7,
             7,
             7,
-            5
+            7
         ],
         "slotDisp": [
             "NOT_EQUIPPED_AIRCRAFT",
@@ -16968,7 +16968,7 @@
     },
     {
         "bookNo": 346,
-        "lv": 81,
+        "lv": 83,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 2,
@@ -16978,23 +16978,23 @@
         "shipClass": "大和型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_346_7q0x1dz702u1.jpg",
-        "expPercent": 39,
+        "expPercent": 54,
         "maxHp": 99,
-        "realHp": 96,
+        "realHp": 98,
         "damageStatus": "NORMAL",
         "slotNum": 5,
         "slotEquipName": [
             "試製51cm連装砲",
             "46cm三連装砲",
             "零式水上偵察機11型乙(熟練)",
-            "",
-            ""
+            "15m二重測距儀+21号電探改二",
+            "一式徹甲弾"
         ],
         "slotAmount": [
             5,
             5,
             5,
-            5,
+            8,
             5
         ],
         "slotDisp": [
@@ -17008,8 +17008,8 @@
             "equip_icon_3_me6e2ezu084a.png",
             "equip_icon_3_me6e2ezu084a.png",
             "equip_icon_10_lpoysb3zk6s4.png",
-            "",
-            ""
+            "equip_icon_11_xznvoamgip59.png",
+            "equip_icon_14_7x6o1b4mwzdx.png"
         ],
         "slotExtension": [
             false,
@@ -17205,7 +17205,7 @@
         "shipClass": "香取型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_154_a4xkr4wt4xsa.jpg",
-        "expPercent": 7,
+        "expPercent": 83,
         "maxHp": 36,
         "realHp": 36,
         "damageStatus": "NORMAL",
@@ -17269,14 +17269,14 @@
         "shipClass": "香取型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_154_mxfm4e9kj46s.jpg",
-        "expPercent": 7,
+        "expPercent": 83,
         "maxHp": 40,
         "realHp": 40,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
             "14cm連装砲改",
-            "15.2cm連装砲",
+            "Bofors15.2cm連装砲 Model1930",
             "艦隊司令部施設",
             "203mm/53 連装砲"
         ],
@@ -17828,7 +17828,7 @@
     },
     {
         "bookNo": 167,
-        "lv": 16,
+        "lv": 21,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
@@ -17838,7 +17838,7 @@
         "shipClass": "陽炎型",
         "shipClassIndex": 12,
         "tcImg": "s/tc_167_m7akm24mcyq6.jpg",
-        "expPercent": 72,
+        "expPercent": 12,
         "maxHp": 16,
         "realHp": 16,
         "damageStatus": "NORMAL",
@@ -17881,23 +17881,23 @@
     },
     {
         "bookNo": 167,
-        "lv": 16,
+        "lv": 21,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 1,
         "shipName": "磯風改",
         "statusImg": "i/i_6dykcnqp3s40_n.png",
-        "starNum": 1,
+        "starNum": 2,
         "shipClass": "陽炎型",
         "shipClassIndex": 12,
         "tcImg": "s/tc_167_k3x94kyqxmk1.jpg",
-        "expPercent": 72,
+        "expPercent": 12,
         "maxHp": 33,
         "realHp": 33,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "13号対空電探改",
+            "10cm高角砲＋高射装置",
             "",
             "",
             ""
@@ -17915,7 +17915,7 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_11_xznvoamgip59.png",
+            "equip_icon_26_rv74l134q7an.png",
             "",
             "",
             ""
@@ -17945,7 +17945,7 @@
     },
     {
         "bookNo": 168,
-        "lv": 17,
+        "lv": 21,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
@@ -17955,7 +17955,7 @@
         "shipClass": "陽炎型",
         "shipClassIndex": 11,
         "tcImg": "s/tc_168_peu0qd6gz004.jpg",
-        "expPercent": 97,
+        "expPercent": 57,
         "maxHp": 16,
         "realHp": 16,
         "damageStatus": "NORMAL",
@@ -17998,7 +17998,7 @@
     },
     {
         "bookNo": 168,
-        "lv": 17,
+        "lv": 21,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 1,
@@ -18008,13 +18008,13 @@
         "shipClass": "陽炎型",
         "shipClassIndex": 11,
         "tcImg": "s/tc_168_pkt6q4c3mx2u.jpg",
-        "expPercent": 97,
+        "expPercent": 57,
         "maxHp": 32,
         "realHp": 32,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "13号対空電探改",
+            "",
             "",
             "",
             ""
@@ -18032,7 +18032,7 @@
             "NONE"
         ],
         "slotImg": [
-            "equip_icon_11_xznvoamgip59.png",
+            "",
             "",
             "",
             ""
@@ -18802,7 +18802,7 @@
     },
     {
         "bookNo": 183,
-        "lv": 81,
+        "lv": 82,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 0,
@@ -18812,7 +18812,7 @@
         "shipClass": "大淀型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_183_e4nk4g0x7gjs.jpg",
-        "expPercent": 93,
+        "expPercent": 59,
         "maxHp": 34,
         "realHp": 34,
         "damageStatus": "NORMAL",
@@ -18866,7 +18866,7 @@
     },
     {
         "bookNo": 183,
-        "lv": 81,
+        "lv": 82,
         "shipType": "軽巡洋艦",
         "shipSortNo": 1700,
         "remodelLv": 1,
@@ -18876,7 +18876,7 @@
         "shipClass": "大淀型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_183_q1466kygu4zt.jpg",
-        "expPercent": 93,
+        "expPercent": 59,
         "maxHp": 47,
         "realHp": 47,
         "damageStatus": "NORMAL",
@@ -18885,7 +18885,7 @@
             "15.5cm三連装砲",
             "15.5cm三連装砲",
             "15.5cm三連装砲",
-            "203mm/53 連装砲"
+            ""
         ],
         "slotAmount": [
             0,
@@ -18903,7 +18903,7 @@
             "equip_icon_2_n8b0sex6xclf.png",
             "equip_icon_2_n8b0sex6xclf.png",
             "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png"
+            ""
         ],
         "slotExtension": [
             false,
@@ -18995,7 +18995,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 18405000100,
         "developEquipmentList": [
@@ -19059,7 +19059,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 18405000101,
         "developEquipmentList": [],
@@ -19367,7 +19367,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 20903601700,
         "developEquipmentList": [],
@@ -19420,7 +19420,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 2,
+        "blueprintTotalNum": 3,
         "married": false,
         "dispSortNo": 20903601701,
         "developEquipmentList": [],
@@ -19473,7 +19473,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 21003601900,
         "developEquipmentList": [],
@@ -19526,7 +19526,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 5,
+        "blueprintTotalNum": 7,
         "married": false,
         "dispSortNo": 21003601901,
         "developEquipmentList": [
@@ -19555,7 +19555,7 @@
         "shipClass": "朝潮型",
         "shipClassIndex": 5,
         "tcImg": "s/tc_213_91a49qm1yf9a.jpg",
-        "expPercent": 24,
+        "expPercent": 58,
         "maxHp": 16,
         "realHp": 16,
         "damageStatus": "NORMAL",
@@ -19608,7 +19608,7 @@
         "shipClass": "朝潮型",
         "shipClassIndex": 5,
         "tcImg": "s/tc_213_acycfmm3rmks.jpg",
-        "expPercent": 24,
+        "expPercent": 58,
         "maxHp": 31,
         "realHp": 31,
         "damageStatus": "NORMAL",
@@ -19672,7 +19672,7 @@
         "shipClass": "朝潮型",
         "shipClassIndex": 6,
         "tcImg": "s/tc_214_kedamgd021d4.jpg",
-        "expPercent": 57,
+        "expPercent": 91,
         "maxHp": 16,
         "realHp": 16,
         "damageStatus": "NORMAL",
@@ -19725,15 +19725,15 @@
         "shipClass": "朝潮型",
         "shipClassIndex": 6,
         "tcImg": "s/tc_214_cq7ckaku24kc.jpg",
-        "expPercent": 57,
+        "expPercent": 91,
         "maxHp": 31,
         "realHp": 31,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "",
-            "",
-            "",
+            "61cm五連装(酸素)魚雷",
+            "61cm五連装(酸素)魚雷",
+            "61cm四連装(酸素)魚雷",
             ""
         ],
         "slotAmount": [
@@ -19749,9 +19749,9 @@
             "NONE"
         ],
         "slotImg": [
-            "",
-            "",
-            "",
+            "equip_icon_5_c4bcdscek33o.png",
+            "equip_icon_5_c4bcdscek33o.png",
+            "equip_icon_5_c4bcdscek33o.png",
             ""
         ],
         "slotExtension": [
@@ -19885,7 +19885,7 @@
     },
     {
         "bookNo": 221,
-        "lv": 81,
+        "lv": 82,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
@@ -19895,7 +19895,7 @@
         "shipClass": "秋月型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_221_6anr0k12taea.jpg",
-        "expPercent": 46,
+        "expPercent": 3,
         "maxHp": 20,
         "realHp": 20,
         "damageStatus": "NORMAL",
@@ -19949,7 +19949,7 @@
     },
     {
         "bookNo": 221,
-        "lv": 81,
+        "lv": 82,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 1,
@@ -19959,14 +19959,14 @@
         "shipClass": "秋月型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_221_z1m2c26ejc6q.jpg",
-        "expPercent": 46,
+        "expPercent": 3,
         "maxHp": 37,
         "realHp": 37,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
-            "",
-            "",
+            "10cm高角砲＋高射装置",
+            "10cm高角砲＋高射装置",
             "",
             ""
         ],
@@ -19983,8 +19983,8 @@
             "NONE"
         ],
         "slotImg": [
-            "",
-            "",
+            "equip_icon_26_rv74l134q7an.png",
+            "equip_icon_26_rv74l134q7an.png",
             "",
             ""
         ],
@@ -20171,7 +20171,7 @@
         "shipClass": "秋月型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_223_qtmt47rnywrm.jpg",
-        "expPercent": 38,
+        "expPercent": 88,
         "maxHp": 20,
         "realHp": 20,
         "damageStatus": "NORMAL",
@@ -20235,7 +20235,7 @@
         "shipClass": "秋月型",
         "shipClassIndex": 4,
         "tcImg": "s/tc_223_d9r9mp449wpy.jpg",
-        "expPercent": 38,
+        "expPercent": 88,
         "maxHp": 37,
         "realHp": 37,
         "damageStatus": "NORMAL",
@@ -20849,7 +20849,7 @@
     },
     {
         "bookNo": 240,
-        "lv": 57,
+        "lv": 58,
         "shipType": "戦艦",
         "shipSortNo": 1200,
         "remodelLv": 0,
@@ -20859,16 +20859,16 @@
         "shipClass": "Iowa級",
         "shipClassIndex": 1,
         "tcImg": "s/tc_240_4g4qa92fm604.jpg",
-        "expPercent": 84,
+        "expPercent": 77,
         "maxHp": 84,
         "realHp": 84,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "16inch三連装砲 Mk.7",
-            "5inch連装砲 Mk.28 mod.2",
-            "新型高温高圧缶",
-            "15m二重測距儀+21号電探改二"
+            "",
+            "",
+            "",
+            ""
         ],
         "slotAmount": [
             4,
@@ -20883,10 +20883,10 @@
             "NOT_EQUIPPED_AIRCRAFT"
         ],
         "slotImg": [
-            "equip_icon_3_me6e2ezu084a.png",
-            "equip_icon_26_rv74l134q7an.png",
-            "equip_icon_12_556qjnbtokca.png",
-            "equip_icon_11_xznvoamgip59.png"
+            "",
+            "",
+            "",
+            ""
         ],
         "slotExtension": [
             false,
@@ -20894,7 +20894,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 0,
         "married": false,
         "dispSortNo": 24007300100,
         "developEquipmentList": [
@@ -20907,6 +20907,80 @@
                 "developCount": 0,
                 "maxDevelopCount": 1,
                 "developEquipImg": "e/equip_161_obtt4hbneqv.png"
+            }
+        ],
+        "shipModelNum": ""
+    },
+    {
+        "bookNo": 240,
+        "lv": 58,
+        "shipType": "戦艦",
+        "shipSortNo": 1200,
+        "remodelLv": 1,
+        "shipName": "Iowa改",
+        "statusImg": "i/i_37xuwjg00ngp_n.png",
+        "starNum": 1,
+        "shipClass": "Iowa級",
+        "shipClassIndex": 1,
+        "tcImg": "s/tc_240_uzpzmg7ap4x4.jpg",
+        "expPercent": 77,
+        "maxHp": 92,
+        "realHp": 92,
+        "damageStatus": "NORMAL",
+        "slotNum": 4,
+        "slotEquipName": [
+            "16inch三連装砲 Mk.7",
+            "16inch三連装砲 Mk.7",
+            "OS2U",
+            "九一式徹甲弾"
+        ],
+        "slotAmount": [
+            4,
+            4,
+            4,
+            4
+        ],
+        "slotDisp": [
+            "NOT_EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT",
+            "EQUIPPED_AIRCRAFT",
+            "NOT_EQUIPPED_AIRCRAFT"
+        ],
+        "slotImg": [
+            "equip_icon_3_me6e2ezu084a.png",
+            "equip_icon_3_me6e2ezu084a.png",
+            "equip_icon_10_lpoysb3zk6s4.png",
+            "equip_icon_14_7x6o1b4mwzdx.png"
+        ],
+        "slotExtension": [
+            false,
+            false,
+            false,
+            false
+        ],
+        "blueprintTotalNum": 0,
+        "married": false,
+        "dispSortNo": 24007300101,
+        "developEquipmentList": [
+            {
+                "planKind": 0,
+                "sortIndex": 0,
+                "requireLv": 50,
+                "requireStrategyPoint": 960,
+                "requireMaterialMedal": 0,
+                "developCount": 0,
+                "maxDevelopCount": 1,
+                "developEquipImg": "e/equip_161_obtt4hbneqv.png"
+            },
+            {
+                "planKind": 2,
+                "sortIndex": 3,
+                "requireLv": 50,
+                "requireStrategyPoint": 340,
+                "requireMaterialMedal": 0,
+                "developCount": 0,
+                "maxDevelopCount": 2,
+                "developEquipImg": "e/equip_171_4ikohnnsmdn.png"
             }
         ],
         "shipModelNum": ""
@@ -21067,10 +21141,10 @@
         "damageStatus": "L_BREAK",
         "slotNum": 4,
         "slotEquipName": [
-            "381mm/50 三連装砲改",
-            "381mm/50 三連装砲改",
             "38.1cm Mk.I連装砲",
-            "三式弾"
+            "三式弾",
+            "",
+            ""
         ],
         "slotAmount": [
             3,
@@ -21086,9 +21160,9 @@
         ],
         "slotImg": [
             "equip_icon_3_me6e2ezu084a.png",
-            "equip_icon_3_me6e2ezu084a.png",
-            "equip_icon_3_me6e2ezu084a.png",
-            "equip_icon_13_jdkmrexetpvn.png"
+            "equip_icon_13_jdkmrexetpvn.png",
+            "",
+            ""
         ],
         "slotExtension": [
             false,
@@ -21189,7 +21263,7 @@
     },
     {
         "bookNo": 245,
-        "lv": 40,
+        "lv": 41,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 0,
@@ -21199,9 +21273,9 @@
         "shipClass": "秋津洲型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_245_2rjseqk974kn.jpg",
-        "expPercent": 11,
+        "expPercent": 69,
         "maxHp": 32,
-        "realHp": 32,
+        "realHp": 30,
         "damageStatus": "NORMAL",
         "slotNum": 2,
         "slotEquipName": [
@@ -21242,7 +21316,7 @@
     },
     {
         "bookNo": 250,
-        "lv": 40,
+        "lv": 41,
         "shipType": "水上機母艦",
         "shipSortNo": 700,
         "remodelLv": 1,
@@ -21252,9 +21326,9 @@
         "shipClass": "秋津洲型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_250_x43r4203cm7z.jpg",
-        "expPercent": 11,
+        "expPercent": 69,
         "maxHp": 36,
-        "realHp": 36,
+        "realHp": 33,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
@@ -21496,7 +21570,7 @@
         "shipClass": "瑞穂型",
         "shipClassIndex": 1,
         "tcImg": "s/tc_251_aqf4ugkqsuqy.jpg",
-        "expPercent": 56,
+        "expPercent": 76,
         "maxHp": 41,
         "realHp": 41,
         "damageStatus": "NORMAL",
@@ -21508,8 +21582,8 @@
             ""
         ],
         "slotAmount": [
-            10,
-            11,
+            12,
+            12,
             0,
             0
         ],
@@ -21595,7 +21669,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 25303600300,
         "developEquipmentList": [],
@@ -21648,7 +21722,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 25303600301,
         "developEquipmentList": [
@@ -21839,7 +21913,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 25502301700,
         "developEquipmentList": [],
@@ -21892,7 +21966,7 @@
             false,
             false
         ],
-        "blueprintTotalNum": 3,
+        "blueprintTotalNum": 4,
         "married": false,
         "dispSortNo": 25502301701,
         "developEquipmentList": [],
@@ -22304,7 +22378,7 @@
     },
     {
         "bookNo": 265,
-        "lv": 82,
+        "lv": 83,
         "shipType": "練習巡洋艦",
         "shipSortNo": 100,
         "remodelLv": 0,
@@ -22314,7 +22388,7 @@
         "shipClass": "香取型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_265_znwfk2k63at1.jpg",
-        "expPercent": 61,
+        "expPercent": 8,
         "maxHp": 36,
         "realHp": 36,
         "damageStatus": "NORMAL",
@@ -22368,7 +22442,7 @@
     },
     {
         "bookNo": 265,
-        "lv": 82,
+        "lv": 83,
         "shipType": "練習巡洋艦",
         "shipSortNo": 100,
         "remodelLv": 1,
@@ -22378,15 +22452,15 @@
         "shipClass": "香取型",
         "shipClassIndex": 2,
         "tcImg": "s/tc_265_2w2494sztcx1.jpg",
-        "expPercent": 61,
+        "expPercent": 8,
         "maxHp": 40,
         "realHp": 40,
         "damageStatus": "NORMAL",
         "slotNum": 4,
         "slotEquipName": [
-            "15.2cm連装砲",
-            "15.2cm連装砲",
-            "15.2cm連装砲",
+            "15.2cm連装砲改",
+            "Bofors15.2cm連装砲 Model1930",
+            "探照灯",
             "203mm/53 連装砲"
         ],
         "slotAmount": [
@@ -22404,7 +22478,7 @@
         "slotImg": [
             "equip_icon_2_n8b0sex6xclf.png",
             "equip_icon_2_n8b0sex6xclf.png",
-            "equip_icon_2_n8b0sex6xclf.png",
+            "equip_icon_23_bbrk4s8firij.png",
             "equip_icon_2_n8b0sex6xclf.png"
         ],
         "slotExtension": [
@@ -22803,7 +22877,7 @@
     },
     {
         "bookNo": 344,
-        "lv": 41,
+        "lv": 42,
         "shipType": "軽空母",
         "shipSortNo": 1300,
         "remodelLv": 0,
@@ -22813,7 +22887,7 @@
         "shipClass": "Casablanca級",
         "shipClassIndex": 19,
         "tcImg": "s/tc_344_4aaefmnxqq9p.jpg",
-        "expPercent": 43,
+        "expPercent": 17,
         "maxHp": 28,
         "realHp": 28,
         "damageStatus": "NORMAL",
@@ -22825,8 +22899,8 @@
             ""
         ],
         "slotAmount": [
-            14,
-            11,
+            15,
+            12,
             0,
             0
         ],
@@ -22867,7 +22941,7 @@
     },
     {
         "bookNo": 362,
-        "lv": 47,
+        "lv": 53,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
@@ -22876,7 +22950,7 @@
         "starNum": 5,
         "shipClass": "Fletcher級",
         "tcImg": "s/tc_362_wq3a6z4cfqte.jpg",
-        "expPercent": 74,
+        "expPercent": 50,
         "maxHp": 17,
         "realHp": 17,
         "damageStatus": "NORMAL",
@@ -22940,24 +23014,24 @@
     },
     {
         "bookNo": 362,
-        "lv": 47,
+        "lv": 53,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 1,
         "shipName": "Johnston改",
         "statusImg": "i/i_9qx27jrxqkq9_n.png",
-        "starNum": 4,
+        "starNum": 5,
         "shipClass": "Fletcher級",
         "tcImg": "s/tc_362_mtqpzmkcd61s.jpg",
-        "expPercent": 74,
+        "expPercent": 50,
         "maxHp": 34,
         "realHp": 34,
         "damageStatus": "NORMAL",
         "slotNum": 3,
         "slotEquipName": [
+            "SG レーダー(初期型)",
             "5inch単装砲 Mk.30改",
             "5inch単装砲 Mk.30改＋GFCS Mk.37",
-            "",
             ""
         ],
         "slotAmount": [
@@ -22973,9 +23047,9 @@
             "NONE"
         ],
         "slotImg": [
+            "equip_icon_11_xznvoamgip59.png",
             "equip_icon_26_rv74l134q7an.png",
             "equip_icon_26_rv74l134q7an.png",
-            "",
             ""
         ],
         "slotExtension": [
@@ -23087,7 +23161,7 @@
     },
     {
         "bookNo": 396,
-        "lv": 62,
+        "lv": 63,
         "shipType": "駆逐艦",
         "shipSortNo": 1800,
         "remodelLv": 0,
@@ -23096,14 +23170,14 @@
         "starNum": 5,
         "shipClass": "Fletcher級",
         "tcImg": "s/tc_396_4d4sqmzftrt4.jpg",
-        "expPercent": 23,
+        "expPercent": 7,
         "maxHp": 18,
         "realHp": 18,
         "damageStatus": "NORMAL",
         "slotNum": 2,
         "slotEquipName": [
             "九五式爆雷",
-            "",
+            "三式水中探信儀",
             "",
             ""
         ],
@@ -23121,7 +23195,7 @@
         ],
         "slotImg": [
             "equip_icon_17_t753p5s1xs0h.png",
-            "",
+            "equip_icon_18_34j48vvi4jhh.png",
             "",
             ""
         ],
