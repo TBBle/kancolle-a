@@ -10,7 +10,7 @@ license.workspace = true
 
 [dependencies]
 anyhow = "1.0.95"
-bpaf = { version = "0.9.15", features = ["dull-color"] }
+bpaf = { version = "0.9.16", features = ["dull-color"] }
 chrono = { version = "0.4.39", features = ["serde"] }
 itertools = "0.14.0"
 jsonxf = "1.1.1"
