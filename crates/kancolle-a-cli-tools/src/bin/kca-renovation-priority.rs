@@ -81,6 +81,10 @@ async fn main() -> Result<()> {
             ship_name: &'a String,
             current: &'a ShipMod,
         },
+        Kekkonable {
+            ship_name: &'a String,
+            current: &'a ShipMod,
+        },
     }
 
     let mut results: Vec<State> = Vec::new();
@@ -120,6 +124,18 @@ async fn main() -> Result<()> {
 
         if missing(ship.mods().first().unwrap()) {
             results.push(State::MissingBase(ship_name));
+        }
+
+        for ship_mod in ship.mods().iter().filter(|&ship_mod| {
+            ship_mod.kekkon().is_some()
+                && ship_mod.character().is_some()
+                && !ship_mod.character().as_ref().unwrap().married
+                && ship_mod.character().as_ref().unwrap().lv >= 99
+        }) {
+            results.push(State::Kekkonable {
+                ship_name,
+                current: ship_mod,
+            });
         }
 
         for i in 0..ship.mods().len() - 1 {
@@ -207,6 +223,15 @@ async fn main() -> Result<()> {
             State::UpgradeReady { .. } => Ordering::Equal,
             _ => Ordering::Greater,
         },
+        State::Kekkonable { .. } => match right {
+            State::MissingAll(_)
+            | State::MissingBase(_)
+            | State::Constructable { .. }
+            | State::UpgradeAvailable { .. }
+            | State::UpgradeReady { .. } => Ordering::Less,
+            State::Kekkonable { .. } => Ordering::Equal,
+            _ => Ordering::Greater,
+        },
         State::StarsNeeded {
             current: left_curr, ..
         } => match right {
@@ -281,6 +306,10 @@ async fn main() -> Result<()> {
                 let current_name = current.name();
                 let current_stars = current.character().as_ref().unwrap().star_num;
                 eprintln!("STARS NEEDED\t{ship_name}\t{current_name}({current_stars}/5)");
+            }
+            State::Kekkonable { ship_name, current } => {
+                let current_name = current.name();
+                eprintln!("KEKKONABLE\t{ship_name}\t{current_name}");
             }
         }
     }
