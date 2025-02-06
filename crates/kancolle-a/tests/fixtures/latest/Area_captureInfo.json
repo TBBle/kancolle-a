@@ -148,7 +148,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1738335600000
+        "periodEndTime": 1740754800000
     },
     {
         "areaId": 2,
@@ -308,7 +308,7 @@
         "bossInfo": {
             "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2000,
-            "militaryGaugeLeft": 1500,
+            "militaryGaugeLeft": 2000,
             "bossStatus": "NONE"
         },
         "limitSec": 360,
@@ -327,7 +327,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1738335600000
+        "periodEndTime": 1740754800000
     },
     {
         "areaId": 3,
@@ -477,7 +477,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1738335600000
+        "periodEndTime": 1740754800000
     },
     {
         "areaId": 4,
@@ -697,11 +697,11 @@
         "stageClearItemAmount": 1,
         "stageClearItemInfo2": "RESULTPOINT",
         "stageClearItemAmount2": 2800,
-        "areaClearState": "NOTCLEAR",
+        "areaClearState": "CLEAR",
         "bossInfo": {
-            "militaryGaugeStatus": "NORMAL",
+            "militaryGaugeStatus": "BREAK",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 2000,
+            "militaryGaugeLeft": 0,
             "bossStatus": "FORM_1"
         },
         "limitSec": 390,
@@ -720,7 +720,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1738335600000
+        "periodEndTime": 1740754800000
     },
     {
         "areaId": 5,
@@ -891,7 +891,7 @@
         "areaId": 5,
         "areaSubId": 4,
         "pursuitMap": false,
-        "pursuitMapOpen": false,
+        "pursuitMapOpen": true,
         "stageClearItemInfo": "MEISTER",
         "stageClearItemAmount": 1,
         "stageClearItemAmount2": 0,
@@ -926,8 +926,38 @@
     {
         "areaId": 5,
         "areaSubId": 4,
-        "pursuitMap": false,
+        "pursuitMap": true,
         "pursuitMapOpen": false,
+        "stageClearItemInfo": "NONE",
+        "stageClearItemAmount": 0,
+        "stageClearItemAmount2": 0,
+        "areaClearState": "CLEAR",
+        "limitSec": 90,
+        "requireGp": 200,
+        "sortieLimit": false,
+        "stageImageName": "area_epy68o44jg.png",
+        "stageMissionName": "東京急行",
+        "stageMissionInfo": "我が艦隊は鼠輸送作戦に成功した。残存する同方面の敵艦隊を追撃せよ！",
+        "stageDropItemInfo": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "route": "PURSUIT",
+        "sortieLimitDrum": 0,
+        "strategyPointDrumBounus": false,
+        "allLvRaidFlag": false,
+        "supportFleetFlag": false,
+        "ssopStartTime": 4102412399900,
+        "ssopEndTime": 4102412399900,
+        "periodEndTime": 0
+    },
+    {
+        "areaId": 5,
+        "areaSubId": 4,
+        "pursuitMap": false,
+        "pursuitMapOpen": true,
         "stageClearItemInfo": "MEISTER",
         "stageClearItemAmount": 0,
         "stageClearItemAmount2": 0,
@@ -972,7 +1002,7 @@
         "bossInfo": {
             "militaryGaugeStatus": "NORMAL",
             "eneMilitaryGaugeVal": 2500,
-            "militaryGaugeLeft": 2500,
+            "militaryGaugeLeft": 2000,
             "bossStatus": "NONE"
         },
         "limitSec": 390,
@@ -991,7 +1021,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1738335600000
+        "periodEndTime": 1740754800000
     },
     {
         "areaId": 6,
@@ -1229,7 +1259,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1738335600000
+        "periodEndTime": 1740754800000
     },
     {
         "areaId": 6,
@@ -1263,6 +1293,6 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1738335600000
+        "periodEndTime": 1740754800000
     }
 ]

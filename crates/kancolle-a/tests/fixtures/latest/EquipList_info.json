@@ -10,23 +10,9 @@
         },
         {
             "type": 1,
-            "equipmentId": 1,
-            "name": "12cm単装砲",
-            "num": 3,
-            "img": "equip_icon_1_1984kzwm2f7s.png"
-        },
-        {
-            "type": 1,
-            "equipmentId": 2,
-            "name": "12.7cm連装砲",
-            "num": 3,
-            "img": "equip_icon_1_1984kzwm2f7s.png"
-        },
-        {
-            "type": 1,
             "equipmentId": 3,
             "name": "10cm連装高角砲",
-            "num": 13,
+            "num": 14,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -72,13 +58,6 @@
             "img": "equip_icon_1_1984kzwm2f7s.png"
         },
         {
-            "type": 2,
-            "equipmentId": 10,
-            "name": "12.7cm連装高角砲",
-            "num": 1,
-            "img": "equip_icon_26_rv74l134q7an.png"
-        },
-        {
             "type": 1,
             "equipmentId": 267,
             "name": "12.7cm連装砲D型改二",
@@ -96,7 +75,7 @@
             "type": 3,
             "equipmentId": 15,
             "name": "61cm四連装(酸素)魚雷",
-            "num": 44,
+            "num": 45,
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
@@ -138,7 +117,7 @@
             "type": 6,
             "equipmentId": 26,
             "name": "瑞雲",
-            "num": 6,
+            "num": 2,
             "img": "equip_icon_10_lpoysb3zk6s4.png"
         },
         {
@@ -229,7 +208,7 @@
             "type": 2,
             "equipmentId": 40,
             "name": "25mm三連装機銃",
-            "num": 3,
+            "num": 2,
             "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
@@ -238,13 +217,6 @@
             "name": "甲標的 甲型",
             "num": 15,
             "img": "equip_icon_5_c4bcdscek33o.png"
-        },
-        {
-            "type": 7,
-            "equipmentId": 44,
-            "name": "九四式爆雷投射機",
-            "num": 2,
-            "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {
             "type": 7,
@@ -394,6 +366,13 @@
             "img": "equip_icon_13_jdkmrexetpvn.png"
         },
         {
+            "type": 6,
+            "equipmentId": 62,
+            "name": "試製晴嵐",
+            "num": 1,
+            "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
             "type": 1,
             "equipmentId": 63,
             "name": "12.7cm連装砲B型改二",
@@ -411,7 +390,7 @@
             "type": 2,
             "equipmentId": 66,
             "name": "8cm高角砲",
-            "num": 14,
+            "num": 15,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -716,13 +695,6 @@
             "img": "equip_icon_2_n8b0sex6xclf.png"
         },
         {
-            "type": 8,
-            "equipmentId": 121,
-            "name": "91式高射装置",
-            "num": 1,
-            "img": "equip_icon_30_43j8mb5y331k.png"
-        },
-        {
             "type": 7,
             "equipmentId": 377,
             "name": "RUR-4A Weapon Alpha改",
@@ -859,7 +831,7 @@
             "type": 1,
             "equipmentId": 147,
             "name": "120mm連装砲",
-            "num": 2,
+            "num": 4,
             "img": "equip_icon_1_1984kzwm2f7s.png"
         },
         {

@@ -355,9 +355,9 @@
     },
     {
         "bookNo": 62,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "多用途水上機/水上爆撃機",
+        "equipName": "試製晴嵐",
+        "equipImg": "e/equip_62_efs018ftmom.png"
     },
     {
         "bookNo": 63,
@@ -1453,6 +1453,12 @@
     },
     {
         "bookNo": 318,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
+        "bookNo": 319,
         "equipKind": "",
         "equipName": "",
         "equipImg": ""

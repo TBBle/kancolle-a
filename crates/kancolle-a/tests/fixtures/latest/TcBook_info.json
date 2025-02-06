@@ -111,7 +111,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 98,
+        "lv": 100,
         "isMarried": [
             false
         ],
@@ -447,7 +447,7 @@
         ],
         "variationNum": 14,
         "acquireNum": 2,
-        "lv": 83,
+        "lv": 84,
         "isMarried": [
             false,
             false,
@@ -556,7 +556,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 2,
-        "lv": 39,
+        "lv": 41,
         "isMarried": [
             false
         ],
@@ -816,7 +816,7 @@
                     "s/tc_20_f9441mtfp1fw.jpg"
                 ],
                 "statusImg": [
-                    "i/i_m6p2pnu2u9ks_bl.png"
+                    "i/i_m6p2pnu2u9ks_n.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 3
@@ -895,7 +895,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 3,
-        "lv": 86,
+        "lv": 89,
         "isMarried": [
             false,
             false
@@ -967,7 +967,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 3,
-        "lv": 86,
+        "lv": 89,
         "isMarried": [
             false,
             false
@@ -1208,8 +1208,8 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_2qxq2nz4rrtn_bl.png",
-                    "i/i_9ed49jnksn4u_bl.png"
+                    "i/i_2qxq2nz4rrtn_n.png",
+                    "i/i_9ed49jnksn4u_n.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 5
@@ -1723,7 +1723,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 2,
-        "lv": 63,
+        "lv": 64,
         "isMarried": [
             false,
             false
@@ -1966,7 +1966,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_x44xgkjc9a4z_n.png"
+                    "i/i_x44xgkjc9a4z_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -1974,7 +1974,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 47,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -1997,7 +1997,7 @@
                     "s/tc_50_kd1anrf46qma.jpg"
                 ],
                 "statusImg": [
-                    "i/i_yzxw7mqeeqp1_n.png"
+                    "i/i_yzxw7mqeeqp1_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 3
@@ -2005,7 +2005,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 3,
-        "lv": 48,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -3225,7 +3225,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 3,
-        "lv": 1,
+        "lv": 11,
         "isMarried": [
             false,
             false
@@ -3247,21 +3247,23 @@
                     "s/tc_78_43q7qmmwngpx.jpg",
                     "s/tc_78_13p7cgzdztw4.jpg",
                     "",
-                    "",
+                    "s/tc_78_y2t400muj2mq.jpg",
                     "",
                     ""
                 ],
                 "statusImg": [
-                    "i/i_43q7qmmwngpx_n.png"
+                    "i/i_43q7qmmwngpx_n.png",
+                    "i/i_y2t400muj2mq_n.png"
                 ],
                 "variationNumInPage": 6,
-                "acquireNumInPage": 2
+                "acquireNumInPage": 3
             }
         ],
         "variationNum": 6,
-        "acquireNum": 2,
+        "acquireNum": 3,
         "lv": 1,
         "isMarried": [
+            false,
             false
         ],
         "marriedImg": []
@@ -3334,8 +3336,8 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_npnsn6jrdstn_n.png",
-                    "i/i_s43us3yfzr6r_n.png"
+                    "i/i_npnsn6jrdstn_bl.png",
+                    "i/i_s43us3yfzr6r_bl.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 3
@@ -3975,7 +3977,7 @@
         ],
         "variationNum": 18,
         "acquireNum": 4,
-        "lv": 36,
+        "lv": 37,
         "isMarried": [
             false,
             false,
@@ -4003,7 +4005,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_6a3eccmpq03x_n.png"
+                    "i/i_6a3eccmpq03x_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -4011,7 +4013,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 47,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -4034,7 +4036,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_143szp9f4a1s_n.png"
+                    "i/i_143szp9f4a1s_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -4042,7 +4044,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 48,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -4107,7 +4109,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_fcskwuuq1kk3_bl.png"
+                    "i/i_fcskwuuq1kk3_n.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -4138,7 +4140,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_96g3y2zr6sq7_n.png"
+                    "i/i_96g3y2zr6sq7_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -4146,7 +4148,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 47,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -4169,7 +4171,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_mc9sqmqj2xj4_n.png"
+                    "i/i_mc9sqmqj2xj4_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -4177,7 +4179,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 48,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -4278,7 +4280,7 @@
         ],
         "variationNum": 4,
         "acquireNum": 2,
-        "lv": 98,
+        "lv": 100,
         "isMarried": [
             false
         ],
@@ -4346,8 +4348,8 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_apqs9x1kdkat_n.png",
-                    "i/i_4r41tdzrqxwn_n.png"
+                    "i/i_apqs9x1kdkat_bl.png",
+                    "i/i_4r41tdzrqxwn_bl.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 2
@@ -4355,7 +4357,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 2,
-        "lv": 47,
+        "lv": 52,
         "isMarried": [
             false,
             false
@@ -4382,8 +4384,8 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_4a3yz14r4x4k_n.png",
-                    "i/i_cc94swqjp4p1_n.png"
+                    "i/i_4a3yz14r4x4k_bl.png",
+                    "i/i_cc94swqjp4p1_bl.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 2
@@ -4391,7 +4393,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 2,
-        "lv": 48,
+        "lv": 52,
         "isMarried": [
             false,
             false
@@ -4790,7 +4792,7 @@
                     "s/tc_115_eapkud73et7s.jpg"
                 ],
                 "statusImg": [
-                    "i/i_cqzpnkksemsr_bl.png"
+                    "i/i_cqzpnkksemsr_n.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 2
@@ -4989,7 +4991,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_q9szeyawp9gq_n.png"
+                    "i/i_q9szeyawp9gq_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -4997,7 +4999,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 47,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -5020,7 +5022,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_e1z130a4zq47_n.png"
+                    "i/i_e1z130a4zq47_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -5028,7 +5030,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 48,
+        "lv": 52,
         "isMarried": [
             false
         ],
@@ -5832,7 +5834,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 63,
+        "lv": 64,
         "isMarried": [
             false
         ],
@@ -5996,7 +5998,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_3mfyuwzp4q4c_n.png"
+                    "i/i_3mfyuwzp4q4c_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -6009,7 +6011,7 @@
                     "s/tc_145_zpwcffttg49n.jpg"
                 ],
                 "statusImg": [
-                    "i/i_3mfyuwzp4q4c_n.png"
+                    "i/i_3mfyuwzp4q4c_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 2
@@ -6022,7 +6024,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_w4w1jcxdw0qa_n.png"
+                    "i/i_w4w1jcxdw0qa_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -6035,7 +6037,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_3mfyuwzp4q4c_n.png"
+                    "i/i_3mfyuwzp4q4c_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -6047,7 +6049,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_3mfyuwzp4q4c_n.png"
+                    "i/i_3mfyuwzp4q4c_bl.png"
                 ],
                 "variationNumInPage": 2,
                 "acquireNumInPage": 0
@@ -6213,7 +6215,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 86,
+        "lv": 89,
         "isMarried": [
             false
         ],
@@ -6286,7 +6288,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 1,
-        "lv": 86,
+        "lv": 89,
         "isMarried": [
             false
         ],
@@ -6352,7 +6354,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 3,
-        "lv": 80,
+        "lv": 82,
         "isMarried": [
             false,
             false
@@ -6373,21 +6375,23 @@
                     "s/tc_155_47u2j90pw996.jpg",
                     "",
                     "",
-                    "",
+                    "s/tc_155_9gd9jt6en4uf.jpg",
                     "",
                     ""
                 ],
                 "statusImg": [
-                    "i/i_w44nxkuy0c44_n.png"
+                    "i/i_w44nxkuy0c44_n.png",
+                    "i/i_00n4xmq22pck_n.png"
                 ],
                 "variationNumInPage": 6,
-                "acquireNumInPage": 1
+                "acquireNumInPage": 2
             }
         ],
         "variationNum": 6,
-        "acquireNum": 1,
+        "acquireNum": 2,
         "lv": 8,
         "isMarried": [
+            false,
             false
         ],
         "marriedImg": []
@@ -6440,7 +6444,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_3ym1kfmzc1mf_bl.png"
+                    "i/i_3ym1kfmzc1mf_n.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -6618,7 +6622,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 4,
-        "lv": 63,
+        "lv": 65,
         "isMarried": [
             false,
             false
@@ -6894,7 +6898,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 1,
-        "lv": 41,
+        "lv": 44,
         "isMarried": [
             false
         ],
@@ -7177,7 +7181,7 @@
         ],
         "variationNum": 3,
         "acquireNum": 2,
-        "lv": 67,
+        "lv": 69,
         "isMarried": [
             false
         ],
@@ -7405,7 +7409,7 @@
         ],
         "variationNum": 4,
         "acquireNum": 1,
-        "lv": 67,
+        "lv": 69,
         "isMarried": [
             false
         ],
@@ -7919,15 +7923,16 @@
                     "s/tc_209_6uqm0rr6azd9.jpg",
                     "s/tc_209_upx42j3kttak.jpg",
                     "",
-                    "",
+                    "s/tc_209_emyyms1pqymq.jpg",
                     "",
                     ""
                 ],
                 "statusImg": [
-                    "i/i_fm346tmmjnkp_n.png"
+                    "i/i_fm346tmmjnkp_n.png",
+                    "i/i_zp6ze49mx4qw_n.png"
                 ],
                 "variationNumInPage": 6,
-                "acquireNumInPage": 2
+                "acquireNumInPage": 3
             },
             {
                 "priority": 1,
@@ -7952,14 +7957,15 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_fm346tmmjnkp_n.png"
+                    "i/i_fm346tmmjnkp_n.png",
+                    "i/i_zp6ze49mx4qw_n.png"
                 ],
                 "variationNumInPage": 1,
                 "acquireNumInPage": 0
             }
         ],
         "variationNum": 13,
-        "acquireNum": 4,
+        "acquireNum": 5,
         "lv": 26,
         "isMarried": [
             false,
@@ -8211,7 +8217,7 @@
         ],
         "variationNum": 12,
         "acquireNum": 7,
-        "lv": 86,
+        "lv": 87,
         "isMarried": [
             false,
             false,
@@ -8804,7 +8810,7 @@
                 "priority": 1,
                 "cardImgList": [
                     "s/tc_239_pm06stz0xerm.jpg",
-                    "",
+                    "s/tc_239_wr72p9q4mqqj.jpg",
                     "",
                     "",
                     "",
@@ -8814,7 +8820,7 @@
                     "i/i_4wmqcmuffn9a_n.png"
                 ],
                 "variationNumInPage": 6,
-                "acquireNumInPage": 1
+                "acquireNumInPage": 2
             },
             {
                 "priority": 2,
@@ -8830,7 +8836,7 @@
             }
         ],
         "variationNum": 14,
-        "acquireNum": 2,
+        "acquireNum": 3,
         "lv": 49,
         "isMarried": [
             false,
@@ -8978,15 +8984,16 @@
                     "s/tc_243_qmd9mt6wdcgc.jpg",
                     "s/tc_243_cdqs4fkatnrj.jpg",
                     "",
-                    "",
+                    "s/tc_243_yte96ztsfsa0.jpg",
                     "",
                     ""
                 ],
                 "statusImg": [
-                    "i/i_4y3ky03czwff_bl.png"
+                    "i/i_4y3ky03czwff_n.png",
+                    "i/i_nnangs3tk74e_n.png"
                 ],
                 "variationNumInPage": 6,
-                "acquireNumInPage": 2
+                "acquireNumInPage": 3
             },
             {
                 "priority": 1,
@@ -8999,16 +9006,18 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_34ccfj64xrx3_bl.png"
+                    "i/i_34ccfj64xrx3_n.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 1
             }
         ],
         "variationNum": 12,
-        "acquireNum": 3,
+        "acquireNum": 4,
         "lv": 30,
         "isMarried": [
+            false,
+            false,
             false,
             false
         ],
@@ -9050,7 +9059,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 1,
-        "lv": 41,
+        "lv": 43,
         "isMarried": [
             false,
             false
@@ -9235,7 +9244,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 2,
-        "lv": 41,
+        "lv": 43,
         "isMarried": [
             false,
             false
@@ -9422,8 +9431,8 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_rkeaf4kqcrmz_bl.png",
-                    "i/i_gqj9ypwgqccm_bl.png"
+                    "i/i_rkeaf4kqcrmz_n.png",
+                    "i/i_gqj9ypwgqccm_n.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 3
@@ -9444,7 +9453,7 @@
         ],
         "variationNum": 12,
         "acquireNum": 3,
-        "lv": 32,
+        "lv": 34,
         "isMarried": [
             false,
             false,
@@ -9806,7 +9815,7 @@
         ],
         "variationNum": 12,
         "acquireNum": 4,
-        "lv": 83,
+        "lv": 84,
         "isMarried": [
             false,
             false,
@@ -10372,14 +10381,14 @@
                 "priority": 0,
                 "cardImgList": [
                     "s/tc_303_rkekj96tmjm1.jpg",
-                    "",
+                    "s/tc_303_1kz4df6e1npz.jpg",
                     ""
                 ],
                 "statusImg": [
                     "i/i_4p3kmqekgfza_n.png"
                 ],
                 "variationNumInPage": 3,
-                "acquireNumInPage": 1
+                "acquireNumInPage": 2
             },
             {
                 "priority": 1,
@@ -10396,7 +10405,7 @@
             }
         ],
         "variationNum": 6,
-        "acquireNum": 2,
+        "acquireNum": 3,
         "lv": 47,
         "isMarried": [
             false,
@@ -10729,22 +10738,24 @@
                 "cardImgList": [
                     "s/tc_353_rem4numkg6m6.jpg",
                     "",
-                    ""
+                    "s/tc_353_ajaek776jk20.jpg"
                 ],
                 "statusImg": [
                     "i/i_gqqdy4ymss74_n.png"
                 ],
                 "variationNumInPage": 3,
-                "acquireNumInPage": 1
+                "acquireNumInPage": 2
             }
         ],
         "variationNum": 3,
-        "acquireNum": 1,
-        "lv": 98,
+        "acquireNum": 2,
+        "lv": 100,
         "isMarried": [
-            false
+            true
         ],
-        "marriedImg": []
+        "marriedImg": [
+            "s/tc_353_r9efqdzm20wk.jpg"
+        ]
     },
     {
         "bookNo": 354,
@@ -10857,7 +10868,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_9qx27jrxqkq9_n.png"
+                    "i/i_9qx27jrxqkq9_bm.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 1
@@ -10873,7 +10884,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_ra4zpwtqmxek_n.png"
+                    "i/i_ra4zpwtqmxek_bm.png"
                 ],
                 "variationNumInPage": 6,
                 "acquireNumInPage": 1
@@ -10881,7 +10892,7 @@
         ],
         "variationNum": 12,
         "acquireNum": 2,
-        "lv": 53,
+        "lv": 55,
         "isMarried": [
             false,
             false,
@@ -10926,7 +10937,7 @@
         ],
         "variationNum": 6,
         "acquireNum": 1,
-        "lv": 30,
+        "lv": 32,
         "isMarried": [
             false,
             false
@@ -11186,7 +11197,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_kwmdmxk73ecm_n.png"
+                    "i/i_kwmdmxk73ecm_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1
@@ -11199,7 +11210,7 @@
                     ""
                 ],
                 "statusImg": [
-                    "i/i_qryyqta2emze_n.png"
+                    "i/i_qryyqta2emze_bl.png"
                 ],
                 "variationNumInPage": 3,
                 "acquireNumInPage": 1

@@ -1248,22 +1248,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 100408,
-        "distance": "",
-        "name": "ＧｉＧＯ小名浜",
-        "tel": "07014585638",
-        "address": "福島県いわき市小名浜林城字塚前１８−１",
-        "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "24:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "FUKUSHIMA",
-        "latitude": "36.98593",
-        "longitude": "140.897135",
-        "zoomLevel": 16
-    },
-    {
         "id": 100410,
         "distance": "",
         "name": "ＧｉＧＯ入間",
@@ -1501,22 +1485,6 @@
         "regionEnum": "MIYAGI",
         "latitude": "38.261943",
         "longitude": "140.879208",
-        "zoomLevel": 16
-    },
-    {
-        "id": 100403,
-        "distance": "",
-        "name": "ネオＡＭスペースａ−ｃｈｏ",
-        "tel": "0752512323",
-        "address": "京都府京都市中京区寺町通四条上る東大文字町３０２−３０３",
-        "station": "",
-        "openTime": "09:00   ",
-        "closeTime": "24:00   ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "KYOUTO",
-        "latitude": "35.004443",
-        "longitude": "135.766836",
         "zoomLevel": 16
     },
     {
@@ -3168,22 +3136,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 105067,
-        "distance": "",
-        "name": "ゲームファンタジアン岡崎店",
-        "tel": "0564660505",
-        "address": "愛知県岡崎市錦町２−４",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "AICHI",
-        "latitude": "34.973373",
-        "longitude": "137.159916",
-        "zoomLevel": 16
-    },
-    {
         "id": 105069,
         "distance": "",
         "name": "シルクハット川崎ダイス",
@@ -3472,22 +3424,6 @@
         "zoomLevel": 16
     },
     {
-        "id": 105538,
-        "distance": "",
-        "name": "ユーズランド太田店",
-        "tel": "0276478722",
-        "address": "群馬県太田市石原町８１番地イオンモール太田２Ｆ",
-        "station": "",
-        "openTime": "        ",
-        "closeTime": "        ",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "GUNMA",
-        "latitude": "36.294144",
-        "longitude": "139.400436",
-        "zoomLevel": 16
-    },
-    {
         "id": 105548,
         "distance": "",
         "name": "アピナ松本店",
@@ -3654,8 +3590,8 @@
         "tel": "0426457050",
         "address": "東京都八王子市高倉町55-4",
         "station": "",
-        "openTime": "10:00   ",
-        "closeTime": "24:00   ",
+        "openTime": "        ",
+        "closeTime": "        ",
         "specialInfo": "",
         "country": "JPN",
         "regionEnum": "TOKYO",
@@ -11021,6 +10957,22 @@
         "regionEnum": "IBARAKI",
         "latitude": "36.042264",
         "longitude": "140.210051",
+        "zoomLevel": 16
+    },
+    {
+        "id": 113270,
+        "distance": "",
+        "name": "アミューズメントパレスワンダーヴュ本牧店",
+        "tel": "0452258150",
+        "address": "神奈川県横浜市中区本牧原１２番１ベイタウン本牧５番街２階",
+        "station": "",
+        "openTime": "10:00   ",
+        "closeTime": "        ",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "KANAGAWA",
+        "latitude": "35.425462",
+        "longitude": "139.665572",
         "zoomLevel": 16
     }
 ]
