@@ -1,6 +1,7 @@
 use anyhow::Result;
+use itertools::Itertools;
 use kancolle_a::ships::ShipsBuilder;
-use kancolle_a_cli_tools::cli_helpers;
+use kancolle_a_cli_tools::{cli_helpers, dirty_ship_sorter};
 use std::collections::BTreeMap;
 
 pub(crate) mod args {
@@ -41,6 +42,7 @@ async fn main() -> Result<()> {
     for bp in ships
         .iter()
         .filter(|(_, ship)| ship.blueprint().is_some())
+        .sorted_by(|&left, &right| dirty_ship_sorter::dirty_ship_wiki_cmp(left.0, right.0))
         .map(|(_, ship)| ship.blueprint().as_ref().unwrap())
     {
         for entry in &bp.expiration_date_list {

@@ -1,8 +1,9 @@
 use std::cmp::Ordering;
 
 use anyhow::Result;
+use itertools::Itertools;
 use kancolle_a::ships::{self, ShipMod, ShipsBuilder};
-use kancolle_a_cli_tools::cli_helpers;
+use kancolle_a_cli_tools::{cli_helpers, dirty_ship_sorter};
 
 pub(crate) mod args {
     use bpaf::*;
@@ -110,6 +111,7 @@ async fn main() -> Result<()> {
 
     for (ship_name, ship) in ships
         .iter()
+        .sorted_by(|&left, &right| dirty_ship_sorter::dirty_ship_wiki_cmp(left.0, right.0))
         .filter(|(ship_name, _)| ship_names.is_empty() || ship_names.contains(&ship_name.as_str()))
     {
         if ship.mods().is_empty()
@@ -182,7 +184,7 @@ async fn main() -> Result<()> {
         }
     }
 
-    results.sort_unstable_by(|left, right| match left {
+    results.sort_by(|left, right| match left {
         State::MissingAll(_) => match right {
             State::MissingAll(_) => Ordering::Equal,
             _ => Ordering::Greater,
