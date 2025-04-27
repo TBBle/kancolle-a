@@ -9,21 +9,21 @@ license.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.95"
-bpaf = { version = "0.9.16", features = ["dull-color"] }
-chrono = { version = "0.4.39", features = ["serde"] }
+anyhow = "1.0.98"
+bpaf = { version = "0.9.19", features = ["dull-color"] }
+chrono = { version = "0.4.40", features = ["serde"] }
 itertools = "0.14.0"
 jsonxf = "1.1.1"
 kancolle-a = { version = ">0.0.0", path = "../kancolle-a" }
 kml = { version = "0.8.7", default-features = false }
-rpassword = "7.3.1"
+rpassword = "7.4.0"
 strum = { version = "0.26.3" }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-tokio = { version = "1.43.0", features = ["full"] }
+tokio = { version = "1.44.2", features = ["full"] }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-tokio = { version = "1.43.0", features = [
+tokio = { version = "1.44.2", features = [
     "sync",
     "macros",
     "io-util",
