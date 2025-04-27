@@ -17,7 +17,7 @@ jsonxf = "1.1.1"
 kancolle-a = { version = ">0.0.0", path = "../kancolle-a" }
 kml = { version = "0.8.7", default-features = false }
 rpassword = "7.4.0"
-strum = { version = "0.26.3" }
+strum = { version = "0.27.1" }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
 tokio = { version = "1.44.2", features = ["full"] }
