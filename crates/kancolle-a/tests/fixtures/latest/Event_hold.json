@@ -1,3 +1,4 @@
 {
-    "holdStatus": "NOT_DISP"
+    "holdStatus": "PERIOD0",
+    "startTime": 1744236000000
 }

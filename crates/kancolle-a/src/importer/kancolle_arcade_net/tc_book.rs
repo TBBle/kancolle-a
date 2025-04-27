@@ -305,7 +305,7 @@ fn init_book_ship_sources() {
         sources.insert(239, vec![SundayBest, OriginalIllustration2(false, true)]);
         // Littorio: https://kancolle-a.sega.jp/players/information/200728_1.html
         sources.insert(241, vec![Swimsuit]);
-        // Roma, Roma改: https://kancolle-a.sega.jp/players/information/211005_1.html
+        // Roma: https://kancolle-a.sega.jp/players/information/211005_1.html
         sources.insert(242, vec![Halloween]);
         // Libeccio, Libeccio改: https://kancolle-a.sega.jp/players/information/190729_1.html
         sources.insert(243, vec![Swimsuit]);
@@ -313,6 +313,8 @@ fn init_book_ship_sources() {
         sources.insert(245, vec![Swimsuit]);
         // Italia: https://kancolle-a.sega.jp/players/information/200728_1.html
         sources.insert(246, vec![Swimsuit]);
+        // Roma改: https://kancolle-a.sega.jp/players/information/211005_1.html
+        sources.insert(247, vec![Halloween]);
         // Zara, Zara改: https://kancolle-a.sega.jp/players/information/2209_sauryfestival.html
         sources.insert(248, vec![PacificSaury]);
         // 秋津洲改: https://kancolle-a.sega.jp/players/information/2207_join_akitusima_swim.html
@@ -369,6 +371,8 @@ fn init_book_ship_sources() {
         sources.insert(396, vec![Swimsuit]);
         // Grecale: https://kancolle-a.sega.jp/players/information/2310_halloween.html
         sources.insert(414, vec![Halloween]);
+        // Ranger: https://kancolle-a.sega.jp/players/information/2504_seaarea_event16_detail.html
+        sources.insert(531, vec![OriginalIllustration1(true)]);
         // 時雨改三: https://kancolle-a.sega.jp/players/information/2408_join_shigure_swim_start.html
         sources.insert(561, vec![Swimsuit]);
 

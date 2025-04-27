@@ -643,15 +643,15 @@
     },
     {
         "bookNo": 111,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上爆撃機",
+        "equipName": "彗星(六〇一空)",
+        "equipImg": "e/equip_111_wbhv4khhjvw.png"
     },
     {
         "bookNo": 112,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "艦上攻撃機",
+        "equipName": "天山(六〇一空)",
+        "equipImg": "e/equip_112_b3foopqlrvy.png"
     },
     {
         "bookNo": 113,
@@ -1134,6 +1134,12 @@
         "equipImg": "e/equip_233_zreon4q4ty5.png"
     },
     {
+        "bookNo": 234,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 235,
         "equipKind": "",
         "equipName": "",
@@ -1560,6 +1566,12 @@
         "equipImg": "e/equip_363_siw2nheopeh.png"
     },
     {
+        "bookNo": 364,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 365,
         "equipKind": "",
         "equipName": "",
@@ -1614,6 +1626,18 @@
         "equipImg": ""
     },
     {
+        "bookNo": 450,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
+        "bookNo": 460,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 468,
         "equipKind": "大口径主砲",
         "equipName": "38cm四連装砲改 deux",
@@ -1654,5 +1678,11 @@
         "equipKind": "小型電探",
         "equipName": "電探装備マスト(13号改+22号電探改四)",
         "equipImg": "e/equip_506_x8v12m5q1t6.png"
+    },
+    {
+        "bookNo": 520,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
     }
 ]

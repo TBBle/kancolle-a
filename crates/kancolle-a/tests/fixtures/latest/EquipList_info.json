@@ -10,10 +10,31 @@
         },
         {
             "type": 1,
+            "equipmentId": 1,
+            "name": "12cm単装砲",
+            "num": 2,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 2,
+            "name": "12.7cm連装砲",
+            "num": 6,
+            "img": "equip_icon_1_1984kzwm2f7s.png"
+        },
+        {
+            "type": 1,
             "equipmentId": 3,
             "name": "10cm連装高角砲",
-            "num": 14,
+            "num": 9,
             "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 4,
+            "name": "14cm単装砲",
+            "num": 1,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
         },
         {
             "type": 1,
@@ -58,6 +79,13 @@
             "img": "equip_icon_1_1984kzwm2f7s.png"
         },
         {
+            "type": 2,
+            "equipmentId": 10,
+            "name": "12.7cm連装高角砲",
+            "num": 4,
+            "img": "equip_icon_26_rv74l134q7an.png"
+        },
+        {
             "type": 1,
             "equipmentId": 267,
             "name": "12.7cm連装砲D型改二",
@@ -73,9 +101,16 @@
         },
         {
             "type": 3,
+            "equipmentId": 13,
+            "name": "61cm三連装魚雷",
+            "num": 7,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 3,
             "equipmentId": 15,
             "name": "61cm四連装(酸素)魚雷",
-            "num": 45,
+            "num": 29,
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
@@ -126,13 +161,6 @@
             "name": "5inch単装砲 Mk.30",
             "num": 3,
             "img": "equip_icon_26_rv74l134q7an.png"
-        },
-        {
-            "type": 8,
-            "equipmentId": 28,
-            "name": "22号対水上電探",
-            "num": 3,
-            "img": "equip_icon_11_xznvoamgip59.png"
         },
         {
             "type": 3,
@@ -206,6 +234,20 @@
         },
         {
             "type": 2,
+            "equipmentId": 38,
+            "name": "12.7mm単装機銃",
+            "num": 1,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 39,
+            "name": "25mm連装機銃",
+            "num": 1,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 2,
             "equipmentId": 40,
             "name": "25mm三連装機銃",
             "num": 2,
@@ -215,14 +257,21 @@
             "type": 3,
             "equipmentId": 41,
             "name": "甲標的 甲型",
-            "num": 15,
+            "num": 16,
             "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 7,
+            "equipmentId": 44,
+            "name": "九四式爆雷投射機",
+            "num": 1,
+            "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {
             "type": 7,
             "equipmentId": 45,
             "name": "三式爆雷投射機",
-            "num": 4,
+            "num": 7,
             "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {
@@ -236,7 +285,7 @@
             "type": 7,
             "equipmentId": 47,
             "name": "三式水中探信儀",
-            "num": 6,
+            "num": 7,
             "img": "equip_icon_18_34j48vvi4jhh.png"
         },
         {
@@ -264,7 +313,7 @@
             "type": 2,
             "equipmentId": 51,
             "name": "12cm30連装噴進砲",
-            "num": 11,
+            "num": 8,
             "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
@@ -292,7 +341,7 @@
             "type": 6,
             "equipmentId": 54,
             "name": "彩雲",
-            "num": 1,
+            "num": 2,
             "img": "equip_icon_9_s61o68iy522i.png"
         },
         {
@@ -390,7 +439,7 @@
             "type": 2,
             "equipmentId": 66,
             "name": "8cm高角砲",
-            "num": 15,
+            "num": 17,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -474,7 +523,7 @@
             "type": 8,
             "equipmentId": 75,
             "name": "ドラム缶(輸送用)",
-            "num": 23,
+            "num": 15,
             "img": "equip_icon_24_o3clfmjqgem3.png"
         },
         {
@@ -558,7 +607,7 @@
             "type": 1,
             "equipmentId": 91,
             "name": "12.7cm連装高角砲(後期型)",
-            "num": 11,
+            "num": 12,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -667,6 +716,27 @@
             "img": "equip_icon_29_httgpsk80smm.png"
         },
         {
+            "type": 4,
+            "equipmentId": 110,
+            "name": "零戦52型丙(六〇一空)",
+            "num": 1,
+            "img": "equip_icon_7_8t376u7vpyzm.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 112,
+            "name": "彗星(六〇一空)",
+            "num": 1,
+            "img": "equip_icon_8_79w1oqe3xxcz.png"
+        },
+        {
+            "type": 5,
+            "equipmentId": 113,
+            "name": "天山(六〇一空)",
+            "num": 1,
+            "img": "equip_icon_6_a2e6kq8r27wg.png"
+        },
+        {
             "type": 6,
             "equipmentId": 116,
             "name": "Ar196改",
@@ -693,6 +763,13 @@
             "name": "14cm連装砲",
             "num": 5,
             "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 8,
+            "equipmentId": 121,
+            "name": "91式高射装置",
+            "num": 1,
+            "img": "equip_icon_30_43j8mb5y331k.png"
         },
         {
             "type": 7,
@@ -768,14 +845,14 @@
             "type": 2,
             "equipmentId": 134,
             "name": "OTO 152mm三連装速射砲",
-            "num": 3,
+            "num": 4,
             "img": "equip_icon_4_mgy58yrghven.png"
         },
         {
             "type": 2,
             "equipmentId": 135,
             "name": "90mm単装高角砲",
-            "num": 1,
+            "num": 2,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -789,7 +866,7 @@
             "type": 1,
             "equipmentId": 137,
             "name": "381mm/50 三連装砲改",
-            "num": 3,
+            "num": 4,
             "img": "equip_icon_3_me6e2ezu084a.png"
         },
         {
@@ -992,7 +1069,7 @@
             "type": 7,
             "equipmentId": 226,
             "name": "九五式爆雷",
-            "num": 5,
+            "num": 7,
             "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {
