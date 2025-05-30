@@ -11,6 +11,42 @@ lazy_static_include_bytes! {
     CHARLIST => "tests/fixtures/latest/CharacterList_info.json",
 }
 
+// crates\kancolle-a\src\importer\wikiwiki_jp_kancolle_a\kansen_table\艦船_テーブル.txt
+// Regex `^\|\d\d\d\|\d\|\[\[[^\]改甲航]*\]\]\|[^|]+\|` gives 197
+// Then there's 6 ships that are renamed per `ship_blueprint_name`.
+const KANSEN_TABLE_SHIPS: usize = 191;
+// Regex `^\|\d\d\d\|\d\|`
+const KANSEN_TABLE_COUNT: usize = 287;
+
+// crates\kancolle-a\src\importer\wikiwiki_jp_kancolle_a\kansen_table\改造艦船_テーブル.txt
+// Regex `^\|\d\d\d\|\d\|`
+const MODIFIED_KANSEN_TABLE_COUNT: usize = 162;
+
+// crates\kancolle-a\tests\fixtures\latest\kanmusu_list.json
+// 441 entries
+const FIXTURE_KANMUSU_LIST_COUNT: usize = 441;
+// Regex `"name": ".*[改甲航].*",` gives 247
+// Then there's 6 ships that are renamed per `ship_blueprint_name`.
+const FIXTURE_KANMUSU_LIST_SHIPS: usize = FIXTURE_KANMUSU_LIST_COUNT - 247 - 6;
+
+// crates\kancolle-a\tests\fixtures\latest\BlueprintList_info.json
+const FIXTURE_BLUEPRINT_LIST_COUNT: usize = 155;
+
+// crates\kancolle-a\tests\fixtures\latest\TcBook_info.json
+// 290 entries but 22 are 未取得
+const FIXTURE_TCBOOK_KNOWN_COUNT: usize = 290 - 22;
+// Regex `"shipName": ".*[改甲航].*",` gives 84 book entries with modified names
+// Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
+const FIXTURE_TCBOOK_KNOWN_SHIPS: usize = FIXTURE_TCBOOK_KNOWN_COUNT - 84 - 4;
+// JSON Path query `$..cardList[0].variationNumInPage`, two-row (6 per page) ships
+const FIXTURE_TCBOOK_KNOWN_SHIPMODS: usize = FIXTURE_TCBOOK_KNOWN_COUNT + 153;
+
+// crates\kancolle-a\tests\fixtures\latest\CharacterList_info.json
+const FIXTURE_CHARACTERS_COUNT: usize = 413;
+// Regex `"shipName": ".*[改甲航].*",` gives 229 characters with modified names
+// Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
+const FIXTURE_CHARACTERS_SHIPS: usize = FIXTURE_CHARACTERS_COUNT - 229 - 4;
+
 #[tokio::test]
 async fn test_ships_null_import() {
     let ships = ShipsBuilder::new()
@@ -28,19 +64,19 @@ async fn test_ships_null_import() {
 async fn test_ships_default_import() {
     let ships = ShipsBuilder::default().build().await.unwrap();
 
-    // Regex against the ships table `^\|\d\d\d\|\d\|\[\[[^\]改甲航]*\]\]\|[^|]+\|` gives 197
-    // Then there's 6 ships that are renamed per `ship_blueprint_name`.
-    assert_eq!(ships.len(), 191);
+    assert_eq!(ships.len(), KANSEN_TABLE_SHIPS);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    // Per the wiki ship lists `^\|\d\d\d\|\d\|`
-    assert_eq!(ships.shipmod_iter().count(), 287 + 162);
+    assert_eq!(
+        ships.shipmod_iter().count(),
+        KANSEN_TABLE_COUNT + MODIFIED_KANSEN_TABLE_COUNT
+    );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| ship.kekkon().is_some())
             .count(),
-        441
+        FIXTURE_KANMUSU_LIST_COUNT
     );
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -60,11 +96,10 @@ async fn test_ships_kekkon_only_import() {
         .await
         .unwrap();
 
-    // 441 entries in kanmusu_list.json, Regex `"name": ".*[改甲航].*",` hits 247, plus 6 renames
-    assert_eq!(ships.len(), 441 - 247 - 6);
+    assert_eq!(ships.len(), FIXTURE_KANMUSU_LIST_SHIPS);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    assert_eq!(ships.shipmod_iter().count(), 441);
+    assert_eq!(ships.shipmod_iter().count(), FIXTURE_KANMUSU_LIST_COUNT);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_some()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -84,11 +119,11 @@ async fn test_ships_blueprint_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 155);
+    assert_eq!(ships.len(), FIXTURE_BLUEPRINT_LIST_COUNT);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.mods().len() == 1));
 
-    assert_eq!(ships.shipmod_iter().count(), 155);
+    assert_eq!(ships.shipmod_iter().count(), FIXTURE_BLUEPRINT_LIST_COUNT);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -108,13 +143,10 @@ async fn test_ships_book_only_import() {
         .await
         .unwrap();
 
-    // Regex `"shipName": ".*[改甲航].*",` gives 84 book entries with modified names
-    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-    assert_eq!(ships.len(), (290 - 22) - 84 - 4);
+    assert_eq!(ships.len(), FIXTURE_TCBOOK_KNOWN_SHIPS);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    // 290 entries, 22 未取得, and of the remaining ships, per JSON Path query `$..cardList[0].variationNumInPage`, 153 have two rows.
-    assert_eq!(ships.shipmod_iter().count(), 290 - 22 + 153);
+    assert_eq!(ships.shipmod_iter().count(), FIXTURE_TCBOOK_KNOWN_SHIPMODS);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_some()));
@@ -134,12 +166,10 @@ async fn test_ships_characters_only_import() {
         .await
         .unwrap();
 
-    // Regex `"shipName": ".*[改甲航].*",` gives 229 characters with modified names
-    // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-    assert_eq!(ships.len(), 413 - 229 - 4);
+    assert_eq!(ships.len(), FIXTURE_CHARACTERS_SHIPS);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    assert_eq!(ships.shipmod_iter().count(), 413);
+    assert_eq!(ships.shipmod_iter().count(), FIXTURE_CHARACTERS_COUNT);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_some()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -167,44 +197,46 @@ async fn test_ships_full_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), 191);
+    assert_eq!(ships.len(), KANSEN_TABLE_SHIPS);
     assert_eq!(
         ships
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        155
+        FIXTURE_BLUEPRINT_LIST_COUNT
     );
 
-    // Per the wiki ship lists `^\|\d\d\d\|\d\|`
-    assert_eq!(ships.shipmod_iter().count(), 287 + 162);
+    assert_eq!(
+        ships.shipmod_iter().count(),
+        KANSEN_TABLE_COUNT + MODIFIED_KANSEN_TABLE_COUNT
+    );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| ship.kekkon().is_some())
             .count(),
-        441
+        FIXTURE_KANMUSU_LIST_COUNT
     );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| ship.book().is_some())
             .count(),
-        (290 - 22) + 153
+        FIXTURE_TCBOOK_KNOWN_SHIPMODS
     );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| ship.character().is_some())
             .count(),
-        413
+        FIXTURE_CHARACTERS_COUNT
     );
     assert_eq!(
         ships
             .shipmod_iter()
             .filter(|ship| ship.wiki_list_entry().is_some())
             .count(),
-        287 + 162
+        KANSEN_TABLE_COUNT + MODIFIED_KANSEN_TABLE_COUNT
     );
 
     let non_kekkon_ships: Vec<&str> = ships
