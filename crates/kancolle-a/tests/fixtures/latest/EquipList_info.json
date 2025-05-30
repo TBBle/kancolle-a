@@ -10,16 +10,9 @@
         },
         {
             "type": 1,
-            "equipmentId": 1,
-            "name": "12cm単装砲",
-            "num": 2,
-            "img": "equip_icon_1_1984kzwm2f7s.png"
-        },
-        {
-            "type": 1,
             "equipmentId": 2,
             "name": "12.7cm連装砲",
-            "num": 6,
+            "num": 4,
             "img": "equip_icon_1_1984kzwm2f7s.png"
         },
         {
@@ -82,7 +75,7 @@
             "type": 2,
             "equipmentId": 10,
             "name": "12.7cm連装高角砲",
-            "num": 4,
+            "num": 7,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -103,14 +96,21 @@
             "type": 3,
             "equipmentId": 13,
             "name": "61cm三連装魚雷",
-            "num": 7,
+            "num": 6,
+            "img": "equip_icon_5_c4bcdscek33o.png"
+        },
+        {
+            "type": 3,
+            "equipmentId": 14,
+            "name": "61cm四連装魚雷",
+            "num": 2,
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
             "type": 3,
             "equipmentId": 15,
             "name": "61cm四連装(酸素)魚雷",
-            "num": 29,
+            "num": 30,
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
@@ -234,9 +234,16 @@
         },
         {
             "type": 2,
+            "equipmentId": 37,
+            "name": "7.7mm機銃",
+            "num": 1,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
+        },
+        {
+            "type": 2,
             "equipmentId": 38,
             "name": "12.7mm単装機銃",
-            "num": 1,
+            "num": 3,
             "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
@@ -250,7 +257,7 @@
             "type": 2,
             "equipmentId": 40,
             "name": "25mm三連装機銃",
-            "num": 2,
+            "num": 5,
             "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
@@ -271,21 +278,21 @@
             "type": 7,
             "equipmentId": 45,
             "name": "三式爆雷投射機",
-            "num": 7,
+            "num": 8,
             "img": "equip_icon_17_t753p5s1xs0h.png"
         },
         {
             "type": 7,
             "equipmentId": 46,
             "name": "九三式水中聴音機",
-            "num": 6,
+            "num": 9,
             "img": "equip_icon_18_34j48vvi4jhh.png"
         },
         {
             "type": 7,
             "equipmentId": 47,
             "name": "三式水中探信儀",
-            "num": 7,
+            "num": 8,
             "img": "equip_icon_18_34j48vvi4jhh.png"
         },
         {
@@ -301,6 +308,13 @@
             "name": "S9 Osprey",
             "num": 1,
             "img": "equip_icon_10_lpoysb3zk6s4.png"
+        },
+        {
+            "type": 2,
+            "equipmentId": 49,
+            "name": "25mm単装機銃",
+            "num": 3,
+            "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
             "type": 1,
@@ -439,7 +453,7 @@
             "type": 2,
             "equipmentId": 66,
             "name": "8cm高角砲",
-            "num": 17,
+            "num": 19,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -523,7 +537,7 @@
             "type": 8,
             "equipmentId": 75,
             "name": "ドラム缶(輸送用)",
-            "num": 15,
+            "num": 16,
             "img": "equip_icon_24_o3clfmjqgem3.png"
         },
         {
@@ -912,6 +926,13 @@
             "img": "equip_icon_1_1984kzwm2f7s.png"
         },
         {
+            "type": 1,
+            "equipmentId": 407,
+            "name": "15.2cm連装砲改二",
+            "num": 1,
+            "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
             "type": 5,
             "equipmentId": 154,
             "name": "零戦62型(爆戦/岩井隊)",
@@ -1069,8 +1090,15 @@
             "type": 7,
             "equipmentId": 226,
             "name": "九五式爆雷",
-            "num": 7,
+            "num": 6,
             "img": "equip_icon_17_t753p5s1xs0h.png"
+        },
+        {
+            "type": 6,
+            "equipmentId": 485,
+            "name": "強風改二",
+            "num": 1,
+            "img": "equip_icon_36_fxawzz8h91b6.png"
         },
         {
             "type": 7,

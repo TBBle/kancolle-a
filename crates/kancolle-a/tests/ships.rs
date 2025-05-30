@@ -30,22 +30,22 @@ const FIXTURE_KANMUSU_LIST_COUNT: usize = 441;
 const FIXTURE_KANMUSU_LIST_SHIPS: usize = FIXTURE_KANMUSU_LIST_COUNT - 247 - 6;
 
 // crates\kancolle-a\tests\fixtures\latest\BlueprintList_info.json
-const FIXTURE_BLUEPRINT_LIST_COUNT: usize = 155;
+const FIXTURE_BLUEPRINT_LIST_COUNT: usize = 159;
 
 // crates\kancolle-a\tests\fixtures\latest\TcBook_info.json
 // 290 entries but 22 are 未取得
-const FIXTURE_TCBOOK_KNOWN_COUNT: usize = 290 - 22;
-// Regex `"shipName": ".*[改甲航].*",` gives 84 book entries with modified names
+const FIXTURE_TCBOOK_KNOWN_COUNT: usize = 291 - 22;
+// Regex `"shipName": ".*[改甲航].*",` gives 85 book entries with modified names
 // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-const FIXTURE_TCBOOK_KNOWN_SHIPS: usize = FIXTURE_TCBOOK_KNOWN_COUNT - 84 - 4;
-// JSON Path query `$..cardList[0].variationNumInPage`, two-row (6 per page) ships
+const FIXTURE_TCBOOK_KNOWN_SHIPS: usize = FIXTURE_TCBOOK_KNOWN_COUNT - 85 - 4;
+// JSON Path query `$..cardList[0].variationNumInPage`, reports 153 two-row (6 per page) ships
 const FIXTURE_TCBOOK_KNOWN_SHIPMODS: usize = FIXTURE_TCBOOK_KNOWN_COUNT + 153;
 
 // crates\kancolle-a\tests\fixtures\latest\CharacterList_info.json
-const FIXTURE_CHARACTERS_COUNT: usize = 413;
-// Regex `"shipName": ".*[改甲航].*",` gives 229 characters with modified names
+const FIXTURE_CHARACTERS_COUNT: usize = 414;
+// Regex `"shipName": ".*[改甲航].*",` gives 230 characters with modified names
 // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-const FIXTURE_CHARACTERS_SHIPS: usize = FIXTURE_CHARACTERS_COUNT - 229 - 4;
+const FIXTURE_CHARACTERS_SHIPS: usize = FIXTURE_CHARACTERS_COUNT - 230 - 4;
 
 #[tokio::test]
 async fn test_ships_null_import() {
@@ -209,6 +209,8 @@ async fn test_ships_full_import() {
     assert_eq!(
         ships.shipmod_iter().count(),
         KANSEN_TABLE_COUNT + MODIFIED_KANSEN_TABLE_COUNT
+        // 矢矧改二 (see test_tcbook_entries_missing_from_wiki)
+        + 1
     );
     assert_eq!(
         ships
@@ -245,7 +247,7 @@ async fn test_ships_full_import() {
         .map(|ship| ship.name().as_ref())
         .collect();
 
-    assert_eq!(non_kekkon_ships.len(), 8);
+    assert_eq!(non_kekkon_ships.len(), 9);
     assert!(non_kekkon_ships.contains(&"Ranger"));
     assert!(non_kekkon_ships.contains(&"武蔵改二"));
     assert!(non_kekkon_ships.contains(&"Ranger改"));
@@ -254,6 +256,7 @@ async fn test_ships_full_import() {
     assert!(non_kekkon_ships.contains(&"Gambier Bay改"));
     assert!(non_kekkon_ships.contains(&"Iowa"));
     assert!(non_kekkon_ships.contains(&"Iowa改"));
+    assert!(non_kekkon_ships.contains(&"矢矧改二"));
 
     // Not really a test, more a record of the data in the integration tests.
     let unowned_ships: Vec<&str> = ships

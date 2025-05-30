@@ -2318,11 +2318,13 @@ fn test_tcbook_entries_missing_from_wiki() {
     }
 
     assert_eq!(wiki_only.len(), 0);
-    assert_eq!(book_only.len(), 3);
+    assert_eq!(book_only.len(), 4);
+    assert!(book_only.contains_key(&320));
+    assert_eq!(book_only[&320], "未取得"); // Janus
     assert!(book_only.contains_key(&456));
     assert_eq!(book_only[&456], "未取得"); // 雪風改二
     assert!(book_only.contains_key(&463));
-    assert_eq!(book_only[&463], "未取得"); // 矢矧改二
+    assert_eq!(book_only[&463], "矢矧改二");
     assert!(book_only.contains_key(&511));
     assert_eq!(book_only[&511], "未取得"); // 大和改二
 }

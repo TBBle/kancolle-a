@@ -9,12 +9,264 @@
         "touchAction": false
     },
     {
+        "kind": "WALL",
+        "sortIndex": 2,
+        "name": "低予算な壁紙",
+        "description": "一番安い壁紙です。いいのです。執務室で戦闘するわけではないですし！",
+        "star": 1,
+        "img": "room_0qubplgaydx.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 16,
+        "name": "緑の壁紙",
+        "description": "モスグリーンの落ち着いた地色に花柄パターンのシックでお洒落な壁。ちょっと格調高いですね！",
+        "star": 2,
+        "img": "room_oif1l0fv7ns.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 17,
+        "name": "ポップな壁紙",
+        "description": "カジュアルな若い感性の壁紙。鮮やかな色彩のストライプには提督は渋い顔ですが、気にしません！",
+        "star": 1,
+        "img": "room_0b8fbtpbjrd.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 8,
+        "name": "シンプルモダン壁紙",
+        "description": "低い位置に装飾のラインが一本だけ入った気品のある壁紙。どんな家具にもマッチします。",
+        "star": 2,
+        "img": "room_dnp9mv3alom.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 7,
+        "name": "青い壁紙",
+        "description": "寒色系でまとめた清楚かつ清潔なイメージの壁紙。",
+        "star": 2,
+        "img": "room_w77hc74fjqq.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 13,
+        "name": "チェック＆リーフ壁紙",
+        "description": "春のうららかな陽気にぴったりの桃色ベースの壁紙です。",
+        "star": 2,
+        "img": "room_n6nnbluvq2i.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 3,
+        "name": "ピンクドット壁紙",
+        "description": "ピンクの大きなドットがポップな雰囲気を醸し出す壁紙。前衛的なキュートさは、一部の艦娘に大好評！",
+        "star": 4,
+        "img": "room_w89i1yudopp.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 5,
+        "name": "高級和風壁紙",
+        "description": "もっと落ち着いた和の心の壁紙が欲しい…という提督の要請から生まれた、高級和風壁紙。違いのわかる、大人の提督に人気です。",
+        "star": 2,
+        "img": "room_lczu9xms5ix.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 6,
+        "name": "和のシンプル壁紙",
+        "description": "和の家具と調和する落ち着いた雰囲気の壁紙が欲しい…という提督達のニーズによって誕生したシンプルな和壁紙です。",
+        "star": 2,
+        "img": "room_qyabb35y6so.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 18,
+        "name": "ピンクコンクリ壁",
+        "description": "一部の艦娘に絶賛されているピンクのコンクリート壁。打ちっぱなし壁面なのにキュートな独特な雰囲気。",
+        "star": 2,
+        "img": "room_a9tqjh39ivi.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 31,
+        "name": "春仕様の壁紙",
+        "description": "春の雰囲気にマッチした明るい色調で仕上げられた和の壁紙。シンプルなデザインの中に、どんな家具とも馴染む奥深い趣。",
+        "star": 2,
+        "img": "room_3d7oqlcfc5q.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 12,
+        "name": "コンクリート壁",
+        "description": "打ちっぱなしの冷たいコンクリート壁面がクール。知的でセンスのある近代的な艦隊司令部を演出します。",
+        "star": 2,
+        "img": "room_jw9tz4wuyxx.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 33,
+        "name": "新緑の壁紙",
+        "description": "皐月五月、新緑の季節を表現した爽やかな壁紙です。緑は目に優しく、また心を落ち着かせる効果もあると大淀さんも云ってました！",
+        "star": 2,
+        "img": "room_0xiamdmzlw6.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 14,
+        "name": "木板の壁",
+        "description": "壁紙ではなく、壁材自体を木材に換装した逸品。自然の素材ならではの落ち着いた雰囲気が、鎮守府を優しく包み込みます。",
+        "star": 2,
+        "img": "room_gyzpdw2o23v.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 20,
+        "name": "緑の和壁紙",
+        "description": "シンプルでありながら繊細な仕事によって完成された和の究極の壁紙のひとつ、それがこの「緑の和壁紙」。壁紙ってわびさびよね…。",
+        "star": 4,
+        "img": "room_fa6275tiynj.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 24,
+        "name": "軍艦色の壁",
+        "description": "執務室で仕事中も艦隊勤務中と同じ雰囲気に包まれる軍艦色で塗装された壁面。シックかつ重厚な趣きの提督執務室を構成します。",
+        "star": 2,
+        "img": "room_9zoixqowce4.png",
+        "touchAction": false
+    },
+    {
         "kind": "FLOOR",
         "sortIndex": 1,
         "name": "鎮守府の床",
         "description": "鎮守府の艦隊司令官室。その通常仕様の床板です。",
         "star": 1,
         "img": "room_hvmrso5v0z0.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 2,
+        "name": "ナチュラルな床",
+        "description": "天然木を使用した明るい木目が特徴の床です。",
+        "star": 1,
+        "img": "room_u34u6xkuhej.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 13,
+        "name": "高級フローリング",
+        "description": "高級なマホガニー仕様の重厚なフローリング。地味にセンスの光る提督の執務室にぴったり！",
+        "star": 1,
+        "img": "room_jflet1fhma2.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 7,
+        "name": "ブルーカーペット",
+        "description": "出撃して高揚した気分も落ち着く、青色のカーペット。艦娘たちもお気に入りです。",
+        "star": 1,
+        "img": "room_m5eydzdk4hl.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 8,
+        "name": "白い石版タイル",
+        "description": "足元から明るい気分になれる白いタイル。洗練されたデザインは、モダンなインテリアにもよく合います！",
+        "star": 1,
+        "img": "room_tpea7mm7q3a.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 16,
+        "name": "小花柄カーペット",
+        "description": "まるで草原にいるような心和む緑のカーペット。床とのコーディネートは、優しい気持ちにさせてくれます。",
+        "star": 2,
+        "img": "room_fg80q55fun0.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 3,
+        "name": "ピンクの床",
+        "description": "ガーリーなピンクに仕上げられた床。どこかのお店のような不思議な雰囲気を醸し出します。",
+        "star": 1,
+        "img": "room_1v846d7hvav.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 12,
+        "name": "コンクリート床",
+        "description": "都会派の貴方はこれでキマリ！洗練されたアーバンな執務室を演出するコンクリート製の床！",
+        "star": 2,
+        "img": "room_xgoggaagx4l.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 19,
+        "name": "ラクガキ床",
+        "description": "何度描いても水で簡単にふき取りが可能な楽しい床。戦略を立てるのにも有効です。",
+        "star": 4,
+        "img": "room_kzyn348hzrk.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 6,
+        "name": "戦艦タイルの床",
+        "description": "天然木と白タイルを組み合わせて戦艦級の艦艇柄をあしらった斬新な床です。自負に溢れた執務室です。",
+        "star": 4,
+        "img": "room_szwknkf94fj.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 5,
+        "name": "い草の畳",
+        "description": "熟練の職人が仕上げた逸品。心も安らぐい草の香りが爽やか。懐かしい、そして最高級の畳の床です。",
+        "star": 5,
+        "img": "room_0k2zdo2xhb7.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 25,
+        "name": "真っ白なフワフワ絨毯",
+        "description": "寝そべったら気持ちよさそう！真っ白でフワフワ仕上げの高級絨毯。駆逐艦娘も大喜びの逸品です。紅茶とかこぼしたらダメ絶対！",
+        "star": 3,
+        "img": "room_opixg8kig4w.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 14,
+        "name": "新緑のフローリング",
+        "description": "しっかりとした木板で構成された、木と新緑の香り漂うフローリングです。作戦室にはもちろん、教室の床材としても最適ですね！",
+        "star": 3,
+        "img": "room_hjz320namhb.png",
         "touchAction": false
     },
     {
@@ -28,11 +280,83 @@
     },
     {
         "kind": "DESK",
+        "sortIndex": 3,
+        "name": "椅子",
+        "description": "提督の執務室に似合う趣きのある椅子。ちょっと腰を落ち着けて物事をじっくり考えれそう！",
+        "star": 1,
+        "img": "room_cagw3mfrqye.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
         "sortIndex": 2,
         "name": "提督の机",
         "description": "１クラス上の提督の貴方にお奨めしたい、執務机。この机なら連戦連勝、間違いなし！",
         "star": 3,
         "img": "room_fs4crj9tv3e.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 18,
+        "name": "インテリア椅子",
+        "description": "木彫で暖かみのある高いデザイン性と機能美を持った椅子。女の子達にも人気の逸品です。",
+        "star": 2,
+        "img": "room_tnx77xsomva.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 9,
+        "name": "モダンチェア",
+        "description": "アートな輝きを放つスタイリッシュなデザイナーズチェア。これなら宇宙艦隊の指揮もとれそうです。",
+        "star": 3,
+        "img": "room_gl59zqhb2n7.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 4,
+        "name": "艦娘専用デスク",
+        "description": "艦娘の待機部屋から持ち出してきたガーリーなデザインの机と椅子。後で怒られますよ？",
+        "star": 4,
+        "img": "room_bvs1rjo5hqj.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 6,
+        "name": "布団と枕",
+        "description": "至高にして究極。普通のお布団と麦わら枕。結局これが一番疲れがとれるかも…。",
+        "star": 1,
+        "img": "room_fq21r7i0wxp.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 8,
+        "name": "執務机",
+        "description": "いろいろな資料を広げられる立派な机と椅子のセットをどうぞ。艦隊の指揮がバッチリとれそうです！",
+        "star": 2,
+        "img": "room_lbdb7r54dl4.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 26,
+        "name": "大将の机",
+        "description": "質の高い織柄のテーブルクロスがポイント！戦略資料を積み重ねて微動だにしない確かな作り。",
+        "star": 5,
+        "img": "room_434t8iq6cc6.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 25,
+        "name": "提督の書斎机",
+        "description": "シックで落ち着いた雰囲気を醸し出す大人の書斎机。書斎本棚と組み合わせれば提督の隠れ家的な書斎空間を演出します。",
+        "star": 3,
+        "img": "room_2pcdgaszez2.png",
         "touchAction": false
     },
     {
@@ -51,6 +375,105 @@
         "description": "鎮守府に備え付けの基本的なデザインの赤いカーテンと窓。母港の様子が一望できます。",
         "star": 1,
         "img": "room_9mt4vkgg3y3.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 2,
+        "name": "ちょっとゴージャスな窓",
+        "description": "重厚感と高級感を感じさせる、シックなカーテンと窓。黒色系で統一された風格のある執務室を演出します。",
+        "star": 2,
+        "img": "room_1chsimi82bh.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 7,
+        "name": "青い上品な大窓",
+        "description": "高級感溢れるビロードのカーテンが嬉しい、落ち着いた佇まいの大窓。",
+        "star": 3,
+        "img": "room_9fx72v3jlhr.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 16,
+        "name": "爽やかな窓",
+        "description": "ミントグリーンのカーテンと窓際の置かれたグリーンが爽やかな気持ちにしてくれる小窓。",
+        "star": 3,
+        "img": "room_9ao4gdvbzje.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 5,
+        "name": "障子",
+        "description": "究極にして最高の窓、それが障子。和のココロの昇華ともいうべきシンプルにして最高のデザイン。",
+        "star": 1,
+        "img": "room_nww3v2nulet.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 8,
+        "name": "シンプルフレーム２型",
+        "description": "機能美を追求したシンプルさが、質実剛健さを求める提督にぴったり。シンプルな白タイプ！",
+        "star": 1,
+        "img": "room_g1rp8o6s8ip.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 13,
+        "name": "すだれ窓",
+        "description": "現代的な機能を持った簾のついた窓。まぶしい光が差し込んできても、スムーズに執務できちゃいますね！",
+        "star": 2,
+        "img": "room_mki2rpzt3gv.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 17,
+        "name": "昔ながらのすりガラス",
+        "description": "すりガラスを入れた窓です。素敵にデザインされた紅葉柄が艦隊司令部に不思議な雰囲気を演出します。",
+        "star": 4,
+        "img": "room_al0v30ypcpv.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 3,
+        "name": "おしゃれな格子窓",
+        "description": "どこか懐かしくて新しいデザインのガラス格子窓です。ファンの多い優れたデザイナーによる逸品です。",
+        "star": 5,
+        "img": "room_p8tvaqihcyw.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 25,
+        "name": "シンプルなすだれ窓",
+        "description": "なにやら少し現代的な機能を持った簾付のシンプルな窓です。これなら午後の日差しが差し込んできても落ち着いて執務できますね。",
+        "star": 2,
+        "img": "room_atutr9tgbo8.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 23,
+        "name": "青カーテンの窓",
+        "description": "爽やかな雰囲気になれるブルーのカーテン。生地も少し高級な素材を使っています。",
+        "star": 1,
+        "img": "room_82qeob7930u.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 19,
+        "name": "緑カーテンの窓",
+        "description": "知的な貴方にぴったりのグリーンのカーテン。落ち着いて戦略を練る提督にぴったりです。",
+        "star": 1,
+        "img": "room_9822nvgzbyp.png",
         "touchAction": false
     },
     {
@@ -73,11 +496,65 @@
     },
     {
         "kind": "DECOR",
+        "sortIndex": 3,
+        "name": "鹿のオブジェ",
+        "description": "リッチなロッジのような世界観を醸し出す鹿の壁掛け。だけど、剥製ではなくて、ぬいぐるみ。",
+        "star": 1,
+        "img": "room_6i6t4jhmhbs.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 4,
+        "name": "ステンドグラス",
+        "description": "海と艦艇をモチーフにしたデザインは、１クラス上の上質な時間を演出します。",
+        "star": 4,
+        "img": "room_xmyr44l2jpw.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 8,
+        "name": "古い世界地図",
+        "description": "とても古い世界地図。よく見ると謎の印が！お宝のありかかもしれません…平和な海がきたら探索ですね！",
+        "star": 1,
+        "img": "room_g7of761p9xz.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 17,
+        "name": "小さな観葉植物",
+        "description": "小さくても緑の観葉植物が、戦いで疲れたココロを癒してくれます。",
+        "star": 1,
+        "img": "room_opxqmmxojd6.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 6,
+        "name": "アレンジメント",
+        "description": "喜び、明るさ、明朗、愉快を表現するフラワーアレンジメント。司令官室を華やかに快活に演出します！",
+        "star": 2,
+        "img": "room_iyot7zo8nok.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
         "sortIndex": 14,
         "name": "怪獣映画ポスター",
         "description": "ちび大怪獣の襲来！迎え撃つ艦娘の勇姿！大ヒットした総天然色映画のポスターです。",
         "star": 1,
         "img": "room_sm4sa7vmd4e.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DECOR",
+        "sortIndex": 18,
+        "name": "戦艦映画ポスター",
+        "description": "遠い国での戦艦の反乱を描いた古いサイレント映画のポスターです。とってもレアなポスターなんです！",
+        "star": 4,
+        "img": "room_sv1lctsdf2s.png",
         "touchAction": false
     },
     {
@@ -91,11 +568,83 @@
     },
     {
         "kind": "FURNITURE",
+        "sortIndex": 8,
+        "name": "エレガントボード",
+        "description": "インテリジェンスを感じさせるエレガントなサイドボード。選ぶ人のセンスが光る逸品です。",
+        "star": 3,
+        "img": "room_xtj58ol2i6b.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 18,
+        "name": "クラシックシェルフ",
+        "description": "クラシックでシンプルな食器棚。やはり艦隊の指揮に紅茶セットは必須アイテムでしょ？",
+        "star": 3,
+        "img": "room_9v0c8ji98nq.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 4,
+        "name": "メルヘンシェルフ",
+        "description": "淡いピンクなデザインの食器棚にぬいぐるみ達がとってもメルヘンな雰囲気を醸し出すインテリア家具。",
+        "star": 4,
+        "img": "room_8fzacb90kmz.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 17,
+        "name": "折り畳み机",
+        "description": "所属する艦娘の大雑把な性格が見事に表現された折り畳み机！とりあえずここにかけとこっと！",
+        "star": 1,
+        "img": "room_iwvvuqkxtrr.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 9,
+        "name": "ハンガーラック",
+        "description": "なんとなく視線を感じる素敵なハンガーラック。ちょっと大きめで色々かけられそう！",
+        "star": 1,
+        "img": "room_xvpku6vwhie.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 14,
+        "name": "ドレッサー",
+        "description": "艦娘が出撃前に殺到する鏡台。身だしなみは大事です！なぜ提督の部屋にあるのか、ちょっと謎です。",
+        "star": 5,
+        "img": "room_so1uc0rsl1e.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 6,
+        "name": "だるま",
+        "description": "必勝祈願に「だるま」はいかがですか？両方入った黒目で艦隊の武運長久をお祈りします！",
+        "star": 2,
+        "img": "room_p4nrugpguy8.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
         "sortIndex": 11,
         "name": "鎮守府のツリー",
         "description": "各鎮守府や拠点に贈られた白いツリー。少しずつ飾りも充実させていきたいですね…。作戦行動中の全提督の皆さんにお贈りします。",
         "star": 2,
         "img": "room_62qag6z1kms.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FURNITURE",
+        "sortIndex": 3,
+        "name": "緑のプランター",
+        "description": "お部屋も気持ちも爽やかにしてくれるグリーンのプランター。ぜひ、ときどき配置もしてみて気分転換を！",
+        "star": 1,
+        "img": "room_eo7wp4nz7x7.png",
         "touchAction": false
     },
     {
@@ -108,12 +657,84 @@
         "touchAction": false
     },
     {
+        "kind": "FURNITURE",
+        "sortIndex": 21,
+        "name": "書斎本棚",
+        "description": "書斎にぴったりの本格本棚です。書斎机と同じ素材を使って、落ち着いた雰囲気を醸し出します。シックで大人な提督御用達です！",
+        "star": 3,
+        "img": "room_cmalxyuca2i.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WINDOW",
+        "sortIndex": 20,
+        "name": "白いカーテンの小窓",
+        "description": "少し小ぶりの窓枠の両脇に白いカーテンを備えた可愛い小窓です。ガーリーな雰囲気は優しい提督の艦娘にぴったりです！",
+        "star": 3,
+        "img": "room_hl6e7fau53j.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 44,
+        "name": "春色の床",
+        "description": "春色満開の床です。比較的リーズナブルな価格で春色気分を目一杯執務室の中に導入できます。ぜひ、春の鎮守府模様替えにどうぞ！",
+        "star": 4,
+        "img": "room_4vj5hd8c9gs.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 38,
+        "name": "梅紫の壁紙",
+        "description": "和の色である梅紫で構成された新色の壁紙です。少し落ち着いた色合いが、大人の艦娘にも人気みたいです。",
+        "star": 2,
+        "img": "room_xribjx4pq5k.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 27,
+        "name": "ガラステーブル",
+        "description": "モダンセンスあふれるガラスを天板にしたテーブル。艦娘たちとのパーティにも重宝します。",
+        "star": 1,
+        "img": "room_koyzhbo6awc.png",
+        "touchAction": false
+    },
+    {
+        "kind": "DESK",
+        "sortIndex": 17,
+        "name": "ウッディな執務机",
+        "description": "森の動物達がお茶会を始めそうな素朴で素敵な机。艦娘にも人気の逸品！",
+        "star": 1,
+        "img": "room_spz4v3gw2kv.png",
+        "touchAction": false
+    },
+    {
         "kind": "DECOR",
         "sortIndex": 27,
         "name": "艦隊大漁旗",
         "description": "第六駆逐隊のある駆逐艦が航海の安全と大漁を祈って司令官のために作った大漁旗です。手作りなので僚艦もお手伝いしたのです！",
         "star": 4,
         "img": "room_03ou3hffonx.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 33,
+        "name": "卯月の床",
+        "description": "春のうららか気分にマッチするデザインの床板です。この季節はまかせてほしいぴょん！という駆逐艦娘がデザインしました。",
+        "star": 2,
+        "img": "room_21cgjwf36tv.png",
+        "touchAction": false
+    },
+    {
+        "kind": "FLOOR",
+        "sortIndex": 23,
+        "name": "床半分の簡易畳",
+        "description": "ちょっと畳な雰囲気を味わいつつシンプルな床も好きという提督のための、ハーフ＆ハーフな簡易畳です。お値段もリーズナブル！",
+        "star": 3,
+        "img": "room_26oizik0swe.png",
         "touchAction": false
     },
     {
@@ -135,6 +756,24 @@
         "touchAction": false
     },
     {
+        "kind": "WALL",
+        "sortIndex": 32,
+        "name": "矢羽の壁紙",
+        "description": "矢羽をデザインモチーフに採用した、爽やかな季節の壁紙です。航空母艦娘にも人気のこの壁紙で、鎮守府の模様替えをどうぞ！",
+        "star": 2,
+        "img": "room_9wlapmewzsy.png",
+        "touchAction": false
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 44,
+        "name": "長月の壁紙",
+        "description": "長月の季節の月をモチーフに描かれた壁面です。駆逐艦と侮るなと主張するある睦月型駆逐艦娘の全面監修による秋夜の月の壁紙です。",
+        "star": 2,
+        "img": "room_clze264ru92.png",
+        "touchAction": false
+    },
+    {
         "kind": "DECOR",
         "sortIndex": 30,
         "name": "一七式大漁旗",
@@ -142,6 +781,15 @@
         "star": 4,
         "img": "room_4v3dxl0vvon.png",
         "touchAction": true
+    },
+    {
+        "kind": "WALL",
+        "sortIndex": 55,
+        "name": "沈丁花の壁紙",
+        "description": "春の訪れを感じさせる季節にぴったりの壁紙です。「栄光」そして「不滅」…そんな花言葉を持つ沈丁花がデザインされています。",
+        "star": 4,
+        "img": "room_i3icher10dp.png",
+        "touchAction": false
     },
     {
         "kind": "DECOR",

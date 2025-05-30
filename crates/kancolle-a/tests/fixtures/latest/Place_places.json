@@ -528,22 +528,6 @@
         "distance": ""
     },
     {
-        "id": 111708,
-        "name": "ソユーゲームフィールド小名浜店",
-        "tel": "0246731001",
-        "address": "福島県いわき市小名浜字辰巳町７９イオンモールいわき小名浜３Ｆ",
-        "station": "",
-        "openTime": "",
-        "closeTime": "",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "FUKUSHIMA",
-        "latitude": "36.946819",
-        "longitude": "140.903794",
-        "zoomLevel": 16,
-        "distance": ""
-    },
-    {
         "id": 111686,
         "name": "ＧｉＧＯコロワ甲子園",
         "tel": "07014595395",
@@ -3132,22 +3116,6 @@
         "regionEnum": "TOKYO",
         "latitude": "35.69911",
         "longitude": "139.412096",
-        "zoomLevel": 16,
-        "distance": ""
-    },
-    {
-        "id": 105083,
-        "name": "ゲームディーノ彦根店",
-        "tel": "0749210073",
-        "address": "滋賀県彦根市西沼波町１６６",
-        "station": "",
-        "openTime": "09:00",
-        "closeTime": "24:00",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "SHIGA",
-        "latitude": "35.25863",
-        "longitude": "136.265473",
         "zoomLevel": 16,
         "distance": ""
     },
@@ -8240,22 +8208,6 @@
         "distance": ""
     },
     {
-        "id": 102582,
-        "name": "キャッツアイ栄通店",
-        "tel": "0118554412",
-        "address": "北海道札幌市白石区栄通１９丁目１１−４３",
-        "station": "",
-        "openTime": "10:00",
-        "closeTime": "00:00",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "HOKKAIDO",
-        "latitude": "43.025348",
-        "longitude": "141.436631",
-        "zoomLevel": 16,
-        "distance": ""
-    },
-    {
         "id": 102901,
         "name": "タイトーステーション 千歳店",
         "tel": "0123424195",
@@ -8881,7 +8833,7 @@
     },
     {
         "id": 106955,
-        "name": "THE 3RD PLANET 長野大通り店",
+        "name": "サープラ長野あそびタウン",
         "tel": "0262315015",
         "address": "長野県長野市大字鶴賀権堂町１５０６−３長電権堂第２ビル１Ｆ",
         "station": "",
@@ -9472,22 +9424,6 @@
         "distance": ""
     },
     {
-        "id": 112428,
-        "name": "ピタゴラス和歌山",
-        "tel": "08072043942",
-        "address": "和歌山県和歌山市土入７３−１",
-        "station": "",
-        "openTime": "",
-        "closeTime": "",
-        "specialInfo": "",
-        "country": "JPN",
-        "regionEnum": "WAKAYAMA",
-        "latitude": "34.252872",
-        "longitude": "135.145628",
-        "zoomLevel": 16,
-        "distance": ""
-    },
-    {
         "id": 101918,
         "name": "アミューズメントクラブ浦和",
         "tel": "0488140200",
@@ -10001,7 +9937,7 @@
     },
     {
         "id": 110852,
-        "name": "トップラン東大阪店",
+        "name": "トップラン東大阪",
         "tel": "08038304781",
         "address": "大阪府東大阪市東鴻池町１−６−３０イオンタウン東大阪店２Ｆ",
         "station": "",

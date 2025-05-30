@@ -148,7 +148,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1746025200000
+        "periodEndTime": 1748703600000
     },
     {
         "areaId": 2,
@@ -327,7 +327,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1746025200000
+        "periodEndTime": 1748703600000
     },
     {
         "areaId": 3,
@@ -477,7 +477,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1746025200000
+        "periodEndTime": 1748703600000
     },
     {
         "areaId": 4,
@@ -749,7 +749,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1746025200000
+        "periodEndTime": 1748703600000
     },
     {
         "areaId": 5,
@@ -1050,7 +1050,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1746025200000
+        "periodEndTime": 1748703600000
     },
     {
         "areaId": 6,
@@ -1288,7 +1288,7 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1746025200000
+        "periodEndTime": 1748703600000
     },
     {
         "areaId": 6,
@@ -1322,6 +1322,6 @@
         "strategyPointDrumBounus": false,
         "allLvRaidFlag": false,
         "supportFleetFlag": false,
-        "periodEndTime": 1746025200000
+        "periodEndTime": 1748703600000
     }
 ]

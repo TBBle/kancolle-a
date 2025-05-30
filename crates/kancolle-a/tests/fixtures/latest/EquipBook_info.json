@@ -1296,6 +1296,12 @@
         "equipImg": ""
     },
     {
+        "bookNo": 280,
+        "equipKind": "",
+        "equipName": "",
+        "equipImg": ""
+    },
+    {
         "bookNo": 281,
         "equipKind": "",
         "equipName": "",
@@ -1597,9 +1603,9 @@
     },
     {
         "bookNo": 407,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "中口径主砲",
+        "equipName": "15.2cm連装砲改二",
+        "equipImg": "e/equip_407_mir78tw0xnw.png"
     },
     {
         "bookNo": 412,
@@ -1657,9 +1663,9 @@
     },
     {
         "bookNo": 485,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "水上戦闘機",
+        "equipName": "強風改二",
+        "equipImg": "e/equip_485_u3ovxxvd5ky.png"
     },
     {
         "bookNo": 488,
