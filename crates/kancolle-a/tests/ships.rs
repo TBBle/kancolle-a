@@ -12,15 +12,15 @@ lazy_static_include_bytes! {
 }
 
 // crates\kancolle-a\src\importer\wikiwiki_jp_kancolle_a\kansen_table\艦船_テーブル.txt
-// Regex `^\|\d\d\d\|\d\|\[\[[^\]改甲航]*\]\]\|[^|]+\|` gives 197
+// Regex `^\|\d\d\d\|\d\|\[\[[^\]改甲航]*\]\]\|[^|]+\|` gives 198
 // Then there's 6 ships that are renamed per `ship_blueprint_name`.
-const KANSEN_TABLE_SHIPS: usize = 191;
+const KANSEN_TABLE_SHIPS: usize = 192;
 // Regex `^\|\d\d\d\|\d\|`
-const KANSEN_TABLE_COUNT: usize = 287;
+const KANSEN_TABLE_COUNT: usize = 290;
 
 // crates\kancolle-a\src\importer\wikiwiki_jp_kancolle_a\kansen_table\改造艦船_テーブル.txt
 // Regex `^\|\d\d\d\|\d\|`
-const MODIFIED_KANSEN_TABLE_COUNT: usize = 162;
+const MODIFIED_KANSEN_TABLE_COUNT: usize = 163;
 
 // crates\kancolle-a\tests\fixtures\latest\kanmusu_list.json
 // 441 entries
@@ -209,8 +209,6 @@ async fn test_ships_full_import() {
     assert_eq!(
         ships.shipmod_iter().count(),
         KANSEN_TABLE_COUNT + MODIFIED_KANSEN_TABLE_COUNT
-        // 矢矧改二 (see test_tcbook_entries_missing_from_wiki)
-        + 1
     );
     assert_eq!(
         ships
@@ -247,7 +245,7 @@ async fn test_ships_full_import() {
         .map(|ship| ship.name().as_ref())
         .collect();
 
-    assert_eq!(non_kekkon_ships.len(), 9);
+    assert_eq!(non_kekkon_ships.len(), 12);
     assert!(non_kekkon_ships.contains(&"Ranger"));
     assert!(non_kekkon_ships.contains(&"武蔵改二"));
     assert!(non_kekkon_ships.contains(&"Ranger改"));
@@ -257,6 +255,9 @@ async fn test_ships_full_import() {
     assert!(non_kekkon_ships.contains(&"Iowa"));
     assert!(non_kekkon_ships.contains(&"Iowa改"));
     assert!(non_kekkon_ships.contains(&"矢矧改二"));
+    assert!(non_kekkon_ships.contains(&"雪風改二"));
+    assert!(non_kekkon_ships.contains(&"Janus"));
+    assert!(non_kekkon_ships.contains(&"Janus改"));
 
     // Not really a test, more a record of the data in the integration tests.
     let unowned_ships: Vec<&str> = ships
@@ -273,7 +274,7 @@ async fn test_ships_full_import() {
             }
         })
         .collect();
-    assert_eq!(unowned_ships.len(), 11);
+    assert_eq!(unowned_ships.len(), 12);
     assert!(unowned_ships.contains(&"Ark Royal"));
     assert!(unowned_ships.contains(&"Hornet"));
     assert!(unowned_ships.contains(&"伊14"));
@@ -285,6 +286,7 @@ async fn test_ships_full_import() {
     assert!(unowned_ships.contains(&"Atlanta"));
     assert!(unowned_ships.contains(&"Гангут"));
     assert!(unowned_ships.contains(&"Z3"));
+    assert!(unowned_ships.contains(&"Janus"));
 
     // Validate our assumption that the Wiki ship_type for the mod-level 0 ShipMod
     // matches the ship_type in the Blueprint data.
