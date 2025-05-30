@@ -67,7 +67,7 @@ pub(crate) fn read_kansen_table(reader: impl Read) -> Result<KansenTable> {
     // TODO: Do we need to worry about the first header being ~-tagged cells instead of being a h-suffixed row?
     for record in rdr.records() {
         let record = record?;
-        if record.iter().last().unwrap() == "h" {
+        if record.iter().next_back().unwrap() == "h" {
             rdr.set_headers(clean_record(&record));
             break;
         }
@@ -81,7 +81,7 @@ pub(crate) fn read_kansen_table(reader: impl Read) -> Result<KansenTable> {
     // We need to skip records with any final character, or with a second cell first character ~
     for record in rdr.records() {
         let record = record?;
-        if record.iter().last().unwrap() != "" {
+        if record.iter().next_back().unwrap() != "" {
             continue;
         }
         if record[1].starts_with('~') {
