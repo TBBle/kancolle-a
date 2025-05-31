@@ -33,7 +33,7 @@ pub(crate) mod args {
     }
 
     #[test]
-    fn kca_blueprints_ready_check_options() {
+    fn kca_renovation_priority_check_options() {
         options().check_invariants(false)
     }
 }
@@ -250,8 +250,8 @@ async fn main() -> Result<()> {
 
     for result in results {
         match result {
-            State::MissingAll(ship_name) => eprintln!("MISSING ALL\t{ship_name}"),
-            State::MissingBase(ship_name) => eprintln!("MISSING BASE\t{ship_name}"),
+            State::MissingAll(ship_name) => println!("MISSING ALL\t{ship_name}"),
+            State::MissingBase(ship_name) => println!("MISSING BASE\t{ship_name}"),
             State::Constructable {
                 ship_name,
                 current,
@@ -265,7 +265,7 @@ async fn main() -> Result<()> {
                 let current_name = current.name();
                 let next_name = next.name();
                 let current_stars = current.character().as_ref().unwrap().star_num;
-                eprintln!(
+                println!(
                     "{next_priority}CONSTRUCTABLE\t{ship_name}\t{current_name}({current_stars}/5)\t=> {next_name}"
                 );
             }
@@ -282,7 +282,7 @@ async fn main() -> Result<()> {
                 let current_name = current.name();
                 let next_name = next.name();
                 let current_stars = current.character().as_ref().unwrap().star_num;
-                eprintln!(
+                println!(
                     "{next_priority}AVAILABLE\t{ship_name}\t{current_name}({current_stars}/5)\t=> {next_name}"
                 );
             }
@@ -298,18 +298,18 @@ async fn main() -> Result<()> {
                 };
                 let current_name = current.name();
                 let next_name = next.name();
-                eprintln!(
+                println!(
                     "{next_priority}READY\t\t{ship_name}\t{current_name}      \t=> {next_name}"
                 );
             }
             State::StarsNeeded { ship_name, current } => {
                 let current_name = current.name();
                 let current_stars = current.character().as_ref().unwrap().star_num;
-                eprintln!("STARS NEEDED\t{ship_name}\t{current_name}({current_stars}/5)");
+                println!("STARS NEEDED\t{ship_name}\t{current_name}({current_stars}/5)");
             }
             State::Kekkonable { ship_name, current } => {
                 let current_name = current.name();
-                eprintln!("KEKKONABLE\t{ship_name}\t{current_name}");
+                println!("KEKKONABLE\t{ship_name}\t{current_name}");
             }
         }
     }
