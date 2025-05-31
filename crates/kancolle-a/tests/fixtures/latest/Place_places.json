@@ -528,6 +528,22 @@
         "distance": ""
     },
     {
+        "id": 111708,
+        "name": "ソユーゲームフィールド小名浜店",
+        "tel": "0246731001",
+        "address": "福島県いわき市小名浜字辰巳町７９イオンモールいわき小名浜３Ｆ",
+        "station": "",
+        "openTime": "",
+        "closeTime": "",
+        "specialInfo": "",
+        "country": "JPN",
+        "regionEnum": "FUKUSHIMA",
+        "latitude": "36.946819",
+        "longitude": "140.903794",
+        "zoomLevel": 16,
+        "distance": ""
+    },
+    {
         "id": 111686,
         "name": "ＧｉＧＯコロワ甲子園",
         "tel": "07014595395",
