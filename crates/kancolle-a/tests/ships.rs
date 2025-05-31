@@ -30,22 +30,22 @@ const FIXTURE_KANMUSU_LIST_COUNT: usize = 441;
 const FIXTURE_KANMUSU_LIST_SHIPS: usize = FIXTURE_KANMUSU_LIST_COUNT - 247 - 6;
 
 // crates\kancolle-a\tests\fixtures\latest\BlueprintList_info.json
-const FIXTURE_BLUEPRINT_LIST_COUNT: usize = 159;
+const FIXTURE_BLUEPRINT_LIST_COUNT: usize = 149;
 
 // crates\kancolle-a\tests\fixtures\latest\TcBook_info.json
-// 290 entries but 22 are 未取得
-const FIXTURE_TCBOOK_KNOWN_COUNT: usize = 291 - 22;
-// Regex `"shipName": ".*[改甲航].*",` gives 85 book entries with modified names
+// 291 entries but 21 are 未取得
+const FIXTURE_TCBOOK_KNOWN_COUNT: usize = 291 - 21;
+// Regex `"shipName": ".*[改甲航].*",` gives 86 book entries with modified names
 // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-const FIXTURE_TCBOOK_KNOWN_SHIPS: usize = FIXTURE_TCBOOK_KNOWN_COUNT - 85 - 4;
+const FIXTURE_TCBOOK_KNOWN_SHIPS: usize = FIXTURE_TCBOOK_KNOWN_COUNT - 86 - 4;
 // JSON Path query `$..cardList[0].variationNumInPage`, reports 153 two-row (6 per page) ships
 const FIXTURE_TCBOOK_KNOWN_SHIPMODS: usize = FIXTURE_TCBOOK_KNOWN_COUNT + 153;
 
 // crates\kancolle-a\tests\fixtures\latest\CharacterList_info.json
-const FIXTURE_CHARACTERS_COUNT: usize = 414;
-// Regex `"shipName": ".*[改甲航].*",` gives 230 characters with modified names
+const FIXTURE_CHARACTERS_COUNT: usize = 415;
+// Regex `"shipName": ".*[改甲航].*",` gives 231 characters with modified names
 // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-const FIXTURE_CHARACTERS_SHIPS: usize = FIXTURE_CHARACTERS_COUNT - 230 - 4;
+const FIXTURE_CHARACTERS_SHIPS: usize = FIXTURE_CHARACTERS_COUNT - 231 - 4;
 
 #[tokio::test]
 async fn test_ships_null_import() {

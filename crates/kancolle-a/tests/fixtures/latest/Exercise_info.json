@@ -12,7 +12,7 @@
         "ngUnitImg": "ng_wuj9uz8ap14.png",
         "open": true,
         "dropEpFesItem": [],
-        "stampCount": 0,
+        "stampCount": 3,
         "stampCountMax": 3
     },
     {
@@ -27,7 +27,7 @@
         "maxExercisePoint": 4554,
         "open": true,
         "dropEpFesItem": [],
-        "stampCount": 0,
+        "stampCount": 6,
         "stampCountMax": 6
     },
     {
@@ -42,7 +42,7 @@
         "maxExercisePoint": 3513,
         "open": true,
         "dropEpFesItem": [],
-        "stampCount": 0,
+        "stampCount": 6,
         "stampCountMax": 6
     },
     {
@@ -57,7 +57,7 @@
         "maxExercisePoint": 12424,
         "open": false,
         "dropEpFesItem": [],
-        "stampCount": 0,
+        "stampCount": 3,
         "stampCountMax": 3
     }
 ]

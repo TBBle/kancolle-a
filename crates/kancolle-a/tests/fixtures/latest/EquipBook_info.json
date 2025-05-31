@@ -1597,9 +1597,9 @@
     },
     {
         "bookNo": 379,
-        "equipKind": "",
-        "equipName": "",
-        "equipImg": ""
+        "equipKind": "小口径主砲",
+        "equipName": "12.7cm単装高角砲改二",
+        "equipImg": "e/equip_379_d728btmpv5b.png"
     },
     {
         "bookNo": 407,

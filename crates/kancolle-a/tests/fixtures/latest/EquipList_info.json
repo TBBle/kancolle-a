@@ -24,13 +24,6 @@
         },
         {
             "type": 1,
-            "equipmentId": 4,
-            "name": "14cm単装砲",
-            "num": 1,
-            "img": "equip_icon_2_n8b0sex6xclf.png"
-        },
-        {
-            "type": 1,
             "equipmentId": 5,
             "name": "15.5cm三連装砲",
             "num": 6,
@@ -96,7 +89,7 @@
             "type": 3,
             "equipmentId": 13,
             "name": "61cm三連装魚雷",
-            "num": 6,
+            "num": 8,
             "img": "equip_icon_5_c4bcdscek33o.png"
         },
         {
@@ -234,20 +227,6 @@
         },
         {
             "type": 2,
-            "equipmentId": 37,
-            "name": "7.7mm機銃",
-            "num": 1,
-            "img": "equip_icon_15_wpoe5ai203dt.png"
-        },
-        {
-            "type": 2,
-            "equipmentId": 38,
-            "name": "12.7mm単装機銃",
-            "num": 3,
-            "img": "equip_icon_15_wpoe5ai203dt.png"
-        },
-        {
-            "type": 2,
             "equipmentId": 39,
             "name": "25mm連装機銃",
             "num": 1,
@@ -257,7 +236,7 @@
             "type": 2,
             "equipmentId": 40,
             "name": "25mm三連装機銃",
-            "num": 5,
+            "num": 6,
             "img": "equip_icon_15_wpoe5ai203dt.png"
         },
         {
@@ -628,7 +607,7 @@
             "type": 1,
             "equipmentId": 92,
             "name": "10cm高角砲＋高射装置",
-            "num": 9,
+            "num": 10,
             "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
@@ -805,6 +784,13 @@
             "name": "SKC34 20.3cm連装砲",
             "num": 2,
             "img": "equip_icon_2_n8b0sex6xclf.png"
+        },
+        {
+            "type": 1,
+            "equipmentId": 379,
+            "name": "12.7cm単装高角砲改二",
+            "num": 1,
+            "img": "equip_icon_26_rv74l134q7an.png"
         },
         {
             "type": 3,
