@@ -35,7 +35,7 @@ pub struct BookShip {
 }
 
 // Notes for future functions
-// * Card images (s/tc_NO_xxx.jpg) live in https://kancolle-arcade.net/ac/resources/pictureBook/
+// * Card images (s/tc_NO_xxx.jpg) and equipment images (e/equip_NO_xxx.png) live in https://kancolle-arcade.net/ac/resources/pictureBook/
 // * Status images (i/i_xxx.png) live in https://kancolle-arcade.net/ac/resources/chara/
 // ** Status images end with _n, _bs, _bm, or _bl. (Not sure if there's one for sunk?)
 
