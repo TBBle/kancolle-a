@@ -1,5 +1,4 @@
 use anyhow::Result;
-use chrono::{Datelike, Utc};
 use kancolle_a::ships::ShipsBuilder;
 use kancolle_a_cli_tools::cli_helpers;
 use std::collections::BTreeMap;
@@ -37,6 +36,8 @@ async fn main() -> Result<()> {
 
     let mut bp_per_month = BTreeMap::new();
 
+    let mut expiring_this_month = 0u16;
+
     for bp in ships
         .iter()
         .filter(|(_, ship)| ship.blueprint().is_some())
@@ -48,27 +49,23 @@ async fn main() -> Result<()> {
                 .or_insert_with(Vec::<(&String, u16)>::new);
             let month_ships = bp_per_month.get_mut(&entry.expiration_date).unwrap();
             month_ships.push((&bp.ship_name, entry.blueprint_num));
-        }
-    }
-
-    let today = Utc::now();
-    let mut expiring_this_month = 0u16;
-
-    for (month, blueprints) in bp_per_month {
-        let is_this_month = month.year() == today.year() && month.month() == today.month();
-        let month_name = month.format("%Y %B");
-        println!("{month_name}");
-        for (name, count) in blueprints {
-            println!("  {name}\t{count}");
-            if is_this_month {
-                expiring_this_month += count;
+            if entry.expire_this_month {
+                expiring_this_month += entry.blueprint_num;
             }
         }
-        println!();
     }
 
     if expiring_this_month > 0 {
         println!("{expiring_this_month} blueprints expiring this month!")
+    }
+
+    for (month, blueprints) in bp_per_month {
+        let month_name = month.format("%Y %B");
+        println!("{month_name}");
+        for (name, count) in blueprints {
+            println!("  {name}\t{count}");
+        }
+        println!();
     }
 
     Ok(())
