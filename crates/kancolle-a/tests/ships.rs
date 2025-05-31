@@ -24,13 +24,13 @@ const MODIFIED_KANSEN_TABLE_COUNT: usize = 163;
 
 // crates\kancolle-a\tests\fixtures\latest\kanmusu_list.json
 // 441 entries
-const FIXTURE_KANMUSU_LIST_COUNT: usize = 441;
+const FIXTURE_KANMUSU_COUNT: usize = 441;
 // Regex `"name": ".*[改甲航].*",` gives 247
 // Then there's 6 ships that are renamed per `ship_blueprint_name`.
-const FIXTURE_KANMUSU_LIST_SHIPS: usize = FIXTURE_KANMUSU_LIST_COUNT - 247 - 6;
+const FIXTURE_KANMUSU_SHIPS: usize = FIXTURE_KANMUSU_COUNT - 247 - 6;
 
 // crates\kancolle-a\tests\fixtures\latest\BlueprintList_info.json
-const FIXTURE_BLUEPRINT_LIST_COUNT: usize = 149;
+const FIXTURE_BPLIST_COUNT: usize = 149;
 
 // crates\kancolle-a\tests\fixtures\latest\TcBook_info.json
 // 291 entries but 21 are 未取得
@@ -42,10 +42,10 @@ const FIXTURE_TCBOOK_KNOWN_SHIPS: usize = FIXTURE_TCBOOK_KNOWN_COUNT - 86 - 4;
 const FIXTURE_TCBOOK_KNOWN_SHIPMODS: usize = FIXTURE_TCBOOK_KNOWN_COUNT + 153;
 
 // crates\kancolle-a\tests\fixtures\latest\CharacterList_info.json
-const FIXTURE_CHARACTERS_COUNT: usize = 415;
+const FIXTURE_CHARLIST_COUNT: usize = 415;
 // Regex `"shipName": ".*[改甲航].*",` gives 231 characters with modified names
 // Then there's 6 ships that are renamed per `ship_blueprint_name`, but 2 are not in my data.
-const FIXTURE_CHARACTERS_SHIPS: usize = FIXTURE_CHARACTERS_COUNT - 231 - 4;
+const FIXTURE_CHARLIST_SHIPS: usize = FIXTURE_CHARLIST_COUNT - 231 - 4;
 
 #[tokio::test]
 async fn test_ships_null_import() {
@@ -76,7 +76,7 @@ async fn test_ships_default_import() {
             .shipmod_iter()
             .filter(|ship| ship.kekkon().is_some())
             .count(),
-        FIXTURE_KANMUSU_LIST_COUNT
+        FIXTURE_KANMUSU_COUNT
     );
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -96,10 +96,10 @@ async fn test_ships_kekkon_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), FIXTURE_KANMUSU_LIST_SHIPS);
+    assert_eq!(ships.len(), FIXTURE_KANMUSU_SHIPS);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    assert_eq!(ships.shipmod_iter().count(), FIXTURE_KANMUSU_LIST_COUNT);
+    assert_eq!(ships.shipmod_iter().count(), FIXTURE_KANMUSU_COUNT);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_some()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -119,11 +119,11 @@ async fn test_ships_blueprint_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), FIXTURE_BLUEPRINT_LIST_COUNT);
+    assert_eq!(ships.len(), FIXTURE_BPLIST_COUNT);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_some()));
     assert!(ships.iter().all(|(_, ship)| ship.mods().len() == 1));
 
-    assert_eq!(ships.shipmod_iter().count(), FIXTURE_BLUEPRINT_LIST_COUNT);
+    assert_eq!(ships.shipmod_iter().count(), FIXTURE_BPLIST_COUNT);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -166,10 +166,10 @@ async fn test_ships_characters_only_import() {
         .await
         .unwrap();
 
-    assert_eq!(ships.len(), FIXTURE_CHARACTERS_SHIPS);
+    assert_eq!(ships.len(), FIXTURE_CHARLIST_SHIPS);
     assert!(ships.iter().all(|(_, ship)| ship.blueprint().is_none()));
 
-    assert_eq!(ships.shipmod_iter().count(), FIXTURE_CHARACTERS_COUNT);
+    assert_eq!(ships.shipmod_iter().count(), FIXTURE_CHARLIST_COUNT);
     assert!(ships.shipmod_iter().all(|ship| ship.kekkon().is_none()));
     assert!(ships.shipmod_iter().all(|ship| ship.character().is_some()));
     assert!(ships.shipmod_iter().all(|ship| ship.book().is_none()));
@@ -203,7 +203,7 @@ async fn test_ships_full_import() {
             .iter()
             .filter(|(_, ship)| ship.blueprint().is_some())
             .count(),
-        FIXTURE_BLUEPRINT_LIST_COUNT
+        FIXTURE_BPLIST_COUNT
     );
 
     assert_eq!(
@@ -215,7 +215,7 @@ async fn test_ships_full_import() {
             .shipmod_iter()
             .filter(|ship| ship.kekkon().is_some())
             .count(),
-        FIXTURE_KANMUSU_LIST_COUNT
+        FIXTURE_KANMUSU_COUNT
     );
     assert_eq!(
         ships
@@ -229,7 +229,7 @@ async fn test_ships_full_import() {
             .shipmod_iter()
             .filter(|ship| ship.character().is_some())
             .count(),
-        FIXTURE_CHARACTERS_COUNT
+        FIXTURE_CHARLIST_COUNT
     );
     assert_eq!(
         ships
